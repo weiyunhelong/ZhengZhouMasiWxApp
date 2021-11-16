@@ -1,5 +1,10 @@
 {
   "pages":[
+    "pages/home/index",
+    "pages/jiyin/index",
+    "pages/zuji/index",
+    "pages/kecheng/index",
+    "pages/my/index",
     "pages/index/index",
     "pages/logs/logs"
   ],
@@ -9,6 +14,69 @@
     "navigationBarTitleText": "Weixin",
     "navigationBarTextStyle":"black"
   },
+  "window": {
+    "backgroundTextStyle": "dark",
+    "navigationBarBackgroundColor": "#f5f5f5",
+    "navigationBarTitleText": "",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "color": "#dddddd",
+    "selectedColor": "#124361",
+    "borderStyle": "black",
+    "backgroundColor": "#ffffff",
+    "list": [
+      {
+        "pagePath": "pages/home/index",
+        "iconPath": "/resources/tabbar/home.png",
+        "selectedIconPath": "/resources/tabbar/homeh.png",
+        "text": "首页"
+      },
+      {
+        "pagePath": "pages/zuji/index",
+        "iconPath": "/resources/tabbar/zuji.png",
+        "selectedIconPath": "/resources/tabbar/zujih.png",
+        "text": "总书记扶贫足迹"
+      },
+      {
+        "pagePath": "pages/jiyin/index",
+        "iconPath": "/resources/tabbar/jiyin.png",
+        "selectedIconPath": "/resources/tabbar/jiyinh.png",
+        "text": "探寻红色基因"
+      },
+      {
+        "pagePath": "pages/kecheng/index",
+        "iconPath": "/resources/tabbar/kecheng.png",
+        "selectedIconPath": "/resources/tabbar/kechengh.png",
+        "text": "创课中心"
+      },
+      {
+        "pagePath": "pages/my/index",
+        "iconPath": "/resources/tabbar/my.png",
+        "selectedIconPath": "/resources/tabbar/myh.png",
+        "text": "我的"
+      }
+    ]
+  },
+  "networkTimeout": {
+    "request": 20000,
+    "connectSocket": 20000,
+    "uploadFile": 60000,
+    "downloadFile": 60000
+  },
+  "plugins": {   
+
+  },
+  "debug": true,
+  "permission": {
+    "scope.userLocation": {
+      "desc": "获取您位置，为您提供更加优秀的服务"
+    }
+  },
+  "requiredBackgroundModes": [
+    "audio",
+    "location"
+  ],
   "style": "v2",
   "sitemapLocation": "sitemap.json"
 }

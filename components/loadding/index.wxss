@@ -1,0 +1,46 @@
+/* components/loadding/index.wxss */
+
+.showloadingMaskZ {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 9999;
+  background:#ffffff;
+}
+
+.showloading {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(0, 0, 0, 0);
+}
+
+.showloading_k {
+  margin-top: -100rpx;
+  width:200rpx;
+  height:200rpx;
+  background-color:transparent;
+  border-radius: 10rpx;
+  color: #fff;
+  font-size: 24rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.showloading_k image {
+  width:200rpx; /*120rpx;*/
+  height:200rpx;
+  border-radius: 20rpx;
+}
+
+.showloading_k view {
+  margin-top: 20rpx;
+  color: #fff;
+  font-size: 24rpx;
+}

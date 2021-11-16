@@ -1,0 +1,8 @@
+<!--components/loadding/index.wxml-->
+<view class='showloadingMaskZ'  style="display:{{showloadingMask?'block':'none'}};}}">
+  <view class='showloading'>
+    <view direction="all" class='showloading_k'>
+      <image src='https://connectplus.oss-cn-shanghai.aliyuncs.com/origin/default/loading.svg' mode="widthFix"></image>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,213 @@
+//价格英文话
+function toThousands(num, point) {
+
+  num = parseFloat(num);
+
+  var sInt, sFloat;
+  if (typeof num === 'number' && num % 1 === 0) {
+    sInt = num;
+    var reg = getRegExp('\d(?=(\d{3})+$)', 'g')
+    sInt = (sInt + '').replace(reg, '$&,');
+    sFloat = "00";
+  } else {
+    var curnum = (num + '').split('.');
+    var reg = getRegExp('\d(?=(\d{3})+$)', 'g');
+    sInt = curnum[0].replace(reg, '$&,');
+    sFloat = curnum[1].substring(0, 2);
+  }
+  return sInt + '.' + sFloat;
+}
+
+//日期加1
+function addDay(date) {
+  var dateTime = getDate(date);
+  var dt = dateTime.getTime() + 24 * 60 * 60 * 1000;
+  var res = getDate(dt);
+  var year = res.getFullYear();
+  var month = res.getMonth() + 1;
+  month = month < 10 ? "0" + month : month;
+  var day = res.getDate();
+  day = day < 10 ? "0" + day : day;
+  return year + "-" + month + "-" + day;
+}
+
+//日期转中文
+function Date2Chinse(date) {
+  var res = getDate(date);
+  var year = res.getFullYear();
+  var month = res.getMonth() + 1;
+  var day = res.getDate();
+  return year + "年" + month + "月" + day + "日";
+}
+
+//日期转中文
+function Date2String(date) {
+  var dt = date.split('-');
+  var year = dt[0];
+  var month = dt[1];
+  var day = dt[2];
+
+  return year + "年" + month + "月" + day + "日";
+}
+
+//英文时间转换为数字
+function time2Numer(date) {
+
+  if (date != undefined) {
+    var startdt = date.split('-')[0];
+    var enddt = date.split('-')[1];
+
+    var sdt = "",
+      edt = "";
+    if (startdt.indexOf("pm") > -1) {
+      sdt = parseInt(startdt) + 12 + ":00";
+    } else if (startdt.indexOf("am") > -1) {
+      sdt = parseInt(startdt) + ":00";
+    }
+
+    if (enddt.indexOf("pm") > -1) {
+      edt = parseInt(enddt) + 12 + ":00";
+    } else if (enddt.indexOf("am") > -1) {
+      edt = parseInt(enddt) + ":00";
+    }
+    return sdt + " - " + edt;
+  } else {
+    return "";
+  }
+
+}
+
+//英文时间转换为数字
+function time2String(date) {
+
+  if (date != undefined) {
+
+    if (date.indexOf("pm") > -1 || date.indexOf("am") > -1) {
+      var startdt = date.split('-')[0];
+      var enddt = date.split('-')[1];
+
+      var sdt = "",
+        edt = "";
+      if (startdt.indexOf("pm") > -1) {
+        sdt = parseInt(startdt) + 12 + ":00";
+      } else if (startdt.indexOf("am") > -1) {
+        sdt = parseInt(startdt) + ":00";
+      }
+
+      if (enddt.indexOf("pm") > -1) {
+        edt = parseInt(enddt) + 12 + ":00";
+      } else if (enddt.indexOf("am") > -1) {
+        edt = parseInt(enddt) + ":00";
+      }
+      return sdt + " - " + edt;
+    } else {
+      return date;
+    }
+
+  } else {
+    return "";
+  }
+
+}
+
+//替换逗号
+function replacedot(item) {
+  var result = '';
+
+  result = item.split(',').join(' ');
+  return result;
+}
+
+// 判断是否相等
+function IndexOfArry(arry, num) {
+
+  return arry.indexOf(num) > -1;
+
+}
+
+// 获取在数据中的下标
+function GetIndexOfArry(arry, num) {
+
+  return arry.indexOf(num)
+
+}
+
+// 获取在日期是否已签到
+function IsDaySigned(datas, day) {
+
+  if (JSON.stringify(datas) == "{}") {
+    return false
+  } else {
+    var obj = datas[day];
+
+    return obj == undefined ? false : obj.Integral!=0;
+  }
+}
+
+//显示2个时间段
+function ShowDate2Range(date1,date2) {
+ 
+  var dt1=date1.substring(5,date1.length);
+  var dt2=date2.substring(5,date2.length);
+  dt1=dt1.replace('-','/');
+  dt2=dt2.replace('-','/');
+  return dt1 + "-" +dt2;
+}
+
+//显示2个时间段
+function ShowDate2DT(date) {
+ 
+  var dt=date.substring(0,10);
+  return dt;
+}
+
+//手机号码隐藏
+function hidePhoneStr(phone) {
+ 
+  if(phone==undefined){
+    return "";
+  }else{
+    return phone.substring(0,3)+"****"+phone.substring(8,11);
+  }
+ 
+}
+
+//2个数字相加
+function Add2Summary(num1,num2) {
+ 
+  var he=parseFloat(num1)+parseFloat(num2);
+  return he.toFixed(4);
+}
+
+//显示2个时间段 2020.12.30 00:00=> 2020/12/30
+function Datestr2DT(date) {
+ 
+  return date;
+  if(date==undefined||date==''){
+    return "";
+  }else{
+    var dt=date.substring(0,10);
+    dt=dt.replace('.','/').replace('.','/');
+    return dt;
+  } 
+}
+
+
+// 导出对外暴露的属性
+module.exports = {
+  toThousands: toThousands,
+  addDay: addDay,
+  time2Numer: time2Numer,
+  Date2Chinse: Date2Chinse,
+  Date2String: Date2String,
+  time2String: time2String,
+  replacedot: replacedot,
+  IndexOfArry: IndexOfArry,
+  GetIndexOfArry: GetIndexOfArry,  
+  IsDaySigned:IsDaySigned,
+  ShowDate2Range:ShowDate2Range,
+  ShowDate2DT:ShowDate2DT,
+  hidePhoneStr:hidePhoneStr,
+  Add2Summary:Add2Summary,
+  Datestr2DT:Datestr2DT,
+}
