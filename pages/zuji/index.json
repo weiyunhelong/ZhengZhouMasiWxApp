@@ -1,3 +1,8 @@
 {
-  "usingComponents": {}
+  "navigationBarBackgroundColor": "#124361",
+  "navigationBarTextStyle": "white",
+  "navigationBarTitleText": "习总书记的扶贫足迹",
+  "usingComponents": {
+    "loadding": "../../components/loadding/index"
+  }
 }

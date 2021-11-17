@@ -1,2 +1,18 @@
 <!--pages/zuji/index.wxml-->
-<text>pages/zuji/index.wxml</text>
+<view class="bgv"></view>
+<view class="contentv">
+  <image src="/resources/zuji/banner.png" class="banner"></image>
+
+  <block wx:for="{{list}}" wx:key="item" wx:for-index="x">
+    <image src="/resources/zuji/{{x%5}}.png" class="cover"></image>
+    <view class="infov" bindtap="goDetail" data-id="{{item.id}}">
+      <view class="date">{{item.date}}</view>
+      <view class="address">{{item.city}}</view>
+      <view class="slogan">{{item.name}}</view>
+      <view class="btn">
+        <view class="btntxt">查看详情</view>
+        <image src="/resources/comman/right.png" class="righticon"></image>
+      </view>
+    </view>
+  </block>
+</view>

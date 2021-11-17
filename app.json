@@ -1,23 +1,44 @@
 {
-  "pages":[
+  "pages": [
+    "pages/test/index",
     "pages/home/index",
     "pages/jiyin/index",
     "pages/zuji/index",
+    "pages/zuji/detail",
     "pages/kecheng/index",
+    "pages/kecheng/video",
+    "pages/kecheng/detail",
     "pages/my/index",
+    "pages/sijiang/index",
+    "pages/sijiang/detail",
+    "pages/shidu/index",
+    "pages/shidu/detail",
     "pages/index/index",
     "pages/logs/logs"
   ],
-  "window":{
-    "backgroundTextStyle":"light",
+  "subPackages": [{
+    "root": "wxauth",
+    "pages": [
+      "pages/register/index",
+      "pages/wxlogin/index",
+      "pages/auth/study",
+      "pages/auth/teacher",
+      "pages/auth/password"
+    ]
+  },{
+    "root": "my",
+    "pages": [
+      "pages/datacenter/index",
+      "pages/dati/index",
+      "pages/collect/index",
+      "pages/study/index",
+      "pages/account/index"
+    ]
+  }],
+  "window": {
+    "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#fff",
     "navigationBarTitleText": "Weixin",
-    "navigationBarTextStyle":"black"
-  },
-  "window": {
-    "backgroundTextStyle": "dark",
-    "navigationBarBackgroundColor": "#f5f5f5",
-    "navigationBarTitleText": "",
     "navigationBarTextStyle": "black"
   },
   "tabBar": {
@@ -25,8 +46,7 @@
     "selectedColor": "#124361",
     "borderStyle": "black",
     "backgroundColor": "#ffffff",
-    "list": [
-      {
+    "list": [{
         "pagePath": "pages/home/index",
         "iconPath": "/resources/tabbar/home.png",
         "selectedIconPath": "/resources/tabbar/homeh.png",
@@ -64,7 +84,7 @@
     "uploadFile": 60000,
     "downloadFile": 60000
   },
-  "plugins": {   
+  "plugins": {
 
   },
   "debug": true,
