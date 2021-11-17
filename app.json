@@ -1,6 +1,5 @@
 {
   "pages": [
-    "pages/test/index",
     "pages/home/index",
     "pages/jiyin/index",
     "pages/zuji/index",
