@@ -11,6 +11,8 @@
 * https://mp.weixin.qq.com
 * 3088663722@qq.com
 * qi13434684666 
+* 帐号 415859041@qq.com
+* 密码 qianao1117
 *  
 * 小Q泊车小程序
 * appId:wxe627e6df3cd1faee
