@@ -24,7 +24,7 @@
       "pages/auth/teacher",
       "pages/auth/password"
     ]
-  },{
+  }, {
     "root": "my",
     "pages": [
       "pages/datacenter/index",
