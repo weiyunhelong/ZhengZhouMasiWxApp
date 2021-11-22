@@ -1,4 +1,5 @@
 {
+  "setting": {},
   "condition": {
     "plugin": {
       "list": []
@@ -14,6 +15,12 @@
         {
           "name": "pages/zuji/index",
           "pathName": "pages/zuji/index",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "wxauth/pages/wxlogin/index",
+          "pathName": "wxauth/pages/wxlogin/index",
           "query": "",
           "scene": null
         }

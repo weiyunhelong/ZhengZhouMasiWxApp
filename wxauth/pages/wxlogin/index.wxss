@@ -1,1 +1,91 @@
 /* wxauth/pages/wxlogin/index.wxss */
+page {
+  background: #0E253D;
+}
+
+.topbg {
+  width: 100vw;
+  height: 364rpx;
+  background: url(https://zhengzhousizheng.oss-cn-beijing.aliyuncs.com/my/topbg.png) no-repeat;
+  background-size: cover;
+}
+
+.infov {
+  width: 100vw;
+  height: calc(100vh - 349rpx);
+  background: #FFFFFF;
+  opacity: 0.95;
+  border-radius: 30rpx;
+  margin-top: -15rpx;
+}
+
+.tabv {
+  display: flex;
+  justify-content: center;
+  padding-top: 50rpx;
+  margin-bottom: 94rpx;
+}
+
+.tabnull {
+  width: 70rpx;
+  height: 30rpx;
+}
+
+.tabitem {
+  font-size: 36rpx;
+  color: #999999;
+}
+
+.tabitemh {
+  padding-bottom: 20rpx;
+  font-size: 36rpx;
+  color: #333333;
+  border-bottom: 8rpx solid #124662;
+}
+
+.inputv {
+  width: 524rpx;
+  height: 100rpx;
+  background: #DDDDDD;
+  border-radius: 50rpx;
+  margin: 0 auto 44rpx;
+}
+
+.inputtxt {
+  padding-left: 42rpx;
+  height: 100rpx;
+  line-height: 100rpx;
+  font-size: 30rpx;
+  color: #333333;
+}
+
+.inputtip {
+  color: #999999;
+}
+
+.forgetpwd {
+  width: 524rpx;
+  font-size: 28rpx;
+  color: #333333;
+  text-align: right;
+  margin: -20rpx auto 50rpx;
+}
+
+.btn {
+  width: 524rpx;
+  height: 100rpx;
+  border-radius: 50rpx;
+  margin: 0 auto 42rpx;
+  text-align: center;
+  line-height: 100rpx;
+  font-size: 30rpx;
+  color: #FFFFFF;
+}
+
+.btn1 {
+  background: #124361;
+}
+
+.btn2 {
+  background: #07C160;
+}

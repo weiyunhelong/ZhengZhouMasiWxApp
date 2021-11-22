@@ -1,2 +1,18 @@
 <!--wxauth/pages/wxlogin/index.wxml-->
-<text>wxauth/pages/wxlogin/index.wxml</text>
+<view class="topbg"></view>
+<view class="infov">
+  <view class="tabv">
+    <view class="{{chkTab==1?'tabitemh':'tabitem'}}" bindtap="tapTabOpt" data-tab="1">用户登录</view>
+    <view class="tabnull"></view>
+    <view class="{{chkTab==2?'tabitemh':'tabitem'}}" bindtap="tapTabOpt" data-tab="2">教师登录</view>
+  </view>
+  <view class="inputv">
+    <input type="text" class="inputtxt" placeholder="请输入您的账号" placeholder-class="inputtip" value="{{account}}" bindinput="getAccount" />
+  </view>
+  <view class="inputv">
+    <input type="text" password="true" class="inputtxt" placeholder="请输入您的密码" placeholder-class="inputtip" value="{{pwd}}" bindinput="getPwd" />
+  </view>
+  <view class="forgetpwd" bindtap="forgetpwdOpt">忘记密码?</view>
+  <view class="btn btn1" bindtap="loginOpt">登录</view>
+  <view class="btn btn2" bindtap="wxOpt">微信一键登录</view>
+</view>

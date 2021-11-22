@@ -1,5 +1,6 @@
 {
   "pages": [
+    "pages/middle/index",
     "pages/home/index",
     "pages/jiyin/index",
     "pages/zuji/index",
@@ -41,41 +42,43 @@
     "navigationBarTextStyle": "black"
   },
   "tabBar": {
-    "color": "#dddddd",
-    "selectedColor": "#124361",
-    "borderStyle": "black",
-    "backgroundColor": "#ffffff",
+    "custom": true,
+    "color": "#999999",
+    "selectedColor": "#124361",   
     "list": [{
         "pagePath": "pages/home/index",
-        "iconPath": "/resources/tabbar/home.png",
-        "selectedIconPath": "/resources/tabbar/homeh.png",
+        "iconPath": "/custom-tab-bar/imgs/home.png",
+        "selectedIconPath": "/custom-tab-bar/imgs/homeh.png",
         "text": "首页"
       },
       {
         "pagePath": "pages/zuji/index",
-        "iconPath": "/resources/tabbar/zuji.png",
-        "selectedIconPath": "/resources/tabbar/zujih.png",
+        "iconPath": "/custom-tab-bar/imgs/zuji.png",
+        "selectedIconPath": "/custom-tab-bar/imgs/zujih.png",
         "text": "总书记扶贫足迹"
       },
       {
         "pagePath": "pages/jiyin/index",
-        "iconPath": "/resources/tabbar/jiyin.png",
-        "selectedIconPath": "/resources/tabbar/jiyinh.png",
+        "iconPath": "/custom-tab-bar/imgs/jiyin.png",
+        "selectedIconPath": "/custom-tab-bar/imgs/jiyinh.png",
         "text": "探寻红色基因"
       },
       {
         "pagePath": "pages/kecheng/index",
-        "iconPath": "/resources/tabbar/kecheng.png",
-        "selectedIconPath": "/resources/tabbar/kechengh.png",
+        "iconPath": "/custom-tab-bar/imgs/kecheng.png",
+        "selectedIconPath": "/custom-tab-bar/imgs/kechengh.png",
         "text": "创课中心"
       },
       {
         "pagePath": "pages/my/index",
-        "iconPath": "/resources/tabbar/my.png",
-        "selectedIconPath": "/resources/tabbar/myh.png",
+        "iconPath": "/custom-tab-bar/imgs/my.png",
+        "selectedIconPath": "/custom-tab-bar/imgs/myh.png",
         "text": "我的"
       }
     ]
+  },
+  "usingComponents": {
+    "tab-bar": "custom-tab-bar/index"
   },
   "networkTimeout": {
     "request": 20000,

@@ -1,0 +1,175 @@
+.tab-barv{
+  width: 100vw;
+  height: 70px;
+  background: #fff;
+  padding-bottom: constant(safe-area-inset-bottom);
+  padding-bottom: env(safe-area-inset-bottom);
+}
+.tab-bar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 70px;
+  background: #fff;
+  display: flex;
+  padding-bottom: constant(safe-area-inset-bottom);
+  padding-bottom: env(safe-area-inset-bottom);
+  z-index: 98;
+}
+
+.tab-bar-border {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 1px;
+  transform: scaleY(0.5);
+  z-index: 99;
+  background: #ccc;
+}
+
+.tab-bar-item {
+  flex: 1;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.tab-bar-item image {
+  width: 25px;
+  height: 25px;
+  margin: 5px auto 5rpx;
+}
+
+.tab-bar-item view {
+  font-size: 12px;
+  font-weight: bold;
+  text-align: center;
+}
+
+.tab-bar-item-btn {
+  flex: 1;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  color: #fff;
+  line-height: 1.2;
+  overflow: hidden;
+  white-space: nowrap;
+  pointer-events: auto;
+  font-family: -apple-system;
+}
+
+.tab-bar-item-btn::after {
+  background: #fff;
+  flex: 1;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  color: #858585;
+  line-height: 1.2;
+  overflow: hidden;
+  white-space: nowrap;
+  pointer-events: auto;
+  font-family: -apple-system;
+  background: #fff;
+  border: 0;
+  margin: 0;
+  padding: 0;
+}
+
+.tab-bar-item-image {
+  width: 27px;
+  height: 27px;
+  display: block;
+  line-height: 1.2;
+  overflow: hidden;
+  pointer-events: auto;
+}
+
+.tab-bar-item-text {
+  font-size: 10px;
+  display: block;
+  line-height: 1.2;
+  overflow: hidden;
+  white-space: nowrap;
+  pointer-events: auto;
+  font-family: -apple-system;
+}
+
+/*****/
+
+.navboxbtn {
+  min-width: 25%;
+  height: 48px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  background: #fff;
+}
+
+.navboxbtn::after {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+}
+
+/*底部tabbar的图片*/
+.tab-barvv {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 48px;
+  background: white;
+  display: flex;
+  z-index: -9;
+}
+
+.tab-bar-itemv {
+  flex: 0;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.tab-bar-itemv {
+  width: 60px;
+  background: #fff;
+  border-radius: 5px;
+}
+
+
+.radiov { 
+  z-index: 999;
+  position: relative;
+  top: -55rpx;
+  width: 108rpx;
+  height: 108rpx;
+  background: #FFFFFF;
+  border-radius: 50%;
+  text-align: center;
+  margin: 0px auto;
+}
+
+
+.tab-bar-itemvh { 
+  width: 100rpx;
+  height: 100rpx;
+  margin: 4rpx auto;
+}

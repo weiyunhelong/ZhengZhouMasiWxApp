@@ -78,8 +78,38 @@ App({
   globalData: {
     userInfo: null, //用户信息
     openId: "", //openid
-    sessionkey: "", //用户手机号解密
-    unionid: "", //unionid
+    userType: 1, //1：学生 2：教师
     requestUrl: "http://8.129.4.12:7022", //接口地址
+    tabbar: [{
+        pagePath: "pages/home/index",
+        iconPath: "/custom-tab-bar/imgs/home.png",
+        selectedIconPath: "/custom-tab-bar/imgs/homeh.png",
+        text: "首页"
+      },
+      {
+        pagePath: "pages/zuji/index",
+        iconPath: "/custom-tab-bar/imgs/zuji.png",
+        selectedIconPath: "/custom-tab-bar/imgs/zujih.png",
+        text: "习总书记的扶贫足迹"
+      },
+      {
+        pagePath: "pages/jiyin/index",
+        iconPath: "/custom-tab-bar/imgs/jiyin.png",
+        selectedIconPath: "/custom-tab-bar/imgs/jiyinh.png",
+        text: "探寻红色基因"
+      },
+      {
+        pagePath: "pages/kecheng/index",
+        iconPath: "/custom-tab-bar/imgs/kecheng.png",
+        selectedIconPath: "/custom-tab-bar/imgs/kechengh.png",
+        text: "创课中心"
+      },
+      {
+        pagePath: "pages/my/index",
+        iconPath: "/custom-tab-bar/imgs/my.png",
+        selectedIconPath: "/custom-tab-bar/imgs/myh.png",
+        text: "我的"
+      }
+    ],
   }
 })
