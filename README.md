@@ -8,9 +8,7 @@
 * 
 * 微信开发平台
 * https://mp.weixin.qq.com
-* 帐号 415859041@qq.com
-* 密码 qianao1117
-*    
+*
 * 接口文档
 * http://8.129.4.12:7022/doc.html
 * 
