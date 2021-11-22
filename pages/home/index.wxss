@@ -183,6 +183,7 @@ page {
   display: flex;
   flex-wrap: wrap;
   padding-left: 20rpx;
+  margin-bottom:22rpx;
 }
 
 .coursecv {

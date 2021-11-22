@@ -112,11 +112,20 @@
     <image lazy-load="true" mode="aspectFill" src="https://zhengzhousizheng.oss-cn-beijing.aliyuncs.com/home/bayi.png" class="coursecover"></image>
     <view class="coursename showOnehangTxt">南昌八一起义南昌八一起义</view>
   </view>
-  <view class="coursecv">
-    <image lazy-load="true" mode="aspectFill" src="https://zhengzhousizheng.oss-cn-beijing.aliyuncs.com/home/bayi.png" class="coursecover"></image>
-    <view class="coursename showOnehangTxt">南昌八一起义南昌八一起义</view>
+</view>
+<view class="kongv"></view>
+
+<view class="titlev">
+  <view class="titlel">
+    <image class="titleicon" style="width:32rpx;height: 33rpx;margin-top: -2rpx;" src="https://zhengzhousizheng.oss-cn-beijing.aliyuncs.com/home/map.png"></image>
+    <view class="titletxt">探寻红色基因</view>
+  </view>
+  <view class="titler">
+    <view class="titlemore">更多</view>
+    <image class="titleright" src="/resources/comman/righticon.png"></image>
   </view>
 </view>
-
-
+<view class="listv">
+  <view class="jiyinv"></view>
+</view>
 <view class="tabbarv"></view>
