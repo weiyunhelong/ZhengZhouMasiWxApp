@@ -1,2 +1,122 @@
 <!--pages/home/index.wxml-->
-<text>pages/home/index.wxml</text>
+<view class="topbgv"></view>
+<swiper class="swiperv" circular="true" next-margin="20rpx" indicator-dots="true" indicator-active-color="#ffffff" indicator-color="#cccccc">
+  <swiper-item>
+    <image lazy-load="true" src="https://zhengzhousizheng.oss-cn-beijing.aliyuncs.com/home/swiper.png" mode="aspectFill" class="swiperimg"></image>
+  </swiper-item>
+  <swiper-item>
+    <image lazy-load="true" src="https://zhengzhousizheng.oss-cn-beijing.aliyuncs.com/home/swiper.png" mode="aspectFill" class="swiperimg"></image>
+  </swiper-item>
+  <swiper-item>
+    <image lazy-load="true" src="https://zhengzhousizheng.oss-cn-beijing.aliyuncs.com/home/swiper.png" mode="aspectFill" class="swiperimg"></image>
+  </swiper-item>
+</swiper>
+<view class="menuv">
+  <view class="menuitem">
+    <image src="https://zhengzhousizheng.oss-cn-beijing.aliyuncs.com/home/jiyin.png" class="menuicon"></image>
+    <view class="menutxt">探寻红色基因</view>
+  </view>
+  <view class="menuitem">
+    <image src="https://zhengzhousizheng.oss-cn-beijing.aliyuncs.com/home/shidu.png" class="menuicon"></image>
+    <view class="menutxt">红色时时读</view>
+  </view>
+  <view class="menuitem">
+    <image src="https://zhengzhousizheng.oss-cn-beijing.aliyuncs.com/home/zujifupin.png" class="menuicon"></image>
+    <view class="menutxt">习总书记的扶贫足迹</view>
+  </view>
+  <view class="menuitem">
+    <image src="https://zhengzhousizheng.oss-cn-beijing.aliyuncs.com/home/jiniandi.png" class="menuicon"></image>
+    <view class="menutxt">全景红色纪念地</view>
+  </view>
+  <view class="menuitem">
+    <image src="https://zhengzhousizheng.oss-cn-beijing.aliyuncs.com/home/zujired.png" class="menuicon"></image>
+    <view class="menutxt">习总书记的红色足迹</view>
+  </view>
+  <view class="menuitem">
+    <image src="https://zhengzhousizheng.oss-cn-beijing.aliyuncs.com/home/sijiang.png" class="menuicon"></image>
+    <view class="menutxt">四史天天讲</view>
+  </view>
+</view>
+<view class="tabv">
+  <image src="https://zhengzhousizheng.oss-cn-beijing.aliyuncs.com/home/chuangke.png" class="tabimg"></image>
+  <image src="https://zhengzhousizheng.oss-cn-beijing.aliyuncs.com/home/system.png" class="tabimg"></image>
+</view>
+<view class="kongv"></view>
+<view class="titlev">
+  <view class="titlel">
+    <image class="titleicon" src="https://zhengzhousizheng.oss-cn-beijing.aliyuncs.com/home/read.png"></image>
+    <view class="titletxt">红色时时读</view>
+  </view>
+  <view class="titler">
+    <view class="titlemore">更多</view>
+    <image class="titleright" src="/resources/comman/righticon.png"></image>
+  </view>
+</view>
+<scroll-view scroll-x="true" class="scrollview">
+  <view class="scrollviewc">
+    <view class="voincev">
+      <view class="writerv">
+        <view class="writerlie"></view>
+        <view class="writername">壬尽美</view>
+      </view>
+      <view class="desc showThreehangTxt">南昌八一起义纪念馆位于江西省南昌市西湖区中山路，江西南昌，一个被誉为“物华天宝、人杰地灵”的历史文化名城，又一个被誉为“物华天宝、人杰地灵”的历史文化名城</view>
+    </view>
+    <image src="https://zhengzhousizheng.oss-cn-beijing.aliyuncs.com/home/voice.png" class="voinceicon"></image>
+  </view>
+  <view class="scrollviewc">
+    <view class="voincev">
+      <view class="writerv">
+        <view class="writerlie"></view>
+        <view class="writername">萧楚女</view>
+      </view>
+      <view class="desc showThreehangTxt">南昌八一起义纪念馆位于江西省南昌市西湖区中山路，江西南昌，一个被誉为“物华天宝、人杰地灵”的历史文化名城，又...</view>
+    </view>
+    <image src="https://zhengzhousizheng.oss-cn-beijing.aliyuncs.com/home/video.png" class="videoicon"></image>
+  </view>
+  <view style="width: 20rpx;height:0rpx;display: inline-block;"></view>
+</scroll-view>
+<view class="kongv"></view>
+
+<view class="titlev">
+  <view class="titlel">
+    <image class="titleicon" style="width: 50rpx;height: 45rpx;margin-top: -4rpx;" src="https://zhengzhousizheng.oss-cn-beijing.aliyuncs.com/home/kecheng.png"></image>
+    <view class="titletxt">创课中心</view>
+  </view>
+  <view class="titler">
+    <view class="titlemore">更多</view>
+    <image class="titleright" src="/resources/comman/righticon.png"></image>
+  </view>
+</view>
+<view class="coursev">
+  <view class="coursecv">
+    <image lazy-load="true" mode="aspectFill" src="https://zhengzhousizheng.oss-cn-beijing.aliyuncs.com/home/bayi.png" class="coursecover"></image>
+    <view class="coursename showOnehangTxt">南昌八一起义南昌八一起义</view>
+  </view>
+  <view class="coursecv">
+    <image lazy-load="true" mode="aspectFill" src="https://zhengzhousizheng.oss-cn-beijing.aliyuncs.com/home/bayi.png" class="coursecover"></image>
+    <view class="coursename showOnehangTxt">南昌八一起义南昌八一起义</view>
+  </view>
+  <view class="coursecv">
+    <image lazy-load="true" mode="aspectFill" src="https://zhengzhousizheng.oss-cn-beijing.aliyuncs.com/home/bayi.png" class="coursecover"></image>
+    <view class="coursename showOnehangTxt">南昌八一起义南昌八一起义</view>
+  </view>
+  <view class="coursecv">
+    <image lazy-load="true" mode="aspectFill" src="https://zhengzhousizheng.oss-cn-beijing.aliyuncs.com/home/bayi.png" class="coursecover"></image>
+    <view class="coursename showOnehangTxt">南昌八一起义南昌八一起义</view>
+  </view>
+  <view class="coursecv">
+    <image lazy-load="true" mode="aspectFill" src="https://zhengzhousizheng.oss-cn-beijing.aliyuncs.com/home/bayi.png" class="coursecover"></image>
+    <view class="coursename showOnehangTxt">南昌八一起义南昌八一起义</view>
+  </view>
+  <view class="coursecv">
+    <image lazy-load="true" mode="aspectFill" src="https://zhengzhousizheng.oss-cn-beijing.aliyuncs.com/home/bayi.png" class="coursecover"></image>
+    <view class="coursename showOnehangTxt">南昌八一起义南昌八一起义</view>
+  </view>
+  <view class="coursecv">
+    <image lazy-load="true" mode="aspectFill" src="https://zhengzhousizheng.oss-cn-beijing.aliyuncs.com/home/bayi.png" class="coursecover"></image>
+    <view class="coursename showOnehangTxt">南昌八一起义南昌八一起义</view>
+  </view>
+</view>
+
+
+<view class="tabbarv"></view>

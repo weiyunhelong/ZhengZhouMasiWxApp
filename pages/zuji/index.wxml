@@ -1,10 +1,10 @@
 <!--pages/zuji/index.wxml-->
 <view class="bgv"></view>
 <view class="contentv">
-  <image src="/resources/zuji/banner.png" class="banner"></image>
+  <image src="https://zhengzhousizheng.oss-cn-beijing.aliyuncs.com/zuji/banner.png" class="banner"></image>
 
   <block wx:for="{{list}}" wx:key="item" wx:for-index="x">
-    <image src="/resources/zuji/{{x%5}}.png" class="cover"></image>
+    <image src="https://zhengzhousizheng.oss-cn-beijing.aliyuncs.com/zuji/{{x%5}}.png" class="cover"></image>
     <view class="infov" bindtap="goDetail" data-id="{{item.id}}">
       <view class="date">{{item.date}}</view>
       <view class="address">{{item.city}}</view>

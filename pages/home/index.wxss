@@ -1,1 +1,204 @@
 /* pages/home/index.wxss */
+page {
+  background: #f2f2f2;
+}
+
+.topbgv {
+  width: 100vw;
+  height: 279rpx;
+  background: url(https://zhengzhousizheng.oss-cn-beijing.aliyuncs.com/home/topbg.png) no-repeat;
+  background-size: cover;
+}
+
+.swiperv {
+  width: 100vw;
+  height: 300rpx;
+  margin-top: -100rpx;
+}
+
+.swiperimg {
+  width: 710rpx;
+  height: 300rpx;
+  margin-left: 20rpx;
+}
+
+.menuv {
+  width: 710rpx;
+  height: auto;
+  background: #FFFFFF;
+  border-radius: 10px;
+  margin: 30rpx auto;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  padding-bottom: 40rpx;
+}
+
+.menuitem {
+  text-align: center;
+  margin-top: 45rpx;
+  width: 220rpx;
+}
+
+.menuicon {
+  width: 108rpx;
+  height: 108rpx;
+  margin: 0 auto;
+}
+
+.menutxt {
+  color: #333;
+  font-size: 24rpx;
+  font-weight: 500;
+}
+
+.tabv {
+  width: 710rpx;
+  height: 175rpx;
+  display: flex;
+  justify-content: space-between;
+  margin: 0 auto 45rpx;
+}
+
+.tabimg {
+  width: 341rpx;
+  height: 175rpx;
+}
+
+.kongv {
+  width: 100vw;
+  height: 20rpx;
+  background: #FFFFFF;
+}
+
+.titlev {
+  width: 710rpx;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  padding: 40rpx 0;
+}
+
+.titlel,
+.titler {
+  display: flex;
+}
+
+.titleicon {
+  width: 36rpx;
+  height: 28rpx;
+}
+
+.titletxt {
+  font-size: 30rpx;
+  font-weight: bold;
+  color: #333333;
+  margin-left: 12rpx;
+  line-height: 1;
+}
+
+.titlemore {
+  font-size: 30rpx;
+  font-weight: bold;
+  color: #999999;
+  margin-right: 10rpx;
+  line-height: 1;
+}
+
+.titleright {
+  width: 10rpx;
+  height: 20rpx;
+  margin-top: 6rpx;
+}
+
+.scrollview {
+  width: 100vw;
+  overflow: hidden;
+  white-space: nowrap;
+  margin-bottom: 32rpx;
+}
+
+.scrollviewc {
+  display: inline-block;
+  width: 400rpx;
+  height: 300rpx;
+  border-radius: 10rpx;
+  position: relative;
+  margin-left: 20rpx;
+}
+
+.voincev {
+  width: 400rpx;
+  height: 260rpx;
+  background: #D1E6F3;
+  border-radius: 10rpx;
+  display: block;
+}
+
+.writerv {
+  display: flex;
+  padding-top: 28rpx;
+}
+
+.writerlie {
+  width: 8rpx;
+  height: 28rpx;
+  background: #124361;
+  margin-right: 16rpx;
+}
+
+.writername {
+  font-size: 30rpx;
+  font-weight: bold;
+  color: #333333;
+  line-height: 1;
+}
+
+.desc {
+  margin: 24rpx 24rpx;
+  font-size: 24rpx;
+  color: #666666;
+  width: 352rpx;
+  height: 100rpx;
+  display: block;
+}
+
+.voinceicon {
+  width: 74rpx;
+  height: 74rpx;
+  position: absolute;
+  top: 222rpx;
+  left: 130rpx;
+}
+
+.videoicon {
+  width: 74rpx;
+  height: 74rpx;
+  position: absolute;
+  top: 222rpx;
+  left: 18rpx;
+}
+
+.coursev {
+  display: flex;
+  flex-wrap: wrap;
+  padding-left: 20rpx;
+}
+
+.coursecv {
+  width: 224rpx;
+  height: 300rpx;
+  margin-right: 18rpx;
+}
+
+.coursecover {
+  width: 224rpx;
+  height: 224rpx;
+}
+
+.coursename {
+  width: 224rpx;
+  font-size: 30rpx;
+  font-weight: bold;
+  color: #333333;
+}
