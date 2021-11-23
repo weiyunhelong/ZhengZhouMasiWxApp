@@ -183,7 +183,7 @@ page {
   display: flex;
   flex-wrap: wrap;
   padding-left: 20rpx;
-  margin-bottom:22rpx;
+  margin-bottom: 22rpx;
 }
 
 .coursecv {
@@ -201,5 +201,96 @@ page {
   width: 224rpx;
   font-size: 30rpx;
   font-weight: bold;
+  color: #333333;
+}
+
+.jiyinv {
+  width: 710rpx;
+  height: 170rpx;
+  margin: 0 auto 32rpx;
+  display: flex;
+}
+
+.jiyincover {
+  width: 240rpx;
+  height: 170rpx;
+  border-radius: 10rpx;
+  margin-right: 26rpx;
+}
+
+.jiyininfo {
+  width: 416rpx;
+  height: 170rpx;
+}
+
+.jiyinname {
+  font-size: 30rpx;
+  font-weight: bold;
+  color: #333333;
+  margin-bottom: 15rpx;
+}
+
+.jiyindesc {
+  font-size: 24rpx;
+  color: #666666;
+}
+
+.jiyinopt {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20rpx;
+}
+
+.jiyinoptv {
+  display: flex;
+  font-size: 24rpx;
+  color: #999999;
+  line-height: 32rpx;
+}
+
+.jiyinicon1 {
+  width: 23rpx;
+  height: 21rpx;
+  margin-right: 20rpx;
+  margin-top: 8rpx;
+}
+
+.jiyinicon2 {
+  width: 19rpx;
+  height: 20rpx;
+  margin-right: 20rpx;
+  margin-top: 7rpx;
+}
+
+.jiyinicon3 {
+  width: 21rpx;
+  height: 20rpx;
+  margin-right: 20rpx;
+  margin-top: 7rpx;
+}
+
+.videov {
+  width: 710rpx;
+  height: auto;
+  margin: 16rpx auto 0rpx;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.smvideo {
+  width: 345rpx;
+  height: 345rpx;
+  margin-bottom: 20rpx;
+}
+.mdvideo{
+  width: 710rpx;
+  height: 345rpx;
+  margin-bottom: 20rpx;
+}
+.videotag{  
+  padding-top: 290rpx;
+  text-align: center;
+  font-size: 30rpx;
   color: #333333;
 }

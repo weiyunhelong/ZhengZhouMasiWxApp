@@ -1,5 +1,6 @@
 <!--pages/home/index.wxml-->
 <view class="topbgv"></view>
+<!--轮播图部分-->
 <swiper class="swiperv" circular="true" next-margin="20rpx" indicator-dots="true" indicator-active-color="#ffffff" indicator-color="#cccccc">
   <swiper-item>
     <image lazy-load="true" src="https://zhengzhousizheng.oss-cn-beijing.aliyuncs.com/home/swiper.png" mode="aspectFill" class="swiperimg"></image>
@@ -11,6 +12,8 @@
     <image lazy-load="true" src="https://zhengzhousizheng.oss-cn-beijing.aliyuncs.com/home/swiper.png" mode="aspectFill" class="swiperimg"></image>
   </swiper-item>
 </swiper>
+
+<!--Menu菜单部分-->
 <view class="menuv">
   <view class="menuitem">
     <image src="https://zhengzhousizheng.oss-cn-beijing.aliyuncs.com/home/jiyin.png" class="menuicon"></image>
@@ -42,6 +45,8 @@
   <image src="https://zhengzhousizheng.oss-cn-beijing.aliyuncs.com/home/system.png" class="tabimg"></image>
 </view>
 <view class="kongv"></view>
+
+<!--红色时时读-->
 <view class="titlev">
   <view class="titlel">
     <image class="titleicon" src="https://zhengzhousizheng.oss-cn-beijing.aliyuncs.com/home/read.png"></image>
@@ -77,6 +82,7 @@
 </scroll-view>
 <view class="kongv"></view>
 
+<!--创课中心-->
 <view class="titlev">
   <view class="titlel">
     <image class="titleicon" style="width: 50rpx;height: 45rpx;margin-top: -4rpx;" src="https://zhengzhousizheng.oss-cn-beijing.aliyuncs.com/home/kecheng.png"></image>
@@ -115,6 +121,7 @@
 </view>
 <view class="kongv"></view>
 
+<!--探寻红色基因-->
 <view class="titlev">
   <view class="titlel">
     <image class="titleicon" style="width:32rpx;height: 33rpx;margin-top: -2rpx;" src="https://zhengzhousizheng.oss-cn-beijing.aliyuncs.com/home/map.png"></image>
@@ -125,7 +132,135 @@
     <image class="titleright" src="/resources/comman/righticon.png"></image>
   </view>
 </view>
-<view class="listv">
-  <view class="jiyinv"></view>
+<view class="listv" style="padding-bottom: 16rpx;">
+  <view class="jiyinv">
+    <image src="https://zhengzhousizheng.oss-cn-beijing.aliyuncs.com/home/xinghuo.png" mode="aspectFill" class="jiyincover"></image>
+    <view class="jiyininfo">
+      <view class="jiyinname showOnehangTxt">中共一大“星火初燃”</view>
+      <view class="jiyindesc showTwohangTxt">南昌路100弄，曾经的老渔阳里，弄内2号是一栋有着100多年历史的砖木结构旧式...</view>
+      <view class="jiyinopt">
+        <view class="jiyinoptv">
+          <image src="/resources/comman/view.png" class="jiyinicon1"></image>
+          <view class="jiyinnum">3350</view>
+        </view>
+        <view class="jiyinoptv">
+          <image src="/resources/comman/zan.png" class="jiyinicon2"></image>
+          <view class="jiyinnum">3350</view>
+        </view>
+        <view class="jiyinoptv">
+          <image src="/resources/comman/xing.png" class="jiyinicon3"></image>
+          <view class="jiyinnum">3350</view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class="jiyinv">
+    <image src="https://zhengzhousizheng.oss-cn-beijing.aliyuncs.com/home/xinghuo.png" mode="aspectFill" class="jiyincover"></image>
+    <view class="jiyininfo">
+      <view class="jiyinname showOnehangTxt">中共一大“星火初燃”</view>
+      <view class="jiyindesc showTwohangTxt">南昌路100弄，曾经的老渔阳里，弄内2号是一栋有着100多年历史的砖木结构旧式...</view>
+      <view class="jiyinopt">
+        <view class="jiyinoptv">
+          <image src="/resources/comman/view.png" class="jiyinicon1"></image>
+          <view class="jiyinnum">3350</view>
+        </view>
+        <view class="jiyinoptv">
+          <image src="/resources/comman/zan.png" class="jiyinicon2"></image>
+          <view class="jiyinnum">3350</view>
+        </view>
+        <view class="jiyinoptv">
+          <image src="/resources/comman/xing.png" class="jiyinicon3"></image>
+          <view class="jiyinnum">3350</view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class="jiyinv">
+    <image src="https://zhengzhousizheng.oss-cn-beijing.aliyuncs.com/home/xinghuo.png" mode="aspectFill" class="jiyincover"></image>
+    <view class="jiyininfo">
+      <view class="jiyinname showOnehangTxt">中共一大“星火初燃”</view>
+      <view class="jiyindesc showTwohangTxt">南昌路100弄，曾经的老渔阳里，弄内2号是一栋有着100多年历史的砖木结构旧式...</view>
+      <view class="jiyinopt">
+        <view class="jiyinoptv">
+          <image src="/resources/comman/view.png" class="jiyinicon1"></image>
+          <view class="jiyinnum">3350</view>
+        </view>
+        <view class="jiyinoptv">
+          <image src="/resources/comman/zan.png" class="jiyinicon2"></image>
+          <view class="jiyinnum">3350</view>
+        </view>
+        <view class="jiyinoptv">
+          <image src="/resources/comman/xing.png" class="jiyinicon3"></image>
+          <view class="jiyinnum">3350</view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class="jiyinv">
+    <image src="https://zhengzhousizheng.oss-cn-beijing.aliyuncs.com/home/xinghuo.png" mode="aspectFill" class="jiyincover"></image>
+    <view class="jiyininfo">
+      <view class="jiyinname showOnehangTxt">中共一大“星火初燃”</view>
+      <view class="jiyindesc showTwohangTxt">南昌路100弄，曾经的老渔阳里，弄内2号是一栋有着100多年历史的砖木结构旧式...</view>
+      <view class="jiyinopt">
+        <view class="jiyinoptv">
+          <image src="/resources/comman/view.png" class="jiyinicon1"></image>
+          <view class="jiyinnum">3350</view>
+        </view>
+        <view class="jiyinoptv">
+          <image src="/resources/comman/zan.png" class="jiyinicon2"></image>
+          <view class="jiyinnum">3350</view>
+        </view>
+        <view class="jiyinoptv">
+          <image src="/resources/comman/xing.png" class="jiyinicon3"></image>
+          <view class="jiyinnum">3350</view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class="jiyinv">
+    <image src="https://zhengzhousizheng.oss-cn-beijing.aliyuncs.com/home/xinghuo.png" mode="aspectFill" class="jiyincover"></image>
+    <view class="jiyininfo">
+      <view class="jiyinname showOnehangTxt">中共一大“星火初燃”</view>
+      <view class="jiyindesc showTwohangTxt">南昌路100弄，曾经的老渔阳里，弄内2号是一栋有着100多年历史的砖木结构旧式...</view>
+      <view class="jiyinopt">
+        <view class="jiyinoptv">
+          <image src="/resources/comman/view.png" class="jiyinicon1"></image>
+          <view class="jiyinnum">3350</view>
+        </view>
+        <view class="jiyinoptv">
+          <image src="/resources/comman/zan.png" class="jiyinicon2"></image>
+          <view class="jiyinnum">3350</view>
+        </view>
+        <view class="jiyinoptv">
+          <image src="/resources/comman/xing.png" class="jiyinicon3"></image>
+          <view class="jiyinnum">3350</view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>
+<view class="kongv"></view>
+
+<!--四史天天讲-->
+<view class="titlev">
+  <view class="titlel">
+    <image class="titleicon" style="width:32rpx;height:27rpx;margin-right:4rpx;" src="https://zhengzhousizheng.oss-cn-beijing.aliyuncs.com/home/laba.png"></image>
+    <view class="titletxt">四史天天讲</view>
+  </view>
+  <view class="titler">
+    <view class="titlemore">更多</view>
+    <image class="titleright" src="/resources/comman/righticon.png"></image>
+  </view>
+</view>
+<view class="videov">
+  <view class="smvideo" style="background:url(https://zhengzhousizheng.oss-cn-beijing.aliyuncs.com/home/wusi.png) no-repeat;background-size: cover;">
+    <view class="videotag showOnehangTxt">五四运动</view>
+  </view>
+  <view class="smvideo" style="background:url(https://zhengzhousizheng.oss-cn-beijing.aliyuncs.com/home/wusi.png) no-repeat;background-size: cover;">
+    <view class="videotag showOnehangTxt">共产党的早期组织成立</view>
+  </view>
+  <view class="mdvideo" style="background:url(https://zhengzhousizheng.oss-cn-beijing.aliyuncs.com/home/yida.png) no-repeat;background-size: cover;">
+    <view class="videotag showOnehangTxt">中共一大</view>
+  </view>
 </view>
 <view class="tabbarv"></view>

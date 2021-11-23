@@ -83,7 +83,25 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
+    var that = this;
+    //获取菜单的列表数据
+    that.setTabbarlist();
+  },
+  setTabbarlist: function () { //获取菜单的列表数据
+    var that = this;
 
+    //设置选中的tabbar
+    if (typeof that.getTabBar === 'function' && that.getTabBar()) {
+      for (var i = 0; i < getApp().globalData.tabbar.length; i++) {
+        if (getApp().globalData.tabbar[i].pagePath.indexOf("/zuji/index") > 0) {
+          that.getTabBar().setData({
+            selected: i,
+            showTabBar: true,
+            list: getApp().globalData.tabbar
+          })
+        }
+      }
+    }
   },
 
   /**
