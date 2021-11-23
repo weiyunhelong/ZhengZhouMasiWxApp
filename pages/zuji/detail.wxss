@@ -1,1 +1,264 @@
 /* pages/zuji/detail.wxss */
+.info1 {
+  width: 100vw;
+  height: 757rpx;
+  background: url(https://zhengzhousizheng.oss-cn-beijing.aliyuncs.com/zujired/1.png) no-repeat;
+  background-size: cover;
+  position: relative;
+}
+
+.infov1 {
+  width: 365rpx;
+  margin-left: 16rpx;
+  padding-top: 68rpx;
+}
+
+.title {
+  font-size: 40rpx;
+  font-family: PangMenZhengDao;
+  color: #124361;
+  margin-bottom: 10rpx;
+}
+
+.desc {
+  font-size: 26rpx;
+  color: #333333;
+  line-height: 40rpx;
+}
+
+.btnv {
+  width: 180rpx;
+  height: 60rpx;
+  border: 2rpx solid #124361;
+  border-radius: 30rpx;
+  display: flex;
+  justify-content: center;
+  line-height: 60rpx;
+  letter-spacing: 2rpx;
+  font-size: 26rpx;
+  color: #124361;
+  margin-top: 20rpx;
+}
+
+.btnicon {
+  width: 26rpx;
+  height: 26rpx;
+  margin-top: 17rpx;
+  margin-left: 6rpx;
+}
+
+.infov2 {
+  margin-top: 88rpx;
+  margin-left: 415rpx;
+  width: 320rpx;
+}
+
+.info2 {
+  width: 100vw;
+  height: 865rpx;
+  background: url(https://zhengzhousizheng.oss-cn-beijing.aliyuncs.com/zujired/2.png) no-repeat;
+  background-size: cover;
+  position: relative;
+}
+
+.infov3 {
+  width: 365rpx;
+  margin-left: 16rpx;
+  padding-top: 88rpx;
+}
+
+.infov4 {
+  margin-top: 88rpx;
+  margin-left: 415rpx;
+  width: 320rpx;
+  position: absolute;
+  z-index: 2;  
+}
+
+.info3 {
+  width: 100vw;
+  height: 857rpx;
+  background: url(https://zhengzhousizheng.oss-cn-beijing.aliyuncs.com/zujired/3.png) no-repeat;
+  background-size: cover;
+  position: relative;
+}
+
+.infov5 {
+  width: 365rpx;
+  margin-left: 16rpx;
+  padding-top: 128rpx;
+}
+
+.infov6 {
+  margin-left: 407rpx;
+  padding-top: 138rpx;
+  width: 320rpx;
+  position: absolute;
+  z-index: 2;
+}
+
+.info4 {
+  width: 100vw;
+  height: 745rpx;
+  background: url(https://zhengzhousizheng.oss-cn-beijing.aliyuncs.com/zujired/4.png) no-repeat;
+  background-size: cover;
+  position: relative;
+}
+
+.infov7 {
+  width: 365rpx;
+  margin-left: 16rpx;
+  padding-top: 108rpx;
+}
+
+.infov8 {
+  margin-left: 407rpx;
+  padding-top: 138rpx;
+  position: absolute;
+  z-index: 2;
+  width: 320rpx;
+}
+
+.info5 {
+  width: 100vw;
+  height: 597rpx;
+  background: url(https://zhengzhousizheng.oss-cn-beijing.aliyuncs.com/zujired/5.png) no-repeat;
+  background-size: cover;
+  position: relative;
+}
+
+.infov9 {
+  width: 365rpx;
+  margin-left: 16rpx;
+  padding-top: 298rpx;
+}
+
+.info6 {
+  width: 100vw;
+  height: 829rpx;
+  background: url(https://zhengzhousizheng.oss-cn-beijing.aliyuncs.com/zujired/6.png) no-repeat;
+  background-size: cover;
+  position: relative;
+}
+
+.infov10 {
+  margin-left: 407rpx;
+  padding-top: 88rpx;
+  width: 320rpx;
+}
+
+.infov11 {
+  width: 365rpx;
+  margin-left: 16rpx;
+  padding-top: 108rpx;
+}
+
+.info7 {
+  width: 100vw;
+  height: 480rpx;
+  background: url(https://zhengzhousizheng.oss-cn-beijing.aliyuncs.com/zujired/7.png) no-repeat;
+  background-size: cover;
+  position: relative;
+}
+
+.infov12 {
+  margin-left: 390rpx;
+  padding-top: 88rpx;
+  width: 320rpx;
+}
+
+.infov13 {
+  width: 365rpx;
+  margin-left: 16rpx;
+  padding-top: 108rpx;
+}
+
+.info8 {
+  width: 100vw;
+  height: 438rpx;
+  background: url(https://zhengzhousizheng.oss-cn-beijing.aliyuncs.com/zujired/8.png) no-repeat;
+  background-size: cover;
+  position: relative;
+}
+
+.infov14 {
+  margin-left: 390rpx;
+  padding-top: 88rpx;
+  width: 320rpx;
+}
+
+.infov15 {
+  width: 365rpx;
+  margin-left: 16rpx;
+  padding-top: 108rpx;
+}
+
+.infov16 {
+  margin-left: 390rpx;
+  padding-top: 88rpx;
+  width: 320rpx;
+}
+
+.infov17 {
+  width: 365rpx;
+  margin-left: 16rpx;
+  padding-top: 188rpx;
+}
+
+.infov18 {
+  margin-left: 390rpx;
+  padding-top: 88rpx;
+  width: 320rpx;
+}
+
+.infov19 {
+  margin-left: 390rpx;
+  padding-top: 88rpx;
+  width: 320rpx;
+}
+
+.infov20 {
+  width: 365rpx;
+  margin-left: 16rpx;
+  padding-top: 148rpx;
+}
+
+.info9 {
+  width: 100vw;
+  height: 414rpx;
+  background: url(https://zhengzhousizheng.oss-cn-beijing.aliyuncs.com/zujired/9.png) no-repeat;
+  background-size: cover;
+  position: relative;
+}
+
+.info10 {
+  width: 100vw;
+  height: 424rpx;
+  background: url(https://zhengzhousizheng.oss-cn-beijing.aliyuncs.com/zujired/10.png) no-repeat;
+  background-size: cover;
+  position: relative;
+}
+
+.info11 {
+  width: 100vw;
+  height: 406rpx;
+  background: url(https://zhengzhousizheng.oss-cn-beijing.aliyuncs.com/zujired/11.png) no-repeat;
+  background-size: cover;
+  position: relative;
+}
+
+.info12 {
+  width: 100vw;
+  height: 487rpx;
+  background: url(https://zhengzhousizheng.oss-cn-beijing.aliyuncs.com/zujired/12.png) no-repeat;
+  background-size: cover;
+  position: relative;
+}
+
+.info13 {
+  width: 100vw;
+  height: 895rpx;
+  background: url(https://zhengzhousizheng.oss-cn-beijing.aliyuncs.com/zujired/13.png) no-repeat;
+  background-size: cover;
+  position: relative;
+}

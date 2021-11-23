@@ -8,10 +8,25 @@ App({
   },
   onShow() {
     var that = this;
-
+    //下载字体文件
+    that.DownFontFile();
     //更新微信小程序代码
     that.UpdateWxCode();
 
+  },
+  DownFontFile() { //下载字体
+   
+    wx.loadFontFace({
+      global:true,
+      family: 'PangMenZhengDao',
+      source: 'url("https://zhengzhousizheng.oss-cn-beijing.aliyuncs.com/zujired/%E5%BA%9E%E9%97%A8%E6%AD%A3%E9%81%93%E7%B2%97%E4%B9%A6%E4%BD%936.0.ttf")',
+      success: function () {
+        console.error('下载成功');
+      },
+      fail: function (err) {
+        console.error('下载失败' + err)
+      }
+    })
   },
   UpdateWxCode() { //更新微信小程序代码
     var that = this

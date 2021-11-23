@@ -13,8 +13,8 @@
     "miniprogram": {
       "list": [
         {
-          "name": "pages/zuji/index",
-          "pathName": "pages/zuji/index",
+          "name": "pages/zuji/detail",
+          "pathName": "pages/zuji/detail",
           "query": "",
           "scene": null
         },
