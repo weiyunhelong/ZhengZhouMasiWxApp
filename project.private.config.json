@@ -23,6 +23,12 @@
           "pathName": "wxauth/pages/wxlogin/index",
           "query": "",
           "scene": null
+        },
+        {
+          "name": "pages/jiyin/list",
+          "pathName": "pages/jiyin/list",
+          "query": "",
+          "scene": null
         }
       ]
     }
