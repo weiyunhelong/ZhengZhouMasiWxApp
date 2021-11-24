@@ -1,2 +1,67 @@
 <!--pages/my/index.wxml-->
-<text>pages/my/index.wxml</text>
+<view class="topbgv"></view>
+<view class="infov">
+  <view class="userv">
+    <image class="usertx" src="https://zhengzhousizheng.oss-cn-beijing.aliyuncs.com/my/mydefaulttx.png"></image>
+    <view class="userc">
+      <view class="usercv">
+        <view class="logintxt">点击登录</view>
+        <image class="myright" src="https://zhengzhousizheng.oss-cn-beijing.aliyuncs.com/my/myright.png"></image>
+      </view>
+      <view class="desc">快来介绍一下自己吧...</view>
+    </view>
+  </view>
+  <view class="numberv">
+    <view class="numcv">
+      <view class="numtag">0</view>
+      <view class="numval">已经学习/时</view>
+    </view>
+    <view class="numline"></view>
+    <view class="numcv">
+      <view class="numtag">0</view>
+      <view class="numval">答题数目/个</view>
+    </view>
+    <view class="numline"></view>
+    <view class="numcv">
+      <view class="numtag">0</view>
+      <view class="numval">我的成就</view>
+    </view>
+  </view>
+</view>
+
+<view class="menuv">
+  <view class="menuitem">
+    <image class="menuicon" src="https://zhengzhousizheng.oss-cn-beijing.aliyuncs.com/my/mydata.png"></image>
+    <view class="menutxt">数据中心</view>
+  </view>
+  <view class="menuitem">
+    <image class="menuicon" src="https://zhengzhousizheng.oss-cn-beijing.aliyuncs.com/my/mydata.png"></image>
+    <view class="menutxt">数据中心</view>
+  </view>
+  <view class="menuitem">
+    <image class="menuicon" src="https://zhengzhousizheng.oss-cn-beijing.aliyuncs.com/my/mydata.png"></image>
+    <view class="menutxt">数据中心</view>
+  </view>
+  <view class="menuitem">
+    <image class="menuicon" src="https://zhengzhousizheng.oss-cn-beijing.aliyuncs.com/my/mynews.png"></image>
+    <view class="menutxt">消息中心</view>
+  </view>
+  <view class="menuitem">
+    <image class="menuicon" src="https://zhengzhousizheng.oss-cn-beijing.aliyuncs.com/my/mybi.png"></image>
+    <view class="menutxt">学习记录</view>
+  </view>
+  <view class="menuitem">
+    <image class="menuicon" src="https://zhengzhousizheng.oss-cn-beijing.aliyuncs.com/my/myxing.png"></image>
+    <view class="menutxt">我的收藏</view>
+  </view>
+  <view class="menuitem">
+    <image class="menuicon" src="https://zhengzhousizheng.oss-cn-beijing.aliyuncs.com/my/mycuoti.png"></image>
+    <view class="menutxt">错题集</view>
+  </view>
+  <view class="menuitem">
+    <image class="menuicon" src="https://zhengzhousizheng.oss-cn-beijing.aliyuncs.com/my/myset.png"></image>
+    <view class="menutxt">账号设置</view>
+  </view>
+</view>
+
+<view class="tabbarv"></view>

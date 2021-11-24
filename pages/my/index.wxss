@@ -1,1 +1,116 @@
 /* pages/my/index.wxss */
+page {
+  background: #f2f2f2;
+}
+
+.topbgv {
+  width: 100vw;
+  height: 297rpx;
+  background: url(https://zhengzhousizheng.oss-cn-beijing.aliyuncs.com/my/mytopbg.png) no-repeat;
+  background-size: cover;
+}
+
+.infov {
+  width: 710rpx;
+  height: 290rpx;
+  background: #FFFFFF;
+  border-radius: 10rpx;
+  margin: -100rpx auto 20rpx;
+}
+
+.infov .userv {
+  padding-left: 70rpx;
+  padding-top: 32rpx;
+  display: flex;
+}
+
+.infov .userv .usertx {
+  width: 120rpx;
+  height: 120rpx;
+  border-radius: 50%;
+  margin-right: 35rpx;
+}
+
+.infov .userv .usercv {
+  display: flex;
+  padding-top: 24rpx;
+  line-height: 1;
+}
+
+.infov .userv .logintxt {
+  margin-right: 20rpx;
+  font-size: 36rpx;
+  font-weight: 500;
+  color: #333333;
+}
+
+.infov .userv .myright {
+  width: 19rpx;
+  height: 34rpx;
+}
+
+.infov .userv .desc {
+  margin-top: 16rpx;
+  font-size: 24rpx;
+  color: #666666;
+}
+
+.infov .numberv {
+  display: flex;
+  justify-content: space-around;
+  padding-top: 28rpx;
+}
+
+.infov .numberv .numcv {
+  width: 235rpx;
+  text-align: center;
+}
+
+.infov .numberv .numcv .numtag {
+  font-size: 36rpx;
+  font-weight: bold;
+  color: #333333;
+}
+
+.infov .numberv .numcv .numval {
+  font-size: 24rpx;
+  color: #666666;
+}
+
+.infov .numberv .numline {
+  width: 0.5rpx;
+  height: 44rpx;
+  border: 1rpx solid #DDDDDD;
+  margin-top: 14rpx;
+}
+
+.menuv {
+  width: 710rpx;
+  height: auto;
+  padding: 36rpx 0 7rpx;
+  background: #FFFFFF;
+  border-radius: 10rpx;
+  margin: 0 auto 20rpx;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.menuv .menuitem {
+  width: 300rpx;
+  height: 180rpx;
+  background: #F2F2F2;
+  border-radius: 22rpx;
+  text-align: center;
+  margin-bottom: 32rpx;
+}
+
+.menuv .menuitem .menuicon {
+  width: 68rpx;
+  height: 68rpx;
+  margin: 33rpx auto 16rpx;
+}
+.menuv .menuitem .menutxt{
+  font-size: 30rpx;
+  color: #333333;
+}
