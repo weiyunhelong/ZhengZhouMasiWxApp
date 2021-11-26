@@ -1,1 +1,42 @@
 /* my/pages/collect/index.wxss */
+.blockv {
+  width: 706rpx;
+  height: 188rpx;
+  background: #FFFFFF;
+  border-radius: 10rpx;
+  margin: 20rpx auto 0;
+  display: flex;
+}
+
+.blockcover {
+  width: 214rpx;
+  height: 161rpx;
+  margin: 13rpx 27rpx 14rpx 13rpx;
+}
+
+.blockc {
+  width: 420rpx;
+  padding-top: 32rpx;
+}
+
+.name {
+  height: 61rpx;
+  font-size: 26rpx;
+  color: #333333;
+}
+
+.infov {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 32rpx;
+}
+
+.date {
+  font-size: 22rpx;
+  color: #999999;
+}
+
+.percent {
+  font-size: 22rpx;
+  color: #124361;
+}

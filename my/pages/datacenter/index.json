@@ -1,3 +1,9 @@
 {
-  "usingComponents": {}
+  "navigationBarBackgroundColor": "#124361",
+  "navigationBarTextStyle": "white",
+  "navigationBarTitleText": "数据中心",
+  "usingComponents": {
+    "loadding": "../../../components/loadding/index",
+    "ec-canvas": "../../../ec-canvas/ec-canvas"
+  }
 }

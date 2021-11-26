@@ -1,2 +1,13 @@
 <!--my/pages/collect/index.wxml-->
-<text>my/pages/collect/index.wxml</text>
+<block wx:for="{{list}}" wx:key="item">
+  <view class="blockv">
+    <image src="{{item.cover}}" class="blockcover" lazy-load="true"></image>
+    <view class="blockc">
+      <view class="name">{{item.name}}</view>
+      <view class="infov">
+        <view class="date"></view>
+        <view class="percent">取消收藏</view>
+      </view>
+    </view>
+  </view>
+</block>

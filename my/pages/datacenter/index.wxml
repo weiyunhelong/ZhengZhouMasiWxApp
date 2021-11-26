@@ -1,2 +1,27 @@
 <!--my/pages/datacenter/index.wxml-->
-<text>my/pages/datacenter/index.wxml</text>
+<view class="topv">
+  <view class="tabv">
+    <view class="{{chktab==0?'tabitemh':'tabitem'}}" data-tab="0" bindtap="tapTab">视频稿件</view>
+    <view class="{{chktab==1?'tabitemh':'tabitem'}}" data-tab="1" bindtap="tapTab">专栏稿件</view>
+  </view>
+  <view class="kindv">
+    <view class="kindv" data-tab="0" bindtap="tapKind">
+      <view class="chkkind">浏览</view>
+    </view>
+    <view class="kindv" data-tab="1" bindtap="tapKind">
+      <view class="chkkind">评论</view>
+    </view>
+    <view class="kindv" data-tab="2" bindtap="tapKind">
+      <view class="chkkind">点赞</view>
+    </view>
+    <view class="kindv" data-tab="3" bindtap="tapKind">
+      <view class="chkkind">收藏</view>
+    </view>
+    <view class="kindv" data-tab="4" bindtap="tapKind">
+      <view class="chkkind">分享</view>
+    </view>
+  </view>
+  <view class="datav">
+    <ec-canvas id="mychart-dom-line" canvas-id="mychart-line" ec="{{ ecline }}"></ec-canvas>
+  </view>
+</view>

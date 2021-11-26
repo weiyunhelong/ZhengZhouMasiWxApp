@@ -1,2 +1,13 @@
 <!--my/pages/study/index.wxml-->
-<text>my/pages/study/index.wxml</text>
+<block wx:for="{{list}}" wx:key="item">
+  <view class="blockv">
+    <image src="{{item.cover}}" class="blockcover" lazy-load="true"></image>
+    <view class="blockc">
+      <view class="name">{{item.name}}</view>
+      <view class="infov">
+        <view class="date">{{item.datetime}}</view>
+        <view class="percent">学习进度：{{item.percent}}%</view>
+      </view>
+    </view>
+  </view>
+</block>

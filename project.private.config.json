@@ -41,6 +41,12 @@
           "pathName": "pages/jiyin/detail",
           "query": "",
           "scene": null
+        },
+        {
+          "name": "my/pages/datacenter/index",
+          "pathName": "my/pages/datacenter/index",
+          "query": "",
+          "scene": null
         }
       ]
     }

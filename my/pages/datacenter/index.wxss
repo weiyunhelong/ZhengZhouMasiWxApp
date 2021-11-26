@@ -1,1 +1,37 @@
 /* my/pages/datacenter/index.wxss */
+.topv {
+  width: 100vw;
+  height: 910rpx;
+  background: linear-gradient(-90deg, #124361, #0D6675);
+}
+
+.tabv {
+  display: flex;
+  height: 88rpx;
+
+}
+
+.tabitemh {  
+  width: 50vw;
+  height: 88rpx;
+  background: rgba(29, 196, 235, 0.5);
+  text-align: center;
+  line-height: 88rpx;
+  font-size: 30rpx;
+  color: #fff;
+}
+
+.tabitem {
+  width: 50vw;
+  height: 88rpx;
+  background: rgba(24, 161, 194, 0.2);
+  text-align: center;
+  line-height: 88rpx;
+  font-size: 30rpx;
+  color: #09434E;
+}
+
+.datav {
+  width: 100vw;
+  height: 694rpx;
+}
