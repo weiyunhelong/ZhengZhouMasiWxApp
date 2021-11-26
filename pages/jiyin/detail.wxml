@@ -1,0 +1,175 @@
+<!--pages/jiyin/detail.wxml-->
+<image lazy-load="true" class="banner" src="https://zhengzhousizheng.oss-cn-beijing.aliyuncs.com/newcountry/bannber.png"></image>
+<view class="block1">
+  <view class="blockv" style="padding-top:60rpx;">
+    <image src="https://zhengzhousizheng.oss-cn-beijing.aliyuncs.com/newcountry/yuan1.png" lazy-load="true" class="blockcover"></image>
+    <view class="blockinfo">
+      <image class="step1icon" src="https://zhengzhousizheng.oss-cn-beijing.aliyuncs.com/newcountry/step1.png"></image>
+      <view class="blockdesc showFourehangTxt">南昌路100弄，曾经的老渔阳里，弄内2号是一栋有着100多年历史的砖木结构旧式石库门住宅。在1920年，这儿即是“星火初燃”之地党的创建...</view>
+    </view>
+  </view>
+  <view class="blockv" style="padding-top:48rpx;">
+    <image src="https://zhengzhousizheng.oss-cn-beijing.aliyuncs.com/newcountry/yuan2.png" lazy-load="true" class="blockcover"></image>
+    <view class="blockinfo">
+      <image class="step2icon" src="https://zhengzhousizheng.oss-cn-beijing.aliyuncs.com/newcountry/step2.png"></image>
+      <view class="blockdesc showFourehangTxt">中共一大会址房屋建于1920年秋，建成后不久，李汉俊（上海共产主义小组发起人之一）及其兄李书城租用望志路106号、108号为寓所，... 幢房屋的... 1921年7月23日，来自各地中国共产党早期组织的代表李达、李汉俊、张国焘、刘仁静、何叔衡、毛泽东、董必武、陈潭秋、王尽美、邓恩铭、陈公博、周佛海，还有包惠僧及共产国际代表马林等秘密汇聚在上海法租界的贝勒路树德里3号（今兴业路76号会址），举行了中国共产党第一次全国代表大会。中国共产党诞生，开启了中国革命道路探索崭新的一页。中国共产党把马克思主义写在自己的旗帜上，开启了二十世纪中国社会最伟大革命的序幕。</view>
+    </view>
+  </view>
+  <view class="blockv" style="padding-top:90rpx;">
+    <view class="blockinfo">
+      <image class="step3icon" src="https://zhengzhousizheng.oss-cn-beijing.aliyuncs.com/newcountry/step3.png"></image>
+      <view class="blockdesc showFourehangTxt">嘉兴市南湖革命纪念馆坐落在风景秀丽的南湖东岸，1921年中国共产党第一次全国代表大会在上海遭法租界巡捕的袭扰后转移到嘉兴南湖继续... 行，在一艘... 个决议，选举产生中央领导机构，庄严宣告中国共产党的正式诞生。南湖从此成为重要的革命纪念地。 习近平指出：“上海党的一大会址、嘉兴南湖的红船，这是我们党梦想起航的地方。中国共产党从这里诞生，从这里出征，从这里走向全国执政。” 百年征程波澜壮阔，百年初心历久弥坚。一艘小小红船承载着人民的重托、民族的希望，越过急流险滩，穿过惊涛骇浪，成为领航中国行稳致远的巍巍巨轮。</view>
+    </view>
+    <image src="https://zhengzhousizheng.oss-cn-beijing.aliyuncs.com/newcountry/yuan3.png" lazy-load="true" class="blockcover"></image>
+  </view>
+  <view class="blockv" style="padding-top:132rpx;">
+    <image src="https://zhengzhousizheng.oss-cn-beijing.aliyuncs.com/newcountry/yuan4.png" lazy-load="true" class="blockcover"></image>
+    <view class="smblockinfo">
+      <image class="step4icon" src="https://zhengzhousizheng.oss-cn-beijing.aliyuncs.com/newcountry/step4.png"></image>
+      <view class="blockdesc showFourehangTxt">南昌八一起义纪念馆位于江西省南昌市西湖区中山路，江西南昌，一个被誉为“物华天宝、人杰地灵”的历史文化名城，“八一南昌起义”...为名副其实的英雄之城。</view>
+    </view>
+  </view>
+  <view class="blockv" style="padding-top:56rpx;">
+    <image src="https://zhengzhousizheng.oss-cn-beijing.aliyuncs.com/newcountry/yuan5.png" lazy-load="true" class="blockcover"></image>
+    <view class="smblockinfo">
+      <image class="step5icon" src="https://zhengzhousizheng.oss-cn-beijing.aliyuncs.com/newcountry/step5.png"></image>
+      <view class="blockdesc showFourehangTxt">修水地处江西省西北部、湘鄂赣三省交界处。秋收起义修水纪念馆坐落于修水县城凤凰山路136号。 1927年，轰轰烈烈的大革命失败... 数先烈遭到国民党反动派迫害。在革命事业存亡之际，根据八七会议精神，党中央积极准备湘、鄂、赣、粤四省秋收暴动。八七会议指出，秋收起义要和南昌起义一样，使用国民党的旗帜。毛泽东深入群众调研后，提出秋收起义应打出共产党自己的旗帜。 1927年由毛泽东同志领导的秋收起义在汀赣边界爆发。修水是秋收起义的主要策源地，起义前夕，工农革命军的第一面旗帜在修水设计、制作并率先升起，1927年9月9日清晨驻守在修水的师部及其所属一、四团，师直特务连在修水县城紫花墩举行了气壮山河的誓师大会，打响了秋收起义的第一枪。</view>
+    </view>
+  </view>
+</view>
+<view class="block2">
+  <view class="blockv" style="padding-top:276rpx;">
+    <view class="blockinfo">
+      <image class="step6icon" src="https://zhengzhousizheng.oss-cn-beijing.aliyuncs.com/newcountry/step6.png"></image>
+      <view class="blockdesc showFourehangTxt">1927年9月，毛泽东根据党的“八七”会议精神和中共湖南省委的决定，以中央特派员、中共湖南省委常委和中共湖南省委前敌委员会省委前敌委员会</view>
+    </view>
+    <image src="https://zhengzhousizheng.oss-cn-beijing.aliyuncs.com/newcountry/yuan6.png" lazy-load="true" class="blockcover"></image>
+  </view>
+  <view class="blockv" style="padding-top:68rpx;">
+    <image src="https://zhengzhousizheng.oss-cn-beijing.aliyuncs.com/newcountry/yuan7.png" lazy-load="true" class="blockcover"></image>
+    <view class="smblockinfo">
+      <image class="step7icon" src="https://zhengzhousizheng.oss-cn-beijing.aliyuncs.com/newcountry/step7.png"></image>
+      <view class="blockdesc showFourehangTxt">三湾改编纪念馆，位于永新县三湾乡三湾村。1927年秋天，湖南秋收起义失利以后，毛泽东率领部队到达江西永新县三湾村，当时部队已... 1000人。为了巩固这支新生的革命军队，以适应革命斗争的需要，9月29日至10月3日，毛泽东在三湾村主持召开前敌委员会会议，对部队进行整顿和改编：允许不愿留下的官兵离队，自愿留下革命的缩编为1个团；在各级建立共产党组织，“支部建在连上”，实行新的党代表制度；实行官兵平等的民主制度。三湾改编是中国共产党创建新型人民军队的重要开端。此后，起义部队虽继续行军打仗，缺吃少穿，却“精神非常的愉快……因为是自由的，绝不受任何人的压迫；同志之间亦同心同德，团结一致”。</view>
+    </view>
+  </view>
+  <view class="blockv" style="padding-top:85rpx;">
+    <view class="blockinfo">
+      <image class="step8icon" src="https://zhengzhousizheng.oss-cn-beijing.aliyuncs.com/newcountry/step8.png"></image>
+      <view class="blockdesc showFourehangTxt">井冈山革命博物馆，位于井冈山市茨坪红军南路，是中国第一个地方性革命史类博物馆。 井冈山革命根据地是土地革命... 争... 期，中国共产党在湖南、江西两省边界罗霄山脉中段创建的第一个农村革命根据地。1927年10月，毛泽东率领湘赣边秋收起义的工农革命军到达罗霄山脉中段的井冈山地区，开展游击战争，进行土地革命，恢复和建立共产党的组织，建立革命政权和赤卫队。 1928年4月底，朱德、陈毅率领南昌起义保存下来的部队和湘南农军到达井冈山，和毛泽东领导的工农革命军会师，成立了中国工农红军第四军。此后，红军粉碎了敌人的多次“围剿”，根据地不断扩大，为中国革命走上农村包围城市，武装夺取政权，开辟了新的道路。</view>
+    </view>
+    <image src="https://zhengzhousizheng.oss-cn-beijing.aliyuncs.com/newcountry/yuan8.png" lazy-load="true" class="blockcover"></image>
+  </view>
+</view>
+<view class="block3">
+  <view class="blockv" style="margin-top:-30rpx;">
+    <view class="blockinfo">
+      <image class="step9icon" src="https://zhengzhousizheng.oss-cn-beijing.aliyuncs.com/newcountry/step9.png"></image>
+      <view class="blockdesc showFourehangTxt">古田会议会址位于福建省上杭县古田镇，原为廖氏宗祠，始建于1848年。古田会议纪念馆是以古田会议会址为依托建立全面介绍田会议历史,传古田会议精神</view>
+    </view>
+    <image src="https://zhengzhousizheng.oss-cn-beijing.aliyuncs.com/newcountry/yuan9.png" lazy-load="true" class="blockcover"></image>
+  </view>
+  <view class="blockv" style="padding-top:67rpx;">
+    <view class="smblockinfo" style="margin-left: 0;margin-right: 20rpx;width: 350rpx;">
+      <image class="step10icon" src="https://zhengzhousizheng.oss-cn-beijing.aliyuncs.com/newcountry/step10.png"></image>
+      <view class="blockdesc showFourehangTxt">瑞金中央革命根据地纪念馆位于江西省瑞金市苏维埃纪念园内。1929年1月，毛泽东、朱德率领中国工农红军从井冈山向赣。简陋</view>
+    </view>
+    <image src="https://zhengzhousizheng.oss-cn-beijing.aliyuncs.com/newcountry/yuan10.png" lazy-load="true" class="blockcover"></image>
+  </view>
+  <view class="blockv" style="padding-top:67rpx;">
+    <view class="smblockinfo" style="margin-left: 0;margin-right: 20rpx;width: 350rpx;">
+      <image class="step11icon" src="https://zhengzhousizheng.oss-cn-beijing.aliyuncs.com/newcountry/step11.png"></image>
+      <view class="blockdesc showFourehangTxt">世界上最伟大的壮举，莫过于举世闻名的中国工农红军的二万五千里长征，江西省于都县就是1934年10月中央红军的集结地和出发地江西省赣州市</view>
+    </view>
+    <image src="https://zhengzhousizheng.oss-cn-beijing.aliyuncs.com/newcountry/yuan11.png" lazy-load="true" class="blockcover"></image>
+  </view>
+  <view class="blockv" style="padding-top:67rpx;">
+    <image src="https://zhengzhousizheng.oss-cn-beijing.aliyuncs.com/newcountry/yuan12.png" lazy-load="true" class="blockcover"></image>
+    <view class="blockinfo">
+      <image class="step12icon" src="https://zhengzhousizheng.oss-cn-beijing.aliyuncs.com/newcountry/step12.png"></image>
+      <view class="blockdesc showFourehangTxt">世界上最伟大的壮举，莫过于举世闻名的中国工农红军的二万五千里长征，江西省于都县就是1934年10月中央红军的集结地和出发地江西省赣州市</view>
+    </view>
+  </view>
+  <view class="blockv" style="padding-top:67rpx;">
+    <view class="blockinfo">
+      <image class="step13icon" src="https://zhengzhousizheng.oss-cn-beijing.aliyuncs.com/newcountry/step13.png"></image>
+      <view class="blockdesc showFourehangTxt">新圩阻击战陈列馆位于广西壮族自治区桂林市灌阳县新圩镇枫树脚，其主建筑造型为五角星建筑，在陈列馆左边立有花岗岩主题雕塑，雕塑由六不怕牺牲</view>
+    </view>
+    <image src="https://zhengzhousizheng.oss-cn-beijing.aliyuncs.com/newcountry/yuan13.png" lazy-load="true" class="blockcover"></image>
+  </view>
+</view>
+<view class="block4">
+  <view class="blockv" style="padding-top:86rpx;">
+    <image src="https://zhengzhousizheng.oss-cn-beijing.aliyuncs.com/newcountry/yuan14.png" lazy-load="true" class="blockcover"></image>
+    <view class="blockinfo">
+      <image class="step14icon" src="https://zhengzhousizheng.oss-cn-beijing.aliyuncs.com/newcountry/step14.png"></image>
+      <view class="blockdesc showFourehangTxt">湘江烈士纪念碑园座落于兴安县城西南1公里的狮子山，占地8万平方米，由大型群雕、主碑、纪念馆组成。 中国工农红军长征，红一方面于年11月</view>
+    </view>
+  </view>
+  <view class="blockv" style="padding-top:67rpx;">
+    <image src="https://zhengzhousizheng.oss-cn-beijing.aliyuncs.com/newcountry/yuan15.png" lazy-load="true" class="blockcover"></image>
+    <view class="blockinfo">
+      <image class="step15icon" src="https://zhengzhousizheng.oss-cn-beijing.aliyuncs.com/newcountry/step20.png"></image>
+      <view class="blockdesc showFourehangTxt">遵义会议纪念馆是为纪念中国共产党历史上具有伟大历史意义的遵义会议而建立的，位于贵州省遵义市子尹路96号。</view>
+    </view>
+  </view>
+  <view class="blockv" style="padding-top:96rpx;">
+    <view class="blockinfo">
+      <image class="step16icon" src="https://zhengzhousizheng.oss-cn-beijing.aliyuncs.com/newcountry/step15.png"></image>
+      <view class="blockdesc showFourehangTxt">四渡赤水纪念馆位于红军一渡赤水河的渡口所在地贵州省遵义市习水县土城镇长征街。战史陈列翔实地再现了红军1935年1月义会</view>
+    </view>
+    <image src="https://zhengzhousizheng.oss-cn-beijing.aliyuncs.com/newcountry/yuan16.png" lazy-load="true" class="blockcover"></image>
+  </view>
+  <view class="blockv" style="padding-top:109rpx;">
+    <view class="smblockinfo" style="margin-left: 0;margin-right: 57rpx;">
+      <image class="step17icon" src="https://zhengzhousizheng.oss-cn-beijing.aliyuncs.com/newcountry/step16.png"></image>
+      <view class="blockdesc showFourehangTxt">红军长征过丽江纪念馆位于丽江城西52公里的石鼓镇。 中国工农红军长征途中，于1935年和1936年转战云南，在云岭下了不的足迹</view>
+    </view>
+    <image src="https://zhengzhousizheng.oss-cn-beijing.aliyuncs.com/newcountry/yuan17.png" lazy-load="true" class="blockcover"></image>
+  </view>
+</view>
+<view class="block5">
+  <view class="blockv" style="padding-top:0rpx;">
+    <image src="https://zhengzhousizheng.oss-cn-beijing.aliyuncs.com/newcountry/yuan18.png" lazy-load="true" class="blockcover"></image>
+    <view class="blockinfo">
+      <image class="step18icon" src="https://zhengzhousizheng.oss-cn-beijing.aliyuncs.com/newcountry/step17.png"></image>
+      <view class="blockdesc showFourehangTxt">会理县红军长征纪念馆位于四川省凉山彝族自治州会理县环城西路中段2号，专门举办“中央红军过会理纪念展”，展览以毛泽东的诗句</view>
+    </view>
+  </view>
+  <view class="blockv" style="padding-top:91rpx;">
+    <view class="blockinfo">
+      <image class="step19icon" src="https://zhengzhousizheng.oss-cn-beijing.aliyuncs.com/newcountry/step18.png"></image>
+      <view class="blockdesc showFourehangTxt">中共中央旧址凤凰山麓 凤凰山麓革命旧址是中共中央驻地旧址，位于延安市宝塔区凤凰山脚下，是延安“四大名山”之一，因“吹箫引凤”的传说而得名。</view>
+    </view>
+    <image src="https://zhengzhousizheng.oss-cn-beijing.aliyuncs.com/newcountry/yuan19.png" lazy-load="true" class="blockcover"></image>
+  </view>
+  <view class="blockv" style="padding-top:89rpx;">
+    <image src="https://zhengzhousizheng.oss-cn-beijing.aliyuncs.com/newcountry/yuan20.png" lazy-load="true" class="blockcover"></image>
+    <view class="blockinfo">
+      <image class="step20icon" src="https://zhengzhousizheng.oss-cn-beijing.aliyuncs.com/newcountry/step19.png"></image>
+      <view class="blockdesc showFourehangTxt">杨家岭革命旧址，是中共中央驻地旧址，位于陕西省延安市西北约3公里的杨家岭村。1938年11月至1947年3月，毛泽东等中央领导和中共中央关在此居住</view>
+    </view>
+  </view>
+  <view class="blockv" style="padding-top:89rpx;">
+    <view class="blockinfo">
+      <image class="step21icon" src="https://zhengzhousizheng.oss-cn-beijing.aliyuncs.com/newcountry/step21.png"></image>
+      <view class="blockdesc showFourehangTxt">延安革命纪念馆位于陕西延安宝塔区西北延河东岸，距城1公里处。纪念馆展出的内容，生动、形象地再现了老一辈革命家在延安住窑洞吃小米</view>
+    </view>
+    <image src="https://zhengzhousizheng.oss-cn-beijing.aliyuncs.com/newcountry/yuan21.png" lazy-load="true" class="blockcover"></image>
+  </view>
+  <view class="blockv" style="padding-top:60rpx;">
+    <image src="https://zhengzhousizheng.oss-cn-beijing.aliyuncs.com/newcountry/yuan21.png" lazy-load="true" class="blockcover"></image>
+    <view class="blockinfo">
+      <image class="step22icon" src="https://zhengzhousizheng.oss-cn-beijing.aliyuncs.com/newcountry/step22.png"></image>
+      <view class="blockdesc showFourehangTxt">西柏坡中共中央旧址，坐落在河北省石家庄市平山县西柏坡镇西柏坡村。1948年5月26日至1949年3月23日，西柏坡中共中央旧为</view>
+    </view>
+  </view>
+</view>
+<view class="block6">  
+  <view class="blockv" style="padding-top:200rpx;">
+    <image src="https://zhengzhousizheng.oss-cn-beijing.aliyuncs.com/newcountry/yuan21.png" lazy-load="true" class="blockcover"></image>
+    <view class="blockinfo">
+      <image class="step23icon" src="https://zhengzhousizheng.oss-cn-beijing.aliyuncs.com/newcountry/step23.png"></image>
+      <view class="blockdesc showFourehangTxt">西柏坡纪念馆位于河北省平山县中部，是解放战争时期中央工委、中共中央和解放军总部的所在地，是解放全中国的最后一个农村指年5月</view>
+    </view>
+  </view>
+</view>

@@ -1,5 +1,5 @@
 <!--pages/jiyin/index.wxml-->
-<view class="block block1">新中国从这里走来</view>
+<view class="block block1" bindtap="goDetail">新中国从这里走来</view>
 <view class="block block2">探寻红色基因</view>
 <view class="block block3">红色时时读</view>
 <view class="block block4">四史天天讲</view>

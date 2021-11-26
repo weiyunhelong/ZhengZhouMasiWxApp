@@ -1,0 +1,175 @@
+/* pages/jiyin/detail.wxss */
+.banner {
+  width: 100vw;
+  height: 211rpx;
+  display: block;
+}
+
+.block1 {
+  width: 100vw;
+  height: 1330rpx;
+  background: url(https://zhengzhousizheng.oss-cn-beijing.aliyuncs.com/newcountry/bg1.png) no-repeat;
+  background-size: cover;
+}
+
+.block2 {
+  width: 100vw;
+  height: 1326rpx;
+  background: url(https://zhengzhousizheng.oss-cn-beijing.aliyuncs.com/newcountry/bg2.png) no-repeat;
+  background-size: cover;
+}
+
+.block3 {
+  width: 100vw;
+  height: 1326rpx;
+  background: url(https://zhengzhousizheng.oss-cn-beijing.aliyuncs.com/newcountry/bg3.png) no-repeat;
+  background-size: cover;
+}
+
+.block4 {
+  width: 100vw;
+  height: 1329rpx;
+  background: url(https://zhengzhousizheng.oss-cn-beijing.aliyuncs.com/newcountry/bg4.png) no-repeat;
+  background-size: cover;
+}
+
+.block5 {
+  width: 100vw;
+  height: 1332rpx;
+  background: url(https://zhengzhousizheng.oss-cn-beijing.aliyuncs.com/newcountry/bg5.png) no-repeat;
+  background-size: cover;
+}
+
+.block6 {
+  width: 100vw;
+  height: 563rpx;
+  background: url(https://zhengzhousizheng.oss-cn-beijing.aliyuncs.com/newcountry/bg6.png) no-repeat;
+  background-size: cover;
+}
+
+.blockv {
+  margin-left: 60rpx;
+  display: flex;
+}
+
+.blockcover {
+  width: 217rpx;
+  height: 217rpx;
+  margin-right: 26rpx;
+}
+
+.blockinfo {
+  width: 385rpx;
+  height: 207rpx;
+  margin-right: 26rpx;
+  padding-top:10rpx;
+}
+.smblockinfo {
+  width: 358rpx;
+  height: 207rpx;
+  margin-left:31rpx;
+  padding-top:10rpx;
+}
+.blockdesc {
+  padding-top: 30rpx;
+  font-size: 24rpx;
+  color: #333333;
+  text-align: justify;
+}
+image{
+  display: block;
+}
+.step1icon {
+  width: 283rpx;
+  height: 29rpx;
+}
+.step2icon {
+  width: 268rpx;
+  height: 29rpx;
+}
+.step3icon {
+  width: 149rpx;
+  height: 28rpx;
+}
+.step4icon {
+  width: 269rpx;
+  height: 29rpx;
+}
+.step5icon{  
+  width: 269rpx;
+  height: 29rpx;
+}
+.step6icon{  
+  width: 269rpx;
+  height: 29rpx;
+}
+.step7icon{  
+  width: 209rpx;
+  height: 30rpx;
+}
+.step8icon{
+  width: 239rpx;
+  height: 29rpx;    
+  margin-left: 146rpx;
+}
+.step9icon{  
+  width: 208rpx;
+  height: 29rpx;    
+  margin-left: 170rpx;
+}
+.step10icon{
+  width: 251rpx;
+  height: 59rpx;
+}
+.step11icon{
+  width: 328rpx;
+  height: 29rpx;
+}
+.step12icon{  
+  width: 329rpx;
+  height: 29rpx;
+}
+.step13icon{
+  width: 239rpx;
+  height: 29rpx;
+}
+.step14icon{
+  width: 299rpx;
+  height: 29rpx;
+}
+.step15icon{
+  width: 210rpx;
+  height: 29rpx;
+}
+.step16icon{  
+  width: 208rpx;
+  height: 29rpx;
+}
+.step17icon{  
+  width: 299rpx;
+  height: 29rpx;
+}
+.step18icon{  
+  width: 299rpx;
+  height: 29rpx;
+}
+.step19icon{
+  width: 421rpx;
+  height: 29rpx;
+}
+.step20icon{  
+  width: 420rpx;
+  height: 29rpx;
+}
+.step21icon{
+  width: 209rpx;
+  height: 30rpx;
+}
+.step22icon{
+  width: 268rpx;
+  height: 55rpx;
+}
+.step23icon{
+  width: 179rpx;
+  height: 29rpx;
+}

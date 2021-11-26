@@ -35,6 +35,12 @@
           "pathName": "pages/my/index",
           "query": "",
           "scene": null
+        },
+        {
+          "name": "pages/jiyin/detail",
+          "pathName": "pages/jiyin/detail",
+          "query": "",
+          "scene": null
         }
       ]
     }

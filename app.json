@@ -3,6 +3,7 @@
     "pages/middle/index",
     "pages/home/index",
     "pages/jiyin/index",
+    "pages/jiyin/detail",
     "pages/jiyin/list",
     "pages/zuji/index",
     "pages/zuji/detail",
