@@ -38,6 +38,7 @@
   background: #fff;
   padding-top: 32rpx;
   margin-top: 10rpx;
+  padding-bottom: 10rpx;
 }
 
 .answerv {

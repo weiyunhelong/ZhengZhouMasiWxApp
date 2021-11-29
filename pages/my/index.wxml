@@ -35,14 +35,6 @@
     <view class="menutxt">数据中心</view>
   </view>
   <view class="menuitem">
-    <image class="menuicon" src="https://zhengzhousizheng.oss-cn-beijing.aliyuncs.com/my/mydata.png"></image>
-    <view class="menutxt">数据中心</view>
-  </view>
-  <view class="menuitem">
-    <image class="menuicon" src="https://zhengzhousizheng.oss-cn-beijing.aliyuncs.com/my/mydata.png"></image>
-    <view class="menutxt">数据中心</view>
-  </view>
-  <view class="menuitem">
     <image class="menuicon" src="https://zhengzhousizheng.oss-cn-beijing.aliyuncs.com/my/mynews.png"></image>
     <view class="menutxt">消息中心</view>
   </view>
