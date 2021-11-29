@@ -11,7 +11,7 @@
 
 }
 
-.tabitemh {  
+.tabitemh {
   width: 50vw;
   height: 88rpx;
   background: rgba(29, 196, 235, 0.5);
@@ -33,5 +33,109 @@
 
 .datav {
   width: 100vw;
-  height: 694rpx;
+  height: 644rpx;
+}
+
+.kindv {
+  display: flex;
+  justify-content: space-around;
+  padding-top: 70rpx;
+}
+
+.kindcv {
+  text-align: center;
+}
+
+.chkkindtxt {
+  font-size: 30rpx;
+  font-weight: bold;
+  color: #FFFFFF;
+  padding-bottom: 20rpx;
+}
+
+.kindtxt {
+  font-size: 30rpx;
+  font-weight: bold;
+  color: #6EA9B3;
+}
+
+.kindline {
+  width: 40rpx;
+  height: 10rpx;
+  background: #FFFFFF;
+  border-radius: 5rpx;
+  margin: -10rpx auto 0;
+}
+
+.days {
+  display: flex;
+  justify-content: center;
+  position: relative;
+  top: -50rpx;
+}
+
+.chkday {
+  width: 130rpx;
+  height: 50rpx;
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 25rpx;
+  line-height: 50rpx;
+  text-align: center;
+  font-size: 24rpx;
+  color: #FFFFFF;
+  margin-left: 30rpx;
+}
+
+.nochkday {
+  width: 130rpx;
+  height: 50rpx;
+  background: transparent;
+  border-radius: 25rpx;
+  line-height: 50rpx;
+  text-align: center;
+  font-size: 24rpx;
+  color: #6EA9B3;
+  margin-left: 30rpx;
+}
+
+.numberv {
+  display: flex;
+  padding: 58rpx 20rpx;
+  flex-wrap: wrap;
+}
+
+.numberc {
+  width: 230rpx;
+  text-align: center;
+  margin-bottom: 58rpx;
+}
+
+.numberval {
+  font-size: 40rpx;
+  font-weight: bold;
+  color: #124361;
+  margin-bottom: 10rpx;
+}
+
+.numbertag {
+  font-size: 24rpx;
+  color: #999999;
+}
+
+.numberline {
+  width: 2rpx;
+  height: 74rpx;
+  background-color: #DDDDDD;
+  margin-top: 10rpx;
+}
+
+.underline {
+  width: 581rpx;
+  height: 66rpx;
+  line-height: 66rpx;
+  border-top: 2rpx solid #DDDDDD;
+  margin: 0 auto;
+  text-align: center;
+  font-size: 22rpx;
+  color: #999999;
 }

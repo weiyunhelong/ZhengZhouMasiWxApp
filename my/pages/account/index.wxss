@@ -1,1 +1,80 @@
 /* my/pages/account/index.wxss */
+.formv {
+  background: #fff;
+  margin-top: 18rpx;
+}
+
+.formc {
+  width: 100vw;
+  height: 88rpx;
+  background: #FFFFFF;
+  border-bottom: 1rpx solid #eee;
+  display: flex;
+  justify-content: space-between;
+}
+
+.formtag {
+  padding-left: 30rpx;
+  height: 88rpx;
+  line-height: 88rpx;
+  font-size: 28rpx;
+  color: #333333;
+}
+
+.formval {
+  display: flex;
+  justify-content: flex-end;
+  padding-right: 30rpx;
+  line-height: 88rpx;
+}
+
+.txicon {
+  width: 74rpx;
+  height: 74rpx;
+  border-radius: 50%;
+  margin-right: 30rpx;
+  margin-top: 7rpx;
+}
+
+.formvaltxt {
+  font-size: 28rpx;
+  color: #999999;
+  margin-right: 30rpx;
+  width: 550rpx;
+  text-align: right;
+}
+
+.righticon {
+  width: 13rpx;
+  height: 22rpx;
+  margin-top: 33rpx;
+}
+
+.bluetxt {
+  color: #124361;
+}
+
+.hangv {
+  width: 100vw;
+  height: 88rpx;
+  background: #FFFFFF;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20rpx;
+}
+
+.btn {
+  width: 300rpx;
+  height: 70rpx;
+  background: #124361;
+  box-shadow: 0rpx 1rpx 0rpx 0rpx rgba(244, 244, 244, 0.35);
+  border-radius: 10rpx;
+  position: fixed;
+  bottom: 55rpx;
+  left: calc(50vw - 150rpx);
+  z-index: 999;
+  font-size: 30rpx;
+  color: #FFFFFF;
+  text-align: center;
+  line-height: 70rpx;
+}

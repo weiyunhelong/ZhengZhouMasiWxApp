@@ -1,0 +1,57 @@
+<!--my/pages/news/index.wxml-->
+<view class="kindv">
+  <view class="kindcv" data-tab="0" bindtap="tapKind">
+    <view class="{{chkkind==0?'chkkindtxt':'kindtxt'}}">评论</view>
+    <view class="kindline" wx:if="{{chkkind==0}}"></view>
+  </view>
+  <view class="kindcv" data-tab="1" bindtap="tapKind">
+    <view class="{{chkkind==1?'chkkindtxt':'kindtxt'}}">点赞</view>
+    <view class="kindline" wx:if="{{chkkind==1}}"></view>
+  </view>
+  <view class="kindcv" data-tab="2" bindtap="tapKind">
+    <view class="{{chkkind==2?'chkkindtxt':'kindtxt'}}">公告</view>
+    <view class="kindline" wx:if="{{chkkind==2}}"></view>
+  </view>
+</view>
+
+<!--评论部分-->
+<view class="datav">
+  <block wx:if="{{chkkind==0}}">
+    <block wx:for="{{list}}" wx:key="item">
+      <view class="commentv">
+        <view class="commentuserv">
+          <image lazy-load="true" class="commentusertx" src="https://zhengzhousizheng.oss-cn-beijing.aliyuncs.com/my/mydefaulttx.png"></image>
+          <view class="commentcv">
+            <view class="commentusernickname">无敌钳子抓抓抓</view>
+            <view class="commentuserdate">11-10 15:15</view>
+          </view>
+        </view>
+        <view class="commentinfo">王瑞俊出身于一个佃农家庭。他才思敏捷,勤奋好学。1918年，他考入山东省立第一师范学校，前往济南求学。</view>
+        <view class="commentdesc">
+          <text class="commentwriter">作者昵称</text>
+          <text class="commenttxt">:每天学习一小时的好处每天学习一小时的好处每天学习一小时的好处每天学习一小时的好处每天学习一小时的好处</text>
+        </view>
+        <view class="commentline"></view>
+      </view>
+    </block>
+  </block>
+
+  <!--点赞部分-->
+  <block wx:if="{{chkkind==1}}"></block>
+
+  <!--公告部分-->
+  <block wx:if="{{chkkind==2}}">
+    <block wx:for="{{list}}" wx:key="item">
+      <view class="gonggaov">
+        <image class="gonggaoicon" src="https://zhengzhousizheng.oss-cn-beijing.aliyuncs.com/mysucai/gonggao.png"></image>
+        <view class="gonggaoc">
+          <view class="gonggaotop">
+            <view class="gonggaotype">系统消息</view>
+            <view class="gonggaodate">11-10 15:15</view>
+          </view>
+          <view class="gonggaodesc showOnehangTxt">快来投稿吧~好礼等你来领！</view>
+        </view>
+      </view>
+    </block>
+  </block>
+</view>

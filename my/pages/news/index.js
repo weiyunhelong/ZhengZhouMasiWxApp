@@ -1,4 +1,4 @@
-// my/pages/dati/index.js
+// my/pages/news/index.js
 var requestUrl = getApp().globalData.requestUrl;
 var WxRequest = require('../../../utils/WxRequest.js');
 
@@ -8,7 +8,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-    chkkind: 0, //0:全部题目 1:错题集
+    chkkind: 2, //0:评论 1:点赞 2:公告
     list: [], //列表数据
   },
 

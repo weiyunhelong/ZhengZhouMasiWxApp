@@ -34,6 +34,7 @@
       "pages/dati/index",
       "pages/collect/index",
       "pages/study/index",
+      "pages/news/index",
       "pages/account/index"
     ]
   }],

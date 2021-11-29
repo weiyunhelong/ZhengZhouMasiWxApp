@@ -1,2 +1,56 @@
 <!--my/pages/account/index.wxml-->
-<text>my/pages/account/index.wxml</text>
+<view class="formv">
+  <view class="formc">
+    <view class="formtag">头像</view>
+    <view class="formval">
+      <image class="txicon" src="https://zhengzhousizheng.oss-cn-beijing.aliyuncs.com/mysucai/mytx.png"></image>
+      <image class="righticon" src="https://zhengzhousizheng.oss-cn-beijing.aliyuncs.com/mysucai/righticon.png"></image>
+    </view>
+  </view>
+  <view class="formc">
+    <view class="formtag">昵称</view>
+    <view class="formval">
+      <view class="formvaltxt">飞天女警</view>
+      <image class="righticon" src="https://zhengzhousizheng.oss-cn-beijing.aliyuncs.com/mysucai/righticon.png"></image>
+    </view>
+  </view>
+  <view class="formc">
+    <view class="formtag">姓名</view>
+    <view class="formval">
+      <view class="formvaltxt">王明</view>
+      <image class="righticon" src="https://zhengzhousizheng.oss-cn-beijing.aliyuncs.com/mysucai/righticon.png"></image>
+    </view>
+  </view>
+  <view class="formc">
+    <view class="formtag">性别</view>
+    <view class="formval">
+      <view class="formvaltxt bluetxt">未完善</view>
+      <image class="righticon" src="https://zhengzhousizheng.oss-cn-beijing.aliyuncs.com/mysucai/righticon.png"></image>
+    </view>
+  </view>
+  <view class="formc">
+    <view class="formtag">签名</view>
+    <view class="formval">
+      <view class="formvaltxt showOnehangTxt">我是一只可爱的猪猪侠子，勇敢无敌，能吃能喝能玩</view>
+      <image class="righticon" src="https://zhengzhousizheng.oss-cn-beijing.aliyuncs.com/mysucai/righticon.png"></image>
+    </view>
+  </view>
+</view>
+
+<view class="hangv">
+  <view class="formtag">签名</view>
+  <view class="formval">
+    <view class="formvaltxt showOnehangTxt">我是一只可爱的猪猪侠子，勇敢无敌，能吃能喝能玩</view>
+    <image class="righticon" src="https://zhengzhousizheng.oss-cn-beijing.aliyuncs.com/mysucai/righticon.png"></image>
+  </view>
+</view>
+
+<view class="hangv">
+  <view class="formtag">修改密码</view>
+  <view class="formval">
+    <view class="formvaltxt" style="width: 200rpx;"></view>
+    <image class="righticon" src="https://zhengzhousizheng.oss-cn-beijing.aliyuncs.com/mysucai/righticon.png"></image>
+  </view>
+</view>
+
+<view class="btn">退出登录</view>

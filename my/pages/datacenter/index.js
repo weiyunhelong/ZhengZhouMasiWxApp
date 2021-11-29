@@ -24,6 +24,8 @@ Page({
       }
     },
     chktab: 0, //选中的tab
+    chkkind:0,//选中的类型
+    chkday:0,//选择的天
   },
 
   /**
@@ -39,9 +41,27 @@ Page({
     })
     that.InitChartData();
   },
+  tapKind(e){//切换分类
+    var that = this;
+    that.setData({
+      chkkind: e.currentTarget.dataset.tab
+    })
+    that.InitChartData();
+  },
+  chkDayOpt(e){//切换天
+    var that = this;
+    that.setData({
+      chkday: e.currentTarget.dataset.day
+    })
+    that.InitChartData();
+  },
   InitChartData() {//初始化折线图
 
     var that = this;
+    var  chktab=that.data.chktab, //选中的tab
+    chkkind=that.data.chkkind,//选中的类型
+    chkday=that.data.chkday;//选择的天
+
     var xData = ["11.01", "11.02", "11.03", "11.04", "11.05", "11.06", "11.07", "11.08"];
     var yData = [];
     for (var i = 0; i < xData.length; i++) {

@@ -47,6 +47,12 @@
           "pathName": "my/pages/datacenter/index",
           "query": "",
           "scene": null
+        },
+        {
+          "name": "my/pages/dati/index",
+          "pathName": "my/pages/dati/index",
+          "query": "",
+          "scene": null
         }
       ]
     }

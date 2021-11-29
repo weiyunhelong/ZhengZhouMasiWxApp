@@ -5,23 +5,59 @@
     <view class="{{chktab==1?'tabitemh':'tabitem'}}" data-tab="1" bindtap="tapTab">专栏稿件</view>
   </view>
   <view class="kindv">
-    <view class="kindv" data-tab="0" bindtap="tapKind">
-      <view class="chkkind">浏览</view>
+    <view class="kindcv" data-tab="0" bindtap="tapKind">
+      <view class="{{chkkind==0?'chkkindtxt':'kindtxt'}}">浏览</view>
+      <view class="kindline" wx:if="{{chkkind==0}}"></view>
     </view>
-    <view class="kindv" data-tab="1" bindtap="tapKind">
-      <view class="chkkind">评论</view>
+    <view class="kindcv" data-tab="1" bindtap="tapKind">
+      <view class="{{chkkind==1?'chkkindtxt':'kindtxt'}}">评论</view>
+      <view class="kindline" wx:if="{{chkkind==1}}"></view>
     </view>
-    <view class="kindv" data-tab="2" bindtap="tapKind">
-      <view class="chkkind">点赞</view>
+    <view class="kindcv" data-tab="2" bindtap="tapKind">
+      <view class="{{chkkind==2?'chkkindtxt':'kindtxt'}}">点赞</view>
+      <view class="kindline" wx:if="{{chkkind==2}}"></view>
     </view>
-    <view class="kindv" data-tab="3" bindtap="tapKind">
-      <view class="chkkind">收藏</view>
+    <view class="kindcv" data-tab="3" bindtap="tapKind">
+      <view class="{{chkkind==3?'chkkindtxt':'kindtxt'}}">收藏</view>
+      <view class="kindline" wx:if="{{chkkind==3}}"></view>
     </view>
-    <view class="kindv" data-tab="4" bindtap="tapKind">
-      <view class="chkkind">分享</view>
+    <view class="kindcv" data-tab="4" bindtap="tapKind">
+      <view class="{{chkkind==4?'chkkindtxt':'kindtxt'}}">分享</view>
+      <view class="kindline" wx:if="{{chkkind==4}}"></view>
     </view>
   </view>
   <view class="datav">
     <ec-canvas id="mychart-dom-line" canvas-id="mychart-line" ec="{{ ecline }}"></ec-canvas>
   </view>
+  <view class="days">
+    <view class="{{chkday==0?'chkday':'nochkday'}}" data-day="0" bindtap="chkDayOpt">近7天</view>
+    <view class="{{chkday==1?'chkday':'nochkday'}}" data-day="1" bindtap="chkDayOpt">近20天</view>
+    <view class="{{chkday==2?'chkday':'nochkday'}}" data-day="2" bindtap="chkDayOpt">近30天</view>
+  </view>
+  <view class="numberv">
+   <view class="numberc">
+     <view class="numberval">1.2万</view>
+     <view class="numbertag">总浏览量</view>
+   </view>
+   <view class="numberline"></view>
+   <view class="numberc">
+     <view class="numberval">9988</view>
+     <view class="numbertag">总评论量</view>
+   </view>
+   <view class="numberline"></view>
+   <view class="numberc">
+     <view class="numberval">1.2万</view>
+     <view class="numbertag">总点赞量</view>
+   </view>
+   <view class="numberc">
+     <view class="numberval">1.2万</view>
+     <view class="numbertag">总收藏量</view>
+   </view>
+   <view class="numberline"></view>
+   <view class="numberc">
+     <view class="numberval">1.2万</view>
+     <view class="numbertag">总分享量</view>
+   </view>
+  </view>
+  <view class="underline">本页面为创课中心数据</view>
 </view>

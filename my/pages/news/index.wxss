@@ -1,0 +1,147 @@
+/* my/pages/news/index.wxss */
+
+.kindv {
+  display: flex;
+  justify-content: space-around;
+  height: 100rpx;
+}
+
+.kindcv {
+  text-align: center;
+  padding-top: 37rpx;
+}
+
+.chkkindtxt {
+  font-size: 36rpx;
+  font-weight: bold;
+  color: #333333;
+  padding-bottom: 15rpx;
+}
+
+.kindtxt {
+  font-size: 36rpx;
+  color: #999;
+  padding-bottom: 15rpx;
+}
+
+.kindline {
+  width: 40rpx;
+  height: 10rpx;
+  background: #124361;
+  border-radius: 5rpx 5rpx 0rpx 0rpx;
+  margin: 0 auto;
+}
+
+.datav {
+  width: 100vw;
+  height: auto;
+  background: #fff;
+  margin-top: 10rpx;
+}
+
+.commentv {
+  padding: 36rpx 0 0 20rpx;
+}
+
+.commentuserv {
+  display: flex;
+}
+
+.commentusertx {
+  width: 80rpx;
+  height: 80rpx;
+  border-radius: 50%;
+}
+
+.commentcv {
+  margin-left: 20rpx;
+  padding-top: 8rpx;
+}
+
+.commentusernickname {
+  font-size: 26rpx;
+  font-weight: bold;
+  color: #333333;
+  margin-bottom: 10rpx;
+}
+
+.commentuserdate {
+  font-size: 22rpx;
+  color: #999999;
+}
+
+.commentinfo {
+  margin: 28rpx 25rpx 0 103rpx;
+  font-size: 26rpx;
+  color: #333333;
+}
+
+.commentdesc {
+  width: 568rpx;
+  height: auto;
+  background: #F2F2F2;
+  border-radius: 10rpx;
+  margin-left: 103rpx;
+  margin-top: 20rpx;
+  padding: 20rpx 20rpx;
+}
+
+.commentwriter {
+  font-size: 26rpx;
+  color: #124361;
+}
+
+.commenttxt {
+  font-size: 26rpx;
+  color: #333333;
+}
+
+.commentline {
+  width: 630rpx;
+  height: 1rpx;
+  background: #DDDDDD;
+  margin: 38rpx 0 2rpx 107rpx;
+}
+
+/*公告部分*/
+.gonggaov {
+  padding-left: 20rpx;
+  padding-top: 18rpx;
+  display: flex;
+}
+
+.gonggaoicon {
+  width: 80rpx;
+  height: 80rpx;
+  margin-right: 20rpx;
+}
+
+.gonggaoc {
+  width: 630rpx;
+  height: 112rpx;
+  border-bottom: 1rpx solid #DDDDDD;
+  padding-top: 8rpx;
+}
+
+.gonggaotop {
+  display: flex;
+  justify-content: space-between;
+  padding-right: 22rpx;
+}
+
+.gonggaotype {
+  font-size: 26rpx;
+  font-weight: bold;
+  color: #333333;
+}
+
+.gonggaodate {
+  font-size: 22rpx;
+  color: #999999;
+}
+
+.gonggaodesc {
+  font-size: 26rpx;
+  color: #333333;
+  padding-top: 20rpx;
+}

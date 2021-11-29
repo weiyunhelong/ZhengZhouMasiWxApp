@@ -1,2 +1,53 @@
 <!--my/pages/dati/index.wxml-->
-<text>my/pages/dati/index.wxml</text>
+<view class="kindv">
+  <view class="kindcv" data-tab="0" bindtap="tapKind">
+    <view class="{{chkkind==0?'chkkindtxt':'kindtxt'}}">全部题目</view>
+    <view class="kindline" wx:if="{{chkkind==0}}"></view>
+  </view>
+  <view class="kindcv" data-tab="1" bindtap="tapKind">
+    <view class="{{chkkind==1?'chkkindtxt':'kindtxt'}}">错题集</view>
+    <view class="kindline" wx:if="{{chkkind==1}}"></view>
+  </view>
+</view>
+
+<view class="datav">
+  <view class="answerv">
+    <view class="answerc">
+      <view class="answertitle">五四运动时什么时候爆发的？</view>
+      <view class="answertxt">答案：<text>A</text></view>
+    </view>
+    <view class="optionv">
+      <view class="optionc">A：1919年5月4日</view>
+      <view class="optionc">B：1921年5月4日</view>
+      <view class="optionc">C：1921年5月4日</view>
+      <view class="optionc">D：1921年5月4日</view>
+    </view>
+  </view>
+  <view class="jiexiv">
+    <view class="jiexioptv">
+      <view class="jiexiopttxt">题目解析</view>
+      <image class="downicon" src="https://zhengzhousizheng.oss-cn-beijing.aliyuncs.com/mysucai/downicon.png"></image>
+    </view>
+  </view>
+
+  <view class="answerv">
+    <view class="answerc">
+      <view class="answertitle">五四运动时什么时候爆发的？</view>
+      <view class="answertxt">答案：<text>A</text></view>
+    </view>
+    <view class="optionv">
+      <view class="optionc">A：1919年5月4日</view>
+      <view class="optionc">B：1921年5月4日</view>
+      <view class="optionc">C：1921年5月4日</view>
+      <view class="optionc">D：1921年5月4日</view>
+    </view>
+  </view>
+  <view class="jiexiv">
+    <view class="jiexitxt">五四运动的导火索是巴黎和会上中国外交的失败。１９１９年１月１８日，第一次世界大战获胜的２７个协约国，在巴黎凡尔赛宫召开和平会议。中国作为战胜国之一，派出了陆征祥、顾维钧等5位代表参加会议。巴黎和会不顾中国提出的维护国家领土主权的三项提案，背信弃义，把德国在青岛及山东的特权，全部转让给日本。</view>
+    <view class="jiexioptv">
+      <view class="jiexiopttxt">题目解析</view>
+      <image class="downicon" src="https://zhengzhousizheng.oss-cn-beijing.aliyuncs.com/mysucai/upicon.png"></image>
+    </view>
+  </view>
+  
+</view>

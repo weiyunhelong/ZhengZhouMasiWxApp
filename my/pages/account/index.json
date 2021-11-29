@@ -1,3 +1,8 @@
 {
-  "usingComponents": {}
+  "navigationBarBackgroundColor": "#124361",
+  "navigationBarTextStyle": "white",
+  "navigationBarTitleText": "账号设置",
+  "usingComponents": {
+    "loadding": "../../../components/loadding/index"
+  }
 }
