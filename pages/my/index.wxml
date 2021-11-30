@@ -1,7 +1,7 @@
 <!--pages/my/index.wxml-->
 <view class="topbgv"></view>
 <view class="infov">
-  <view class="userv">
+  <view class="userv" bindtap="goLogin" wx:if="{{!IsLogin}}">
     <image class="usertx" src="https://zhengzhousizheng.oss-cn-beijing.aliyuncs.com/my/mydefaulttx.png"></image>
     <view class="userc">
       <view class="usercv">
@@ -9,6 +9,16 @@
         <image class="myright" src="https://zhengzhousizheng.oss-cn-beijing.aliyuncs.com/my/myright.png"></image>
       </view>
       <view class="desc">快来介绍一下自己吧...</view>
+    </view>
+  </view>
+  <view class="userv" bindtap="goAccount" wx:else>
+    <image class="usertx" src="{{userInfo.tx}}"></image>
+    <view class="userc">
+      <view class="usercv">
+        <view class="logintxt">{{userInfo.nickName}}</view>
+        <image class="myright" src="https://zhengzhousizheng.oss-cn-beijing.aliyuncs.com/my/myright.png"></image>
+      </view>
+      <view class="desc">{{userInfo.desc}}</view>
     </view>
   </view>
   <view class="numberv">
@@ -30,27 +40,27 @@
 </view>
 
 <view class="menuv">
-  <view class="menuitem">
+  <view class="menuitem" bindtap="tapMenu" data-menu="0">
     <image class="menuicon" src="https://zhengzhousizheng.oss-cn-beijing.aliyuncs.com/my/mydata.png"></image>
     <view class="menutxt">数据中心</view>
   </view>
-  <view class="menuitem">
+  <view class="menuitem" bindtap="tapMenu" data-menu="1">
     <image class="menuicon" src="https://zhengzhousizheng.oss-cn-beijing.aliyuncs.com/my/mynews.png"></image>
     <view class="menutxt">消息中心</view>
   </view>
-  <view class="menuitem">
+  <view class="menuitem" bindtap="tapMenu" data-menu="2">
     <image class="menuicon" src="https://zhengzhousizheng.oss-cn-beijing.aliyuncs.com/my/mybi.png"></image>
     <view class="menutxt">学习记录</view>
   </view>
-  <view class="menuitem">
+  <view class="menuitem" bindtap="tapMenu" data-menu="3">
     <image class="menuicon" src="https://zhengzhousizheng.oss-cn-beijing.aliyuncs.com/my/myxing.png"></image>
     <view class="menutxt">我的收藏</view>
   </view>
-  <view class="menuitem">
+  <view class="menuitem" bindtap="tapMenu" data-menu="4">
     <image class="menuicon" src="https://zhengzhousizheng.oss-cn-beijing.aliyuncs.com/my/mycuoti.png"></image>
     <view class="menutxt">错题集</view>
   </view>
-  <view class="menuitem">
+  <view class="menuitem" bindtap="tapMenu" data-menu="5">
     <image class="menuicon" src="https://zhengzhousizheng.oss-cn-beijing.aliyuncs.com/my/myset.png"></image>
     <view class="menutxt">账号设置</view>
   </view>

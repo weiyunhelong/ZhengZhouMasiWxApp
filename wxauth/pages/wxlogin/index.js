@@ -57,7 +57,8 @@ Page({
         data: "account:" + account + ",pwd:" + pwd + ",type:1",
         success: function () {
           wx.reLaunch({
-            url: '../../../pages/middle/index',
+            //url: '../../../pages/middle/index',
+            url: '../auth/teacher',
           })
         }
       })
@@ -68,7 +69,8 @@ Page({
         data: "account:" + account + ",pwd:" + pwd + ",type:2",
         success: function () {
           wx.reLaunch({
-            url: '../../../pages/middle/index',
+            //url: '../../../pages/middle/index',
+            url: '../auth/study',
           })
         }
       })
@@ -78,11 +80,11 @@ Page({
 
     var that=this;
     if(that.data.chkTab==1){
-      wx.navigateTo({
+      wx.redirectTo({
         url: '../auth/study',
       })
     }else if(that.data.chkTab==2){
-      wx.navigateTo({
+      wx.redirectTo({
         url: '../auth/teacher',
       })
     }

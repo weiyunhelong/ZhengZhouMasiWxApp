@@ -8,7 +8,8 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    chktab: 0, //0视频 1专栏
+    list: [1, 2, 3, 4]
   },
 
   /**
@@ -17,7 +18,25 @@ Page({
   onLoad: function (options) {
 
   },
-
+  tapTab(e) { //切换tab
+    var that = this;
+    that.setData({
+      chktab: e.currentTarget.dataset.tab
+    })
+  },
+  goDetail(e) { //点击到详情
+    var that = this;
+    var chktab = that.data.chktab;
+    if (chktab == 0) { //视频
+      wx.navigateTo({
+        url: '../kecheng/video?id=' + e.currentTarget.dataset.id,
+      })
+    } else { //专栏
+      wx.navigateTo({
+        url: '../kecheng/detail?id=' + e.currentTarget.dataset.id,
+      })
+    }
+  },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */

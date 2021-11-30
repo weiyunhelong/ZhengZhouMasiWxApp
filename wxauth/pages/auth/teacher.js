@@ -3,6 +3,7 @@ var WxRequest = require('../../../utils/WxRequest.js');
 var validator = require('../../../utils/validator.js');
 var requesturl = getApp().globalData.requestUrl;
 var timer = '';
+var OssTool = require('../../../ossutils/uploadFile.js');
 
 Page({
 
@@ -17,7 +18,7 @@ Page({
     desc: "", //签名
     phone: "", //手机号
     code: "", //验证码
-    recode: "", //短信验证码
+    recode: "123456", //短信验证码
     clock: 60,
   },
 
@@ -91,6 +92,11 @@ Page({
       }, 1000)
     }
   },
+  getCode(e) { //获取验证码
+    this.setData({
+      code: e.detail.value
+    })
+  },
   finishOpt() { //点击完成
     var that = this;
     var tx = that.data.tx, //头像
@@ -102,28 +108,41 @@ Page({
       code = that.data.code, //验证码
       recode = that.data.recode; //短信验证码
 
-      if(tx==""){
-        WxRequest.ShowAlert("请上传头像");
-      }else if(nickName==""){
-        WxRequest.ShowAlert("请输入昵称");
-      }else if(name==""){
-        WxRequest.ShowAlert("请输入姓名");
-      }else if(desc==""){
-        WxRequest.ShowAlert("请输入签名");
-      }else if(phone==""){
-        WxRequest.ShowAlert("请输入手机号");
-      }else if(!validator.validateMobile(phone)){
-        WxRequest.ShowAlert("手机号不正确");
-      }else if(code==""){
-        WxRequest.ShowAlert("请输入验证码");
-      }else if(code!=recode){
-        WxRequest.ShowAlert("验证码不正确");
-      }else{
-        //TODO 提交表单
-        wx.navigateBack({
-          delta: 1,
-        })
-      }
+    if (tx == "") {
+      WxRequest.ShowAlert("请上传头像");
+    } else if (nickName == "") {
+      WxRequest.ShowAlert("请输入昵称");
+    } else if (name == "") {
+      WxRequest.ShowAlert("请输入姓名");
+    } else if (desc == "") {
+      WxRequest.ShowAlert("请输入签名");
+    } else if (phone == "") {
+      WxRequest.ShowAlert("请输入手机号");
+    } else if (!validator.validateMobile(phone)) {
+      WxRequest.ShowAlert("手机号不正确");
+    } else if (code == "") {
+      WxRequest.ShowAlert("请输入验证码");
+    } else if (code != recode) {
+      WxRequest.ShowAlert("验证码不正确");
+    } else {
+      //TODO 提交表单
+      wx.setStorage({
+        key: "loginobj",
+        data: {
+          tx: that.data.tx, //头像
+          nickName: that.data.nickName, //昵称
+          name: that.data.name, //姓名
+          sex: that.data.sex, //性别
+          desc: that.data.desc, //签名
+          phone: that.data.phone
+        },
+        success: function () {
+          wx.navigateBack({
+            delta: 1,
+          })
+        }
+      })
+    }
   },
   skipOpt() { //点击跳过
     var that = this;

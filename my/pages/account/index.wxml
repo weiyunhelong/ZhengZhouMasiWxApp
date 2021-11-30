@@ -3,44 +3,45 @@
   <view class="formc">
     <view class="formtag">头像</view>
     <view class="formval">
-      <image class="txicon" src="https://zhengzhousizheng.oss-cn-beijing.aliyuncs.com/mysucai/mytx.png"></image>
+      <image class="txicon" src="{{userInfo.tx}}"></image>
       <image class="righticon" src="https://zhengzhousizheng.oss-cn-beijing.aliyuncs.com/mysucai/righticon.png"></image>
     </view>
   </view>
   <view class="formc">
     <view class="formtag">昵称</view>
     <view class="formval">
-      <view class="formvaltxt">飞天女警</view>
+      <view class="formvaltxt">{{userInfo.nickName}}</view>
       <image class="righticon" src="https://zhengzhousizheng.oss-cn-beijing.aliyuncs.com/mysucai/righticon.png"></image>
     </view>
   </view>
   <view class="formc">
     <view class="formtag">姓名</view>
     <view class="formval">
-      <view class="formvaltxt">王明</view>
+      <view class="formvaltxt">{{userInfo.name}}</view>
       <image class="righticon" src="https://zhengzhousizheng.oss-cn-beijing.aliyuncs.com/mysucai/righticon.png"></image>
     </view>
   </view>
   <view class="formc">
     <view class="formtag">性别</view>
     <view class="formval">
-      <view class="formvaltxt bluetxt">未完善</view>
+      <view class="formvaltxt" wx:if="{{userInfo.sex!=undefined}}">{{userInfo.sex==1?'男士':'女士'}}</view>
+      <view class="formvaltxt bluetxt" wx:else>未完善</view>
       <image class="righticon" src="https://zhengzhousizheng.oss-cn-beijing.aliyuncs.com/mysucai/righticon.png"></image>
     </view>
   </view>
   <view class="formc">
     <view class="formtag">签名</view>
     <view class="formval">
-      <view class="formvaltxt showOnehangTxt">我是一只可爱的猪猪侠子，勇敢无敌，能吃能喝能玩</view>
+      <view class="formvaltxt showOnehangTxt">{{userInfo.desc}}</view>
       <image class="righticon" src="https://zhengzhousizheng.oss-cn-beijing.aliyuncs.com/mysucai/righticon.png"></image>
     </view>
   </view>
 </view>
 
 <view class="hangv">
-  <view class="formtag">签名</view>
+  <view class="formtag">手机号码</view>
   <view class="formval">
-    <view class="formvaltxt showOnehangTxt">我是一只可爱的猪猪侠子，勇敢无敌，能吃能喝能玩</view>
+    <view class="formvaltxt showOnehangTxt" style="width: 250rpx;">{{userInfo.phone}}</view>
     <image class="righticon" src="https://zhengzhousizheng.oss-cn-beijing.aliyuncs.com/mysucai/righticon.png"></image>
   </view>
 </view>
@@ -53,4 +54,4 @@
   </view>
 </view>
 
-<view class="btn">退出登录</view>
+<view class="btn" bindtap="logoutOpt">退出登录</view>

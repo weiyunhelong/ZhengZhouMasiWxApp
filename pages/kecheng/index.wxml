@@ -1,2 +1,58 @@
 <!--pages/kecheng/index.wxml-->
-<text>pages/kecheng/index.wxml</text>
+<!--tab部分-->
+<view class="tabv">
+  <view class="tabitem">
+    <view class="{{chktab==0?'tabtxth':'tabtxt'}}" bindtap="tapTab" data-tab="0">视频</view>
+    <view class="tabline" wx:if="{{chktab==0}}"></view>
+  </view>
+  <view class="tabkong"></view>
+  <view class="tabitem">
+    <view class="{{chktab==1?'tabtxth':'tabtxt'}}" bindtap="tapTab" data-tab="1">专栏</view>
+    <view class="tabline" wx:if="{{chktab==1}}"></view>
+  </view>
+</view>
+
+<!--考试必看-->
+<view class="titlev">考试必看</view>
+<scroll-view scroll-x="true" class="scrollview">
+  <block wx:for="{{list}}" wx:key="item">
+    <view class="scrollviewc" bindtap="goDetail" data-id="0">
+      <view class="scrollcover" style="background: url(https://zhengzhousizheng.oss-cn-beijing.aliyuncs.com/chuangke/2.png) no-repeat;background-size: cover;">
+        <image src="/resources/comman/playw.png" class="playicon"></image>
+      </view>
+      <view class="scrollnamev">
+        <view class="scrollname showOnehangTxt">每日进行1小时学习</view>
+        <view class="scrolldate">02:23</view>
+      </view>
+      <view class="scrollowner">潘pym</view>
+    </view>
+  </block>
+  <view class="scrollkong"></view>
+</scroll-view>
+
+<!--推荐学习-->
+<view class="titlev" style="margin-top:65rpx;margin-bottom:47rpx;">推荐学习</view>
+<block wx:for="{{list}}" wx:key="item">
+  <view class="studyv" bindtap="goDetail" data-id="0">
+    <image class="studycover" mode="aspectFill" src="https://zhengzhousizheng.oss-cn-beijing.aliyuncs.com/chuangke/4.png"></image>
+    <view class="studyinfo">
+      <view class="studyname showTwohangTxt">爱国主义教育基地纪念馆爱国主义教育基地纪念馆地纪念馆</view>
+      <view class="optv">
+        <view class="optc">
+          <image src="/resources/comman/view.png" class="opticon1"></image>
+          <view class="optnum">3350</view>
+        </view>
+        <view class="optc">
+          <image src="/resources/comman/zan.png" class="opticon2"></image>
+          <view class="optnum">3350</view>
+        </view>
+        <view class="optc">
+          <image src="/resources/comman/xing.png" class="opticon3"></image>
+          <view class="optnum">3350</view>
+        </view>
+      </view>
+    </view>
+  </view>
+</block>
+
+<view class="tabbarv"></view>

@@ -1,2 +1,81 @@
 <!--pages/kecheng/video.wxml-->
-<text>pages/kecheng/video.wxml</text>
+<!--顶部基本信息-->
+<view class="coverv">
+  <view class="coverc">
+    <image class="cover {{IsPlay?'xuanzhuanv':''}}" src="https://zhengzhousizheng.oss-cn-beijing.aliyuncs.com/chuangke/6.png"></image>
+
+    <view class="nametxt">学雷锋日学雷锋日</view>
+    <view class="owner">玛卡巴卡作者</view>
+
+    <view class="optv">
+      <view class="optc">
+        <image src="/resources/comman/view.png" class="opticon1"></image>
+        <view class="optnum">3350</view>
+      </view>
+      <view class="optc">
+        <image src="/resources/comman/zan.png" class="opticon2"></image>
+        <view class="optnum">点赞</view>
+      </view>
+      <view class="optc">
+        <image src="/resources/comman/xing.png" class="opticon3"></image>
+        <view class="optnum">收藏</view>
+      </view>
+    </view>
+
+    <view class="progreesv">
+      <view class="startnum">00:00</view>
+      <view class="progreesc">
+        <progress percent="80" color="#124361" backgroundColor="#BAC6CE" active stroke-width="6"></progress>
+      </view>
+      <view class="endnum">05:46</view>
+    </view>
+
+    <view class="iconv">
+      <view class="iconc">
+        <image src="/resources/comman/prevideo.png" class="smicon"></image>
+      </view>
+      <view class="iconc">
+        <image src="/resources/comman/playicon.png" class="mdicon1" wx:if="{{!IsPlay}}" bindtap="playOpt"></image>
+        <image src="/resources/comman/pauseicon.png" class="mdicon2" wx:else bindtap="pauseOpt"></image>
+      </view>
+      <view class="iconc">
+        <image src="/resources/comman/nextvideo.png" class="smicon"></image>
+      </view>
+    </view>
+  </view>
+</view>
+
+<!--分类部分-->
+<view class="tabv">
+  <view class="tabitem" bindtap="tapTab" data-tab="1">
+    <view class="{{chktab==1?'tabtxth':'tabtxt'}}">文章赏析</view>
+    <view class="tabline" wx:if="{{chktab==1}}"></view>
+  </view>
+  <view class="tabkong"></view>
+  <view class="tabitem" bindtap="tapTab" data-tab="2">
+    <view class="{{chktab==2?'tabtxth':'tabtxt'}}">学习交流</view>
+    <view class="tabline" wx:if="{{chktab==2}}"></view>
+  </view>
+</view>
+
+<!--文章赏析部分-->
+<block wx:if="{{chktab==1}}">
+  <view class="contentv">
+    <view class="desc">《红色故事会》内容介绍：中国共产党诞生以来，在领导人民进行革命，建设和改革的伟大事业中，涌现出一批又一批优秀的共产党人—— 假扮夫妻领导广州群众起义的周文雍和陈铁军，被叛徒出卖后慷慨赴死，将刑场上的枪声，作为他们结婚的礼炮。 大庆石油工人王进喜，怀揣着亿万中国人建成大油田的梦想，用血肉之躯搅拌水泥，压住了险恶的井喷，用生命的伟力战胜了大自然的肆虐。</view>
+    <image mode="widthFix" style="width: 100%;min-height: 0rpx;display: block;margin-top: 37rpx;" src="https://zhengzhousizheng.oss-cn-beijing.aliyuncs.com/chuangke/3.png"></image>
+  </view>
+  <view class="kongw"></view>
+
+  <view class="btmvv"></view>
+  <view class="btmv">
+    <view class="textv">
+      <input class="commenttxt" placeholder-class="commenttip" placeholder="说点什么吧..." type="text" value="{{comment}}" bindinput="getComment"/>
+    </view>
+    <view class="sendbtn" bindtap="sendMsgOpt">
+      <image src="/resources/comman/send.png" class="sendicon"></image>
+    </view>
+  </view>
+</block>
+
+<!--学习交流部分-->
+<block wx:if="{{chktab==2}}"></block>

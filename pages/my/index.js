@@ -8,7 +8,8 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    IsLogin: false, //是否登录
+    userInfo: {}, //用户信息
   },
 
   /**
@@ -17,7 +18,50 @@ Page({
   onLoad: function (options) {
 
   },
+  goLogin() { //去登录
+    wx.navigateTo({
+      url: '../../wxauth/pages/wxlogin/index',
+    })
+  },
+  goAccount() { //账号管理
+    wx.navigateTo({
+      url: '../../my/pages/account/index',
+    })
+  },
+  tapMenu(e) { //跳转到菜单
+    var that=this;
+    var url = "",
+      menu = parseInt(e.currentTarget.dataset.menu);
+    switch (menu) {
+      case 0:
+        url = "../../my/pages/datacenter/index";
+        break;
+      case 1:
+        url = "../../my/pages/news/index";
+        break;
+      case 2:
+        url = "../../my/pages/study/index";
+        break;
+      case 3:
+        url = "../../my/pages/collect/index";
+        break;
+      case 4:
+        url = "../../my/pages/dati/index";
+        break;
+      case 5:
+        if (!that.data.IsLogin) {
+          url = "../../wxauth/pages/wxlogin/index";
+          break;
+        } else {
+          url = "../../my/pages/account/index";
+          break;
+        }
+    }
+    wx.navigateTo({
+      url: url
+    })
 
+  },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
@@ -32,6 +76,22 @@ Page({
     var that = this;
     //获取菜单的列表数据
     that.setTabbarlist();
+
+    wx.getStorage({
+      key: "loginobj",
+      success: function (res) {
+        that.setData({
+          IsLogin: true,
+          userInfo: res.data
+        })
+      },
+      fail: function () {
+        that.setData({
+          IsLogin: false,
+          userInfo: []
+        })
+      }
+    })
   },
   setTabbarlist: function () { //获取菜单的列表数据
     var that = this;

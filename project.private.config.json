@@ -53,6 +53,18 @@
           "pathName": "my/pages/dati/index",
           "query": "",
           "scene": null
+        },
+        {
+          "name": "pages/kecheng/index",
+          "pathName": "pages/kecheng/index",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/kecheng/video",
+          "pathName": "pages/kecheng/video",
+          "query": "id=0",
+          "scene": null
         }
       ]
     }

@@ -1,1 +1,158 @@
 /* pages/kecheng/index.wxss */
+.tabv {
+  display: flex;
+  justify-content: center;
+  height: 116rpx;
+}
+
+.tabitem {
+  text-align: center;
+  width: 150rpx;
+}
+
+.tabkong {
+  width: 145rpx;
+  height: auto;
+}
+
+.tabtxt {
+  padding-top: 35rpx;
+  font-size: 30rpx;
+  color: #999999;
+}
+
+.tabtxth {
+  padding-top: 35rpx;
+  padding-bottom: 6rpx;
+  font-size: 30rpx;
+  font-weight: bold;
+  color: #124361;
+}
+
+.tabline {
+  width: 40rpx;
+  height: 10rpx;
+  background: #124361;
+  border-radius: 5rpx;
+  margin: 0 auto;
+}
+
+.titlev {
+  padding-left: 20rpx;
+  font-size: 36rpx;
+  font-weight: bold;
+  color: #333333;
+}
+
+.scrollview {
+  display: flex;
+  white-space: nowrap;
+  overflow: hidden;
+  margin-top: 42rpx;
+}
+
+.scrollviewc {
+  width: 509rpx;
+  display: inline-block;
+  margin-left: 24rpx;
+}
+
+.scrollcover {
+  width: 510rpx;
+  height: 308rpx;
+  position: relative;
+}
+
+.playicon {
+  width: 74rpx;
+  height: 74rpx;
+  position: absolute;
+  z-index: 2;
+  left: 218rpx;
+  top: 117rpx;
+}
+
+.scrollnamev {
+  display: flex;
+  justify-content: space-between;
+  color: #333333;
+  padding-top: 30rpx;
+}
+
+.scrollname {
+  font-size: 30rpx;
+}
+
+.scrolldate {
+  font-size: 24rpx;
+}
+
+.scrollowner {
+  font-size: 24rpx;
+  color: #999;
+}
+
+.scrollkong {
+  width: 24rpx;
+  height: 0;
+  display: inline-block;
+}
+
+.studyv {
+  display: flex;
+  padding: 0rpx 20rpx 40rpx;
+}
+
+.studycover {
+  width: 197rpx;
+  height: 197rpx;
+  border-radius: 20rpx;
+  margin-right: 38rpx;
+}
+
+.studyinfo {
+  width: 475rpx;
+  height: auto;
+  padding-top: 24rpx;
+}
+
+.studyname {
+  height: 80rpx;
+  font-size: 30rpx;
+  color: #333333;
+}
+
+.optv {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20rpx;
+}
+
+.optc {
+  display: flex;
+  font-size: 24rpx;
+  color: #999999;
+  line-height: 32rpx;
+  margin-top: 40rpx;
+}
+
+.opticon1 {
+  width: 23rpx;
+  height: 21rpx;
+  margin-right: 20rpx;
+  margin-top: 8rpx;
+}
+
+.opticon2 {
+  width: 19rpx;
+  height: 20rpx;
+  margin-right: 20rpx;
+  margin-top: 7rpx;
+}
+
+.opticon3 {
+  width: 21rpx;
+  height: 20rpx;
+  margin-right: 20rpx;
+  margin-top: 7rpx;
+}

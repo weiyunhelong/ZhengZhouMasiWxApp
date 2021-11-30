@@ -1,1 +1,236 @@
 /* pages/kecheng/video.wxss */
+page {
+  overflow-x: hidden;
+}
+
+.coverv {
+  width: 900rpx;
+  height: 900rpx;
+  background: url(https://zhengzhousizheng.oss-cn-beijing.aliyuncs.com/chuangke/7.png) no-repeat;
+  background-size: cover;
+  background-position-y: -230rpx;
+  background-position-x: -75rpx;
+}
+
+.coverc {
+  width: 100vw;
+  text-align: center;
+  padding-top: 70rpx;
+}
+
+.cover {
+  width: 300rpx;
+  height: 300rpx;
+}
+
+.nametxt {
+  padding: 70rpx 30rpx 10rpx;
+  font-size: 36rpx;
+  font-weight: bold;
+  color: #333333;
+}
+
+.owner {
+  font-size: 28rpx;
+  color: #999999;
+}
+
+.optv {
+  width: 80vw;
+  display: flex;
+  justify-content: space-around;
+  margin: 50rpx auto;
+}
+
+.optc {
+  display: flex;
+  font-size: 26rpx;
+  color: #999999;
+  line-height: 32rpx;
+}
+
+.opticon1 {
+  width: 25rpx;
+  height: 19rpx;
+  margin-right: 10rpx;
+  margin-top: 8rpx;
+}
+
+.opticon2 {
+  width: 24rpx;
+  height: 24rpx;
+  margin-right: 10rpx;
+  margin-top: 4rpx;
+}
+
+.opticon3 {
+  width: 26rpx;
+  height: 24rpx;
+  margin-right: 10rpx;
+  margin-top: 4rpx;
+}
+
+.xuanzhuanv {
+  animation: spin 10s 0s infinite linear;
+}
+
+@-webkit-keyframes spin {
+  from {
+    -webkit-transform: rotate(0deg);
+  }
+
+  to {
+    -webkit-transform: rotate(360deg);
+  }
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.progreesv {
+  width: 80vw;
+  margin: 30rpx auto 60rpx;
+  display: flex;
+}
+
+.startnum,
+.endnum {
+  font-size: 24rpx;
+  color: #999999;
+  line-height: 1;
+}
+
+.progreesc {
+  width: 562rpx;
+  height: 12rpx;
+  margin: 6rpx 14rpx;
+  border-radius: 6rpx;
+}
+
+.iconv {
+  width: 80vw;
+  display: flex;
+  justify-content: space-around;
+  margin: 0 auto;
+}
+
+.smicon {
+  width: 33rpx;
+  height: 18rpx;
+  margin-top: 18rpx;
+}
+
+.mdicon1 {
+  width: 48rpx;
+  height: 54rpx;
+}
+
+.mdicon2 {
+  width: 39rpx;
+  height: 54rpx;
+  margin: 0 4.5rpx;
+}
+
+.tabv {
+  display: flex;
+  justify-content: center;
+}
+
+.tabkong {
+  width: 74rpx;
+  height: auto;
+}
+
+.tabitem {
+  text-align: center;
+}
+
+.tabtxth {
+  font-size: 30rpx;
+  font-weight: bold;
+  color: #333333;
+}
+
+.tabtxt {
+  font-size: 30rpx;
+  color: #999999;
+}
+
+.tabline {
+  width: 40rpx;
+  height: 10rpx;
+  background: #124361;
+  border-radius: 5rpx;
+  margin: 10rpx auto 0;
+}
+
+.contentv {
+  padding: 60rpx 20rpx 0;
+  font-size: 24rpx;
+  color: #333333;
+  line-height: 50rpx;
+}
+
+.kongw {
+  width: 100vw;
+  height: 20rpx;
+  background: #FFFFFF;
+  margin: 60rpx 0;
+}
+
+.btmvv {
+  width: 100vw;
+  height: 120rpx;
+}
+
+.btmv {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  z-index: 999;
+  width: 100vw;
+  height: 120rpx;
+  display: flex;
+  justify-content: center;
+  background: #f2f2f2;
+}
+
+.textv {
+  width: 605rpx;
+  height: 80rpx;
+  background: #E8E8E8;
+  border-radius: 10rpx;
+  margin: 0 18rpx;
+}
+
+.sendbtn {
+  width: 88rpx;
+  height: 80rpx;
+  background: #124361;
+  border-radius: 10rpx;
+  text-align: center;
+  line-height: 80rpx;
+}
+
+.sendicon {
+  width: 34rpx;
+  height: 35rpx;
+  margin: 23rpx auto;
+}
+.commenttxt{
+  padding: 0 20rpx;
+  height: 80rpx;
+  line-height: 80rpx;
+  font-size: 26rpx;
+  color: #333;
+}
+.commenttip{
+  color: #999999;
+}

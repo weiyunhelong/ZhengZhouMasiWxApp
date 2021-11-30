@@ -5,7 +5,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    userInfo: {}, //用户信息
   },
 
   /**
@@ -14,7 +14,17 @@ Page({
   onLoad: function (options) {
 
   },
-
+  logoutOpt(){//退出操作
+    var that=this;
+    wx.removeStorage({
+      key: 'loginobj',
+      success:function(){
+        wx.navigateBack({
+          delta: 1,
+        })
+      }
+    })
+  },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
@@ -26,7 +36,15 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
+    var that=this;
+    wx.getStorage({
+      key: "loginobj",
+      success: function (res) {
+        that.setData({
+          userInfo: res.data
+        })
+      }
+    })
   },
 
   /**
