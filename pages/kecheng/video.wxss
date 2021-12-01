@@ -182,12 +182,12 @@ page {
   width: 100vw;
   height: 20rpx;
   background: #FFFFFF;
-  margin: 60rpx 0;
+  margin-top: 60rpx;
 }
 
 .btmvv {
   width: 100vw;
-  height: 120rpx;
+  height: 140rpx;
 }
 
 .btmv {
@@ -207,7 +207,7 @@ page {
   height: 80rpx;
   background: #E8E8E8;
   border-radius: 10rpx;
-  margin: 0 18rpx;
+  margin-right: 18rpx;
 }
 
 .sendbtn {
@@ -224,13 +224,124 @@ page {
   height: 35rpx;
   margin: 23rpx auto;
 }
-.commenttxt{
+
+.commenttxt {
   padding: 0 20rpx;
   height: 80rpx;
   line-height: 80rpx;
   font-size: 26rpx;
   color: #333;
 }
-.commenttip{
+
+.commenttip {
   color: #999999;
+}
+
+/*评论部分*/
+.commentv {
+  padding: 50rpx 20rpx 0;
+}
+
+.commentv .commentuv {
+  display: flex;
+  justify-content: space-between;
+}
+
+.commentuv .commentul {
+  display: flex;
+  width: 300rpx;
+  flex-wrap: wrap;
+}
+
+.commentuv .commentul .commentutx {
+  width: 80rpx;
+  height: 80rpx;
+  border-radius: 50%;
+  margin-right: 20rpx;
+}
+
+.commentuv .commentul .commentuname {
+  font-size: 26rpx;
+  font-weight: bold;
+  color: #333333;
+}
+
+.commentuv .commentul .commentudate {
+  font-size: 22rpx;
+  color: #999999;
+  margin-top: 15rpx;
+}
+
+.commentuv .commentur {
+  display: flex;
+  justify-content: flex-end;
+  padding-top: 20rpx;
+}
+
+.commentuv .commentur .commentuzanicon {
+  width: 20rpx;
+  height: 20rpx;
+  margin-right: 10rpx;
+  margin-top: 5rpx;
+}
+
+.commentuv .commentur .commentuzannum {
+  font-size: 22rpx;
+  color: #999;
+}
+
+.commentuv .commentur .commentuzannumr {
+  font-size: 22rpx;
+  color: #F00808;
+}
+
+.commentuv .commentur .commentuhuifu {
+  margin-left: 35rpx;
+  font-size: 22rpx;
+  color: #999999;
+}
+
+.commentv .commentdesc {
+  width: 605rpx;
+  height: 195rpx;
+  font-size: 26rpx;
+  color: #333333;
+  margin-left: 95rpx;
+  margin-top: 20rpx;
+  line-height: 40rpx;
+  text-align: justify;
+}
+
+.commentv .commentreplayv {
+  width: 605rpx;
+  background: #E8E8E8;
+  border-radius: 10rpx;
+  margin-left: 95rpx;
+  margin-top: 30rpx;
+  padding-bottom: 20rpx;
+}
+
+.commentv .commentreplayv .commentreplayc {
+  padding: 15rpx 20rpx 0;
+  font-size: 26rpx;
+}
+
+.commentv .commentreplayv .commentreplayer {
+  color: #124361;
+}
+
+.commentv .commentreplayv .commentreplaytxt {
+  color: #333;
+}
+
+.commentreplayor {
+  width: 80rpx;
+  height: 24rpx;
+  background: rgba(18, 67, 97, 0.2);
+  border-radius: 12rpx;
+  font-size: 20rpx;
+  color: #124361;
+  text-align: center;
+  line-height: 24rpx;
+  margin:0 10rpx;
 }
