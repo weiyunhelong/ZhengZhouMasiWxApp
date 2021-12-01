@@ -17,7 +17,69 @@ Page({
   onLoad: function (options) {
 
   },
-
+  tapMenu(e) { //点击菜单部分
+    var that = this;
+    var menu = parseInt(e.currentTarget.dataset.menu);
+    var url = "";
+    switch (menu) {
+      case 1:
+        url = "../jiyin/index";
+        break;
+      case 2:
+        url = "../shidu/index";
+        break;
+      case 3:
+        url = "../zuji/index";
+        break;
+      case 4:
+        url = "../jinian/index";
+        break;
+      case 5:
+        url = "../zuji/detail";
+        break;
+      case 6:
+        url = "../sijiang/index";
+        break;
+    }
+    wx.navigateTo({
+      url: url,
+      fail: function () {
+        wx.switchTab({
+          url: url
+        })
+      }
+    })
+  },
+  goChuangke() { //创课中心
+    wx.switchTab({
+      url: '../kecheng/index',
+    })
+  },
+  goSystem() { //党建和思政教育云展系统
+    wx.navigateTo({
+      url: '../../yunsystem/pages/home/index',
+    })
+  },
+  goShiduOpt(e) { //点击红色时时读
+    wx.navigateTo({
+      url: '../shidu/detail?id=' + e.currentTarget.dataset.id
+    })
+  },
+  goChuangkeOpt(e) { //点击创课中心
+    wx.navigateTo({
+      url: '../kecheng/detail?id=' + e.currentTarget.dataset.id
+    })
+  },
+  goJiYinOpt(e){//点击探寻红色基因
+    wx.navigateTo({
+      url: '../jiyin/detail?id=' + e.currentTarget.dataset.id
+    })
+  },
+  goSiJiangOpt(e){//点击探寻四讲
+    wx.navigateTo({
+      url: '../sijiang/detail?id=' + e.currentTarget.dataset.id
+    })
+  },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */

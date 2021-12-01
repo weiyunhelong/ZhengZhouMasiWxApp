@@ -74,5 +74,5 @@ page {
   margin-top: 7rpx;
 }
 .optnumh{
-  color: #FF0000;
+  color: #ff0000;
 }

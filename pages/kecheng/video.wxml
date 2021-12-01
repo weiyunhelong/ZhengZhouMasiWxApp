@@ -65,7 +65,12 @@
     <view class="desc">《红色故事会》内容介绍：中国共产党诞生以来，在领导人民进行革命，建设和改革的伟大事业中，涌现出一批又一批优秀的共产党人—— 假扮夫妻领导广州群众起义的周文雍和陈铁军，被叛徒出卖后慷慨赴死，将刑场上的枪声，作为他们结婚的礼炮。 大庆石油工人王进喜，怀揣着亿万中国人建成大油田的梦想，用血肉之躯搅拌水泥，压住了险恶的井喷，用生命的伟力战胜了大自然的肆虐。</view>
     <image mode="widthFix" style="width: 100%;min-height: 0rpx;display: block;margin-top: 37rpx;" src="https://zhengzhousizheng.oss-cn-beijing.aliyuncs.com/chuangke/3.png"></image>
   </view>
+
   <view class="kongw"></view>
+</block>
+
+<!--学习交流部分-->
+<block wx:if="{{chktab==2}}">
 
   <!--评论部分-->
   <view class="commentv">
@@ -135,6 +140,3 @@
   </view>
 
 </block>
-
-<!--学习交流部分-->
-<block wx:if="{{chktab==2}}"></block>

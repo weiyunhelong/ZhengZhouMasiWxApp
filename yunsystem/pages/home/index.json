@@ -1,0 +1,8 @@
+{
+  "navigationBarBackgroundColor": "#124361",
+  "navigationBarTextStyle": "white",
+  "navigationBarTitleText": "党建和思政教育云展系统",
+  "usingComponents": {
+    "loadding": "../../../components/loadding/index"
+  }
+}

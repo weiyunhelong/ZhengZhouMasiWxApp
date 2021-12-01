@@ -182,7 +182,7 @@ page {
   width: 100vw;
   height: 20rpx;
   background: #FFFFFF;
-  margin-top: 60rpx;
+  margin: 60rpx 0;
 }
 
 .btmvv {
@@ -282,7 +282,7 @@ page {
   width: 20rpx;
   height: 20rpx;
   margin-right: 10rpx;
-  margin-top: 5rpx;
+  margin-top:6rpx;
 }
 
 .commentuv .commentur .commentuzannum {
@@ -343,5 +343,5 @@ page {
   color: #124361;
   text-align: center;
   line-height: 24rpx;
-  margin:0 10rpx;
+  margin: 0 10rpx;
 }

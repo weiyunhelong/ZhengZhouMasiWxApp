@@ -13,57 +13,21 @@
     "miniprogram": {
       "list": [
         {
-          "name": "pages/zuji/detail",
-          "pathName": "pages/zuji/detail",
+          "name": "pages/kecheng/detail",
+          "pathName": "pages/kecheng/detail",
           "query": "",
           "scene": null
         },
         {
-          "name": "wxauth/pages/wxlogin/index",
-          "pathName": "wxauth/pages/wxlogin/index",
+          "name": "yunsystem/pages/home/index",
+          "pathName": "yunsystem/pages/home/index",
           "query": "",
           "scene": null
         },
         {
-          "name": "pages/jiyin/list",
-          "pathName": "pages/jiyin/list",
+          "name": "yunsystem/pages/record/index",
+          "pathName": "yunsystem/pages/record/index",
           "query": "",
-          "scene": null
-        },
-        {
-          "name": "pages/my/index",
-          "pathName": "pages/my/index",
-          "query": "",
-          "scene": null
-        },
-        {
-          "name": "pages/jiyin/detail",
-          "pathName": "pages/jiyin/detail",
-          "query": "",
-          "scene": null
-        },
-        {
-          "name": "my/pages/datacenter/index",
-          "pathName": "my/pages/datacenter/index",
-          "query": "",
-          "scene": null
-        },
-        {
-          "name": "my/pages/dati/index",
-          "pathName": "my/pages/dati/index",
-          "query": "",
-          "scene": null
-        },
-        {
-          "name": "pages/kecheng/index",
-          "pathName": "pages/kecheng/index",
-          "query": "",
-          "scene": null
-        },
-        {
-          "name": "pages/kecheng/video",
-          "pathName": "pages/kecheng/video",
-          "query": "id=0",
           "scene": null
         }
       ]

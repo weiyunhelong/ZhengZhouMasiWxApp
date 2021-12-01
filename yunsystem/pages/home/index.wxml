@@ -1,0 +1,33 @@
+<!--yunsystem/pages/home/index.wxml-->
+<view class="bodyv">
+  <view class="block1" bindtap="goMenu" data-menu="1">
+    <image class="menuicon" src="https://zhengzhousizheng.oss-cn-beijing.aliyuncs.com/yunsystem/menu1.png"></image>
+  </view>
+  <view class="block2" bindtap="goMenu" data-menu="2">
+    <image class="menuicon" src="https://zhengzhousizheng.oss-cn-beijing.aliyuncs.com/yunsystem/menu2.png"></image>
+  </view>
+  <view class="block3" bindtap="goMenu" data-menu="3">
+    <image class="menuicon" src="https://zhengzhousizheng.oss-cn-beijing.aliyuncs.com/yunsystem/menu3.png"></image>
+  </view>
+  <view class="block4" bindtap="goMenu" data-menu="4">
+    <image class="menuicon" src="https://zhengzhousizheng.oss-cn-beijing.aliyuncs.com/yunsystem/menu4.png"></image>
+  </view>
+  <view class="block5" bindtap="goMenu" data-menu="5">
+    <image class="menuicon" src="https://zhengzhousizheng.oss-cn-beijing.aliyuncs.com/yunsystem/menu5.png"></image>
+  </view>
+</view>
+
+<!--底部tabbar-->
+<view class="tabbar">
+  <view class="tabbarc">
+    <image class="tabbaricon1" src="https://zhengzhousizheng.oss-cn-beijing.aliyuncs.com/yunsystem/homeh.png"></image>
+    <view class="tabbartxth">首页</view>
+  </view>
+  <view class="tabbarc" bindtap="ScanOpt">
+    <image class="scan" src="https://zhengzhousizheng.oss-cn-beijing.aliyuncs.com/yunsystem/scan.png"></image>
+  </view>
+  <view class="tabbarc" bindtap="goRecord">
+    <image class="tabbaricon2" src="https://zhengzhousizheng.oss-cn-beijing.aliyuncs.com/yunsystem/record.png"></image>
+    <view class="tabbartxt">浏览体验记录</view>
+  </view>
+</view>
