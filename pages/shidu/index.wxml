@@ -1,2 +1,27 @@
 <!--pages/shidu/index.wxml-->
-<text>pages/shidu/index.wxml</text>
+<view class="recentv">
+  <view class="liev">
+    <view class="lieicon"></view>
+    <view class="lietxt">最近学习</view>
+  </view>
+  <view class="recentc">
+    <view class="recentcover" style="background: url(https://zhengzhousizheng.oss-cn-beijing.aliyuncs.com/sidu/author.png) no-repeat;background-size:cover;"></view>
+    <view class="recentinfo">
+      <view class="recentname">壬尽美</view>
+      <view class="recentdesc">中国工厂党创始人之一</view>
+      <view class="recentoptv">
+        <image src="/resources/comman/erji.png" class="erjiicon"></image>
+        <view class="erjinum">22.3万</view>
+
+        <image src="/resources/comman/xingw.png" class="xingicon"></image>
+        <view class="xingnum">收藏</view>
+      </view>
+      <view class="recentjinduv">
+        <view class="progressv">
+          <progress percent="80" border-radius="9rpx" backgroundColor="rgba(255,255,255,0.2)" color="#ffffff" active stroke-width="18rpx" />
+        </view>
+        <view class="shichang">01:55/02:33</view>
+      </view>
+    </view>
+  </view>
+</view>

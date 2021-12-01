@@ -29,6 +29,12 @@
           "pathName": "yunsystem/pages/record/index",
           "query": "",
           "scene": null
+        },
+        {
+          "name": "pages/shidu/index",
+          "pathName": "pages/shidu/index",
+          "query": "",
+          "scene": null
         }
       ]
     }
