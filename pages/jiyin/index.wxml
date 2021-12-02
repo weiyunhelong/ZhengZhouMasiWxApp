@@ -1,7 +1,7 @@
 <!--pages/jiyin/index.wxml-->
-<view class="block block1" bindtap="goDetail">新中国从这里走来</view>
-<view class="block block2">探寻红色基因</view>
-<view class="block block3">红色时时读</view>
-<view class="block block4">四史天天讲</view>
-<view class="block block5">习总书记的红色足迹</view>
-<view class="block block6">习总书记的扶贫足迹</view>
+<view class="block block1" bindtap="goMenu" data-menu="1">新中国从这里走来</view>
+<view class="block block2" bindtap="goMenu" data-menu="2">探寻红色基因</view>
+<view class="block block3" bindtap="goMenu" data-menu="3">红色时时读</view>
+<view class="block block4" bindtap="goMenu" data-menu="4">四史天天讲</view>
+<view class="block block5" bindtap="goMenu" data-menu="5">习总书记的红色足迹</view>
+<view class="block block6" bindtap="goMenu" data-menu="6">习总书记的扶贫足迹</view>

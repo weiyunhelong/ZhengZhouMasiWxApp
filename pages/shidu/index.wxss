@@ -1,17 +1,18 @@
 /* pages/shidu/index.wxss */
+/*最近学习*/
 .recentv {
   width: 100vw;
-  height: 550rpx;
+  height: 450rpx;
   background: linear-gradient(90deg, #124361 0%, #0D6675 100%);
   border-radius: 0rpx 0rpx 50rpx 0rpx;
 }
 
-.liev {
+.recentv .liev {
   display: flex;
   padding: 30rpx 20rpx 38rpx;
 }
 
-.lieicon {
+.recentv .lieicon {
   width: 10rpx;
   height: 30rpx;
   background: #FFFFFF;
@@ -19,38 +20,38 @@
   margin-right: 20rpx;
 }
 
-.lietxt {
+.recentv .lietxt {
   line-height: 1;
   font-size: 30rpx;
   color: #FFFFFF;
 }
 
-.recentc {
+.recentv .recentc {
   display: flex;
   padding: 0 20rpx;
 }
 
-.recentcover {
+.recentv .recentcover {
   width: 223rpx;
   height: 281rpx;
   border-radius: 4rpx;
   margin-right: 52rpx;
 }
 
-.recentname {
+.recentv .recentname {
   padding-top: 40rpx;
   font-size: 36rpx;
   font-weight: bold;
   color: #FFFFFF;
 }
 
-.recentdesc {
+.recentv .recentdesc {
   margin-top: 10rpx;
   font-size: 26rpx;
   color: #FFFFFF;
 }
 
-.recentoptv {
+.recentv .recentoptv {
   display: flex;
   font-size: 26rpx;
   color: #FFFFFF;
@@ -58,33 +59,120 @@
   margin-top: 30rpx;
 }
 
-.erjiicon {
+.recentv .erjiicon {
   width: 21rpx;
   height: 21rpx;
   margin-top: 4rpx;
   margin-right: 10rpx;
 }
 
-.xingicon {
+.recentv .xingicon {
   width: 26rpx;
   height: 24rpx;
   margin-right: 10rpx;
   margin-left: 40rpx;
 }
 
-.recentjinduv {
+.recentv .recentjinduv {
   display: flex;
   padding-top: 34rpx;
 }
 
-.progressv {
+.recentv .progressv {
   width: 250rpx;
   height: 18rpx;
   margin-top: 5rpx;
 }
 
-.shichang {
+.recentv .shichang {
   margin-left: 22rpx;
   font-size: 22rpx;
   color: #FFFFFF;
+}
+
+/*tab部分*/
+.tabv {
+  display: flex;
+  overflow: hidden;
+  white-space: nowrap;
+  padding-left: 20rpx;
+}
+
+.tabv .tabc {
+  width: 210rpx;
+  margin-right: 40rpx;
+  display: inline-block;
+  text-align: center;
+  padding-top: 54rpx;
+}
+
+.tabv .tabc .tabtxth {
+  font-size: 30rpx;
+  font-weight: bold;
+  color: #333333;
+}
+
+.tabv .tabc .tabtxt {
+  font-size: 30rpx;
+  color: #999;
+}
+
+.tabv .tabc .tabline {
+  width: 40rpx;
+  height: 10rpx;
+  background: #124361;
+  border-radius: 5rpx;
+  margin: 10rpx auto;
+}
+
+/*分类数据*/
+.datav {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 50rpx;
+}
+
+.datac {
+  width: 223rpx;
+  height: auto;
+  margin-bottom: 50rpx;
+  margin-left: 20rpx;
+  position: relative;
+}
+
+.datacover {
+  width: 223rpx;
+  height: 281rpx;
+}
+
+.datacv {
+  position: absolute;
+  top: 240rpx;
+  left: 15rpx;
+  display: flex;
+}
+
+.iconerji {
+  width: 21rpx;
+  height: 21rpx;
+  margin-top: 5rpx;
+}
+
+.datanum {
+  font-size: 26rpx;
+  color: #FFFFFF;
+  line-height: 1;
+  margin-left: 10rpx;
+}
+
+.username {
+  font-size: 30rpx;
+  color: #333333;
+  margin-top:10rpx;
+}
+
+.tagtxt {
+  font-size: 24rpx;
+  color: #999999;
+  margin-top:5rpx;
 }

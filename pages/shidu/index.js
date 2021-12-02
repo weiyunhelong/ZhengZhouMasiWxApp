@@ -8,7 +8,9 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    tabs: ["红色英雄天天学", "红色家书天天读", "红色故事天天听", "红色英雄天天读"],
+    chktab: 0,
+    list: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
   },
 
   /**
@@ -17,7 +19,17 @@ Page({
   onLoad: function (options) {
 
   },
-
+  tapTab(e) { //切换tab
+    var that = this;
+    that.setData({
+      chktab: parseInt(e.currentTarget.dataset.index)
+    })
+  },
+  goDetail(e) { //跳转到详情
+    wx.navigateTo({
+      url: '../shidu/detail?id=' + e.currentTarget.dataset.id,
+    })
+  },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */

@@ -1,2 +1,52 @@
 <!--pages/sijiang/index.wxml-->
-<text>pages/sijiang/index.wxml</text>
+<view class="liev">
+  <view class="lieicon"></view>
+  <view class="lietxt">经典必看</view>
+</view>
+
+<view bindtap="goDetail" data-id="0" class="mddatav" style="background: url(https://zhengzhousizheng.oss-cn-beijing.aliyuncs.com/sijiang/cover2.png) no-repeat;background-size: cover;">
+  <image class="mddataicon" src="/resources/comman/playicong.png"></image>
+  <view class="mddataname showOnehangTxt">五四运动</view>
+</view>
+
+<view class="liev">
+  <view class="lieicon"></view>
+  <view class="lietxt">精品优选</view>
+</view>
+
+<view class="listv">
+  <block wx:for="{{list}}" wx:key="item">
+    <view class="smdatav"  bindtap="goDetail" data-id="0">
+      <image mode="aspectFill" class="smdatacover" src="https://zhengzhousizheng.oss-cn-beijing.aliyuncs.com/sijiang/cover1.png"></image>
+      <view class="smdatanumv">
+        <view class="smdatanumvl">
+          <image class="smdataicon" src="/resources/comman/playicong.png"></image>
+          <view class="smdatanum">22.3万</view>
+        </view>
+        <view class="smdatanumvr">1:52</view>
+      </view>
+      <view class="smdataname">工厂党的早期组织成立</view>
+    </view>
+  </block>
+</view>
+
+<view class="liev">
+  <view class="lieicon"></view>
+  <view class="lietxt">推荐学习</view>
+</view>
+
+<view class="listv">
+  <block wx:for="{{list}}" wx:key="item">
+    <view class="smdatav" bindtap="goDetail" data-id="0">
+      <image mode="aspectFill" class="smdatacover" src="https://zhengzhousizheng.oss-cn-beijing.aliyuncs.com/sijiang/cover1.png"></image>
+      <view class="smdatanumv">
+        <view class="smdatanumvl">
+          <image class="smdataicon" src="/resources/comman/playicong.png"></image>
+          <view class="smdatanum">22.3万</view>
+        </view>
+        <view class="smdatanumvr">1:52</view>
+      </view>
+      <view class="smdataname">工厂党的早期组织成立</view>
+    </view>
+  </block>
+</view>

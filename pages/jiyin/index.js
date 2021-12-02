@@ -17,9 +17,36 @@ Page({
   onLoad: function (options) {
 
   },
-  goDetail(e){
+  goMenu(e) { //点击菜单
+    var url = "";
+    var menu = parseInt(e.currentTarget.dataset.menu);
+    switch (menu) {
+      case 1:
+        url = "../xinzhongguo/index";
+        break;
+      case 2:
+        url = "../jinian/index";
+        break;
+      case 3:
+        url = "../shidu/index";
+        break;
+      case 4:
+        url = "../sijiang/index";
+        break;
+      case 5:
+        url = "../zuji/detail";
+        break;
+      case 6:
+        url = "../zuji/index";
+        break;
+    }
     wx.navigateTo({
-      url: '../jiyin/detail',
+      url: url,
+      fail:function(){
+        wx.switchTab({
+          url: url
+        })
+      }
     })
   },
   /**

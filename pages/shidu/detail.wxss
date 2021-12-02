@@ -1,1 +1,96 @@
 /* pages/shidu/detail.wxss */
+
+/*最近学习*/
+.recentv {
+  width: 100vw;
+  height: 450rpx;
+  background: linear-gradient(90deg, #124361 0%, #0D6675 100%);
+  border-radius: 0rpx 0rpx 50rpx 0rpx;
+}
+
+.recentv .liev {
+  display: flex;
+  padding: 30rpx 20rpx 38rpx;
+}
+
+.recentv .lieicon {
+  width: 10rpx;
+  height: 30rpx;
+  background: #FFFFFF;
+  border-radius: 5rpx;
+  margin-right: 20rpx;
+}
+
+.recentv .lietxt {
+  line-height: 1;
+  font-size: 30rpx;
+  color: #FFFFFF;
+}
+
+.recentv .recentc {
+  display: flex;
+  padding: 0 20rpx;
+}
+
+.recentv .recentcover {
+  width: 223rpx;
+  height: 281rpx;
+  border-radius: 4rpx;
+  margin-right: 52rpx;
+}
+
+.recentv .recentname {
+  padding-top: 40rpx;
+  font-size: 36rpx;
+  font-weight: bold;
+  color: #FFFFFF;
+}
+
+.recentv .recentdesc {
+  margin-top: 10rpx;
+  font-size: 26rpx;
+  color: #FFFFFF;
+}
+
+.recentv .recentoptv {
+  display: flex;
+  font-size: 26rpx;
+  color: #FFFFFF;
+  line-height: 1;
+  margin-top: 30rpx;
+}
+
+.recentv .erjiicon {
+  width: 21rpx;
+  height: 21rpx;
+  margin-top: 4rpx;
+  margin-right: 10rpx;
+}
+
+.recentv .xingicon {
+  width: 26rpx;
+  height: 24rpx;
+  margin-right: 10rpx;
+  margin-left: 40rpx;
+}
+
+.recentv .recentjinduv {
+  display: flex;
+  padding-top: 34rpx;
+}
+
+.recentv .progressv {
+  width: 250rpx;
+  height: 18rpx;
+  margin-top: 5rpx;
+}
+
+.recentv .shichang {
+  margin-left: 22rpx;
+  font-size: 22rpx;
+  color: #FFFFFF;
+}
+
+
+/*TAB分类数据*/
+@import '../../styles/article.wxss';

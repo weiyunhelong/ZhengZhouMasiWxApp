@@ -1,11 +1,14 @@
-// pages/jinian/index.js
+// pages/jiyin/list.js
+var requestUrl = getApp().globalData.requestUrl;
+var WxRequest = require('../../utils/WxRequest.js');
+
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-
+    list: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
   },
 
   /**

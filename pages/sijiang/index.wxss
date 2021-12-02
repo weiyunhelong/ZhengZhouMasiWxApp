@@ -1,1 +1,91 @@
 /* pages/sijiang/index.wxss */
+.liev {
+  height: 95rpx;
+  display: flex;
+  padding-left: 20rpx;
+}
+
+.liev .lieicon {
+  width: 10rpx;
+  height: 30rpx;
+  background: linear-gradient(180deg, #124361 0%, #0D6675 100%);
+  border-radius: 5rpx;
+  margin-right: 20rpx;
+  margin-top: 32.5rpx;
+}
+
+.liev .lietxt {
+  font-size: 30rpx;
+  color: #333333;
+  line-height: 95rpx;
+}
+
+.mddatav {
+  width: 710rpx;
+  height: 358rpx;
+  margin: 0 auto;
+  border-radius: 15rpx;
+  text-align: center;
+}
+
+.mddataicon {
+  width: 90rpx;
+  height: 90rpx;
+  margin: 129rpx auto;
+}
+
+.mddataname {
+  margin: -50rpx 30rpx 0;
+  font-size: 24rpx;
+  color: #FFFFFF;
+  text-align: left;
+}
+
+.listv {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.smdatav {
+  width: 345rpx;
+  height: auto;
+  margin-bottom: 30rpx;
+  margin-left: 20rpx;
+}
+
+.smdatacover {
+  width: 345rpx;
+  height: 280rpx;
+  display: block;
+}
+
+.smdatanumv {
+  padding: 0 20rpx;
+  display: flex;
+  justify-content: space-between;
+  margin-top: -55rpx;
+}
+
+.smdatanumvl {
+  display: flex;
+}
+
+.smdataicon {
+  width: 40rpx;
+  height: 40rpx;
+  margin-right: 10rpx;
+}
+
+.smdatanum,
+.smdatanumvr {
+  height: 40rpx;
+  line-height: 40rpx;
+  font-size: 22rpx;
+  color: #FFFFFF;
+}
+
+.smdataname {
+  padding-top: 30rpx;
+  font-size: 24rpx;
+  color: #666666;
+}

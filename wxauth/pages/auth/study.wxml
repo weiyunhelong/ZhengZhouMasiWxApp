@@ -51,7 +51,7 @@
   <view class="hangv">
     <view class="hangtag">验证码</view>
     <view class="hangval">
-      <input type="text" value="{{code}}" placeholder="请输入短信验证码" placeholder-class="hangvaltip" class="hangvaltxt" bindinput="getCode" />
+      <input type="text" value="{{code}}" placeholder="请输入短信验证码(123456)" placeholder-class="hangvaltip" class="hangvaltxt" bindinput="getCode" />
     </view>
   </view>
 

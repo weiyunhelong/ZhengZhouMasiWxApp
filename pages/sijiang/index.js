@@ -1,11 +1,14 @@
 // pages/sijiang/index.js
+var requestUrl = getApp().globalData.requestUrl;
+var WxRequest = require('../../utils/WxRequest.js');
+
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-
+    list: [1, 2, 3, 4],
   },
 
   /**
@@ -14,7 +17,11 @@ Page({
   onLoad: function (options) {
 
   },
-
+  goDetail(e) { //跳转到详情页面
+    wx.navigateTo({
+      url: '../sijiang/detail?id=' + e.currentTarget.dataset.id,
+    })
+  },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */

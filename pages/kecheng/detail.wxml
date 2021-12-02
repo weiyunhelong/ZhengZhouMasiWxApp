@@ -2,17 +2,20 @@
 <video class="videoobj" object-fit="fill" controls="{{true}}" autoplay="{{false}}" poster="https://zhengzhousizheng.oss-cn-beijing.aliyuncs.com/chuangke/5.png" src="https://clouddn-oss-prod.asaplus.com.cn/FM/fmv1.mp4"></video>
 
 <view class="videoc">
-  <image src="/resources/comman/view.png" class="viewicon"></image>
-  <view class="viewnum">2.23万</view>
-  <view class="videoname">这里是作者巴卡</view>
-
-  <view class="zanv" bindtap="ZanOpt">
-    <image src="{{IsZan?'/resources/comman/zanh.png':'/resources/comman/zan.png'}}" class="zanicon"></image>
-    <view class="zantxt {{IsZan?'zantxth':''}}">点赞</view>
+  <view class="videocl">
+    <image src="/resources/comman/view.png" class="viewicon"></image>
+    <view class="viewnum">2.23万</view>
+    <view class="videoname showOnehangTxt">这里是作者巴卡</view>
   </view>
-  <view class="zanv"  bindtap="CollectOpt" style="margin-left: 30rpx;">
-    <image src="{{IsCollect?'/resources/comman/xingh.png':'/resources/comman/xing.png'}}" class="zanicon"></image>
-    <view class="zantxt {{IsCollect?'zantxth':''}}">收藏</view>
+  <view class="videocr">
+    <view class="zanv" bindtap="ZanOpt">
+      <image src="{{IsZan?'/resources/comman/zanh.png':'/resources/comman/zan.png'}}" class="zanicon"></image>
+      <view class="zantxt {{IsZan?'zantxth':''}}">点赞</view>
+    </view>
+    <view class="zanv" bindtap="CollectOpt" style="margin-left: 30rpx;">
+      <image src="{{IsCollect?'/resources/comman/xingh.png':'/resources/comman/xing.png'}}" class="zanicon"></image>
+      <view class="zantxt {{IsCollect?'zantxth':''}}">收藏</view>
+    </view>
   </view>
 </view>
 
