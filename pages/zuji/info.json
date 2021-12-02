@@ -1,7 +1,7 @@
 {
   "navigationBarBackgroundColor": "#124361",
   "navigationBarTextStyle": "white",
-  "navigationBarTitleText": "探寻红色基因",
+  "navigationBarTitleText": "习总书记的扶贫足迹",
   "usingComponents": {
     "loadding": "../../components/loadding/index"
   }

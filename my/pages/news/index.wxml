@@ -37,7 +37,20 @@
   </block>
 
   <!--点赞部分-->
-  <block wx:if="{{chkkind==1}}"></block>
+  <block wx:if="{{chkkind==1}}">
+    <block wx:for="{{list}}" wx:key="item">
+  <view class="blockv">
+    <image src="{{item.cover}}" class="blockcover" lazy-load="true"></image>
+    <view class="blockc">
+      <view class="name">{{item.name}}</view>
+      <view class="infov">
+        <view class="date"></view>
+        <view class="percent">取消点赞</view>
+      </view>
+    </view>
+  </view>
+</block>
+  </block>
 
   <!--公告部分-->
   <block wx:if="{{chkkind==2}}">

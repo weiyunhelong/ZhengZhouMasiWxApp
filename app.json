@@ -5,6 +5,7 @@
     "pages/jiyin/index",
     "pages/jiyin/list",
     "pages/zuji/index",
+    "pages/zuji/info",
     "pages/zuji/detail",
     "pages/kecheng/index",
     "pages/kecheng/video",

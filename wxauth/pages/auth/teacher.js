@@ -35,11 +35,13 @@ Page({
       sizeType: ['compressed'],
       sourceType: ['album', 'camera'],
       success(res) {
-        // tempFilePath可以作为img标签的src属性显示图片
-        const tempFilePaths = res.tempFilePaths;
-        that.setData({
-          tx: tempFilePaths[0]
-        })
+        // tempFilePath可以作为img标签的src属性显示图片        
+        OssTool.uploadImgFile(res.tempFilePaths[0], 'avatarUrl/' + getApp().globalData.openId + '/',
+          function (result) {
+            that.setData({
+              tx: result
+            })
+          })
       }
     })
   },

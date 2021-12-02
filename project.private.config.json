@@ -12,54 +12,6 @@
     },
     "miniprogram": {
       "list": [
-        {
-          "name": "pages/kecheng/detail",
-          "pathName": "pages/kecheng/detail",
-          "query": "",
-          "scene": null
-        },
-        {
-          "name": "yunsystem/pages/home/index",
-          "pathName": "yunsystem/pages/home/index",
-          "query": "",
-          "scene": null
-        },
-        {
-          "name": "yunsystem/pages/record/index",
-          "pathName": "yunsystem/pages/record/index",
-          "query": "",
-          "scene": null
-        },
-        {
-          "name": "pages/sijiang/index",
-          "pathName": "pages/sijiang/index",
-          "query": "",
-          "scene": null
-        },
-        {
-          "name": "pages/sijiang/detail",
-          "pathName": "pages/sijiang/detail",
-          "query": "id=0",
-          "scene": null
-        },
-        {
-          "name": "pages/jinian/index",
-          "pathName": "pages/jinian/index",
-          "query": "",
-          "scene": null
-        },
-        {
-          "name": "pages/zuji/index",
-          "pathName": "pages/zuji/index",
-          "query": "",
-          "scene": null
-        },
-        {
-          "name": "pages/jiyin/index",
-          "pathName": "pages/jiyin/index",
-          "query": "",
-          "scene": null
-        }
       ]
     }
   }
