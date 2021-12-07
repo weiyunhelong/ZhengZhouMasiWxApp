@@ -128,6 +128,19 @@ Page({
       WxRequest.ShowAlert("验证码不正确");
     } else {
       //TODO 提交表单
+      var url=requestUrl+"/API/LoginApi/CompleteUserInfo?verifyCode="+code;
+      var params={
+        ID:getApp().globalData.WxUserId,
+        Avatar:that.data.tx,
+        NickName:that.data.nickName,
+        ReadName:that.data.name,
+        Sex:that.data.sex,
+        Asign:that.data.desc,
+        mobile:that.data.phone
+      };
+      WxRequest.PostRequest(url,params).then(res=>{
+        
+      })
       wx.setStorage({
         key: "loginobj",
         data: {

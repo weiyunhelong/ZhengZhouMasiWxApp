@@ -10,7 +10,8 @@ Page({
   data: {
     tabs: ["红色英雄天天学", "红色家书天天读", "红色故事天天听", "红色英雄天天读"],
     chktab: 0,
-    list: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+    list: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
+    pageindex:1,
   },
 
   /**
@@ -43,7 +44,14 @@ Page({
   onShow: function () {
 
   },
-
+  InitData() { //获取列表数据
+    var that = this;
+    var pageindex = that.data.pageindex;
+    var url = requestUrl + "/API/ReadRedTimeApi/GetReadRedTimeList?userId=" + getApp().globalData.WxUserId + "&page=" + pageindex + "&rows=10";
+    WxRequest.PostRequest(url,{}).then(res=>{
+      
+    })
+  },
   /**
    * 生命周期函数--监听页面隐藏
    */

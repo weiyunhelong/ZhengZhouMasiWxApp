@@ -94,6 +94,7 @@ App({
     userInfo: null, //用户信息
     openId: "", //openid
     userType: 1, //1：学生 2：教师
+    WxUserId:0,//userId
     requestUrl: "http://8.129.4.12:7022", //接口地址
     tabbar: [{
         pagePath: "pages/home/index",

@@ -9,6 +9,7 @@ Page({
    */
   data: {
     list: [1, 2, 3, 4],
+    pageindex: 1,
   },
 
   /**
@@ -35,7 +36,14 @@ Page({
   onShow: function () {
 
   },
-
+  InitData() { //获取列表数据
+    var that = this;
+    var pageindex = that.data.pageindex;
+    var url = requestUrl + "/API/FourHistoryApi/GetFourHistoryList?userId=" + getApp().globalData.WxUserId + "&page=" + pageindex + "&rows=10";
+    WxRequest.PostRequest(url,{}).then(res=>{
+      
+    })
+  },
   /**
    * 生命周期函数--监听页面隐藏
    */

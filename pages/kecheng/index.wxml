@@ -2,13 +2,13 @@
 <!--tab部分-->
 <view class="tabv">
   <view class="tabitem">
-    <view class="{{chktab==0?'tabtxth':'tabtxt'}}" bindtap="tapTab" data-tab="0">视频</view>
-    <view class="tabline" wx:if="{{chktab==0}}"></view>
+    <view class="{{chktab==1?'tabtxth':'tabtxt'}}" bindtap="tapTab" data-tab="1">视频</view>
+    <view class="tabline" wx:if="{{chktab==1}}"></view>
   </view>
   <view class="tabkong"></view>
   <view class="tabitem">
-    <view class="{{chktab==1?'tabtxth':'tabtxt'}}" bindtap="tapTab" data-tab="1">专栏</view>
-    <view class="tabline" wx:if="{{chktab==1}}"></view>
+    <view class="{{chktab==0?'tabtxth':'tabtxt'}}" bindtap="tapTab" data-tab="0">专栏</view>
+    <view class="tabline" wx:if="{{chktab==0}}"></view>
   </view>
 </view>
 

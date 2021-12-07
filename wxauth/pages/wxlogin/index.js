@@ -52,6 +52,12 @@ Page({
       WxRequest.ShowAlert("请输入您的密码");
     } else if (chkTab == 1) { //学生登录
       //TODO 学生登录
+      var url=requestUrl+"/API/LoginApi/Login?account="+account+"&password="+pwd;
+      var params={};
+      WxRequest.PostRequest(url,params).then(res=>{
+
+      })
+
       wx.setStorage({
         key: "loginObj",
         data: "account:" + account + ",pwd:" + pwd + ",type:1",
@@ -63,6 +69,13 @@ Page({
         }
       })
     } else if (chkTab == 2) { //教师登录
+
+      var url=requestUrl+"/API/LoginApi/Login?account="+account+"&password="+pwd;
+      var params={};
+      WxRequest.PostRequest(url,params).then(res=>{
+
+      })
+
       //TODO 学生登录
       wx.setStorage({
         key: "loginObj",

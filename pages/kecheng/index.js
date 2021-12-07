@@ -8,8 +8,9 @@ Page({
    * 页面的初始数据
    */
   data: {
-    chktab: 0, //0视频 1专栏
-    list: [1, 2, 3, 4]
+    chktab: 1, //1视频 0专栏
+    list: [1, 2, 3, 4],
+    pageindex: 1,
   },
 
   /**
@@ -67,6 +68,16 @@ Page({
         }
       }
     }
+  },
+  InitData() { //获取列表数据
+    var that = this;
+
+    var pageindex = that.data.pageindex;
+    var chktab = that.data.chktab; //0视频 1专栏
+    var url=requestUrl+"/API/ManuscriptApi/GetManuscriptList?page="+pageindex+"&rows=10"+"&type="+chktab;
+    WxRequest.PostRequest(url,{}).then(res=>{
+      
+    })
   },
   /**
    * 生命周期函数--监听页面隐藏

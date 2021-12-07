@@ -29,7 +29,7 @@ Page({
     })
   },
   tapMenu(e) { //跳转到菜单
-    var that=this;
+    var that = this;
     var url = "",
       menu = parseInt(e.currentTarget.dataset.menu);
     switch (menu) {
@@ -84,6 +84,7 @@ Page({
           IsLogin: true,
           userInfo: res.data
         })
+        that.InitUserInfo();
       },
       fail: function () {
         that.setData({
@@ -91,6 +92,13 @@ Page({
           userInfo: []
         })
       }
+    })
+  },
+  InitUserInfo() {//获取用户信息
+    var that = this;
+    var url = requestUrl + "/API/LoginApi/GetUserData?userId=" + getApp().globalData.WxUserId;
+    WxRequest.PostRequest(url,{}).then(res=>{
+
     })
   },
   setTabbarlist: function () { //获取菜单的列表数据
