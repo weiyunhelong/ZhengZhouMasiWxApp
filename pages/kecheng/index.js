@@ -9,7 +9,7 @@ Page({
    */
   data: {
     chktab: 1, //1视频 0专栏
-    list: [1, 2, 3, 4],
+    list: [],
     pageindex: 1,
   },
 
@@ -22,19 +22,21 @@ Page({
   tapTab(e) { //切换tab
     var that = this;
     that.setData({
-      chktab: e.currentTarget.dataset.tab
+      chktab: e.currentTarget.dataset.tab,
+      pageindex:1
     })
+    that.InitData();
   },
   goDetail(e) { //点击到详情
     var that = this;
     var chktab = that.data.chktab;
-    if (chktab == 0) { //视频
-      wx.navigateTo({
-        url: '../kecheng/video?id=' + e.currentTarget.dataset.id,
-      })
-    } else { //专栏
+    if (chktab == 0) { //专栏
       wx.navigateTo({
         url: '../kecheng/detail?id=' + e.currentTarget.dataset.id,
+      })
+    } else { //视频
+      wx.navigateTo({
+        url: '../kecheng/video?id=' + e.currentTarget.dataset.id,
       })
     }
   },
@@ -52,6 +54,8 @@ Page({
     var that = this;
     //获取菜单的列表数据
     that.setTabbarlist();
+
+    that.InitData();
   },
   setTabbarlist: function () { //获取菜单的列表数据
     var that = this;
@@ -74,9 +78,19 @@ Page({
 
     var pageindex = that.data.pageindex;
     var chktab = that.data.chktab; //0视频 1专栏
-    var url=requestUrl+"/API/ManuscriptApi/GetManuscriptList?page="+pageindex+"&rows=10"+"&type="+chktab;
+    var url=requestUrl+"/API/ManuscriptApi/GetManuscriptList?keywords=&userId="+getApp().globalData.WxUserId+"page="+pageindex+"&rows=10"+"&type="+chktab;
     WxRequest.PostRequest(url,{}).then(res=>{
-      
+      if(res.data.success){
+        if(pageindex==1){
+          that.setData({
+            list:res.data.data.datas
+          })
+        }else{
+          that.setData({
+            list:that.data.list.concat(res.data.data.datas) 
+          })
+        }
+      }
     })
   },
   /**

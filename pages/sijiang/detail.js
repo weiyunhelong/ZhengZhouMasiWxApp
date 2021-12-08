@@ -8,12 +8,13 @@ Page({
    * 页面的初始数据
    */
   data: {
-    IsZan: false, //是否点赞
-    IsCollect: false, //是否收藏
     chktab: 1, //1：文章赏析 2：学习交流
-    comment: "", //评论
-    dataobj: {},
+
     id: 0,
+    dataobj: {},
+    commentId: 0, //
+    placeholdertxt: "说点什么吧...",
+    comment: "", //评论
   },
 
   /**
@@ -25,37 +26,50 @@ Page({
       id: options.id
     })
   },
-  SaveVideoProgress(progress) { //保存播放记录
+  ViewVideoOpt(e) { //保存播放记录
     var that = this;
-    var url = requestUrl + "/API/FourHistoryApi/SavePlayhistory?userId=" + getApp().globalData.WxUserId + "&id=" + that.data.id + "&progress=" + progress;
+    var url = requestUrl + "/API/FourHistoryApi/SavePlayhistory?userId=" + getApp().globalData.WxUserId + "&id=" + that.data.id + "&progress=" + e.detail.currentTime;
 
-    WxRequest.PostRequest(url, {}).then(res => {
+    WxRequest.PostRequest(url, {}).then(res => {});
 
-    })
   },
   CollectOpt() { //收藏操作
     var that = this;
-    var IsCollect = that.data.IsCollect;
-    if (IsCollect) { //取消收藏
-      wx.showToast({
-        title: '已取消收藏',
-      })
+    var dataobj = that.data.dataobj;
+    var IsCollect = dataobj.IsCollect;
+    if (IsCollect) { //取消收藏  
+
       var url = requestUrl + "/API/FourHistoryApi/CancelCollect?userId=" + getApp().globalData.WxUserId + "&id=" + that.data.id;
       WxRequest.PostRequest(url, {}).then(res => {
+        if (res.data.success) {
+          dataobj.IsCollect = false;
+          that.setData({
+            dataobj: dataobj
+          })
+          wx.showToast({
+            title: '已取消收藏',
+          })
+        } else {
+          WxRequest.ShowAlert(res.data.msg);
+        }
+      })
+    } else { //添加收藏
 
-      })
-    } else {
-      wx.showToast({
-        title: '收藏成功',
-      })
       var url = requestUrl + "/API/FourHistoryApi/Collect?userId=" + getApp().globalData.WxUserId + "&id=" + that.data.id;
       WxRequest.PostRequest(url, {}).then(res => {
-
+        if (res.data.success) {
+          dataobj.IsCollect = true;
+          that.setData({
+            dataobj: dataobj
+          })
+          wx.showToast({
+            title: '收藏成功',
+          })
+        } else {
+          WxRequest.ShowAlert(res.data.msg);
+        }
       })
     }
-    that.setData({
-      IsCollect: !IsCollect
-    })
   },
   tapTab(e) { //切换tab
     var that = this;
@@ -73,23 +87,42 @@ Page({
     var comment = that.data.comment;
     if (comment.length > 0) {
       //TODO 请求接口进行发送
-      that.setData({
-        comment: ""
-      })
-      wx.showToast({
-        title: '评论成功',
-        duration: 2000
-      })
+      if (that.data.commentId == 0) {
+        that.PostComment(comment);
+      } else {
+        that.PostFeedback(comment, that.data.commentId);
+      }
     } else {
       WxRequest.ShowAlert("请输入您的评论");
     }
-  },  
+  },
+  tapFeedback(e) { //点击选中需要回复的评论
+    var that = this;
+    that.setData({
+      commentId: e.currentTarget.dataset.id,
+      placeholdertxt: "回复" + e.currentTarget.dataset.name + ":"
+    })
+  },
   PostComment(comment) { //提交评论
     var that = this;
     var url = requestUrl + "/API/FourHistoryApi/PostComment?userId=" + getApp().globalData.WxUserId + "&id=" + that.data.id + "&contents=" + comment;
 
     WxRequest.PostRequest(url, {}).then(res => {
 
+      if (res.data.success) {
+        wx.showToast({
+          title: '评论成功',
+          duration: 2000
+        })
+        that.setData({
+          comment: "",
+          commentId: 0,
+          placeholdertxt: "说点什么吧...",
+        })
+        that.InitData();
+      } else {
+        WxRequest.ShowAlert(res.data.msg);
+      }
     })
   },
   PostFeedback(comment, id) { //提交回复评论
@@ -97,7 +130,29 @@ Page({
     var url = requestUrl + "/API/FourHistoryApi/ReplyComment?userId=" + getApp().globalData.WxUserId + "&commentId=" + id + "&contents=" + comment;
 
     WxRequest.PostRequest(url, {}).then(res => {
-
+      if (res.data.success) {
+        wx.showToast({
+          title: '评论成功',
+          duration: 2000
+        })
+        that.setData({
+          commentId: 0,
+          placeholdertxt: "说点什么吧...",
+          comment: ""
+        })
+        that.InitData();
+      } else {
+        WxRequest.ShowAlert(res.data.msg);
+      }
+    })
+  },
+  ShowMoreComment(e) { //点击展开
+    var that = this;
+    var dataobj = that.data.dataobj;
+    var index = e.currentTarget.dataset.index;
+    dataobj.CommentList[index].IsOpen = true;
+    that.setData({
+      dataobj: dataobj
     })
   },
   ZanCommentOpt(e) { //点赞评论
@@ -105,16 +160,39 @@ Page({
     var index = e.currentTarget.dataset.index;
     var id = e.currentTarget.dataset.id;
     var status = e.currentTarget.dataset.status;
+    var dataobj = that.data.dataobj;
 
-    if (status == "false") {
+    if (status == false) {
       var url = requestUrl + "/API/FourHistoryApi/LikeComment?userId=" + getApp().globalData.WxUserId + "&commentId=" + id;
       WxRequest.PostRequest(url, {}).then(res => {
-
+        if (res.data.success) {
+          dataobj.CommentList[index].IsLike = true;
+          that.setData({
+            dataobj: dataobj
+          })
+          wx.showToast({
+            title: '点赞评论成功',
+            duration: 2000
+          })
+        } else {
+          WxRequest.ShowAlert(res.data.msg);
+        }
       })
-    }else{
+    } else {
       var url = requestUrl + "/API/FourHistoryApi/CancelLikeComment?userId=" + getApp().globalData.WxUserId + "&commentId=" + id;
       WxRequest.PostRequest(url, {}).then(res => {
-
+        if (res.data.success) {
+          dataobj.CommentList[index].IsLike = false;
+          that.setData({
+            dataobj: dataobj
+          })
+          wx.showToast({
+            title: '已取消评论点赞',
+            duration: 2000
+          })
+        } else {
+          WxRequest.ShowAlert(res.data.msg);
+        }
       })
     }
   },
@@ -129,13 +207,28 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
+    var that = this;
+    that.InitData();
   },
   InitData() { //获取详情
     var that = this;
     var url = requestUrl + "/API/FourHistoryApi/GetFourHistoryDetail?userId=" + getApp().globalData.WxUserId + "&id=" + that.data.id;
     WxRequest.PostRequest(url, {}).then(res => {
-
+      if (res.data.success) {
+        var dataobj = res.data.data;
+        dataobj.summarytime = "02:30";
+        dataobj.Progress = dataobj.Progress == "" ? '0:00' : dataobj.Progress;
+        that.setData({
+          dataobj: dataobj
+        })
+      } else {
+        WxRequest.ShowAlert("该记录已不存在");
+        setTimeout(() => {
+          wx.navigateBack({
+            delta: 1,
+          })
+        }, 2000);
+      }
     })
   },
   /**

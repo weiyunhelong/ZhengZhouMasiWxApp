@@ -37,6 +37,15 @@
   height: 281rpx;
   border-radius: 4rpx;
   margin-right: 52rpx;
+  position: relative;
+}
+
+.recentv .recentcover .playicon {
+  width: 39rpx;
+  height: 45rpx;
+  position: absolute;
+  top: 118rpx;
+  left: 100rpx;
 }
 
 .recentv .recentname {
@@ -71,7 +80,17 @@
   width: 26rpx;
   height: 24rpx;
   margin-right: 10rpx;
-  margin-left: 40rpx;
+  margin-left: 40rpx;    
+  margin-top: 4rpx;
+}
+
+.recentv .zanv {
+  width: 150rpx;
+  display: flex;
+}
+
+.recentv .xingnumr {
+  color: red;
 }
 
 .recentv .recentjinduv {

@@ -1,6 +1,6 @@
 <!--pages/shidu/index.wxml-->
 <!--最近学习-->
-<view class="recentv">
+<view class="recentv" wx:if="{{studyobj!=null}}">
   <view class="liev">
     <view class="lieicon"></view>
     <view class="lietxt">最近学习</view>
@@ -29,10 +29,10 @@
 
 <!--滚动tab-->
 <scroll-view scroll-x="true" class="tabv">
-  <block wx:for="{{tabs}}" wx:key="item" wx:for-index="x">
-    <view class="tabc" bindtap="tapTab" data-index="{{x}}">
-      <view class="{{x==chktab?'tabtxth':'tabtxt'}}">{{item}}</view>
-      <view class="tabline" wx:if="{{x==chktab}}"></view>
+  <block wx:for="{{tabs}}" wx:key="item">
+    <view class="tabc" bindtap="tapTab" data-index="{{item.Key}}">
+      <view class="{{item.Key==chktab?'tabtxth':'tabtxt'}}">{{item.Value}}</view>
+      <view class="tabline" wx:if="{{item.Key==chktab}}"></view>
     </view>
   </block>
   <view style="width: 20rpx;height: 0;display: inline-block;"></view>
@@ -41,14 +41,14 @@
 <!--分类下的数据-->
 <view class="datav">
   <block wx:for="{{list}}" wx:key="item" wx:for-index="x">
-    <view class="datac" data-id="{{x}}" bindtap="goDetail">
-      <image lazy-load="true" mode="aspectFill" src="https://zhengzhousizheng.oss-cn-beijing.aliyuncs.com/sidu/author2.png" class="datacover"></image>
+    <view class="datac" data-id="{{item.ID}}" bindtap="goDetail">
+      <image lazy-load="true" mode="aspectFill" src="{{item.Thumbnail}}" class="datacover"></image>
       <view class="datacv">
         <image src="/resources/comman/erji.png" class="iconerji"></image>
-        <view class="datanum">22.3万</view>
+        <view class="datanum">{{item.PlayNum}}</view>
       </view>
-      <view class="username">夏明翰</view>
-      <view class="tagtxt showOnehangTxt">为理想而献身</view>
+      <view class="username">{{item.Name}}</view>
+      <view class="tagtxt showOnehangTxt">{{item.Motto}}</view>
     </view>
   </block>
 </view>

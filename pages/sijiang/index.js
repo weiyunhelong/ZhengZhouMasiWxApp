@@ -8,7 +8,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-    list: [1, 2, 3, 4],
+    list: [],
     pageindex: 1,
   },
 
@@ -35,14 +35,33 @@ Page({
    */
   onShow: function () {
 
+    var that = this;
+    that.InitData();
   },
   InitData() { //获取列表数据
     var that = this;
     var pageindex = that.data.pageindex;
-    var url = requestUrl + "/API/FourHistoryApi/GetFourHistoryList?userId=" + getApp().globalData.WxUserId + "&page=" + pageindex + "&rows=10";
-    WxRequest.PostRequest(url,{}).then(res=>{
-      
+    var url = requestUrl + "/API/FourHistoryApi/GetFourHistoryList?keywords=&userId=" + getApp().globalData.WxUserId + "&page=" + pageindex + "&rows=10";
+    WxRequest.PostRequest(url, {}).then(res => {
+      if (res.data.success) {
+        if (pageindex == 1) {
+          that.setData({
+            list: res.data.data.datas
+          })
+        } else {
+          that.setData({
+            list: that.data.list.concat(res.data.data.datas)
+          })
+        }
+      }
     })
+  },
+  ShowMoreData() { //加载下一页
+    var that = this;
+    that.setData({
+      pageindex: 1 + that.data.pageindex
+    })
+    that.InitData();
   },
   /**
    * 生命周期函数--监听页面隐藏

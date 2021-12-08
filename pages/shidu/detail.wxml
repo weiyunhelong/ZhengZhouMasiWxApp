@@ -1,27 +1,36 @@
 <!--pages/shidu/detail.wxml-->
+<wxs module="filter" src="../../styles/filter.wxs" />
+
 <!--最近学习-->
 <view class="recentv">
   <view class="liev">
     <view class="lieicon"></view>
-    <view class="lietxt">壬尽美</view>
+    <view class="lietxt">{{dataobj.Name}}</view>
   </view>
   <view class="recentc">
-    <view class="recentcover" style="background: url(https://zhengzhousizheng.oss-cn-beijing.aliyuncs.com/sidu/author.png) no-repeat;background-size:cover;"></view>
+    <view class="recentcover" bindtap="{{IsPlay?'pauseOpt':'playOpt'}}" style="background: url(https://zhengzhousizheng.oss-cn-beijing.aliyuncs.com/sidu/author.png) no-repeat;background-size:cover;">
+      <image src="/resources/comman/playsm.png" class="playicon" wx:if="{{!IsPlay}}"></image>
+    </view>
     <view class="recentinfo">
-      <view class="recentname">壬尽美</view>
-      <view class="recentdesc">中国工厂党创始人之一</view>
+      <view class="recentname">{{dataobj.Name}}</view>
+      <view class="recentdesc">{{dataobj.Motto}}</view>
       <view class="recentoptv">
         <image src="/resources/comman/erji.png" class="erjiicon"></image>
-        <view class="erjinum">22.3万</view>
-
-        <image src="/resources/comman/xingw.png" class="xingicon"></image>
-        <view class="xingnum">收藏</view>
+        <view class="erjinum">{{dataobj.PlayNum}}</view>
+        <view class="zanv" wx:if="{{!dataobj.IsCollect}}" bindtap="CollectOpt">
+          <image src="/resources/comman/xingw.png" class="xingicon"></image>
+          <view class="xingnum">收藏</view>
+        </view>
+        <view class="zanv" wx:else bindtap="CollectOpt">
+          <image src="/resources/comman/xingh.png" class="xingicon"></image>
+          <view class="xingnumr">收藏</view>
+        </view>
       </view>
       <view class="recentjinduv">
         <view class="progressv">
-          <progress percent="80" border-radius="9rpx" backgroundColor="rgba(255,255,255,0.2)" color="#ffffff" active stroke-width="18rpx" />
+          <progress percent="{{filter.time2Percent(dataobj.Progress,dataobj.summarytime)}}" border-radius="9rpx" backgroundColor="rgba(255,255,255,0.2)" color="#ffffff" active stroke-width="18rpx" />
         </view>
-        <view class="shichang">01:55/02:33</view>
+        <view class="shichang">{{dataobj.Progress}}/{{dataobj.summarytime}}</view>
       </view>
     </view>
   </view>
@@ -45,8 +54,12 @@
 <block wx:if="{{chktab==1}}">
   <!--内容简介-->
   <view class="contentv">
-    <view class="desc">《红色故事会》内容介绍：中国共产党诞生以来，在领导人民进行革命，建设和改革的伟大事业中，涌现出一批又一批优秀的共产党人—— 假扮夫妻领导广州群众起义的周文雍和陈铁军，被叛徒出卖后慷慨赴死，将刑场上的枪声，作为他们结婚的礼炮。 大庆石油工人王进喜，怀揣着亿万中国人建成大油田的梦想，用血肉之躯搅拌水泥，压住了险恶的井喷，用生命的伟力战胜了大自然的肆虐。</view>
-    <image mode="widthFix" style="width: 100%;min-height: 0rpx;display: block;margin-top: 37rpx;" src="https://zhengzhousizheng.oss-cn-beijing.aliyuncs.com/chuangke/3.png"></image>
+    <view class="desc" style="margin-bottom:37rpx;">
+      <h5parser html="{{dataobj.Introduce}}" />
+    </view>
+    <block wx:for="{{filter.string2Arry(dataobj.ImgList)}}" wx:key="item">
+      <image mode="widthFix" style="width: 100%;min-height: 0rpx;" src="{{item}}"></image>
+    </block>
   </view>
 </block>
 
@@ -54,66 +67,47 @@
 <block wx:if="{{chktab==2}}">
 
   <!--评论部分-->
-  <view class="commentv">
-    <view class="commentuv">
-      <view class="commentul">
-        <image class="commentutx" src="https://zhengzhousizheng.oss-cn-beijing.aliyuncs.com/my/mydefaulttx.png"></image>
-        <view>
-          <view class="commentuname">无敌钳子抓抓抓</view>
-          <view class="commentudate">2021-11-10 15:15</view>
+  <block wx:for="{{dataobj.CommentList}}" wx:key="item" wx:for-index="x">
+    <view class="commentv">
+      <view class="commentuv">
+        <view class="commentul">
+          <image class="commentutx" src="{{item.Avatar}}"></image>
+          <view style="width: 300rpx;">
+            <view class="commentuname">{{item.NickName}}</view>
+            <view class="commentudate">{{item.CreateTime}}</view>
+          </view>
+        </view>
+        <view class="commentur" bindtap="ZanCommentOpt" data-index="{{x}}" data-status="{{item.IsLike}}" data-id="{{item.CommentId}}">
+          <image src="{{item.IsLike?'/resources/comman/zanh.png':'/resources/comman/zan.png'}}" class="commentuzanicon"></image>
+          <view class="{{item.IsLike?'commentuzannumr':'commentuzannum'}}">赞{{LikesNum}}</view>
+          <view class="commentuhuifu">回复{{item.ReplyNum}}</view>
         </view>
       </view>
-      <view class="commentur">
-        <image src="/resources/comman/zanh.png" class="commentuzanicon"></image>
-        <view class="commentuzannumr">赞853</view>
-        <view class="commentuhuifu">回复98</view>
-      </view>
-    </view>
-    <view class="commentdesc">王瑞俊出身于一个佃农家庭。他才思敏捷,勤奋好学。1918年，他考入山东省立第一师范学校，前往济南求学。"五四运动"爆发后，王瑞俊被推举为山东学生联合会负责人之一，积极组织学生进行各种宣传和游行示威活动。他还以山东省学联代表的...</view>
-    <view class="commentreplayv">
-      <view class="commentreplayc">
-        <text class="commentreplayer">hoh知道</text>
-        <text class="commentreplaytxt">:王瑞俊出身于一个佃农家庭。他才思敏捷,勤奋好学。1918年，他考入山东省立第一师范学校。</text>
-      </view>
-      <view class="commentreplayc">
-        <text class="commentreplayer">我们说好很好</text>
-        <text class="commentreplaytxt">:王瑞俊出身于一个佃农家庭。他才思敏捷,勤奋好学。</text>
-      </view>
-      <view class="commentreplayc">
-        <text class="commentreplayer">共6条回复></text>
-      </view>
-    </view>
-  </view>
-  <view class="commentv">
-    <view class="commentuv">
-      <view class="commentul">
-        <image class="commentutx" src="https://zhengzhousizheng.oss-cn-beijing.aliyuncs.com/my/mydefaulttx.png"></image>
-        <view>
-          <view class="commentuname">无敌钳子抓抓抓</view>
-          <view class="commentudate">2021-11-10 15:15</view>
+      <view class="commentdesc"  bindtap="tapFeedback" data-id="{{item.CommentId}}" data-name="{{item.NickName}}">{{item.Contents}}</view>
+
+      <block wx:if="{{item.ReplyCommentList.length>0}}">
+        <view class="commentreplayv">
+          <block wx:for="{{item.ReplyCommentList}}" wx:key="ritem" wx:for-item="ritem"  wx:for-index="rx">
+            <view class="commentreplayc" wx:if="{{item.IsOpen?rx<item.ReplyCommentList.length:rx<3}}">
+              <text class="commentreplayer">{{ritem.NickName}}</text>
+              <text class="commentreplayor" wx:if="{{ritem.IsAuther}}">作者</text>
+              <text class=" commentreplaytxt">:{{ritem.Contents}}</text>
+            </view>
+          </block>
+          <view class="commentreplayc" wx:if="{{item.ReplyCommentList.length>3&&!item.IsOpen}}" catchtap="ShowMoreComment"  data-index="{{x}}">
+            <text class="commentreplayer">共{{item.ReplyCommentList.length}}条回复></text>
+          </view>
         </view>
-      </view>
-      <view class="commentur">
-        <image src="/resources/comman/zan.png" class="commentuzanicon"></image>
-        <view class="commentuzannum">赞853</view>
-        <view class="commentuhuifu">回复98</view>
-      </view>
+      </block>
     </view>
-    <view class="commentdesc">王瑞俊出身于一个佃农家庭。他才思敏捷,勤奋好学。1918年，他考入山东省立第一师范学校，前往济南求学。"五四运动"爆发后，王瑞俊被推举为山东学生联合会负责人之一，积极组织学生进行各种宣传和游行示威活动。他还以山东省学联代表的...</view>
-    <view class="commentreplayv">
-      <view class="commentreplayc">
-        <text class="commentreplayer">hoh知道</text>
-        <text class="commentreplayor">作者</text>
-        <text class="commentreplaytxt">:王瑞俊出身于一个佃农家庭。他才思敏捷,勤奋好学。1918年，他考入山东省立第一师范学校。</text>
-      </view>
-    </view>
-  </view>
+  </block>
+  <view class="nodatav" wx:if="{{dataobj.CommentList.length==0}}">暂无记录~</view>
 
   <!--底部按钮部分-->
   <view class="btmvv"></view>
   <view class="btmv">
     <view class="textv">
-      <input class="commenttxt" placeholder-class="commenttip" placeholder="说点什么吧..." type="text" value="{{comment}}" bindinput="getComment" />
+      <input class="commenttxt" placeholder-class="commenttip" placeholder="{{placeholdertxt}}" type="text" value="{{comment}}" bindinput="getComment" />
     </view>
     <view class="sendbtn" bindtap="sendMsgOpt">
       <image src="/resources/comman/send.png" class="sendicon"></image>

@@ -3,6 +3,7 @@
   "navigationBarTextStyle": "white",
   "navigationBarTitleText": "四史天天讲",
   "usingComponents": {
-    "loadding": "../../../components/loadding/index"
+    "loadding": "../../components/loadding/index",
+    "h5parser": "../../h5parser/parser"
   }
 }

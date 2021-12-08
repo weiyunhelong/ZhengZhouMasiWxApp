@@ -377,13 +377,13 @@ function Str2Date(date) { //date格式为2020-09-06
 
 //得到一周的日期范围
 function getWeekDays(year, month, tian) {
-  var now=new Date();
+  var now = new Date();
   var d = new Date(year + "/" + month + "/" + tian),
     day = d.getDay(),
     days = [];
 
-  for (var i = day; i > 0; i--) {  
-    var dt=new Date(d.getTime()-1000*60*60*24*i); 
+  for (var i = day; i > 0; i--) {
+    var dt = new Date(d.getTime() - 1000 * 60 * 60 * 24 * i);
     var nian = new Date(dt).getFullYear();
     var yue = new Date(dt).getMonth() + 1;
     var ri = new Date(dt).getDate();
@@ -391,12 +391,12 @@ function getWeekDays(year, month, tian) {
       year: nian,
       month: yue < 10 ? '0' + yue : yue,
       day: ri < 10 ? '0' + ri : ri,
-      choosed:false
+      choosed: false
     };
     days.push(dtobj);
   }
   for (var j = 0; j < 7 - day; j++) {
-    var dt=new Date(d.getTime()+1000*60*60*24*j); 
+    var dt = new Date(d.getTime() + 1000 * 60 * 60 * 24 * j);
     var nian = new Date(dt).getFullYear();
     var yue = new Date(dt).getMonth() + 1;
     var ri = new Date(dt).getDate();
@@ -404,11 +404,26 @@ function getWeekDays(year, month, tian) {
       year: nian,
       month: yue < 10 ? '0' + yue : yue,
       day: ri < 10 ? '0' + ri : ri,
-      choosed:nian==now.getFullYear()&&now.getMonth()+1==yue&&ri==now.getDate()
+      choosed: nian == now.getFullYear() && now.getMonth() + 1 == yue && ri == now.getDate()
     };
     days.push(dtobj);
   }
   return days;
+}
+
+//计算秒数
+function AddSeconds(currtime, secnum) {
+  var currmin = parseInt(currtime.split(':')[0]);
+  var currsec = parseInt(currtime.split(':')[1]);
+  if(currsec+secnum>60){
+    currmin=currmin+1;
+    currsec=(currsec+secnum)%60;
+  }else{
+    currsec=currsec+secnum;
+  }
+  currmin=currmin<10?'0'+currmin:currmin;
+  currsec=currsec<10?'0'+currsec:currsec;
+  return currmin+":"+currsec;
 }
 
 module.exports = {
@@ -445,4 +460,5 @@ module.exports = {
   Day2Str: Day2Str, //数字日期转日期格式
   Str2Date: Str2Date, //字符串日期转日期格式
   getWeekDays: getWeekDays, //获取一周的时间范围
+  AddSeconds:AddSeconds,
 }

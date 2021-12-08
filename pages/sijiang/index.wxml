@@ -1,5 +1,5 @@
 <!--pages/sijiang/index.wxml-->
-<view class="liev">
+<!-- <view class="liev">
   <view class="lieicon"></view>
   <view class="lietxt">经典必看</view>
 </view>
@@ -28,25 +28,25 @@
       <view class="smdataname">工厂党的早期组织成立</view>
     </view>
   </block>
-</view>
+</view> -->
 
 <view class="liev">
   <view class="lieicon"></view>
   <view class="lietxt">推荐学习</view>
 </view>
 
-<view class="listv">
+<scroll-view scroll-y="true" class="listv" bindscrolltolower="ShowMoreData">
   <block wx:for="{{list}}" wx:key="item">
-    <view class="smdatav" bindtap="goDetail" data-id="0">
-      <image mode="aspectFill" class="smdatacover" src="https://zhengzhousizheng.oss-cn-beijing.aliyuncs.com/sijiang/cover1.png"></image>
+    <view class="smdatav" bindtap="goDetail" data-id="{{item.ID}}">
+      <image mode="aspectFill" class="smdatacover" src="{{item.Thumbnail}}"></image>
       <view class="smdatanumv">
         <view class="smdatanumvl">
           <image class="smdataicon" src="/resources/comman/playicong.png"></image>
-          <view class="smdatanum">22.3万</view>
+          <view class="smdatanum">{{item.PlayNum}}</view>
         </view>
-        <view class="smdatanumvr">1:52</view>
+        <view class="smdatanumvr">{{item.PlayNum}}</view>
       </view>
-      <view class="smdataname">工厂党的早期组织成立</view>
+      <view class="smdataname">{{item.Title}}</view>
     </view>
   </block>
-</view>
+</scroll-view>

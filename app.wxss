@@ -127,3 +127,12 @@ scroll-view {
   line-clamp: 4;
   -webkit-box-orient: vertical;
 }
+
+.nodatav {
+  width: 100%;
+  height: 50vh;
+  line-height: 50vh;
+  text-align: center;
+  font-size: 32rpx;
+  color: #999;
+}

@@ -8,10 +8,11 @@ Page({
    * 页面的初始数据
    */
   data: {
-    tabs: ["红色英雄天天学", "红色家书天天读", "红色故事天天听", "红色英雄天天读"],
+    tabs: [],
     chktab: 0,
-    list: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
-    pageindex:1,
+    list: [],
+    pageindex: 1,
+    studyobj:{},//最近学习
   },
 
   /**
@@ -19,12 +20,51 @@ Page({
    */
   onLoad: function (options) {
 
+    var that = this;
+    //获取Tabs数据
+    that.InitTypeData();
+  },
+  InitTypeData() { //获取Tabs数据
+    var that = this;
+    var url = requestUrl + "/API/CategoryApi/GetReadRedTypeList";
+    WxRequest.PostRequest(url, {}).then(res => {
+      if (res.data.success) {
+        that.setData({
+          tabs: res.data.data,
+          chktab: res.data.data[0].Key,
+        })
+        //获取列表数据
+        that.InitData();
+      }
+    })
+  }, 
+  InitData() { //获取列表数据
+    var that = this;
+    var pageindex = that.data.pageindex;
+    var url = requestUrl + "/API/ReadRedTimeApi/GetReadRedTimeList?keywords=&userId=" + getApp().globalData.WxUserId + "&page=" + pageindex + "&rows=10&type=" + that.data.chktab;
+    WxRequest.PostRequest(url, {}).then(res => {
+      if (res.data.success) {
+        if (pageindex == 1) {
+          that.setData({
+            studyobj:res.data.data.RecentLearning,
+            list: res.data.data.datas
+          })
+        } else {
+          that.setData({
+            list: that.data.list.concat(res.data.data.datas)
+          })
+        }
+      }
+    })
   },
   tapTab(e) { //切换tab
     var that = this;
     that.setData({
-      chktab: parseInt(e.currentTarget.dataset.index)
+      chktab: e.currentTarget.dataset.index,
+      pageindex: 1
     })
+    //获取列表数据
+    that.InitData();
   },
   goDetail(e) { //跳转到详情
     wx.navigateTo({
@@ -44,14 +84,7 @@ Page({
   onShow: function () {
 
   },
-  InitData() { //获取列表数据
-    var that = this;
-    var pageindex = that.data.pageindex;
-    var url = requestUrl + "/API/ReadRedTimeApi/GetReadRedTimeList?userId=" + getApp().globalData.WxUserId + "&page=" + pageindex + "&rows=10";
-    WxRequest.PostRequest(url,{}).then(res=>{
-      
-    })
-  },
+ 
   /**
    * 生命周期函数--监听页面隐藏
    */

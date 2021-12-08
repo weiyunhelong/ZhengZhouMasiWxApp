@@ -61,6 +61,7 @@
   display: flex;
   justify-content: center;
   background: #f2f2f2;
+  padding-top: 20rpx;
 }
 
 .textv {
@@ -112,8 +113,7 @@
 
 .commentuv .commentul {
   display: flex;
-  width: 300rpx;
-  flex-wrap: wrap;
+  width: 450rpx;
 }
 
 .commentuv .commentul .commentutx {
@@ -166,7 +166,7 @@
 
 .commentv .commentdesc {
   width: 605rpx;
-  height: 195rpx;
+  height: auto;
   font-size: 26rpx;
   color: #333333;
   margin-left: 95rpx;

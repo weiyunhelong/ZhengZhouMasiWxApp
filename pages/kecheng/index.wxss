@@ -136,6 +136,10 @@
   margin-top: 40rpx;
 }
 
+.optc .optnumh {
+  color: red;
+}
+
 .opticon1 {
   width: 23rpx;
   height: 21rpx;

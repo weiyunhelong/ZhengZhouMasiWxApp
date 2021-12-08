@@ -44,6 +44,8 @@
 .listv {
   display: flex;
   flex-wrap: wrap;
+  height: 100vh;
+  padding-bottom: 32rpx;
 }
 
 .smdatav {
@@ -51,6 +53,7 @@
   height: auto;
   margin-bottom: 30rpx;
   margin-left: 20rpx;
+  display: inline-block;
 }
 
 .smdatacover {
