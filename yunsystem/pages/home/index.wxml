@@ -1,33 +1,58 @@
 <!--yunsystem/pages/home/index.wxml-->
-<view class="bodyv">
-  <view class="block1" bindtap="goMenu" data-menu="1">
-    <image class="menuicon" src="https://zhengzhousizheng.oss-cn-beijing.aliyuncs.com/yunsystem/menu1.png"></image>
-  </view>
-  <view class="block2" bindtap="goMenu" data-menu="2">
-    <image class="menuicon" src="https://zhengzhousizheng.oss-cn-beijing.aliyuncs.com/yunsystem/menu2.png"></image>
-  </view>
-  <view class="block3" bindtap="goMenu" data-menu="3">
-    <image class="menuicon" src="https://zhengzhousizheng.oss-cn-beijing.aliyuncs.com/yunsystem/menu3.png"></image>
-  </view>
-  <view class="block4" bindtap="goMenu" data-menu="4">
-    <image class="menuicon" src="https://zhengzhousizheng.oss-cn-beijing.aliyuncs.com/yunsystem/menu4.png"></image>
-  </view>
-  <view class="block5" bindtap="goMenu" data-menu="5">
-    <image class="menuicon" src="https://zhengzhousizheng.oss-cn-beijing.aliyuncs.com/yunsystem/menu5.png"></image>
+<view class="topbgv">
+  <view style="width: 100vw;height:{{navigationBarHeight}}px"></view>
+  <view class="backcv" bindtap="goBack">
+    <image src="/resources/comman/backicon.png" class="backicon"></image>
   </view>
 </view>
 
-<!--底部tabbar-->
+<view class="menuv">
+  <view class="menuitem" bindtap="goMenu" data-menu="1">
+    <view class="iconv">
+      <image class="icon" src="https://zhengzhousizheng.oss-cn-beijing.aliyuncs.com/yunxitong/icon1.png"></image>
+    </view>
+    <view class="menutxt">新中国新郑州</view>
+    <image class="ziimg" src="https://zhengzhousizheng.oss-cn-beijing.aliyuncs.com/yunxitong/zi1.png"></image>
+  </view>
+  <view class="menuitem" bindtap="goMenu" data-menu="2">
+    <view class="iconv">
+      <image class="icon" src="https://zhengzhousizheng.oss-cn-beijing.aliyuncs.com/yunxitong/icon2.png"></image>
+    </view>
+    <view class="menutxt">站起来</view>
+    <image class="ziimg" src="https://zhengzhousizheng.oss-cn-beijing.aliyuncs.com/yunxitong/zi2.png"></image>
+  </view>
+  <view class="menuitem" bindtap="goMenu" data-menu="3">
+    <view class="iconv">
+      <image class="icon" src="https://zhengzhousizheng.oss-cn-beijing.aliyuncs.com/yunxitong/icon3.png"></image>
+    </view>
+    <view class="menutxt">红色河南</view>
+    <image class="ziimg" src="https://zhengzhousizheng.oss-cn-beijing.aliyuncs.com/yunxitong/zi3.png"></image>
+  </view>
+  <view class="menuitem" bindtap="goMenu" data-menu="4">
+    <view class="iconv">
+      <image class="icon" src="https://zhengzhousizheng.oss-cn-beijing.aliyuncs.com/yunxitong/icon4.png"></image>
+    </view>
+    <view class="menutxt">强起来</view>
+    <image class="ziimg" src="https://zhengzhousizheng.oss-cn-beijing.aliyuncs.com/yunxitong/zi4.png"></image>
+  </view>
+  <view class="menuitem" bindtap="goMenu" data-menu="5">
+    <view class="iconv">
+      <image class="icon" src="https://zhengzhousizheng.oss-cn-beijing.aliyuncs.com/yunxitong/icon5.png"></image>
+    </view>
+    <view class="menutxt">富起来</view>
+    <image class="ziimg" src="https://zhengzhousizheng.oss-cn-beijing.aliyuncs.com/yunxitong/zi5.png"></image>
+  </view>
+</view>
+<view class="btmbgv"></view>
+
+<view class="tabbarv" style="margin-top: -420rpx;"></view>
 <view class="tabbar">
-  <view class="tabbarc">
-    <image class="tabbaricon1" src="https://zhengzhousizheng.oss-cn-beijing.aliyuncs.com/yunsystem/homeh.png"></image>
     <view class="tabbartxth">首页</view>
-  </view>
-  <view class="tabbarc" bindtap="ScanOpt">
-    <image class="scan" src="https://zhengzhousizheng.oss-cn-beijing.aliyuncs.com/yunsystem/scan.png"></image>
-  </view>
-  <view class="tabbarc" bindtap="goRecord">
-    <image class="tabbaricon2" src="https://zhengzhousizheng.oss-cn-beijing.aliyuncs.com/yunsystem/record.png"></image>
-    <view class="tabbartxt">浏览体验记录</view>
-  </view>
+    <view class="tabbarscanev" bindtap="ScanOpt">
+      <image src="./lujing.png" class="lujingicon"></image>
+      <view class="scanev">
+        <image src="./scan.png" class="scanicon"></image>
+      </view>
+    </view>
+    <view class="tabbartxt" bindtap="goRecord">记录</view>
 </view>

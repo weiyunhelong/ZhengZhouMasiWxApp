@@ -13,45 +13,9 @@
     "miniprogram": {
       "list": [
         {
-          "name": "pages/shidu/index",
-          "pathName": "pages/shidu/index",
+          "name": "yunsystem/pages/home/index",
+          "pathName": "yunsystem/pages/home/index",
           "query": "",
-          "scene": null
-        },
-        {
-          "name": "pages/shidu/detail",
-          "pathName": "pages/shidu/detail",
-          "query": "id=91",
-          "scene": null
-        },
-        {
-          "name": "pages/sijiang/index",
-          "pathName": "pages/sijiang/index",
-          "query": "",
-          "scene": null
-        },
-        {
-          "name": "pages/sijiang/detail",
-          "pathName": "pages/sijiang/detail",
-          "query": "id=47",
-          "scene": null
-        },
-        {
-          "name": "pages/kecheng/index",
-          "pathName": "pages/kecheng/index",
-          "query": "",
-          "scene": null
-        },
-        {
-          "name": "pages/kecheng/video",
-          "pathName": "pages/kecheng/video",
-          "query": "id=118",
-          "scene": null
-        },
-        {
-          "name": "pages/kecheng/detail",
-          "pathName": "pages/kecheng/detail",
-          "query": "id=119",
           "scene": null
         }
       ]
