@@ -1,84 +1,119 @@
 /* yunsystem/pages/record/index.wxss */
+page {
+  background: #f5f5f5;
+}
 
 .bodyv {
   width: 100vw;
-  height: calc(100vh - 140rpx);
-  background: #f2f2f2;
+  height: calc(100vh - 220rpx);
+  margin-top:20rpx;
+  background:#fff;
+  border-top-left-radius: 40rpx;
+  border-top-right-radius: 40rpx;
 }
-
-.date {
-  height: 70rpx;
-  line-height: 70rpx;
-  padding: 0 20rpx;
-  font-size: 28rpx;
-  font-weight: bold;
-  color: #333333;
+.datev{
+  display: flex;
+  justify-content: space-between;
+  width: 100vw;
+  height: 80rpx;
+  line-height: 80rpx;
+  padding-bottom: 16rpx;
 }
-.recordv{
+.datetxt {
+  width: 300rpx;
+  height: 80rpx;
+  line-height: 80rpx;
+  padding-left: 32rpx;
+  font-size: 32rpx;
+  font-weight: 500;
+  color: #262626;
+}
+.yun{
+  width: 480rpx;
+  height: 80rpx;
+}
+.recordv {
   display: flex;
   flex-wrap: wrap;
-  padding-left:20rpx;
-}
-.recordc{
-  margin-right: 20rpx;
-  width: 223rpx;
-  margin-bottom: 32rpx;
-}
-.recordcover{
-  width: 223rpx;
-  height: 223rpx;
-  border-radius: 4rpx;
-}
-.name{  
-font-size: 24rpx;
-color: #124361;
+  padding-left: 32rpx;
 }
 
+.recordc {
+  margin-right: 26rpx;
+  width: 330rpx;
+  margin-bottom: 40rpx;
+}
+
+.recordcover {
+  width: 330rpx;
+  height: 170rpx;
+  border-radius:20rpx;
+}
+
+.name {
+  font-size: 32rpx;
+  color: #262626;
+}
+
+/*底部tabbar*/
 .tabbar {
-  width: 100vw;
-  height: 140rpx;
   display: flex;
   justify-content: space-around;
-  position: relative;
   background: #fff;
+  width: 100vw;
+  height: 70px;
+  padding-bottom: constant(safe-area-inset-bottom);
+  padding-bottom: env(safe-area-inset-bottom);
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  z-index: 999;
 }
 
-.tabbarc {
-  width: 160rpx;
-  height: 140rpx;
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  align-items: center;
+.lujingicon {
+  width: 164rpx;
+  height: 30rpx;
 }
 
-.tabbaricon1 {
-  width: 38rpx;
-  height: 42rpx;
-  margin-bottom: 10rpx;
+.scanev {
+  width: 104rpx;
+  height: 104rpx;
+  background: linear-gradient(135deg, #FA7B74 0%, #F24540 100%);
+  box-shadow: 0rpx 2rpx 8rpx 0rpx rgba(242, 69, 64, 0.5);
+  text-align: center;
+  line-height: 104rpx;
+  border-radius: 50%;
+  margin: 0 auto;
 }
 
-.tabbaricon2 {
-  width: 43rpx;
-  height: 42rpx;
-  margin-bottom: 10rpx;
-}
-
-.tabbartxth {
-  font-size: 24rpx;
-  font-weight: 500;
-  color: #124361;
+.scanicon {
+  width: 44rpx;
+  height: 44rpx;
+  margin-top: 30rpx;
 }
 
 .tabbartxt {
-  font-size: 24rpx;
-  font-weight: 500;
-  color: #999;
+  width: 164rpx;
+  text-align: center;
+  line-height: 70px;
+  height: 70px;
+  font-size: 32rpx;
+  color: #999999;
 }
 
-.scan {
-  width: 150rpx;
-  height: 150rpx;
-  position: absolute;
-  top: -73rpx;
+.tabbartxth {
+  width: 164rpx;
+  text-align: center;
+  line-height: 70px;
+  height: 70px;
+  color: #262626;
+  font-weight: bold;
+  font-size: 34rpx;
+}
+
+.tabbarscanev {
+  position: relative;
+  width: 164rpx;
+  text-align: center;
+  top: -35rpx;
 }

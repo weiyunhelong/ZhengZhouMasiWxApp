@@ -1,6 +1,6 @@
 {
-  "navigationBarBackgroundColor": "#124361",
-  "navigationBarTextStyle": "white",
+  "navigationBarBackgroundColor": "#f5f5f5",
+  "navigationBarTextStyle": "black",
   "navigationBarTitleText": "浏览体验记录",
   "usingComponents": {
     "loadding": "../../../components/loadding/index"

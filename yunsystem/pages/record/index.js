@@ -17,6 +17,11 @@ Page({
   onLoad: function (options) {
 
   },
+  goDetail(e){//跳转到详情
+    wx.navigateTo({
+      url: '../record/detail?id='+e.currentTarget.dataset.id,
+    })
+  },
   ScanOpt() { //扫码操作
     var that = this;
     wx.scanCode({

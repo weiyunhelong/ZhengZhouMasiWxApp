@@ -1,25 +1,20 @@
-<!--pages/jiyin/list.wxml-->
+<!--yunsystem/pages/zhanqilai/index.wxml-->
+<view class="topbgv">
+  <view style="width: 100vw;height:{{navigationBarHeight}}px"></view>
+  <view class="backcv" bindtap="goBack">
+    <image src="/resources/comman/backicon.png" class="backicon"></image>
+  </view>
+  <image src="../../resources/qi.png" class="qiicon"></image>
+  <view class="pagetitle">红色河南</view>
+</view>
+
 <block wx:for="{{list}}" wx:key="item" wx:for-index="x">
-  <view class="block">
-    <view class="liev"></view>
-    <image class="cover" src="https://zhengzhousizheng.oss-cn-beijing.aliyuncs.com/jiyinred/8.png"></image>
-    <view class="infov">
-      <view class="name showTwohangTxt">爱国主义教育基地纪念馆爱国主义教育基地纪念馆</view>
-      <view class="optv">
-        <view class="optcv">
-          <image src="/resources/comman/view.png" class="icon1"></image>
-          <view class="optnum">3350</view>
-        </view>
-        <view class="optcv">
-          <image src="{{x==2?'/resources/comman/zanh.png':'/resources/comman/zan.png'}}" class="icon2"></image>
-          <view class="{{x==2?'optnumh':'optnum'}}">3350</view>
-        </view>
-        <view class="optcv">
-          <image src="{{x==2?'/resources/comman/xingh.png':'/resources/comman/xing.png'}}" class="icon3"></image>
-          <view class="{{x==2?'optnumh':'optnum'}}">3350</view>
-        </view>
-      </view>
+  <view class="datav" bindtap="goDetail" data-id="{{item.ID}}">
+    <image src="../../resources/qi.png" mode="aspectFill" class="cover" lazy-load="true"></image>
+    <view class="datac">
+      <view class="name showTwohangTxt">主义必胜革命纪念馆和思政教育主义必胜革命纪...</view>
+      <view class="numbertxt">1.1w浏览 · 23点赞 · 1.4k收藏</view>
     </view>
   </view>
 </block>
-<view style="width: 100vw;height: 32rpx;"></view>
+<view class="nomoredata">没有更多了</view>

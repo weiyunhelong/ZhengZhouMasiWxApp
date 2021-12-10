@@ -49,9 +49,9 @@
 <view class="tabbar">
     <view class="tabbartxth">首页</view>
     <view class="tabbarscanev" bindtap="ScanOpt">
-      <image src="./lujing.png" class="lujingicon"></image>
+      <image src="../../resources/lujing.png" class="lujingicon"></image>
       <view class="scanev">
-        <image src="./scan.png" class="scanicon"></image>
+        <image src="../../resources/scan.png" class="scanicon"></image>
       </view>
     </view>
     <view class="tabbartxt" bindtap="goRecord">记录</view>

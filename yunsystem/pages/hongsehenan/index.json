@@ -1,7 +1,5 @@
 {
-  "navigationBarBackgroundColor": "#124361",
-  "navigationBarTextStyle": "white",
-  "navigationBarTitleText": "红色河南",
+  "navigationStyle": "custom",
   "usingComponents": {
     "loadding": "../../../components/loadding/index"
   }

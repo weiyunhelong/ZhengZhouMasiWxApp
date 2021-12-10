@@ -1,1 +1,83 @@
 /* yunsystem/pages/zhanqilai/index.wxss */
+page {
+  background: #fff;
+}
+
+.topbgv {
+  width: 100vw;
+  height: 180rpx;
+  background: #F24540;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.backcv {
+  width: 120rpx;
+  height: 60rpx;
+  padding-left: 35rpx;
+  margin-top: 10rpx;
+}
+
+.backicon {
+  width: 20rpx;
+  height: 34rpx;
+  margin-top: 13rpx;
+}
+
+.qiicon {
+  width: 138rpx;
+  height: 118rpx;
+  position: relative;
+  top: -30rpx;
+}
+
+.pagetitle {
+  font-size: 34rpx;
+  color: #FFFFFF;
+  width: 210rpx;
+  text-align: center;
+  height: 60rpx;
+  line-height: 60rpx;
+  margin-top: 10rpx;
+  margin-left: -20rpx;
+}
+
+.datav {
+  margin: 32rpx 32rpx 0;
+  display: flex;
+  border-bottom: 1rpx solid #eee;
+}
+
+.cover {
+  width: 288rpx;
+  height: 144rpx;
+  border-radius: 20rpx;
+  margin-bottom: 32rpx;
+  margin-right: 24rpx;
+}
+.datac{
+  width: 375rpx;
+}
+.name {
+  height: 108rpx;
+  font-size: 34rpx;
+  color: #262626;
+}
+
+.numbertxt {
+  font-size: 26rpx;
+  color: #999999;
+}
+
+.noborder{
+  border-bottom: none;
+}
+.nomoredata{
+  width: 100vw;
+  height: 88rpx;
+  background: #FFFFFF;
+  font-size: 26rpx;
+  color: #999999;
+  line-height: 88rpx;
+  text-align: center;  
+}

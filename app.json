@@ -49,7 +49,9 @@
       "pages/qiangqilai/index",
       "pages/fuqilai/index",
       "pages/hongsehenan/index",
-      "pages/xinzhengzhou/index"
+      "pages/xinzhengzhou/index",
+      "pages/info/index",
+      "pages/webview/index"
     ]
   }],
   "window": {

@@ -15,18 +15,23 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    var that=this;
+    var that = this;
     wx.getSystemInfo({
       success: (res) => {
         that.setData({
-          navigationBarHeight:res.statusBarHeight
-        })        
+          navigationBarHeight: res.statusBarHeight
+        })
       },
     })
   },
-  goBack(){//点击返回
+  goBack() { //点击返回
     wx.navigateBack({
       delta: 1,
+      fail:function(){
+        wx.reLaunch({
+          url: '../../../pages/home/index',
+        })
+      }
     })
   },
   goMenu(e) { //点击菜单
@@ -34,19 +39,19 @@ Page({
     var menu = parseInt(e.currentTarget.dataset.menu);
     switch (menu) {
       case 1:
-        url = "../zhanqilai/index";
+        url = "../xinzhengzhou/index";
         break;
       case 2:
-        url = "../qiangqilai/index";
+        url = "../zhanqilai/index";
         break;
       case 3:
-        url = "../fuqilai/index";
-        break;
-      case 4:
         url = "../hongsehenan/index";
         break;
+      case 4:
+        url = "../qiangqilai/index";
+        break;
       case 5:
-        url = "../xinzhengzhou/index";
+        url = "../fuqilai/index";
         break;
     }
     wx.navigateTo({

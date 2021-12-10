@@ -1,64 +1,45 @@
 <!--yunsystem/pages/record/index.wxml-->
 <scroll-view scroll-y="auto" class="bodyv">
-  <view class="date">10月28日</view>
+  <view class="datev">
+    <view class="datetxt">12月4日</view>
+    <image src="../../resources/yun.png" class="yun"></image>
+  </view>
   <view class="recordv">
-    <view class="recordc">
-      <image mode="aspectFill" lazy-load="true" class="recordcover" src="https://zhengzhousizheng.oss-cn-beijing.aliyuncs.com/jiyinred/8.png"></image>
-      <view class="name showOnehangTxt">爱国主义教育基地爱国主义教育基地</view>
+    <view class="recordc" bindtap="goDetail" data-id="0">
+      <image src="../../resources/qi.png" class="recordcover"></image>
+      <view class="name showOnehangTxt">革命纪念馆革命命革命纪念馆革命命</view>
     </view>
-    <view class="recordc">
-      <image mode="aspectFill" lazy-load="true" class="recordcover" src="https://zhengzhousizheng.oss-cn-beijing.aliyuncs.com/jiyinred/8.png"></image>
-      <view class="name showOnehangTxt">爱国主义教育基地爱国主义教育基地</view>
+    <view class="recordc" bindtap="goDetail" data-id="0">
+      <image src="../../resources/qi.png" class="recordcover"></image>
+      <view class="name showOnehangTxt">革命纪念馆革命命革命纪念馆革命命</view>
     </view>
-    <view class="recordc">
-      <image mode="aspectFill" lazy-load="true" class="recordcover" src="https://zhengzhousizheng.oss-cn-beijing.aliyuncs.com/jiyinred/8.png"></image>
-      <view class="name showOnehangTxt">爱国主义教育基地爱国主义教育基地</view>
-    </view>
-    <view class="recordc">
-      <image mode="aspectFill" lazy-load="true" class="recordcover" src="https://zhengzhousizheng.oss-cn-beijing.aliyuncs.com/jiyinred/8.png"></image>
-      <view class="name showOnehangTxt">爱国主义教育基地爱国主义教育基地</view>
+    <view class="recordc" bindtap="goDetail" data-id="0">
+      <image src="../../resources/qi.png" class="recordcover"></image>
+      <view class="name showOnehangTxt">革命纪念馆革命命革命纪念馆革命命</view>
     </view>
   </view>
 
-  <view class="date">10月27日</view>
+  <view class="datev">
+    <view class="datetxt">12月3日</view>
+    <image src="../../resources/yun.png" class="yun"></image>
+  </view>
   <view class="recordv">
-    <view class="recordc">
-      <image mode="aspectFill" lazy-load="true" class="recordcover" src="https://zhengzhousizheng.oss-cn-beijing.aliyuncs.com/jiyinred/8.png"></image>
-      <view class="name showOnehangTxt">爱国主义教育基地爱国主义教育基地</view>
+    <view class="recordc" bindtap="goDetail" data-id="0">
+      <image src="../../resources/qi.png" class="recordcover"></image>
+      <view class="name showOnehangTxt">革命纪念馆革命命革命纪念馆革命命</view>
     </view>
   </view>
-
-  <view class="date">10月26日</view>
-  <view class="recordv">
-    <view class="recordc">
-      <image mode="aspectFill" lazy-load="true" class="recordcover" src="https://zhengzhousizheng.oss-cn-beijing.aliyuncs.com/jiyinred/8.png"></image>
-      <view class="name showOnehangTxt">爱国主义教育基地爱国主义教育基地</view>
-    </view>
-    <view class="recordc">
-      <image mode="aspectFill" lazy-load="true" class="recordcover" src="https://zhengzhousizheng.oss-cn-beijing.aliyuncs.com/jiyinred/8.png"></image>
-      <view class="name showOnehangTxt">爱国主义教育基地爱国主义教育基地</view>
-    </view>
-    <view class="recordc">
-      <image mode="aspectFill" lazy-load="true" class="recordcover" src="https://zhengzhousizheng.oss-cn-beijing.aliyuncs.com/jiyinred/8.png"></image>
-      <view class="name showOnehangTxt">爱国主义教育基地爱国主义教育基地</view>
-    </view>
-  </view>
-
-  <view style="width: 100vw;height:52rpx;"></view>
-
 </scroll-view>
 
 <!--底部tabbar-->
+<view class="tabbarv"></view>
 <view class="tabbar">
-  <view class="tabbarc" bindtap="goHome">
-    <image class="tabbaricon1" src="https://zhengzhousizheng.oss-cn-beijing.aliyuncs.com/yunsystem/home.png"></image>
-    <view class="tabbartxt">首页</view>
+  <view class="tabbartxt" bindtap="goHome">首页</view>
+  <view class="tabbarscanev" bindtap="ScanOpt">
+    <image src="../../resources/lujing.png" class="lujingicon"></image>
+    <view class="scanev">
+      <image src="../../resources/scan.png" class="scanicon"></image>
+    </view>
   </view>
-  <view class="tabbarc" bindtap="ScanOpt">
-    <image class="scan" src="https://zhengzhousizheng.oss-cn-beijing.aliyuncs.com/yunsystem/scan.png"></image>
-  </view>
-  <view class="tabbarc">
-    <image class="tabbaricon2" src="https://zhengzhousizheng.oss-cn-beijing.aliyuncs.com/yunsystem/recordh.png"></image>
-    <view class="tabbartxth">浏览体验记录</view>
-  </view>
+  <view class="tabbartxth">记录</view>
 </view>

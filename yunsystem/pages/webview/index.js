@@ -1,15 +1,11 @@
-// yunsystem/pages/zhanqilai/index.js
-var requestUrl = getApp().globalData.requestUrl;
-var WxRequest = require('../../../utils/WxRequest.js');
-
+// yunsystem/pages/webview/index.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    list: [1,2,3,4,5,],
-    pageindex: 1,
+
   },
 
   /**
@@ -17,24 +13,20 @@ Page({
    */
   onLoad: function (options) {
     var that = this;
-    wx.getSystemInfo({
-      success: (res) => {
-        that.setData({
-          navigationBarHeight: res.statusBarHeight
-        })
-      },
-    })
+    let link = options.url;
+
+    if (options.type == 1) {
+      link = decodeURIComponent(link);
+      that.setData({
+        link: link
+      })
+    } else {
+      that.setData({
+        link: link
+      })
+    }
   },
-  goBack(){//返回
-    wx.navigateBack({
-      delta: 1,
-    })
-  },
-  goDetail(e){//跳转到详情
-    wx.navigateTo({
-      url: '../info/index?id='+e.currentTarget.dataset.id,
-    })
-  },
+
   /**
    * 生命周期函数--监听页面初次渲染完成
    */

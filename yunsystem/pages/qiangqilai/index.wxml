@@ -1,2 +1,20 @@
-<!--yunsystem/pages/qiangqilai/index.wxml-->
-<text>强起来</text>
+<!--yunsystem/pages/zhanqilai/index.wxml-->
+<view class="topbgv">
+  <view style="width: 100vw;height:{{navigationBarHeight}}px"></view>
+  <view class="backcv" bindtap="goBack">
+    <image src="/resources/comman/backicon.png" class="backicon"></image>
+  </view>
+  <image src="../../resources/qi.png" class="qiicon"></image>
+  <view class="pagetitle">强起来</view>
+</view>
+
+<block wx:for="{{list}}" wx:key="item" wx:for-index="x">
+  <view class="datav" bindtap="goDetail" data-id="{{item.ID}}">
+    <image src="../../resources/qi.png" mode="aspectFill" class="cover" lazy-load="true"></image>
+    <view class="datac">
+      <view class="name showTwohangTxt">主义必胜革命纪念馆和思政教育主义必胜革命纪...</view>
+      <view class="numbertxt">1.1w浏览 · 23点赞 · 1.4k收藏</view>
+    </view>
+  </view>
+</block>
+<view class="nomoredata">没有更多了</view>
