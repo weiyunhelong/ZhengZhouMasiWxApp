@@ -95,7 +95,7 @@ App({
     openId: "", //openid
     userType: 1, //1：学生 2：教师
     WxUserId:194,//userId
-    requestUrl: "http://edu.vrkejiao.com", //接口地址
+    requestUrl: "https://edu.vrkejiao.com", //接口地址
     tabbar: [{
         pagePath: "pages/home/index",
         iconPath: "/custom-tab-bar/imgs/home.png",
