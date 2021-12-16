@@ -32,6 +32,9 @@
   }, {
     "root": "my",
     "pages": [
+      "pages/info/index",
+      "pages/info/desc",      
+      "pages/info/pwd",
       "pages/datacenter/index",
       "pages/dati/index",
       "pages/collect/index",

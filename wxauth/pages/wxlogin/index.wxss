@@ -1,91 +1,156 @@
 /* wxauth/pages/wxlogin/index.wxss */
 page {
-  background: #0E253D;
+  background: #fff;
+}
+
+.topv {
+  width: 100vw;
+  height: 420rpx;
 }
 
 .topbg {
-  width: 100vw;
-  height: 364rpx;
-  background: url(https://zhengzhousizheng.oss-cn-beijing.aliyuncs.com/my/topbg.png) no-repeat;
-  background-size: cover;
-}
-
-.infov {
-  width: 100vw;
-  height: calc(100vh - 349rpx);
-  background: #FFFFFF;
-  opacity: 0.95;
-  border-radius: 30rpx;
-  margin-top: -15rpx;
+  width: 466rpx;
+  height: 420rpx;
 }
 
 .tabv {
   display: flex;
-  justify-content: center;
-  padding-top: 50rpx;
-  margin-bottom: 94rpx;
-}
-
-.tabnull {
-  width: 70rpx;
-  height: 30rpx;
+  padding-left: 52rpx;
+  margin-top: -150rpx;
 }
 
 .tabitem {
-  font-size: 36rpx;
-  color: #999999;
-}
-
-.tabitemh {
-  padding-bottom: 20rpx;
-  font-size: 36rpx;
-  color: #333333;
-  border-bottom: 8rpx solid #124662;
-}
-
-.inputv {
-  width: 524rpx;
-  height: 100rpx;
-  background: #DDDDDD;
-  border-radius: 50rpx;
-  margin: 0 auto 44rpx;
-}
-
-.inputtxt {
-  padding-left: 42rpx;
+  width: 220rpx;
+  text-align: center;
   height: 100rpx;
   line-height: 100rpx;
-  font-size: 30rpx;
-  color: #333333;
 }
 
-.inputtip {
+.tabtxth {
+  width: 220rpx;
+  font-size: 48rpx;
+  font-weight: 500;
+  color: #262626;
+}
+
+.tabtxt {
+  width: 220rpx;
+  font-size: 40rpx;
   color: #999999;
 }
 
-.forgetpwd {
-  width: 524rpx;
-  font-size: 28rpx;
-  color: #333333;
-  text-align: right;
-  margin: -20rpx auto 50rpx;
+.tabline {
+  width: 28rpx;
+  height: 6rpx;
+  background: #F24540;
+  border-radius: 3rpx;
+  margin: -5rpx auto;
+}
+
+.tabline2 {
+  width: 2rpx;
+  height: 32rpx;
+  background: #E3E3E3;
+  margin-top: 40rpx;
+  margin-left: 20rpx;
+}
+
+.tabline3 {
+  width: 2rpx;
+  height: 32rpx;
+  background: #E3E3E3;
+  margin-top: 40rpx;
+  margin-right: 20rpx;
+}
+
+.hangv {
+  width: 646rpx;
+  height: 108rpx;
+  background: #F7F7F7;
+  border-radius: 6rpx;
+  display: flex;
+  margin: 0 auto;
+}
+
+.hangicon {
+  width: 38rpx;
+  height: 36rpx;
+  margin: 36rpx 30rpx;
+}
+
+.hangtxt {
+  width: 500rpx;
+  height: 108rpx;
+  line-height: 108rpx;
+  font-size: 34rpx;
+  color: #262626;
+}
+
+.hangtip {
+  color: #999999;
 }
 
 .btn {
-  width: 524rpx;
-  height: 100rpx;
-  border-radius: 50rpx;
-  margin: 0 auto 42rpx;
+  width: 548rpx;
+  height: 96rpx;
+  background: rgba(242, 69, 64, 0.5);
+  border-radius: 48rpx;
+  margin: 205rpx auto 0;
   text-align: center;
-  line-height: 100rpx;
-  font-size: 30rpx;
+  line-height: 96rpx;
+  font-size: 32rpx;
+  font-weight: 500;
   color: #FFFFFF;
 }
 
-.btn1 {
-  background: #124361;
+.pwdtxt {
+  width: 548rpx;
+  height: 100rpx;
+  line-height: 100rpx;
+  text-align: center;
+  margin: 0 auto;
+  font-size: 28rpx;
+  color: #999999;
+}
+.btmv{
+  position: fixed;
+  bottom: 120rpx;
+  left: 0;
+  width: 100vw;
+  height: auto;
+  z-index: 99;
+}
+.tagv {
+  display: flex;
+  justify-content: center;
 }
 
-.btn2 {
-  background: #07C160;
+.taglinel {
+  margin-top: 16rpx;
+  width: 278rpx;
+  height: 2rpx;
+  background: linear-gradient(90deg, #FFFFFF 0%, #E3E3E3 100%);
+}
+
+.tagliner {
+  margin-top: 16rpx;
+  width: 278rpx;
+  height: 2rpx;
+  background: linear-gradient(270deg, #FFFFFF 0%, #EEEEEE 100%, #E3E3E3 100%);
+}
+
+.tagtxt {
+  width: 130rpx;
+  text-align: center;
+  font-size: 24rpx;
+  color: #999999;
+}
+.wxloginv{
+  width: 100vw;
+  text-align: center;
+  padding-top: 32rpx;
+}
+.wxloginicon{
+  width: 80rpx;
+  height: 80rpx;
 }

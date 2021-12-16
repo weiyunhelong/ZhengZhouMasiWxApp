@@ -1,7 +1,7 @@
 {
   "navigationBarBackgroundColor": "#fff",
   "navigationBarTextStyle": "black",
-  "navigationBarTitleText": "我的收藏",
+  "navigationBarTitleText": "设置简介",
   "usingComponents": {
     "loadding": "../../../components/loadding/index"
   }

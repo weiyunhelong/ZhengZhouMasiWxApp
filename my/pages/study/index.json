@@ -1,6 +1,6 @@
 {
-  "navigationBarBackgroundColor": "#124361",
-  "navigationBarTextStyle": "white",
+  "navigationBarBackgroundColor": "#fff",
+  "navigationBarTextStyle": "black",
   "navigationBarTitleText": "学习记录",
   "usingComponents": {
     "loadding": "../../../components/loadding/index"

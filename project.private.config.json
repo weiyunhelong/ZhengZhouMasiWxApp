@@ -13,27 +13,9 @@
     "miniprogram": {
       "list": [
         {
-          "name": "yunsystem/pages/home/index",
-          "pathName": "yunsystem/pages/home/index",
+          "name": "",
+          "pathName": "my/pages/info/index",
           "query": "",
-          "scene": null
-        },
-        {
-          "name": "yunsystem/pages/record/index",
-          "pathName": "yunsystem/pages/record/index",
-          "query": "",
-          "scene": null
-        },
-        {
-          "name": "yunsystem/pages/zhanqilai/index",
-          "pathName": "yunsystem/pages/zhanqilai/index",
-          "query": "",
-          "scene": null
-        },
-        {
-          "name": "yunsystem/pages/info/index",
-          "pathName": "yunsystem/pages/info/index",
-          "query": "id=undefined",
           "scene": null
         }
       ]

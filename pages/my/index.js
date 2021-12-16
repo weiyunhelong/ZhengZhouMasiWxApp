@@ -31,7 +31,7 @@ Page({
   tapMenu(e) { //跳转到菜单
     var that = this;
     var url = "",
-      menu = parseInt(e.currentTarget.dataset.menu);
+      menu = parseInt(e.currentTarget.dataset.index);
     switch (menu) {
       case 0:
         url = "../../my/pages/datacenter/index";

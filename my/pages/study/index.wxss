@@ -1,28 +1,45 @@
 /* my/pages/study/index.wxss */
+page{
+  background: #fff;
+}
 .blockv {
-  width: 706rpx;
-  height: 188rpx;
-  background: #FFFFFF;
+  width: 686rpx;
+  height: 208rpx;
   border-radius: 10rpx;
-  margin: 20rpx auto 0;
+  margin: 0rpx auto;
   display: flex;
+  border-bottom:1rpx solid #eee;
 }
 
 .blockcover {
-  width: 214rpx;
-  height: 161rpx;
-  margin: 13rpx 27rpx 14rpx 13rpx;
+  width: 274rpx;
+  height: 152rpx;
+  border-radius: 12rpx;
+  margin: 28rpx 20rpx 28rpx 0rpx;
+}
+
+.jinduv {
+  width: 100%;
+  height: 52rpx;
+  background: rgba(0, 0, 0, 0.2);
+  text-align: center;
+  line-height: 52rpx;
+  font-size: 24rpx;
+  color: #FFFFFF;
+  margin-top: 100rpx;
+  border-bottom-left-radius: 12rpx;
+  border-bottom-right-radius: 12rpx;
 }
 
 .blockc {
-  width: 420rpx;
-  padding-top: 32rpx;
+  width:392rpx;
+  padding-top:28rpx;
 }
 
 .name {
-  height: 61rpx;
-  font-size: 26rpx;
-  color: #333333;
+  height: 84rpx;
+  font-size: 30rpx;
+  color: #262626;
 }
 
 .infov {
@@ -32,7 +49,7 @@
 }
 
 .date {
-  font-size: 22rpx;
+  font-size: 24rpx;
   color: #999999;
 }
 

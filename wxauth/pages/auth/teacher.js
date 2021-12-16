@@ -14,7 +14,8 @@ Page({
     tx: "", //头像
     nickName: "", //昵称
     name: "", //姓名
-    sex: 1, //性别
+    sexs:["保密",'男','女'],
+    sex: -1, //性别
     desc: "", //签名
     phone: "", //手机号
     code: "", //验证码
@@ -57,7 +58,7 @@ Page({
   },
   sexChkOpt(e) { //性别
     this.setData({
-      sex: e.currentTarget.dataset.sex
+      sex:e.detail.value
     })
   },
   getDesc(e) { //获取签名
@@ -116,6 +117,8 @@ Page({
       WxRequest.ShowAlert("请输入昵称");
     } else if (name == "") {
       WxRequest.ShowAlert("请输入姓名");
+    } else if (sex == -1) {
+      WxRequest.ShowAlert("请选择性别");
     } else if (desc == "") {
       WxRequest.ShowAlert("请输入签名");
     } else if (phone == "") {

@@ -1,126 +1,131 @@
 /* wxauth/pages/auth/study.wxss */
 .topbg {
   width: 100vw;
-  height: 220rpx;
-  background: url(https://zhengzhousizheng.oss-cn-beijing.aliyuncs.com/my/topbg.png) no-repeat;
-  background-size: cover;
+  height: 452rpx;
+  background: linear-gradient(180deg, #F24540 0%, #F24540 100%);
 }
 
-.toptitle {
-  padding-top: 126rpx;
-  padding-left: 20rpx;
-  font-size: 36rpx;
-  font-weight: bold;
-  color: #FFFFFF;
+.qiziv {
+  width: 230rpx;
+  height: 200rpx;
+  margin-left: 150rpx;
+  padding-top: 18rpx;
+}
+
+.qiziicon {
+  width: 100%;
+  height: 100%;
+}
+
+.pagetitle {
+  width: 380rpx;
+  margin: 0 auto;
+  text-align: center;
+  height: 60rpx;
+  line-height: 60rpx;
+  color: #fff;
+  top: -120rpx;
+  font-size: 34rpx;
+  z-index: 2;
+  position: relative;
+}
+
+.formv {
+  width: 686rpx;
+  height: 1418rpx;
+  background: #FFFFFF;
+  border-radius: 6rpx;
+  margin: -240rpx auto 0rpx;
 }
 
 .txv {
+  width: 100%;
   text-align: center;
-  width: 100vw;
   padding-top: 40rpx;
-  margin-bottom: 42rpx;
+}
+
+.txicon {
+  width: 132rpx;
+  height: 132rpx;
+  background: #EEEEEE;
+  border-radius: 50%;
+  font-size: 24rpx;
+  color: #999999;
+  text-align: center;
+  line-height: 132rpx;
+  margin: 0 auto;
 }
 
 .tximg {
-  width: 120rpx;
-  height: 120rpx;
   border-radius: 50%;
-}
-
-.txtxt {
-  font-size: 28rpx;
-  color: #999999;
+  width: 132rpx;
+  height: 132rpx;
+  margin: 0 auto;
 }
 
 .hangv {
-  height: 95rpx;
-  width: 640rpx;
-  border-bottom: 2rpx solid #DDDDDD;
-  margin: 0 auto;
   display: flex;
+  width: 622rpx;
+  height: 100rpx;
+  line-height: 100rpx;
+  background: #FFFFFF;
+  border-bottom: 1rpx solid #eee;
+  margin: 30rpx auto 0;
 }
 
 .hangtag {
-  padding-top: 20rpx;
-  color: #333;
-  line-height: 75rpx;
-  height: 75rpx;
-  width: 112rpx;
+  width: 136rpx;
+  font-size: 32rpx;
+  color: #262626;
 }
 
-.hangval {
-  width: 528rpx;
-  height: 75rpx;
-  padding-top: 20rpx;
+.hangtxt {
+  width: 486rpx;
+  font-size: 32rpx;
+  color: #262626;
+  height: 100rpx;
+  line-height: 100rpx;
 }
 
-.hangvaltxt {
-  color: #333;
-  line-height: 75rpx;
-  height: 75rpx;
-  width: 500rpx;
-  font-size: 28rpx;
+.smhangtxt {
+  width: 286rpx;
+  font-size: 32rpx;
+  color: #262626;
+  height: 100rpx;
+  line-height: 100rpx;
 }
 
-.hangvaltip {
-  color: #999999;
+.hangtip {
+  color: #999;
 }
 
-.sexv {
-  display: flex;
+.codetxt {
+  text-align: right;
   width: 200rpx;
-  height: 75rpx;
-  line-height: 75rpx;
-}
-
-.radioicon {
-  width: 32rpx;
-  height: 32rpx;
-  margin-top: 21.5rpx;
-}
-
-.radioview {
-  border-radius: 50%;
-  background-color: #ddd;
-  width: 32rpx;
-  height: 32rpx;
-  margin-top: 21.5rpx;
-}
-
-.sextxt {
-  margin-left: 18rpx;
-}
-
-.codebtn {
-  width: 160rpx;
-  height: 50rpx;
-  border: 1rpx solid #124361;
-  border-radius: 25rpx;
-  margin-top: 5rpx;
-  line-height: 50rpx;
-  text-align: center;
-  font-size: 24rpx;
-  color: #124361;
+  height: 100rpx;
+  line-height: 100rpx;
+  font-size: 32rpx;
+  color: #F24540;
 }
 
 .btn {
-  width: 523rpx;
-  height: 68rpx;
-  border-radius: 34rpx;
-  text-align: center;
-  line-height: 68rpx;
-  margin: 0 auto;
-  font-size: 36rpx;
+  width: 548rpx;
+  height: 96rpx;
+  background: #F24540;
+  border-radius: 48rpx;
+  font-size: 32rpx;
+  font-weight: 500;
   color: #FFFFFF;
+  text-align: center;
+  line-height: 96rpx;
+  margin: 106rpx auto 0;
 }
 
-.btn1 {
-  margin-top: 64rpx;
-  background: #124361;
-  margin-bottom: 44rpx;
-}
-
-.btn2 {
-  background: #CCCCCC;
-  margin-bottom: 44rpx;
+.skiptxt {
+  width: 100%;
+  height: 100rpx;
+  line-height: 100rpx;
+  font-size: 28rpx;
+  color: #999999;
+  text-align: center;
 }

@@ -1,18 +1,42 @@
 <!--wxauth/pages/wxlogin/index.wxml-->
-<view class="topbg"></view>
-<view class="infov">
+<view class="topv">
+  <image lazy-load="true" class="topbg" src="https://zhengzhousizheng.oss-cn-beijing.aliyuncs.com/zhengzhouv2/login-2.png" wx:if="{{chkTab==1}}"></image>
+  <image lazy-load="true" class="topbg" src="https://zhengzhousizheng.oss-cn-beijing.aliyuncs.com/zhengzhouv2/login-1.png" wx:if="{{chkTab==2}}"></image>
+
   <view class="tabv">
-    <view class="{{chkTab==1?'tabitemh':'tabitem'}}" bindtap="tapTabOpt" data-tab="1">用户登录</view>
-    <view class="tabnull"></view>
-    <view class="{{chkTab==2?'tabitemh':'tabitem'}}" bindtap="tapTabOpt" data-tab="2">教师登录</view>
+    <view class="tabitem" bindtap="tapTabOpt" data-tab="1">
+      <view class="{{chkTab==1?'tabtxth':'tabtxt'}}">学生身份</view>
+      <view class="tabline"  wx:if="{{chkTab==1}}"></view>
+    </view>
+    <view class="tabline2" wx:if="{{chkTab==1}}"></view>
+    <view class="tabline3" wx:if="{{chkTab==2}}"></view>
+    <view class="tabitem" bindtap="tapTabOpt" data-tab="2">
+      <view class="{{chkTab==2?'tabtxth':'tabtxt'}}">老师身份</view>
+      <view class="tabline"  wx:if="{{chkTab==2}}"></view>
+    </view>
   </view>
-  <view class="inputv">
-    <input type="text" class="inputtxt" placeholder="请输入您的账号" placeholder-class="inputtip" value="{{account}}" bindinput="getAccount" />
+</view>
+
+<view class="formv">
+  <view class="hangv">
+    <image src="./my-3.png" class="hangicon"></image>
+    <input type="text" bindinput="getAccount" placeholder="请输入账号" class="hangtxt" placeholder-class="hangtip" value="{{account}}"/>
   </view>
-  <view class="inputv">
-    <input type="text" password="true" class="inputtxt" placeholder="请输入您的密码" placeholder-class="inputtip" value="{{pwd}}" bindinput="getPwd" />
+  <view class="hangv" style="margin-top: 40rpx;">
+    <image src="./my-4.png" class="hangicon"></image>
+    <input type="text" password="true" bindinput="getPwd" placeholder="请输入密码" class="hangtxt" placeholder-class="hangtip" value="{{pwd}}"/>
   </view>
-  <view class="forgetpwd" bindtap="forgetpwdOpt">忘记密码?</view>
-  <view class="btn btn1" bindtap="loginOpt">登录</view>
-  <view class="btn btn2" bindtap="wxOpt">微信一键登录</view>
+
+  <view class="btn" bindtap="loginOpt">登录</view>
+  <view class="pwdtxt" bindtap="forgetpwdOpt">找回密码?</view>
+  <view class="btmv">
+    <view class="tagv">
+      <view class="taglinel"></view>
+      <view class="tagtxt">快速登录</view>
+      <view class="tagliner"></view>
+    </view>
+    <view class="wxloginv" bindtap="wxOpt">
+      <image src="./my-5.png" class="wxloginicon"></image>
+    </view>
+  </view>
 </view>

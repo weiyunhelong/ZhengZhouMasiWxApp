@@ -1,116 +1,124 @@
 /* pages/my/index.wxss */
 page {
-  background: #f2f2f2;
+  background: #fff;
 }
 
 .topbgv {
   width: 100vw;
-  height: 297rpx;
-  background: url(https://zhengzhousizheng.oss-cn-beijing.aliyuncs.com/my/mytopbg.png) no-repeat;
-  background-size: cover;
+  height: 452rpx;
+  background: #F24540;
+  border-bottom-left-radius: 30rpx;
+  border-bottom-right-radius: 30rpx;
 }
 
-.infov {
-  width: 710rpx;
-  height: 290rpx;
-  background: #FFFFFF;
-  border-radius: 10rpx;
-  margin: -100rpx auto 20rpx;
+.qiziv {
+  width: 230rpx;
+  height: 200rpx;
+  margin-left: 150rpx;
+  padding-top: 18rpx;
 }
 
-.infov .userv {
-  padding-left: 70rpx;
-  padding-top: 32rpx;
+.qiziicon {
+  width: 100%;
+  height: 100%;
+}
+
+.userv {
   display: flex;
+  padding: 0 38rpx;
 }
 
-.infov .userv .usertx {
-  width: 120rpx;
-  height: 120rpx;
+.userv .txv {
+  width: 116rpx;
+  height: 116rpx;
+  background: linear-gradient(180deg, #EEEEEE 0%, #D8D8D8 100%);
   border-radius: 50%;
-  margin-right: 35rpx;
-}
-
-.infov .userv .usercv {
-  display: flex;
-  padding-top: 24rpx;
-  line-height: 1;
-}
-
-.infov .userv .logintxt {
   margin-right: 20rpx;
-  font-size: 36rpx;
+}
+
+.userv .tximg {
+  width: 116rpx;
+  height: 116rpx;
+  border-radius: 50%;
+  margin-right: 20rpx;
+}
+
+.userv .userc {
+  width: 450rpx;
+  padding-top: 8rpx;
+}
+
+.userv .username {
+  font-size: 40rpx;
   font-weight: 500;
-  color: #333333;
+  color: #FFFFFF;
 }
 
-.infov .userv .myright {
-  width: 19rpx;
-  height: 34rpx;
+.userv .userdesc {
+  margin-top: 10rpx;
+  font-size: 28rpx;
+  color: #FFFFFF;
 }
 
-.infov .userv .desc {
-  margin-top: 16rpx;
-  font-size: 24rpx;
-  color: #666666;
-}
-
-.infov .numberv {
+.numberv {
+  width: 686rpx;
+  height: 160rpx;
+  background: #FFFFFF;
+  box-shadow: 0px 4rpx 16rpx 0rpx rgba(0, 0, 0, 0.1);
+  margin: -60rpx auto 0;
+  border-radius: 10rpx;
   display: flex;
-  justify-content: space-around;
-  padding-top: 28rpx;
 }
 
-.infov .numberv .numcv {
-  width: 235rpx;
+.numberv .numberc {
+  width: 226rpx;
+  height: 160rpx;
   text-align: center;
 }
 
-.infov .numberv .numcv .numtag {
-  font-size: 36rpx;
-  font-weight: bold;
-  color: #333333;
+.numberv .numbertxt {
+  padding-top: 34rpx;
+  font-size: 40rpx;
+  font-weight: 500;
+  color: #262626;
 }
 
-.infov .numberv .numcv .numval {
+.numberv .numbertag {
   font-size: 24rpx;
-  color: #666666;
+  color: #999999;
 }
 
-.infov .numberv .numline {
-  width: 0.5rpx;
-  height: 44rpx;
-  border: 1rpx solid #DDDDDD;
-  margin-top: 14rpx;
+.numberv .numberline {
+  width: 2rpx;
+  height: 28rpx;
+  background: #EEEEEE;
+  margin-top: 62rpx;
 }
 
 .menuv {
-  width: 710rpx;
-  height: auto;
-  padding: 36rpx 0 7rpx;
-  background: #FFFFFF;
-  border-radius: 10rpx;
-  margin: 0 auto 20rpx;
+  margin: 28rpx 32rpx;
+}
+
+.menuc {
   display: flex;
-  flex-wrap: wrap;
-  justify-content: space-around;
+  justify-content: space-between;
 }
 
-.menuv .menuitem {
-  width: 300rpx;
-  height: 180rpx;
-  background: #F2F2F2;
-  border-radius: 22rpx;
-  text-align: center;
-  margin-bottom: 32rpx;
+.menucl {
+  display: flex;
+  height: 100rpx;
+  line-height: 100rpx;
 }
 
-.menuv .menuitem .menuicon {
-  width: 68rpx;
-  height: 68rpx;
-  margin: 33rpx auto 16rpx;
+.menuicon {
+  width: 40rpx;
+  height: 40rpx;
+  margin-top: 30rpx;
+  margin-right: 16rpx;
 }
-.menuv .menuitem .menutxt{
-  font-size: 30rpx;
-  color: #333333;
+
+.righticon {
+  width: 12rpx;
+  height: 20rpx;
+  margin-top:40rpx;
 }

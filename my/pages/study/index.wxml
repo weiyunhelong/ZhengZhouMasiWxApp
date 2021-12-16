@@ -1,12 +1,13 @@
 <!--my/pages/study/index.wxml-->
 <block wx:for="{{list}}" wx:key="item">
   <view class="blockv">
-    <image src="{{item.cover}}" class="blockcover" lazy-load="true"></image>
+     <view class="blockcover" style="background: url({{item.cover}}) no-repeat;background-size: cover;">
+       <view class="jinduv">{{item.percent}}%</view>
+     </view>
     <view class="blockc">
-      <view class="name">{{item.name}}</view>
+      <view class="name showTwohangTxt">{{item.name}}</view>
       <view class="infov">
         <view class="date">{{item.datetime}}</view>
-        <view class="percent">学习进度：{{item.percent}}%</view>
       </view>
     </view>
   </view>

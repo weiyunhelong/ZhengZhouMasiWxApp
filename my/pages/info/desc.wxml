@@ -1,0 +1,5 @@
+<!--my/pages/info/desc.wxml-->
+<textarea class="textareav" maxlength="30" placeholder="请输入..." placeholder-class="textareatip" value="{{val}}" bindinput="getval"></textarea>
+<view class="tiptxt">请输入5-30个字符</view>
+
+<view class="btn" bindtap="finshOpt">完成</view>

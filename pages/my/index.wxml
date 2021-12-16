@@ -1,69 +1,88 @@
 <!--pages/my/index.wxml-->
-<view class="topbgv"></view>
-<view class="infov">
-  <view class="userv" bindtap="goLogin" wx:if="{{!IsLogin}}">
-    <image class="usertx" src="https://zhengzhousizheng.oss-cn-beijing.aliyuncs.com/my/mydefaulttx.png"></image>
+<!--用户部分-->
+<view class="topbgv">
+  <view class="qiziv">
+    <image class="qiziicon" src="/resources/comman/qizi.png"></image>
+  </view>
+  <view class="userv" wx:if="{{!IsLogin}}" bindtap="goLogin">
+    <view class="txv"></view>
     <view class="userc">
-      <view class="usercv">
-        <view class="logintxt">点击登录</view>
-        <image class="myright" src="https://zhengzhousizheng.oss-cn-beijing.aliyuncs.com/my/myright.png"></image>
-      </view>
-      <view class="desc">快来介绍一下自己吧...</view>
+      <view class="username">点击登录</view>
+      <view class="userdesc">完成登录使用更多功能</view>
     </view>
   </view>
-  <view class="userv" bindtap="goAccount" wx:else>
-    <image class="usertx" src="{{userInfo.tx}}"></image>
+  <view class="userv" wx:else>
+    <image src="{{userInfo.tx}}" class="tximg"></image>
     <view class="userc">
-      <view class="usercv">
-        <view class="logintxt">{{userInfo.nickName}}</view>
-        <image class="myright" src="https://zhengzhousizheng.oss-cn-beijing.aliyuncs.com/my/myright.png"></image>
-      </view>
-      <view class="desc">{{userInfo.desc}}</view>
-    </view>
-  </view>
-  <view class="numberv">
-    <view class="numcv">
-      <view class="numtag">0</view>
-      <view class="numval">已经学习/时</view>
-    </view>
-    <view class="numline"></view>
-    <view class="numcv">
-      <view class="numtag">0</view>
-      <view class="numval">答题数目/个</view>
-    </view>
-    <view class="numline"></view>
-    <view class="numcv">
-      <view class="numtag">0</view>
-      <view class="numval">我的成就</view>
+      <view class="username">{{userInfo.name}}</view>
+      <view class="userdesc showOnehangTxt">{{userInfo.desc}}</view>
     </view>
   </view>
 </view>
 
-<view class="menuv">
-  <view class="menuitem" bindtap="tapMenu" data-menu="0">
-    <image class="menuicon" src="https://zhengzhousizheng.oss-cn-beijing.aliyuncs.com/my/mydata.png"></image>
-    <view class="menutxt">数据中心</view>
+<!--数据部分-->
+<view class="numberv">
+  <view class="numberc">
+    <view class="numbertxt">0</view>
+    <view class="numbertag">已经学习/时</view>
   </view>
-  <view class="menuitem" bindtap="tapMenu" data-menu="1">
-    <image class="menuicon" src="https://zhengzhousizheng.oss-cn-beijing.aliyuncs.com/my/mynews.png"></image>
-    <view class="menutxt">消息中心</view>
+  <view class="numberline"></view>
+  <view class="numberc">
+    <view class="numbertxt">0</view>
+    <view class="numbertag">答题数目/个</view>
   </view>
-  <view class="menuitem" bindtap="tapMenu" data-menu="2">
-    <image class="menuicon" src="https://zhengzhousizheng.oss-cn-beijing.aliyuncs.com/my/mybi.png"></image>
-    <view class="menutxt">学习记录</view>
-  </view>
-  <view class="menuitem" bindtap="tapMenu" data-menu="3">
-    <image class="menuicon" src="https://zhengzhousizheng.oss-cn-beijing.aliyuncs.com/my/myxing.png"></image>
-    <view class="menutxt">我的收藏</view>
-  </view>
-  <view class="menuitem" bindtap="tapMenu" data-menu="4">
-    <image class="menuicon" src="https://zhengzhousizheng.oss-cn-beijing.aliyuncs.com/my/mycuoti.png"></image>
-    <view class="menutxt">错题集</view>
-  </view>
-  <view class="menuitem" bindtap="tapMenu" data-menu="5">
-    <image class="menuicon" src="https://zhengzhousizheng.oss-cn-beijing.aliyuncs.com/my/myset.png"></image>
-    <view class="menutxt">账号设置</view>
+  <view class="numberline"></view>
+  <view class="numberc">
+    <view class="numbertxt">0</view>
+    <view class="numbertag">我的成就</view>
   </view>
 </view>
+
+<!--菜单部分-->
+<view class="menuv">
+  <view class="menuc" bindtap="tapMenu" data-index="0">
+    <view class="menucl">
+      <image src="/resources/my/my-6.png" class="menuicon"></image>
+      <view class="menutxt">数据中心</view>
+    </view>
+    <image src="/resources/comman/righticon.png" class="righticon"></image>
+  </view>
+  <view class="menuc" bindtap="tapMenu" data-index="1">
+    <view class="menucl">
+      <image src="/resources/my/my-7.png" class="menuicon"></image>
+      <view class="menutxt">消息中心</view>
+    </view>
+    <image src="/resources/comman/righticon.png" class="righticon"></image>
+  </view>
+  <view class="menuc" bindtap="tapMenu" data-index="2">
+    <view class="menucl">
+      <image src="/resources/my/my-8.png" class="menuicon"></image>
+      <view class="menutxt">学习记录</view>
+    </view>
+    <image src="/resources/comman/righticon.png" class="righticon"></image>
+  </view>
+  <view class="menuc" bindtap="tapMenu" data-index="3">
+    <view class="menucl">
+      <image src="/resources/my/my-9.png" class="menuicon"></image>
+      <view class="menutxt">我的收藏</view>
+    </view>
+    <image src="/resources/comman/righticon.png" class="righticon"></image>
+  </view>
+  <view class="menuc" bindtap="tapMenu" data-index="4">
+    <view class="menucl">
+      <image src="/resources/my/my-10.png" class="menuicon"></image>
+      <view class="menutxt">错题集</view>
+    </view>
+    <image src="/resources/comman/righticon.png" class="righticon"></image>
+  </view>
+  <view class="menuc" bindtap="tapMenu" data-index="5">
+    <view class="menucl">
+      <image src="/resources/my/my-11.png" class="menuicon"></image>
+      <view class="menutxt">账户设置</view>
+    </view>
+    <image src="/resources/comman/righticon.png" class="righticon"></image>
+  </view>
+</view>
+
 
 <view class="tabbarv"></view>
