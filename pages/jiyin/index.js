@@ -15,7 +15,14 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    var that = this;
+    wx.getSystemInfo({
+      success: (res) => {
+        that.setData({
+          navigationBarHeight: res.statusBarHeight
+        })
+      },
+    })
   },
   goMenu(e) { //点击菜单
     var url = "";
@@ -25,19 +32,19 @@ Page({
         url = "../xinzhongguo/index";
         break;
       case 2:
-        url = "../jinian/index";
+        url = "../sijiang/index";
         break;
       case 3:
         url = "../shidu/index";
         break;
       case 4:
-        url = "../sijiang/index";
+        url = "../zuji/red";
         break;
       case 5:
-        url = "../zuji/detail";
+        url = "../zuji/fupin";
         break;
       case 6:
-        url = "../zuji/index";
+        url = "../jiyin/list";
         break;
     }
     wx.navigateTo({
