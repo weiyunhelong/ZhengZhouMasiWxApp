@@ -20,12 +20,13 @@ Page({
           devicePixelRatio: dpr // new
         });
         canvas.setChart(lineChart);
+        lineChart.setOption(getLineOption([], [], [], [], []), true);
         return lineChart;
       }
     },
     chktab: 0, //选中的tab
-    chkkind:0,//选中的类型
-    chkday:0,//选择的天
+    chkkind: 0, //选中的类型
+    chkday: 0, //选择的天
   },
 
   /**
@@ -41,33 +42,39 @@ Page({
     })
     that.InitChartData();
   },
-  tapKind(e){//切换分类
+  tapKind(e) { //切换分类
     var that = this;
     that.setData({
       chkkind: e.currentTarget.dataset.tab
     })
     that.InitChartData();
   },
-  chkDayOpt(e){//切换天
+  chkDayOpt(e) { //切换天
     var that = this;
     that.setData({
       chkday: e.currentTarget.dataset.day
     })
     that.InitChartData();
   },
-  InitChartData() {//初始化折线图
+  InitChartData() { //初始化折线图
 
     var that = this;
-    var  chktab=that.data.chktab, //选中的tab
-    chkkind=that.data.chkkind,//选中的类型
-    chkday=that.data.chkday;//选择的天
+    var chktab = that.data.chktab, //选中的tab
+      chkkind = that.data.chkkind, //选中的类型
+      chkday = that.data.chkday; //选择的天
 
     var xData = ["11.01", "11.02", "11.03", "11.04", "11.05", "11.06", "11.07", "11.08"];
-    var yData = [];
+    var yData1 = [],
+      yData2 = [],
+      yData3 = [],
+      yData4 = [];
     for (var i = 0; i < xData.length; i++) {
-      yData.push(parseInt(Math.random() * 1000))
+      yData1.push(parseInt(Math.random() * 1000));
+      yData2.push(parseInt(Math.random() * 1000));
+      yData3.push(parseInt(Math.random() * 1000));
+      yData4.push(parseInt(Math.random() * 1000));
     }
-    lineChart.setOption(getLineOption(xData, yData), true);
+    lineChart.setOption(getLineOption(xData, yData1, yData2, yData3, yData4), true);
   },
   /**
    * 生命周期函数--监听页面初次渲染完成
@@ -125,20 +132,27 @@ Page({
 })
 
 //初始化图标
-function getLineOption(xData, yData) {
+function getLineOption(xData, yData1, yData2, yData3, yData4) {
   return {
     tooltip: {
       formatter: '{c}'
+    },
+    legend: {
+      x:'center',
+      y:'bottom',
+      icon:'rect',
+      itemWidth:7,
+      itemHeight:2,
     },
     xAxis: [{
       type: 'category',
       boundaryGap: false,
       data: xData,
       axisLine: {
-        show: false
+        show: true
       },
       axisLabel: {
-        color: '#fff'
+        color: '#999'
       },
       splitLine: {
         show: false
@@ -150,22 +164,61 @@ function getLineOption(xData, yData) {
         show: false
       },
       axisLabel: {
-        color: '#fff'
+        color: '#999'
       },
       splitLine: {
         show: false
       }
     }],
     series: [{
-      name: '',
+      name: '浏览',
       type: 'line',
       smooth: true,
-      data: yData,
+      data: yData1,
       itemStyle: {
         normal: {
-          color: '#fff',
+          color: '#F24540',
           lineStyle: {
-            color: '#fff'
+            color: '#F24540'
+          }
+        }
+      },
+    }, {
+      name: '评论',
+      type: 'line',
+      smooth: true,
+      data: yData2,
+      itemStyle: {
+        normal: {
+          color: '#0AA3FC',
+          lineStyle: {
+            color: '#0AA3FC'
+          }
+        }
+      },
+    }, {
+      name: '点赞',
+      type: 'line',
+      smooth: true,
+      data: yData3,
+      itemStyle: {
+        normal: {
+          color: '#FCC40A',
+          lineStyle: {
+            color: '#FCC40A'
+          }
+        }
+      },
+    }, {
+      name: '收藏',
+      type: 'line',
+      smooth: true,
+      data: yData4,
+      itemStyle: {
+        normal: {
+          color: '#00DE46',
+          lineStyle: {
+            color: '#00DE46'
           }
         }
       },

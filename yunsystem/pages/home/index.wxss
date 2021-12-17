@@ -27,7 +27,7 @@ page {
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
-  margin-top: -150rpx;
+  margin-top: -220rpx;
   padding: 0 32rpx;
 }
 
@@ -97,6 +97,7 @@ page {
 .lujingicon {
   width: 164rpx;
   height: 30rpx;
+  display: block;
 }
 
 .scanev {
@@ -138,5 +139,5 @@ page {
   position: relative;
   width: 164rpx;
   text-align: center;
-  top: -35rpx;
+  top: -30rpx;
 }

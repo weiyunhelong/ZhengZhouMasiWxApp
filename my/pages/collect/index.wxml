@@ -7,7 +7,7 @@
     <view class="blockc">
       <view class="name showTwohangTxt">{{item.name}}</view>
       <view class="infov">
-        <view class="date">{{item.datetime}}</view>
+        <view class="date">时长：{{item.datetime}}</view>
       </view>
     </view>
   </view>
