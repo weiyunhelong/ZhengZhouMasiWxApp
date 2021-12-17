@@ -1,0 +1,12 @@
+/* components/loadding/index.wxss */
+.iconv{
+  width: 100%;
+  height: 50vh;
+  line-height: 50vh;
+  text-align: center;
+}
+.iconv{
+  width: 260rpx;
+  height: 290rpx;
+  margin: calc(25vh - 145rpx) auto;
+}

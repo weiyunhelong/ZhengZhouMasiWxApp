@@ -34,6 +34,11 @@ Page({
         title: '保存成功',
         duration:2000
       })
+      setTimeout(() => {
+        wx.navigateBack({
+          delta: 1,
+        })
+      }, 2000);
     }
   },
   /**

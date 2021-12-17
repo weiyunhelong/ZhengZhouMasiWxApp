@@ -33,6 +33,7 @@
     "root": "my",
     "pages": [
       "pages/info/index",
+      "pages/info/nickname",
       "pages/info/desc",      
       "pages/info/pwd",
       "pages/datacenter/index",

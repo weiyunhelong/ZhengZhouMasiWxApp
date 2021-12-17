@@ -3,44 +3,49 @@
 .kindv {
   display: flex;
   justify-content: space-around;
-  height: 100rpx;
+  height: 88rpx;
+  width: 100vw;
+  background: #fff;
 }
 
 .kindcv {
   text-align: center;
-  padding-top: 37rpx;
+  height: 88rpx;
+  line-height: 88rpx;
 }
 
 .chkkindtxt {
-  font-size: 36rpx;
-  font-weight: bold;
-  color: #333333;
-  padding-bottom: 15rpx;
+  font-size: 30rpx;
+  font-weight: 500;
+  color: #262626;
 }
 
 .kindtxt {
-  font-size: 36rpx;
+  font-size: 30rpx;
   color: #999;
-  padding-bottom: 15rpx;
 }
 
 .kindline {
-  width: 40rpx;
-  height: 10rpx;
-  background: #124361;
-  border-radius: 5rpx 5rpx 0rpx 0rpx;
+  width: 28rpx;
+  height: 4rpx;
+  background: #F24540;
+  border-radius: 3rpx;
   margin: 0 auto;
 }
 
 .datav {
   width: 100vw;
-  height: auto;
-  background: #fff;
-  margin-top: 10rpx;
+  height: calc(100vh - 108rpx);
+  margin-top: 20rpx;
 }
 
 .commentv {
-  padding: 36rpx 0 0 20rpx;
+  padding: 32rpx 32rpx;
+  width: 622rpx;
+  height: auto;
+  background: #fff;
+  border-radius: 6rpx;
+  margin: 0 auto 20rpx;
 }
 
 .commentuserv {
@@ -54,20 +59,33 @@
 }
 
 .commentcv {
+  width: 358rpx;
   margin-left: 20rpx;
-  padding-top: 8rpx;
+  margin-right: 32rpx;
 }
 
 .commentusernickname {
-  font-size: 26rpx;
-  font-weight: bold;
-  color: #333333;
-  margin-bottom: 10rpx;
+  font-size: 30rpx;
+  font-weight: 500;
+  color: #262626;
+  margin-bottom: 3rpx;
 }
 
-.commentuserdate {
-  font-size: 22rpx;
+.commenttxt {
+  font-size: 28rpx;
+  color: #262626;
+}
+
+.commenttime {
+  font-size: 24rpx;
   color: #999999;
+  margin-top: 10rpx;
+}
+
+.commentcover {
+  width: 120rpx;
+  height: 120rpx;
+  border-radius: 4rpx;
 }
 
 .commentinfo {
@@ -76,115 +94,91 @@
   color: #333333;
 }
 
-.commentdesc {
-  width: 568rpx;
-  height: auto;
-  background: #F2F2F2;
-  border-radius: 10rpx;
-  margin-left: 103rpx;
-  margin-top: 20rpx;
-  padding: 20rpx 20rpx;
-}
-
-.commentwriter {
-  font-size: 26rpx;
-  color: #124361;
-}
-
-.commenttxt {
-  font-size: 26rpx;
-  color: #333333;
-}
-
-.commentline {
-  width: 630rpx;
-  height: 1rpx;
-  background: #DDDDDD;
-  margin: 38rpx 0 2rpx 107rpx;
-}
-
-/*公告部分*/
-.gonggaov {
-  padding-left: 20rpx;
-  padding-top: 18rpx;
-  display: flex;
-}
-
-.gonggaoicon {
-  width: 80rpx;
-  height: 80rpx;
-  margin-right: 20rpx;
-}
-
-.gonggaoc {
-  width: 630rpx;
-  height: 112rpx;
-  border-bottom: 1rpx solid #DDDDDD;
-  padding-top: 8rpx;
-}
-
-.gonggaotop {
-  display: flex;
-  justify-content: space-between;
-  padding-right: 22rpx;
-}
-
-.gonggaotype {
-  font-size: 26rpx;
-  font-weight: bold;
-  color: #333333;
-}
-
-.gonggaodate {
-  font-size: 22rpx;
-  color: #999999;
-}
-
-.gonggaodesc {
-  font-size: 26rpx;
-  color: #333333;
-  padding-top: 20rpx;
-}
-
 /*点赞部分*/
 .blockv {
-  width: 706rpx;
-  height: 188rpx;
+  width: 622rpx;
+  height: auto;
   background: #FFFFFF;
-  border-radius: 10rpx;
-  margin: 20rpx auto 0;
+  border-radius: 6rpx;
+  margin: 0rpx auto 20rpx;
   display: flex;
+  padding: 32rpx 32rpx;
 }
 
 .blockcover {
-  width: 214rpx;
-  height: 161rpx;
-  margin: 13rpx 27rpx 14rpx 13rpx;
+  width: 92rpx;
+  height: 92rpx;
+  border-radius: 50%;
 }
 
 .blockc {
-  width: 420rpx;
-  padding-top: 32rpx;
+  width: 358rpx;
+  margin-left: 20rpx;
+  margin-right: 32rpx;
 }
 
 .name {
-  height: 61rpx;
-  font-size: 26rpx;
-  color: #333333;
+  font-size: 30rpx;
+  font-weight: 500;
+  color: #262626;
 }
 
 .infov {
-  display: flex;
-  justify-content: space-between;
-  padding-top: 32rpx;
+  width: 358rpx;
+  margin-right: 32rpx;
 }
 
 .date {
-  font-size: 22rpx;
+  font-size: 24rpx;
   color: #999999;
 }
 
 .percent {
-  font-size: 22rpx;
-  color: #124361;
+  font-size: 28rpx;
+  color: #262626;
+  margin: 8rpx 0 16rpx;
+}
+
+/*公告部分*/
+.gonggaov {
+  width: 622rpx;
+  height: auto;
+  background: #FFFFFF;
+  border-radius: 6rpx;
+  margin: 0rpx auto 20rpx;
+  display: flex;
+  padding: 32rpx 32rpx;
+}
+
+.gonggaoicon {
+  width: 92rpx;
+  height: 92rpx;
+  border-radius: 50%;
+}
+
+.gonggaoc {
+  width: 542rpx;
+  margin-left: 20rpx;
+}
+
+.gonggaotop {
+  width: 100%;
+}
+
+.gonggaotype {
+  font-size: 30rpx;
+  font-weight: 500;
+  color: #262626;
+}
+
+.gonggaodesc {
+  font-size: 28rpx;
+  color: #333333;
+  margin-top: 8rpx;
+  margin-bottom: 16rpx;
+}
+
+.gonggaodate {
+  font-size: 24rpx;
+  color: #999999;
 }

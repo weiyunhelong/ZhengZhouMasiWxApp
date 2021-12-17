@@ -1,0 +1,38 @@
+/* my/pages/info/nickname.wxss */
+page {
+  background: #fff;
+}
+
+.textareav {
+  width: 622rpx;
+  height: 100rpx;
+  background: #F7F7F7;
+  border-radius: 6rpx;
+  margin: 32rpx auto 0;
+  padding: 0rpx 32rpx;
+}
+
+.textareatip {
+  font-size: 30rpx;
+  color: #999999;
+}
+
+.tiptxt {
+  width: 686rpx;
+  font-size: 24rpx;
+  color: #999999;
+  margin: 12rpx auto 0;
+}
+
+.btn {
+  width: 548rpx;
+  height: 96rpx;
+  background: #F24540;
+  border-radius: 48rpx;
+  margin: 60rpx auto;
+  font-size: 32rpx;
+  font-weight: 500;
+  color: #FFFFFF;
+  text-align: center;
+  line-height: 96rpx;
+}

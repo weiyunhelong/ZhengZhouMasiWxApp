@@ -8,7 +8,7 @@
 </view>
 
 <view class="hangv">
-  <view class="hangc">
+  <view class="hangc" bindtap="goNickName">
     <view class="hangtag">昵称</view>
     <view class="hangval">
       <view class="hangtxt">用户名</view>

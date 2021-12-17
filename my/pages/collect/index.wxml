@@ -12,3 +12,5 @@
     </view>
   </view>
 </block>
+
+<nodatacom wx:if="{{list.length==0}}"/>

@@ -14,8 +14,10 @@
   </view>
 </view>
 
-<!--评论部分-->
-<view class="datav">
+<!--数据部分-->
+<scroll-view scroll-y="true" class="datav" bindscrolltolower="ShowMoreData">
+ 
+ <!--评论部分-->
   <block wx:if="{{chkkind==0}}">
     <block wx:for="{{list}}" wx:key="item">
       <view class="commentv">
@@ -23,15 +25,11 @@
           <image lazy-load="true" class="commentusertx" src="https://zhengzhousizheng.oss-cn-beijing.aliyuncs.com/my/mydefaulttx.png"></image>
           <view class="commentcv">
             <view class="commentusernickname">无敌钳子抓抓抓</view>
-            <view class="commentuserdate">11-10 15:15</view>
+            <view class="commenttxt">如果你既不热爱你的工作，也不对之嗤之以鼻，那说明你做的还不够多</view>
+            <view class="commenttime">5分钟前 回复了你</view>
           </view>
+          <image lazy-load="true" mode="aspectFill" class="commentcover" src="/resources/comman/avatarUrl.jpg"></image>
         </view>
-        <view class="commentinfo">王瑞俊出身于一个佃农家庭。他才思敏捷,勤奋好学。1918年，他考入山东省立第一师范学校，前往济南求学。</view>
-        <view class="commentdesc">
-          <text class="commentwriter">作者昵称</text>
-          <text class="commenttxt">:每天学习一小时的好处每天学习一小时的好处每天学习一小时的好处每天学习一小时的好处每天学习一小时的好处</text>
-        </view>
-        <view class="commentline"></view>
       </view>
     </block>
   </block>
@@ -39,17 +37,18 @@
   <!--点赞部分-->
   <block wx:if="{{chkkind==1}}">
     <block wx:for="{{list}}" wx:key="item">
-  <view class="blockv">
-    <image src="{{item.cover}}" class="blockcover" lazy-load="true"></image>
-    <view class="blockc">
-      <view class="name">{{item.name}}</view>
-      <view class="infov">
-        <view class="date"></view>
-        <view class="percent">取消点赞</view>
+      <view class="blockv">
+        <image src="https://zhengzhousizheng.oss-cn-beijing.aliyuncs.com/my/mydefaulttx.png" class="blockcover" lazy-load="true"></image>
+        <view class="blockc">
+          <view class="name">海思</view>
+          <view class="infov">
+            <view class="percent">赞了你的作品</view>
+            <view class="date">9分钟前</view>
+          </view>
+        </view>
+        <image lazy-load="true" mode="aspectFill" class="commentcover" src="/resources/comman/avatarUrl.jpg"></image>
       </view>
-    </view>
-  </view>
-</block>
+    </block>
   </block>
 
   <!--公告部分-->
@@ -60,11 +59,14 @@
         <view class="gonggaoc">
           <view class="gonggaotop">
             <view class="gonggaotype">系统消息</view>
-            <view class="gonggaodate">11-10 15:15</view>
           </view>
-          <view class="gonggaodesc showOnehangTxt">快来投稿吧~好礼等你来领！</view>
+          <view class="gonggaodesc showOnehangTxt">快来投稿吧~好礼等你来领！</view>          
+          <view class="gonggaodate">18分钟前</view>
         </view>
       </view>
     </block>
   </block>
-</view>
+
+  <nodatacom wx:if="{{list.length==0}}"/>
+
+</scroll-view>

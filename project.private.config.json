@@ -14,19 +14,7 @@
       "list": [
         {
           "name": "",
-          "pathName": "my/pages/info/index",
-          "query": "",
-          "scene": null
-        },
-        {
-          "name": "",
-          "pathName": "my/pages/datacenter/index",
-          "query": "",
-          "scene": null
-        },
-        {
-          "name": "",
-          "pathName": "yunsystem/pages/home/index",
+          "pathName": "my/pages/collect/index",
           "query": "",
           "scene": null
         }

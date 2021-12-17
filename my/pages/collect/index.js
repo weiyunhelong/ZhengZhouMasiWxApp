@@ -14,67 +14,67 @@ Page({
       name: "爱国主义教育基地纪念关贵爱国主义教育基地纪念关贵",
       datetime: "23:32",
       percent: "12"
-    },{
+    }, {
       id: 2,
       cover: "https://zhengzhousizheng.oss-cn-beijing.aliyuncs.com/mysucai/studycover.png",
       name: "爱国主义教育基地纪念关贵爱国主义教育基地纪念关贵",
       datetime: "23:32",
       percent: "56"
-    },{
+    }, {
       id: 3,
       cover: "https://zhengzhousizheng.oss-cn-beijing.aliyuncs.com/mysucai/studycover.png",
       name: "爱国主义教育基地纪念关贵爱国主义教育基地纪念关贵",
       datetime: "23:32",
       percent: "12"
-    },{
+    }, {
       id: 4,
       cover: "https://zhengzhousizheng.oss-cn-beijing.aliyuncs.com/mysucai/studycover.png",
       name: "爱国主义教育基地纪念关贵爱国主义教育基地纪念关贵",
       datetime: "23:32",
       percent: "12"
-    },{
+    }, {
       id: 5,
       cover: "https://zhengzhousizheng.oss-cn-beijing.aliyuncs.com/mysucai/studycover.png",
       name: "爱国主义教育基地纪念关贵爱国主义教育基地纪念关贵",
       datetime: "23:32",
       percent: "12"
-    },{
+    }, {
       id: 6,
       cover: "https://zhengzhousizheng.oss-cn-beijing.aliyuncs.com/mysucai/studycover.png",
       name: "爱国主义教育基地纪念关贵爱国主义教育基地纪念关贵",
       datetime: "23:32",
       percent: "12"
-    },{
+    }, {
       id: 7,
       cover: "https://zhengzhousizheng.oss-cn-beijing.aliyuncs.com/mysucai/studycover.png",
       name: "爱国主义教育基地纪念关贵爱国主义教育基地纪念关贵",
       datetime: "23:32",
       percent: "12"
-    },{
+    }, {
       id: 8,
       cover: "https://zhengzhousizheng.oss-cn-beijing.aliyuncs.com/mysucai/studycover.png",
       name: "爱国主义教育基地纪念关贵爱国主义教育基地纪念关贵",
       datetime: "23:32",
       percent: "12"
-    },{
+    }, {
       id: 9,
       cover: "https://zhengzhousizheng.oss-cn-beijing.aliyuncs.com/mysucai/studycover.png",
       name: "爱国主义教育基地纪念关贵爱国主义教育基地纪念关贵",
       datetime: "23:32",
       percent: "12"
-    },{
+    }, {
       id: 10,
       cover: "https://zhengzhousizheng.oss-cn-beijing.aliyuncs.com/mysucai/studycover.png",
       name: "爱国主义教育基地纪念关贵爱国主义教育基地纪念关贵",
       datetime: "23:32",
       percent: "12"
-    },{
+    }, {
       id: 11,
       cover: "https://zhengzhousizheng.oss-cn-beijing.aliyuncs.com/mysucai/studycover.png",
       name: "爱国主义教育基地纪念关贵爱国主义教育基地纪念关贵",
       datetime: "23:32",
       percent: "12"
-    },{
+    }, {
       id: 12,
       cover: "https://zhengzhousizheng.oss-cn-beijing.aliyuncs.com/mysucai/studycover.png",
       name: "爱国主义教育基地纪念关贵爱国主义教育基地纪念关贵",
@@ -87,7 +87,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+   
   },
 
   /**
