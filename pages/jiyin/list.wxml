@@ -1,25 +1,46 @@
 <!--pages/jiyin/list.wxml-->
-<block wx:for="{{list}}" wx:key="item" wx:for-index="x">
-  <view class="block">
-    <view class="liev"></view>
-    <image class="cover" src="https://zhengzhousizheng.oss-cn-beijing.aliyuncs.com/jiyinred/8.png"></image>
-    <view class="infov">
-      <view class="name showTwohangTxt">爱国主义教育基地纪念馆爱国主义教育基地纪念馆</view>
-      <view class="optv">
-        <view class="optcv">
-          <image src="/resources/comman/view.png" class="icon1"></image>
-          <view class="optnum">3350</view>
-        </view>
-        <view class="optcv">
-          <image src="{{x==2?'/resources/comman/zanh.png':'/resources/comman/zan.png'}}" class="icon2"></image>
-          <view class="{{x==2?'optnumh':'optnum'}}">3350</view>
-        </view>
-        <view class="optcv">
-          <image src="{{x==2?'/resources/comman/xingh.png':'/resources/comman/xing.png'}}" class="icon3"></image>
-          <view class="{{x==2?'optnumh':'optnum'}}">3350</view>
-        </view>
-      </view>
+<!--顶部用户信息-->
+<view class="topbgv">
+  <view style="width: 100vw;height:{{navigationBarHeight}}px"></view>
+  <view class="pagetitlev">
+    <view class="backiconv" bindtap="goBackOpt">
+      <image src="/resources/comman/backiconw.png" class="backicon"></image>
     </view>
+    <view class="pagetitle">探寻红色基因</view>
   </view>
-</block>
-<view style="width: 100vw;height: 32rpx;"></view>
+</view>
+
+<!--banner部分-->
+<view class="bannerv" bindtap="goSystem">
+  <image lazy-load="true" class="banner" src="https://zhengzhousizheng.oss-cn-beijing.aliyuncs.com/zhengzhouv2/homebanner.png"></image>
+</view>
+
+<!--探寻红色基因-->
+<view class="jiyinv" bindtap="goJiYinOpt" data-id="1">
+  <image mode="aspectFill" lazy-load="true" src="/resources/comman/avatarUrl.jpg" class="jiyincover"></image>
+  <view class="jiyinc">
+    <view class="jiyinname">红色摇篮-安远路矿工人运动纪念馆</view>
+    <view class="jiyinnumv">1.4k浏览 · 231点赞 · 233收藏</view>
+  </view>
+</view>
+<view class="jiyinv" bindtap="goJiYinOpt" data-id="1">
+  <image mode="aspectFill" lazy-load="true" src="/resources/comman/avatarUrl.jpg" class="jiyincover"></image>
+  <view class="jiyinc">
+    <view class="jiyinname">鲁迅纪念馆平展</view>
+    <view class="jiyinnumv">1.4k浏览 · 231点赞 · 233收藏</view>
+  </view>
+</view>
+<view class="jiyinv" bindtap="goJiYinOpt" data-id="1">
+  <image mode="aspectFill" lazy-load="true" src="/resources/comman/avatarUrl.jpg" class="jiyincover"></image>
+  <view class="jiyinc">
+    <view class="jiyinname">鳄鱼园革命纪念馆</view>
+    <view class="jiyinnumv">1.4k浏览 · 231点赞 · 233收藏</view>
+  </view>
+</view>
+<view class="jiyinv" bindtap="goJiYinOpt" data-id="1">
+  <image mode="aspectFill" lazy-load="true" src="/resources/comman/avatarUrl.jpg" class="jiyincover"></image>
+  <view class="jiyinc">
+    <view class="jiyinname">黄花塘新四军军部纪念馆</view>
+    <view class="jiyinnumv">1.4k浏览 · 231点赞 · 233收藏</view>
+  </view>
+</view>

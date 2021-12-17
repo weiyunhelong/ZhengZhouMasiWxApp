@@ -3,76 +3,94 @@ page {
   background: #f2f2f2;
 }
 
-.block {
-  width: 710rpx;
-  height: 200rpx;
-  background: #FFFFFF;
-  border-radius: 10rpx;
-  margin: 22rpx auto 0;
+page {
+  background: #fff;
+}
+
+/*用户信息*/
+.topbgv {
+  width: 100vw;
+  height: 356rpx;
+  background: url(https://zhengzhousizheng.oss-cn-beijing.aliyuncs.com/zhengzhouv2/topbg.png) no-repeat;
+  background-size: cover;
+}
+
+.topbgv .pagetitlev {
+  width: 555rpx;
+  height: 70rpx;
   display: flex;
+  padding-left: 32rpx;
 }
 
-.liev {
-  width: 6rpx;
-  height: 200rpx;
-  background: linear-gradient(180deg, #124361, #0D6675);
-  box-shadow: 0px 2rpx 7rpx 0rpx rgba(209, 64, 0, 0.35);
-  border-top-left-radius: 10rpx;
-  border-bottom-left-radius: 10rpx;
+.topbgv .backiconv {
+  width: 70rpx;
+  height: 70rpx;
 }
 
-.cover {
-  width: 160rpx;
-  height: 160rpx;
-  margin: 20rpx 30rpx 0 20rpx;
-}
-
-.infov {
-  width: 475rpx;
-  height: 66rpx;
-  font-size: 26rpx;
-  color: #124361;
-}
-
-.name {
-  padding-top: 32rpx;
-  font-size: 26rpx;
-  color: #124361;
-  line-height: 45rpx;
-}
-
-.optv {
-  display: flex;
-  justify-content: space-between;
-  margin-top: 20rpx;
-}
-.optcv {
-  display: flex;
-  font-size: 24rpx;
-  color: #999999;
-  line-height: 32rpx;
-}
-
-.icon1 {
-  width: 23rpx;
-  height: 21rpx;
-  margin-right: 20rpx;
+.topbgv .backicon {
+  width: 27rpx;
+  height: 54rpx;
+  border-radius: 50%;
   margin-top: 8rpx;
 }
 
-.icon2 {
-  width: 19rpx;
-  height: 20rpx;
-  margin-right: 20rpx;
-  margin-top: 7rpx;
+.topbgv .pagetitle {
+  width: 385rpx;
+  height: 70rpx;
+  text-align: center;
+  line-height: 70rpx;
+  font-size: 34rpx;
+  color: #FFFFFF;
+  margin-left: 84rpx;
 }
 
-.icon3 {
-  width: 21rpx;
-  height: 20rpx;
-  margin-right: 20rpx;
-  margin-top: 7rpx;
+
+/*顶部的banner*/
+.bannerv {
+  width: 100vw;
+  height: 240rpx;
+  position: relative;
+  top: -150rpx;
+  text-align: center;
+  margin-bottom: -120rpx;
 }
-.optnumh{
-  color: #FF0000;
+
+.banner {
+  width: 686rpx;
+  height: 240rpx;
+  margin: 0 auto;
+}
+/*探寻红色基因*/
+.jiyinv {
+  width: 686rpx;
+  height: 202rpx;
+  border-bottom: 1rpx solid #eee;
+  display: flex;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+.jiyinv .jiyincover {
+  width: 260rpx;
+  height: 146rpx;
+  border-radius: 6rpx;
+  margin-top: 28rpx;
+  margin-right: 20rpx;
+}
+
+.jiyinv .jiyinc {
+  width: 406rpx;
+  padding-top: 28rpx;
+}
+
+.jiyinv .jiyinname {
+  height: 84rpx;
+  font-size: 30rpx;
+  color: #262626;
+}
+
+.jiyinv .jiyinnumv {
+  font-size: 24rpx;
+  color: #999999;
+  margin-top: 28rpx;
 }

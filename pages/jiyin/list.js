@@ -15,9 +15,25 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    var that = this;
+    wx.getSystemInfo({
+      success: (res) => {
+        that.setData({
+          navigationBarHeight: res.statusBarHeight
+        })
+      },
+    })
   },
-
+  goBackOpt(){//点击返回
+    wx.navigateBack({
+      delta: 1,
+    })
+  },
+  goJiYinOpt(e){//点击到详情
+    wx.navigateTo({
+      url: '../jiyin/detail?id='+e.currentTarget.dataset.id,
+    })
+  },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */

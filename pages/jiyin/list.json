@@ -1,7 +1,6 @@
 {
-  "navigationBarBackgroundColor": "#124361",
-  "navigationBarTextStyle": "white",
-  "navigationBarTitleText": "全景红色纪念地",
+  "navigationBarTitleText": "",
+  "navigationStyle": "custom",
   "usingComponents": {
     "loadding": "../../components/loadding/index"
   }
