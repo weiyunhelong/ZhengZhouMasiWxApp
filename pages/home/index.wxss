@@ -321,4 +321,5 @@ page {
   padding: 0 5%;
   border-bottom-left-radius: 6rpx;
   border-bottom-right-radius: 6rpx;
+  color: #fff;
 }
