@@ -1,8 +1,8 @@
 Component({
   data: {
     selected: 0,
-    color: "#999999",
-    selectedColor: "#124361",
+    color: "#666666",
+    selectedColor: "#F24540",
     list: getApp().globalData.tabbar,
     showTabBar: true,
     tabbarresize: '?x-oss-process=image/resize,m_fill,w_54,h_54,limit_0'

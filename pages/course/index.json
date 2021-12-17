@@ -1,7 +1,7 @@
 {
   "navigationBarBackgroundColor": "#ffffff",
   "navigationBarTextStyle": "black",
-  "navigationBarTitleText": "扶贫足迹",
+  "navigationBarTitleText": "进德学堂",
   "usingComponents": {
     "loadding": "../../components/loadding/index"
   }

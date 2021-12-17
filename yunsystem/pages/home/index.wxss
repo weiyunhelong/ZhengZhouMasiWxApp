@@ -12,15 +12,14 @@ page {
 
 .backcv {
   width: 400rpx;
-  height: 60rpx;
+  height: 70rpx;
   padding-left: 35rpx;
-  margin-top: 10rpx;
 }
 
 .backicon {
-  width: 20rpx;
-  height: 34rpx;
-  margin-top: 13rpx;
+  width: 27rpx;
+  height: 54rpx;
+  margin-top: 8rpx;
 }
 
 .menuv {
@@ -107,17 +106,17 @@ page {
   box-shadow: 0rpx 2rpx 8rpx 0rpx rgba(242, 69, 64, 0.5);
   text-align: center;
   line-height: 104rpx;
-  border-radius: 50%;    
+  border-radius: 50%;
   margin: 0 auto;
 }
 
 .scanicon {
   width: 44rpx;
   height: 44rpx;
-  margin-top:30rpx;
+  margin-top: 30rpx;
 }
 
-.tabbartxt{
+.tabbartxt {
   width: 164rpx;
   text-align: center;
   line-height: 70px;
@@ -125,7 +124,8 @@ page {
   font-size: 32rpx;
   color: #999999;
 }
-.tabbartxth{
+
+.tabbartxth {
   width: 164rpx;
   text-align: center;
   line-height: 70px;
@@ -135,7 +135,7 @@ page {
   font-size: 34rpx;
 }
 
-.tabbarscanev{
+.tabbarscanev {
   position: relative;
   width: 164rpx;
   text-align: center;

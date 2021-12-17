@@ -4,7 +4,7 @@
     <image src="/resources/comman/avatarUrl.jpg" class="txicon"></image>
     <view class="txtxt">更换头像</view>
   </view>
-  <image src="/resources/comman/righticon.png" class="righticon"></image>
+  <image src="/resources/comman/right.png" class="righticon"></image>
 </view>
 
 <view class="hangv">
@@ -12,14 +12,14 @@
     <view class="hangtag">昵称</view>
     <view class="hangval">
       <view class="hangtxt">用户名</view>
-      <image src="/resources/comman/righticon.png" class="righticon"></image>
+      <image src="/resources/comman/right.png" class="righticon"></image>
     </view>
   </view>
   <view class="hangc" bindtap="goDescOpt">
     <view class="hangtag">简介</view>
     <view class="hangval">
       <view class="hangtxtr">未完成</view>
-      <image src="/resources/comman/righticon.png" class="righticon"></image>
+      <image src="/resources/comman/right.png" class="righticon"></image>
     </view>
   </view>
 </view>
@@ -29,21 +29,21 @@
     <view class="hangtag">姓名</view>
     <view class="hangval">
       <view class="hangtxt">李云飞</view>
-      <image src="/resources/comman/righticon.png" class="righticon"></image>
+      <image src="/resources/comman/right.png" class="righticon"></image>
     </view>
   </view>
   <view class="hangc" bindtap="goSexOpt">
     <view class="hangtag">性别</view>
     <view class="hangval">
       <view class="hangtxt">男</view>
-      <image src="/resources/comman/righticon.png" class="righticon"></image>
+      <image src="/resources/comman/right.png" class="righticon"></image>
     </view>
   </view>
   <view class="hangc">
     <view class="hangtag">手机号码</view>
     <view class="hangval">
       <view class="hangtxt">13812345678</view>
-      <image src="/resources/comman/righticon.png" class="righticon"></image>
+      <image src="/resources/comman/right.png" class="righticon"></image>
     </view>
   </view>
 </view>
@@ -53,7 +53,7 @@
     <view class="hangtag">修改密码</view>
     <view class="hangval">
       <view class="hangtxt"></view>
-      <image src="/resources/comman/righticon.png" class="righticon"></image>
+      <image src="/resources/comman/right.png" class="righticon"></image>
     </view>
   </view>
 </view>

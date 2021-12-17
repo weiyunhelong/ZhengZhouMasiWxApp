@@ -1,4 +1,52 @@
-/* pages/zuji/detail.wxss */
+/* pages/zuji/red.wxss */
+page {
+  background: #fff;
+}
+
+/*用户信息*/
+.topbgv {
+  width: 100vw;
+  height: 356rpx;
+  background: url(https://zhengzhousizheng.oss-cn-beijing.aliyuncs.com/zhengzhouv2/topbg.png) no-repeat;
+  background-size: cover;
+}
+
+.topbgv .pagetitlev {
+  width: 555rpx;
+  height: 70rpx;
+  display: flex;
+  padding-left: 32rpx;
+}
+
+.topbgv .backiconv {
+  width: 70rpx;
+  height: 70rpx;
+}
+
+.topbgv .backicon {
+  width: 27rpx;
+  height: 54rpx;
+  border-radius: 50%;
+  margin-top: 8rpx;
+}
+
+.topbgv .pagetitle {
+  width: 385rpx;
+  height: 70rpx;
+  text-align: center;
+  line-height: 70rpx;
+  font-size: 34rpx;
+  color: #FFFFFF;
+  margin-left: 84rpx;
+}
+
+/*红色足迹部分*/
+.datav{
+  width: 100vw;
+  height: calc(100vh - 180rpx);
+  margin-top: -180rpx;
+  position: relative;
+}
 .info1 {
   width: 100vw;
   height: 757rpx;

@@ -1,296 +1,324 @@
 /* pages/home/index.wxss */
 page {
-  background: #f2f2f2;
+  background: #fff;
 }
 
+/*用户信息*/
 .topbgv {
   width: 100vw;
-  height: 279rpx;
-  background: url(https://zhengzhousizheng.oss-cn-beijing.aliyuncs.com/home/topbg.png) no-repeat;
+  height: 356rpx;
+  background: url(https://zhengzhousizheng.oss-cn-beijing.aliyuncs.com/zhengzhouv2/topbg.png) no-repeat;
   background-size: cover;
 }
 
-.swiperv {
+.topbgv .userv {
+  width: 555rpx;
+  height: 70rpx;
+  display: flex;
+  padding-left: 32rpx;
+}
+
+.topbgv .avatarUrl {
+  width: 70rpx;
+  height: 70rpx;
+  border-radius: 50%;
+  margin-right: 20rpx;
+}
+
+.topbgv .username {
+  height: 70rpx;
+  line-height: 70rpx;
+  font-size: 32rpx;
+  color: #FFFFFF;
+}
+
+/*顶部的banner*/
+.bannerv {
   width: 100vw;
-  height: 300rpx;
-  margin-top: -100rpx;
+  height: 240rpx;
+  position: relative;
+  top: -150rpx;
+  text-align: center;
 }
 
-.swiperimg {
-  width: 710rpx;
-  height: 300rpx;
-  margin-left: 20rpx;
+.banner {
+  width: 686rpx;
+  height: 240rpx;
+  margin: 0 auto;
 }
 
+/*Menu部分*/
 .menuv {
-  width: 710rpx;
+  width: 100vw;
   height: auto;
-  background: #FFFFFF;
-  border-radius: 10px;
-  margin: 30rpx auto;
   display: flex;
   justify-content: space-around;
-  flex-wrap: wrap;
-  padding-bottom: 40rpx;
+  margin: -105rpx auto 0rpx;
 }
 
-.menuitem {
+.menuv .menuitm {
+  width: 130rpx;
   text-align: center;
-  margin-top: 45rpx;
-  width: 220rpx;
 }
 
-.menuicon {
-  width: 108rpx;
-  height: 108rpx;
-  margin: 0 auto;
-}
-
-.menutxt {
-  color: #333;
-  font-size: 24rpx;
-  font-weight: 500;
-}
-
-.tabv {
-  width: 710rpx;
-  height: 175rpx;
-  display: flex;
-  justify-content: space-between;
-  margin: 0 auto 45rpx;
-}
-
-.tabimg {
-  width: 341rpx;
-  height: 175rpx;
-}
-
-.kongv {
-  width: 100vw;
-  height: 20rpx;
-  background: #FFFFFF;
-}
-
-.titlev {
-  width: 710rpx;
-  margin: 0 auto;
-  display: flex;
-  justify-content: space-between;
-  padding: 40rpx 0;
-}
-
-.titlel,
-.titler {
-  display: flex;
-}
-
-.titleicon {
-  width: 36rpx;
-  height: 28rpx;
-}
-
-.titletxt {
-  font-size: 30rpx;
-  font-weight: bold;
-  color: #333333;
-  margin-left: 12rpx;
-  line-height: 1;
-}
-
-.titlemore {
-  font-size: 30rpx;
-  font-weight: bold;
-  color: #999999;
-  margin-right: 10rpx;
-  line-height: 1;
-}
-
-.titleright {
-  width: 10rpx;
-  height: 20rpx;
-  margin-top: 6rpx;
-}
-
-.scrollview {
-  width: 100vw;
-  overflow: hidden;
-  white-space: nowrap;
-  margin-bottom: 32rpx;
-}
-
-.scrollviewc {
-  display: inline-block;
-  width: 400rpx;
-  height: 300rpx;
-  border-radius: 10rpx;
-  position: relative;
-  margin-left: 20rpx;
-}
-
-.voincev {
-  width: 400rpx;
-  height: 260rpx;
-  background: #D1E6F3;
-  border-radius: 10rpx;
-  display: block;
-}
-
-.writerv {
-  display: flex;
-  padding-top: 28rpx;
-}
-
-.writerlie {
-  width: 8rpx;
-  height: 28rpx;
-  background: #124361;
-  margin-right: 16rpx;
-}
-
-.writername {
-  font-size: 30rpx;
-  font-weight: bold;
-  color: #333333;
-  line-height: 1;
-}
-
-.desc {
-  margin: 24rpx 24rpx;
-  font-size: 24rpx;
-  color: #666666;
-  width: 352rpx;
+.menuv .menuicon1 {
+  width: 96rpx;
   height: 100rpx;
-  display: block;
+  margin: 0 auto 5rpx;
 }
 
-.voinceicon {
-  width: 74rpx;
-  height: 74rpx;
-  position: absolute;
-  top: 222rpx;
-  left: 130rpx;
+.menuv .menuicon2 {
+  width: 96rpx;
+  height: 92rpx;
+  margin: 0 auto 15rpx;
 }
 
-.videoicon {
-  width: 74rpx;
-  height: 74rpx;
-  position: absolute;
-  top: 222rpx;
-  left: 18rpx;
+.menuv .menuicon3 {
+  width: 96rpx;
+  height: 102rpx;
+  margin: 0 auto 8rpx;
 }
 
-.coursev {
-  display: flex;
-  flex-wrap: wrap;
-  padding-left: 20rpx;
-  margin-bottom: 22rpx;
+.menuv .menuicon4 {
+  width: 96rpx;
+  height: 102rpx;
+  margin: 1rpx auto 8rpx;
 }
 
-.coursecv {
-  width: 224rpx;
-  height: 300rpx;
-  margin-right: 18rpx;
+.menuv .menuicon5 {
+  width: 96rpx;
+  height: 100rpx;
+  margin: 0 auto 12rpx;
 }
 
-.coursecover {
-  width: 224rpx;
-  height: 224rpx;
+.menuv .menutxt {
+  font-size: 24rx;
+  color: #262626;
 }
 
-.coursename {
-  width: 224rpx;
-  font-size: 30rpx;
-  font-weight: bold;
-  color: #333333;
-}
-
-.jiyinv {
-  width: 710rpx;
-  height: 170rpx;
-  margin: 0 auto 32rpx;
-  display: flex;
-}
-
-.jiyincover {
-  width: 240rpx;
-  height: 170rpx;
-  border-radius: 10rpx;
-  margin-right: 26rpx;
-}
-
-.jiyininfo {
-  width: 416rpx;
-  height: 170rpx;
-}
-
-.jiyinname {
-  font-size: 30rpx;
-  font-weight: bold;
-  color: #333333;
-  margin-bottom: 15rpx;
-}
-
-.jiyindesc {
-  font-size: 24rpx;
-  color: #666666;
-}
-
-.jiyinopt {
+/*分类部分*/
+.categoryv {
   display: flex;
   justify-content: space-between;
-  margin-top: 20rpx;
+  margin: 40rpx 32rpx 0;
+  height: 100rpx;
+  line-height: 100rpx;
 }
 
-.jiyinoptv {
+.categoryv .categoryvl {
   display: flex;
+}
+
+.categoryv .categoryvlie {
+  width: 5rpx;
+  height: 28rpx;
+  background: #F24540;
+  border-radius: 3rpx;
+  margin-top: 36rpx;
+  margin-right: 10rpx;
+}
+
+.categoryv .categoryvtxt {
+  font-size: 34rpx;
+  font-weight: 500;
+  color: #262626;
+}
+
+.categoryv .categoryvr {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.categoryv .categoryvmore {
+  font-size: 24rpx;
+  color: #262626;
+}
+
+.categoryv .righticon {
+  width: 12rpx;
+  height: 20rpx;
+  margin-top: 43rpx;
+  margin-left: 8rpx;
+}
+
+/*横向滚动*/
+.xscrollview {
+  padding-left: 32rpx;
+  display: flex;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.xscrollview .xscrollviewc {
+  margin-right: 30rpx;
+  width: 180rpx;
+  height: auto;
+  display: inline-block;
+}
+
+.xscrollview .xscrollviewcover {
+  width: 180rpx;
+  height: 180rpx;
+  border-radius: 6rpx;
+}
+
+.xscrollview .xscrollviewnumberv {
+  width: 82rpx;
+  height: 28rpx;
+  background: rgba(14, 14, 14, 0.4);
+  border-radius: 6rpx;
+  display: flex;
+  justify-content: center;
+  position: relative;
+  z-index: 2;
+  top: -44rpx;
+  left: 86rpx;
+}
+
+.xscrollview .voiceicon {
+  width: 16rpx;
+  height: 16rpx;
+  margin-top: 6rpx;
+  margin-right: 4rpx;
+}
+
+.xscrollview .numbertxt {
+  height: 28rpx;
+  line-height: 28rpx;
+  font-size: 20rpx;
+  color: #FFFFFF;
+}
+
+.xscrollview .xscrollviewname {
+  font-size: 30rpx;
+  color: #262626;
+  margin-top: -28rpx;
+}
+
+.xscrollviewnull {
+  width: 30rpx;
+  height: 0;
+  display: inline-block;
+}
+
+/*创课中心*/
+.chuangkev {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin: 0 32rpx;
+}
+
+.chuangkev .chuangkec {
+  width: 328rpx;
+  height: auto;
+  margin-bottom: 30rpx;
+}
+
+.chuangkev .chuangkecover {
+  width: 328rpx;
+  height: 184rpx;
+  border-radius: 6rpx;
+}
+
+.chuangkev .chuangkenumberv {
+  width: 82rpx;
+  height: 28rpx;
+  line-height: 28rpx;
+  background: rgba(14, 14, 14, 0.4);
+  border-radius: 6rpx;
+  display: flex;
+  justify-content: center;
+  position: relative;
+  z-index: 2;
+  top: -44rpx;
+  left: 244rpx;
+}
+
+.chuangkev .videoicon {
+  width: 12rpx;
+  height: 14rpx;
+  margin-top: 9rpx;
+  margin-right: 4rpx;
+}
+
+.chuangkev .numbertxt {
+  height: 28rpx;
+  line-height: 28rpx;
+  font-size: 20rpx;
+  color: #FFFFFF;
+}
+
+.chuangkev .chuangkename {
+  margin-top: -28rpx;
+  font-size: 30rpx;
+  color: #262626;
+}
+
+.chuangkev .chuangketime {
   font-size: 24rpx;
   color: #999999;
-  line-height: 32rpx;
+  height: 38rpx;
+  line-height: 38rpx;
 }
 
-.jiyinicon1 {
-  width: 23rpx;
-  height: 21rpx;
-  margin-right: 20rpx;
-  margin-top: 8rpx;
-}
-
-.jiyinicon2 {
-  width: 19rpx;
-  height: 20rpx;
-  margin-right: 20rpx;
-  margin-top: 7rpx;
-}
-
-.jiyinicon3 {
-  width: 21rpx;
-  height: 20rpx;
-  margin-right: 20rpx;
-  margin-top: 7rpx;
-}
-
-.videov {
-  width: 710rpx;
-  height: auto;
-  margin: 16rpx auto 0rpx;
+/*探寻红色基因*/
+.jiyinv {
+  width: 686rpx;
+  height: 202rpx;
+  border-bottom: 1rpx solid #eee;
   display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
 }
 
-.smvideo {
-  width: 345rpx;
-  height: 345rpx;
-  margin-bottom: 20rpx;
+.jiyinv .jiyincover {
+  width: 260rpx;
+  height: 146rpx;
+  border-radius: 6rpx;
+  margin-top: 16rpx;
+  margin-right: 20rpx;
 }
-.mdvideo{
-  width: 710rpx;
-  height: 345rpx;
-  margin-bottom: 20rpx;
+
+.jiyinv .jiyinc {
+  width: 406rpx;
+  padding-top: 16rpx;
 }
-.videotag{  
-  padding-top: 290rpx;
-  text-align: center;
+
+.jiyinv .jiyinname {
+  height: 84rpx;
   font-size: 30rpx;
-  color: #333333;
+  color: #262626;
+}
+
+.jiyinv .jiyinnumv {
+  font-size: 24rpx;
+  color: #999999;
+  margin-top: 28rpx;
+}
+
+/*四史天天讲*/
+.sishiv {
+  width: 686rpx;
+  height: auto;
+  margin: 0 auto 30rpx;
+}
+
+.sishiv .sishicover {
+  width: 100%;
+  height: auto;
+  min-height: 0rpx;
+  border-radius: 6rpx;
+}
+
+.sishiv .sishiname {
+  width: 90%;
+  height: 88rpx;
+  background: rgba(0, 0, 0, 0.3);
+  line-height: 88rpx;
+  text-align: center;
+  margin: -93rpx auto 0;
+  position: relative;
+  z-index: 2;
+  padding: 0 5%;
+  border-bottom-left-radius: 6rpx;
+  border-bottom-right-radius: 6rpx;
 }

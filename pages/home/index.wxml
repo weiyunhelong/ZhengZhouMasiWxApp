@@ -1,267 +1,219 @@
 <!--pages/home/index.wxml-->
-<view class="topbgv"></view>
-<!--轮播图部分-->
-<swiper class="swiperv" circular="true" next-margin="20rpx" indicator-dots="true" indicator-active-color="#ffffff" indicator-color="#cccccc">
-  <swiper-item>
-    <image lazy-load="true" src="https://zhengzhousizheng.oss-cn-beijing.aliyuncs.com/home/swiper.png" mode="aspectFill" class="swiperimg"></image>
-  </swiper-item>
-  <swiper-item>
-    <image lazy-load="true" src="https://zhengzhousizheng.oss-cn-beijing.aliyuncs.com/home/swiper.png" mode="aspectFill" class="swiperimg"></image>
-  </swiper-item>
-  <swiper-item>
-    <image lazy-load="true" src="https://zhengzhousizheng.oss-cn-beijing.aliyuncs.com/home/swiper.png" mode="aspectFill" class="swiperimg"></image>
-  </swiper-item>
-</swiper>
+<!--顶部用户信息-->
+<view class="topbgv">
+  <view style="width: 100vw;height:{{navigationBarHeight}}px"></view>
+  <view class="userv" bindtap="goUserOpt">
+    <image src="/resources/comman/avatarUrl.jpg" class="avatarUrl"></image>
+    <view class="username">李云飞</view>
+  </view>
+</view>
 
-<!--Menu菜单部分-->
+<!--banner部分-->
+<view class="bannerv" bindtap="goSystem">
+  <image lazy-load="true" class="banner" src="https://zhengzhousizheng.oss-cn-beijing.aliyuncs.com/zhengzhouv2/homebanner.png"></image>
+</view>
+
+<!--menu部分-->
 <view class="menuv">
-  <view class="menuitem" bindtap="tapMenu" data-menu="1">
-    <image src="https://zhengzhousizheng.oss-cn-beijing.aliyuncs.com/home/jiyin.png" class="menuicon"></image>
-    <view class="menutxt">探寻红色基因</view>
+  <view class="menuitm" bindtap="tapMenu" data-menu="1">
+    <image src="/resources/icon/shishidu.png" class="menuicon1"></image>
+    <view class="menutxt">时时读</view>
   </view>
-  <view class="menuitem" bindtap="tapMenu" data-menu="2">
-    <image src="https://zhengzhousizheng.oss-cn-beijing.aliyuncs.com/home/shidu.png" class="menuicon"></image>
-    <view class="menutxt">红色时时读</view>
+  <view class="menuitm" bindtap="tapMenu" data-menu="2">
+    <image src="/resources/icon/fupinzuji.png" class="menuicon2"></image>
+    <view class="menutxt">扶贫足迹</view>
   </view>
-  <view class="menuitem" bindtap="tapMenu" data-menu="3">
-    <image src="https://zhengzhousizheng.oss-cn-beijing.aliyuncs.com/home/zujifupin.png" class="menuicon"></image>
-    <view class="menutxt">习总书记的扶贫足迹</view>
+  <view class="menuitm" bindtap="tapMenu" data-menu="3">
+    <image src="/resources/icon/jiniandi.png" class="menuicon3"></image>
+    <view class="menutxt">纪念地</view>
   </view>
-  <view class="menuitem" bindtap="tapMenu" data-menu="4">
-    <image src="https://zhengzhousizheng.oss-cn-beijing.aliyuncs.com/home/jiniandi.png" class="menuicon"></image>
-    <view class="menutxt">全景红色纪念地</view>
+  <view class="menuitm" bindtap="tapMenu" data-menu="4">
+    <image src="/resources/icon/redzuji.png" class="menuicon4"></image>
+    <view class="menutxt">红色足迹</view>
   </view>
-  <view class="menuitem" bindtap="tapMenu" data-menu="5">
-    <image src="https://zhengzhousizheng.oss-cn-beijing.aliyuncs.com/home/zujired.png" class="menuicon"></image>
-    <view class="menutxt">习总书记的红色足迹</view>
-  </view>
-  <view class="menuitem" bindtap="tapMenu" data-menu="6">
-    <image src="https://zhengzhousizheng.oss-cn-beijing.aliyuncs.com/home/sijiang.png" class="menuicon"></image>
-    <view class="menutxt">四史天天讲</view>
+  <view class="menuitm" bindtap="tapMenu" data-menu="5">
+    <image src="/resources/icon/sishi.png" class="menuicon5"></image>
+    <view class="menutxt">学四史</view>
   </view>
 </view>
-<view class="tabv">
-  <image src="https://zhengzhousizheng.oss-cn-beijing.aliyuncs.com/home/chuangke.png" class="tabimg" bindtap="goChuangke"></image>
-  <image src="https://zhengzhousizheng.oss-cn-beijing.aliyuncs.com/home/system.png" class="tabimg" bindtap="goSystem"></image>
+
+<!--分类部分-->
+<view class="categoryv">
+  <view class="categoryvl">
+    <view class="categoryvlie"></view>
+    <view class="categoryvtxt">红色时时读</view>
+  </view>
+  <view class="categoryvr" bindtap="tapMenu" data-menu="1">
+    <view class="categoryvmore">更多</view>
+    <image src="/resources/comman/right.png" class="righticon"></image>
+  </view>
 </view>
-<view class="kongv"></view>
 
 <!--红色时时读-->
-<view class="titlev"  bindtap="tapMenu" data-menu="2">
-  <view class="titlel">
-    <image class="titleicon" src="https://zhengzhousizheng.oss-cn-beijing.aliyuncs.com/home/read.png"></image>
-    <view class="titletxt">红色时时读</view>
+<scroll-view class="xscrollview" scroll-x="true">
+  <view class="xscrollviewc" bindtap="goShiduOpt" data-id="93">
+    <image mode="aspectFill" lazy-load="true" src="/resources/comman/avatarUrl.jpg" class="xscrollviewcover"></image>
+    <view class="xscrollviewnumberv">
+      <image src="/resources/home/voice.png" class="voiceicon"></image>
+      <view class="numbertxt">1.2万</view>
+    </view>
+    <view class="xscrollviewname showOnehangTxt">做发动机不好使</view>
   </view>
-  <view class="titler">
-    <view class="titlemore">更多</view>
-    <image class="titleright" src="/resources/comman/righticon.png"></image>
+  <view class="xscrollviewc" bindtap="goShiduOpt" data-id="93">
+    <image mode="aspectFill" lazy-load="true" src="/resources/comman/avatarUrl.jpg" class="xscrollviewcover"></image>
+    <view class="xscrollviewnumberv">
+      <image src="/resources/home/voice.png" class="voiceicon"></image>
+      <view class="numbertxt">1.2万</view>
+    </view>
+    <view class="xscrollviewname showOnehangTxt">做发动机不好使</view>
+  </view>
+  <view class="xscrollviewc" bindtap="goShiduOpt" data-id="93">
+    <image mode="aspectFill" lazy-load="true" src="/resources/comman/avatarUrl.jpg" class="xscrollviewcover"></image>
+    <view class="xscrollviewnumberv">
+      <image src="/resources/home/voice.png" class="voiceicon"></image>
+      <view class="numbertxt">1.2万</view>
+    </view>
+    <view class="xscrollviewname showOnehangTxt">做发动机不好使</view>
+  </view>
+  <view class="xscrollviewc" bindtap="goShiduOpt" data-id="93">
+    <image mode="aspectFill" lazy-load="true" src="/resources/comman/avatarUrl.jpg" class="xscrollviewcover"></image>
+    <view class="xscrollviewnumberv">
+      <image src="/resources/home/voice.png" class="voiceicon"></image>
+      <view class="numbertxt">1.2万</view>
+    </view>
+    <view class="xscrollviewname showOnehangTxt">做发动机不好使</view>
+  </view>
+  <view class="xscrollviewc" bindtap="goShiduOpt" data-id="93">
+    <image mode="aspectFill" lazy-load="true" src="/resources/comman/avatarUrl.jpg" class="xscrollviewcover"></image>
+    <view class="xscrollviewnumberv">
+      <image src="/resources/home/voice.png" class="voiceicon"></image>
+      <view class="numbertxt">1.2万</view>
+    </view>
+    <view class="xscrollviewname showOnehangTxt">做发动机不好使</view>
+  </view>
+</scroll-view>
+
+<!--分类部分-->
+<view class="categoryv">
+  <view class="categoryvl">
+    <view class="categoryvlie"></view>
+    <view class="categoryvtxt">创课中心</view>
+  </view>
+  <view class="categoryvr" bindtap="goChuangke">
+    <view class="categoryvmore">更多</view>
+    <image src="/resources/comman/right.png" class="righticon"></image>
   </view>
 </view>
-<scroll-view scroll-x="true" class="scrollview">
-  <view class="scrollviewc" bindtap="goShiduOpt" data-id="1">
-    <view class="voincev">
-      <view class="writerv">
-        <view class="writerlie"></view>
-        <view class="writername">壬尽美</view>
-      </view>
-      <view class="desc showThreehangTxt">南昌八一起义纪念馆位于江西省南昌市西湖区中山路，江西南昌，一个被誉为“物华天宝、人杰地灵”的历史文化名城，又一个被誉为“物华天宝、人杰地灵”的历史文化名城</view>
-    </view>
-    <image src="https://zhengzhousizheng.oss-cn-beijing.aliyuncs.com/home/voice.png" class="voinceicon"></image>
-  </view>
-  <view class="scrollviewc" bindtap="goShiduOpt" data-id="2">
-    <view class="voincev">
-      <view class="writerv">
-        <view class="writerlie"></view>
-        <view class="writername">萧楚女</view>
-      </view>
-      <view class="desc showThreehangTxt">南昌八一起义纪念馆位于江西省南昌市西湖区中山路，江西南昌，一个被誉为“物华天宝、人杰地灵”的历史文化名城，又...</view>
-    </view>
-    <image src="https://zhengzhousizheng.oss-cn-beijing.aliyuncs.com/home/video.png" class="videoicon"></image>
-  </view>
-  <view style="width: 20rpx;height:0rpx;display: inline-block;"></view>
-</scroll-view>
-<view class="kongv"></view>
 
 <!--创课中心-->
-<view class="titlev" bindtap="goChuangke">
-  <view class="titlel">
-    <image class="titleicon" style="width: 50rpx;height: 45rpx;margin-top: -4rpx;" src="https://zhengzhousizheng.oss-cn-beijing.aliyuncs.com/home/kecheng.png"></image>
-    <view class="titletxt">创课中心</view>
+<view class="chuangkev">
+  <view class="chuangkec" bindtap="goChuangkeOpt" data-id="124">
+    <image mode="aspectFill" lazy-load="true" src="/resources/comman/avatarUrl.jpg" class="chuangkecover"></image>
+    <view class="chuangkenumberv">
+      <image src="/resources/home/video.png" class="videoicon"></image>
+      <view class="numbertxt">1.2万</view>
+    </view>
+    <view class="chuangkename showOnehangTxt">使用设计工具的好处在省时省力</view>
+    <view class="chuangketime">时长：19:23</view>
   </view>
-  <view class="titler">
-    <view class="titlemore">更多</view>
-    <image class="titleright" src="/resources/comman/righticon.png"></image>
+  <view class="chuangkec" bindtap="goChuangkeOpt" data-id="124">
+    <image mode="aspectFill" lazy-load="true" src="/resources/comman/avatarUrl.jpg" class="chuangkecover"></image>
+    <view class="chuangkenumberv">
+      <image src="/resources/home/video.png" class="videoicon"></image>
+      <view class="numbertxt">1.2万</view>
+    </view>
+    <view class="chuangkename showOnehangTxt">使用设计工具的好处在省时省力</view>
+    <view class="chuangketime">时长：19:23</view>
+  </view>
+  <view class="chuangkec" bindtap="goChuangkeOpt" data-id="124">
+    <image mode="aspectFill" lazy-load="true" src="/resources/comman/avatarUrl.jpg" class="chuangkecover"></image>
+    <view class="chuangkenumberv">
+      <image src="/resources/home/video.png" class="videoicon"></image>
+      <view class="numbertxt">1.2万</view>
+    </view>
+    <view class="chuangkename showOnehangTxt">使用设计工具的好处在省时省力</view>
+    <view class="chuangketime">时长：19:23</view>
+  </view>
+  <view class="chuangkec" bindtap="goChuangkeOpt" data-id="124">
+    <image mode="aspectFill" lazy-load="true" src="/resources/comman/avatarUrl.jpg" class="chuangkecover"></image>
+    <view class="chuangkenumberv">
+      <image src="/resources/home/video.png" class="videoicon"></image>
+      <view class="numbertxt">1.2万</view>
+    </view>
+    <view class="chuangkename showOnehangTxt">使用设计工具的好处在省时省力</view>
+    <view class="chuangketime">时长：19:23</view>
   </view>
 </view>
-<view class="coursev">
-  <view class="coursecv" bindtap="goChuangkeOpt" data-id="1">
-    <image lazy-load="true" mode="aspectFill" src="https://zhengzhousizheng.oss-cn-beijing.aliyuncs.com/home/bayi.png" class="coursecover"></image>
-    <view class="coursename showOnehangTxt">南昌八一起义南昌八一起义</view>
+
+<!--分类部分-->
+<view class="categoryv">
+  <view class="categoryvl">
+    <view class="categoryvlie"></view>
+    <view class="categoryvtxt">探寻红色基因</view>
   </view>
-  <view class="coursecv" bindtap="goChuangkeOpt" data-id="1">
-    <image lazy-load="true" mode="aspectFill" src="https://zhengzhousizheng.oss-cn-beijing.aliyuncs.com/home/bayi.png" class="coursecover"></image>
-    <view class="coursename showOnehangTxt">南昌八一起义南昌八一起义</view>
-  </view>
-  <view class="coursecv" bindtap="goChuangkeOpt" data-id="1">
-    <image lazy-load="true" mode="aspectFill" src="https://zhengzhousizheng.oss-cn-beijing.aliyuncs.com/home/bayi.png" class="coursecover"></image>
-    <view class="coursename showOnehangTxt">南昌八一起义南昌八一起义</view>
-  </view>
-  <view class="coursecv" bindtap="goChuangkeOpt" data-id="1">
-    <image lazy-load="true" mode="aspectFill" src="https://zhengzhousizheng.oss-cn-beijing.aliyuncs.com/home/bayi.png" class="coursecover"></image>
-    <view class="coursename showOnehangTxt">南昌八一起义南昌八一起义</view>
-  </view>
-  <view class="coursecv" bindtap="goChuangkeOpt" data-id="1">
-    <image lazy-load="true" mode="aspectFill" src="https://zhengzhousizheng.oss-cn-beijing.aliyuncs.com/home/bayi.png" class="coursecover"></image>
-    <view class="coursename showOnehangTxt">南昌八一起义南昌八一起义</view>
-  </view>
-  <view class="coursecv" bindtap="goChuangkeOpt" data-id="1">
-    <image lazy-load="true" mode="aspectFill" src="https://zhengzhousizheng.oss-cn-beijing.aliyuncs.com/home/bayi.png" class="coursecover"></image>
-    <view class="coursename showOnehangTxt">南昌八一起义南昌八一起义</view>
+  <view class="categoryvr" bindtap="goJiyin">
+    <view class="categoryvmore">更多</view>
+    <image src="/resources/comman/right.png" class="righticon"></image>
   </view>
 </view>
-<view class="kongv"></view>
 
 <!--探寻红色基因-->
-<view class="titlev" bindtap="tapMenu" data-menu="1">
-  <view class="titlel">
-    <image class="titleicon" style="width:32rpx;height: 33rpx;margin-top: -2rpx;" src="https://zhengzhousizheng.oss-cn-beijing.aliyuncs.com/home/map.png"></image>
-    <view class="titletxt">探寻红色基因</view>
-  </view>
-  <view class="titler">
-    <view class="titlemore">更多</view>
-    <image class="titleright" src="/resources/comman/righticon.png"></image>
+<view class="jiyinv" bindtap="goJiYinOpt" data-id="1">
+  <image mode="aspectFill" lazy-load="true" src="/resources/comman/avatarUrl.jpg" class="jiyincover"></image>
+  <view class="jiyinc">
+    <view class="jiyinname">红色摇篮-安远路矿工人运动纪念馆</view>
+    <view class="jiyinnumv">1.4k浏览 · 231点赞 · 233收藏</view>
   </view>
 </view>
-<view class="listv" style="padding-bottom: 16rpx;">
-  <view class="jiyinv" bindtap="goJiYinOpt" data-id="1">
-    <image src="https://zhengzhousizheng.oss-cn-beijing.aliyuncs.com/home/xinghuo.png" mode="aspectFill" class="jiyincover"></image>
-    <view class="jiyininfo">
-      <view class="jiyinname showOnehangTxt">中共一大“星火初燃”</view>
-      <view class="jiyindesc showTwohangTxt">南昌路100弄，曾经的老渔阳里，弄内2号是一栋有着100多年历史的砖木结构旧式...</view>
-      <view class="jiyinopt">
-        <view class="jiyinoptv">
-          <image src="/resources/comman/view.png" class="jiyinicon1"></image>
-          <view class="jiyinnum">3350</view>
-        </view>
-        <view class="jiyinoptv">
-          <image src="/resources/comman/zan.png" class="jiyinicon2"></image>
-          <view class="jiyinnum">3350</view>
-        </view>
-        <view class="jiyinoptv">
-          <image src="/resources/comman/xing.png" class="jiyinicon3"></image>
-          <view class="jiyinnum">3350</view>
-        </view>
-      </view>
-    </view>
-  </view>
-  <view class="jiyinv" bindtap="goJiYinOpt" data-id="2">
-    <image src="https://zhengzhousizheng.oss-cn-beijing.aliyuncs.com/home/xinghuo.png" mode="aspectFill" class="jiyincover"></image>
-    <view class="jiyininfo">
-      <view class="jiyinname showOnehangTxt">中共一大“星火初燃”</view>
-      <view class="jiyindesc showTwohangTxt">南昌路100弄，曾经的老渔阳里，弄内2号是一栋有着100多年历史的砖木结构旧式...</view>
-      <view class="jiyinopt">
-        <view class="jiyinoptv">
-          <image src="/resources/comman/view.png" class="jiyinicon1"></image>
-          <view class="jiyinnum">3350</view>
-        </view>
-        <view class="jiyinoptv">
-          <image src="/resources/comman/zan.png" class="jiyinicon2"></image>
-          <view class="jiyinnum">3350</view>
-        </view>
-        <view class="jiyinoptv">
-          <image src="/resources/comman/xing.png" class="jiyinicon3"></image>
-          <view class="jiyinnum">3350</view>
-        </view>
-      </view>
-    </view>
-  </view>
-  <view class="jiyinv" bindtap="goJiYinOpt" data-id="3">
-    <image src="https://zhengzhousizheng.oss-cn-beijing.aliyuncs.com/home/xinghuo.png" mode="aspectFill" class="jiyincover"></image>
-    <view class="jiyininfo">
-      <view class="jiyinname showOnehangTxt">中共一大“星火初燃”</view>
-      <view class="jiyindesc showTwohangTxt">南昌路100弄，曾经的老渔阳里，弄内2号是一栋有着100多年历史的砖木结构旧式...</view>
-      <view class="jiyinopt">
-        <view class="jiyinoptv">
-          <image src="/resources/comman/view.png" class="jiyinicon1"></image>
-          <view class="jiyinnum">3350</view>
-        </view>
-        <view class="jiyinoptv">
-          <image src="/resources/comman/zan.png" class="jiyinicon2"></image>
-          <view class="jiyinnum">3350</view>
-        </view>
-        <view class="jiyinoptv">
-          <image src="/resources/comman/xing.png" class="jiyinicon3"></image>
-          <view class="jiyinnum">3350</view>
-        </view>
-      </view>
-    </view>
-  </view>
-  <view class="jiyinv" bindtap="goJiYinOpt" data-id="4">
-    <image src="https://zhengzhousizheng.oss-cn-beijing.aliyuncs.com/home/xinghuo.png" mode="aspectFill" class="jiyincover"></image>
-    <view class="jiyininfo">
-      <view class="jiyinname showOnehangTxt">中共一大“星火初燃”</view>
-      <view class="jiyindesc showTwohangTxt">南昌路100弄，曾经的老渔阳里，弄内2号是一栋有着100多年历史的砖木结构旧式...</view>
-      <view class="jiyinopt">
-        <view class="jiyinoptv">
-          <image src="/resources/comman/view.png" class="jiyinicon1"></image>
-          <view class="jiyinnum">3350</view>
-        </view>
-        <view class="jiyinoptv">
-          <image src="/resources/comman/zan.png" class="jiyinicon2"></image>
-          <view class="jiyinnum">3350</view>
-        </view>
-        <view class="jiyinoptv">
-          <image src="/resources/comman/xing.png" class="jiyinicon3"></image>
-          <view class="jiyinnum">3350</view>
-        </view>
-      </view>
-    </view>
-  </view>
-  <view class="jiyinv" bindtap="goJiYinOpt" data-id="5">
-    <image src="https://zhengzhousizheng.oss-cn-beijing.aliyuncs.com/home/xinghuo.png" mode="aspectFill" class="jiyincover"></image>
-    <view class="jiyininfo">
-      <view class="jiyinname showOnehangTxt">中共一大“星火初燃”</view>
-      <view class="jiyindesc showTwohangTxt">南昌路100弄，曾经的老渔阳里，弄内2号是一栋有着100多年历史的砖木结构旧式...</view>
-      <view class="jiyinopt">
-        <view class="jiyinoptv">
-          <image src="/resources/comman/view.png" class="jiyinicon1"></image>
-          <view class="jiyinnum">3350</view>
-        </view>
-        <view class="jiyinoptv">
-          <image src="/resources/comman/zan.png" class="jiyinicon2"></image>
-          <view class="jiyinnum">3350</view>
-        </view>
-        <view class="jiyinoptv">
-          <image src="/resources/comman/xing.png" class="jiyinicon3"></image>
-          <view class="jiyinnum">3350</view>
-        </view>
-      </view>
-    </view>
+<view class="jiyinv" bindtap="goJiYinOpt" data-id="1">
+  <image mode="aspectFill" lazy-load="true" src="/resources/comman/avatarUrl.jpg" class="jiyincover"></image>
+  <view class="jiyinc">
+    <view class="jiyinname">鲁迅纪念馆平展</view>
+    <view class="jiyinnumv">1.4k浏览 · 231点赞 · 233收藏</view>
   </view>
 </view>
-<view class="kongv"></view>
+<view class="jiyinv" bindtap="goJiYinOpt" data-id="1">
+  <image mode="aspectFill" lazy-load="true" src="/resources/comman/avatarUrl.jpg" class="jiyincover"></image>
+  <view class="jiyinc">
+    <view class="jiyinname">鳄鱼园革命纪念馆</view>
+    <view class="jiyinnumv">1.4k浏览 · 231点赞 · 233收藏</view>
+  </view>
+</view>
+<view class="jiyinv" bindtap="goJiYinOpt" data-id="1">
+  <image mode="aspectFill" lazy-load="true" src="/resources/comman/avatarUrl.jpg" class="jiyincover"></image>
+  <view class="jiyinc">
+    <view class="jiyinname">黄花塘新四军军部纪念馆</view>
+    <view class="jiyinnumv">1.4k浏览 · 231点赞 · 233收藏</view>
+  </view>
+</view>
 
-<!--四史天天讲-->
-<view class="titlev"  bindtap="tapMenu" data-menu="6">
-  <view class="titlel">
-    <image class="titleicon" style="width:32rpx;height:27rpx;margin-right:4rpx;" src="https://zhengzhousizheng.oss-cn-beijing.aliyuncs.com/home/laba.png"></image>
-    <view class="titletxt">四史天天讲</view>
+<!--分类部分-->
+<view class="categoryv">
+  <view class="categoryvl">
+    <view class="categoryvlie"></view>
+    <view class="categoryvtxt">四史天天讲</view>
   </view>
-  <view class="titler">
-    <view class="titlemore">更多</view>
-    <image class="titleright" src="/resources/comman/righticon.png"></image>
-  </view>
-</view>
-<view class="videov">
-  <view bindtap="goSiJiangOpt" data-id="1" class="smvideo" style="background:url(https://zhengzhousizheng.oss-cn-beijing.aliyuncs.com/home/wusi.png) no-repeat;background-size: cover;">
-    <view class="videotag showOnehangTxt">五四运动</view>
-  </view>
-  <view bindtap="goSiJiangOpt" data-id="2" class="smvideo" style="background:url(https://zhengzhousizheng.oss-cn-beijing.aliyuncs.com/home/wusi.png) no-repeat;background-size: cover;">
-    <view class="videotag showOnehangTxt">共产党的早期组织成立</view>
-  </view>
-  <view bindtap="goSiJiangOpt" data-id="3" class="mdvideo" style="background:url(https://zhengzhousizheng.oss-cn-beijing.aliyuncs.com/home/yida.png) no-repeat;background-size: cover;">
-    <view class="videotag showOnehangTxt">中共一大</view>
+  <view class="categoryvr" bindtap="tapMenu" data-menu="5">
+    <view class="categoryvmore">更多</view>
+    <image src="/resources/comman/right.png" class="righticon"></image>
   </view>
 </view>
 
+<!--四史天天讲-->
+<view class="sishiv" bindtap="goSiJiangOpt" data-id="1">
+  <image mode="widthFix" lazy-load="true" src="/resources/comman/avatarUrl.jpg" class="sishicover"></image>
+  <view class="sishiname showOnehangTxt">北京市朝阳区嵩山路118号</view>
+</view>
+<view class="sishiv" bindtap="goSiJiangOpt" data-id="1">
+  <image mode="widthFix" lazy-load="true" src="/resources/comman/avatarUrl.jpg" class="sishicover"></image>
+  <view class="sishiname showOnehangTxt">北京市朝阳区嵩山路118号</view>
+</view>
+<view class="sishiv" bindtap="goSiJiangOpt" data-id="1">
+  <image mode="widthFix" lazy-load="true" src="/resources/comman/avatarUrl.jpg" class="sishicover"></image>
+  <view class="sishiname showOnehangTxt">北京市朝阳区嵩山路118号</view>
+</view>
+<view class="sishiv" bindtap="goSiJiangOpt" data-id="1">
+  <image mode="widthFix" lazy-load="true" src="/resources/comman/avatarUrl.jpg" class="sishicover"></image>
+  <view class="sishiname showOnehangTxt">北京市朝阳区嵩山路118号</view>
+</view>
 <view class="tabbarv"></view>

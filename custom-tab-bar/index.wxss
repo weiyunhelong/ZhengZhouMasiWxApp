@@ -46,7 +46,6 @@
 
 .tab-bar-item view {
   font-size: 12px;
-  font-weight: bold;
   text-align: center;
 }
 

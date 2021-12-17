@@ -17,6 +17,12 @@
           "pathName": "my/pages/dati/index",
           "query": "",
           "scene": null
+        },
+        {
+          "name": "",
+          "pathName": "pages/home/index",
+          "query": "",
+          "scene": null
         }
       ]
     }

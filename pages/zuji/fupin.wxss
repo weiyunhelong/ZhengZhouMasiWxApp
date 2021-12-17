@@ -1,0 +1,71 @@
+/* pages/zuji/fupin.wxss */
+page {
+  background: #fff;
+}
+
+/*用户信息*/
+.topbgv {
+  width: 100vw;
+  height: 356rpx;
+  background: url(https://zhengzhousizheng.oss-cn-beijing.aliyuncs.com/zhengzhouv2/topbg.png) no-repeat;
+  background-size: cover;
+}
+
+.topbgv .pagetitlev {
+  width: 555rpx;
+  height: 70rpx;
+  display: flex;
+  padding-left: 32rpx;
+}
+
+.topbgv .backiconv {
+  width: 70rpx;
+  height: 70rpx;
+}
+
+.topbgv .backicon {
+  width: 27rpx;
+  height: 54rpx;
+  border-radius: 50%;
+  margin-top: 8rpx;
+}
+
+.topbgv .pagetitle {
+  width: 385rpx;
+  height: 70rpx;
+  text-align: center;
+  line-height: 70rpx;
+  font-size: 34rpx;
+  color: #FFFFFF;
+  margin-left: 84rpx;
+}
+
+/*内容部分*/
+.contentv {
+  width: 710rpx;
+  height: auto;
+  margin: -150rpx auto 32rpx;
+}
+
+.banner {
+  width: 100%;
+  height: 300rpx;
+  margin-bottom: 14rpx;
+  display: block;
+}
+
+.cover {
+  width: 100%;
+  height: auto;
+  min-height: 0rpx;
+  display: block;
+}
+
+.lianziicon {
+  width: 61rpx;
+  height: 92rpx;
+  position: relative;
+  z-index: 2;
+  left: 602rpx;
+  top: -36rpx;
+}

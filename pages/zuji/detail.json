@@ -1,8 +1,0 @@
-{
-  "navigationBarBackgroundColor": "#124361",
-  "navigationBarTextStyle": "white",
-  "navigationBarTitleText": "习总书记的红色足迹",
-  "usingComponents": {
-    "loadding": "../../components/loadding/index"
-  }
-}

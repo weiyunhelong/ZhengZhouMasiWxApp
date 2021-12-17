@@ -1,5 +1,15 @@
-<!--pages/zuji/index.wxml-->
-<view class="bgv"></view>
+<!--pages/zuji/fupin.wxml-->
+<!--顶部用户信息-->
+<view class="topbgv">
+  <view style="width: 100vw;height:{{navigationBarHeight}}px"></view>
+  <view class="pagetitlev">
+    <view class="backiconv" bindtap="goBackOpt">
+      <image src="/resources/comman/backiconw.png" class="backicon"></image>
+    </view>
+    <view class="pagetitle">扶贫足迹</view>
+  </view>
+</view>
+
 <view class="contentv">
   <image src="https://zhengzhousizheng.oss-cn-beijing.aliyuncs.com/zujiv2/banner.png" class="banner"></image>
 
@@ -8,5 +18,3 @@
     <image class="lianziicon" src="https://zhengzhousizheng.oss-cn-beijing.aliyuncs.com/zujiv2/lianzi.png" wx:if="{{item!=list.length}}"></image>  
   </block>
 </view>
-
-<view class="tabbarv"></view>

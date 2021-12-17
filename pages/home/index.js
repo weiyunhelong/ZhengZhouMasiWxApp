@@ -15,7 +15,19 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    var that = this;
+    wx.getSystemInfo({
+      success: (res) => {
+        that.setData({
+          navigationBarHeight: res.statusBarHeight
+        })
+      },
+    })
+  },
+  goUserOpt(){//点击跳转到用户信息
+    wx.navigateTo({
+      url: '../../my/pages/info/index',
+    })
   },
   tapMenu(e) { //点击菜单部分
     var that = this;
@@ -23,21 +35,18 @@ Page({
     var url = "";
     switch (menu) {
       case 1:
-        url = "../jiyin/index";
-        break;
-      case 2:
         url = "../shidu/index";
         break;
-      case 3:
-        url = "../zuji/index";
+      case 2:
+        url = "../zuji/fupin";
         break;
-      case 4:
+      case 3:
         url = "../jinian/index";
         break;
-      case 5:
-        url = "../zuji/detail";
+      case 4:
+        url = "../zuji/red";
         break;
-      case 6:
+      case 5:
         url = "../sijiang/index";
         break;
     }
@@ -50,11 +59,6 @@ Page({
       }
     })
   },
-  goChuangke() { //创课中心
-    wx.switchTab({
-      url: '../kecheng/index',
-    })
-  },
   goSystem() { //党建和思政教育云展系统
     wx.navigateTo({
       url: '../../yunsystem/pages/home/index',
@@ -65,9 +69,19 @@ Page({
       url: '../shidu/detail?id=' + e.currentTarget.dataset.id
     })
   },
+  goChuangke() { //创课中心
+    wx.switchTab({
+      url: '../kecheng/index',
+    })
+  },
   goChuangkeOpt(e) { //点击创课中心
     wx.navigateTo({
       url: '../kecheng/detail?id=' + e.currentTarget.dataset.id
+    })
+  },
+  goJiyin(){//红色基因
+    wx.switchTab({
+      url: '../jiyin/index',
     })
   },
   goJiYinOpt(e){//点击探寻红色基因

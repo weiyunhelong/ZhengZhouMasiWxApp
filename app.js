@@ -103,28 +103,22 @@ App({
         text: "首页"
       },
       {
-        pagePath: "pages/zuji/index",
-        iconPath: "/custom-tab-bar/imgs/zuji.png",
-        selectedIconPath: "/custom-tab-bar/imgs/zujih.png",
-        text: "习总书记的扶贫足迹"
-      },
-      {
         pagePath: "pages/jiyin/index",
         iconPath: "/custom-tab-bar/imgs/jiyin.png",
         selectedIconPath: "/custom-tab-bar/imgs/jiyinh.png",
-        text: "探寻红色基因"
+        text: "红色基因"
+      },
+      {
+        pagePath: "pages/course/index",
+        iconPath: "/custom-tab-bar/imgs/course.png",
+        selectedIconPath: "/custom-tab-bar/imgs/courseh.png",
+        text: "进德学堂"
       },
       {
         pagePath: "pages/kecheng/index",
         iconPath: "/custom-tab-bar/imgs/kecheng.png",
         selectedIconPath: "/custom-tab-bar/imgs/kechengh.png",
         text: "创课中心"
-      },
-      {
-        pagePath: "pages/my/index",
-        iconPath: "/custom-tab-bar/imgs/my.png",
-        selectedIconPath: "/custom-tab-bar/imgs/myh.png",
-        text: "我的"
       }
     ],
   }

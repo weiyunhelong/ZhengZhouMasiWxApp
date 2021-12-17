@@ -1,4 +1,4 @@
-// pages/zuji/index.js
+// pages/zuji/fupin.js
 var requestUrl = getApp().globalData.requestUrl;
 var WxRequest = require('../../utils/WxRequest.js');
 
@@ -16,6 +16,15 @@ Page({
    */
   onLoad: function (options) {
     var that = this;
+    wx.getSystemInfo({
+      success: (res) => {
+        that.setData({
+          navigationBarHeight: res.statusBarHeight
+        })
+      },
+    })
+   
+    //数据
     var arry = [];
     for (var i = 1; i < 32; i++) {
       arry.push(i);
@@ -24,9 +33,14 @@ Page({
       list: arry
     })
   },
-  goDetail(e) { //点击跳转到详情页面
+  goBackOpt(){//点击返回
+    wx.navigateBack({
+      delta: 1,
+    })
+  },
+  goDetail(e){//点击到详情
     wx.navigateTo({
-      url: '../zuji/info?id=' + e.currentTarget.dataset.id,
+      url: '../zuji/info',
     })
   },
   /**
@@ -40,25 +54,7 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-    var that = this;
-    //获取菜单的列表数据
-    that.setTabbarlist();
-  },
-  setTabbarlist: function () { //获取菜单的列表数据
-    var that = this;
 
-    //设置选中的tabbar
-    if (typeof that.getTabBar === 'function' && that.getTabBar()) {
-      for (var i = 0; i < getApp().globalData.tabbar.length; i++) {
-        if (getApp().globalData.tabbar[i].pagePath.indexOf("/zuji/index") > 0) {
-          that.getTabBar().setData({
-            selected: i,
-            showTabBar: true,
-            list: getApp().globalData.tabbar
-          })
-        }
-      }
-    }
   },
 
   /**
