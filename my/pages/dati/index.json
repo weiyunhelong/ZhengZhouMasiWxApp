@@ -1,8 +1,10 @@
 {
-  "navigationBarBackgroundColor": "#124361",
-  "navigationBarTextStyle": "white",
-  "navigationBarTitleText": "答题数目",
+  "navigationBarBackgroundColor": "#fff",
+  "navigationBarTextStyle": "black",
+  "navigationBarTitleText": "错题集",
   "usingComponents": {
-    "loadding": "../../../components/loadding/index"
+    "loadding": "../../../components/loadding/index",
+    "ec-canvas": "../../../ec-canvas/ec-canvas",
+    "nodatacom": "../../../components/nodata/index"
   }
 }

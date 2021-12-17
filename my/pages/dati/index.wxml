@@ -1,53 +1,87 @@
 <!--my/pages/dati/index.wxml-->
 <view class="kindv">
-  <view class="kindcv" data-tab="0" bindtap="tapKind">
-    <view class="{{chkkind==0?'chkkindtxt':'kindtxt'}}">全部题目</view>
-    <view class="kindline" wx:if="{{chkkind==0}}"></view>
-  </view>
-  <view class="kindcv" data-tab="1" bindtap="tapKind">
-    <view class="{{chkkind==1?'chkkindtxt':'kindtxt'}}">错题集</view>
-    <view class="kindline" wx:if="{{chkkind==1}}"></view>
-  </view>
+  <view class="kindcv {{chkkind==0?'chkkindtxt':'kindtxt'}}" data-tab="0" bindtap="tapKind">全部题目</view>
+  <view class="kindcv {{chkkind==1?'chkkindtxt':'kindtxt'}}" data-tab="1" bindtap="tapKind">错题集</view>
 </view>
 
-<view class="datav">
-  <view class="answerv">
-    <view class="answerc">
-      <view class="answertitle">五四运动时什么时候爆发的？</view>
-      <view class="answertxt">答案：<text>A</text></view>
-    </view>
+<scroll-view scroll-y="true" class="datav">
+
+  <view class="questionv">
+    <view class="questionvtxt">1、不要以“为别人考虑”做理由，其实丢弃了“舍我其谁”的使命感</view>
     <view class="optionv">
-      <view class="optionc">A：1919年5月4日</view>
-      <view class="optionc">B：1921年5月4日</view>
-      <view class="optionc">C：1921年5月4日</view>
-      <view class="optionc">D：1921年5月4日</view>
+      <view class="optionc">
+        <view class="optioniconv optioniconvr">
+          <image src="./cuo.png" class="optioniconw"></image>
+        </view>
+        <view class="optiontxt">瓦利斯群岛和富图纳群岛</view>
+      </view>
+      <view class="optionc">
+        <view class="optioniconv">
+          <view class="optionicontxt">B</view>
+        </view>
+        <view class="optiontxt">瓦利斯群岛和富图纳群岛</view>
+      </view>
     </view>
-  </view>
-  <view class="jiexiv">
-    <view class="jiexioptv">
-      <view class="jiexiopttxt">题目解析</view>
-      <image class="downicon" src="https://zhengzhousizheng.oss-cn-beijing.aliyuncs.com/mysucai/downicon.png"></image>
+    <view class="answertxt">正确答案: B</view>
+    <view class="jiexiv">
+      <view class="jiexioptv">
+        <view class="jiexiopttxt">题目解析</view>
+        <image class="downicon" src="./down.png"></image>
+      </view>
     </view>
   </view>
 
-  <view class="answerv">
-    <view class="answerc">
-      <view class="answertitle">五四运动时什么时候爆发的？</view>
-      <view class="answertxt">答案：<text>A</text></view>
-    </view>
+  <view class="questionv">
+    <view class="questionvtxt">2、好设计是不唐突的</view>
     <view class="optionv">
-      <view class="optionc">A：1919年5月4日</view>
-      <view class="optionc">B：1921年5月4日</view>
-      <view class="optionc">C：1921年5月4日</view>
-      <view class="optionc">D：1921年5月4日</view>
+      <view class="optionc">
+        <view class="optioniconv">
+          <view class="optionicontxt">A</view>
+        </view>
+        <view class="optiontxt">错误</view>
+      </view>
+      <view class="optionc">
+        <view class="optioniconv optioniconvb">
+          <image src="./dui.png" class="optioniconr"></image>
+        </view>
+        <view class="optiontxt">正确</view>
+      </view>
+    </view>
+    <view class="answertxt">正确答案: B</view>
+    <view class="jiexiv">
+      <view class="jiexioptv">
+        <view class="jiexiopttxt">题目解析</view>
+        <image class="downicon" src="./upicon.png"></image>
+      </view>
+      <view class="jiexitxt">题目解析：那些更棒的点子来自于个体依然用过去习惯的方式思考创意时——坐在办公桌前时，在咖啡店等咖啡时，洗澡时。这些由人们独自想出的点子更胜一筹。当讨论会的狂热劲头散去，头脑风暴产生的点子其实并没有那么特别</view>
     </view>
   </view>
-  <view class="jiexiv">
-    <view class="jiexitxt">五四运动的导火索是巴黎和会上中国外交的失败。１９１９年１月１８日，第一次世界大战获胜的２７个协约国，在巴黎凡尔赛宫召开和平会议。中国作为战胜国之一，派出了陆征祥、顾维钧等5位代表参加会议。巴黎和会不顾中国提出的维护国家领土主权的三项提案，背信弃义，把德国在青岛及山东的特权，全部转让给日本。</view>
-    <view class="jiexioptv">
-      <view class="jiexiopttxt">题目解析</view>
-      <image class="downicon" src="https://zhengzhousizheng.oss-cn-beijing.aliyuncs.com/mysucai/upicon.png"></image>
+
+  <view class="questionv">
+    <view class="questionvtxt">3、不要以“为别人考虑”做理由，其实丢弃了“舍我其谁”的使命感</view>
+    <view class="optionv">
+      <view class="optionc">
+        <view class="optioniconv optioniconvr">
+          <image src="./cuo.png" class="optioniconw"></image>
+        </view>
+        <view class="optiontxt">瓦利斯群岛和富图纳群岛</view>
+      </view>
+      <view class="optionc">
+        <view class="optioniconv">
+          <view class="optionicontxt">B</view>
+        </view>
+        <view class="optiontxt">瓦利斯群岛和富图纳群岛</view>
+      </view>
+    </view>
+    <view class="answertxt">正确答案: B</view>
+    <view class="jiexiv">
+      <view class="jiexioptv">
+        <view class="jiexiopttxt">题目解析</view>
+        <image class="downicon" src="./down.png"></image>
+      </view>
     </view>
   </view>
+
+  <nodatacom />
   
-</view>
+</scroll-view>

@@ -1,120 +1,142 @@
 /* my/pages/dati/index.wxss */
-
+/*分类部分*/
 .kindv {
+  width: 300rpx;
+  height: 60rpx;
+  line-height: 60rpx;
+  border: 1rpx solid #262626;
+  margin: 30rpx auto;
+  border-radius: 8rpx;
   display: flex;
-  justify-content: space-around;
-  height: 100rpx;
+  justify-content: space-between;
 }
 
 .kindcv {
+  width: 150rpx;
   text-align: center;
-  padding-top: 37rpx;
+  height: 60rpx;
+  line-height: 60rpx;
 }
 
 .chkkindtxt {
-  font-size: 36rpx;
+  width: 150rpx;
+  font-size: 28rpx;
   font-weight: bold;
-  color: #333333;
-  padding-bottom: 15rpx;
+  color: #fff;
+  background: #262626;
+  border-radius: 8rpx;
 }
 
 .kindtxt {
-  font-size: 36rpx;
-  color: #999;
-  padding-bottom: 15rpx;
+  width: 150rpx;
+  font-size: 28rpx;
+  font-weight: bold;
+  color: #262626;
+  background: #fff;
+  border-radius: 8rpx;
 }
 
-.kindline {
-  width: 40rpx;
-  height: 10rpx;
-  background: #124361;
-  border-radius: 5rpx 5rpx 0rpx 0rpx;
-  margin: 0 auto;
-}
-
+/*数据部分*/
 .datav {
   width: 100vw;
+  height: calc(100vh - 120rpx);
+}
+
+.questionv {
+  width: 622rpx;
   height: auto;
-  background: #fff;
-  padding-top: 32rpx;
-  margin-top: 10rpx;
-  padding-bottom: 10rpx;
+  background: #FFFFFF;
+  border-radius: 6rpx;
+  margin: 0 auto 28rpx;
+  padding: 32rpx 32rpx 0;
 }
 
-.answerv {
-  width: 710rpx;
-  height: auto;
-  background: #F2F2F2;
-  border-radius: 10rpx;
-  margin: 0 auto;
-  padding-bottom: 20rpx;
-}
-
-.answerc {
-  display: flex;
-  justify-content: space-between;
-  padding: 40rpx 32rpx;
-}
-
-.answertitle {
-  width: 515rpx;
-  height: auto;
-}
-
-.answertxt {
-  font-size: 28rpx;
-  color: #333333;
-}
-
-.answertxt text {
-  font-weight: 500;
+.questiontxt {
+  font-size: 34rpx;
+  color: #000000;
 }
 
 .optionv {
-  padding: 0rpx 32rpx;
-  display: flex;
-  flex-wrap: wrap;
+  margin: 20rpx 0;
 }
 
 .optionc {
-  width: 320rpx;
-  margin-bottom: 20rpx;
-  font-size: 28rpx;
-  color: #333333;
+  height: 100rpx;
+  line-height: 100rpx;
+  display: flex;
 }
-.jiexiv{
-  margin-bottom: 20rpx;
+
+.optioniconv {
+  width: 52rpx;
+  height: 52rpx;
+  background: #FFFFFF;
+  box-shadow: 0rpx 0rpx 12rpx 0rpx rgba(0, 0, 0, 0.2);
+  border-radius: 50%;
+  margin-right: 30rpx;
+  margin-top: 24rpx;
+  text-align: center;
+  line-height: 52rpx;
 }
+
+.optioniconvr {
+  background: #F24540;
+}
+
+.optioniconvb {
+  background: #23ABF8;
+}
+
+.optioniconr {
+  width: 30rpx;
+  height: 20rpx;
+  margin: 15rpx auto;
+}
+
+.optioniconw {
+  width: 20rpx;
+  height: 20rpx;
+  margin: 15rpx auto;
+}
+
+.answertxt {
+  width: 602rpx;
+  height: 88rpx;
+  background: #F7F7F7;
+  border-radius: 6rpx;
+  font-size: 32rpx;
+  color: #262626;
+  line-height: 88rpx;
+  padding-left: 20rpx;
+}
+
+.jiexiv {
+  width: 100%;
+  height: auto;
+}
+
 .jiexioptv {
-  width: 710rpx;
-  height: 42rpx;
-  background: #E6E6E6;
-  border-bottom-left-radius: 10rpx;
-  border-bottom-right-radius: 10rpx;
-  margin: 0 auto;
+  width: 100%;
+  height: 100rpx;
+  line-height: 100rpx;
   display: flex;
   justify-content: center;
 }
 
 .downicon {
-  width: 23rpx;
-  height: 13rpx;
-  margin-top: 14.5rpx;
-  margin-left: 10rpx;
+  width: 20rpx;
+  height: 12rpx;
+  margin-top: 44rpx;
+  margin-left: 12rpx;
 }
 
 .jiexiopttxt {
-  line-height: 42rpx;
-  font-size: 24rpx;
-  color: #124361;
+  font-size: 28rpx;
+  color: #666;
 }
-.jiexitxt{
-  width: 658rpx;
-  height: auto;
-  background: #E6E6E6;
-  margin: 0 auto;
-  padding: 32rpx 26rpx 0rpx;
-  font-size: 24rpx;
-  color: #333333;
+
+.jiexitxt {
+  font-size: 28rpx;
+  color: #000000;
+  padding-bottom:40rpx;
   line-height: 40rpx;
 }

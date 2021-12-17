@@ -1,4 +1,4 @@
 <!--components/loadding/index.wxml-->
-<view class="iconv">
-  <image src="./icon.png" class="iconv"></image>
+<view class="nodataiconv">
+  <image src="./icon.png" class="nodataicon"></image>
 </view>
