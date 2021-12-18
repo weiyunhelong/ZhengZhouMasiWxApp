@@ -29,6 +29,36 @@
           "pathName": "pages/jiyin/list",
           "query": "",
           "scene": null
+        },
+        {
+          "name": "pages/kecheng/index",
+          "pathName": "pages/kecheng/index",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/kecheng/video",
+          "pathName": "pages/kecheng/video",
+          "query": "id=123",
+          "scene": null
+        },
+        {
+          "name": "pages/sijiang/index",
+          "pathName": "pages/sijiang/index",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/shidu/index",
+          "pathName": "pages/shidu/index",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/shidu/detail",
+          "pathName": "pages/shidu/detail",
+          "query": "id=70",
+          "scene": null
         }
       ]
     }

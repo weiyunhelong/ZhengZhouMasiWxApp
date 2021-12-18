@@ -8,7 +8,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-    list: [],
+    list: [1,2,3,4,5,6],
     pageindex: 1,
   },
 
@@ -16,7 +16,14 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    var that = this;
+    wx.getSystemInfo({
+      success: (res) => {
+        that.setData({
+          navigationBarHeight: res.statusBarHeight
+        })
+      },
+    })
   },
   goDetail(e) { //跳转到详情页面
     wx.navigateTo({
@@ -36,7 +43,7 @@ Page({
   onShow: function () {
 
     var that = this;
-    that.InitData();
+    //that.InitData();
   },
   InitData() { //获取列表数据
     var that = this;

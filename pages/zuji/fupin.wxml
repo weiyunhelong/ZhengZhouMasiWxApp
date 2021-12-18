@@ -1,7 +1,7 @@
 <!--pages/zuji/fupin.wxml-->
 <!--顶部用户信息-->
 <view class="topbgv">
-  <view style="width: 100vw;height:{{navigationBarHeight}}px"></view>
+  <view style="width: 100vw;height:{{navigationBarHeight}}px;margin-bottom: 10rpx;"></view>
   <view class="pagetitlev">
     <view class="backiconv" bindtap="goBackOpt">
       <image src="/resources/comman/backiconw.png" class="backicon"></image>

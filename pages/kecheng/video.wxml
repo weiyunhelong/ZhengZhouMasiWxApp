@@ -1,57 +1,73 @@
 <!--pages/kecheng/detail.wxml-->
-<video class="videoobj" object-fit="fill" controls="{{true}}" autoplay="{{false}}"initial-time="{{dataobj.Progress}}" poster="{{dataobj.Thumbnail}}" src="{{dataobj.Video}}" bindtimeupdate="ViewVideoOpt"></video>
-
-<view class="videoc">
-  <view class="videocl">
-    <image src="/resources/comman/view.png" class="viewicon"></image>
-    <view class="viewnum">{{dataobj.PlayNum}}</view>
-    <view class="videoname showOnehangTxt">{{dataobj.LabelName}}</view>
+<!--顶部的状态栏-->
+<view style="background: #000;width: 100vw;height:{{navigationBarHeight}}px;margin-bottom: 10rpx;"></view>
+<view class="pagetitlev" style="top:calc({{navigationBarHeight}}px + 10rpx);">
+  <view class="backiconv" bindtap="goBackOpt">
+    <image src="/resources/comman/backiconw.png" class="backicon"></image>
   </view>
-  <view class="videocr">
-    <view class="zanv" bindtap="ZanOpt">
-      <image src="{{dataobj.IsLike?'/resources/comman/zanh.png':'/resources/comman/zan.png'}}" class="zanicon"></image>
-      <view class="zantxt {{dataobj.IsLike?'zantxth':''}}">点赞</view>
-    </view>
-    <view class="zanv" bindtap="CollectOpt" style="margin-left: 30rpx;">
-      <image src="{{dataobj.IsCollect?'/resources/comman/xingh.png':'/resources/comman/xing.png'}}" class="zanicon"></image>
-      <view class="zantxt {{dataobj.IsCollect?'zantxth':''}}">收藏</view>
-    </view>
-  </view>
+  <view class="pagetitle"></view>
 </view>
 
-<view class="name">{{dataobj.Title}}</view>
+<!--视频部分-->
+<video class="videoobj" object-fit="fill" controls="{{true}}" autoplay="{{false}}" initial-time="{{dataobj.Progress}}" poster="{{dataobj.Thumbnail}}" src="{{dataobj.Video}}" bindtimeupdate="ViewVideoOpt"></video>
+
+<!--视频信息-->
+<view class="videoinfov">
+  <view class="videoname">中华文化和中国精神的时代精华</view>
+  <view class="infov">
+    <view class="origin">来源：Awaatif Al Sadek</view>
+    <view class="numtxt">23万次播放</view>
+  </view>
+</view>
+<view class="kongv"></view>
 
 <!--分类部分-->
 <view class="tabv">
   <view class="tabitem" bindtap="tapTab" data-tab="1">
-    <view class="{{chktab==1?'tabtxth':'tabtxt'}}">文章赏析</view>
+    <view class="{{chktab==1?'tabtxth':'tabtxt'}}">视频介绍</view>
     <view class="tabline" wx:if="{{chktab==1}}"></view>
   </view>
   <view class="tabkong"></view>
   <view class="tabitem" bindtap="tapTab" data-tab="2">
-    <view class="{{chktab==2?'tabtxth':'tabtxt'}}">学习交流</view>
+    <view class="{{chktab==2?'tabtxth':'tabtxt'}}">学习交流（234）</view>
     <view class="tabline" wx:if="{{chktab==2}}"></view>
   </view>
 </view>
 
-<!--文章赏析部分-->
-<block wx:if="{{chktab==1}}">
-  <!--内容简介-->
-  <view class="contentv">
-    <view class="desc" style="margin-bottom:37rpx;">
-      <h5parser html="{{dataobj.Introduce}}" />
+<scroll-view scroll-y="true" class="objinfov" style="height: calc(100vh - 720rpx);">
+ 
+  <!--视频介绍部分-->
+  <block wx:if="{{chktab==1}}">
+    <!--内容简介-->
+    <view class="contentv">
+      <h5parser html="{{dataobj.Introduce||dataobj.Contents}}" />
     </view>
-    <block wx:for="{{filter.string2Arry(dataobj.ImgList)}}" wx:key="item">
-      <image mode="widthFix" style="width: 100%;min-height: 0rpx;" src="{{item}}"></image>
-    </block>
-  </view>
-</block>
+    <view class="optbtmvv"></view>
+    <view class="optbtmv">
+      <button open-type="share" class="optitem">
+        <image src="/resources/icon/share.png" class="optitemshareicon"></image>
+        <view class="optitemtxt">转发</view>
+      </button>
+      <view class="optitem">
+        <image src="/resources/icon/xiaoxi.png" class="optitemxiaoxiicon"></image>
+        <view class="optitemtxt">消息</view>
+      </view>
+      <view class="optitem" bindtap="CollectOpt">
+        <image src="{{dataobj.IsCollect?'/resources/icon/collecth.png':'/resources/icon/collect.png'}}" class="optitemshareicon"></image>
+        <view class="{{dataobj.IsCollect?'optitemtxth':'optitemtxt'}}">823</view>
+      </view>
+      <view class="optitem" bindtap="ZanOpt">
+        <image src="{{dataobj.IsLike?'/resources/icon/zanh.png':'/resources/icon/zan.png'}}" class="optitemshareicon"></image>
+        <view class="{{dataobj.IsLike?'optitemtxth':'optitemtxt'}}">823</view>
+      </view>
+    </view>
+  </block>
 
-<!--学习交流部分-->
-<block wx:if="{{chktab==2}}">
-
-  <!--评论部分-->
-  <block wx:for="{{dataobj.CommentList}}" wx:key="item" wx:for-index="x">
+  <!--学习交流部分-->
+  <block wx:if="{{chktab==2}}">
+    <view style="width: 100%;height: 30rpx;"></view>
+    <!--评论部分-->
+    <!-- <block wx:for="{{dataobj.CommentList}}" wx:key="item" wx:for-index="x">
     <view class="commentv">
       <view class="commentuv">
         <view class="commentul">
@@ -67,35 +83,116 @@
           <view class="commentuhuifu">回复{{item.ReplyNum}}</view>
         </view>
       </view>
-      <view class="commentdesc"  bindtap="tapFeedback" data-id="{{item.CommentId}}" data-name="{{item.NickName}}">{{item.Contents}}</view>
+      <view class="commentdesc" bindtap="tapFeedback" data-id="{{item.CommentId}}" data-name="{{item.NickName}}">{{item.Contents}}</view>
 
       <block wx:if="{{item.ReplyCommentList.length>0}}">
         <view class="commentreplayv">
-          <block wx:for="{{item.ReplyCommentList}}" wx:key="ritem" wx:for-item="ritem"  wx:for-index="rx">
+          <block wx:for="{{item.ReplyCommentList}}" wx:key="ritem" wx:for-item="ritem" wx:for-index="rx">
             <view class="commentreplayc" wx:if="{{item.IsOpen?rx<item.ReplyCommentList.length:rx<3}}">
               <text class="commentreplayer">{{ritem.NickName}}</text>
               <text class="commentreplayor" wx:if="{{ritem.IsAuther}}">作者</text>
               <text class=" commentreplaytxt">:{{ritem.Contents}}</text>
             </view>
           </block>
-          <view class="commentreplayc" wx:if="{{item.ReplyCommentList.length>3&&!item.IsOpen}}" catchtap="ShowMoreComment"  data-index="{{x}}">
+          <view class="commentreplayc" wx:if="{{item.ReplyCommentList.length>3&&!item.IsOpen}}" catchtap="ShowMoreComment" data-index="{{x}}">
             <text class="commentreplayer">共{{item.ReplyCommentList.length}}条回复></text>
           </view>
         </view>
       </block>
     </view>
   </block>
-  <view class="nodatav" wx:if="{{dataobj.CommentList.length==0}}">暂无记录~</view>
+  <nodatacom  wx:if="{{dataobj.CommentList.length==0}}" /> -->
 
-  <!--底部按钮部分-->
-  <view class="btmvv"></view>
-  <view class="btmv">
-    <view class="textv">
-      <input class="commenttxt" placeholder-class="commenttip" placeholder="{{placeholdertxt}}" type="text" value="{{comment}}" bindinput="getComment" />
-    </view>
-    <view class="sendbtn" bindtap="sendMsgOpt">
-      <image src="/resources/comman/send.png" class="sendicon"></image>
-    </view>
-  </view>
+    <view class="commentv">
+      <view class="commentuv">
+        <view class="commentul">
+          <image class="commentutx" src="/resources/comman/avatarUrl.jpg"></image>
+          <view style="width: 400rpx;">
+            <view class="commentunamev">
+              <view class="commentuname">沟通</view>
+              <view class="commentuowner">作者</view>
+            </view>
+            <view class="commentudate">5分钟前</view>
+          </view>
+        </view>
+        <view class="commentur" bindtap="ZanCommentOpt" data-index="{{x}}" data-status="{{item.IsLike}}" data-id="{{item.CommentId}}">
+          <image src="{{item.IsLike?'/resources/icon/zanh.png':'/resources/icon/zan.png'}}" class="commentuzanicon"></image>
+          <view class="{{item.IsLike?'commentuzannumr':'commentuzannum'}}">23</view>
+        </view>
+      </view>
+      <view class="commentdesc" bindtap="tapFeedback" data-id="{{item.CommentId}}" data-name="{{item.NickName}}">每天睡前都听相声的</view>
 
-</block>
+      <view class="commentreplayv">
+        <view class="commentreplayc">
+          <text class="commentreplayer">沟通</text>
+          <text class="commentreplayor">作者</text>
+          <text class="commentreplaytip">回复</text>
+          <text class="commentreplayer">冷漠</text>
+          <text class=" commentreplaytxt">：你什么意思？</text>
+        </view>
+        <view class="commentreplayc">
+          <text class="commentreplayer">冷漠</text>
+          <text class="commentreplaytip">回复</text>
+          <text class="commentreplayer">沟通</text>
+          <text class=" commentreplaytxt">：你知道今年双减政策的改变对社会有什么影响吗</text>
+        </view>
+        <view class="commentreplayc">
+          <text class="commentreplayer">查看全部234条回复 ></text>
+        </view>
+      </view>
+    </view>
+
+    <view class="commentv">
+      <view class="commentuv">
+        <view class="commentul">
+          <image class="commentutx" src="/resources/comman/avatarUrl.jpg"></image>
+          <view style="width: 400rpx;">
+            <view class="commentunamev">
+              <view class="commentuname">冷漠</view>
+            </view>
+            <view class="commentudate">5分钟前</view>
+          </view>
+        </view>
+        <view class="commentur">
+          <image src="/resources/icon/zanh.png" class="commentuzanicon"></image>
+          <view class="commentuzannumr">23</view>
+        </view>
+      </view>
+      <view class="commentdesc" bindtap="tapFeedback" data-id="{{item.CommentId}}" data-name="{{item.NickName}}">每天睡前都听相声的</view>
+
+      <view class="commentreplayv">
+        <view class="commentreplayc">
+          <text class="commentreplayer">沟通</text>
+          <text class="commentreplayor">作者</text>
+          <text class="commentreplaytip">回复</text>
+          <text class="commentreplayer">冷漠</text>
+          <text class=" commentreplaytxt">：你什么意思？</text>
+        </view>
+        <view class="commentreplayc">
+          <text class="commentreplayer">冷漠</text>
+          <text class="commentreplaytip">回复</text>
+          <text class="commentreplayer">沟通</text>
+          <text class=" commentreplaytxt">：你知道今年双减政策的改变对社会有什么影响吗</text>
+        </view>
+        <view class="commentreplayc">
+          <text class="commentreplayer">冷漠</text>
+          <text class="commentreplaytip">回复</text>
+          <text class="commentreplayer">沟通</text>
+          <text class=" commentreplaytxt">：你知道今年双减政策的改变对社会有什么影响吗</text>
+        </view>
+      </view>
+    </view>
+    <!--底部按钮部分-->
+    <view class="btmvv"></view>
+    <view class="btmv">
+      <view class="textv">
+        <input class="commenttxt" placeholder-class="commenttip" placeholder="{{placeholdertxt}}" type="text" value="{{comment}}" bindinput="getComment" />
+      </view>
+      <view class="sendbtn" bindtap="sendMsgOpt">
+        <image src="/resources/comman/send.png" class="sendicon"></image>
+      </view>
+    </view>
+
+  </block>
+
+</scroll-view>

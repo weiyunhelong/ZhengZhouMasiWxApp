@@ -25,6 +25,19 @@ Page({
     that.setData({
       id: options.id
     })
+
+    wx.getSystemInfo({
+      success: (res) => {
+        that.setData({
+          navigationBarHeight: res.statusBarHeight
+        })
+      },
+    })
+  },
+  goBackOpt() { //点击返回
+    wx.navigateBack({
+      delta: 1,
+    })
   },
   ViewVideoOpt(e) { //保存播放记录
     var that = this;
@@ -184,7 +197,7 @@ Page({
         WxRequest.ShowAlert(res.data.msg);
       }
     })
-  },  
+  },
   ShowMoreComment(e) { //点击展开
     var that = this;
     var dataobj = that.data.dataobj;
@@ -303,6 +316,12 @@ Page({
    * 用户点击右上角分享
    */
   onShareAppMessage: function () {
-
+    var that = this;
+    var dataobj = that.data.dataobj;
+    return {
+      title: dataobj.Title,
+      imageUrl: dataobj.Thumbnail,
+      path: "pages/kecheng/video?id=" + that.data.id
+    }
   }
 })

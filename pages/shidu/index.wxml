@@ -1,54 +1,46 @@
 <!--pages/shidu/index.wxml-->
-<!--最近学习-->
-<view class="recentv" wx:if="{{studyobj!=null}}">
-  <view class="liev">
-    <view class="lieicon"></view>
-    <view class="lietxt">最近学习</view>
-  </view>
-  <view class="recentc">
-    <view class="recentcover" style="background: url(https://zhengzhousizheng.oss-cn-beijing.aliyuncs.com/sidu/author.png) no-repeat;background-size:cover;"></view>
-    <view class="recentinfo">
-      <view class="recentname">壬尽美</view>
-      <view class="recentdesc">中国工厂党创始人之一</view>
-      <view class="recentoptv">
-        <image src="/resources/comman/erji.png" class="erjiicon"></image>
-        <view class="erjinum">22.3万</view>
-
-        <image src="/resources/comman/xingw.png" class="xingicon"></image>
-        <view class="xingnum">收藏</view>
-      </view>
-      <view class="recentjinduv">
-        <view class="progressv">
-          <progress percent="80" border-radius="9rpx" backgroundColor="rgba(255,255,255,0.2)" color="#ffffff" active stroke-width="18rpx" />
-        </view>
-        <view class="shichang">01:55/02:33</view>
-      </view>
-    </view>
+<!--顶部用户信息-->
+<view class="topbgv">
+  <view style="width: 100vw;height:{{navigationBarHeight}}px;margin-bottom: 10rpx;"></view>
+  <view class="pagetitlev">
+    <view class="backiconv"></view>
+    <view class="pagetitle">红色时时读</view>
   </view>
 </view>
 
-<!--滚动tab-->
-<scroll-view scroll-x="true" class="tabv">
+<!--tab部分-->
+<view class="tabv">
   <block wx:for="{{tabs}}" wx:key="item">
-    <view class="tabc" bindtap="tapTab" data-index="{{item.Key}}">
-      <view class="{{item.Key==chktab?'tabtxth':'tabtxt'}}">{{item.Value}}</view>
-      <view class="tabline" wx:if="{{item.Key==chktab}}"></view>
-    </view>
-  </block>
-  <view style="width: 20rpx;height: 0;display: inline-block;"></view>
-</scroll-view>
-
-<!--分类下的数据-->
-<view class="datav">
-  <block wx:for="{{list}}" wx:key="item" wx:for-index="x">
-    <view class="datac" data-id="{{item.ID}}" bindtap="goDetail">
-      <image lazy-load="true" mode="aspectFill" src="{{item.Thumbnail}}" class="datacover"></image>
-      <view class="datacv">
-        <image src="/resources/comman/erji.png" class="iconerji"></image>
-        <view class="datanum">{{item.PlayNum}}</view>
-      </view>
-      <view class="username">{{item.Name}}</view>
-      <view class="tagtxt showOnehangTxt">{{item.Motto}}</view>
+    <view class="tabitem" bindtap="tapTab" data-tab="{{item.Key}}">
+      <view class="{{chktab==item.Key?'tabtxth':'tabtxt'}}">{{item.Value}}</view>
+      <view class="tabline" wx:if="{{chktab==item.Key}}"></view>
     </view>
   </block>
 </view>
+
+<scroll-view scroll-y="true" class="datalistv">
+
+  <!--banner部分-->
+  <view class="bannerv" bindtap="goSystem">
+    <image lazy-load="true" class="banner" src="https://zhengzhousizheng.oss-cn-beijing.aliyuncs.com/zhengzhouv2/homebanner.png"></image>
+  </view>
+
+  <!--数据部分-->
+  <block wx:for="{{list}}" wx:key="item">
+    <view class="zhuanlanv" bindtap="goDetail" data-id="{{item.ID}}">
+      <image mode="aspectFill" lazy-load="true" src="{{item.Thumbnail}}" class="zhuanlancover"></image>
+      <view class="zhuanlanc">
+        <view class="zhuanlanname showOnehangTxt">{{item.Name}}</view>
+        <view class="zhuanlandesc showOnehangTxt">{{item.Motto}}</view>
+        <view class="zhuanlannumv">
+          <image src="/resources/home/listen.png" class="voiceicon"></image>
+          <view class="zhuanlannum">{{item.PlayNum}}播放</view>
+        </view>
+      </view>
+    </view>
+  </block>
+
+  <nodatav wx:if="{{list.length==0}}" />
+
+  <view class="tabbarv"></view>
+</scroll-view>

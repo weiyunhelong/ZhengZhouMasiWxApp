@@ -1,162 +1,191 @@
 /* pages/kecheng/index.wxss */
-.tabv {
+
+/*用户信息*/
+.topbgv {
+  width: 100vw;
+  height: 356rpx;
+  background: url(https://zhengzhousizheng.oss-cn-beijing.aliyuncs.com/zhengzhouv2/topbg.png) no-repeat;
+  background-size: cover;
+}
+
+.topbgv .pagetitlev {
+  width: 555rpx;
+  height: 60rpx;
   display: flex;
-  justify-content: center;
-  height: 116rpx;
+  padding-left: 32rpx;
 }
 
-.tabitem {
-  text-align: center;
-  width: 150rpx;
+.topbgv .backiconv {
+  width: 70rpx;
+  height: 60rpx;
 }
 
-.tabkong {
-  width: 145rpx;
-  height: auto;
-}
-
-.tabtxt {
-  padding-top: 35rpx;
-  font-size: 30rpx;
-  color: #999999;
-}
-
-.tabtxth {
-  padding-top: 35rpx;
-  padding-bottom: 6rpx;
-  font-size: 30rpx;
-  font-weight: bold;
-  color: #124361;
-}
-
-.tabline {
-  width: 40rpx;
-  height: 10rpx;
-  background: #124361;
-  border-radius: 5rpx;
-  margin: 0 auto;
-}
-
-.titlev {
-  padding-left: 20rpx;
-  font-size: 36rpx;
-  font-weight: bold;
-  color: #333333;
-}
-
-.scrollview {
-  display: flex;
-  white-space: nowrap;
-  overflow: hidden;
-  margin-top: 42rpx;
-}
-
-.scrollviewc {
-  width: 509rpx;
-  display: inline-block;
-  margin-left: 24rpx;
-}
-
-.scrollcover {
-  width: 510rpx;
-  height: 308rpx;
-  position: relative;
-}
-
-.playicon {
-  width: 74rpx;
-  height: 74rpx;
-  position: absolute;
-  z-index: 2;
-  left: 218rpx;
-  top: 117rpx;
-}
-
-.scrollnamev {
-  display: flex;
-  justify-content: space-between;
-  color: #333333;
-  padding-top: 30rpx;
-}
-
-.scrollname {
-  font-size: 30rpx;
-}
-
-.scrolldate {
-  font-size: 24rpx;
-}
-
-.scrollowner {
-  font-size: 24rpx;
-  color: #999;
-}
-
-.scrollkong {
-  width: 24rpx;
-  height: 0;
-  display: inline-block;
-}
-
-.studyv {
-  display: flex;
-  padding: 0rpx 20rpx 40rpx;
-}
-
-.studycover {
-  width: 197rpx;
-  height: 197rpx;
-  border-radius: 20rpx;
-  margin-right: 38rpx;
-}
-
-.studyinfo {
-  width: 475rpx;
-  height: auto;
-  padding-top: 24rpx;
-}
-
-.studyname {
-  height: 80rpx;
-  font-size: 30rpx;
-  color: #333333;
-}
-
-.optv {
-  display: flex;
-  justify-content: space-between;
-  margin-top: 20rpx;
-}
-
-.optc {
-  display: flex;
-  font-size: 24rpx;
-  color: #999999;
-  line-height: 32rpx;
-  margin-top: 40rpx;
-}
-
-.optc .optnumh {
-  color: red;
-}
-
-.opticon1 {
-  width: 23rpx;
-  height: 21rpx;
-  margin-right: 20rpx;
+.topbgv .backicon {
+  width: 27rpx;
+  height: 54rpx;
+  border-radius: 50%;
   margin-top: 8rpx;
 }
 
-.opticon2 {
-  width: 19rpx;
-  height: 20rpx;
-  margin-right: 20rpx;
-  margin-top: 7rpx;
+.topbgv .pagetitle {
+  width: 385rpx;
+  height: 60rpx;
+  text-align: center;
+  line-height: 60rpx;
+  font-size: 34rpx;
+  color: #FFFFFF;
+  margin-left: 84rpx;
 }
 
-.opticon3 {
-  width: 21rpx;
-  height: 20rpx;
+/*TAB部分*/
+.tabv {
+  width: 100vw;
+  height: 88rpx;
+  line-height: 88rpx;
+  display: flex;
+  justify-content: space-around;
+  margin-top: -200rpx;
+  margin-bottom: 20rpx;
+}
+
+.tabv .tabitem {
+  text-align: center;
+  font-size: 30rpx;
+}
+
+.tabv .tabtxth {
+  color: #FFFFFF;
+}
+
+.tabv .tabtxt {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.tabv .tabline {
+  width: 28rpx;
+  height: 4rpx;
+  background: #FFFFFF;
+  border-radius: 3rpx;
+  margin: -10rpx auto 0;
+}
+
+/*顶部的banner*/
+.datalistv {
+  width: 100vw;
+  height: calc(100vh - 256rpx);
+}
+.bannerv {
+  width: 100vw;
+  height: 240rpx;
+  text-align: center;
+}
+
+.banner {
+  width: 686rpx;
+  height: 240rpx;
+  margin: 0 auto;
+}
+
+
+/*视频数据部分*/
+.videolistv {
+  display: flex;
+  justify-content: space-between;
+  margin: 0 32rpx;
+  flex-wrap: wrap;
+}
+
+.videolistv .videov {
+  margin-top: 30rpx;
+  width: 328rpx;
+  height: auto;
+}
+
+.videov .videocover {
+  width: 328rpx;
+  height: 184rpx;
+  border-radius: 6rpx;
+}
+
+.videov .videonumv {
+  width: 82rpx;
+  height: 28rpx;
+  border-radius: 6rpx;
+  background: rgba(14, 14, 14, 0.4);
+  display: flex;
+  justify-content: center;
+  position: relative;
+  top: -48rpx;
+  left: 234rpx;
+}
+
+.videov .videoicon {
+  width: 12rpx;
+  height: 14rpx;
+  margin-top: 8rpx;
+  margin-right: 4rpx;
+  display: block;
+}
+
+.videov .videonum {
+  height: 28rpx;
+  line-height: 28rpx;
+  font-size: 20rpx;
+  color: #FFFFFF;
+}
+
+.videov .videoname {
+  font-size: 30rpx;
+  color: #262626;
+  margin-top: -28rpx;
+}
+
+.videov .videotime {
+  font-size: 24rpx;
+  color: #999999;
+}
+
+/*专栏数据部分*/
+.zhuanlanv {
+  width: 686rpx;
+  height: 208rpx;
+  border-bottom: 1rpx solid #eee;
+  display: flex;
+  margin: 0 auto;
+}
+
+.zhuanlanv .zhuanlancover {
+  width: 152rpx;
+  height: 152rpx;
+  border-radius: 6rpx;
+  margin-top: 28rpx;
   margin-right: 20rpx;
-  margin-top: 7rpx;
+}
+
+.zhuanlanv .zhuanlanc {
+  width: 510rpx;
+}
+
+.zhuanlanv .zhuanlanname {
+  margin-top: 28rpx;
+  font-size: 30rpx;
+  color: #262626;
+}
+.zhuanlanv .zhuanlandesc {
+  font-size: 24rpx;
+  color: #999;
+  margin-top: 12rpx;
+}
+.zhuanlanv .zhuanlannumv {
+  font-size: 24rpx;
+  color: #999999;
+  margin-top: 28rpx;
+  display: flex;
+}
+
+.voiceicon{
+  width: 20rpx;
+  height: 20rpx;
+  margin-right: 8rpx;
+  margin-top: 6rpx;
 }

@@ -13,21 +13,21 @@ page {
 
 .topbgv .userv {
   width: 555rpx;
-  height: 70rpx;
+  height: 60rpx;
   display: flex;
   padding-left: 32rpx;
 }
 
 .topbgv .avatarUrl {
   width: 70rpx;
-  height: 70rpx;
+  height: 60rpx;
   border-radius: 50%;
   margin-right: 20rpx;
 }
 
 .topbgv .username {
   height: 70rpx;
-  line-height: 70rpx;
+  line-height: 60rpx;
   font-size: 32rpx;
   color: #FFFFFF;
 }
@@ -268,6 +268,7 @@ page {
   height: 202rpx;
   border-bottom: 1rpx solid #eee;
   display: flex;
+  margin: 0 auto;
 }
 
 .jiyinv .jiyincover {

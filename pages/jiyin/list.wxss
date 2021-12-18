@@ -17,14 +17,14 @@ page {
 
 .topbgv .pagetitlev {
   width: 555rpx;
-  height: 70rpx;
+  height: 60rpx;
   display: flex;
   padding-left: 32rpx;
 }
 
 .topbgv .backiconv {
   width: 70rpx;
-  height: 70rpx;
+  height: 60rpx;
 }
 
 .topbgv .backicon {
@@ -36,9 +36,9 @@ page {
 
 .topbgv .pagetitle {
   width: 385rpx;
-  height: 70rpx;
+  height: 60rpx;
   text-align: center;
-  line-height: 70rpx;
+  line-height: 60rpx;
   font-size: 34rpx;
   color: #FFFFFF;
   margin-left: 84rpx;

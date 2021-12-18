@@ -1,7 +1,6 @@
 {
-  "navigationBarBackgroundColor": "#124361",
-  "navigationBarTextStyle": "white",
-  "navigationBarTitleText": "四史天天讲",
+  "navigationBarTitleText": "",
+  "navigationStyle": "custom",
   "usingComponents": {
     "loadding": "../../../components/loadding/index"
   }

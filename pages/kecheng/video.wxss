@@ -1,67 +1,77 @@
 /* pages/kecheng/detail.wxss */
+page {
+  background: #fff;
+}
+
+/*顶部状态栏*/
+.pagetitlev {
+  width: 100vw;
+  height: 60rpx;
+  display: flex;
+  position: absolute;
+  z-index: 9999;
+  left: 0;
+  background: transparent;
+}
+
+.pagetitlev .backiconv {
+  width: 70rpx;
+  height: 60rpx;
+  padding-left: 32rpx;
+}
+
+.pagetitlev .backicon {
+  width: 27rpx;
+  height: 54rpx;
+  border-radius: 50%;
+  margin-top: 8rpx;
+}
+
+.pagetitlev .pagetitle {
+  width: 385rpx;
+  height: 60rpx;
+  text-align: center;
+  line-height: 60rpx;
+  font-size: 34rpx;
+  color: #FFFFFF;
+  margin-left: 84rpx;
+}
+
 .videoobj {
   width: 100vw;
   height: 422rpx;
   display: block;
 }
 
-.videoc {
-  width: 100vw;
-  height: 70rpx;
-  background: #DDDDDD;
+.videoinfov {
+  padding: 26rpx 32rpx;
+}
+
+.videoinfov .videoname {
+  font-size: 34rpx;
+  color: #262626;
+}
+
+.videoinfov .infov {
   display: flex;
-  line-height: 70rpx;
   justify-content: space-between;
-}
-.videocl{
-  display: flex;
-  width: 500rpx;
-}
-.videocr{
-  display: flex;
-  justify-content: flex-end;
-  margin-right: 20rpx;
-}
-.viewicon {
-  width: 25rpx;
-  height: 19rpx;
-  margin: 28rpx 10rpx 0 20rpx;
+  margin-top: 10rpx;
 }
 
-.viewnum {
-  font-size: 26rpx;
+.videoinfov .origin {
+  font-size: 28rpx;
   color: #999999;
 }
 
-.videoname {
-  width: 300rpx;
-  font-size: 26rpx;
-  color: #999999;
-  margin-left: 46rpx;
-}
-.zanv{
-  display: flex;
-}
-.zanicon{
-  width: 24rpx;
-  height: 24rpx;
-  margin-right: 10rpx;
-  margin-top:24rpx;
-}
-.zantxt{  
-  font-size: 26rpx;
+.videoinfov .numtxt {
+  font-size: 28rpx;
   color: #999999;
 }
-.zantxth{
-  color: #FF0000;
+
+.kongv {
+  width: 100vw;
+  height: 16rpx;
+  background: #f7f7f7;
 }
 
-.name{
-  padding: 45rpx 20rpx;
-  font-size: 36rpx;
-  font-weight: bold;
-  color: #333333;
-}
-
-/*TAB分类数据*/
 @import '../../styles/article.wxss';

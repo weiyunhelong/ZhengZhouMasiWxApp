@@ -1,178 +1,193 @@
 /* pages/shidu/index.wxss */
-/*最近学习*/
-.recentv {
+page{
+  background: #fff;
+}
+/*用户信息*/
+.topbgv {
   width: 100vw;
-  height: 450rpx;
-  background: linear-gradient(90deg, #124361 0%, #0D6675 100%);
-  border-radius: 0rpx 0rpx 50rpx 0rpx;
+  height: 356rpx;
+  background: url(https://zhengzhousizheng.oss-cn-beijing.aliyuncs.com/zhengzhouv2/topbg.png) no-repeat;
+  background-size: cover;
 }
 
-.recentv .liev {
+.topbgv .pagetitlev {
+  width: 555rpx;
+  height: 60rpx;
   display: flex;
-  padding: 30rpx 20rpx 38rpx;
+  padding-left: 32rpx;
 }
 
-.recentv .lieicon {
-  width: 10rpx;
-  height: 30rpx;
+.topbgv .backiconv {
+  width: 70rpx;
+  height: 60rpx;
+}
+
+.topbgv .backicon {
+  width: 27rpx;
+  height: 54rpx;
+  border-radius: 50%;
+  margin-top: 8rpx;
+}
+
+.topbgv .pagetitle {
+  width: 385rpx;
+  height: 60rpx;
+  text-align: center;
+  line-height: 60rpx;
+  font-size: 34rpx;
+  color: #FFFFFF;
+  margin-left: 84rpx;
+}
+
+/*TAB部分*/
+.tabv {
+  width: 100vw;
+  height: 88rpx;
+  line-height: 88rpx;
+  display: flex;
+  justify-content: space-around;
+  margin-top: -200rpx;
+  margin-bottom: 20rpx;
+}
+
+.tabv .tabitem {
+  text-align: center;
+  font-size: 30rpx;
+}
+
+.tabv .tabtxth {
+  color: #FFFFFF;
+}
+
+.tabv .tabtxt {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.tabv .tabline {
+  width: 28rpx;
+  height: 4rpx;
   background: #FFFFFF;
-  border-radius: 5rpx;
+  border-radius: 3rpx;
+  margin: -10rpx auto 0;
+}
+
+/*顶部的banner*/
+.datalistv {
+  width: 100vw;
+  height: calc(100vh - 256rpx);
+}
+.bannerv {
+  width: 100vw;
+  height: 240rpx;
+  text-align: center;
+}
+
+.banner {
+  width: 686rpx;
+  height: 240rpx;
+  margin: 0 auto;
+}
+
+
+/*视频数据部分*/
+.videolistv {
+  display: flex;
+  justify-content: space-between;
+  margin: 0 32rpx;
+  flex-wrap: wrap;
+}
+
+.videolistv .videov {
+  margin-top: 30rpx;
+  width: 328rpx;
+  height: auto;
+}
+
+.videov .videocover {
+  width: 328rpx;
+  height: 184rpx;
+  border-radius: 6rpx;
+}
+
+.videov .videonumv {
+  width: 82rpx;
+  height: 28rpx;
+  border-radius: 6rpx;
+  background: rgba(14, 14, 14, 0.4);
+  display: flex;
+  justify-content: center;
+  position: relative;
+  top: -48rpx;
+  left: 234rpx;
+}
+
+.videov .videoicon {
+  width: 12rpx;
+  height: 14rpx;
+  margin-top: 8rpx;
+  margin-right: 4rpx;
+  display: block;
+}
+
+.videov .videonum {
+  height: 28rpx;
+  line-height: 28rpx;
+  font-size: 20rpx;
+  color: #FFFFFF;
+}
+
+.videov .videoname {
+  font-size: 30rpx;
+  color: #262626;
+  margin-top: -28rpx;
+}
+
+.videov .videotime {
+  font-size: 24rpx;
+  color: #999999;
+}
+
+/*专栏数据部分*/
+.zhuanlanv {
+  width: 686rpx;
+  height: 208rpx;
+  border-bottom: 1rpx solid #eee;
+  display: flex;
+  margin: 0 auto;
+}
+
+.zhuanlanv .zhuanlancover {
+  width: 152rpx;
+  height: 152rpx;
+  border-radius: 6rpx;
+  margin-top: 28rpx;
   margin-right: 20rpx;
 }
 
-.recentv .lietxt {
-  line-height: 1;
+.zhuanlanv .zhuanlanc {
+  width: 510rpx;
+}
+
+.zhuanlanv .zhuanlanname {
+  margin-top: 28rpx;
   font-size: 30rpx;
-  color: #FFFFFF;
+  color: #262626;
 }
-
-.recentv .recentc {
-  display: flex;
-  padding: 0 20rpx;
-}
-
-.recentv .recentcover {
-  width: 223rpx;
-  height: 281rpx;
-  border-radius: 4rpx;
-  margin-right: 52rpx;
-}
-
-.recentv .recentname {
-  padding-top: 40rpx;
-  font-size: 36rpx;
-  font-weight: bold;
-  color: #FFFFFF;
-}
-
-.recentv .recentdesc {
-  margin-top: 10rpx;
-  font-size: 26rpx;
-  color: #FFFFFF;
-}
-
-.recentv .recentoptv {
-  display: flex;
-  font-size: 26rpx;
-  color: #FFFFFF;
-  line-height: 1;
-  margin-top: 30rpx;
-}
-
-.recentv .erjiicon {
-  width: 21rpx;
-  height: 21rpx;
-  margin-top: 4rpx;
-  margin-right: 10rpx;
-}
-
-.recentv .xingicon {
-  width: 26rpx;
-  height: 24rpx;
-  margin-right: 10rpx;
-  margin-left: 40rpx;
-}
-
-.recentv .recentjinduv {
-  display: flex;
-  padding-top: 34rpx;
-}
-
-.recentv .progressv {
-  width: 250rpx;
-  height: 18rpx;
-  margin-top: 5rpx;
-}
-
-.recentv .shichang {
-  margin-left: 22rpx;
-  font-size: 22rpx;
-  color: #FFFFFF;
-}
-
-/*tab部分*/
-.tabv {
-  display: flex;
-  overflow: hidden;
-  white-space: nowrap;
-  padding-left: 20rpx;
-}
-
-.tabv .tabc {
-  width: 210rpx;
-  margin-right: 40rpx;
-  display: inline-block;
-  text-align: center;
-  padding-top: 54rpx;
-}
-
-.tabv .tabc .tabtxth {
-  font-size: 30rpx;
-  font-weight: bold;
-  color: #333333;
-}
-
-.tabv .tabc .tabtxt {
-  font-size: 30rpx;
+.zhuanlanv .zhuanlandesc {
+  font-size: 24rpx;
   color: #999;
+  margin-top: 12rpx;
 }
-
-.tabv .tabc .tabline {
-  width: 40rpx;
-  height: 10rpx;
-  background: #124361;
-  border-radius: 5rpx;
-  margin: 10rpx auto;
-}
-
-/*分类数据*/
-.datav {
-  display: flex;
-  flex-wrap: wrap;
-  margin-top: 50rpx;
-}
-
-.datac {
-  width: 223rpx;
-  height: auto;
-  margin-bottom: 50rpx;
-  margin-left: 20rpx;
-  position: relative;
-}
-
-.datacover {
-  width: 223rpx;
-  height: 281rpx;
-}
-
-.datacv {
-  position: absolute;
-  top: 240rpx;
-  left: 15rpx;
-  display: flex;
-}
-
-.iconerji {
-  width: 21rpx;
-  height: 21rpx;
-  margin-top: 5rpx;
-}
-
-.datanum {
-  font-size: 26rpx;
-  color: #FFFFFF;
-  line-height: 1;
-  margin-left: 10rpx;
-}
-
-.username {
-  font-size: 30rpx;
-  color: #333333;
-  margin-top:10rpx;
-}
-
-.tagtxt {
+.zhuanlanv .zhuanlannumv {
   font-size: 24rpx;
   color: #999999;
-  margin-top:5rpx;
+  margin-top: 28rpx;
+  display: flex;
+}
+
+.voiceicon{
+  width: 20rpx;
+  height: 20rpx;
+  margin-right: 8rpx;
+  margin-top: 6rpx;
 }

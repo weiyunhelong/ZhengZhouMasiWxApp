@@ -1,54 +1,111 @@
-/*TAB分类数据*/
+/*底部操作部分*/
 .tabv {
+  width: 100vw;
+  height: 88rpx;
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
 }
 
-.tabkong {
-  width: 74rpx;
-  height: auto;
-}
-
-.tabitem {
+.tabv .tabitem {
   text-align: center;
+  line-height: 88rpx;
 }
 
-.tabtxth {
+.tabv .tabitem .tabtxth {
   font-size: 30rpx;
-  font-weight: bold;
-  color: #333333;
+  font-weight: 500;
+  color: #262626;
 }
 
-.tabtxt {
+.tabv .tabitem .tabtxt {
   font-size: 30rpx;
   color: #999999;
 }
 
-.tabline {
-  width: 40rpx;
-  height: 10rpx;
-  background: #124361;
-  border-radius: 5rpx;
-  margin: 10rpx auto 0;
+.tabv .tabitem .tabline {
+  width: 28rpx;
+  height: 5rpx;
+  background: #F24540;
+  border-radius: 3rpx;
+  margin: -10rpx auto 0;
 }
-
-.contentv {
-  padding: 60rpx 20rpx 0;
-  font-size: 24rpx;
-  color: #333333;
-  line-height: 50rpx;
-}
-
-.kongw {
+.objinfov{
   width: 100vw;
-  height: 20rpx;
+}
+.contentv {
+  margin: 32rpx 32rpx;
+  font-size: 30rpx;
+  color: #262626;
+}
+
+.optbtmvv {
+  width: 100vw;
+  height: 108rpx;
+  padding-bottom: constant(safe-area-inset-bottom);
+  padding-bottom: env(safe-area-inset-bottom);
+}
+
+.optbtmv {
+  width: 100vw;
+  height: 108rpx;
+  display: flex;
+  justify-content: space-around;
+  padding-bottom: constant(safe-area-inset-bottom);
+  padding-bottom: env(safe-area-inset-bottom);
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  z-index: 999;
+  border-top: 1rpx solid #eee;
+  background: #fff;
+}
+
+.optbtmv .optitem {
+  width: 108rpx;
+  height: 108rpx;
   background: #FFFFFF;
-  margin: 60rpx 0;
+  text-align: center;
+  border: none;
+  padding: 0;
+  margin: 0;
+  background: transparent;
+}
+
+.optbtmv .optitem::after {
+  border: none;
+  padding: 0;
+  margin: 0;
+}
+
+.optbtmv .optitemshareicon {
+  width: 40rpx;
+  height: 40rpx;
+  margin: 14rpx auto 8rpx;
+  display: block;
+}
+
+.optbtmv .optitemxiaoxiicon {
+  width: 42rpx;
+  height: 40rpx;
+  margin: 14rpx auto 8rpx;
+  display: block;
+}
+
+.optbtmv .optitemtxt {
+  font-size: 22rpx;
+  color: #999999;
+}
+
+.optbtmv .optitemtxth {
+  font-size: 22rpx;
+  color: #F24540;
 }
 
 .btmvv {
   width: 100vw;
-  height: 140rpx;
+  height: 108rpx;
+  padding-bottom: constant(safe-area-inset-bottom);
+  padding-bottom: env(safe-area-inset-bottom);
 }
 
 .btmv {
@@ -57,27 +114,29 @@
   left: 0;
   z-index: 999;
   width: 100vw;
-  height: 120rpx;
+  height: 108rpx;
+  padding-bottom: constant(safe-area-inset-bottom);
+  padding-bottom: env(safe-area-inset-bottom);
   display: flex;
   justify-content: center;
-  background: #f2f2f2;
-  padding-top: 20rpx;
+  border-top: 1rpx solid #eee;
+  background: #fff;
 }
 
 .textv {
   width: 605rpx;
   height: 80rpx;
-  background: #E8E8E8;
-  border-radius: 10rpx;
+  background: #F7F7F7;
+  border-radius: 44rpx;
   margin-right: 18rpx;
-  margin-top: 10rpx;
+  margin-top: 14rpx;
 }
 
 .sendbtn {
-  margin-top: 10rpx;
-  width: 88rpx;
+  margin-top: 14rpx;
+  width: 80rpx;
   height: 80rpx;
-  background: #124361;
+  background: #262626;
   border-radius: 10rpx;
   text-align: center;
   line-height: 80rpx;
@@ -90,11 +149,11 @@
 }
 
 .commenttxt {
-  padding: 0 20rpx;
+  padding: 0 32rpx;
   height: 80rpx;
   line-height: 80rpx;
   font-size: 26rpx;
-  color: #333;
+  color: #262626;
 }
 
 .commenttip {
@@ -103,7 +162,7 @@
 
 /*评论部分*/
 .commentv {
-  padding: 50rpx 20rpx 0;
+  padding: 0rpx 32rpx 60rpx;
 }
 
 .commentv .commentuv {
@@ -117,45 +176,65 @@
 }
 
 .commentuv .commentul .commentutx {
-  width: 80rpx;
-  height: 80rpx;
+  width: 76rpx;
+  height: 76rpx;
   border-radius: 50%;
-  margin-right: 20rpx;
+  margin-right: 16rpx;
+}
+
+.commentuv .commentul .commentunamev {
+  display: flex;
+  margin-top: 15rpx;
 }
 
 .commentuv .commentul .commentuname {
-  font-size: 26rpx;
-  font-weight: bold;
+  font-size: 28rpx;
   color: #333333;
+  line-height: 1;
+}
+
+.commentuv .commentul .commentuowner {
+  width: 52rpx;
+  height: 28rpx;
+  background: rgba(242, 69, 64, 0.06);
+  border-radius: 4rpx;
+  text-align: center;
+  line-height: 28rpx;
+  font-size: 18rpx;
+  color: #F24540;
+  margin-left: 16rpx;
 }
 
 .commentuv .commentul .commentudate {
-  font-size: 22rpx;
+  font-size: 24rpx;
   color: #999999;
-  margin-top: 15rpx;
 }
 
 .commentuv .commentur {
   display: flex;
   justify-content: flex-end;
-  padding-top: 20rpx;
+  height: 76rpx;
 }
 
 .commentuv .commentur .commentuzanicon {
-  width: 20rpx;
-  height: 20rpx;
-  margin-right: 10rpx;
-  margin-top:6rpx;
+  width: 24rpx;
+  height: 24rpx;
+  margin-right: 8rpx;
+  margin-top: 24rpx;
 }
 
 .commentuv .commentur .commentuzannum {
-  font-size: 22rpx;
+  font-size: 24rpx;
   color: #999;
+  height: 76rpx;
+  line-height: 76rpx;
 }
 
 .commentuv .commentur .commentuzannumr {
-  font-size: 22rpx;
   color: #F00808;
+  font-size: 24rpx;
+  height: 76rpx;
+  line-height: 76rpx;
 }
 
 .commentuv .commentur .commentuhuifu {
@@ -176,17 +255,18 @@
 }
 
 .commentv .commentreplayv {
-  width: 605rpx;
-  background: #E8E8E8;
-  border-radius: 10rpx;
-  margin-left: 95rpx;
-  margin-top: 30rpx;
-  padding-bottom: 20rpx;
+  width: 530rpx;
+  height: auto;
+  background: #F7F7F7;
+  border-radius: 12rpx;
+  margin-left: 92rpx;
+  margin-top: 16rpx;
+  padding: 32rpx 32rpx 20rpx;
 }
 
 .commentv .commentreplayv .commentreplayc {
-  padding: 15rpx 20rpx 0;
-  font-size: 26rpx;
+  margin-bottom: 12rpx;
+  font-size: 28rpx;
 }
 
 .commentv .commentreplayv .commentreplayer {
@@ -194,17 +274,22 @@
 }
 
 .commentv .commentreplayv .commentreplaytxt {
-  color: #333;
+  color: #262626;
 }
 
-.commentreplayor {
-  width: 80rpx;
-  height: 24rpx;
-  background: rgba(18, 67, 97, 0.2);
-  border-radius: 12rpx;
-  font-size: 20rpx;
-  color: #124361;
+.commentv .commentreplayv .commentreplayor {
+  width: 52rpx;
+  height: 28rpx;
+  border-radius: 4rpx;
+  background: rgba(242, 69, 64, 0.06);
+  font-size: 18rpx;
+  color: #F24540;
   text-align: center;
-  line-height: 24rpx;
-  margin: 0 10rpx;
+  line-height: 28rpx;
+  margin-left: 12rpx;
+}
+
+.commentv .commentreplayv .commentreplaytip {
+  color: #999;
+  margin: 0 12rpx;
 }

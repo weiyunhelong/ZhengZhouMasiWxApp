@@ -12,7 +12,7 @@ page {
 
 .backcv {
   width: 400rpx;
-  height: 70rpx;
+  height: 60rpx;
   padding-left: 35rpx;
 }
 

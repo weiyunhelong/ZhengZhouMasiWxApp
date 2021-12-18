@@ -1,115 +1,79 @@
 /* pages/shidu/detail.wxss */
+page {
+  background: #fff;
+}
 
-/*最近学习*/
-.recentv {
+/*顶部状态栏*/
+.pagetitlev {
   width: 100vw;
-  height: 450rpx;
-  background: linear-gradient(90deg, #124361 0%, #0D6675 100%);
-  border-radius: 0rpx 0rpx 50rpx 0rpx;
-}
-
-.recentv .liev {
+  height: 60rpx;
   display: flex;
-  padding: 30rpx 20rpx 38rpx;
-}
-
-.recentv .lieicon {
-  width: 10rpx;
-  height: 30rpx;
-  background: #FFFFFF;
-  border-radius: 5rpx;
-  margin-right: 20rpx;
-}
-
-.recentv .lietxt {
-  line-height: 1;
-  font-size: 30rpx;
-  color: #FFFFFF;
-}
-
-.recentv .recentc {
-  display: flex;
-  padding: 0 20rpx;
-}
-
-.recentv .recentcover {
-  width: 223rpx;
-  height: 281rpx;
-  border-radius: 4rpx;
-  margin-right: 52rpx;
-  position: relative;
-}
-
-.recentv .recentcover .playicon {
-  width: 39rpx;
-  height: 45rpx;
   position: absolute;
-  top: 118rpx;
-  left: 100rpx;
+  z-index: 9999;
+  left: 0;
+  background: transparent;
 }
 
-.recentv .recentname {
-  padding-top: 40rpx;
-  font-size: 36rpx;
-  font-weight: bold;
+.pagetitlev .backiconv {
+  width: 70rpx;
+  height: 60rpx;
+  padding-left: 32rpx;
+}
+
+.pagetitlev .backicon {
+  width: 27rpx;
+  height: 54rpx;
+  border-radius: 50%;
+  margin-top: 8rpx;
+}
+
+.pagetitlev .pagetitle {
+  width: 385rpx;
+  height: 60rpx;
+  text-align: center;
+  line-height: 60rpx;
+  font-size: 34rpx;
   color: #FFFFFF;
+  margin-left: 84rpx;
 }
 
-.recentv .recentdesc {
+/*音频信息部分*/
+.voincev {
+  width: 100vw;
+  height: 764rpx;
+  text-align: center;
+  display: block;
+}
+
+.videoinfov {
+  padding: 26rpx 32rpx;
+}
+
+.videoinfov .videoname {
+  font-size: 34rpx;
+  color: #262626;
+}
+
+.videoinfov .infov {
+  display: flex;
+  justify-content: space-between;
   margin-top: 10rpx;
-  font-size: 26rpx;
-  color: #FFFFFF;
 }
 
-.recentv .recentoptv {
-  display: flex;
-  font-size: 26rpx;
-  color: #FFFFFF;
-  line-height: 1;
-  margin-top: 30rpx;
+.videoinfov .origin {
+  font-size: 28rpx;
+  color: #999999;
 }
 
-.recentv .erjiicon {
-  width: 21rpx;
-  height: 21rpx;
-  margin-top: 4rpx;
-  margin-right: 10rpx;
+.videoinfov .numtxt {
+  font-size: 28rpx;
+  color: #999999;
 }
 
-.recentv .xingicon {
-  width: 26rpx;
-  height: 24rpx;
-  margin-right: 10rpx;
-  margin-left: 40rpx;    
-  margin-top: 4rpx;
+.kongv {
+  width: 100vw;
+  height: 16rpx;
+  background: #f7f7f7;
 }
 
-.recentv .zanv {
-  width: 150rpx;
-  display: flex;
-}
-
-.recentv .xingnumr {
-  color: red;
-}
-
-.recentv .recentjinduv {
-  display: flex;
-  padding-top: 34rpx;
-}
-
-.recentv .progressv {
-  width: 250rpx;
-  height: 18rpx;
-  margin-top: 5rpx;
-}
-
-.recentv .shichang {
-  margin-left: 22rpx;
-  font-size: 22rpx;
-  color: #FFFFFF;
-}
-
-
-/*TAB分类数据*/
 @import '../../styles/article.wxss';

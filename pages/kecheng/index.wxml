@@ -1,58 +1,66 @@
 <!--pages/kecheng/index.wxml-->
+<!--顶部用户信息-->
+<view class="topbgv">
+  <view style="width: 100vw;height:{{navigationBarHeight}}px;margin-bottom: 10rpx;"></view>
+  <view class="pagetitlev">
+    <view class="backiconv"></view>
+    <view class="pagetitle">创课中心</view>
+  </view>
+</view>
+
 <!--tab部分-->
 <view class="tabv">
-  <view class="tabitem">
-    <view class="{{chktab==1?'tabtxth':'tabtxt'}}" bindtap="tapTab" data-tab="1">视频</view>
+  <view class="tabitem" bindtap="tapTab" data-tab="1">
+    <view class="{{chktab==1?'tabtxth':'tabtxt'}}">视频</view>
     <view class="tabline" wx:if="{{chktab==1}}"></view>
   </view>
-  <view class="tabkong"></view>
-  <view class="tabitem">
-    <view class="{{chktab==0?'tabtxth':'tabtxt'}}" bindtap="tapTab" data-tab="0">专栏</view>
+  <view class="tabitem" bindtap="tapTab" data-tab="0">
+    <view class="{{chktab==0?'tabtxth':'tabtxt'}}">专栏</view>
     <view class="tabline" wx:if="{{chktab==0}}"></view>
   </view>
 </view>
 
-<!--考试必看-->
-<!-- <view class="titlev">考试必看</view>
-<scroll-view scroll-x="true" class="scrollview">
-  <block wx:for="{{list}}" wx:key="item">
-    <view class="scrollviewc" bindtap="goDetail" data-id="0">
-      <view class="scrollcover" style="background: url(https://zhengzhousizheng.oss-cn-beijing.aliyuncs.com/chuangke/2.png) no-repeat;background-size: cover;">
-        <image src="/resources/comman/playw.png" class="playicon"></image>
-      </view>
-      <view class="scrollnamev">
-        <view class="scrollname showOnehangTxt">每日进行1小时学习</view>
-        <view class="scrolldate">02:23</view>
-      </view>
-      <view class="scrollowner">潘pym</view>
+<scroll-view scroll-y="true" class="datalistv">
+
+  <!--banner部分-->
+  <view class="bannerv" bindtap="goSystem">
+    <image lazy-load="true" class="banner" src="https://zhengzhousizheng.oss-cn-beijing.aliyuncs.com/zhengzhouv2/homebanner.png"></image>
+  </view>
+
+  <!--视频数据部分-->
+  <block wx:if="{{chktab==1}}">
+    <view class="videolistv">
+      <block wx:for="{{list}}" wx:key="item">
+        <view class="videov" bindtap="goDetail" data-id="{{item.ID}}">
+          <image mode="aspectFill" lazy-load="true" src="{{item.Thumbnail}}" class="videocover"></image>
+          <view class="videonumv">
+            <image src="/resources/home/video.png" class="videoicon"></image>
+            <view class="videonum">{{item.PlayNum}}</view>
+          </view>
+          <view class="videoname showOnehangTxt">{{item.Title}}</view>
+          <view class="videotime">时长：19:23</view>
+        </view>
+      </block>
     </view>
   </block>
-  <view class="scrollkong"></view>
-</scroll-view> -->
 
-<!--推荐学习-->
-<view class="titlev" style="margin-bottom:47rpx;">推荐学习</view>
-<block wx:for="{{list}}" wx:key="item">
-  <view class="studyv" bindtap="goDetail" data-id="{{item.ID}}">
-    <image class="studycover" mode="aspectFill" src="{{item.Thumbnail}}"></image>
-    <view class="studyinfo">
-      <view class="studyname showTwohangTxt">{{item.Title}}</view>
-      <view class="optv">
-        <view class="optc">
-          <image src="/resources/comman/view.png" class="opticon1"></image>
-          <view class="optnum">{{item.PlayNum}}</view>
-        </view>
-        <view class="optc">
-          <image src="{{item.IsLike?'/resources/comman/zanh.png':'/resources/comman/zan.png'}}" class="opticon2"></image>
-          <view class="{{item.IsLike?'optnumh':'optnum'}}">{{item.LikesNum}}</view>
-        </view>
-        <view class="optc">
-          <image src="{{item.IsLike?'/resources/comman/xingh.png':'/resources/comman/xing.png'}}" class="opticon3"></image>
-          <view class="{{item.IsLike?'optnumh':'optnum'}}">{{item.CollectionNum}}</view>
+
+  <!--专栏数据部分-->
+  <block wx:if="{{chktab==0}}">
+    <block wx:for="{{list}}" wx:key="item">
+      <view class="zhuanlanv" bindtap="goDetail" data-id="{{item.ID}}">
+        <image mode="aspectFill" lazy-load="true" src="{{item.Thumbnail}}" class="zhuanlancover"></image>
+        <view class="zhuanlanc">
+          <view class="zhuanlanname showOnehangTxt">{{item.Title}}</view>
+          <view class="zhuanlandesc showOnehangTxt">{{item.LabelName}}</view>
+          <view class="zhuanlannumv">
+            <image src="/resources/home/listen.png" class="voiceicon"></image>
+            <view class="zhuanlannum">{{item.PlayNum}}播放</view>
+          </view>
         </view>
       </view>
-    </view>
-  </view>
-</block>
+    </block>
+  </block>
 
-<view class="tabbarv"></view>
+  <view class="tabbarv"></view>
+</scroll-view>

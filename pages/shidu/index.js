@@ -21,6 +21,13 @@ Page({
   onLoad: function (options) {
 
     var that = this;
+    wx.getSystemInfo({
+      success: (res) => {
+        that.setData({
+          navigationBarHeight: res.statusBarHeight
+        })
+      },
+    })
     //获取Tabs数据
     that.InitTypeData();
   },

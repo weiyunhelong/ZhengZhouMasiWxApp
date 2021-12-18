@@ -17,7 +17,14 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    var that = this;
+    wx.getSystemInfo({
+      success: (res) => {
+        that.setData({
+          navigationBarHeight: res.statusBarHeight
+        })
+      },
+    })
   },
   tapTab(e) { //切换tab
     var that = this;
@@ -29,16 +36,19 @@ Page({
   },
   goDetail(e) { //点击到详情
     var that = this;
-    var chktab = that.data.chktab;
-    if (chktab == 0) { //专栏
-      wx.navigateTo({
-        url: '../kecheng/detail?id=' + e.currentTarget.dataset.id,
-      })
-    } else { //视频
-      wx.navigateTo({
-        url: '../kecheng/video?id=' + e.currentTarget.dataset.id,
-      })
-    }
+    //var chktab = that.data.chktab;
+    // if (chktab == 0) { //专栏
+    //   wx.navigateTo({
+    //     url: '../kecheng/detail?id=' + e.currentTarget.dataset.id,
+    //   })
+    // } else { //视频
+    //   wx.navigateTo({
+    //     url: '../kecheng/video?id=' + e.currentTarget.dataset.id,
+    //   })
+    // }
+    wx.navigateTo({
+      url: '../kecheng/video?id=123',
+    })
   },
   /**
    * 生命周期函数--监听页面初次渲染完成

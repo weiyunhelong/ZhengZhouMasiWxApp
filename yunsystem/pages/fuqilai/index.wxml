@@ -1,6 +1,6 @@
 <!--yunsystem/pages/zhanqilai/index.wxml-->
 <view class="topbgv">
-  <view style="width: 100vw;height:{{navigationBarHeight}}px"></view>
+  <view style="width: 100vw;height:{{navigationBarHeight}}px;margin-bottom: 10rpx;"></view>
   <view class="backcv" bindtap="goBack">
     <image src="/resources/comman/backicon.png" class="backicon"></image>
   </view>

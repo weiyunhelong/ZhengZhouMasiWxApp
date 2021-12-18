@@ -1,7 +1,7 @@
 <!--pages/home/index.wxml-->
 <!--顶部用户信息-->
 <view class="topbgv">
-  <view style="width: 100vw;height:{{navigationBarHeight}}px"></view>
+  <view style="width: 100vw;height:{{navigationBarHeight}}px;margin-bottom: 10rpx;"></view>
   <view class="userv" bindtap="goUserOpt">
     <image src="/resources/comman/avatarUrl.jpg" class="avatarUrl"></image>
     <view class="username">李云飞</view>

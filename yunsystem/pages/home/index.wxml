@@ -1,6 +1,6 @@
 <!--yunsystem/pages/home/index.wxml-->
 <view class="topbgv">
-  <view style="width: 100vw;height:{{navigationBarHeight}}px"></view>
+  <view style="width: 100vw;height:{{navigationBarHeight}}px;margin-bottom: 10rpx;"></view>
   <view class="backcv" bindtap="goBack">
     <image src="/resources/comman/backiconw.png" class="backicon"></image>
   </view>
