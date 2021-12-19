@@ -3,39 +3,6 @@ page {
   background: #fff;
 }
 
-/*顶部状态栏*/
-.pagetitlev {
-  width: 100vw;
-  height: 60rpx;
-  display: flex;
-  position: absolute;
-  z-index: 9999;
-  left: 0;
-  background: transparent;
-}
-
-.pagetitlev .backiconv {
-  width: 70rpx;
-  height: 60rpx;
-  padding-left: 32rpx;
-}
-
-.pagetitlev .backicon {
-  width: 27rpx;
-  height: 54rpx;
-  border-radius: 50%;
-  margin-top: 8rpx;
-}
-
-.pagetitlev .pagetitle {
-  width: 385rpx;
-  height: 60rpx;
-  text-align: center;
-  line-height: 60rpx;
-  font-size: 34rpx;
-  color: #FFFFFF;
-  margin-left: 84rpx;
-}
 
 /*音频信息部分*/
 .voincev {
@@ -45,29 +12,154 @@ page {
   display: block;
 }
 
-.videoinfov {
-  padding: 26rpx 32rpx;
+.voincev .voincecoverv {
+  width: 100%;
+  text-align: center;
+  margin-top: 24rpx;
 }
 
-.videoinfov .videoname {
-  font-size: 34rpx;
-  color: #262626;
+.voincev .voincecover {
+  width: 280rpx;
+  height: 280rpx;
+  border-radius: 6rpx;
+  margin: 0 auto;
 }
 
-.videoinfov .infov {
+.voincev .playnumv {
   display: flex;
-  justify-content: space-between;
-  margin-top: 10rpx;
+  justify-content: center;
+  width: 82rpx;
+  height: 28rpx;
+  background: rgba(14, 14, 14, 0.4);
+  border-radius: 6rpx;
+  position: relative;
+  top: -65rpx;
+  left: 410rpx;
 }
 
-.videoinfov .origin {
+.voincev .erjiicon {
+  width: 16rpx;
+  height: 16rpx;
+  margin-right: 4rpx;
+  margin-top: 6rpx;
+}
+
+.voincev .playnum {
+  line-height: 28rpx;
+  font-size: 20rpx;
+  color: #FFFFFF;
+}
+
+.voincev .username {
+  font-size: 36rpx;
+  font-weight: 500;
+  color: #262626;
+  text-align: center;
+}
+
+.voincev .usertitle {
   font-size: 28rpx;
+  color: #999999;
+  text-align: center;
+}
+
+.voincev .progressv {
+  width: 686rpx;
+  height: 100rpx;
+  margin: 20rpx auto 30rpx;
+}
+
+.voincev .progresskong {
+  width: 100%;
+  height: 48rpx;
+}
+
+.voincev .progressc {
+  width: 158rpx;
+  height: 40rpx;
+  background: #F24540;
+  border-radius: 20rpx;
+  font-size: 22rpx;
+  color: #FFFFFF;
+  text-align: center;
+  line-height: 40rpx;
+  margin-top: -23rpx;
+  position: relative;
+  z-index: 2;
+  left: 2%;
+}
+
+.voinceoptv {
+  display: flex;
+  width: 100vw;
+  height: 120rpx;
+  background: #FFFFFF;
+}
+
+.voinceoptv .voincesharebtn {
+  border: none;
+  margin: 0;
+  padding: 0;
+  border-radius: none;
+  width: 250rpx;
+  height: 120rpx;
+  background: #FFFFFF;
+}
+
+.voinceoptv .voincesharebtn::after {
+  border: none;
+  margin: 0;
+  padding: 0;
+  border-radius: none;
+}
+
+.voinceoptv .voinceshareicon {
+  width: 40rpx;
+  height: 40rpx;
+  margin-top: 20rpx;
+}
+
+.voinceoptv .voincesharetxt {
+  font-size: 22rpx;
   color: #999999;
 }
 
-.videoinfov .numtxt {
-  font-size: 28rpx;
-  color: #999999;
+.voinceoptv .voincecollectbtn {
+  width: 250rpx;
+  height: 120rpx;
+  text-align: center;
+}
+
+.voinceoptv .voincecollecticon {
+  width: 40rpx;
+  height: 40rpx;
+  margin-top: 20rpx;
+}
+
+.voinceoptv .voincesharetxth {
+  font-size: 22rpx;
+  color: #F24540;
+}
+
+.voinceoptv .voinceoptc {
+  width: 250rpx;
+  height: 120rpx;
+  text-align: center;
+}
+
+.voinceoptv .voinceoptbtn {
+  width: 120rpx;
+  height: 120rpx;
+  background: #F24540;
+  margin: 0 auto;
+  border-radius: 50%;
+  text-align: center;
+}
+
+.voinceoptv .playicon {
+  width: 34rpx;
+  height: 40rpx;
+  margin: 40rpx auto;
 }
 
 .kongv {

@@ -49,13 +49,15 @@ Page({
         url = "../../my/pages/dati/index";
         break;
       case 5:
-        if (!that.data.IsLogin) {
-          url = "../../wxauth/pages/wxlogin/index";
-          break;
-        } else {
-          url = "../../my/pages/account/index";
-          break;
-        }
+        url = "../../my/pages/info/index";
+        break;
+        // if (!that.data.IsLogin) {
+        //   url = "../../wxauth/pages/wxlogin/index";
+        //   break;
+        // } else {
+        //   url = "../../my/pages/account/index";
+        //   break;
+        // }
     }
     wx.navigateTo({
       url: url

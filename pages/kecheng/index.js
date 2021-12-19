@@ -26,6 +26,11 @@ Page({
       },
     })
   },
+  goSystem() { //党建和思政教育云展系统
+    wx.navigateTo({
+      url: '../../yunsystem/pages/home/index',
+    })
+  },
   tapTab(e) { //切换tab
     var that = this;
     that.setData({

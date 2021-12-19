@@ -1,2 +1,64 @@
 <!--pages/course/index.wxml-->
-<text>pages/course/index.wxml</text>
+<!--顶部用户信息-->
+<view class="topbgv">
+  <view style="width: 100vw;height:{{navigationBarHeight}}px;margin-bottom: 10rpx;"></view>
+  <view class="pagetitlev">
+    <view class="tabv">
+      <view class="tabitemv" bindtap="tapTab" data-tab="1">
+        <view class="{{chktab==1?'tabtxth':'tabtxt'}}">我的实践课</view>
+        <view class="tabline" wx:if="{{chktab==1}}"></view>
+      </view>
+      <view class="tabitemv" bindtap="tapTab" data-tab="2">
+        <view class="{{chktab==2?'tabtxth':'tabtxt'}}">更多课程</view>
+        <view class="tabline" wx:if="{{chktab==2}}"></view>
+      </view>
+    </view>
+  </view>
+</view>
+<scroll-view scroll-y="true" class="datalistv">
+  <!--我的实践课-->
+  <block wx:if="{{chktab==1}}">
+    <view class="nocoursev">
+      <image src="/resources/course/nodata.png" class="nocourseicon"></image>
+      <view class="showmorebtn" bindtap="tapTab" data-tab="2">更多课程</view>
+    </view>
+  </block>
+
+  <!--更多课程-->
+  <block wx:if="{{chktab==2}}">
+    <!--banner部分-->
+    <view class="bannerv" bindtap="goSystem">
+      <image lazy-load="true" class="banner" src="https://zhengzhousizheng.oss-cn-beijing.aliyuncs.com/zhengzhouv2/homebanner.png"></image>
+    </view>
+
+    <view class="jiyinv" bindtap="goDetail" data-id="1">
+      <image mode="aspectFill" lazy-load="true" src="/resources/comman/avatarUrl.jpg" class="jiyincover"></image>
+      <view class="jiyinc">
+        <view class="jiyinname">红色摇篮-安远路矿工人运动纪念馆</view>
+        <view class="jiyinnumv">负责人：李某</view>
+      </view>
+    </view>
+    <view class="jiyinv" bindtap="goDetail" data-id="1">
+      <image mode="aspectFill" lazy-load="true" src="/resources/comman/avatarUrl.jpg" class="jiyincover"></image>
+      <view class="jiyinc">
+        <view class="jiyinname">鲁迅纪念馆平展</view>
+        <view class="jiyinnumv">负责人：李某</view>
+      </view>
+    </view>
+    <view class="jiyinv" bindtap="goDetail" data-id="1">
+      <image mode="aspectFill" lazy-load="true" src="/resources/comman/avatarUrl.jpg" class="jiyincover"></image>
+      <view class="jiyinc">
+        <view class="jiyinname">鳄鱼园革命纪念馆</view>
+        <view class="jiyinnumv">负责人：李某</view>
+      </view>
+    </view>
+    <view class="jiyinv" bindtap="goDetail" data-id="1">
+      <image mode="aspectFill" lazy-load="true" src="/resources/comman/avatarUrl.jpg" class="jiyincover"></image>
+      <view class="jiyinc">
+        <view class="jiyinname">黄花塘新四军军部纪念馆</view>
+        <view class="jiyinnumv">负责人：李某</view>
+      </view>
+    </view>
+
+  </block>
+</scroll-view>

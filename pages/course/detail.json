@@ -1,5 +1,6 @@
-{ 
+{
   "navigationBarTitleText": "",
+  "navigationStyle": "custom",
   "usingComponents": {
     "loadding": "../../components/loadding/index",
     "nodatacom": "../../components/nodata/index",

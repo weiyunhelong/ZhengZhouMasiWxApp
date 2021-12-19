@@ -8,7 +8,9 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    chktab: 1, //1:我的实践课 2:更多课程
+    pageindex: 1,
+    list: [],
   },
 
   /**
@@ -16,8 +18,32 @@ Page({
    */
   onLoad: function (options) {
 
+    var that = this;
+    wx.getSystemInfo({
+      success: (res) => {
+        that.setData({
+          navigationBarHeight: res.statusBarHeight
+        })
+      },
+    })
   },
-
+  goSystem() { //党建和思政教育云展系统
+    wx.navigateTo({
+      url: '../../yunsystem/pages/home/index',
+    })
+  },
+  tapTab(e) { //切换tab
+    var that = this;
+    that.setData({
+      pageindex: 1,
+      chktab: e.currentTarget.dataset.tab
+    })
+  },
+  goDetail(e) { //跳转到详情
+    wx.navigateTo({
+      url: '../course/detail?id=' + e.currentTarget.dataset.id,
+    })
+  },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */

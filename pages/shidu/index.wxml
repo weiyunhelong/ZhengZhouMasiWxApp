@@ -3,7 +3,9 @@
 <view class="topbgv">
   <view style="width: 100vw;height:{{navigationBarHeight}}px;margin-bottom: 10rpx;"></view>
   <view class="pagetitlev">
-    <view class="backiconv"></view>
+    <view class="backiconv" bindtap="goBackOpt">
+      <image src="/resources/comman/backiconw.png" class="backicon"></image>
+    </view>
     <view class="pagetitle">红色时时读</view>
   </view>
 </view>
@@ -11,7 +13,7 @@
 <!--tab部分-->
 <view class="tabv">
   <block wx:for="{{tabs}}" wx:key="item">
-    <view class="tabitem" bindtap="tapTab" data-tab="{{item.Key}}">
+    <view class="tabitem" bindtap="tapTab" data-index="{{item.Key}}">
       <view class="{{chktab==item.Key?'tabtxth':'tabtxt'}}">{{item.Value}}</view>
       <view class="tabline" wx:if="{{chktab==item.Key}}"></view>
     </view>

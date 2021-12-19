@@ -137,7 +137,7 @@ page {
 .categoryv .righticon {
   width: 12rpx;
   height: 20rpx;
-  margin-top: 43rpx;
+  margin-top: 40rpx;
   margin-left: 8rpx;
 }
 
@@ -316,7 +316,7 @@ page {
   background: rgba(0, 0, 0, 0.3);
   line-height: 88rpx;
   text-align: center;
-  margin: -93rpx auto 0;
+  margin: -98rpx auto 0;
   position: relative;
   z-index: 2;
   padding: 0 5%;

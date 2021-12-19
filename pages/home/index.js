@@ -26,7 +26,7 @@ Page({
   },
   goUserOpt(){//点击跳转到用户信息
     wx.navigateTo({
-      url: '../../my/pages/info/index',
+      url: '../my/index',
     })
   },
   tapMenu(e) { //点击菜单部分
@@ -76,7 +76,7 @@ Page({
   },
   goChuangkeOpt(e) { //点击创课中心
     wx.navigateTo({
-      url: '../kecheng/detail?id=' + e.currentTarget.dataset.id
+      url: '../kecheng/video?id=' + e.currentTarget.dataset.id
     })
   },
   goJiyin(){//红色基因

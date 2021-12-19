@@ -3,6 +3,7 @@
     "pages/middle/index",
     "pages/home/index",
     "pages/course/index",
+    "pages/course/detail",
     "pages/jiyin/index",
     "pages/jiyin/detail",
     "pages/jiyin/list",
@@ -63,7 +64,7 @@
   "window": {
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#fff",
-    "navigationBarTitleText": "Weixin",
+    "navigationBarTitleText": "",
     "navigationBarTextStyle": "black"
   },
   "tabBar": {

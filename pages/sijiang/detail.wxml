@@ -1,7 +1,7 @@
 <!--pages/sijiang/detail.wxml-->
 <wxs module="filter" src="../../styles/filter.wxs" />
 <!--顶部的状态栏-->
-<view style="background: #000;width: 100vw;height:{{navigationBarHeight}}px;margin-bottom: 10rpx;"></view>
+<view style="background: #000;width: 100vw;height:calc({{navigationBarHeight}}px + 10rpx);"></view>
 <view class="pagetitlev" style="top:calc({{navigationBarHeight}}px + 10rpx);">
   <view class="backiconv" bindtap="goBackOpt">
     <image src="/resources/comman/backiconw.png" class="backicon"></image>
@@ -10,7 +10,7 @@
 </view>
 
 <!--视频部分-->
-<video class="videoobj" object-fit="fill" controls="{{true}}" autoplay="{{false}}" initial-time="{{dataobj.Progress}}" poster="{{dataobj.Thumbnail}}" src="{{dataobj.Video}}" bindtimeupdate="ViewVideoOpt"></video>
+<video class="videoobj" object-fit="fill" controls="{{true}}" autoplay="{{false}}" initial-time="0:00" poster="https://sqyr2021.oss-cn-shanghai.aliyuncs.com/imgesfiles/202112021926133108.png" src="https://sqyr2021.oss-cn-shanghai.aliyuncs.com/test/202112021925139028.mp4" bindtimeupdate="ViewVideoOpt"></video>
 
 <!--视频信息-->
 <view class="videoinfov">

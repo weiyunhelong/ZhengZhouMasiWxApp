@@ -136,7 +136,7 @@
   margin-top: 14rpx;
   width: 80rpx;
   height: 80rpx;
-  background: #262626;
+  background: #F24540;
   border-radius: 10rpx;
   text-align: center;
   line-height: 80rpx;

@@ -1,1 +1,130 @@
 /* pages/course/index.wxss */
+page {
+  background: #fff;
+}
+
+/*用户信息*/
+.topbgv {
+  width: 100vw;
+  height: 356rpx;
+  background: url(https://zhengzhousizheng.oss-cn-beijing.aliyuncs.com/zhengzhouv2/topbg.png) no-repeat;
+  background-size: cover;
+}
+
+.topbgv .pagetitlev {
+  width: 555rpx;
+  height: 60rpx;
+  display: flex;
+  padding-left: 32rpx;
+}
+
+
+.topbgv .tabv {
+  height: 60rpx;
+  text-align: center;
+  line-height: 60rpx;
+  display: flex;
+}
+
+.tabitemv {
+  width: 180rpx;
+  margin-right: 30rpx;
+  text-align: center;
+}
+
+.tabtxth {
+  font-size: 34rpx;
+  font-weight: 500;
+  color: #fff;
+}
+
+.tabtxt {
+  font-size: 34rpx;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.tabline {
+  width: 28rpx;
+  height: 4rpx;
+  background: #fff;
+  border-radius: 3rpx;
+  margin: 0rpx auto;
+}
+
+/*我的实践课*/
+.nocoursev {
+  width: 100vw;
+  padding-top: 188rpx;
+  text-align: center;
+}
+
+.nocourseicon {
+  width: 260rpx;
+  height: 290rpx;
+}
+
+.showmorebtn {
+  width: 220rpx;
+  height: 64rpx;
+  background: #FFFFFF;
+  border-radius: 32rpx;
+  border: 1rpx solid #F24540;
+  font-size: 28rpx;
+  color: #F24540;
+  text-align: center;
+  line-height: 64rpx;
+  margin: 60rpx auto;
+}
+/*顶部的banner*/
+.datalistv {
+  width: 100vw;
+  height: calc(100vh - 256rpx);
+  margin-top: -150rpx;
+}
+.bannerv {
+  width: 100vw;
+  height: 240rpx;
+  text-align: center;
+}
+
+.banner {
+  width: 686rpx;
+  height: 240rpx;
+  margin: 0 auto;
+}
+
+
+/*探寻红色基因*/
+.jiyinv {
+  width: 686rpx;
+  height: 202rpx;
+  border-bottom: 1rpx solid #eee;
+  display: flex;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+.jiyinv .jiyincover {
+  width: 260rpx;
+  height: 146rpx;
+  border-radius: 6rpx;
+  margin-top: 28rpx;
+  margin-right: 20rpx;
+}
+
+.jiyinv .jiyinc {
+  width: 406rpx;
+  padding-top: 28rpx;
+}
+
+.jiyinv .jiyinname {
+  height: 84rpx;
+  font-size: 30rpx;
+  color: #262626;
+}
+
+.jiyinv .jiyinnumv {
+  font-size: 24rpx;
+  color: #999999;
+  margin-top: 28rpx;
+}

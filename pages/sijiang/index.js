@@ -25,6 +25,16 @@ Page({
       },
     })
   },
+  goBackOpt() { //点击返回
+    wx.navigateBack({
+      delta: 1,
+    })
+  },
+  goSystem() { //党建和思政教育云展系统
+    wx.navigateTo({
+      url: '../../yunsystem/pages/home/index',
+    })
+  },
   goDetail(e) { //跳转到详情页面
     wx.navigateTo({
       url: '../sijiang/detail?id=' + e.currentTarget.dataset.id,

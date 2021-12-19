@@ -12,7 +12,7 @@ Page({
     chktab: 0,
     list: [],
     pageindex: 1,
-    studyobj:{},//最近学习
+    studyobj: {}, //最近学习
   },
 
   /**
@@ -31,6 +31,16 @@ Page({
     //获取Tabs数据
     that.InitTypeData();
   },
+  goBackOpt() { //返回
+    wx.navigateBack({
+      delta: 1,
+    })
+  },
+  goSystem() { //党建和思政教育云展系统
+    wx.navigateTo({
+      url: '../../yunsystem/pages/home/index',
+    })
+  },
   InitTypeData() { //获取Tabs数据
     var that = this;
     var url = requestUrl + "/API/CategoryApi/GetReadRedTypeList";
@@ -44,7 +54,7 @@ Page({
         that.InitData();
       }
     })
-  }, 
+  },
   InitData() { //获取列表数据
     var that = this;
     var pageindex = that.data.pageindex;
@@ -53,7 +63,7 @@ Page({
       if (res.data.success) {
         if (pageindex == 1) {
           that.setData({
-            studyobj:res.data.data.RecentLearning,
+            studyobj: res.data.data.RecentLearning,
             list: res.data.data.datas
           })
         } else {
@@ -91,7 +101,7 @@ Page({
   onShow: function () {
 
   },
- 
+
   /**
    * 生命周期函数--监听页面隐藏
    */

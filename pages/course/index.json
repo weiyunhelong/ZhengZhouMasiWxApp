@@ -1,8 +1,8 @@
 {
-  "navigationBarBackgroundColor": "#ffffff",
-  "navigationBarTextStyle": "black",
-  "navigationBarTitleText": "进德学堂",
+  "navigationBarTitleText": "",
+  "navigationStyle": "custom",
   "usingComponents": {
-    "loadding": "../../components/loadding/index"
+    "loadding": "../../components/loadding/index",
+    "nodatav": "../../components/nodata/index"
   }
 }
