@@ -12,24 +12,6 @@
     },
     "miniprogram": {
       "list": [
-        {
-          "name": "pages/course/index",
-          "pathName": "pages/course/index",
-          "query": "",
-          "scene": null
-        },
-        {
-          "name": "pages/course/detail",
-          "pathName": "pages/course/detail",
-          "query": "id=1",
-          "scene": null
-        },
-        {
-          "name": "",
-          "pathName": "pages/xinzhongguo/index",
-          "query": "",
-          "scene": null
-        }
       ]
     }
   }
