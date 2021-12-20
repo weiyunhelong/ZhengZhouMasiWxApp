@@ -1,4 +1,14 @@
 <!--pages/jiyin/detail.wxml-->
+<!--顶部用户信息-->
+<view class="topbgv">
+  <view style="width: 100vw;height:{{navigationBarHeight}}px;margin-bottom: 10rpx;"></view>
+  <view class="pagetitlev">
+    <view class="backiconv" bindtap="goBackOpt">
+      <image src="/resources/comman/backiconw.png" class="backicon"></image>
+    </view>
+    <view class="pagetitle">新中国从这里走来</view>
+  </view>
+</view>
 <image lazy-load="true" class="banner" src="https://zhengzhousizheng.oss-cn-beijing.aliyuncs.com/newcountry/bannber.png"></image>
 <view class="block1">
   <view class="blockv" style="padding-top:60rpx;">
@@ -52,12 +62,12 @@
       <view class="blockdesc showFourehangTxt">三湾改编纪念馆，位于永新县三湾乡三湾村。1927年秋天，湖南秋收起义失利以后，毛泽东率领部队到达江西永新县三湾村，当时部队已... 1000人。为了巩固这支新生的革命军队，以适应革命斗争的需要，9月29日至10月3日，毛泽东在三湾村主持召开前敌委员会会议，对部队进行整顿和改编：允许不愿留下的官兵离队，自愿留下革命的缩编为1个团；在各级建立共产党组织，“支部建在连上”，实行新的党代表制度；实行官兵平等的民主制度。三湾改编是中国共产党创建新型人民军队的重要开端。此后，起义部队虽继续行军打仗，缺吃少穿，却“精神非常的愉快……因为是自由的，绝不受任何人的压迫；同志之间亦同心同德，团结一致”。</view>
     </view>
   </view>
-  <view class="blockv" style="padding-top:85rpx;">
+  <view class="blockv" style="padding-top:85rpx;">  
+    <image src="https://zhengzhousizheng.oss-cn-beijing.aliyuncs.com/newcountry/yuan8.png" lazy-load="true" class="blockcover"></image>
     <view class="blockinfo">
       <image class="step8icon" src="https://zhengzhousizheng.oss-cn-beijing.aliyuncs.com/newcountry/step8.png"></image>
       <view class="blockdesc showFourehangTxt">井冈山革命博物馆，位于井冈山市茨坪红军南路，是中国第一个地方性革命史类博物馆。 井冈山革命根据地是土地革命... 争... 期，中国共产党在湖南、江西两省边界罗霄山脉中段创建的第一个农村革命根据地。1927年10月，毛泽东率领湘赣边秋收起义的工农革命军到达罗霄山脉中段的井冈山地区，开展游击战争，进行土地革命，恢复和建立共产党的组织，建立革命政权和赤卫队。 1928年4月底，朱德、陈毅率领南昌起义保存下来的部队和湘南农军到达井冈山，和毛泽东领导的工农革命军会师，成立了中国工农红军第四军。此后，红军粉碎了敌人的多次“围剿”，根据地不断扩大，为中国革命走上农村包围城市，武装夺取政权，开辟了新的道路。</view>
     </view>
-    <image src="https://zhengzhousizheng.oss-cn-beijing.aliyuncs.com/newcountry/yuan8.png" lazy-load="true" class="blockcover"></image>
   </view>
 </view>
 <view class="block3">
@@ -136,11 +146,11 @@
     </view>
   </view>
   <view class="blockv" style="padding-top:91rpx;">
+    <image src="https://zhengzhousizheng.oss-cn-beijing.aliyuncs.com/newcountry/yuan19.png" lazy-load="true" class="blockcover"></image>
     <view class="blockinfo">
       <image class="step19icon" src="https://zhengzhousizheng.oss-cn-beijing.aliyuncs.com/newcountry/step18.png"></image>
       <view class="blockdesc showFourehangTxt">中共中央旧址凤凰山麓 凤凰山麓革命旧址是中共中央驻地旧址，位于延安市宝塔区凤凰山脚下，是延安“四大名山”之一，因“吹箫引凤”的传说而得名。</view>
     </view>
-    <image src="https://zhengzhousizheng.oss-cn-beijing.aliyuncs.com/newcountry/yuan19.png" lazy-load="true" class="blockcover"></image>
   </view>
   <view class="blockv" style="padding-top:89rpx;">
     <image src="https://zhengzhousizheng.oss-cn-beijing.aliyuncs.com/newcountry/yuan20.png" lazy-load="true" class="blockcover"></image>

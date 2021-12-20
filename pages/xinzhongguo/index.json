@@ -1,7 +1,6 @@
 {
-  "navigationBarBackgroundColor": "#124361",
-  "navigationBarTextStyle": "white",
-  "navigationBarTitleText": "新中国从这里走来",
+  "navigationBarTitleText": "",
+  "navigationStyle": "custom",
   "usingComponents": {
     "loadding": "../../components/loadding/index"
   }

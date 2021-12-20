@@ -23,6 +23,12 @@
           "pathName": "pages/course/detail",
           "query": "id=1",
           "scene": null
+        },
+        {
+          "name": "",
+          "pathName": "pages/xinzhongguo/index",
+          "query": "",
+          "scene": null
         }
       ]
     }
