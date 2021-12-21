@@ -250,7 +250,7 @@ page {
 }
 
 .btmc {
-  width: 250rpx;
+  width: 180rpx;
   height: 108rpx;
   text-align: center;
   line-height: 108rpx;

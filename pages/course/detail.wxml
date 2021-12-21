@@ -98,4 +98,7 @@
   <view class="btmc">
     <view class="btmctxt">实践资源</view>
   </view>
+  <view class="btmc">
+    <view class="btmctxt">讨论区</view>
+  </view>
 </view>
