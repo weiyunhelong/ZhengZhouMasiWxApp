@@ -1,0 +1,98 @@
+/* pages/course/jidi.wxss */
+page {
+  background: #fff;
+}
+
+.topborder {
+  width: 100vw;
+  height: 1rpx;
+  background: #eee;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 9999;
+}
+
+.bodyv {
+  padding: 28rpx 32rpx;
+  font-size: 36rpx;
+  color: #262626;
+}
+
+.title {
+  font-size: 48rpx;
+  font-weight: 500;
+  color: #262626;
+  line-height: 68rpx;
+  margin-bottom: 20rpx;
+}
+
+.parserv{
+  font-size: 34rpx;
+  color: #262626;
+  line-height: 50rpx;
+}
+.tabbar {
+  display: flex;
+  justify-content: space-around;
+  background: #fff;
+  width: 100vw;
+  height: 50px;
+  padding-bottom: constant(safe-area-inset-bottom);
+  padding-bottom: env(safe-area-inset-bottom);
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  z-index: 999;
+  border-top: 1rpx solid #eee;
+}
+
+.bookbtn {
+  width: 686rpx;
+  height: 92rpx;
+  background: #F24540;
+  border-radius: 46rpx;
+  margin: 8rpx auto;
+  text-align: center;
+  line-height: 92rpx;
+  font-size: 32rpx;
+  font-weight: 500;
+  color: #FFFFFF;
+}
+
+.vrbtn {
+  width: 188rpx;
+  height: 76rpx;
+  background: rgba(242, 69, 64, 0.9);
+  box-shadow: 0rpx 2rpx 16rpx 0rpx rgba(242, 69, 64, 0.5);
+  border-radius: 38rpx 0rpx 0rpx 38rpx;
+  position: fixed;
+  top: 120rpx;
+  right: 0;
+  z-index: 9;
+  display: flex;
+  justify-content: center;
+}
+
+.vriconv {
+  width: 46rpx;
+  height: 46rpx;
+  background: #FFFFFF;
+  border-radius: 50%;
+  margin: 15rpx 0;
+  text-align: center;
+}
+
+.vricon {
+  width: 30rpx;
+  height: 20rpx;
+  margin: 16rpx auto;
+}
+
+.vrtxt {
+  margin-left: 10rpx;
+  height: 76rpx;
+  line-height: 76rpx;
+  font-size: 26rpx;
+  color: #FFFFFF;
+}

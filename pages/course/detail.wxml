@@ -1,104 +1,199 @@
 <!--pages/course/detail.wxml-->
 <!--顶部用户信息-->
-<view class="topbgv">
+<view class="topbgv" bindtap="hideMaskOpt">
   <view style="width: 100vw;height:{{navigationBarHeight}}px;margin-bottom: 10rpx;"></view>
   <view class="pagetitlev">
-    <view class="backiconv" bindtap="goBackOpt">
+    <view class="backiconv" catchtap="goBackOpt">
       <image src="/resources/comman/backiconw.png" class="backicon"></image>
     </view>
     <view class="pagetitle"></view>
   </view>
 </view>
 
-<view class="infov">
-  <view class="namev">
-    <view class="namelie"></view>
-    <view class="nametxt">红色摇篮-安远路矿工人运动纪念馆</view>
-  </view>
-  <view class="owner">负责人：上课时</view>
-  <view class="desc">内容简介少女刘兰芝自幼便习女红，善弹琴，能诵诗书。十七岁嫁给焦仲卿为妻，日夜辛劳，勤于家务，却不为婆婆所容，于是就去信给正在庐江郡府做小吏的丈夫，诉说不堪忍受之苦。</view>
-</view>
-
-<view class="tabv">
-  <view class="tabitem tabitem1">实践活动</view>
-  <view class="tabitem tabitem2">实践任务</view>
-  <view class="tabitem tabitem3">答题考试</view>
-</view>
-
-<view class="bodyv">
-  <view class="kindv">考核标准</view>
-  <view class="demandtxtv">
-    <view class="demandtxt">· 完成所有任务</view>
-    <view class="demandstatush">完成</view>
-  </view>
-  <view class="demandtxtv">
-    <view class="demandtxt">· 提交所有报告</view>
-    <view class="demandstatus">未完成</view>
-  </view>
-  <view class="demandtxtv">
-    <view class="demandtxt">· 参加所有活动</view>
-    <view class="demandstatus">未完成</view>
+<scroll-view scroll-y="true" class="contentv">
+  <view class="infov">
+    <view class="namev">
+      <view class="namelie"></view>
+      <view class="nametxt">红色摇篮-安远路矿工人运动纪念馆</view>
+    </view>
+    <view class="owner">负责人：上课时</view>
+    <view class="desc">内容简介少女刘兰芝自幼便习女红，善弹琴，能诵诗书。十七岁嫁给焦仲卿为妻，日夜辛劳，勤于家务，却不为婆婆所容，于是就去信给正在庐江郡府做小吏的丈夫，诉说不堪忍受之苦。</view>
   </view>
 
-  <view class="kindv">完成情况</view>
-  <view class="finishbtnv">
-    <view class="finishbtn">
-      <view class="finishbtnl">
-        <icon type="info" class="finishbtnicon" size="14"></icon>
-        <view class="finishbtntxt">已提交</view>
+  <view class="tabv">
+    <view class="tabitem tabitem1">实践活动</view>
+    <view class="tabitem tabitem2">实践任务</view>
+    <view class="tabitem tabitem3">答题考试</view>
+  </view>
+
+  <view class="bodyv">
+    <view class="kindv">考核标准</view>
+    <view class="demandtxtv">
+      <view class="demandtxt">· 完成所有任务</view>
+      <view class="demandstatush">完成</view>
+    </view>
+    <view class="demandtxtv">
+      <view class="demandtxt">· 提交所有报告</view>
+      <view class="demandstatus">未完成</view>
+    </view>
+    <view class="demandtxtv">
+      <view class="demandtxt">· 参加所有活动</view>
+      <view class="demandstatus">未完成</view>
+    </view>
+
+    <view class="kindv">完成情况</view>
+    <view class="finishbtnv">
+      <view class="finishbtn">
+        <view class="finishbtnl">
+          <image src="https://zhengzhousizheng.oss-cn-beijing.aliyuncs.com/zhengzhouv2/infoicon.png" class="finishbtnicon"></image>
+          <view class="finishbtntxt">已提交</view>
+        </view>
+        <view class="finishbtnr">
+          <text class="finishnum">23</text>
+          <text class="finishunit">人</text>
+        </view>
       </view>
-      <view class="finishbtnr">
-        <text class="finishnum">23</text>
-        <text class="finishunit">人</text>
+      <view class="finishbtn">
+        <view class="finishbtnl">
+          <image src="https://zhengzhousizheng.oss-cn-beijing.aliyuncs.com/zhengzhouv2/cuoicon.png" class="finishbtnicon"></image>
+          <view class="finishbtntxt">未提交</view>
+        </view>
+        <view class="finishbtnr">
+          <text class="finishnum">123</text>
+          <text class="finishunit">人</text>
+        </view>
+      </view>
+      <view class="finishbtn" style="width: 100%;margin: 20rpx 0;">
+        <view class="finishnum" style="color: #666666;;">实践报告上传截止时间</view>
+        <view class="finishnum">2020-03-21</view>
       </view>
     </view>
-    <view class="finishbtn">
-      <view class="finishbtnl">
-        <icon type="cancel" class="finishbtnicon" size="14"></icon>
-        <view class="finishbtntxt">未提交</view>
+
+    <view class="kindv">教师团队</view>
+    <view class="tagtxt">负责人</view>
+    <view class="userv">
+      <view class="userc">毕尔巴鄂</view>
+    </view>
+    <view class="tagtxt">带队教师</view>
+    <view class="userv">
+      <view class="userc">卡萨布兰卡</view>
+      <view class="userc">都柏林</view>
+      <view class="userc">阿布扎比</view>
+      <view class="userc">波士顿</view>
+      <view class="userc">罗斯托夫</view>
+      <view class="userc">卡尔加里</view>
+    </view>
+
+    <view class="uploadbtn" bindtap="uploadOpt">上传实践报告</view>
+  </view>
+
+  <!--底部操作按钮部分-->
+  <view class="btmv">
+    <view class="btmoptlinev">
+      <view class="btmoptline"></view>
+    </view>
+    <view class="btmoptv">
+      <view class="btmc" bindtap="showMaskOpt" data-tab="1">
+        <view class="btmctxt">教学方案</view>
       </view>
-      <view class="finishbtnr">
-        <text class="finishnum">123</text>
-        <text class="finishunit">人</text>
+      <view class="btmc" bindtap="showMaskOpt" data-tab="2">
+        <view class="btmctxt">实践基地</view>
+      </view>
+      <view class="btmc" bindtap="showMaskOpt" data-tab="3">
+        <view class="btmctxt">实践资源</view>
+      </view>
+      <view class="btmc" bindtap="showMaskOpt" data-tab="4">
+        <view class="btmctxt">讨论区</view>
       </view>
     </view>
-    <view class="finishbtn" style="width: 100%;margin: 20rpx 0;">
-      <view class="finishnum" style="color: #666666;;">实践报告上传截止时间</view>
-      <view class="finishnum">2020-03-21</view>
+  </view>
+
+</scroll-view>
+
+
+<!--显示遮罩层-->
+<view class="maskv {{showMaskAni?'showMaskv':'hideMaskv'}}" wx:if="{{showMask}}">
+  <!--TAB部分-->
+  <view class="tabcv">
+    <view class="tabcc" bindtap="showMaskOpt" data-tab="1">
+      <view class="{{chkTab==1?'tabctxth':'tabctxt'}}">教学方案</view>
+      <view class="tabcline" wx:if="{{chkTab==1}}"></view>
+    </view>
+    <view class="tabcc" bindtap="showMaskOpt" data-tab="2">
+      <view class="{{chkTab==2?'tabctxth':'tabctxt'}}">实践基地</view>
+      <view class="tabcline" wx:if="{{chkTab==2}}"></view>
+    </view>
+    <view class="tabcc" bindtap="showMaskOpt" data-tab="3">
+      <view class="{{chkTab==3?'tabctxth':'tabctxt'}}">实践资源</view>
+      <view class="tabcline" wx:if="{{chkTab==3}}"></view>
+    </view>
+    <view class="tabcc" bindtap="showMaskOpt" data-tab="4">
+      <view class="{{chkTab==4?'tabctxth':'tabctxt'}}">讨论区</view>
+      <view class="tabcline" wx:if="{{chkTab==4}}"></view>
     </view>
   </view>
 
-  <view class="kindv">教师团队</view>
-  <view class="tagtxt">负责人</view>
-  <view class="userv">
-    <view class="userc">毕尔巴鄂</view>
-  </view>
-  <view class="tagtxt">带队教师</view>
-  <view class="userv">
-    <view class="userc">卡萨布兰卡</view>
-    <view class="userc">都柏林</view>
-    <view class="userc">阿布扎比</view>
-    <view class="userc">波士顿</view>
-    <view class="userc">罗斯托夫</view>
-    <view class="userc">卡尔加里</view>
-  </view>
+  <!--教学方案-->
+  <block wx:if="{{chkTab==1}}">
+    <scroll-view scroll-y="true" class="maskinfov">
+      <view class="subtitle">管理者要学会自己舔伤口，舔完自己的伤口还要去舔别人</view>
+      <view class="subowner">
+        <text class="subownertxt1">负责人：</text>
+        <text class="subownertxt2">李某人</text>
+      </view>
+      <view class="subparserv">
+        <h5parser html="{{desc}}" />
+      </view>
+      <view class="subtabbarv"></view>
+      <scroll-view scroll-x="true" class="subtabbar">
+        <view class="{{chksubTab==1?'subtabbarch':'subtabbarc'}}" bindtap="tapSubTab" data-tab="1">任务一</view>
+        <view class="{{chksubTab==2?'subtabbarch':'subtabbarc'}}" bindtap="tapSubTab" data-tab="2">任务二</view>
+        <view class="{{chksubTab==3?'subtabbarch':'subtabbarc'}}" bindtap="tapSubTab" data-tab="3">任务三</view>
+        <view class="{{chksubTab==4?'subtabbarch':'subtabbarc'}}" bindtap="tapSubTab" data-tab="4">任务四</view>
+        <view class="{{chksubTab==5?'subtabbarch':'subtabbarc'}}" bindtap="tapSubTab" data-tab="5">任务五</view>
+        <view class="{{chksubTab==6?'subtabbarch':'subtabbarc'}}" bindtap="tapSubTab" data-tab="6">任务六</view>
+      </scroll-view>
+    </scroll-view>
+  </block>
 
-  <view class="uploadbtn">上传实践报告</view>
-</view>
+  <!--实践基地-->
+  <block wx:if="{{chkTab==2}}">
+    <scroll-view scroll-y="true" class="maskinfov">
+      <view class="subtitle" style="font-size: 34rpx;">{{chksubTab==1?'线上基地':'线下基地'}}</view>
+      <!--线上基地-->
+      <block wx:if="{{chksubTab==1}}">
+        <view class="jidiv" bindtap="goJiDiOpt" data-id="1">
+          <image mode="widthFix" lazy-load="true" src="https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fimg.jj20.com%2Fup%2Fallimg%2F611%2F031213123016%2F130312123016-3-1200.jpg" class="jidicover"></image>
+          <view class="jidiname showOnehangTxt">北京市朝阳区嵩山路118号</view>
+        </view>
+        <view class="jidiv" bindtap="goJiDiOpt" data-id="1">
+          <image mode="widthFix" lazy-load="true" src="https://t7.baidu.com/it/u=825057118,3516313570&fm=193&f=GIF" class="jidicover"></image>
+          <view class="jidiname showOnehangTxt">北京市朝阳区嵩山路118号</view>
+        </view>
+      </block>
+      <!--线下基地-->
+      <block wx:if="{{chksubTab==2}}">
+        <view class="jidiofflinev">
+          <view class="jidiofflinev1"  bindtap="goJiDiOpt" data-id="1">
+            <image src="/resources/comman/map.png" class="mapicon"></image>
+            <view class="jidiofflinename">安远路矿工人运动实践报告</view>
+          </view>
+          <view class="jidiofflinev2">地址：上海市 浦东新区 张江 郭守敬路 盛创中心 1号楼</view>
+        </view>
+        <view class="jidiofflinev">
+          <view class="jidiofflinev1"  bindtap="goJiDiOpt" data-id="1">
+            <image src="/resources/comman/map.png" class="mapicon"></image>
+            <view class="jidiofflinename">安远路矿工人运动实践报告</view>
+          </view>
+          <view class="jidiofflinev2">地址：上海市 浦东新区 张江 郭守敬路 盛创中心 1号楼</view>
+        </view>
+      </block>
+      <view class="subtabbarv"></view>
+      <scroll-view scroll-x="true" class="subtabbar">
+        <view class="{{chksubTab==1?'subtabbarch':'subtabbarc'}}" bindtap="tapSubTab" data-tab="1" style="width: 50vw;">线上基地</view>
+        <view class="{{chksubTab==2?'subtabbarch':'subtabbarc'}}" bindtap="tapSubTab" data-tab="2" style="width: 50vw;">线下基地</view>
+      </scroll-view>
+    </scroll-view>
+  </block>
 
-<view class="btmvv"></view>
-<view class="btmv">
-  <view class="btmc">
-    <view class="btmctxth">教学方案</view>
-    <view class="btmcline"></view>
-  </view>
-  <view class="btmc">
-    <view class="btmctxt">实践基地</view>
-  </view>
-  <view class="btmc">
-    <view class="btmctxt">实践资源</view>
-  </view>
-  <view class="btmc">
-    <view class="btmctxt">讨论区</view>
-  </view>
 </view>

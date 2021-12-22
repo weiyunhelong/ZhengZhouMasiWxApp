@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "实践任务",
+  "usingComponents": {
+    "loadding": "../../components/loadding/index",
+    "parser": "../../h5parser/parser"
+  }
+}

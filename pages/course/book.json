@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "报名预约",
+  "usingComponents": {
+    "loadding": "../../components/loadding/index"
+  }
+}

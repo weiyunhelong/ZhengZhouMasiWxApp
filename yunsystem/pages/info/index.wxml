@@ -22,7 +22,7 @@
 
 <view class="vrbtn" bindtap="goVROpt">
   <view class="vriconv">
-    <image src="../../resources/vr.png" class="vricon"></image>
+    <image src="./vr.png" class="vricon"></image>
   </view>
   <view class="vrtxt">全景体验</view>
 </view>

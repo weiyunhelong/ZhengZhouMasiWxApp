@@ -1,0 +1,41 @@
+<!--pages/course/task.wxml-->
+<view class="topborder"></view>
+<view class="bodyv">
+  <view class="title">{{chkTab}}:爱过主义教育基地纪念馆爱过主义教育基地纪念馆</view>
+  <view class="infov">
+    <view class="infov1">
+      <view class="infol">
+        <text class="infotxt1">负责人：</text>
+        <text class="infotxt2">李某人</text>
+      </view>
+      <view class="infor">必选</view>
+    </view>
+    <view class="infov2">
+      <view class="infol">
+        <text class="infotxt1">截止时间：</text>
+        <text class="infotxt2">2021.12.23</text>
+      </view>
+    </view>
+    <view class="infov3">
+      <view class="infol">
+        <text class="infotxt1">参加人数：</text>
+        <text class="infotxt2">50人</text>
+      </view>
+    </view>
+  </view>
+  <view class="parserv">
+    <parser html="{{desc}}" />
+  </view>
+</view>
+<view class="btnv">
+  <view class="uploadbtn" bindtap="goUploadWork">上传作品</view>
+</view>
+<view class="tabbarv"></view>
+<scroll-view scroll-x="true" class="tabbar">
+  <view class="{{chkTab=='任务一'?'tabbarch':'tabbarc'}}" bindtap="tapTab" data-name="任务一">任务一</view>
+  <view class="{{chkTab=='任务二'?'tabbarch':'tabbarc'}}" bindtap="tapTab" data-name="任务二">任务二</view>
+  <view class="{{chkTab=='任务三'?'tabbarch':'tabbarc'}}" bindtap="tapTab" data-name="任务三">任务三</view>
+  <view class="{{chkTab=='任务四'?'tabbarch':'tabbarc'}}" bindtap="tapTab" data-name="任务四">任务四</view>
+  <view class="{{chkTab=='任务五'?'tabbarch':'tabbarc'}}" bindtap="tapTab" data-name="任务五">任务五</view>
+  <view class="{{chkTab=='任务六'?'tabbarch':'tabbarc'}}" bindtap="tapTab" data-name="任务六">任务六</view>
+</scroll-view>

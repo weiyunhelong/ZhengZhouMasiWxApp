@@ -1,0 +1,56 @@
+<!--pages/course/upload.wxml-->
+<view class="formv">
+  <view class="formhangv">
+    <input type="text" placeholder="请输入标题" placeholder-class="tipcss" class="txtcss" value="{{title}}" bindinput="getTitle" />
+  </view>
+  <view class="formhangv">
+    <textarea type="text" placeholder="请输入实践报告内容…" placeholder-class="tipcss" class="textarea" value="{{info}}" bindinput="getInfo" />
+  </view>
+</view>
+
+<view style="width: 100vw;height: 20rpx;"></view>
+<view class="formv">
+  <view class="hangv">
+    <view class="hangtag">添加照片</view>
+    <view class="hangval" bindtap="chooseImgOpt">上传照片({{imgs.length}}/5) ></view>
+  </view>
+  <block wx:if="{{imgs.length>0}}">
+    <view class="imgv">
+      <block wx:for="{{imgs}}" wx:key="item" wx:for-index="x">
+        <view class="imgc">
+          <image mode="aspectFill" lazy-load="true" class="img" src="{{item}}"></image>
+          <view class="deletev" bindtap="DeleteImg" data-index="{{x}}">
+            <image src="/resources/comman/delete.png" class="deleteicon"> </image>
+          </view>
+        </view>
+      </block>
+    </view>
+    <view class="imgdesv">
+      <textarea placeholder="请输入图片说明..." class="imgdesc" placeholder-class="tipcss" bindinput="getImgdesc" value="{{imgdesc}}"></textarea>
+    </view>
+  </block>
+  <view class="formline"></view>
+  <view class="hangv">
+    <view class="hangtag">添加附件</view>
+    <view class="hangval" bindtap="chooseFileOpt" wx:if="{{fujian==''}}">系统附件 ></view>
+    <view class="hangval" bindtap="chooseFileOpt" wx:else><text>{{fujian}}</text> ></view>
+  </view>
+</view>
+
+<view style="width: 100vw;height: 20rpx;"></view>
+<view class="formv" style="padding-bottom: 116rpx;">
+  <view class="hangv">
+    <view class="hangtag">实践地址</view>
+    <view class="hangval" style="width: 515rpx;margin-left: 40rpx;">
+      <input type="text" placeholder="请输入实践地址" placeholder-class="tipcss" class="textcss" value="{{address}}" bindinput="getAddress" />
+    </view>
+  </view>
+  <textarea type="text" placeholder="这次实践您有什么体会想表达吗…" placeholder-class="tipcss" class="textarea2" value="{{mark}}" bindinput="getMark" />
+  <view class="formline"></view>
+</view>
+
+<view class="btmvv"></view>
+<view class="btmv">
+  <view class="cancelbtn" bindtap="cancelOpt">取消</view>
+  <view class="formbtn" bindtap="postOpt">提交上传</view>
+</view>

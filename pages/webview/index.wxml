@@ -1,0 +1,2 @@
+<!--yunsystem/pages/webview/index.wxml-->
+<web-view src="{{link}}"></web-view>
