@@ -1,4 +1,4 @@
-// pages/course/task.js
+// pages/activity/index.js
 var requestUrl = getApp().globalData.requestUrl;
 var WxRequest = require('../../utils/WxRequest.js');
 
@@ -16,7 +16,6 @@ Page({
     <img style="width:100%;border-radius:10px;margin:10px 0;" src="https://bkimg.cdn.bcebos.com/pic/0b55b319ebc4b74543a93692ffb609178a82b901bf57"/>\
     <p>三亚市，是海南省地级市，简称崖，古称崖州，别称鹿城，地处海南岛的最南端。三亚东邻陵水黎族自治县，西接乐东黎族自治县，北毗保亭黎族苗族自治县，南临南海，三亚市陆地总面积1921平方千米，海域总面积3226平方千米。东西长91.6千米，南北宽51公里，下辖四个区。</p>',
 
-    IsVr: true, //是否有VR视频
     chkTab: '任务一', //当前的任务
   },
 
@@ -24,7 +23,10 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    var that = this;
+    that.setData({
+      id: options.id
+    })
   },
   tapTab(e) { //切换任务
     var that = this;
@@ -32,15 +34,22 @@ Page({
       chkTab: e.currentTarget.dataset.name
     })
   },
-  goVROpt() { //跳转到VR页面
-    wx.navigateTo({
-      url: '../webview/index?url=https://www.baidu.com',
-    })
-  },
-  goUploadWork() { //上传作品
+  goAddOpt() { //跳转到创建
     var that = this;
     wx.navigateTo({
-      url: '../course/work?id=' + that.data.id + "&task=" + that.data.chkTab,
+      url: '../activity/create?id=' + that.data.id,
+    })
+  },
+  bookOpt() { //报名
+    var that = this;
+    wx.navigateTo({
+      url: '../activity/book?id=' + that.data.id + "&task=" + that.data.chkTab,
+    })
+  },
+  UploadOpt() { //上传作品
+    var that = this;
+    wx.navigateTo({
+      url: '../activity/upload?id=' + that.data.id + "&task=" + that.data.chkTab,
     })
   },
   /**

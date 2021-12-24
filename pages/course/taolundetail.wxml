@@ -1,0 +1,143 @@
+<!--pages/course/taolundetail.wxml-->
+<wxs module="filter" src="../../styles/filter.wxs" />
+<view class="topborderv"></view>
+<!--信息部分-->
+<view class="namev">
+  <image src="/resources/course/taolun.png" class="taolunicon"></image>
+  <view class="nametxt">红色摇篮-安远路矿工人运动纪念馆</view>
+</view>
+<view class="infov">
+ <view class="infouser">发起人：李某</view>
+ <view class="infoudate">2020-03-21</view>
+</view>
+<view class="desc">内容简介少女刘兰芝自幼便习女红，善弹琴，能诵诗书。十七岁嫁给焦仲卿为妻，日夜辛劳，勤于家务，却不为婆婆所容，于是就去信给正在庐江郡府做小吏的丈夫，诉说不堪忍受之苦。</view>
+<view class="kongv"></view>
+
+
+  <view style="width: 100%;height: 30rpx;"></view>
+  <!--评论部分-->
+  <!-- <block wx:for="{{dataobj.CommentList}}" wx:key="item" wx:for-index="x">
+    <view class="commentv">
+      <view class="commentuv">
+        <view class="commentul">
+          <image class="commentutx" src="{{item.Avatar}}"></image>
+          <view style="width: 300rpx;">
+            <view class="commentuname">{{item.NickName}}</view>
+            <view class="commentudate">{{item.CreateTime}}</view>
+          </view>
+        </view>
+        <view class="commentur" bindtap="ZanCommentOpt" data-index="{{x}}" data-status="{{item.IsLike}}" data-id="{{item.CommentId}}">
+          <image src="{{item.IsLike?'/resources/comman/zanh.png':'/resources/comman/zan.png'}}" class="commentuzanicon"></image>
+          <view class="{{item.IsLike?'commentuzannumr':'commentuzannum'}}">赞{{LikesNum}}</view>
+          <view class="commentuhuifu">回复{{item.ReplyNum}}</view>
+        </view>
+      </view>
+      <view class="commentdesc" bindtap="tapFeedback" data-id="{{item.CommentId}}" data-name="{{item.NickName}}">{{item.Contents}}</view>
+
+      <block wx:if="{{item.ReplyCommentList.length>0}}">
+        <view class="commentreplayv">
+          <block wx:for="{{item.ReplyCommentList}}" wx:key="ritem" wx:for-item="ritem" wx:for-index="rx">
+            <view class="commentreplayc" wx:if="{{item.IsOpen?rx<item.ReplyCommentList.length:rx<3}}">
+              <text class="commentreplayer">{{ritem.NickName}}</text>
+              <text class="commentreplayor" wx:if="{{ritem.IsAuther}}">作者</text>
+              <text class=" commentreplaytxt">:{{ritem.Contents}}</text>
+            </view>
+          </block>
+          <view class="commentreplayc" wx:if="{{item.ReplyCommentList.length>3&&!item.IsOpen}}" catchtap="ShowMoreComment" data-index="{{x}}">
+            <text class="commentreplayer">共{{item.ReplyCommentList.length}}条回复></text>
+          </view>
+        </view>
+      </block>
+    </view>
+  </block>
+  <nodatacom  wx:if="{{dataobj.CommentList.length==0}}" /> -->
+
+  <view class="commentv">
+    <view class="commentuv">
+      <view class="commentul">
+        <image class="commentutx" src="/resources/comman/avatarUrl.jpg"></image>
+        <view style="width: 400rpx;">
+          <view class="commentunamev">
+            <view class="commentuname">沟通</view>
+            <view class="commentuowner">作者</view>
+          </view>
+          <view class="commentudate">5分钟前</view>
+        </view>
+      </view>
+      <view class="commentur" bindtap="ZanCommentOpt" data-index="{{x}}" data-status="{{item.IsLike}}" data-id="{{item.CommentId}}">
+        <image src="{{item.IsLike?'/resources/icon/zanh.png':'/resources/icon/zan.png'}}" class="commentuzanicon"></image>
+        <view class="{{item.IsLike?'commentuzannumr':'commentuzannum'}}">23</view>
+      </view>
+    </view>
+    <view class="commentdesc" bindtap="tapFeedback" data-id="{{item.CommentId}}" data-name="{{item.NickName}}">每天睡前都听相声的</view>
+
+    <view class="commentreplayv">
+      <view class="commentreplayc">
+        <text class="commentreplayer">沟通</text>
+        <text class="commentreplayor">作者</text>
+        <text class="commentreplaytip">回复</text>
+        <text class="commentreplayer">冷漠</text>
+        <text class=" commentreplaytxt">：你什么意思？</text>
+      </view>
+      <view class="commentreplayc">
+        <text class="commentreplayer">冷漠</text>
+        <text class="commentreplaytip">回复</text>
+        <text class="commentreplayer">沟通</text>
+        <text class=" commentreplaytxt">：你知道今年双减政策的改变对社会有什么影响吗</text>
+      </view>
+      <view class="commentreplayc">
+        <text class="commentreplayer">查看全部234条回复 ></text>
+      </view>
+    </view>
+  </view>
+
+  <view class="commentv">
+    <view class="commentuv">
+      <view class="commentul">
+        <image class="commentutx" src="/resources/comman/avatarUrl.jpg"></image>
+        <view style="width: 400rpx;">
+          <view class="commentunamev">
+            <view class="commentuname">冷漠</view>
+          </view>
+          <view class="commentudate">5分钟前</view>
+        </view>
+      </view>
+      <view class="commentur">
+        <image src="/resources/icon/zanh.png" class="commentuzanicon"></image>
+        <view class="commentuzannumr">23</view>
+      </view>
+    </view>
+    <view class="commentdesc" bindtap="tapFeedback" data-id="{{item.CommentId}}" data-name="{{item.NickName}}">每天睡前都听相声的</view>
+
+    <view class="commentreplayv">
+      <view class="commentreplayc">
+        <text class="commentreplayer">沟通</text>
+        <text class="commentreplayor">作者</text>
+        <text class="commentreplaytip">回复</text>
+        <text class="commentreplayer">冷漠</text>
+        <text class=" commentreplaytxt">：你什么意思？</text>
+      </view>
+      <view class="commentreplayc">
+        <text class="commentreplayer">冷漠</text>
+        <text class="commentreplaytip">回复</text>
+        <text class="commentreplayer">沟通</text>
+        <text class=" commentreplaytxt">：你知道今年双减政策的改变对社会有什么影响吗</text>
+      </view>
+      <view class="commentreplayc">
+        <text class="commentreplayer">冷漠</text>
+        <text class="commentreplaytip">回复</text>
+        <text class="commentreplayer">沟通</text>
+        <text class=" commentreplaytxt">：你知道今年双减政策的改变对社会有什么影响吗</text>
+      </view>
+    </view>
+  </view>
+  <!--底部按钮部分-->
+  <view class="btmvv"></view>
+  <view class="btmv">
+    <view class="textv">
+      <input class="commenttxt" placeholder-class="commenttip" placeholder="{{placeholdertxt}}" type="text" value="{{comment}}" bindinput="getComment" />
+    </view>
+    <view class="sendbtn" bindtap="sendMsgOpt">
+      <image src="/resources/comman/send.png" class="sendicon"></image>
+    </view>
+  </view>

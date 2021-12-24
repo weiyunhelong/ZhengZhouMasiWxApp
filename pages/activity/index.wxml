@@ -1,0 +1,54 @@
+<!--pages/activity/index.wxml-->
+<view class="topborder"></view>
+<view class="bodyv">
+  <view class="title">管理者要学会自己舔伤口，舔完自己的伤口还要去舔别人的伤口</view>
+  <view class="infov">
+    <view class="infov1">
+      <view class="infol">
+        <text class="infotxt1">负责人：</text>
+        <text class="infotxt2">李某人</text>
+      </view>
+      <view class="infor">预约时间：2021.12.23</view>
+    </view>
+    <view class="infov2">
+      <view class="infol">
+        <text class="infotxt1">截止时间：</text>
+        <text class="infotxt2">2021.12.23</text>
+      </view>
+    </view>
+    <view class="infov3">
+      <view class="infol">
+        <text class="infotxt1">参加人数：</text>
+        <text class="infotxt2">50人</text>
+      </view>
+    </view>
+  </view>
+  <view class="parserv">
+    <parser html="{{desc}}" />
+  </view>
+  <view class="btnv">
+    <view class="mdbtn" bindtap="bookOpt">报名预约</view>
+  </view>
+  <view class="btnv" style="justify-content: space-between;">
+    <view class="smbtn smbtn1" bindtap="UploadOpt">上传作品</view>
+    <view class="smbtn smbtn2" bindtap="bookOpt">报名活动</view>
+  </view>
+</view>
+<view class="tabbarvv"></view>
+<view class="tabbarv">
+  <scroll-view scroll-x="true" class="tabbar">
+    <view class="{{chkTab=='任务一'?'tabbarch':'tabbarc'}}" bindtap="tapTab" data-name="任务一">任务一</view>
+    <view class="{{chkTab=='任务二'?'tabbarch':'tabbarc'}}" bindtap="tapTab" data-name="任务二">任务二</view>
+    <view class="{{chkTab=='任务三'?'tabbarch':'tabbarc'}}" bindtap="tapTab" data-name="任务三">任务三</view>
+    <view class="{{chkTab=='任务四'?'tabbarch':'tabbarc'}}" bindtap="tapTab" data-name="任务四">任务四</view>
+    <view class="{{chkTab=='任务五'?'tabbarch':'tabbarc'}}" bindtap="tapTab" data-name="任务五">任务五</view>
+    <view class="{{chkTab=='任务六'?'tabbarch':'tabbarc'}}" bindtap="tapTab" data-name="任务六">任务六</view>
+  </scroll-view>
+</view>
+
+<view class="vrbtn" bindtap="goAddOpt">
+  <view class="vriconv">
+    <image src="/resources/course/addicon.png" class="vricon"></image>
+  </view>
+  <view class="vrtxt">创建活动</view>
+</view>

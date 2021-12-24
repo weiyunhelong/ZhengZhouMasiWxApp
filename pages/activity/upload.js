@@ -1,4 +1,4 @@
-// pages/course/work.js
+// pages/activity/upload.js
 Page({
 
   /**

@@ -13,27 +13,21 @@
     "miniprogram": {
       "list": [
         {
-          "name": "",
-          "pathName": "pages/course/upload",
-          "query": "",
-          "scene": null
-        },
-        {
-          "name": "",
+          "name": "pages/course/detail",
           "pathName": "pages/course/detail",
           "query": "",
           "scene": null
         },
         {
-          "name": "",
-          "pathName": "pages/course/jidi",
+          "name": "pages/course/taolun",
+          "pathName": "pages/course/taolun",
           "query": "",
           "scene": null
         },
         {
-          "name": "",
-          "pathName": "pages/course/book",
-          "query": "id=1",
+          "name": "pages/activity/index",
+          "pathName": "pages/activity/index",
+          "query": "",
           "scene": null
         }
       ]

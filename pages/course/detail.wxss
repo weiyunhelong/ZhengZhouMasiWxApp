@@ -43,10 +43,10 @@ page {
 /*内容展示部分*/
 .contentv {
   width: 100vw;
-  height: calc(100vh - 220rpx - 204rpx);
-  position: relative;
+  height: calc(100vh - 220rpx);
+  position: fixed;
   z-index: 2;
-  top: -200rpx;
+  bottom: 0rpx;
   left: 0;
 }
 
@@ -458,8 +458,7 @@ page {
   font-size: 40rpx;
   font-weight: 500;
   color: #262626;
-  height: 100rpx;
-  line-height: 100rpx;
+  padding-top: 28rpx;
 }
 
 .maskv .subowner {
@@ -471,7 +470,22 @@ page {
 
 .maskv .subtabbarv {
   width: 100vw;
-  height: 156rpx;
+  height: 140rpx;
+  padding-bottom: constant(safe-area-inset-bottom);
+  padding-bottom: env(safe-area-inset-bottom);
+}
+
+.maskv .maskbtmv {
+  width: 100vw;
+  height: 108rpx;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  z-index: 999;
+  padding-bottom: constant(safe-area-inset-bottom);
+  padding-bottom: env(safe-area-inset-bottom);
+  border-top: 1rpx solid #eee;
+  background: #f7f7f7;
 }
 
 .maskv .subtabbar {
@@ -479,37 +493,34 @@ page {
   justify-content: space-around;
   white-space: nowrap;
   overflow: hidden;
-  background: #fff;
   width: 100vw;
-  height: 156rpx;
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  z-index: 999;
-  border-top: 1rpx solid #eee;
+  height: 108rpx;
 }
 
 .maskv .subtabbarch {
   width: 150rpx;
-  height: 88rpx;
+  height: 108rpx;
   text-align: center;
-  line-height: 88rpx;
+  line-height: 108rpx;
   font-size: 30rpx;
   font-weight: 500;
   color: #262626;
   display: inline-block;
+  background: #fff;
+  border-radius: 0rpx 0rpx 12rpx 12rpx;
 }
 
 .maskv .subtabbarc {
   width: 150rpx;
-  height: 88rpx;
+  height: 108rpx;
   text-align: center;
-  line-height: 88rpx;
+  line-height: 108rpx;
   font-size: 24rpx;
   color: #999999;
   display: inline-block;
 }
 
+/*基地*/
 .maskv .jidiv {
   width: 686rpx;
   height: auto;
@@ -535,8 +546,8 @@ page {
   top: -88rpx;
   position: relative;
   z-index: 2;
-  border-bottom-right-radius: 20rpx;
-  border-bottom-left-radius: 20rpx;
+  border-bottom-right-radius: 6rpx;
+  border-bottom-left-radius: 6rpx;
 }
 
 .maskv .jidiofflinev {
@@ -545,9 +556,9 @@ page {
   background: #FFFFFF;
   border-radius: 12rpx;
   margin: 0 auto 30rpx;
-  background:url(https://zhengzhousizheng.oss-cn-beijing.aliyuncs.com/zhengzhouv2/jidibg.png) no-repeat;
+  background: url(https://zhengzhousizheng.oss-cn-beijing.aliyuncs.com/zhengzhouv2/jidibg.png) no-repeat;
   background-size: cover;
-  box-shadow: 0rpx 4rpx 16rpx 0rpx rgba(0,0,0,0.1);
+  box-shadow: 0rpx 4rpx 16rpx 0rpx rgba(0, 0, 0, 0.1);
 }
 
 .maskv .jidiofflinev .jidiofflinev1 {
@@ -574,4 +585,86 @@ page {
   color: #666;
   padding: 0rpx 32rpx 46rpx;
   line-height: 1;
+}
+
+/*讨论区*/
+.maskv .taolunv {
+  width: 686rpx;
+  height: 184rpx;
+  background: #FFFFFF;
+  border-radius: 12rpx;
+  margin: 0 auto 30rpx;
+}
+
+.maskv .taoluntopv {
+  padding: 46rpx 32rpx 16rpx;
+  display: flex;
+  justify-content: space-between;
+}
+
+.maskv .tltopl {
+  display: flex;
+}
+
+.maskv .tlicon {
+  width: 36rpx;
+  height: 36rpx;
+  margin-right: 12rpx;
+}
+
+.maskv .tltopname {
+  max-width: 400rpx;
+  font-size: 30rpx;
+  font-weight: 500;
+  color: #262626;
+}
+
+.maskv .tltopr {
+  display: flex;
+  justify-content: flex-end;
+  font-size: 24rpx;
+  font-weight: 500;
+  line-height: 45rpx;
+}
+
+.maskv .tltopr .redtxt {
+  color: #F24540;
+}
+
+.maskv .tltopr .greytxt {
+  color: #999;
+}
+
+.maskv .taolunbtmv {
+  margin: 0 80rpx;
+  font-size: 24rpx;
+  color: #999999;
+}
+
+.maskv .faqitlbtn {
+  width: 220rpx;
+  height: 68rpx;
+  background: #F24540;
+  box-shadow: 0rpx 2rpx 16rpx 0rpx rgba(168, 5, 0, 0.2);
+  border-radius: 34rpx;
+  position: fixed;
+  z-index: 9999;
+  bottom: 88rpx;
+  left: calc(50vw - 110rpx);
+  display: flex;
+  justify-content: center;
+}
+
+.taolunwicon {
+  width: 28rpx;
+  height: 28rpx;
+  margin-top: 20rpx;
+  margin-right: 8rpx;
+}
+
+.taoluntxt {
+  line-height: 68rpx;
+  height: 68rpx;
+  font-size: 28rpx;
+  color: #FFFFFF;
 }

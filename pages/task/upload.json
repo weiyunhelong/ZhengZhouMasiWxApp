@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "上传作品",
+  "usingComponents": {
+    "loadding": "../../components/loadding/index"
+  }
+}

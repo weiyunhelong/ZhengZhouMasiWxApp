@@ -1,4 +1,4 @@
-/* pages/course/task.wxss */
+/* pages/task/index.wxss */
 page {
   background: #fff;
 }
@@ -26,9 +26,26 @@ page {
   line-height: 68rpx;
 }
 
+.tabbarvv {
+  width: 100vw;
+  height: 108rpx;
+  padding-bottom: constant(safe-area-inset-bottom);
+  padding-bottom: env(safe-area-inset-bottom);
+}
+
 .tabbarv {
   width: 100vw;
-  height: 156rpx;
+  height: 108rpx;
+  padding-bottom: constant(safe-area-inset-bottom);
+  padding-bottom: env(safe-area-inset-bottom);
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  z-index: 999;
+  border-top: 1rpx solid #eee;
+  padding-bottom: constant(safe-area-inset-bottom);
+  padding-bottom: env(safe-area-inset-bottom);
+  background: #f7f7f7;
 }
 
 .tabbar {
@@ -36,32 +53,28 @@ page {
   justify-content: space-around;
   white-space: nowrap;
   overflow: hidden;
-  background: #fff;
   width: 100vw;
-  height: 156rpx;
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  z-index: 999;
-  border-top: 1rpx solid #eee;
+  height: 108rpx;
 }
 
 .tabbarch {
   width: 150rpx;
-  height: 88rpx;
+  height: 108rpx;
   text-align: center;
-  line-height: 88rpx;
+  line-height: 108rpx;
   font-size: 30rpx;
   font-weight: 500;
   color: #262626;
   display: inline-block;
+  background: #fff;
+  border-radius: 0rpx 0rpx 12rpx 12rpx;
 }
 
 .tabbarc {
   width: 150rpx;
-  height: 88rpx;
+  height: 108rpx;
   text-align: center;
-  line-height: 88rpx;
+  line-height: 108rpx;
   font-size: 24rpx;
   color: #999999;
   display: inline-block;
@@ -109,7 +122,7 @@ page {
 .btnv {
   width: 100vw;
   text-align: center;
-  margin-top: 32rpx;
+  margin: 32rpx 0;
 }
 
 .uploadbtn {
@@ -126,7 +139,9 @@ page {
 }
 
 /**/
-.infov1,.infov2,.infov3 {
+.infov1,
+.infov2,
+.infov3 {
   display: flex;
   justify-content: space-between;
   height: 50rpx;
@@ -138,9 +153,11 @@ page {
   font-size: 24rpx;
   color: #999999;
 }
-.infotxt2{
+
+.infotxt2 {
   color: #262626;
 }
+
 .infor {
   width: 80rpx;
   height: 42rpx;
@@ -151,7 +168,8 @@ page {
   text-align: center;
   line-height: 42rpx;
 }
-.parserv{
+
+.parserv {
   padding: 20rpx 0;
   font-size: 34rpx;
   color: #262626;

@@ -1,0 +1,53 @@
+/* pages/course/taolundetail.wxss */
+page {
+  background: #fff;
+}
+
+.topborderv {
+  width: 100vw;
+  height: 1rpx;
+  background: #eee;
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+.namev {
+  padding: 32rpx 32rpx 0 32rpx;
+  display: flex;
+}
+
+.taolunicon {
+  width: 36rpx;
+  height: 36rpx;
+  margin-right: 12rpx;
+}
+
+.nametxt {
+  max-width: 638rpx;
+  font-size: 34tpx;
+  font-weight: 500;
+  color: #262626;
+}
+
+.infov {
+  display: flex;
+  justify-content: space-between;
+  padding: 12rpx 32rpx;
+  font-size: 24rpx;
+  color: #999999;
+}
+
+.desc {
+  padding: 12rpx 32rpx 40rpx;
+  font-size: 28rpx;
+  color: #666666;
+}
+
+.kongv {
+  width: 100vw;
+  height: 16rpx;
+  background: #f7f7f7;
+}
+
+@import '../../styles/article.wxss';

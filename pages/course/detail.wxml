@@ -10,6 +10,7 @@
   </view>
 </view>
 
+<!--课程详情-->
 <scroll-view scroll-y="true" class="contentv">
   <view class="infov">
     <view class="namev">
@@ -21,9 +22,9 @@
   </view>
 
   <view class="tabv">
-    <view class="tabitem tabitem1">实践活动</view>
-    <view class="tabitem tabitem2">实践任务</view>
-    <view class="tabitem tabitem3">答题考试</view>
+    <view class="tabitem tabitem1" bindtap="goActivityOpt">实践活动</view>
+    <view class="tabitem tabitem2" bindtap="goTaskOpt">实践任务</view>
+    <view class="tabitem tabitem3" bindtap="goTestOpt">答题考试</view>
   </view>
 
   <view class="bodyv">
@@ -85,6 +86,7 @@
     </view>
 
     <view class="uploadbtn" bindtap="uploadOpt">上传实践报告</view>
+    <view class="btmvv"></view>
   </view>
 
   <!--底部操作按钮部分-->
@@ -145,6 +147,8 @@
         <h5parser html="{{desc}}" />
       </view>
       <view class="subtabbarv"></view>
+    </scroll-view>
+    <view class="maskbtmv">
       <scroll-view scroll-x="true" class="subtabbar">
         <view class="{{chksubTab==1?'subtabbarch':'subtabbarc'}}" bindtap="tapSubTab" data-tab="1">任务一</view>
         <view class="{{chksubTab==2?'subtabbarch':'subtabbarc'}}" bindtap="tapSubTab" data-tab="2">任务二</view>
@@ -153,13 +157,13 @@
         <view class="{{chksubTab==5?'subtabbarch':'subtabbarc'}}" bindtap="tapSubTab" data-tab="5">任务五</view>
         <view class="{{chksubTab==6?'subtabbarch':'subtabbarc'}}" bindtap="tapSubTab" data-tab="6">任务六</view>
       </scroll-view>
-    </scroll-view>
+    </view>
   </block>
 
   <!--实践基地-->
   <block wx:if="{{chkTab==2}}">
     <scroll-view scroll-y="true" class="maskinfov">
-      <view class="subtitle" style="font-size: 34rpx;">{{chksubTab==1?'线上基地':'线下基地'}}</view>
+      <view class="subtitle" style="font-size: 34rpx;padding-bottom: 28rpx;">{{chksubTab==1?'线上基地':'线下基地'}}</view>
       <!--线上基地-->
       <block wx:if="{{chksubTab==1}}">
         <view class="jidiv" bindtap="goJiDiOpt" data-id="1">
@@ -174,14 +178,14 @@
       <!--线下基地-->
       <block wx:if="{{chksubTab==2}}">
         <view class="jidiofflinev">
-          <view class="jidiofflinev1"  bindtap="goJiDiOpt" data-id="1">
+          <view class="jidiofflinev1" bindtap="goJiDiOpt" data-id="1">
             <image src="/resources/comman/map.png" class="mapicon"></image>
             <view class="jidiofflinename">安远路矿工人运动实践报告</view>
           </view>
           <view class="jidiofflinev2">地址：上海市 浦东新区 张江 郭守敬路 盛创中心 1号楼</view>
         </view>
         <view class="jidiofflinev">
-          <view class="jidiofflinev1"  bindtap="goJiDiOpt" data-id="1">
+          <view class="jidiofflinev1" bindtap="goJiDiOpt" data-id="1">
             <image src="/resources/comman/map.png" class="mapicon"></image>
             <view class="jidiofflinename">安远路矿工人运动实践报告</view>
           </view>
@@ -189,11 +193,137 @@
         </view>
       </block>
       <view class="subtabbarv"></view>
+    </scroll-view>
+    <view class="maskbtmv">
       <scroll-view scroll-x="true" class="subtabbar">
         <view class="{{chksubTab==1?'subtabbarch':'subtabbarc'}}" bindtap="tapSubTab" data-tab="1" style="width: 50vw;">线上基地</view>
         <view class="{{chksubTab==2?'subtabbarch':'subtabbarc'}}" bindtap="tapSubTab" data-tab="2" style="width: 50vw;">线下基地</view>
       </scroll-view>
-    </scroll-view>
+    </view>
   </block>
 
+  <!--实践资源-->
+  <block wx:if="{{chkTab==3}}">
+    <scroll-view scroll-y="true" class="maskinfov">
+      <view class="subtitle">管理者要学会自己舔伤口，舔完自己的伤口还要去舔别人</view>
+      <view class="subparserv">
+        <h5parser html="{{desc}}" />
+      </view>
+      <view class="subtabbarv"></view>
+    </scroll-view>
+    <view class="maskbtmv">
+      <scroll-view scroll-x="true" class="subtabbar">
+        <view class="{{chksubTab==1?'subtabbarch':'subtabbarc'}}" bindtap="tapSubTab" data-tab="1">资源一</view>
+        <view class="{{chksubTab==2?'subtabbarch':'subtabbarc'}}" bindtap="tapSubTab" data-tab="2">资源二</view>
+        <view class="{{chksubTab==3?'subtabbarch':'subtabbarc'}}" bindtap="tapSubTab" data-tab="3">资源三</view>
+        <view class="{{chksubTab==4?'subtabbarch':'subtabbarc'}}" bindtap="tapSubTab" data-tab="4">资源四</view>
+        <view class="{{chksubTab==5?'subtabbarch':'subtabbarc'}}" bindtap="tapSubTab" data-tab="5">资源五</view>
+        <view class="{{chksubTab==6?'subtabbarch':'subtabbarc'}}" bindtap="tapSubTab" data-tab="6">资源六</view>
+      </scroll-view>
+    </view>
+  </block>
+
+  <!--讨论区-->
+  <block wx:if="{{chkTab==4}}">
+    <scroll-view scroll-y="true" class="maskinfov" style="background: #f7f7f7;">
+      <view style="width: 100%;height: 28rpx;"></view>
+      <view class="taolunv" bindtap="goTaoLun" data-id="1">
+        <view class="taoluntopv">
+          <view class="tltopl">
+            <image src="/resources/course/taolun.png" class="tlicon"></image>
+            <view class="tltopname showOnehangTxt">生的伟大，死的光荣</view>
+          </view>
+          <view class="tltopr">
+            <text class="redtxt">234人</text>
+            <text class="greytxt">讨论 ></text>
+          </view>
+        </view>
+        <view class="taolunbtmv">发起人：李某 · 2021-03-12</view>
+      </view>
+      <view class="taolunv" bindtap="goTaoLun" data-id="1">
+        <view class="taoluntopv">
+          <view class="tltopl">
+            <image src="/resources/course/taolun.png" class="tlicon"></image>
+            <view class="tltopname showOnehangTxt">临危受命，誓死挺进浙江</view>
+          </view>
+          <view class="tltopr">
+            <text class="redtxt">234人</text>
+            <text class="greytxt">讨论 ></text>
+          </view>
+        </view>
+        <view class="taolunbtmv">发起人：瓷器厂 · 2021-03-12</view>
+      </view>
+      <view class="taolunv" bindtap="goTaoLun" data-id="1">
+        <view class="taoluntopv">
+          <view class="tltopl">
+            <image src="/resources/course/taolun.png" class="tlicon"></image>
+            <view class="tltopname showOnehangTxt">我是共产党员，请准许我去</view>
+          </view>
+          <view class="tltopr">
+            <text class="redtxt">234人</text>
+            <text class="greytxt">讨论 ></text>
+          </view>
+        </view>
+        <view class="taolunbtmv">发起人：欧耶 · 2021-03-12</view>
+      </view>
+      <view class="taolunv" bindtap="goTaoLun" data-id="1">
+        <view class="taoluntopv">
+          <view class="tltopl">
+            <image src="/resources/course/taolun.png" class="tlicon"></image>
+            <view class="tltopname showOnehangTxt">抗日战争时期王二小</view>
+          </view>
+          <view class="tltopr">
+            <text class="redtxt">234人</text>
+            <text class="greytxt">讨论 ></text>
+          </view>
+        </view>
+        <view class="taolunbtmv">发起人：李某 · 20201-03-12</view>
+      </view>
+      <view class="taolunv" bindtap="goTaoLun" data-id="1">
+        <view class="taoluntopv">
+          <view class="tltopl">
+            <image src="/resources/course/taolun.png" class="tlicon"></image>
+            <view class="tltopname showOnehangTxt">“英烈千秋”挽匾以资表扬</view>
+          </view>
+          <view class="tltopr">
+            <text class="redtxt">234人</text>
+            <text class="greytxt">讨论 ></text>
+          </view>
+        </view>
+        <view class="taolunbtmv">发起人：非树下 · 2021-03-12</view>
+      </view>
+      <view class="taolunv" bindtap="goTaoLun" data-id="1">
+        <view class="taoluntopv">
+          <view class="tltopl">
+            <image src="/resources/course/taolun.png" class="tlicon"></image>
+            <view class="tltopname showOnehangTxt">“英烈千秋”挽匾以资表扬</view>
+          </view>
+          <view class="tltopr">
+            <text class="redtxt">234人</text>
+            <text class="greytxt">讨论 ></text>
+          </view>
+        </view>
+        <view class="taolunbtmv">发起人：李某 · 2021-03-12</view>
+      </view>
+      <view class="taolunv" bindtap="goTaoLun" data-id="1">
+        <view class="taoluntopv">
+          <view class="tltopl">
+            <image src="/resources/course/taolun.png" class="tlicon"></image>
+            <view class="tltopname showOnehangTxt">生的伟大，死的光荣</view>
+          </view>
+          <view class="tltopr">
+            <text class="redtxt">234人</text>
+            <text class="greytxt">讨论 ></text>
+          </view>
+        </view>
+        <view class="taolunbtmv">发起人：李某 · 20201-03-12</view>
+      </view>
+
+
+    </scroll-view>
+    <view class="faqitlbtn" bindtap="goPublicTaolun">
+      <image src="/resources/course/taolunw.png" class="taolunwicon"></image>
+      <view class="taoluntxt">发起讨论</view>
+    </view>
+  </block>
 </view>

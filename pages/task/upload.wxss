@@ -1,0 +1,67 @@
+/* pages/task/upload.wxss */
+page {
+  background-color: #fff;
+}
+
+.formv {
+  border-top: 1rpx solid #eee;
+}
+
+.formhangv {
+  padding: 32rpx 32rpx 0;
+}
+
+.txtcss {
+  height: 56rpx;
+  line-height: 56rpx;
+  font-size: 40rpx;
+  font-weight: 500;
+  color: #262626;
+}
+
+.textarea {
+  width: 100%;
+  height: calc(100vh - 320rpx);
+  font-size: 28rpx;
+  color: #262626;
+}
+
+.tipcss {
+  color: #999;
+}
+
+.btmvv {
+  width: 100vw;
+  height: 108rpx;
+  padding-bottom: constant(safe-area-inset-bottom);
+  padding-bottom: env(safe-area-inset-bottom);
+}
+
+.btmv {
+  width: 100vw;
+  height: 108rpx;
+  text-align: center;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  z-index: 999;
+  padding-bottom: constant(safe-area-inset-bottom);
+  padding-bottom: env(safe-area-inset-bottom);
+  border-top: 1rpx solid #eee;
+}
+
+.btn {
+  width: 686rpx;
+  height: 92rpx;
+  background-color: rgba(249, 69, 64, 0.5);
+  border-radius: 46rpx;
+  margin: 9rpx auto;
+  text-align: center;
+  line-height: 92rpx;
+  font-size: 32rpx;
+  font-weight: 500;
+  color: #FFFFFF;
+}
+.btnh{
+  background-color: rgba(249, 69, 64, 1);
+}

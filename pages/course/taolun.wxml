@@ -1,0 +1,14 @@
+<!--pages/course/taolun.wxml-->
+<view class="formv">
+  <view class="formhangv">
+    <input type="text" placeholder="请输入讨论标题" placeholder-class="tipcss" class="txtcss" value="{{title}}" bindinput="getTitle" />
+  </view>
+  <view class="formhangv">
+    <textarea type="text" placeholder="请输入讨论内容…" placeholder-class="tipcss" class="textarea" value="{{info}}" bindinput="getInfo" />
+  </view>
+</view>
+<view class="btmvv"></view>
+<view class="btmv">
+  <view class="btn {{title.length>0&&info.length>0?'btnh':''}}" bindtap="PostOpt">提交上传</view>
+</view>
+

@@ -1,0 +1,193 @@
+/* pages/activity/index.wxss */
+page {
+  background: #fff;
+}
+
+.topborder {
+  width: 100vw;
+  height: 1rpx;
+  background: #eee;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 9999;
+}
+
+.bodyv {
+  padding: 28rpx 32rpx;
+  font-size: 36rpx;
+  color: #262626;
+}
+
+.title {
+  font-size: 40rpx;
+  font-weight: 500;
+  color: #262626;
+  margin-bottom: 20rpx;
+}
+
+.parserv {
+  font-size: 34rpx;
+  color: #262626;
+  line-height: 50rpx;
+}
+
+/*悬浮按钮*/
+.vrbtn {
+  width: 188rpx;
+  height: 76rpx;
+  background: rgba(242, 69, 64, 0.9);
+  box-shadow: 0rpx 2rpx 16rpx 0rpx rgba(242, 69, 64, 0.5);
+  border-radius: 38rpx 0rpx 0rpx 38rpx;
+  position: fixed;
+  top: 120rpx;
+  right: 0;
+  z-index: 9;
+  display: flex;
+  justify-content: center;
+}
+
+.vriconv {
+  width: 46rpx;
+  height: 46rpx;
+  background: #FFFFFF;
+  border-radius: 50%;
+  margin: 15rpx 0;
+  text-align: center;
+}
+
+.vricon {
+  width: 20rpx;
+  height: 20rpx;
+  margin: 15rpx auto;
+}
+
+.vrtxt {
+  margin-left: 10rpx;
+  height: 76rpx;
+  line-height: 76rpx;
+  font-size: 26rpx;
+  color: #FFFFFF;
+}
+
+/**/
+.infov1,
+.infov2,
+.infov3 {
+  display: flex;
+  justify-content: space-between;
+  height: 50rpx;
+  line-height: 50rpx;
+}
+
+.infol {
+  display: flex;
+  font-size: 24rpx;
+  color: #999999;
+}
+
+.infotxt2 {
+  color: #262626;
+}
+
+.infor {
+  font-size: 24rpx;
+  color: #999999;
+}
+
+.btnv {
+  width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  margin: 60rpx 0;
+}
+
+.mdbtn {
+  width: 548rpx;
+  height: 96rpx;
+  background: #FFFFFF;
+  border-radius: 48rpx;
+  border: 1rpx solid #F24540;
+  font-size: 32rpx;
+  font-weight: 500;
+  color: #F24540;
+  text-align: center;
+  line-height: 96rpx;
+}
+
+.smbtn {
+  width: 328rpx;
+  height: 96prx;
+  background: #FFFFFF;
+  border-radius: 48rpx;
+  text-align: center;
+  line-height: 96rpx;
+  font-size: 32rpx;
+  font-weight: 500;
+}
+
+.smbtn1 {
+  border: 1rpx solid #F24540;
+  color: #F24540;
+}
+
+.smbtn2 {
+  border: 1rpx solid #E3E3E3;
+  color: #262626;
+}
+
+/*底部操作按钮*/
+.tabbarvv {
+  width: 100vw;
+  height: 108rpx;
+  padding-bottom: constant(safe-area-inset-bottom);
+  padding-bottom: env(safe-area-inset-bottom);
+}
+
+.tabbarv {
+  width: 100vw;
+  height: 108rpx;
+  padding-bottom: constant(safe-area-inset-bottom);
+  padding-bottom: env(safe-area-inset-bottom);
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  z-index: 999;
+  border-top: 1rpx solid #eee;
+  padding-bottom: constant(safe-area-inset-bottom);
+  padding-bottom: env(safe-area-inset-bottom);
+  background: #f7f7f7;
+}
+
+.tabbar {
+  display: flex;
+  justify-content: space-around;
+  white-space: nowrap;
+  overflow: hidden;
+  width: 100vw;
+  height: 108rpx;
+}
+
+.tabbarch {
+  width: 150rpx;
+  height: 108rpx;
+  text-align: center;
+  line-height: 108rpx;
+  font-size: 30rpx;
+  font-weight: 500;
+  color: #262626;
+  display: inline-block;
+  background: #fff;
+  border-radius: 0rpx 0rpx 12rpx 12rpx;
+}
+
+.tabbarc {
+  width: 150rpx;
+  height: 108rpx;
+  text-align: center;
+  line-height: 108rpx;
+  font-size: 24rpx;
+  color: #999999;
+  display: inline-block;
+}
