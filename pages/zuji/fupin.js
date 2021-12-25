@@ -39,9 +39,39 @@ Page({
     })
   },
   goDetail(e){//点击到详情
-    wx.navigateTo({
-      url: '../zuji/info',
-    })
+    var urls=[
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+    ];
+    var index=e.currentTarget.dataset.index;
+    var url=urls[index];
+    if(url!=""){
+      wx.navigateTo({
+        url: '../webview/index?url='+url,
+      })
+    }
   },
   /**
    * 生命周期函数--监听页面初次渲染完成

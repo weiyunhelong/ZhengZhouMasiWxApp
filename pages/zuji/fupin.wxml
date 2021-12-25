@@ -14,7 +14,7 @@
   <image src="https://zhengzhousizheng.oss-cn-beijing.aliyuncs.com/zujiv2/banner.png" class="banner"></image>
 
   <block wx:for="{{list}}" wx:key="item" wx:for-index="x"> 
-    <image bindtap="goDetail" data-id="{{x}}" mode="widthFix" style="margin-top: {{x==0?'0':'-80'}}rpx;" lazy-load="true" src="https://zhengzhousizheng.oss-cn-beijing.aliyuncs.com/zujiv2/v{{item}}.png" class="cover"></image>    
+    <image bindtap="goDetail" data-index="{{x}}" mode="widthFix" style="margin-top: {{x==0?'0':'-80'}}rpx;" lazy-load="true" src="https://zhengzhousizheng.oss-cn-beijing.aliyuncs.com/zujiv2/v{{item}}.png" class="cover"></image>    
     <image class="lianziicon" src="https://zhengzhousizheng.oss-cn-beijing.aliyuncs.com/zujiv2/lianzi.png" wx:if="{{item!=list.length}}"></image>  
   </block>
 </view>

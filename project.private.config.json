@@ -29,6 +29,18 @@
           "pathName": "pages/activity/index",
           "query": "",
           "scene": null
+        },
+        {
+          "name": "",
+          "pathName": "pages/webview/index",
+          "query": "url=https://720.vrkejiao.com/10001",
+          "scene": null
+        },
+        {
+          "name": "",
+          "pathName": "pages/zuji/fupin",
+          "query": "",
+          "scene": null
         }
       ]
     }

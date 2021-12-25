@@ -29,6 +29,36 @@ Page({
       delta: 1,
     })
   },
+  goDetail(e){
+    var urls=[
+      "https://720.vrkejiao.com/10067",
+      "https://720.vrkejiao.com/10013",
+      "https://720.vrkejiao.com/10070",
+      "",
+      "https://720.vrkejiao.com/10079",
+      "https://720.vrkejiao.com/jgsgmjng",
+      "",
+      "https://720.vrkejiao.com/10025",
+      "",
+      "https://720.vrkejiao.com/10073",
+      "https://720.vrkejiao.com/zgydjng",
+      "",
+      "https://720.vrkejiao.com/10078",
+      "",
+      "",
+      "https://720.vrkejiao.com/10004",
+      "https://720.vrkejiao.com/10063",
+      "",
+      "https://720.vrkejiao.com/10065",
+    ];
+    var index=e.currentTarget.dataset.index;
+    var url=urls[index];
+    if(url!=""){
+      wx.navigateTo({
+        url: '../webview/index?url='+url,
+      })
+    }
+  },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
