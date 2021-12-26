@@ -1,2 +1,26 @@
-<!--pages/activity/upload.wxml-->
-<text>pages/activity/upload.wxml</text>
+<!--pages/course/upload.wxml-->
+<view class="formv">
+  <view class="formhangv">
+    <input type="text" placeholder="请输入标题" placeholder-class="tipcss" class="txtcss" value="{{title}}" bindinput="getTitle" />
+  </view>
+  <view class="formhangv">
+    <textarea type="text" placeholder="请输入内容…" placeholder-class="tipcss" class="textarea" value="{{info}}" bindinput="getInfo" />
+  </view>
+</view>
+
+<view style="width: 100vw;height: 20rpx;background: #f7f7f7;"></view>
+<view class="formv">
+  <view class="formline"></view>
+  <view class="hangv">
+    <view class="hangtag">添加附件</view>
+    <view class="hangval" bindtap="chooseFileOpt" wx:if="{{fujian==''}}">系统附件 ></view>
+    <view class="hangval" bindtap="chooseFileOpt" wx:else><text>{{fujian}}</text> ></view>
+  </view>
+</view>
+
+
+<view class="btmvv"></view>
+<view class="btmv">
+  <view class="cancelbtn" bindtap="cancelOpt">取消</view>
+  <view class="formbtn" bindtap="postOpt">提交上传</view>
+</view>

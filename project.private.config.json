@@ -12,36 +12,6 @@
     },
     "miniprogram": {
       "list": [
-        {
-          "name": "pages/course/detail",
-          "pathName": "pages/course/detail",
-          "query": "",
-          "scene": null
-        },
-        {
-          "name": "pages/course/taolun",
-          "pathName": "pages/course/taolun",
-          "query": "",
-          "scene": null
-        },
-        {
-          "name": "pages/activity/index",
-          "pathName": "pages/activity/index",
-          "query": "",
-          "scene": null
-        },
-        {
-          "name": "",
-          "pathName": "pages/webview/index",
-          "query": "url=https://720.vrkejiao.com/10001",
-          "scene": null
-        },
-        {
-          "name": "",
-          "pathName": "pages/zuji/fupin",
-          "query": "",
-          "scene": null
-        }
       ]
     }
   }

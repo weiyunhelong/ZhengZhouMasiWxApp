@@ -2,7 +2,7 @@
 <view class="topbgv">
   <view style="width: 100vw;height:{{navigationBarHeight}}px;margin-bottom: 10rpx;"></view>
   <view class="backcv" bindtap="goBack">
-    <image src="/resources/comman/backicon.png" class="backicon"></image>
+    <image src="/resources/comman/backiconw.png" class="backicon"></image>
   </view>
   <image src="../../resources/qi.png" class="qiicon"></image>
   <view class="pagetitle">强起来</view>

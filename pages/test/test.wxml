@@ -1,0 +1,74 @@
+<!--pages/test/test.wxml-->
+<view class="clockv">
+  <view class="clocktxt">考试时间 45:00</view>
+</view>
+
+<view class="formv">
+  <view class="questionv">
+    <text class="typetxt">判断</text>
+    <text class="text">不要以“为别人考虑”做理由，其实丢弃了“舍我其谁”的使命感</text>
+  </view>
+  <view class="optionv">
+    <view class="optionc" bindtap="tapOption" data-index="0">
+      <view class="optionno {{chkoption==0?'optionnoh':''}}">A</view>
+      <view class="optiontxt">错误</view>
+    </view>
+    <view class="optionc" bindtap="tapOption" data-index="1">
+      <view class="optionno  {{chkoption==1?'optionnoh':''}}">B</view>
+      <view class="optiontxt">正确</view>
+    </view>
+  </view>
+</view>
+
+<view class="btmvv"></view>
+<view class="btmv">
+  <view class="btml" bindtap="postOpt">
+    <view class="btntxt">交卷</view>
+    <image src="/resources/course/rightg.png" class="righticon"></image>
+  </view>
+  <view class="btmr" bindtap="checkOpt">
+    <image src="/resources/course/rightg.png" class="righticon"></image>
+    <view class="btnno">1</view>
+    <view class="btnnum">/100</view>
+  </view>
+</view>
+
+<!--交卷遮罩层-->
+<view catchtouchmove="nomove" class="maskv {{showMaskAni?'showMaskv':'hideMaskv'}}" wx:if="{{showMask}}">
+  <view class="modalv">
+    <view class="modaltitle">确认结束考试吗</view>
+    <view class="modalsubtitle">还有<text class="redtxt">50道</text>题未做</view>
+    <view class="modaliconv">
+      <image src="/resources/course/posttip.png" class="modalicon"></image>
+    </view>
+    <view class="modalnumv">
+      <view class="modalnumc">
+        <view class="modalnumtxt">100</view>
+        <view class="modalnumtag">考题数</view>
+      </view>
+      <view class="modalnumc">
+        <view class="modalnumtxt">50</view>
+        <view class="modalnumtag">已做题</view>
+      </view>
+      <view class="modalnumc">
+        <view class="modalnumtxt">90分</view>
+        <view class="modalnumtag">合格标准</view>
+      </view>
+    </view>
+    <view class="modalnumv" style="padding-top: 46rpx;">
+      <view class="btn btnl" bindtap="cancelOpt">继续答题</view>
+      <view class="btn btnr" bindtap="confirmOpt">确认提交</view>
+    </view>
+  </view>
+</view>
+
+<!--查看遮罩层-->
+<view catchtouchmove="nomove" bindtap="cancelModal" class="maskv {{showModalAni?'showMaskv':'hideMaskv'}}" wx:if="{{showModal}}">
+  <scroll-view scroll-y="true" class="scrollindexv">
+    <view class="indexv">
+      <block wx:for="{{list}}" wx:key="item" wx:for-index="x">
+        <view class="indexc {{x<4?'indexch':''}}">{{x+1}}</view>
+      </block>
+    </view>
+  </scroll-view>
+</view>

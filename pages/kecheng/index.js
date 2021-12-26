@@ -9,7 +9,7 @@ Page({
    */
   data: {
     chktab: 1, //1视频 0专栏
-    list: [],
+    list: [1,2,3,4,5,6],
     pageindex: 1,
   },
 
@@ -37,7 +37,7 @@ Page({
       chktab: e.currentTarget.dataset.tab,
       pageindex:1
     })
-    that.InitData();
+    //that.InitData();
   },
   goDetail(e) { //点击到详情
     var that = this;
@@ -70,7 +70,7 @@ Page({
     //获取菜单的列表数据
     that.setTabbarlist();
 
-    that.InitData();
+    //that.InitData();
   },
   setTabbarlist: function () { //获取菜单的列表数据
     var that = this;

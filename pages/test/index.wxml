@@ -1,2 +1,74 @@
 <!--pages/test/index.wxml-->
+<view class="blockv" bindtap="goTest">
+  <view class="blockl">
+    <view class="name showOnehangTxt">安远路矿工人运动实践报告</view>
+    <view class="status">考试时间：2021.23.23</view>
+  </view>
+  <view class="blockr">
+    <image src="/resources/course/test.png" class="testicon"></image>
+    <view class="blocktxt">开始考试</view>
+  </view>
+</view>
 
+<view class="blockv">
+  <view class="blockl">
+    <view class="name showOnehangTxt">安远路矿工人运动实践报告</view>
+    <view class="status">考试完成</view>
+  </view>
+  <view class="blockr">
+    <view class="blocktxth">27分</view>
+    <view class="blocktxtg">开始考试</view>
+  </view>
+</view>
+
+
+<view class="blockv">
+  <view class="blockl">
+    <view class="name showOnehangTxt">安远路矿工人运动实践报告</view>
+    <view class="status">考试时间：2022.03.23</view>
+  </view>
+  <view class="blockr">
+    <image src="/resources/course/notest.png" class="testicon"></image>
+    <view class="blocktxtg">暂未开放</view>
+  </view>
+</view>
+
+<view class="blockv">
+  <view class="blockl">
+    <view class="name showOnehangTxt">安远路矿工人运动实践报告</view>
+    <view class="status">考试时间：2021.03.23</view>
+  </view>
+  <view class="blockr">
+    <image src="/resources/course/notest.png" class="testicon"></image>
+    <view class="blocktxtg">过期未考</view>
+  </view>
+</view>
+
+<!--显示遮罩层-->
+<view catchtouchmove="nomove" class="maskv {{showMaskAni?'showMaskv':'hideMaskv'}}" wx:if="{{showMask}}">
+  <view class="modalv">
+    <view class="modaltitle">确认开始考试吗</view>
+    <view class="modalsubtitle">2020年现代设计史</view>
+    <view class="modaliconv">
+      <image src="/resources/course/testicon.png" class="modalicon"></image>
+    </view>
+    <view class="modalnumv">
+      <view class="modalnumc">
+        <view class="modalnumtxt">100</view>
+        <view class="modalnumtag">考题数</view>
+      </view>
+      <view class="modalnumc">
+        <view class="modalnumtxt">2小时</view>
+        <view class="modalnumtag">考试时间</view>
+      </view>
+      <view class="modalnumc">
+        <view class="modalnumtxt">90分</view>
+        <view class="modalnumtag">合格标准</view>
+      </view>
+    </view>
+    <view class="modalnumv" style="padding-top: 46rpx;">
+      <view class="btn btnl" bindtap="cancelOpt">我再想想</view>
+      <view class="btn btnr" bindtap="confirmOpt">确认考试</view>
+    </view>
+  </view>
+</view>

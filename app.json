@@ -12,6 +12,7 @@
     "pages/task/index",
     "pages/task/upload",
     "pages/test/index",
+    "pages/test/test",
     "pages/test/result",
     "pages/activity/index",
     "pages/activity/create",

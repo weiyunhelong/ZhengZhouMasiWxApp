@@ -1,0 +1,342 @@
+/* pages/test/test.wxss */
+.clockv {
+  width: 100vw;
+  height: 100rpx;
+  line-height: 100rpx;
+  display: flex;
+  justify-content: center;
+}
+
+.clocktxt {
+  font-size: 34rpx;
+  color: #262626;
+}
+
+.formv {
+  margin: 28rpx auto;
+  width: 686rpx;
+  height: auto;
+  background: #FFFFFF;
+  border-radius: 12rpx;
+}
+
+.questionv {
+  padding: 32rpx 32rpx 0;
+  font-size: 34rpx;
+  color: #262626;
+}
+
+.typetxt {
+  width: 64rpx;
+  height: 36rpx;
+  background: #F7F7F7;
+  border-radius: 6rpx;
+  font-size: 20rpx;
+  color: #10B950;
+  margin-right: 20rpx;
+  text-align: center;
+  line-height: 36rpx;
+}
+
+.optionv {
+  padding: 20rpx 32rpx;
+}
+
+.optionc {
+  display: flex;
+  padding-bottom: 24rpx;
+}
+
+.optionno {
+  width: 52rpx;
+  height: 52rpx;
+  background: #FFFFFF;
+  border: 1rpx solid #FFFFFF;
+  box-shadow: 0rpx 0rpx 12rpx 0rpx rgba(0, 0, 0, 0.2);
+  margin-top: 24rpx;
+  margin-right: 32rpx;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 52rpx;
+  font-size: 30rpx;
+  color: #262626;
+}
+
+.optionnoh {
+  border: 1rpx solid #10B950;
+  color: #10B950;
+}
+
+.optiontxt {
+  font-size: 32rpx;
+  color: #262626;
+  padding-top: 28rpx;
+}
+
+.btmvv {
+  width: 100vw;
+  height: 108rpx;
+  padding-bottom: constant(safe-area-inset-bottom);
+  padding-bottom: env(safe-area-inset-bottom);
+}
+
+.btmv {
+  width: 100vw;
+  height: 108rpx;
+  padding-bottom: constant(safe-area-inset-bottom);
+  padding-bottom: env(safe-area-inset-bottom);
+  position: fixed;
+  left: 0rpx;
+  bottom: 0rpx;
+  z-index: 9;
+  display: flex;
+  justify-content: space-between;
+  background: #fff;
+}
+
+.btml {
+  width: 152rpx;
+  height: 52rpx;
+  background: #F7F7F7;
+  border-radius: 26rpx;
+  display: flex;
+  justify-content: center;
+  margin: 28rpx 32rpx;
+}
+
+.btntxt {
+  height: 52rpx;
+  line-height: 52rpx;
+  font-size: 28rpx;
+  color: #10B950;
+  margin-right: 8rpx;
+}
+
+.righticon {
+  width: 26rpx;
+  height: 28rpx;
+  margin-top: 12rpx;
+}
+
+.btmr {
+  width: 152rpx;
+  height: 52rpx;
+  display: flex;
+  justify-content: center;
+  margin: 28rpx 32rpx;
+}
+
+.btnno {
+  height: 52rpx;
+  line-height: 52rpx;
+  font-size: 32rpx;
+  color: #333333;
+  margin-left: 10rpx;
+}
+
+.btnnum {
+  height: 52rpx;
+  line-height: 52rpx;
+  font-size: 28rpx;
+  color: #999;
+}
+
+
+/*遮罩层部分*/
+.maskv {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  z-index: 999;
+  top: 0rpx;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.showMaskv {
+  animation: fadeInUp 1s ease-in-out forwards;
+  -webkit-animation: fadeInUp 1s ease-in-out forwards;
+  -moz-animation: fadeInUp 1s ease-in-out forwards;
+}
+
+.hideMaskv {
+  animation: fadeOutDown 1s ease-in-out forwards;
+  -webkit-animation: fadeOutDown 1s ease-in-out forwards;
+  -moz-animation: fadeOutDown 1s ease-in-out forwards;
+}
+
+
+@-webkit-keyframes fadeInUp {
+  from {
+    opacity: 0;
+    -webkit-transform: translate3d(0, 100%, 0);
+    transform: translate3d(0, 100%, 0);
+  }
+
+  to {
+    opacity: 1;
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    -webkit-transform: translate3d(0, 100%, 0);
+    transform: translate3d(0, 100%, 0);
+  }
+
+  to {
+    opacity: 1;
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+.fadeInUp {
+  -webkit-animation-name: fadeInUp;
+  animation-name: fadeInUp;
+}
+
+
+@-webkit-keyframes fadeOutDown {
+  from {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 0;
+    -webkit-transform: translate3d(0, 100%, 0);
+    transform: translate3d(0, 100%, 0);
+  }
+}
+
+@keyframes fadeOutDown {
+  from {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 0;
+    -webkit-transform: translate3d(0, 100%, 0);
+    transform: translate3d(0, 100%, 0);
+  }
+}
+
+.fadeOutDown {
+  -webkit-animation-name: fadeOutDown;
+  animation-name: fadeOutDown;
+}
+
+.modalv {
+  width: 630rpx;
+  height: 728rpx;
+  background: #FFFFFF;
+  border-radius: 12rpx;
+  position: relative;
+  top: calc(50vh - 364rpx);
+  left: calc(50vw - 315rpx);
+}
+
+.modalv .modaltitle {
+  text-align: center;
+  font-size: 40rpx;
+  font-weight: 500;
+  color: #262626;
+  padding-top: 40rpx;
+}
+
+.modalv .modalsubtitle {
+  text-align: center;
+  font-size: 30rpx;
+  color: #999999;
+}
+
+.modalv .modalsubtitle .redtxt {
+  color: #F24540;
+}
+
+.modalv .modaliconv {
+  text-align: center;
+  padding-top: 16rpx;
+}
+
+.modalv .modalicon {
+  width: 254rpx;
+  height: 254rpx;
+  margin: 0 auto;
+}
+
+.modalv .modalnumv {
+  display: flex;
+  justify-content: space-around;
+}
+
+.modalv .modalnumc {
+  text-align: center;
+  padding-top: 36rpx;
+}
+
+.modalv .modalnumtxt {
+  font-size: 40rpx;
+  color: #262626;
+}
+
+.modalv .modalnumtag {
+  font-size: 24rpx;
+  color: #666666;
+}
+
+.modalv .btn {
+  width: 270rpx;
+  height: 88rpx;
+  text-align: center;
+  line-height: 88rpx;
+  font-size: 32rpx;
+  border-radius: 44rpx;
+}
+
+.modalv .btnl {
+  border: 1rpx solid #E3E3E3;
+  color: #262626;
+}
+
+.modalv .btnr {
+  border: 1rpx solid #F24540;
+  color: #F24540;
+}
+
+.scrollindexv {
+  width: 100vw;
+  height: 90vh;
+  background: #fff;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+
+.indexv {
+  display: flex;
+  padding: 32rpx 0 32rpx 32rpx;
+  flex-wrap: wrap;
+}
+
+.indexc {
+  width: 94rpx;
+  height: 94rpx;
+  background: #FFFFFF;
+  border: 1rpx solid #E3E3E3;
+  margin-right: 20rpx;
+  margin-bottom: 20rpx;
+  font-size: 32rpx;
+  color: #262626;
+  text-align: center;
+  line-height: 96rpx;
+  border-radius: 50%;
+}
+
+.indexch {
+  border: 1rpx solid #10B950;
+  color: #10B950;
+}

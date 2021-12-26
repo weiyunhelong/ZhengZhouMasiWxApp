@@ -12,7 +12,7 @@ page {
   position: sticky;
   top: 0;
   left: 0;
-  z-index: 999;
+  z-index: 9;
 }
 
 .topbgv .userv {
@@ -35,13 +35,21 @@ page {
   font-size: 32rpx;
   color: #FFFFFF;
 }
-
+.bodyv{
+  width: 100vw;
+  height: calc(100vh - 150rpx - 100px);
+  position: relative;
+  top: -150rpx;
+  z-index: 99;
+}
+.tabbarcvc{
+  width: 100vw;
+  height: 64rpx;
+}
 /*顶部的banner*/
 .bannerv {
   width: 100vw;
   height: 240rpx;
-  position: relative;
-  top: -150rpx;
   text-align: center;
 }
 
@@ -57,7 +65,7 @@ page {
   height: auto;
   display: flex;
   justify-content: space-around;
-  margin: -105rpx auto 0rpx;
+  margin: 50rpx auto 0rpx;
 }
 
 .menuv .menuitm {

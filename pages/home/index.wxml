@@ -8,212 +8,216 @@
   </view>
 </view>
 
-<!--banner部分-->
-<view class="bannerv" bindtap="goSystem">
-  <image lazy-load="true" class="banner" src="https://zhengzhousizheng.oss-cn-beijing.aliyuncs.com/zhengzhouv2/homebanner.png"></image>
-</view>
+<scroll-view scroll-y="true" class="bodyv">
+  <!--banner部分-->
+  <view class="bannerv" bindtap="goSystem">
+    <image lazy-load="true" class="banner" src="https://zhengzhousizheng.oss-cn-beijing.aliyuncs.com/zhengzhouv2/homebanner.png"></image>
+  </view>
 
-<!--menu部分-->
-<view class="menuv">
-  <view class="menuitm" bindtap="tapMenu" data-menu="1">
-    <image src="/resources/icon/shishidu.png" class="menuicon1"></image>
-    <view class="menutxt">时时读</view>
+  <!--menu部分-->
+  <view class="menuv">
+    <view class="menuitm" bindtap="tapMenu" data-menu="1">
+      <image src="/resources/icon/shishidu.png" class="menuicon1"></image>
+      <view class="menutxt">时时读</view>
+    </view>
+    <view class="menuitm" bindtap="tapMenu" data-menu="2">
+      <image src="/resources/icon/fupinzuji.png" class="menuicon2"></image>
+      <view class="menutxt">扶贫足迹</view>
+    </view>
+    <view class="menuitm" bindtap="tapMenu" data-menu="3">
+      <image src="/resources/icon/jiniandi.png" class="menuicon3"></image>
+      <view class="menutxt">纪念地</view>
+    </view>
+    <view class="menuitm" bindtap="tapMenu" data-menu="4">
+      <image src="/resources/icon/redzuji.png" class="menuicon4"></image>
+      <view class="menutxt">红色足迹</view>
+    </view>
+    <view class="menuitm" bindtap="tapMenu" data-menu="5">
+      <image src="/resources/icon/sishi.png" class="menuicon5"></image>
+      <view class="menutxt">学四史</view>
+    </view>
   </view>
-  <view class="menuitm" bindtap="tapMenu" data-menu="2">
-    <image src="/resources/icon/fupinzuji.png" class="menuicon2"></image>
-    <view class="menutxt">扶贫足迹</view>
-  </view>
-  <view class="menuitm" bindtap="tapMenu" data-menu="3">
-    <image src="/resources/icon/jiniandi.png" class="menuicon3"></image>
-    <view class="menutxt">纪念地</view>
-  </view>
-  <view class="menuitm" bindtap="tapMenu" data-menu="4">
-    <image src="/resources/icon/redzuji.png" class="menuicon4"></image>
-    <view class="menutxt">红色足迹</view>
-  </view>
-  <view class="menuitm" bindtap="tapMenu" data-menu="5">
-    <image src="/resources/icon/sishi.png" class="menuicon5"></image>
-    <view class="menutxt">学四史</view>
-  </view>
-</view>
 
-<!--分类部分-->
-<view class="categoryv">
-  <view class="categoryvl">
-    <view class="categoryvlie"></view>
-    <view class="categoryvtxt">红色时时读</view>
+  <!--分类部分-->
+  <view class="categoryv">
+    <view class="categoryvl">
+      <view class="categoryvlie"></view>
+      <view class="categoryvtxt">红色时时读</view>
+    </view>
+    <view class="categoryvr" bindtap="tapMenu" data-menu="1">
+      <view class="categoryvmore">更多</view>
+      <image src="/resources/comman/right.png" class="righticon"></image>
+    </view>
   </view>
-  <view class="categoryvr" bindtap="tapMenu" data-menu="1">
-    <view class="categoryvmore">更多</view>
-    <image src="/resources/comman/right.png" class="righticon"></image>
-  </view>
-</view>
 
-<!--红色时时读-->
-<scroll-view class="xscrollview" scroll-x="true">
-  <view class="xscrollviewc" bindtap="goShiduOpt" data-id="93">
-    <image mode="aspectFill" lazy-load="true" src="/resources/comman/avatarUrl.jpg" class="xscrollviewcover"></image>
-    <view class="xscrollviewnumberv">
-      <image src="/resources/home/voice.png" class="voiceicon"></image>
-      <view class="numbertxt">1.2万</view>
+  <!--红色时时读-->
+  <scroll-view class="xscrollview" scroll-x="true">
+    <view class="xscrollviewc" bindtap="goShiduOpt" data-id="93">
+      <image mode="aspectFill" lazy-load="true" src="/resources/comman/avatarUrl.jpg" class="xscrollviewcover"></image>
+      <view class="xscrollviewnumberv">
+        <image src="/resources/home/voice.png" class="voiceicon"></image>
+        <view class="numbertxt">1.2万</view>
+      </view>
+      <view class="xscrollviewname showOnehangTxt">做发动机不好使</view>
     </view>
-    <view class="xscrollviewname showOnehangTxt">做发动机不好使</view>
-  </view>
-  <view class="xscrollviewc" bindtap="goShiduOpt" data-id="93">
-    <image mode="aspectFill" lazy-load="true" src="/resources/comman/avatarUrl.jpg" class="xscrollviewcover"></image>
-    <view class="xscrollviewnumberv">
-      <image src="/resources/home/voice.png" class="voiceicon"></image>
-      <view class="numbertxt">1.2万</view>
+    <view class="xscrollviewc" bindtap="goShiduOpt" data-id="93">
+      <image mode="aspectFill" lazy-load="true" src="/resources/comman/avatarUrl.jpg" class="xscrollviewcover"></image>
+      <view class="xscrollviewnumberv">
+        <image src="/resources/home/voice.png" class="voiceicon"></image>
+        <view class="numbertxt">1.2万</view>
+      </view>
+      <view class="xscrollviewname showOnehangTxt">做发动机不好使</view>
     </view>
-    <view class="xscrollviewname showOnehangTxt">做发动机不好使</view>
-  </view>
-  <view class="xscrollviewc" bindtap="goShiduOpt" data-id="93">
-    <image mode="aspectFill" lazy-load="true" src="/resources/comman/avatarUrl.jpg" class="xscrollviewcover"></image>
-    <view class="xscrollviewnumberv">
-      <image src="/resources/home/voice.png" class="voiceicon"></image>
-      <view class="numbertxt">1.2万</view>
+    <view class="xscrollviewc" bindtap="goShiduOpt" data-id="93">
+      <image mode="aspectFill" lazy-load="true" src="/resources/comman/avatarUrl.jpg" class="xscrollviewcover"></image>
+      <view class="xscrollviewnumberv">
+        <image src="/resources/home/voice.png" class="voiceicon"></image>
+        <view class="numbertxt">1.2万</view>
+      </view>
+      <view class="xscrollviewname showOnehangTxt">做发动机不好使</view>
     </view>
-    <view class="xscrollviewname showOnehangTxt">做发动机不好使</view>
-  </view>
-  <view class="xscrollviewc" bindtap="goShiduOpt" data-id="93">
-    <image mode="aspectFill" lazy-load="true" src="/resources/comman/avatarUrl.jpg" class="xscrollviewcover"></image>
-    <view class="xscrollviewnumberv">
-      <image src="/resources/home/voice.png" class="voiceicon"></image>
-      <view class="numbertxt">1.2万</view>
+    <view class="xscrollviewc" bindtap="goShiduOpt" data-id="93">
+      <image mode="aspectFill" lazy-load="true" src="/resources/comman/avatarUrl.jpg" class="xscrollviewcover"></image>
+      <view class="xscrollviewnumberv">
+        <image src="/resources/home/voice.png" class="voiceicon"></image>
+        <view class="numbertxt">1.2万</view>
+      </view>
+      <view class="xscrollviewname showOnehangTxt">做发动机不好使</view>
     </view>
-    <view class="xscrollviewname showOnehangTxt">做发动机不好使</view>
-  </view>
-  <view class="xscrollviewc" bindtap="goShiduOpt" data-id="93">
-    <image mode="aspectFill" lazy-load="true" src="/resources/comman/avatarUrl.jpg" class="xscrollviewcover"></image>
-    <view class="xscrollviewnumberv">
-      <image src="/resources/home/voice.png" class="voiceicon"></image>
-      <view class="numbertxt">1.2万</view>
+    <view class="xscrollviewc" bindtap="goShiduOpt" data-id="93">
+      <image mode="aspectFill" lazy-load="true" src="/resources/comman/avatarUrl.jpg" class="xscrollviewcover"></image>
+      <view class="xscrollviewnumberv">
+        <image src="/resources/home/voice.png" class="voiceicon"></image>
+        <view class="numbertxt">1.2万</view>
+      </view>
+      <view class="xscrollviewname showOnehangTxt">做发动机不好使</view>
     </view>
-    <view class="xscrollviewname showOnehangTxt">做发动机不好使</view>
+  </scroll-view>
+
+  <!--分类部分-->
+  <view class="categoryv">
+    <view class="categoryvl">
+      <view class="categoryvlie"></view>
+      <view class="categoryvtxt">创课中心</view>
+    </view>
+    <view class="categoryvr" bindtap="goChuangke">
+      <view class="categoryvmore">更多</view>
+      <image src="/resources/comman/right.png" class="righticon"></image>
+    </view>
   </view>
+
+  <!--创课中心-->
+  <view class="chuangkev">
+    <view class="chuangkec" bindtap="goChuangkeOpt" data-id="124">
+      <image mode="aspectFill" lazy-load="true" src="/resources/comman/avatarUrl.jpg" class="chuangkecover"></image>
+      <view class="chuangkenumberv">
+        <image src="/resources/home/video.png" class="videoicon"></image>
+        <view class="numbertxt">1.2万</view>
+      </view>
+      <view class="chuangkename showOnehangTxt">使用设计工具的好处在省时省力</view>
+      <view class="chuangketime">时长：19:23</view>
+    </view>
+    <view class="chuangkec" bindtap="goChuangkeOpt" data-id="124">
+      <image mode="aspectFill" lazy-load="true" src="/resources/comman/avatarUrl.jpg" class="chuangkecover"></image>
+      <view class="chuangkenumberv">
+        <image src="/resources/home/video.png" class="videoicon"></image>
+        <view class="numbertxt">1.2万</view>
+      </view>
+      <view class="chuangkename showOnehangTxt">使用设计工具的好处在省时省力</view>
+      <view class="chuangketime">时长：19:23</view>
+    </view>
+    <view class="chuangkec" bindtap="goChuangkeOpt" data-id="124">
+      <image mode="aspectFill" lazy-load="true" src="/resources/comman/avatarUrl.jpg" class="chuangkecover"></image>
+      <view class="chuangkenumberv">
+        <image src="/resources/home/video.png" class="videoicon"></image>
+        <view class="numbertxt">1.2万</view>
+      </view>
+      <view class="chuangkename showOnehangTxt">使用设计工具的好处在省时省力</view>
+      <view class="chuangketime">时长：19:23</view>
+    </view>
+    <view class="chuangkec" bindtap="goChuangkeOpt" data-id="124">
+      <image mode="aspectFill" lazy-load="true" src="/resources/comman/avatarUrl.jpg" class="chuangkecover"></image>
+      <view class="chuangkenumberv">
+        <image src="/resources/home/video.png" class="videoicon"></image>
+        <view class="numbertxt">1.2万</view>
+      </view>
+      <view class="chuangkename showOnehangTxt">使用设计工具的好处在省时省力</view>
+      <view class="chuangketime">时长：19:23</view>
+    </view>
+  </view>
+
+  <!--分类部分-->
+  <view class="categoryv">
+    <view class="categoryvl">
+      <view class="categoryvlie"></view>
+      <view class="categoryvtxt">探寻红色基因</view>
+    </view>
+    <view class="categoryvr" bindtap="goJiyin">
+      <view class="categoryvmore">更多</view>
+      <image src="/resources/comman/right.png" class="righticon"></image>
+    </view>
+  </view>
+
+  <!--探寻红色基因-->
+  <view class="jiyinv" bindtap="goJiYinOpt" data-id="1">
+    <image mode="aspectFill" lazy-load="true" src="/resources/comman/avatarUrl.jpg" class="jiyincover"></image>
+    <view class="jiyinc">
+      <view class="jiyinname">红色摇篮-安远路矿工人运动纪念馆</view>
+      <view class="jiyinnumv">1.4k浏览 · 231点赞 · 233收藏</view>
+    </view>
+  </view>
+  <view class="jiyinv" bindtap="goJiYinOpt" data-id="1">
+    <image mode="aspectFill" lazy-load="true" src="/resources/comman/avatarUrl.jpg" class="jiyincover"></image>
+    <view class="jiyinc">
+      <view class="jiyinname">鲁迅纪念馆平展</view>
+      <view class="jiyinnumv">1.4k浏览 · 231点赞 · 233收藏</view>
+    </view>
+  </view>
+  <view class="jiyinv" bindtap="goJiYinOpt" data-id="1">
+    <image mode="aspectFill" lazy-load="true" src="/resources/comman/avatarUrl.jpg" class="jiyincover"></image>
+    <view class="jiyinc">
+      <view class="jiyinname">鳄鱼园革命纪念馆</view>
+      <view class="jiyinnumv">1.4k浏览 · 231点赞 · 233收藏</view>
+    </view>
+  </view>
+  <view class="jiyinv" bindtap="goJiYinOpt" data-id="1">
+    <image mode="aspectFill" lazy-load="true" src="/resources/comman/avatarUrl.jpg" class="jiyincover"></image>
+    <view class="jiyinc">
+      <view class="jiyinname">黄花塘新四军军部纪念馆</view>
+      <view class="jiyinnumv">1.4k浏览 · 231点赞 · 233收藏</view>
+    </view>
+  </view>
+
+  <!--分类部分-->
+  <view class="categoryv">
+    <view class="categoryvl">
+      <view class="categoryvlie"></view>
+      <view class="categoryvtxt">四史天天讲</view>
+    </view>
+    <view class="categoryvr" bindtap="tapMenu" data-menu="5">
+      <view class="categoryvmore">更多</view>
+      <image src="/resources/comman/right.png" class="righticon"></image>
+    </view>
+  </view>
+
+  <!--四史天天讲-->
+  <view class="sishiv" bindtap="goSiJiangOpt" data-id="1">
+    <image mode="widthFix" lazy-load="true" src="/resources/comman/avatarUrl.jpg" class="sishicover"></image>
+    <view class="sishiname showOnehangTxt">北京市朝阳区嵩山路118号</view>
+  </view>
+  <view class="sishiv" bindtap="goSiJiangOpt" data-id="1">
+    <image mode="widthFix" lazy-load="true" src="/resources/comman/avatarUrl.jpg" class="sishicover"></image>
+    <view class="sishiname showOnehangTxt">北京市朝阳区嵩山路118号</view>
+  </view>
+  <view class="sishiv" bindtap="goSiJiangOpt" data-id="1">
+    <image mode="widthFix" lazy-load="true" src="/resources/comman/avatarUrl.jpg" class="sishicover"></image>
+    <view class="sishiname showOnehangTxt">北京市朝阳区嵩山路118号</view>
+  </view>
+  <view class="sishiv" bindtap="goSiJiangOpt" data-id="1">
+    <image mode="widthFix" lazy-load="true" src="/resources/comman/avatarUrl.jpg" class="sishicover"></image>
+    <view class="sishiname showOnehangTxt">北京市朝阳区嵩山路118号</view>
+  </view>
+
+  <view class="tabbarcvc"></view>
+
 </scroll-view>
-
-<!--分类部分-->
-<view class="categoryv">
-  <view class="categoryvl">
-    <view class="categoryvlie"></view>
-    <view class="categoryvtxt">创课中心</view>
-  </view>
-  <view class="categoryvr" bindtap="goChuangke">
-    <view class="categoryvmore">更多</view>
-    <image src="/resources/comman/right.png" class="righticon"></image>
-  </view>
-</view>
-
-<!--创课中心-->
-<view class="chuangkev">
-  <view class="chuangkec" bindtap="goChuangkeOpt" data-id="124">
-    <image mode="aspectFill" lazy-load="true" src="/resources/comman/avatarUrl.jpg" class="chuangkecover"></image>
-    <view class="chuangkenumberv">
-      <image src="/resources/home/video.png" class="videoicon"></image>
-      <view class="numbertxt">1.2万</view>
-    </view>
-    <view class="chuangkename showOnehangTxt">使用设计工具的好处在省时省力</view>
-    <view class="chuangketime">时长：19:23</view>
-  </view>
-  <view class="chuangkec" bindtap="goChuangkeOpt" data-id="124">
-    <image mode="aspectFill" lazy-load="true" src="/resources/comman/avatarUrl.jpg" class="chuangkecover"></image>
-    <view class="chuangkenumberv">
-      <image src="/resources/home/video.png" class="videoicon"></image>
-      <view class="numbertxt">1.2万</view>
-    </view>
-    <view class="chuangkename showOnehangTxt">使用设计工具的好处在省时省力</view>
-    <view class="chuangketime">时长：19:23</view>
-  </view>
-  <view class="chuangkec" bindtap="goChuangkeOpt" data-id="124">
-    <image mode="aspectFill" lazy-load="true" src="/resources/comman/avatarUrl.jpg" class="chuangkecover"></image>
-    <view class="chuangkenumberv">
-      <image src="/resources/home/video.png" class="videoicon"></image>
-      <view class="numbertxt">1.2万</view>
-    </view>
-    <view class="chuangkename showOnehangTxt">使用设计工具的好处在省时省力</view>
-    <view class="chuangketime">时长：19:23</view>
-  </view>
-  <view class="chuangkec" bindtap="goChuangkeOpt" data-id="124">
-    <image mode="aspectFill" lazy-load="true" src="/resources/comman/avatarUrl.jpg" class="chuangkecover"></image>
-    <view class="chuangkenumberv">
-      <image src="/resources/home/video.png" class="videoicon"></image>
-      <view class="numbertxt">1.2万</view>
-    </view>
-    <view class="chuangkename showOnehangTxt">使用设计工具的好处在省时省力</view>
-    <view class="chuangketime">时长：19:23</view>
-  </view>
-</view>
-
-<!--分类部分-->
-<view class="categoryv">
-  <view class="categoryvl">
-    <view class="categoryvlie"></view>
-    <view class="categoryvtxt">探寻红色基因</view>
-  </view>
-  <view class="categoryvr" bindtap="goJiyin">
-    <view class="categoryvmore">更多</view>
-    <image src="/resources/comman/right.png" class="righticon"></image>
-  </view>
-</view>
-
-<!--探寻红色基因-->
-<view class="jiyinv" bindtap="goJiYinOpt" data-id="1">
-  <image mode="aspectFill" lazy-load="true" src="/resources/comman/avatarUrl.jpg" class="jiyincover"></image>
-  <view class="jiyinc">
-    <view class="jiyinname">红色摇篮-安远路矿工人运动纪念馆</view>
-    <view class="jiyinnumv">1.4k浏览 · 231点赞 · 233收藏</view>
-  </view>
-</view>
-<view class="jiyinv" bindtap="goJiYinOpt" data-id="1">
-  <image mode="aspectFill" lazy-load="true" src="/resources/comman/avatarUrl.jpg" class="jiyincover"></image>
-  <view class="jiyinc">
-    <view class="jiyinname">鲁迅纪念馆平展</view>
-    <view class="jiyinnumv">1.4k浏览 · 231点赞 · 233收藏</view>
-  </view>
-</view>
-<view class="jiyinv" bindtap="goJiYinOpt" data-id="1">
-  <image mode="aspectFill" lazy-load="true" src="/resources/comman/avatarUrl.jpg" class="jiyincover"></image>
-  <view class="jiyinc">
-    <view class="jiyinname">鳄鱼园革命纪念馆</view>
-    <view class="jiyinnumv">1.4k浏览 · 231点赞 · 233收藏</view>
-  </view>
-</view>
-<view class="jiyinv" bindtap="goJiYinOpt" data-id="1">
-  <image mode="aspectFill" lazy-load="true" src="/resources/comman/avatarUrl.jpg" class="jiyincover"></image>
-  <view class="jiyinc">
-    <view class="jiyinname">黄花塘新四军军部纪念馆</view>
-    <view class="jiyinnumv">1.4k浏览 · 231点赞 · 233收藏</view>
-  </view>
-</view>
-
-<!--分类部分-->
-<view class="categoryv">
-  <view class="categoryvl">
-    <view class="categoryvlie"></view>
-    <view class="categoryvtxt">四史天天讲</view>
-  </view>
-  <view class="categoryvr" bindtap="tapMenu" data-menu="5">
-    <view class="categoryvmore">更多</view>
-    <image src="/resources/comman/right.png" class="righticon"></image>
-  </view>
-</view>
-
-<!--四史天天讲-->
-<view class="sishiv" bindtap="goSiJiangOpt" data-id="1">
-  <image mode="widthFix" lazy-load="true" src="/resources/comman/avatarUrl.jpg" class="sishicover"></image>
-  <view class="sishiname showOnehangTxt">北京市朝阳区嵩山路118号</view>
-</view>
-<view class="sishiv" bindtap="goSiJiangOpt" data-id="1">
-  <image mode="widthFix" lazy-load="true" src="/resources/comman/avatarUrl.jpg" class="sishicover"></image>
-  <view class="sishiname showOnehangTxt">北京市朝阳区嵩山路118号</view>
-</view>
-<view class="sishiv" bindtap="goSiJiangOpt" data-id="1">
-  <image mode="widthFix" lazy-load="true" src="/resources/comman/avatarUrl.jpg" class="sishicover"></image>
-  <view class="sishiname showOnehangTxt">北京市朝阳区嵩山路118号</view>
-</view>
-<view class="sishiv" bindtap="goSiJiangOpt" data-id="1">
-  <image mode="widthFix" lazy-load="true" src="/resources/comman/avatarUrl.jpg" class="sishicover"></image>
-  <view class="sishiname showOnehangTxt">北京市朝阳区嵩山路118号</view>
-</view>
-<view class="tabbarv"></view>

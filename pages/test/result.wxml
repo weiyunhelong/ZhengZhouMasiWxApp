@@ -1,2 +1,26 @@
 <!--pages/test/result.wxml-->
-<text>pages/test/result.wxml</text>
+<!--顶部用户信息-->
+<view class="topbgv">
+  <view style="width: 100vw;height:{{navigationBarHeight}}px;margin-bottom: 10rpx;"></view>
+  <view class="pagetitlev">
+    <view class="backiconv" bindtap="goBackOpt">
+      <image src="/resources/comman/backiconw.png" class="backicon"></image>
+    </view>
+    <view class="pagetitle">考试成绩</view>
+  </view>
+</view>
+
+
+<view class="formv">
+  <view class="title">2020年现代设计史</view>
+
+  <view class="cicrlev">
+    <view class="fenv">
+      <view class="fennum">27</view>
+      <view class="fentag">分</view>
+    </view>
+    <view class="fentip">考试成绩</view>
+  </view>
+
+  <view class="cicrleh"></view>
+</view>

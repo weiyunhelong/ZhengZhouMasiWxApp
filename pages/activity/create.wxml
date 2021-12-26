@@ -1,2 +1,59 @@
 <!--pages/activity/create.wxml-->
-<text>pages/activity/create.wxml</text>
+<view class="datev">
+  <view class="datetagv">
+    <view class="datelie"></view>
+    <view class="datetag">活动时间</view>
+  </view>
+  <view class="datecv">
+    <picker mode="date" value="{{actstartdt}}" bindchange="getActStartDt">
+      <input type="text" disabled="true" placeholder="开始时间" placeholder-class="tipcss" class="smtxtcss" value="{{actstartdt}}" />
+    </picker>
+    <view class="datetxt">至</view>
+    <picker mode="date" value="{{actenddt}}" bindchange="getActEndDt">
+      <input type="text" disabled="true" placeholder="结束时间" placeholder-class="tipcss" class="smtxtcss" value="{{actenddt}}" />
+    </picker>
+  </view>
+</view>
+
+<view class="datev">
+  <view class="datetagv">
+    <view class="datelie"></view>
+    <view class="datetag">活动预约时间</view>
+  </view>
+  <view class="datecv">
+    <picker mode="date" value="{{bookstartdt}}" bindchange="getBookStartDt">
+      <input type="text" disabled="true" placeholder="开始时间" placeholder-class="tipcss" class="smtxtcss" value="{{bookstartdt}}" />
+    </picker>
+    <view class="datetxt">至</view>
+    <picker mode="date" value="{{bookenddt}}" bindchange="getBookEndDt">
+      <input type="text" disabled="true" placeholder="结束时间" placeholder-class="tipcss" class="smtxtcss" value="{{bookenddt}}" />
+    </picker>
+  </view>
+</view>
+
+<view class="formv">
+  <view class="hangv">
+    <view class="hangtag">发起人</view>
+    <view class="hangval">
+      <input type="text" class="hangtxt" placeholder-class="tipcss" placeholder="请输入发起人" value="{{name}}" bindinput="getName"/>
+    </view>
+  </view>
+  <view class="hangv">
+    <view class="hangtag">活动人数</view>
+    <view class="hangval">
+      <input type="number" class="hangtxt" placeholder-class="tipcss" placeholder="请设置活动人数" value="{{number}}" bindinput="getNumber"/>
+    </view>
+  </view>
+  <view class="hangv">
+    <view class="hangtag">活动标题</view>
+    <view class="hangval">
+      <input type="text" class="hangtxt" placeholder-class="tipcss" placeholder="请输入活动标题" value="{{title}}" bindinput="getTitle"/>
+    </view>
+  </view>
+  <textarea class="textarea" placeholder-class="tipcss" placeholder="请输入活动内容描述…" value="{{desc}}" bindinput="getDesc"></textarea>
+</view>
+
+<view class="btnvv"></view>
+<view class="btnv">
+  <view class="btn" bindtap="postOpt">确认报名</view>
+</view>

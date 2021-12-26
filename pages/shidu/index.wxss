@@ -8,6 +8,9 @@ page{
   height: 356rpx;
   background: url(https://zhengzhousizheng.oss-cn-beijing.aliyuncs.com/zhengzhouv2/topbg.png) no-repeat;
   background-size: cover;
+  position: sticky;
+  top: 0;
+  left: 0;
 }
 
 .topbgv .pagetitlev {
@@ -47,7 +50,9 @@ page{
   display: flex;
   justify-content: space-around;
   margin-top: -200rpx;
-  margin-bottom: 20rpx;
+  margin-bottom: 20rpx;    
+  position: relative;
+  z-index: 2;
 }
 
 .tabv .tabitem {

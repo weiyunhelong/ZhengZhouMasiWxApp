@@ -1,1 +1,98 @@
 /* pages/test/result.wxss */
+page {
+  background: #f7f7f7;
+}
+
+/*用户信息*/
+.topbgv {
+  width: 100vw;
+  height: 356rpx;
+  background: url(https://zhengzhousizheng.oss-cn-beijing.aliyuncs.com/zhengzhouv2/topbg.png) no-repeat;
+  background-size: cover;
+}
+
+.topbgv .pagetitlev {
+  width: 555rpx;
+  height: 60rpx;
+  display: flex;
+  padding-left: 32rpx;
+}
+
+.topbgv .backiconv {
+  width: 70rpx;
+  height: 60rpx;
+}
+
+.topbgv .backicon {
+  width: 27rpx;
+  height: 54rpx;
+  border-radius: 50%;
+  margin-top: 8rpx;
+}
+
+.topbgv .pagetitle {
+  width: 385rpx;
+  height: 60rpx;
+  text-align: center;
+  line-height: 60rpx;
+  font-size: 34rpx;
+  color: #FFFFFF;
+  margin-left: 84rpx;
+}
+
+
+.formv {
+  width: 686rpx;
+  height: 620rpx;
+  background: #FFFFFF;
+  border-radius: 6rpx;
+  margin: -150rpx auto;
+}
+
+.title {
+  font-size: 36rpx;
+  font-weight: 500;
+  color: #262626;
+  padding: 50rpx 0;
+  text-align: center;
+}
+
+.cicrlev {
+  width: 360rpx;
+  height: 360rpx;
+  background: #FFFFFF;
+  border: 20rpx solid rgba(242, 69, 64, 0.2);
+  border-radius: 50%;
+  margin: 0 auto;
+  position: relative;
+}
+
+.fenv {
+  text-align: center;
+  padding-top: 86rpx;
+  display: flex;
+  justify-content: center;
+}
+
+.fennum {
+  font-size: 100rpx;
+  font-weight: 600;
+  color: #262626;
+}
+
+.fentag {
+  font-size: 28rpx;
+  color: #262626;
+  line-height: 190rpx;
+}
+
+.fentip {
+  font-size: 28rpx;
+  color: #666666;
+  text-align: center;
+  margin-top: -70rpx;
+}
+
+.cicrleh{
+
+}

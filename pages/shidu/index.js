@@ -10,7 +10,7 @@ Page({
   data: {
     tabs: [],
     chktab: 0,
-    list: [],
+    list: [1,2,3,4,5,6,],
     pageindex: 1,
     studyobj: {}, //最近学习
   },
@@ -51,7 +51,7 @@ Page({
           chktab: res.data.data[0].Key,
         })
         //获取列表数据
-        that.InitData();
+        //that.InitData();
       }
     })
   },
@@ -81,7 +81,7 @@ Page({
       pageindex: 1
     })
     //获取列表数据
-    that.InitData();
+    //that.InitData();
   },
   goDetail(e) { //跳转到详情
     wx.navigateTo({
