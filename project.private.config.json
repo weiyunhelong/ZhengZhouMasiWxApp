@@ -12,36 +12,6 @@
     },
     "miniprogram": {
       "list": [
-        {
-          "name": "",
-          "pathName": "pages/shidu/index",
-          "query": "",
-          "scene": null
-        },
-        {
-          "name": "",
-          "pathName": "pages/shidu/list",
-          "query": "id=2",
-          "scene": null
-        },
-        {
-          "name": "",
-          "pathName": "pages/shidu/chapter",
-          "query": "id=1",
-          "scene": null
-        },
-        {
-          "name": "",
-          "pathName": "pages/shidu/detail",
-          "query": "id=1",
-          "scene": null
-        },
-        {
-          "name": "",
-          "pathName": "pages/test/test",
-          "query": "",
-          "scene": null
-        }
       ]
     }
   }
