@@ -1,0 +1,293 @@
+<!--pages/shidu/chapter.wxml-->
+<!--顶部信息-->
+<view class="topinfov">
+  <image class="cover" mode="aspectFill" src="https://sqyr2021.oss-cn-shanghai.aliyuncs.com/imgesfiles/202112031803091669540.png"></image>
+  <view class="topinfoc">
+    <view class="name">步履坚定，共绘高质量发展新篇章——各地</view>
+    <view class="playc">
+      <image src="/resources/home/listen.png" class="playicon"></image>
+      <view class="playnum">1.2万播放</view>
+    </view>
+    <view class="optv">
+      <view class="optbtn optbtn1 {{IsCollect?'optbtn1h':''}}" bindtap="collectOpt">
+        <image class="collecticon" src="{{IsCollect?'/resources/icon/collecth.png':'/resources/icon/collect.png'}}"></image>
+        <view class="collecttxt">{{IsCollect?'已收藏':'收藏'}}</view>
+      </view>
+      <button open-type="share" class="optbtn optbtn2">
+        <image class="shareicon" src="/resources/shidu/share.png"></image>
+        <view class="sharetxt">分享</view>
+      </button>
+    </view>
+  </view>
+</view>
+
+<view class="kongv"></view>
+
+<!--TAB部分-->
+<view class="tabv">
+  <view class="tabcv" bindtap="tapTab" data-tab="1">
+    <view class="tabtxt {{chktab==1?'tabtxth':''}}">声音（233）</view>
+    <view class="tabline" wx:if="{{chktab==1}}"></view>
+  </view>
+  <view class="tabcv" bindtap="tapTab" data-tab="2">
+    <view class="tabtxt {{chktab==2?'tabtxth':''}}">简介</view>
+    <view class="tabline" wx:if="{{chktab==2}}"></view>
+  </view>
+  <view class="tabcv" bindtap="tapTab" data-tab="3">
+    <view class="tabtxt {{chktab==3?'tabtxth':''}}">评论</view>
+    <view class="tabline" wx:if="{{chktab==3}}"></view>
+  </view>
+</view>
+
+<scroll-view scroll-y="true" class="bodyv">
+
+  <!--声音部分-->
+  <block wx:if="{{chktab==1}}">
+    <view class="summaryv">
+      <view class="summaryvl">
+        <image src="/resources/shidu/play.png" class="playicon"></image>
+        <view class="playnum">顺序播放</view>
+      </view>
+      <view class="summaryvr">共80章节</view>
+    </view>
+    <view class="chapterv" bindtap="goDetail" data-id="1">
+      <view class="chapterno redtxt">1</view>
+      <view class="chapternamev">
+        <view class="chaptername redtxt">共绘高质量发展新篇章——各地贯彻党的十九届六中全会精神纪</view>
+        <view class="chapternumv">
+          <image class="chapternumicon" src="/resources/home/listen.png"></image>
+          <view class="chapternumtxt">53.1万</view>
+          <image class="chapternumicon" src="/resources/shidu/time.png"></image>
+          <view class="chapternumtxt">53.1万</view>
+          <image class="chapternumicon" src="/resources/shidu/msg.png"></image>
+          <view class="chapternumtxt">53.1万</view>
+        </view>
+      </view>
+      <view class="chapteroptv">
+        <image src="/resources/shidu/gif.gif" class="playicon"></image>
+      </view>
+    </view>
+    <view class="chapterv">
+      <view class="chapterno">2</view>
+      <view class="chapternamev">
+        <view class="chaptername">共绘高质量发展新篇章——各地贯彻党的十九届六中全会精神纪</view>
+        <view class="chapternumv">
+          <image class="chapternumicon" src="/resources/home/listen.png"></image>
+          <view class="chapternumtxt">53.1万</view>
+          <image class="chapternumicon" src="/resources/shidu/time.png"></image>
+          <view class="chapternumtxt">53.1万</view>
+          <image class="chapternumicon" src="/resources/shidu/msg.png"></image>
+          <view class="chapternumtxt">53.1万</view>
+        </view>
+      </view>
+      <view class="chapteroptv">
+        <image src="/resources/shidu/play.png" class="playicon"></image>
+      </view>
+    </view>
+    <view class="chapterv">
+      <view class="chapterno">3</view>
+      <view class="chapternamev">
+        <view class="chaptername">共绘高质量发展新篇章</view>
+        <view class="chapternumv">
+          <image class="chapternumicon" src="/resources/home/listen.png"></image>
+          <view class="chapternumtxt">53.1万</view>
+          <image class="chapternumicon" src="/resources/shidu/time.png"></image>
+          <view class="chapternumtxt">53.1万</view>
+          <image class="chapternumicon" src="/resources/shidu/msg.png"></image>
+          <view class="chapternumtxt">53.1万</view>
+        </view>
+      </view>
+      <view class="chapteroptv">
+        <image src="/resources/shidu/play.png" class="playicon"></image>
+      </view>
+    </view>
+    <view class="chapterv">
+      <view class="chapterno">4</view>
+      <view class="chapternamev">
+        <view class="chaptername">共绘高质量发展新篇章——各地贯彻党的十九届六中全会精神纪</view>
+        <view class="chapternumv">
+          <image class="chapternumicon" src="/resources/home/listen.png"></image>
+          <view class="chapternumtxt">53.1万</view>
+          <image class="chapternumicon" src="/resources/shidu/time.png"></image>
+          <view class="chapternumtxt">53.1万</view>
+          <image class="chapternumicon" src="/resources/shidu/msg.png"></image>
+          <view class="chapternumtxt">53.1万</view>
+        </view>
+      </view>
+      <view class="chapteroptv">
+        <image src="/resources/shidu/play.png" class="playicon"></image>
+      </view>
+    </view>
+    <view class="chapterv">
+      <view class="chapterno">4</view>
+      <view class="chapternamev">
+        <view class="chaptername">共绘高质量发展新篇章——各地贯彻党的十九届六中全会精神纪</view>
+        <view class="chapternumv">
+          <image class="chapternumicon" src="/resources/home/listen.png"></image>
+          <view class="chapternumtxt">53.1万</view>
+          <image class="chapternumicon" src="/resources/shidu/time.png"></image>
+          <view class="chapternumtxt">53.1万</view>
+          <image class="chapternumicon" src="/resources/shidu/msg.png"></image>
+          <view class="chapternumtxt">53.1万</view>
+        </view>
+      </view>
+      <view class="chapteroptv">
+        <image src="/resources/shidu/play.png" class="playicon"></image>
+      </view>
+    </view>
+    <view class="chapterv">
+      <view class="chapterno">5</view>
+      <view class="chapternamev">
+        <view class="chaptername">共绘高质量发展新篇章——各地贯彻党的十九届六中全会精神纪</view>
+        <view class="chapternumv">
+          <image class="chapternumicon" src="/resources/home/listen.png"></image>
+          <view class="chapternumtxt">53.1万</view>
+          <image class="chapternumicon" src="/resources/shidu/time.png"></image>
+          <view class="chapternumtxt">53.1万</view>
+          <image class="chapternumicon" src="/resources/shidu/msg.png"></image>
+          <view class="chapternumtxt">53.1万</view>
+        </view>
+      </view>
+      <view class="chapteroptv">
+        <image src="/resources/shidu/play.png" class="playicon"></image>
+      </view>
+    </view>
+    <view class="chapterv">
+      <view class="chapterno">6</view>
+      <view class="chapternamev">
+        <view class="chaptername">共绘高质量发展新篇章——各地贯彻党的十九届六中全会精神纪</view>
+        <view class="chapternumv">
+          <image class="chapternumicon" src="/resources/home/listen.png"></image>
+          <view class="chapternumtxt">53.1万</view>
+          <image class="chapternumicon" src="/resources/shidu/time.png"></image>
+          <view class="chapternumtxt">53.1万</view>
+          <image class="chapternumicon" src="/resources/shidu/msg.png"></image>
+          <view class="chapternumtxt">53.1万</view>
+        </view>
+      </view>
+      <view class="chapteroptv">
+        <image src="/resources/shidu/play.png" class="playicon"></image>
+      </view>
+    </view>
+    <view class="chapterv">
+      <view class="chapterno">7</view>
+      <view class="chapternamev">
+        <view class="chaptername">共绘高质量发展新篇章——各地贯彻党的十九届六中全会精神纪</view>
+        <view class="chapternumv">
+          <image class="chapternumicon" src="/resources/home/listen.png"></image>
+          <view class="chapternumtxt">53.1万</view>
+          <image class="chapternumicon" src="/resources/shidu/time.png"></image>
+          <view class="chapternumtxt">53.1万</view>
+          <image class="chapternumicon" src="/resources/shidu/msg.png"></image>
+          <view class="chapternumtxt">53.1万</view>
+        </view>
+      </view>
+      <view class="chapteroptv">
+        <image src="/resources/shidu/play.png" class="playicon"></image>
+      </view>
+    </view>
+  </block>
+
+  <!--简介部分-->
+  <block wx:if="{{chktab==2}}">
+    <view class="parserv">
+      <h5parser html="{{desc}}" />
+    </view>
+  </block>
+
+  <!--评论部分-->
+  <block wx:if="{{chktab==3}}">
+    <view style="width: 100%;height: 32rpx;"></view>
+    <view class="commentv">
+      <view class="commentuv">
+        <view class="commentul">
+          <image class="commentutx" src="/resources/comman/avatarUrl.jpg"></image>
+          <view style="width: 400rpx;">
+            <view class="commentunamev">
+              <view class="commentuname">沟通</view>
+              <view class="commentuowner">作者</view>
+            </view>
+            <view class="commentudate">5分钟前</view>
+          </view>
+        </view>
+        <view class="commentur" bindtap="ZanCommentOpt" data-index="{{x}}" data-status="{{item.IsLike}}" data-id="{{item.CommentId}}">
+          <image src="{{item.IsLike?'/resources/icon/zanh.png':'/resources/icon/zan.png'}}" class="commentuzanicon"></image>
+          <view class="{{item.IsLike?'commentuzannumr':'commentuzannum'}}">23</view>
+        </view>
+      </view>
+      <view class="commentdesc" bindtap="tapFeedback" data-id="{{item.CommentId}}" data-name="{{item.NickName}}">每天睡前都听相声的</view>
+
+      <view class="commentreplayv">
+        <view class="commentreplayc">
+          <text class="commentreplayer">沟通</text>
+          <text class="commentreplayor">作者</text>
+          <text class="commentreplaytip">回复</text>
+          <text class="commentreplayer">冷漠</text>
+          <text class=" commentreplaytxt">：你什么意思？</text>
+        </view>
+        <view class="commentreplayc">
+          <text class="commentreplayer">冷漠</text>
+          <text class="commentreplaytip">回复</text>
+          <text class="commentreplayer">沟通</text>
+          <text class=" commentreplaytxt">：你知道今年双减政策的改变对社会有什么影响吗</text>
+        </view>
+        <view class="commentreplayc">
+          <text class="commentreplayer">查看全部234条回复 ></text>
+        </view>
+      </view>
+    </view>
+
+    <view class="commentv">
+      <view class="commentuv">
+        <view class="commentul">
+          <image class="commentutx" src="/resources/comman/avatarUrl.jpg"></image>
+          <view style="width: 400rpx;">
+            <view class="commentunamev">
+              <view class="commentuname">冷漠</view>
+            </view>
+            <view class="commentudate">5分钟前</view>
+          </view>
+        </view>
+        <view class="commentur">
+          <image src="/resources/icon/zanh.png" class="commentuzanicon"></image>
+          <view class="commentuzannumr">23</view>
+        </view>
+      </view>
+      <view class="commentdesc" bindtap="tapFeedback" data-id="{{item.CommentId}}" data-name="{{item.NickName}}">每天睡前都听相声的</view>
+
+      <view class="commentreplayv">
+        <view class="commentreplayc">
+          <text class="commentreplayer">沟通</text>
+          <text class="commentreplayor">作者</text>
+          <text class="commentreplaytip">回复</text>
+          <text class="commentreplayer">冷漠</text>
+          <text class=" commentreplaytxt">：你什么意思？</text>
+        </view>
+        <view class="commentreplayc">
+          <text class="commentreplayer">冷漠</text>
+          <text class="commentreplaytip">回复</text>
+          <text class="commentreplayer">沟通</text>
+          <text class=" commentreplaytxt">：你知道今年双减政策的改变对社会有什么影响吗</text>
+        </view>
+        <view class="commentreplayc">
+          <text class="commentreplayer">冷漠</text>
+          <text class="commentreplaytip">回复</text>
+          <text class="commentreplayer">沟通</text>
+          <text class=" commentreplaytxt">：你知道今年双减政策的改变对社会有什么影响吗</text>
+        </view>
+      </view>
+    </view>
+    <!--底部按钮部分-->
+    <view class="btmvv"></view>
+    <view class="btmv">
+      <view class="textv">
+        <input class="commenttxt" placeholder-class="commenttip" placeholder="{{placeholdertxt}}" type="text" value="{{comment}}" bindinput="getComment" />
+      </view>
+      <view class="sendbtn" bindtap="sendMsgOpt">
+        <image src="/resources/comman/send.png" class="sendicon"></image>
+      </view>
+    </view>
+
+  </block>
+
+</scroll-view>

@@ -10,9 +10,7 @@
       <view class="playnum">1.2万</view>
     </view>
   </view>
-  <view class="username">王尽美</view>
-  <view class="usertitle">中国共产党创始人之一</view>
-
+  <view class="username">共绘高质量发展新篇章——各地贯彻党的十九届六中全会精神纪</view>
   <view class="progressv">
     <view class="progresskong"></view>
     <progress percent="10" border-radius="3rpx" backgroundColor="#F7F7F7" color="#F24540" active stroke-width="6rpx" />
@@ -20,19 +18,25 @@
   </view>
 
   <view class="voinceoptv">
-    <button open-type="share" class="voincesharebtn">
-      <image src="/resources/icon/share.png" class="voinceshareicon"></image>
-      <view class="voincesharetxt">转发</view>
-    </button>
+    <view class="voincecollectbtn">
+      <image src="/resources/icon/collecth.png" class="voincecollecticon"></image>
+      <view class="voincesharetxth">已收藏</view>
+    </view> 
+    <view class="voincepretbtn">
+      <image src="/resources/shidu/pre.png" class="voincepreicon"></image>
+    </view>       
     <view class="voinceoptc">
       <view class="voinceoptbtn">
         <image src="/resources/icon/play.png" class="playicon"></image>
       </view>
     </view>
-    <view class="voincecollectbtn">
-      <image src="/resources/icon/collecth.png" class="voincecollecticon"></image>
-      <view class="voincesharetxth">已收藏</view>
-    </view>
+    <view class="voincenextbtn">
+      <image src="/resources/shidu/next.png" class="voincenexticon"></image>
+    </view>      
+    <button open-type="share" class="voincesharebtn">
+      <image src="/resources/icon/share.png" class="voinceshareicon"></image>
+      <view class="voincesharetxt">转发</view>
+    </button>
   </view>
 </view>
 
@@ -50,28 +54,13 @@
   </view>
 </view>
 
-<scroll-view scroll-y="true" class="objinfov" style="height: calc(100vh - 864rpx);">
+<scroll-view scroll-y="true" class="objinfov" style="height: calc(100vh - 894rpx);">
 
   <!--视频介绍部分-->
   <block wx:if="{{chktab==1}}">
     <!--内容简介-->
     <view class="contentv">
       <h5parser html="{{Introduce}}" />
-    </view>
-    <view class="optbtmvv"></view>
-    <view class="optbtmv">
-      <button open-type="share" class="optitem">
-        <image src="/resources/icon/share.png" class="optitemshareicon"></image>
-        <view class="optitemtxt">转发</view>
-      </button>
-      <view class="optitem">
-        <image src="/resources/icon/xiaoxi.png" class="optitemxiaoxiicon"></image>
-        <view class="optitemtxt">234</view>
-      </view>
-      <view class="optitem" bindtap="CollectOpt">
-        <image src="{{dataobj.IsCollect?'/resources/icon/collecth.png':'/resources/icon/collect.png'}}" class="optitemshareicon"></image>
-        <view class="{{dataobj.IsCollect?'optitemtxth':'optitemtxt'}}">823</view>
-      </view>
     </view>
   </block>
 

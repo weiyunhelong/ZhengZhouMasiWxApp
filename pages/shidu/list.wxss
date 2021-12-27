@@ -1,0 +1,50 @@
+/* pages/shidu/list.wxss */
+page{
+  background-color: #fff;
+}
+/*党史部分*/
+.zhuanlanv {
+  width: 686rpx;
+  height: 208rpx;
+  border-bottom: 1rpx solid #eee;
+  display: flex;
+  margin: 0 auto;
+}
+.zhuanlanv .noborder{
+  border-bottom: none;
+}
+.zhuanlanv .zhuanlancover {
+  width: 152rpx;
+  height: 152rpx;
+  border-radius: 6rpx;
+  margin-top: 28rpx;
+  margin-right: 20rpx;
+}
+
+.zhuanlanv .zhuanlanc {
+  width: 510rpx;
+}
+
+.zhuanlanv .zhuanlanname {
+  margin-top: 28rpx;
+  font-size: 30rpx;
+  color: #262626;
+}
+.zhuanlanv .zhuanlandesc {
+  font-size: 24rpx;
+  color: #999;
+  margin-top: 12rpx;
+}
+.zhuanlanv .zhuanlannumv {
+  font-size: 24rpx;
+  color: #999999;
+  margin-top: 28rpx;
+  display: flex;
+}
+
+.voiceicon{
+  width: 20rpx;
+  height: 20rpx;
+  margin-right: 8rpx;
+  margin-top: 6rpx;
+}

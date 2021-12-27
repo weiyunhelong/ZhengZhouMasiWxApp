@@ -1,0 +1,261 @@
+/* pages/shidu/chapter.wxss */
+@import '../../styles/article.wxss';
+
+page {
+  background-color: #fff;
+}
+
+.topinfov {
+  padding: 32rpx 32rpx;
+  display: flex;
+}
+
+.topinfov .cover {
+  width: 252rpx;
+  height: 252rpx;
+  border-radius: 12rpx;
+  margin-right: 32rpx;
+}
+
+.topinfov .topinfoc {
+  width: 402rpx;
+  height: auto;
+}
+
+.topinfov .name {
+  height: 96rpx;
+  font-size: 34rpx;
+  font-weight: 500;
+  color: #262626;
+}
+
+.topinfov .playc {
+  display: flex;
+  padding-top: 15rpx;
+}
+
+.topinfov .playicon {
+  margin-right: 8rpx;
+  width: 20rpx;
+  height: 20rpx;
+  margin-top: 4rpx;
+}
+
+.topinfov .playnum {
+  font-size: 24rpx;
+  color: #999999;
+  line-height: 1;
+}
+
+.topinfov .optv {
+  display: flex;
+  padding-top: 50rpx;
+}
+
+.topinfov .optbtn {
+  width: 188rpx;
+  height: 56rpx;
+  border-radius: 28rpx;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+}
+
+.topinfov .optbtn1 {
+  background: #FFFFFF;
+  border: 1rpx solid #262626;
+  margin-right: 26rpx;
+  color: #262626;
+}
+.topinfov .optbtn1h {
+  color: #F24540;
+  border: 1rpx solid #F24540;
+  margin-right: 26rpx;
+}
+.topinfov .optbtn2 {
+  background: #F24540;
+  border: 1rpx solid #F24540;
+  font-size: 24rpx;
+  color: #fff;
+  margin: 0 0;
+  padding: 0 0;
+}
+
+.topinfov .optbtn2::after {
+  margin: 0 0;
+  padding: 0 0;
+}
+
+.topinfov .collecticon {
+  width: 30rpx;
+  height: 30rpx;
+  margin-top: 13rpx;
+  margin-right: 8rpx;
+}
+
+.topinfov .collecttxt {
+  height: 56rpx;
+  line-height: 56rpx;
+  font-size: 24rpx;
+}
+
+.topinfov .shareicon {
+  width: 30rpx;
+  height: 32rpx;
+  margin-top: 13rpx;
+  margin-right: 8rpx;
+}
+
+.topinfov .sharetxt {
+  height: 56rpx;
+  line-height: 56rpx;
+  font-size: 24rpx;
+  color: #fff;
+}
+
+.kongv {
+  width: 100vw;
+  height: 16rpx;
+  background: #F7F7F7;
+}
+
+/*分类部分*/
+.tabv {
+  display: flex;
+  justify-content: space-around;
+  height: 88rpx;
+  border-bottom: 1rpx solid #eee;
+}
+
+.tabcv {
+  width: 250rpx;
+  text-align: center;
+  height: 88rpx;
+}
+
+.tabtxt {
+  height: 88rpx;
+  line-height: 88rpx;
+  font-size: 30rpx;
+  color: #999999;
+}
+
+.tabtxth {
+  height: 88rpx;
+  line-height: 88rpx;
+  font-size: 30rpx;
+  font-weight: 500;
+  color: #262626;
+}
+
+.tabline {
+  width: 28rpx;
+  height: 4rpx;
+  background: #F24540;
+  border-radius: 3rpx;
+  margin: -4rpx auto;
+}
+
+/*内容部分*/
+.bodyv {
+  width: 100vw;
+  height: calc(100vh - 425rpx);
+}
+
+.summaryv {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 32rpx;
+  height: 108rpx;
+  line-height: 108rpx;
+  border-bottom: 1rpx solid #eee;
+}
+
+.summaryv .summaryvl {
+  display: flex;
+}
+
+.summaryv .playicon {
+  width: 28rpx;
+  height: 28rpx;
+  margin-right: 8rpx;
+  margin-top: 40rpx;
+}
+
+.summaryv .playnum {
+  font-size: 28rpx;
+  color: #666666;
+}
+
+.summaryv .summaryvr {
+  font-size: 28rpx;
+  color: #666666;
+}
+
+.chapterv {
+  margin: 0 32rpx;
+  height: 178rpx;
+  border-bottom: 1rpx solid #eee;
+  display: flex;
+}
+
+.chapterv .chapterno {
+  width: 72rpx;
+  text-align: center;
+  line-height: 178rpx;
+  height: 178rpx;
+  font-size: 32rpx;
+  color: #666666;
+}
+
+.chapterv .chapternamev {
+  width: 542rpx;
+  padding-top: 20rpx;
+}
+
+.chapterv .chaptername {
+  height: 88rpx;
+  font-size: 32rpx;
+  color: #262626;
+}
+
+.chapternumv {
+  display: flex;
+  padding-top: 16rpx;
+}
+
+.chapterv .chapternumicon {
+  width: 20rpx;
+  height: 20rpx;
+  margin-right: 8rpx;
+  margin-top: 6rpx;
+}
+
+.chapterv .chapternumtxt {
+  font-size: 24rpx;
+  color: #999999;
+  margin-right: 32rpx;
+}
+
+.chapterv .chapteroptv {
+  width: 72rpx;
+  text-align: center;
+  height: 178rpx;
+}
+
+.chapterv .playicon {
+  width: 40rpx;
+  height: 40rpx;
+  margin: 69rpx auto;
+}
+
+.chapterv .redtxt {
+  color: #F24540;
+}
+
+.parserv {
+  padding: 32rpx 32rpx;
+  font-size: 30rpx;
+  color: #262626;
+  line-height: 50rpx;
+}

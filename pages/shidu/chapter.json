@@ -1,0 +1,8 @@
+{
+  "navigationBarTitleText": "",
+  "usingComponents": {
+    "loadding": "../../components/loadding/index",
+    "nodatacom": "../../components/nodata/index",
+    "h5parser": "../../h5parser/parser"
+  }
+}

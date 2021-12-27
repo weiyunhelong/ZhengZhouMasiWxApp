@@ -6,7 +6,12 @@
   display: flex;
   justify-content: center;
 }
-
+.timeicon{
+  width: 32rpx;
+  height: 32rpx;
+  margin-top: 34rpx;
+  margin-right: 8rpx;
+}
 .clocktxt {
   font-size: 34rpx;
   color: #262626;

@@ -4,6 +4,7 @@
   height: 88rpx;
   display: flex;
   justify-content: space-around;
+  border-bottom: 1rpx solid #eee;
 }
 
 .tabv .tabitem {
@@ -27,7 +28,7 @@
   height: 5rpx;
   background: #F24540;
   border-radius: 3rpx;
-  margin: -10rpx auto 0;
+  margin: -4rpx auto 0;
 }
 .objinfov{
   width: 100vw;

@@ -1,5 +1,6 @@
 <!--pages/test/test.wxml-->
 <view class="clockv">
+  <image src="/resources/shidu/time.png" class="timeicon"></image>
   <view class="clocktxt">考试时间 45:00</view>
 </view>
 

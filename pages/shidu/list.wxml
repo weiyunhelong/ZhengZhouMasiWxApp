@@ -1,0 +1,14 @@
+<!--pages/shidu/list.wxml-->
+<block wx:for="{{list}}" wx:key="item">
+  <view class="zhuanlanv" bindtap="goDetail" data-id="{{item.ID}}">
+    <image mode="aspectFill" lazy-load="true" src="/resources/comman/avatarUrl.jpg" class="zhuanlancover"></image>
+    <view class="zhuanlanc">
+      <view class="zhuanlanname showOnehangTxt">想不等于做，做不等于做到，做到不想不等于做，做不等于做到，做到不</view>
+      <view class="zhuanlandesc showOnehangTxt">不要再纠缠于“长期”和“短期”，很多时候</view>
+      <view class="zhuanlannumv">
+        <image src="/resources/home/listen.png" class="voiceicon"></image>
+        <view class="zhuanlannum">1.2万播放</view>
+      </view>
+    </view>
+  </view>
+</block>

@@ -31,6 +31,8 @@
     "pages/sijiang/index",
     "pages/sijiang/detail",
     "pages/shidu/index",
+    "pages/shidu/list",
+    "pages/shidu/chapter",
     "pages/shidu/detail",
     "pages/jinian/index",
     "pages/xinzhongguo/index",

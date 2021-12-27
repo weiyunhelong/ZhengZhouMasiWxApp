@@ -10,7 +10,7 @@ Page({
   data: {
     tabs: [],
     chktab: 0,
-    list: [1,2,3,4,5,6,],
+    list: [1, 2, 3, 4, 5, 6, ],
     pageindex: 1,
     studyobj: {}, //最近学习
   },
@@ -28,8 +28,6 @@ Page({
         })
       },
     })
-    //获取Tabs数据
-    that.InitTypeData();
   },
   goBackOpt() { //返回
     wx.navigateBack({
@@ -41,18 +39,14 @@ Page({
       url: '../../yunsystem/pages/home/index',
     })
   },
-  InitTypeData() { //获取Tabs数据
-    var that = this;
-    var url = requestUrl + "/API/CategoryApi/GetReadRedTypeList";
-    WxRequest.PostRequest(url, {}).then(res => {
-      if (res.data.success) {
-        that.setData({
-          tabs: res.data.data,
-          chktab: res.data.data[0].Key,
-        })
-        //获取列表数据
-        //that.InitData();
-      }
+  tapMenu(e) { //跳转到对应的分类列表
+    wx.navigateTo({
+      url: '../shidu/list?id=' + e.currentTarget.dataset.menu,
+    })
+  },
+  goDetail(e) { //跳转到详情页面
+    wx.navigateTo({
+      url: '../shidu/chapter?id=' + e.currentTarget.dataset.id,
     })
   },
   InitData() { //获取列表数据
@@ -82,11 +76,6 @@ Page({
     })
     //获取列表数据
     //that.InitData();
-  },
-  goDetail(e) { //跳转到详情
-    wx.navigateTo({
-      url: '../shidu/detail?id=' + e.currentTarget.dataset.id,
-    })
   },
   /**
    * 生命周期函数--监听页面初次渲染完成
