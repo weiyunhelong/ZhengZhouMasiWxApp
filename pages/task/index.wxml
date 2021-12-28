@@ -32,12 +32,36 @@
 </view>
 <view class="tabbarvv"></view>
 <view class="tabbarv">
-  <scroll-view scroll-x="true" class="tabbar">
-    <view class="{{chkTab=='任务一'?'tabbarch':'tabbarc'}}" bindtap="tapTab" data-name="任务一">任务一</view>
-    <view class="{{chkTab=='任务二'?'tabbarch':'tabbarc'}}" bindtap="tapTab" data-name="任务二">任务二</view>
-    <view class="{{chkTab=='任务三'?'tabbarch':'tabbarc'}}" bindtap="tapTab" data-name="任务三">任务三</view>
-    <view class="{{chkTab=='任务四'?'tabbarch':'tabbarc'}}" bindtap="tapTab" data-name="任务四">任务四</view>
-    <view class="{{chkTab=='任务五'?'tabbarch':'tabbarc'}}" bindtap="tapTab" data-name="任务五">任务五</view>
-    <view class="{{chkTab=='任务六'?'tabbarch':'tabbarc'}}" bindtap="tapTab" data-name="任务六">任务六</view>
+  <view class="tabbarvl" bindtap="showModalOpt">
+    <view class="tabbarvltxt">全部方案</view>
+    <image src="/resources/course/allicon.png" class="tabbarvlicon"></image>
+  </view>
+  <view class="tabbarvr" bindtap="showNextOpt">
+    <image src="/resources/course/renwu.png" class="tabbarvricon"></image>
+    <view class="tabbarvrtxt">下个任务</view>
+  </view>
+</view>
+
+<!--显示遮罩层-->
+<view class="maskv {{showMaskAni?'showMaskv':'hideMaskv'}}" wx:if="{{showMask}}">
+
+  <view class="masktopv" catchtap="hideMaskOpt">
+    <view class="maskvtoplinev">
+      <view class="maskvtopline"></view>
+    </view>
+    <view class="maskvtoptitle">全部任务</view>
+    <view class="maskvtopopt">收起</view>
+  </view>
+
+  <scroll-view scroll-y="true" class="maskdatav">
+    <block wx:for="{{tasks}}" wx:key="item" wx:for-index="x">
+      <view class="maskdatac">
+        <view class="maskdatacv">
+          <image src="/resources/course/renwu.png" class="maskdataicon"></image>
+          <view class="maskdatatitle showOnehangTxt">你刚来可以抱怨你的手下是一群混蛋，但你刚来可以抱怨你的手下是一群混蛋，</view>
+        </view>
+        <view class="maskdatatip showOnehangTxt {{x==chktask?'maskdatatiph':''}}">{{x==chktask?'正在浏览此活动':'员工为自己的发展负责，管理者为下属的发展负责'}}</view>
+      </view>
+    </block>
   </scroll-view>
 </view>

@@ -1,0 +1,175 @@
+/*遮罩层部分*/
+.maskv {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  z-index: 999;
+  top: 0rpx;
+  left: 0rpx;
+  background-color: #F7F7F7;
+}
+
+.showMaskv {
+  animation: fadeInUp 1s ease-in-out forwards;
+  -webkit-animation: fadeInUp 1s ease-in-out forwards;
+  -moz-animation: fadeInUp 1s ease-in-out forwards;
+}
+
+.hideMaskv {
+  animation: fadeOutDown 1s ease-in-out forwards;
+  -webkit-animation: fadeOutDown 1s ease-in-out forwards;
+  -moz-animation: fadeOutDown 1s ease-in-out forwards;
+}
+
+
+@-webkit-keyframes fadeInUp {
+  from {
+    opacity: 0;
+    -webkit-transform: translate3d(0, 100%, 0);
+    transform: translate3d(0, 100%, 0);
+  }
+
+  to {
+    opacity: 1;
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    -webkit-transform: translate3d(0, 100%, 0);
+    transform: translate3d(0, 100%, 0);
+  }
+
+  to {
+    opacity: 1;
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+.fadeInUp {
+  -webkit-animation-name: fadeInUp;
+  animation-name: fadeInUp;
+}
+
+
+@-webkit-keyframes fadeOutDown {
+  from {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 0;
+    -webkit-transform: translate3d(0, 100%, 0);
+    transform: translate3d(0, 100%, 0);
+  }
+}
+
+@keyframes fadeOutDown {
+  from {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 0;
+    -webkit-transform: translate3d(0, 100%, 0);
+    transform: translate3d(0, 100%, 0);
+  }
+}
+
+.fadeOutDown {
+  -webkit-animation-name: fadeOutDown;
+  animation-name: fadeOutDown;
+}
+
+.maskv .masktopv {
+  width: 100vw;
+  height: 108rpx;
+  text-align: center;
+  background: #f7f7f7;
+  border-top-left-radius: 20rpx;
+  border-top-right-radius: 20rpx;
+}
+
+.maskv .masktopv .maskvtoplinev {
+  width: 300rpx;
+  height: auto;
+  padding: 10rpx 0 14rpx;
+  text-align: center;
+  margin: 0 auto;
+}
+
+.maskv .masktopv .maskvtopline {
+  width: 72rpx;
+  height: 10rpx;
+  background: #EEEEEE;
+  border-radius: 5rpx;
+  margin: 0 auto;
+}
+
+.maskv .maskvtoptitle {
+  width: 300rpx;
+  font-size: 30rpx;
+  font-weight: 500;
+  color: #262626;
+  margin: 0 auto;
+}
+
+.maskv .maskvtopopt {
+  position: relative;
+  top: -72rpx;
+  left: 632rpx;
+  width: 108rpx;
+  height: 108rpx;
+  text-align: center;
+  line-height: 108rpx;
+  font-size: 28rpx;
+  color: #999999;
+}
+
+
+.maskv .maskdatav {
+  width: 100vw;
+  height: calc(100vh - 108rpx - 250rpx);
+}
+
+.maskv .maskdatac {
+  width: 686rpx;
+  height: 184rpx;
+  background: #FFFFFF;
+  box-shadow: 0rpx 4rpx 16rpx 0rpx rgba(0, 0, 0, 0.1);
+  border-radius: 12rpx;
+  margin: 28rpx 32rpx 0;
+}
+
+.maskv .maskdatacv {
+  display: flex;
+  padding: 50rpx 32rpx 0;
+}
+
+.maskv .maskdataicon {
+  width: 36rpx;
+  height: 38rpx;
+  margin-right: 12rpx;
+}
+
+.maskv .maskdatatitle {
+  width: 575rpx;
+  font-size: 30rpx;
+  font-weight: 500;
+  color: #262626;
+}
+
+.maskv .maskdatatip {
+  width: 575rpx;
+  font-size: 24rpx;
+  color: #999999;
+  padding: 12rpx 32rpx 0 80rpx;
+}
+
+.maskv .maskdatatiph {
+  color: #F24540;
+}

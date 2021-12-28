@@ -116,7 +116,7 @@
 <!--显示遮罩层-->
 <view class="maskv {{showMaskAni?'showMaskv':'hideMaskv'}}" wx:if="{{showMask}}">
   <!--TAB部分-->
-  <view class="tabcv">
+  <view class="tabcv" wx:if="{{!showMaskList}}">
     <view class="tabcc" bindtap="showMaskOpt" data-tab="1">
       <view class="{{chkTab==1?'tabctxth':'tabctxt'}}">教学方案</view>
       <view class="tabcline" wx:if="{{chkTab==1}}"></view>
@@ -137,27 +137,58 @@
 
   <!--教学方案-->
   <block wx:if="{{chkTab==1}}">
-    <scroll-view scroll-y="true" class="maskinfov">
-      <view class="subtitle">管理者要学会自己舔伤口，舔完自己的伤口还要去舔别人</view>
-      <view class="subowner">
-        <text class="subownertxt1">负责人：</text>
-        <text class="subownertxt2">李某人</text>
-      </view>
-      <view class="subparserv">
-        <h5parser html="{{desc}}" />
-      </view>
-      <view class="subtabbarv"></view>
-    </scroll-view>
-    <view class="maskbtmv">
-      <scroll-view scroll-x="true" class="subtabbar">
-        <view class="{{chksubTab==1?'subtabbarch':'subtabbarc'}}" bindtap="tapSubTab" data-tab="1">任务一</view>
-        <view class="{{chksubTab==2?'subtabbarch':'subtabbarc'}}" bindtap="tapSubTab" data-tab="2">任务二</view>
-        <view class="{{chksubTab==3?'subtabbarch':'subtabbarc'}}" bindtap="tapSubTab" data-tab="3">任务三</view>
-        <view class="{{chksubTab==4?'subtabbarch':'subtabbarc'}}" bindtap="tapSubTab" data-tab="4">任务四</view>
-        <view class="{{chksubTab==5?'subtabbarch':'subtabbarc'}}" bindtap="tapSubTab" data-tab="5">任务五</view>
-        <view class="{{chksubTab==6?'subtabbarch':'subtabbarc'}}" bindtap="tapSubTab" data-tab="6">任务六</view>
+
+    <!--方案详情-->
+    <block wx:if="{{!showMaskList}}">
+      <scroll-view scroll-y="true" class="maskinfov">
+        <view class="subtitle">管理者要学会自己舔伤口，舔完自己的伤口还要去舔别人</view>
+        <view class="subowner">
+          <text class="subownertxt1">负责人：</text>
+          <text class="subownertxt2">李某人</text>
+        </view>
+        <view class="subparserv">
+          <h5parser html="{{desc}}" />
+        </view>
+        <view class="subtabbarv"></view>
       </scroll-view>
-    </view>
+      <view class="maskbtmv">
+        <view class="tabbarv">
+          <view class="tabbarvl" bindtap="showModalOpt">
+            <view class="tabbarvltxt">全部方案</view>
+            <image src="/resources/course/allicon.png" class="tabbarvlicon"></image>
+          </view>
+          <view class="tabbarvr" bindtap="showNextOpt">
+            <image src="/resources/course/fangan.png" class="tabbarvricon"></image>
+            <view class="tabbarvrtxt">下个方案</view>
+          </view>
+        </view>
+      </view>
+    </block>
+
+    <!--方案列表-->
+    <block wx:else>
+      <view class="masktopv" catchtap="hideMaskOpt">
+        <view class="maskvtoplinev">
+          <view class="maskvtopline"></view>
+        </view>
+        <view class="maskvtoptitle">全部任务</view>
+        <view class="maskvtopopt">收起</view>
+      </view>
+
+      <scroll-view scroll-y="true" class="maskdatav">
+        <block wx:for="{{tasks}}" wx:key="item" wx:for-index="x">
+          <view class="maskdatac">
+            <view class="maskdatacv">
+              <image src="/resources/course/fangan.png" class="maskdataicon"></image>
+              <view class="maskdatatitle showOnehangTxt">你刚来可以抱怨你的手下是一群混蛋，但你刚来可以抱怨你的手下是一群混蛋，</view>
+            </view>
+            <view class="maskdatatip showOnehangTxt {{x==chktask?'maskdatatiph':''}}">{{x==chktask?'正在浏览此活动':'员工为自己的发展负责，管理者为下属的发展负责'}}</view>
+          </view>
+        </block>
+        <view style="width: 100%;height: 10rpx;"></view>
+      </scroll-view>
+    </block>
+
   </block>
 
   <!--实践基地-->
@@ -194,7 +225,7 @@
       </block>
       <view class="subtabbarv"></view>
     </scroll-view>
-    <view class="maskbtmv">
+    <view class="maskbtmv" style="background-color: #f7f7f7;">
       <scroll-view scroll-x="true" class="subtabbar">
         <view class="{{chksubTab==1?'subtabbarch':'subtabbarc'}}" bindtap="tapSubTab" data-tab="1" style="width: 50vw;">线上基地</view>
         <view class="{{chksubTab==2?'subtabbarch':'subtabbarc'}}" bindtap="tapSubTab" data-tab="2" style="width: 50vw;">线下基地</view>
@@ -204,23 +235,54 @@
 
   <!--实践资源-->
   <block wx:if="{{chkTab==3}}">
-    <scroll-view scroll-y="true" class="maskinfov">
-      <view class="subtitle">管理者要学会自己舔伤口，舔完自己的伤口还要去舔别人</view>
-      <view class="subparserv">
-        <h5parser html="{{desc}}" />
-      </view>
-      <view class="subtabbarv"></view>
-    </scroll-view>
-    <view class="maskbtmv">
-      <scroll-view scroll-x="true" class="subtabbar">
-        <view class="{{chksubTab==1?'subtabbarch':'subtabbarc'}}" bindtap="tapSubTab" data-tab="1">资源一</view>
-        <view class="{{chksubTab==2?'subtabbarch':'subtabbarc'}}" bindtap="tapSubTab" data-tab="2">资源二</view>
-        <view class="{{chksubTab==3?'subtabbarch':'subtabbarc'}}" bindtap="tapSubTab" data-tab="3">资源三</view>
-        <view class="{{chksubTab==4?'subtabbarch':'subtabbarc'}}" bindtap="tapSubTab" data-tab="4">资源四</view>
-        <view class="{{chksubTab==5?'subtabbarch':'subtabbarc'}}" bindtap="tapSubTab" data-tab="5">资源五</view>
-        <view class="{{chksubTab==6?'subtabbarch':'subtabbarc'}}" bindtap="tapSubTab" data-tab="6">资源六</view>
+
+    <!--资源详情-->
+    <block wx:if="{{!showMaskList}}">
+      <scroll-view scroll-y="true" class="maskinfov">
+        <view class="subtitle">管理者要学会自己舔伤口，舔完自己的伤口还要去舔别人</view>
+        <view class="subparserv">
+          <h5parser html="{{desc}}" />
+        </view>
+        <view class="subtabbarv"></view>
       </scroll-view>
-    </view>
+      <view class="maskbtmv">
+        <view class="tabbarv">
+          <view class="tabbarvl" bindtap="showModalOpt">
+            <view class="tabbarvltxt">全部资源</view>
+            <image src="/resources/course/allicon.png" class="tabbarvlicon"></image>
+          </view>
+          <view class="tabbarvr" bindtap="showNextOpt">
+            <image src="/resources/course/ziyuan.png" class="tabbarvricon"></image>
+            <view class="tabbarvrtxt">下个资源</view>
+          </view>
+        </view>
+      </view>
+    </block>
+
+    <!--资源列表-->
+    <block wx:else>
+      <view class="masktopv" catchtap="hideMaskOpt">
+        <view class="maskvtoplinev">
+          <view class="maskvtopline"></view>
+        </view>
+        <view class="maskvtoptitle">全部资源</view>
+        <view class="maskvtopopt">收起</view>
+      </view>
+
+      <scroll-view scroll-y="true" class="maskdatav">
+        <block wx:for="{{tasks}}" wx:key="item" wx:for-index="x">
+          <view class="maskdatac">
+            <view class="maskdatacv">
+              <image src="/resources/course/ziyuan.png" class="maskdataicon"></image>
+              <view class="maskdatatitle showOnehangTxt">你刚来可以抱怨你的手下是一群混蛋，但你刚来可以抱怨你的手下是一群混蛋，</view>
+            </view>
+            <view class="maskdatatip showOnehangTxt {{x==chktask?'maskdatatiph':''}}">{{x==chktask?'正在浏览此活动':'员工为自己的发展负责，管理者为下属的发展负责'}}</view>
+          </view>
+        </block>
+        <view style="width: 100%;height: 10rpx;"></view>
+      </scroll-view>
+    </block>
+
   </block>
 
   <!--讨论区-->

@@ -17,7 +17,8 @@ Page({
     <p>三亚市，是海南省地级市，简称崖，古称崖州，别称鹿城，地处海南岛的最南端。三亚东邻陵水黎族自治县，西接乐东黎族自治县，北毗保亭黎族苗族自治县，南临南海，三亚市陆地总面积1921平方千米，海域总面积3226平方千米。东西长91.6千米，南北宽51公里，下辖四个区。</p>',
 
     IsVr: true, //是否有VR视频
-    chkTab: '任务一', //当前的任务
+    tasks:[1,2,3,4,5,6,7,8,9,10], //当前的任务
+    chktask:0,
   },
 
   /**
@@ -42,6 +43,24 @@ Page({
     wx.navigateTo({
       url: '../task/upload?id=' + that.data.id + "&task=" + that.data.chkTab,
     })
+  },
+  showModalOpt() { //点击显示遮罩
+    var that = this;
+    that.setData({
+      showMask: true,
+      showMaskAni: true,
+    })
+  },
+  hideMaskOpt() { //隐藏遮罩层
+    var that = this;
+    that.setData({
+      showMaskAni: false
+    })
+    setTimeout(() => {
+      that.setData({
+        showMask: false
+      })
+    }, 2000);
   },
   /**
    * 生命周期函数--监听页面初次渲染完成

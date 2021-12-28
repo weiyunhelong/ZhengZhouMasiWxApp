@@ -20,6 +20,8 @@ Page({
     showMask: false, //显示遮罩层
     showMaskAni: false, //遮罩层动画
     chksubTab: 0, //选中子分类
+
+    showMaskList: false, //显示列表部分
   },
 
   /**
@@ -57,12 +59,27 @@ Page({
       })
     }, 2000);
   },
+  showModalOpt() { //显示列表
+    this.setData({
+      showMaskList: true,
+      tasks:[1,2,3,4,5,6,7,8,9,10], //当前的任务
+      chktask:0,
+    })
+  },
+  showNextOpt() { //显示下个方案
+    WxRequest.ShowAlert("显示下个方案");
+  },
+  hideMaskOpt(){//隐藏列表
+    this.setData({
+      showMaskList: false
+    })
+  },
   goBackOpt() { //点击返回
     wx.navigateBack({
       delta: 1,
     })
   },
-  goActivityOpt(){//点击实践活动
+  goActivityOpt() { //点击实践活动
     var that = this;
     wx.navigateTo({
       url: '../activity/index?id=' + that.data.id

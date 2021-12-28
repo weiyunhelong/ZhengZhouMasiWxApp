@@ -2,6 +2,7 @@
 page {
   background: #fff;
 }
+@import '../../styles/maskv.wxss';
 
 /*用户信息*/
 .topbgv {
@@ -472,9 +473,7 @@ page {
   left: 0;
   z-index: 999;
   padding-bottom: constant(safe-area-inset-bottom);
-  padding-bottom: env(safe-area-inset-bottom);
-  border-top: 1rpx solid #eee;
-  background: #f7f7f7;
+  padding-bottom: env(safe-area-inset-bottom);  
 }
 
 .maskv .subtabbar {
@@ -507,6 +506,77 @@ page {
   font-size: 24rpx;
   color: #999999;
   display: inline-block;
+}
+
+.maskv .tabbarvv {
+  width: 100vw;
+  height: 108rpx;
+  padding-bottom: constant(safe-area-inset-bottom);
+  padding-bottom: env(safe-area-inset-bottom);
+}
+
+.maskv .tabbarv {
+  width: 100vw;
+  height: 108rpx;
+  padding-bottom: constant(safe-area-inset-bottom);
+  padding-bottom: env(safe-area-inset-bottom);
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  z-index: 9;
+  padding-bottom: constant(safe-area-inset-bottom);
+  padding-bottom: env(safe-area-inset-bottom);
+  background: #fff;
+  display: flex;
+  justify-content: space-between;
+}
+
+.maskv .tabbarvl {
+  display: flex;
+  justify-content: center;
+  width: 188rpx;
+  height: 76rpx;
+  background: rgba(255, 255, 255, 0.9);
+  box-shadow: 0rpx 4rpx 16rpx 0rpx rgba(0, 0, 0, 0.14);
+  border-radius: 0rpx 38rpx 38rpx 0rpx;margin-top: 16rpx;
+}
+
+.maskv .tabbarvltxt {
+  height: 76rpx;
+  line-height: 76rpx;
+  font-size: 26rpx;
+  color: #262626;
+}
+
+.maskv .tabbarvlicon {
+  width: 28rpx;
+  height: 28rpx;
+  margin-top: 24rpx;
+  margin-left: 8rpx;
+}
+
+.maskv .tabbarvricon {
+  width: 28rpx;
+  height: 30rpx;
+  margin-top: 23rpx;
+  margin-right: 8rpx;
+}
+
+.tabbarvrtxt {
+  height: 76rpx;
+  line-height: 76rpx;
+  font-size: 26rpx;
+  color: #F24540;
+}
+
+.maskv .tabbarvr {
+  display: flex;
+  justify-content: center;
+  width: 188rpx;
+  height: 76rpx;
+  background: rgba(255, 255, 255, 0.9);
+  box-shadow: 0rpx 4rpx 16rpx 0rpx rgba(0, 0, 0, 0.14);
+  border-radius: 38rpx 0rpx 0rpx 38rpx;margin-top: 16rpx;
 }
 
 /*基地*/

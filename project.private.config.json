@@ -12,6 +12,18 @@
     },
     "miniprogram": {
       "list": [
+        {
+          "name": "",
+          "pathName": "pages/task/index",
+          "query": "id=0",
+          "scene": null
+        },
+        {
+          "name": "",
+          "pathName": "pages/course/detail",
+          "query": "id=1",
+          "scene": null
+        }
       ]
     }
   }
