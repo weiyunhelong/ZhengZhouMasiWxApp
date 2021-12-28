@@ -14,13 +14,16 @@
 <view class="formv">
   <view class="title">2020年现代设计史</view>
 
-  <view class="cicrlev">
-    <view class="fenv">
-      <view class="fennum">27</view>
-      <view class="fentag">分</view>
+  <view class="circle-box">
+    <canvas class="circle" style="z-index: -99; width:200px; height:200px;" canvas-id="canvasCircle"></canvas>
+    <canvas class="circle" style="width:200px; height:200px;" canvas-id="canvasArcCir"></canvas>
+    <view class="draw_btn">
+      <view class="fenv">
+        <view class="fennum">27</view>
+        <view class="fentag">分</view>
+      </view>
+      <view class="fentip">考试成绩</view>
     </view>
-    <view class="fentip">考试成绩</view>
   </view>
 
-  <view class="cicrleh"></view>
 </view>

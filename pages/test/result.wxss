@@ -93,6 +93,29 @@ page {
   margin-top: -70rpx;
 }
 
-.cicrleh{
 
+.circle-box {
+  text-align: center;
+  position: relative;
+  width: 500rpx;
+  height: 500rpx;
+  margin: 0 auto;
+  z-index: 999;
+}
+
+.circle {
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin: auto;
+}
+
+.draw_btn {
+  width: 35vw;
+  position: absolute;
+  top: 2vh;
+  right: 0;
+  left: 0;
+  margin: auto;
+  border-radius: 5vw;
 }
