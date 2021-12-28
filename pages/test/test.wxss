@@ -122,7 +122,11 @@
   height: 28rpx;
   margin-top: 12rpx;
 }
-
+.noicon{  
+  width: 36rpx;
+  height: 33.6rpx;
+  margin-top: 10rpx;
+}
 .btmr {
   width: 152rpx;
   height: 52rpx;
@@ -311,10 +315,19 @@
   border: 1rpx solid #F24540;
   color: #F24540;
 }
-
+.maskoptv{
+  width: 100vw;
+  height: 108rpx; 
+  background: #fff;
+  position: absolute;
+  bottom:88vh;
+  left: 0;
+  display: flex;
+  justify-content: space-between;
+}
 .scrollindexv {
   width: 100vw;
-  height: 90vh;
+  height: 88vh;
   background: #fff;
   position: absolute;
   bottom: 0;

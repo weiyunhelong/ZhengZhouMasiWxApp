@@ -28,7 +28,7 @@
     <image src="/resources/course/rightg.png" class="righticon"></image>
   </view>
   <view class="btmr" bindtap="checkOpt">
-    <image src="/resources/course/rightg.png" class="righticon"></image>
+    <image src="/resources/course/noicon.png" class="noicon"></image>
     <view class="btnno">1</view>
     <view class="btnnum">/100</view>
   </view>
@@ -65,6 +65,17 @@
 
 <!--查看遮罩层-->
 <view catchtouchmove="nomove" bindtap="cancelModal" class="maskv {{showModalAni?'showMaskv':'hideMaskv'}}" wx:if="{{showModal}}">
+  <view class="maskoptv">
+    <view class="btml" bindtap="postOpt">
+      <view class="btntxt">交卷</view>
+      <image src="/resources/course/rightg.png" class="righticon"></image>
+    </view>
+    <view class="btmr" bindtap="checkOpt">
+      <image src="/resources/course/noicon.png" class="noicon"></image>
+      <view class="btnno">1</view>
+      <view class="btnnum">/100</view>
+    </view>
+  </view>
   <scroll-view scroll-y="true" class="scrollindexv">
     <view class="indexv">
       <block wx:for="{{list}}" wx:key="item" wx:for-index="x">
