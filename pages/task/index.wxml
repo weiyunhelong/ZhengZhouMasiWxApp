@@ -1,47 +1,52 @@
 <!--pages/task/index.wxml-->
 <view class="topborder"></view>
-<view class="bodyv">
-  <view class="title">{{chkTab}}:爱过主义教育基地纪念馆爱过主义教育基地纪念馆</view>
-  <view class="infov">
-    <view class="infov1">
-      <view class="infol">
-        <text class="infotxt1">负责人：</text>
-        <text class="infotxt2">李某人</text>
+<!--有实践任务-->
+<block wx:if="{{taskid!=-1}}">
+  <view class="bodyv">
+    <view class="title">{{chkTab}}:爱过主义教育基地纪念馆爱过主义教育基地纪念馆</view>
+    <view class="infov">
+      <view class="infov1">
+        <view class="infol">
+          <text class="infotxt1">负责人：</text>
+          <text class="infotxt2">李某人</text>
+        </view>
+        <view class="infor">必选</view>
       </view>
-      <view class="infor">必选</view>
-    </view>
-    <view class="infov2">
-      <view class="infol">
-        <text class="infotxt1">截止时间：</text>
-        <text class="infotxt2">2021.12.23</text>
+      <view class="infov2">
+        <view class="infol">
+          <text class="infotxt1">截止时间：</text>
+          <text class="infotxt2">2021.12.23</text>
+        </view>
+      </view>
+      <view class="infov3">
+        <view class="infol">
+          <text class="infotxt1">参加人数：</text>
+          <text class="infotxt2">50人</text>
+        </view>
       </view>
     </view>
-    <view class="infov3">
-      <view class="infol">
-        <text class="infotxt1">参加人数：</text>
-        <text class="infotxt2">50人</text>
-      </view>
+    <view class="parserv">
+      <parser html="{{desc}}" />
     </view>
   </view>
-  <view class="parserv">
-    <parser html="{{desc}}" />
+  <view class="btnv">
+    <view class="uploadbtn" bindtap="goUploadWork">上传作品</view>
   </view>
-</view>
-<view class="btnv">
-  <view class="uploadbtn" bindtap="goUploadWork">上传作品</view>
-</view>
-<view class="tabbarvv"></view>
-<view class="tabbarv">
-  <view class="tabbarvl" bindtap="showModalOpt">
-    <view class="tabbarvltxt">全部方案</view>
-    <image src="/resources/course/allicon.png" class="tabbarvlicon"></image>
+  <view class="tabbarvv"></view>
+  <view class="tabbarv">
+    <view class="tabbarvl" bindtap="showModalOpt">
+      <view class="tabbarvltxt">全部任务</view>
+      <image src="/resources/course/allicon.png" class="tabbarvlicon"></image>
+    </view>
+    <view class="tabbarvr" bindtap="showNextOpt">
+      <image src="/resources/course/renwu.png" class="tabbarvricon"></image>
+      <view class="tabbarvrtxt">下个任务</view>
+    </view>
   </view>
-  <view class="tabbarvr" bindtap="showNextOpt">
-    <image src="/resources/course/renwu.png" class="tabbarvricon"></image>
-    <view class="tabbarvrtxt">下个任务</view>
-  </view>
-</view>
-
+</block>
+<block wx:else>
+  <nodatacom />
+</block>
 <!--显示遮罩层-->
 <view class="maskv {{showMaskAni?'showMaskv':'hideMaskv'}}" wx:if="{{showMask}}">
 
@@ -55,12 +60,12 @@
 
   <scroll-view scroll-y="true" class="maskdatav">
     <block wx:for="{{tasks}}" wx:key="item" wx:for-index="x">
-      <view class="maskdatac">
+      <view class="maskdatac" bindtap="tapTab" data-id="{{item.ID}}">
         <view class="maskdatacv">
           <image src="/resources/course/renwu.png" class="maskdataicon"></image>
-          <view class="maskdatatitle showOnehangTxt">你刚来可以抱怨你的手下是一群混蛋，但你刚来可以抱怨你的手下是一群混蛋，</view>
+          <view class="maskdatatitle showOnehangTxt">{{item.Title}}</view>
         </view>
-        <view class="maskdatatip showOnehangTxt {{x==chktask?'maskdatatiph':''}}">{{x==chktask?'正在浏览此活动':'员工为自己的发展负责，管理者为下属的发展负责'}}</view>
+        <view class="maskdatatip showOnehangTxt {{item.ID==taskid?'maskdatatiph':''}}">{{item.ID==taskid?'正在浏览此活动':''}}</view>
       </view>
     </block>
   </scroll-view>

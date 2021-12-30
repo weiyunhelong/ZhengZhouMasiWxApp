@@ -9,5 +9,5 @@
 </view>
 <view class="btmvv"></view>
 <view class="btmv">
-  <view class="btn {{title.length>0&&info.length>0?'btnh':''}}" bindtap="PostOpt">提交上传</view>
+  <view class="btn {{title.length>0&&info.length>0?'btnh':''}}" bindtap="{{title.length>0&&info.length>0?'PostOpt':''}}">提交上传</view>
 </view>

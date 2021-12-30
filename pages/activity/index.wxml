@@ -1,57 +1,66 @@
 <!--pages/activity/index.wxml-->
 <view class="topborder"></view>
-<view class="bodyv">
-  <view class="title">{{dataobj.Title}}</view>
-  <view class="infov">
-    <view class="infov1">
-      <view class="infol">
-        <text class="infotxt1">负责人：</text>
-        <text class="infotxt2">{{dataobj.UserName}}</text>
-      </view>
-      <view class="infor">预约时间：{{dataobj.StarTime}}</view>
-    </view>
-    <view class="infov2">
-      <view class="infol">
-        <text class="infotxt1">截止时间：</text>
-        <text class="infotxt2">{{dataobj.EndTime}}</text>
-      </view>
-    </view>
-    <view class="infov3">
-      <view class="infol">
-        <text class="infotxt1">参加人数：</text>
-        <text class="infotxt2">{{dataobj.JoinNum}}人</text>
-      </view>
-    </view>
-  </view>
-  <view class="parserv">
-    <parser html="{{dataobj.Contents}}" />
-  </view>
-  <view class="btnv" wx:if="{{!dataobj.IsApply}}">
-    <view class="mdbtn" bindtap="bookOpt">报名预约</view>
-  </view>
-  <view class="btnv" style="justify-content: space-between;" wx:else>
-    <view class="smbtn smbtn1" bindtap="UploadOpt">上传作品</view>
-    <view class="smbtn smbtn2" bindtap="CancelBookOpt">取消报名</view>
-  </view>
-</view>
-<view class="tabbarvv"></view>
-<view class="tabbarv">
-  <view class="tabbarvl" bindtap="showModalOpt">
-    <view class="tabbarvltxt">全部活动</view>
-    <image src="/resources/course/allicon.png" class="tabbarvlicon"></image>
-  </view>
-  <view class="tabbarvr" bindtap="NextOpt">
-    <image src="/resources/course/huodong.png" class="tabbarvricon"></image>
-    <view class="tabbarvrtxt">下个活动</view>
-  </view>
-</view>
 
-<view class="vrbtn" bindtap="goAddOpt">
-  <view class="vriconv">
-    <image src="/resources/course/addicon.png" class="vricon"></image>
+<!--有实践活动-->
+<block wx:if="{{activityid!=-1}}">
+  <view class="bodyv">
+    <view class="title">{{dataobj.Title}}</view>
+    <view class="infov">
+      <view class="infov1">
+        <view class="infol">
+          <text class="infotxt1">负责人：</text>
+          <text class="infotxt2">{{dataobj.UserName}}</text>
+        </view>
+        <view class="infor">预约时间：{{dataobj.StarTime}}</view>
+      </view>
+      <view class="infov2">
+        <view class="infol">
+          <text class="infotxt1">截止时间：</text>
+          <text class="infotxt2">{{dataobj.EndTime}}</text>
+        </view>
+      </view>
+      <view class="infov3">
+        <view class="infol">
+          <text class="infotxt1">参加人数：</text>
+          <text class="infotxt2">{{dataobj.JoinNum}}人</text>
+        </view>
+      </view>
+    </view>
+    <view class="parserv">
+      <parser html="{{dataobj.Contents}}" />
+    </view>
+    <view class="btnv" wx:if="{{!dataobj.IsApply}}">
+      <view class="mdbtn" bindtap="bookOpt">报名预约</view>
+    </view>
+    <view class="btnv" style="justify-content: space-between;" wx:else>
+      <view class="smbtn smbtn1" bindtap="UploadOpt">上传作品</view>
+      <view class="smbtn smbtn2" bindtap="CancelBookOpt">取消报名</view>
+    </view>
   </view>
-  <view class="vrtxt">创建活动</view>
-</view>
+  <view class="tabbarvv"></view>
+  <view class="tabbarv">
+    <view class="tabbarvl" bindtap="showModalOpt">
+      <view class="tabbarvltxt">全部活动</view>
+      <image src="/resources/course/allicon.png" class="tabbarvlicon"></image>
+    </view>
+    <view class="tabbarvr" bindtap="NextOpt">
+      <image src="/resources/course/huodong.png" class="tabbarvricon"></image>
+      <view class="tabbarvrtxt">下个活动</view>
+    </view>
+  </view>
+
+  <view class="vrbtn" bindtap="goAddOpt">
+    <view class="vriconv">
+      <image src="/resources/course/addicon.png" class="vricon"></image>
+    </view>
+    <view class="vrtxt">创建活动</view>
+  </view>
+
+</block>
+
+<block wx:else>
+  <nodatacom />
+</block>
 
 <!--显示遮罩层-->
 <view class="maskv {{showMaskAni?'showMaskv':'hideMaskv'}}" wx:if="{{showMask}}">

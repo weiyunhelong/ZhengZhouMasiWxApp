@@ -9,6 +9,7 @@ Page({
    */
   data: {
     id: 0, //
+    taskid: 0,
     title: "",
     desc: "",
   },
@@ -19,7 +20,8 @@ Page({
   onLoad: function (options) {
     var that = this;
     that.setData({
-      id: options.id
+      id: options.id,
+      taskid: options.taskid,
     })
   },
   getTitle(e) {
@@ -32,27 +34,41 @@ Page({
       info: e.detail.value
     })
   },
-  PostOpt(){//点击提交
-    var that=this;
-    var id= 0, //
-    title= "";
-    desc= "";
+  PostOpt() { //点击提交
+    var that = this;
+    var id = that.data.id, //
+      title = that.data.title,
+      desc = that.data.desc;
 
-    if(title==""){
+    if (title == "") {
       WxRequest.ShowAlert("请输入作品标题");
-    }else if(desc==""){
+    } else if (desc == "") {
       WxRequest.ShowAlert("请输入作品内容");
-    }else{
+    } else {
       //TODO 请求接口
-      wx.showToast({
-        title: '上传作品成功',
-        duration:2000
+      var url = requestUrl + "/API/PracticalTask/UploadWork";
+      var params = {
+        PracticalID: id,
+        RefID: that.data.taskid,
+        UserID: getApp().globalData.WxUserId,
+        Title: title,
+        Content: desc
+      };
+      WxRequest.PostRequest(url, params).then(res => {
+        if (res.data.success) {
+          wx.showToast({
+            title: '上传作品成功',
+            duration: 2000
+          })
+          setTimeout(() => {
+            wx.navigateBack({
+              delta: 1,
+            })
+          }, 2000);
+        } else {
+          WxRequest.ShowAlert(res.data.msg);
+        }
       })
-      setTimeout(() => {
-        wx.navigateBack({
-          delta: 1,
-        })
-      }, 2000);
     }
   },
   /**

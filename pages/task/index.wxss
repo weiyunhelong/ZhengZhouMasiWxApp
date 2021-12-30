@@ -369,3 +369,29 @@ page {
 .maskv .maskdatatiph {
   color: #F24540;
 }
+
+
+/*我的实践课*/
+.nocoursev {
+  width: 100vw;
+  padding-top: 188rpx;
+  text-align: center;
+}
+
+.nocourseicon {
+  width: 260rpx;
+  height: 290rpx;
+}
+
+.showmorebtn {
+  width: 220rpx;
+  height: 64rpx;
+  background: #FFFFFF;
+  border-radius: 32rpx;
+  border: 1rpx solid #F24540;
+  font-size: 28rpx;
+  color: #F24540;
+  text-align: center;
+  line-height: 64rpx;
+  margin: 60rpx auto;
+}

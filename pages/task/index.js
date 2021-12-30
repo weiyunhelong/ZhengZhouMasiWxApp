@@ -9,29 +9,27 @@ Page({
    */
   data: {
     id: 0,
+    taskid:-1,
     dataobj: {},
-    desc: '<p>三亚市，是海南省地级市，简称崖，古称崖州，别称鹿城，地处海南岛的最南端。三亚东邻陵水黎族自治县，西接乐东黎族自治县，北毗保亭黎族苗族自治县，南临南海，三亚市陆地总面积1921平方千米，海域总面积3226平方千米。东西长91.6千米，南北宽51公里，下辖四个区。</p>\
-    <img style="width:100%;border-radius:10px;margin:10px 0;" src="https://bkimg.cdn.bcebos.com/pic/0b55b319ebc4b74543a93692ffb609178a82b901bf57"/>\
-    <p>三亚市，是海南省地级市，简称崖，古称崖州，别称鹿城，地处海南岛的最南端。三亚东邻陵水黎族自治县，西接乐东黎族自治县，北毗保亭黎族苗族自治县，南临南海，三亚市陆地总面积1921平方千米，海域总面积3226平方千米。东西长91.6千米，南北宽51公里，下辖四个区。</p>\
-    <img style="width:100%;border-radius:10px;margin:10px 0;" src="https://bkimg.cdn.bcebos.com/pic/0b55b319ebc4b74543a93692ffb609178a82b901bf57"/>\
-    <p>三亚市，是海南省地级市，简称崖，古称崖州，别称鹿城，地处海南岛的最南端。三亚东邻陵水黎族自治县，西接乐东黎族自治县，北毗保亭黎族苗族自治县，南临南海，三亚市陆地总面积1921平方千米，海域总面积3226平方千米。东西长91.6千米，南北宽51公里，下辖四个区。</p>',
-
     IsVr: true, //是否有VR视频
-    tasks:[1,2,3,4,5,6,7,8,9,10], //当前的任务
-    chktask:0,
+    tasks:[], //当前的任务
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    var that=this;
+    that.setData({
+      id:options.id
+    })    
   },
   tapTab(e) { //切换任务
     var that = this;
     that.setData({
-      chkTab: e.currentTarget.dataset.name
+      taskid: e.currentTarget.dataset.id
     })
+    that.InitObjData();
   },
   goVROpt() { //跳转到VR页面
     wx.navigateTo({
@@ -41,7 +39,7 @@ Page({
   goUploadWork() { //上传作品
     var that = this;
     wx.navigateTo({
-      url: '../task/upload?id=' + that.data.id + "&task=" + that.data.chkTab,
+      url: '../task/upload?id=' + that.data.id + "&taskid=" + that.data.taskid,
     })
   },
   showModalOpt() { //点击显示遮罩
@@ -73,7 +71,34 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
+    var that = this;
+    that.InitData();
+  },
+  InitData() { //获取全部任务
+    var that = this;
+    var url = requestUrl + "/API/PracticalTask/GetPracticalTaskList?page=1&rows=100&practicalID=" + that.data.id;
+    WxRequest.PostRequest(url, {}).then(res => {
+      if (res.data.success) {
+        that.setData({
+          list: res.data.data.datas,
+          taskid:res.data.data.datas.length==0?-1:res.data.data.datas[0].ID
+        })
+        if(that.data.taskid!=-1){
+          that.InitObjData();
+        }        
+      }
+    })
+  },
+  InitObjData(){//获取任务详情
+    var that = this;
+    var url = requestUrl + "/API/PracticalTask/GetPracticalTaskDetail?id=" + that.data.taskid;
+    WxRequest.PostRequest(url, {}).then(res => {
+      if (res.data.success) {
+        that.setData({
+          dataobj: res.data.data
+        })
+      }
+    })
   },
 
   /**

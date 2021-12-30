@@ -9,7 +9,7 @@ Page({
    */
   data: {
     id: 0,//课程id
-    activityid:0,//活动id
+    activityid:-1,//活动id
     dataobj: {},
     chkTab: 0, //当前的任务
   },
@@ -122,9 +122,11 @@ Page({
       if (res.data.success) {
         that.setData({
           list: res.data.data.datas,
-          activityid: res.data.data.datas[0].ID
+          activityid:res.data.data.datas.length==0?-1:res.data.data.datas[0].ID
         })
-        that.InitObjData();
+        if(activityid!=-1){
+          that.InitObjData();
+        }        
       }
     })
   },

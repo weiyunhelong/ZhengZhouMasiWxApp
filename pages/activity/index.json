@@ -2,6 +2,7 @@
   "navigationBarTitleText": "实践活动",
   "usingComponents": {
     "loadding": "../../components/loadding/index",
+    "nodatacom": "../../components/nodata/index",
     "parser": "../../h5parser/parser"
   }
 }
