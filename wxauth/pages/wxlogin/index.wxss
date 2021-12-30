@@ -102,6 +102,9 @@ page {
   font-weight: 500;
   color: #FFFFFF;
 }
+.btnh{
+  background: rgba(242, 69, 64, 1);
+}
 
 .pwdtxt {
   width: 548rpx;

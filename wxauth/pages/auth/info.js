@@ -1,7 +1,7 @@
-// wxauth/pages/auth/teacher.js
+// wxauth/pages/auth/study.js
 var WxRequest = require('../../../utils/WxRequest.js');
 var validator = require('../../../utils/validator.js');
-var requesturl = getApp().globalData.requestUrl;
+var requestUrl = getApp().globalData.requestUrl;
 var timer = '';
 var OssTool = require('../../../ossutils/uploadFile.js');
 
@@ -14,12 +14,12 @@ Page({
     tx: "", //头像
     nickName: "", //昵称
     name: "", //姓名
-    sexs:["保密",'男','女'],
+    sexs: [],
     sex: -1, //性别
     desc: "", //签名
     phone: "", //手机号
     code: "", //验证码
-    recode: "123456", //短信验证码
+    recode: "", //短信验证码
     clock: 60,
   },
 
@@ -27,7 +27,19 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    var that=this;
+    that.InitSexs();
+  },
+  InitSexs(){//获取性别
+    var that=this;
+    var url=requestUrl+"/API/CategoryApi/GetSexTypeList";
+    WxRequest.PostRequest(url,{}).then(res=>{
+      if(res.data.success){
+        that.setData({
+          sexs:res.data.data
+        })
+      }
+    })  
   },
   chooseTx() { //上传头像
     var that = this;
@@ -36,7 +48,7 @@ Page({
       sizeType: ['compressed'],
       sourceType: ['album', 'camera'],
       success(res) {
-        // tempFilePath可以作为img标签的src属性显示图片        
+        // tempFilePath可以作为img标签的src属性显示图片 
         OssTool.uploadImgFile(res.tempFilePaths[0], 'avatarUrl/' + getApp().globalData.openId + '/',
           function (result) {
             that.setData({
@@ -58,7 +70,7 @@ Page({
   },
   sexChkOpt(e) { //性别
     this.setData({
-      sex:e.detail.value
+      sex: e.detail.value
     })
   },
   getDesc(e) { //获取签名
@@ -78,21 +90,31 @@ Page({
     } else if (!validator.validateMobile(that.data.phone)) {
       WxRequest.ShowAlert("手机号不正确");
     } else {
-      timer = setInterval(function () {
-        var clock = that.data.clock;
-        if (clock == 0) {
-          clearInterval(timer);
+      var url=requestUrl+"/API/PublicDataApi/SendMsgCode?contact="+that.data.phone;
+      WxRequest.PostRequest(url,{}).then(res=>{
+        if(res.data.success){
           that.setData({
-            clock: 60
+            recode:res.data.data.msgcode
           })
-        } else {
-          //TODO 发送短信
-          that.setData({
-            clock: clock - 1
-          })
+          timer = setInterval(function () {
+            var clock = that.data.clock;
+            if (clock == 0) {
+              clearInterval(timer);
+              that.setData({
+                clock: 60
+              })
+            } else {
+              //TODO 发送短信
+              that.setData({
+                clock: clock - 1
+              })
+            }
+    
+          }, 1000)
+        }else{
+          WxRequest.ShowAlert(res.data.msg);
         }
-
-      }, 1000)
+      })    
     }
   },
   getCode(e) { //获取验证码
@@ -105,6 +127,7 @@ Page({
     var tx = that.data.tx, //头像
       nickName = that.data.nickName, //昵称
       name = that.data.name, //姓名
+      sexs = that.data.sexs, //性别
       sex = that.data.sex, //性别
       desc = that.data.desc, //签名
       phone = that.data.phone, //手机号
@@ -130,36 +153,39 @@ Page({
     } else if (code != recode) {
       WxRequest.ShowAlert("验证码不正确");
     } else {
+      //TODO 提交表单
       var url = requestUrl + "/API/LoginApi/CompleteUserInfo?verifyCode=" + code;
       var params = {
         ID: getApp().globalData.WxUserId,
         Avatar: that.data.tx,
         NickName: that.data.nickName,
         ReadName: that.data.name,
-        Sex: that.data.sex,
+        Sex:sexs[sex].Key,
         Asign: that.data.desc,
         mobile: that.data.phone
       };
       WxRequest.PostRequest(url, params).then(res => {
-
-      })
-      //TODO 提交表单
-      wx.setStorage({
-        key: "loginobj",
-        data: {
-          tx: that.data.tx, //头像
-          nickName: that.data.nickName, //昵称
-          name: that.data.name, //姓名
-          sex: that.data.sex, //性别
-          desc: that.data.desc, //签名
-          phone: that.data.phone
-        },
-        success: function () {
-          wx.navigateBack({
-            delta: 1,
+        if(res.data.success){
+          wx.setStorage({
+            key: "loginobj",
+            data: {
+              tx: that.data.tx, //头像
+              nickName: that.data.nickName, //昵称
+              name: that.data.name, //姓名
+              sex: that.data.sex, //性别
+              desc: that.data.desc, //签名
+              phone: that.data.phone
+            },
+            success: function () {
+              wx.navigateBack({
+                delta: 1,
+              })
+            }
           })
+        }else{
+          WxRequest.ShowAlert(res.data.msg);
         }
-      })
+      })      
     }
   },
   skipOpt() { //点击跳过

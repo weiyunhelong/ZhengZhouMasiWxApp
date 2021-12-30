@@ -1,6 +1,6 @@
 // wxauth/pages/wxlogin/index.js
 var WxRequest = require('../../../utils/WxRequest.js');
-var requesturl = getApp().globalData.requestUrl;
+var requestUrl = getApp().globalData.requestUrl;
 
 Page({
 
@@ -52,10 +52,10 @@ Page({
       WxRequest.ShowAlert("请输入您的密码");
     } else if (chkTab == 1) { //学生登录
       //TODO 学生登录
-      var url=requestUrl+"/API/LoginApi/Login?account="+account+"&password="+pwd;
-      var params={};
-      WxRequest.PostRequest(url,params).then(res=>{
-
+      var url = requestUrl + "/API/LoginApi/Login?account=" + account + "&password=" + pwd;
+      var params = {};
+      WxRequest.PostRequest(url, params).then(res => {
+        console.error("学生登录", res);
       })
 
       wx.setStorage({
@@ -70,9 +70,9 @@ Page({
       })
     } else if (chkTab == 2) { //教师登录
 
-      var url=requestUrl+"/API/LoginApi/Login?account="+account+"&password="+pwd;
-      var params={};
-      WxRequest.PostRequest(url,params).then(res=>{
+      var url = requestUrl + "/API/LoginApi/Login?account=" + account + "&password=" + pwd;
+      var params = {};
+      WxRequest.PostRequest(url, params).then(res => {
 
       })
 
@@ -89,20 +89,28 @@ Page({
       })
     }
   },
-  wxOpt(){//微信登录
+  wxOpt() { //微信登录
 
-    var that=this;
-    if(that.data.chkTab==1){
-      wx.redirectTo({
-        url: '../auth/study',
+    var that = this;
+    if (that.data.account == "") {
+      WxRequest.ShowAlert("请输入您的账号");
+    } else {
+      var url = requestUrl + "/API/LoginApi/BindWeiXin?account=" + that.data.account + "&openid=" + getApp().globalData.openId;
+      WxRequest.PostRequest(url, {}).then(res => {
+
+        if (res.data.success) {
+          var wxurl = requestUrl + "/API/LoginApi/WXLogin?openid=" + getApp().globalData.openId;
+          WxRequest.PostRequest(wxurl, {}).then(res => {
+
+          })
+        }
       })
-    }else if(that.data.chkTab==2){
       wx.redirectTo({
-        url: '../auth/teacher',
+        url: '../auth/info',
       })
     }
-   
   },
+
   /**
    * 生命周期函数--监听页面初次渲染完成
    */

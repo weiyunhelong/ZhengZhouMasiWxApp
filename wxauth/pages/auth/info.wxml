@@ -21,8 +21,8 @@
   </view>
   <view class="hangv">
     <view class="hangtag">性别</view>
-    <picker bindchange="sexChkOpt" range="{{sexs}}" value="{{sex}}">
-      <input type="text" disabled="true" placeholder="请选择性别" placeholder-class="hangtip" class="hangtxt" value="{{sexs[sex]}}"/>
+    <picker bindchange="sexChkOpt" range="{{sexs}}" value="{{sex}}" range-key="Value">
+      <input type="text" disabled="true" placeholder="请选择性别" placeholder-class="hangtip" class="hangtxt" value="{{sexs[sex].Value}}"/>
     </picker>
   </view>
   <view class="hangv">

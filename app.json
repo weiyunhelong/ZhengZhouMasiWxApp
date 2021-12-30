@@ -45,8 +45,7 @@
     "pages": [
       "pages/register/index",
       "pages/wxlogin/index",
-      "pages/auth/study",
-      "pages/auth/teacher",
+      "pages/auth/info",
       "pages/auth/password"
     ]
   }, {
