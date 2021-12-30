@@ -10,6 +10,7 @@ Page({
    */
   data: {
     id: 0,
+    courseid:"",
     name: "",
     phone: "",
   },
@@ -19,7 +20,8 @@ Page({
    */
   onLoad: function (options) {
     this.setData({
-      id: options.id
+      id: options.id,
+      courseid:options.courseid
     })
   },
   getName(e) {
@@ -33,28 +35,44 @@ Page({
     })
   },
   postOpt() {
-    var that=this;
-    var id=that.data.id,
-    name=that.data.name,
-    phone=that.data.phone;
+    var that = this;
+    var id = that.data.id,
+      name = that.data.name,
+      phone = that.data.phone;
 
-    if(name==""){
+    if (name == "") {
       WxRequest.ShowAlert("请输入姓名");
-    }else if(phone==""){
+    } else if (phone == "") {
       WxRequest.ShowAlert("请输入手机号");
-    }else if(!validator.validateMobile(phone)){
+    } else if (!validator.validateMobile(phone)) {
       WxRequest.ShowAlert("手机号不正确");
-    }else{
+    } else {
       //TODO 请求接口
-      wx.showToast({
-        title: '报名成功',
-        duration:2000
+      var url = requestUrl + "/API/PracticalMatrix/ApplyBase";
+      var params = {
+        PracticalID:parseInt(that.data.courseid),
+        ProjectID:parseInt(that.data.id),
+        UserID: getApp().globalData.WxUserId,
+        Name: name,
+        Phone: phone
+      };
+      WxRequest.PostRequest(url, params).then(res => {
+
+        if (res.data.success) {
+          wx.showToast({
+            title: '报名成功',
+            duration: 2000
+          })
+          setTimeout(() => {
+            wx.navigateBack({
+              delta: 1,
+            })
+          }, 2000);
+        } else {
+          WxRequest.ShowAlert(res.data.msg);
+        }
       })
-      setTimeout(() => {
-        wx.navigateBack({
-          delta: 1,
-        })
-      }, 2000);
+
     }
   },
   /**

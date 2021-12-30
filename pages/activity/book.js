@@ -10,6 +10,7 @@ Page({
    */
   data: {
     id: 0,
+    taskid:0,
     name: "",
     phone: "",
     studyno:"",
@@ -26,7 +27,8 @@ Page({
    */
   onLoad: function (options) {
     this.setData({
-      id: options.id
+      id: options.id,
+      taskid:options.taskid,
     })
   },
   getName(e) {
@@ -88,15 +90,33 @@ Page({
       WxRequest.ShowAlert("请选择班级");
     }else{
       //TODO 请求接口
-      wx.showToast({
-        title: '报名成功',
-        duration:2000
-      })
-      setTimeout(() => {
-        wx.navigateBack({
-          delta: 1,
-        })
-      }, 2000);
+      var url=requestUrl+"/API/PracticalActivity/ApplyActivity";
+      var params={
+        PracticalID:that.data.id,
+        ProjectID:that.data.taskid,
+        UserID:getApp().globalData.WxUserId,
+        Name:name,
+        Phone:phone,
+        StuNum:studyno,
+        DepartmentID:departments[dindex].ID,
+        ProfessionalID:majors[mindex].ID,
+        ClassID:classess[cindex].ID,
+      };
+      WxRequest.PostRequest(url,params).then(res=>{
+        if(res.data.success){
+          wx.showToast({
+            title: '报名成功',
+            duration:2000
+          })
+          setTimeout(() => {
+            wx.navigateBack({
+              delta: 1,
+            })
+          }, 2000);
+        }else{
+          WxRequest.ShowAlert(res.data.msg);
+        }
+      })    
     }
   },
 

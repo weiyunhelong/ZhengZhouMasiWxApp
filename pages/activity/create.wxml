@@ -55,5 +55,5 @@
 
 <view class="btnvv"></view>
 <view class="btnv">
-  <view class="btn" bindtap="postOpt">确认报名</view>
+  <view class="btn {{isComplete?'btnh':''}}" bindtap="{{isComplete?'postOpt':''}}">确认报名</view>
 </view>

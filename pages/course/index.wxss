@@ -128,3 +128,8 @@ page {
   color: #999999;
   margin-top: 28rpx;
 }
+
+.bodyv{
+  width: 100vw;
+  height: calc(100vh - 650rpx);
+}

@@ -8,8 +8,6 @@ page {
 .topbgv {
   width: 100vw;
   height: 422rpx;
-  background: url(https://t7.baidu.com/it/u=1819248061,230866778&fm=193&f=GIF) no-repeat;
-  background-size: cover;
 }
 
 .topbgv .pagetitlev {
@@ -91,6 +89,7 @@ page {
   line-height: 40rpx;
   font-size: 28rpx;
   color: #666666;
+  min-height: 100rpx;
 }
 
 .tabv {
@@ -139,27 +138,9 @@ page {
   color: #262626;
 }
 
-.demandtxtv {
-  height: 60rpx;
-  line-height: 60rpx;
-  display: flex;
-  justify-content: space-between;
-}
-
-.demandtxt {
-  max-width: 500rpx;
+.demandtxtv {  
   font-size: 28rpx;
   color: #262626;
-}
-
-.demandstatus {
-  font-size: 24rpx;
-  color: #262626;
-}
-
-.demandstatush {
-  font-size: 24rpx;
-  color: #666666;
 }
 
 .finishbtnv {

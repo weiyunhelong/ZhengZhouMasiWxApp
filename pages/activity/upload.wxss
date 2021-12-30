@@ -106,7 +106,7 @@ page {
 .formbtn {
   width: 466rpx;
   height: 92rpx;
-  background: rgba(242, 69, 64,1);
+  background: rgba(242, 69, 64,0.4);
   border-radius: 46rpx;
   margin-top: 8rpx;
   font-size: 32rpx;
@@ -115,7 +115,9 @@ page {
   text-align: center;
   line-height: 92rpx;
 }
-
+.formbtnh{
+  background: rgba(242, 69, 64,1);
+}
 .imgv {
   padding-left: 32rpx;
   display: flex;

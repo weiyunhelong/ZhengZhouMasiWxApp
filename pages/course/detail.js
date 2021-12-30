@@ -10,18 +10,14 @@ Page({
   data: {
     id: 0,
     dataobj: {},
-    desc: '<p>三亚市，是海南省地级市，简称崖，古称崖州，别称鹿城，地处海南岛的最南端。三亚东邻陵水黎族自治县，西接乐东黎族自治县，北毗保亭黎族苗族自治县，南临南海，三亚市陆地总面积1921平方千米，海域总面积3226平方千米。东西长91.6千米，南北宽51公里，下辖四个区。</p>\
-    <img style="width:100%;border-radius:10px;margin:10px 0;" src="https://bkimg.cdn.bcebos.com/pic/0b55b319ebc4b74543a93692ffb609178a82b901bf57"/>\
-    <p>三亚市，是海南省地级市，简称崖，古称崖州，别称鹿城，地处海南岛的最南端。三亚东邻陵水黎族自治县，西接乐东黎族自治县，北毗保亭黎族苗族自治县，南临南海，三亚市陆地总面积1921平方千米，海域总面积3226平方千米。东西长91.6千米，南北宽51公里，下辖四个区。</p>\
-    <img style="width:100%;border-radius:10px;margin:10px 0;" src="https://bkimg.cdn.bcebos.com/pic/0b55b319ebc4b74543a93692ffb609178a82b901bf57"/>\
-    <p>三亚市，是海南省地级市，简称崖，古称崖州，别称鹿城，地处海南岛的最南端。三亚东邻陵水黎族自治县，西接乐东黎族自治县，北毗保亭黎族苗族自治县，南临南海，三亚市陆地总面积1921平方千米，海域总面积3226平方千米。东西长91.6千米，南北宽51公里，下辖四个区。</p>',
 
     chkTab: 0, //当前的任务
     showMask: false, //显示遮罩层
     showMaskAni: false, //遮罩层动画
-    chksubTab: 0, //选中子分类
 
     showMaskList: false, //显示列表部分
+    fangans: [], //方案列表    
+    chksubTab: 0, //选中子分类
   },
 
   /**
@@ -37,14 +33,18 @@ Page({
         })
       },
     })
+    that.setData({
+      id: options.id
+    })
   },
   showMaskOpt(e) { //点击显示遮罩
     var that = this;
+
     that.setData({
       showMask: true,
       showMaskAni: true,
       chkTab: e.currentTarget.dataset.tab,
-      chksubTab: 1, //子分类
+      chksubTab: 0, //子分类
     })
   },
   hideMaskOpt() { //隐藏遮罩层
@@ -62,14 +62,51 @@ Page({
   showModalOpt() { //显示列表
     this.setData({
       showMaskList: true,
-      tasks:[1,2,3,4,5,6,7,8,9,10], //当前的任务
-      chktask:0,
+      masklist: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10], //当前的任务
+      chkmasklist: 0,
     })
   },
-  showNextOpt() { //显示下个方案
-    WxRequest.ShowAlert("显示下个方案");
+  checkfangan(e) { //选中方案
+    var that = this;
+    var chksubTab = parseInt(e.currentTarget.dataset.index);
+    that.setData({
+      chksubTab: chksubTab
+    })
   },
-  hideMaskOpt(){//隐藏列表
+  checkziyuanOpt(e) { //选中资源
+    var that = this;
+    var chksubTab = parseInt(e.currentTarget.dataset.index);
+    that.setData({
+      chksubTab: chksubTab
+    })
+  },
+  showFangAnNextOpt() { //显示下个方案
+    var that = this;
+    var fangans = that.data.fangans;
+    var chksubTab = parseInt(that.data.chksubTab);
+    if (chksubTab + 1 == fangans.length) {
+      chksubTab = 0;
+    } else {
+      chksubTab = chksubTab + 1;
+    }
+    that.setData({
+      chksubTab: chksubTab
+    })
+  },
+  showZiYuanNextOpt() { //显示下个资源
+    var that = this;
+    var ziyuans = that.data.ziyuans;
+    var chksubTab = parseInt(that.data.chksubTab);
+    if (chksubTab + 1 == ziyuans.length) {
+      chksubTab = 0;
+    } else {
+      chksubTab = chksubTab + 1;
+    }
+    that.setData({
+      chksubTab: chksubTab
+    })
+  },
+  hideMaskListOpt() { //点击收起
     this.setData({
       showMaskList: false
     })
@@ -109,9 +146,17 @@ Page({
       chksubTab: e.currentTarget.dataset.tab
     })
   },
+  tapJidiSubTab(e) { //点击子分类
+    var that = this;
+    that.setData({
+      chksubTab: e.currentTarget.dataset.tab
+    })
+    that.InitJiDi();
+  },
   goJiDiOpt(e) { //点击跳转到基地详情
+    var that = this;
     wx.navigateTo({
-      url: '../course/jidi?id=' + e.currentTarget.dataset.id
+      url: '../course/jidi?id=' + e.currentTarget.dataset.id + "&courseid=" + that.data.id
     })
   },
   goTaoLun(e) { //点击到讨论专区
@@ -137,9 +182,63 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
+    var that = this;
+    //获取课程详情
+    that.InitData();
 
+    //获取教学方案
+    that.InitFangAn();
+
+    //获取实践基地
+    that.InitJiDi();
+
+    //获取实践资源
+    that.InitZiYuan();
   },
-
+  InitData() { //获取详情
+    var that = this;
+    var url = requestUrl + "/API/PracticalTeaching/GetPracticalTeachingDetail?id=" + that.data.id;
+    WxRequest.PostRequest(url, {}).then(res => {
+      if (res.data.success) {
+        that.setData({
+          dataobj: res.data.data
+        })
+      }
+    })
+  },
+  InitFangAn() { //获取教学方案
+    var that = this;
+    var url = requestUrl + "/API/PracticalScheme/GetPracticalSchemeList?page=1&rows=100&practicalID=" + that.data.id;
+    WxRequest.PostRequest(url, {}).then(res => {
+      if (res.data.success) {
+        that.setData({
+          fangans: res.data.data.datas,
+        })
+      }
+    })
+  },
+  InitJiDi() { //获取实践基地
+    var that = this;
+    var url = requestUrl + "/API/PracticalMatrix/GetPracticalMatrixList?page=1&rows=100&practicalID=" + that.data.id + "&type=" + that.data.chksubTab;
+    WxRequest.PostRequest(url, {}).then(res => {
+      if (res.data.success) {
+        that.setData({
+          jidis: res.data.data.datas,
+        })
+      }
+    })
+  },
+  InitZiYuan() { //获取实践资源
+    var that = this;
+    var url = requestUrl + "/API/PracticalResource/GetPracticalResourceList?page=1&rows=100&practicalID=" + that.data.id;
+    WxRequest.PostRequest(url, {}).then(res => {
+      if (res.data.success) {
+        that.setData({
+          ziyuans: res.data.data.datas,
+        })
+      }
+    })
+  },
   /**
    * 生命周期函数--监听页面隐藏
    */

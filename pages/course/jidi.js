@@ -10,13 +10,6 @@ Page({
   data: {
     id: 0,
     dataobj: {},
-    desc: '<p>三亚市，是海南省地级市，简称崖，古称崖州，别称鹿城，地处海南岛的最南端。三亚东邻陵水黎族自治县，西接乐东黎族自治县，北毗保亭黎族苗族自治县，南临南海，三亚市陆地总面积1921平方千米，海域总面积3226平方千米。东西长91.6千米，南北宽51公里，下辖四个区。</p>\
-    <img style="width:100%;border-radius:10px;margin:10px 0;" src="https://bkimg.cdn.bcebos.com/pic/0b55b319ebc4b74543a93692ffb609178a82b901bf57"/>\
-    <p>三亚市，是海南省地级市，简称崖，古称崖州，别称鹿城，地处海南岛的最南端。三亚东邻陵水黎族自治县，西接乐东黎族自治县，北毗保亭黎族苗族自治县，南临南海，三亚市陆地总面积1921平方千米，海域总面积3226平方千米。东西长91.6千米，南北宽51公里，下辖四个区。</p>\
-    <img style="width:100%;border-radius:10px;margin:10px 0;" src="https://bkimg.cdn.bcebos.com/pic/0b55b319ebc4b74543a93692ffb609178a82b901bf57"/>\
-    <p>三亚市，是海南省地级市，简称崖，古称崖州，别称鹿城，地处海南岛的最南端。三亚东邻陵水黎族自治县，西接乐东黎族自治县，北毗保亭黎族苗族自治县，南临南海，三亚市陆地总面积1921平方千米，海域总面积3226平方千米。东西长91.6千米，南北宽51公里，下辖四个区。</p>',
-    IsZan: false, //是否点赞
-    IsCollect: false, //是否收藏
     IsVr: true, //是否有VR视频
   },
 
@@ -26,13 +19,27 @@ Page({
   onLoad: function (options) {
     var that = this;
     that.setData({
-      id: options.id
+      id: options.id,
+      courseid:options.courseid
+    })
+    //获取基地详情
+    that.InitData();
+  },
+  InitData(){//获取基地详情
+    var that=this;
+    var url=requestUrl+"/API/PracticalMatrix/GetPracticalMatrixDetail?id="+that.data.id;
+    WxRequest.PostRequest(url,{}).then(res=>{
+      if(res.data.success){
+        that.setData({
+          dataobj:res.data.data
+        })
+      }
     })
   },
-  bookOpt() { //点赞
+  bookOpt() { //报名
     var that=this;
     wx.navigateTo({
-      url: '../course/book?id='+that.data.id
+      url: '../course/book?id='+that.data.id+"&courseid="+that.data.courseid
     })
   },
   goVROpt() { //vr体验

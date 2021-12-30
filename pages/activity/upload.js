@@ -10,6 +10,7 @@ Page({
    */
   data: {
     id: "",
+    taskid: 0,
     title: "", //标题
     info: "", //内容
     fujian: "", //附件
@@ -22,7 +23,8 @@ Page({
   onLoad: function (options) {
     var that = this;
     that.setData({
-      id: options.id
+      id: options.id,
+      taskid: options.taskid
     })
   },
   getTitle(e) { //获取标题
@@ -45,9 +47,23 @@ Page({
       extension: ["pdf", "doc", "docx", "PDF", "DOC", "DOCX", ],
       success: function (res) {
 
-        that.setData({
-          fujian: res.tempFiles[0].name
+        wx.showLoading({
+          title: '上传中...',
+          mask: true
         })
+        OssTool.uploadPdfFile(res.tempFiles[0].path, 'course/shijianbaogao/' + getApp().globalData.WxUserId + '/',
+          function (result) {
+            that.setData({
+              fujian: res.tempFiles[0].name,
+              fujianUrl: result
+            })
+            wx.hideLoading();
+          },
+          function (result) {
+            WxRequest.ShowAlert("上传失败" + result);
+            wx.hideLoading();
+          }
+        )
       }
     })
   },
@@ -71,16 +87,31 @@ Page({
     } else if (fujian == "") {
       WxRequest.ShowAlert("请添加附件");
     } else {
-      //TODO 请求接口提交报错
-      wx.showToast({
-        title: '提交成功',
-        duration: 2000
+      //TODO 请求接口提交
+      var url = requestUrl + "/API/PracticalActivity/UploadWork";
+      var params = {
+        PracticalID:id,
+        RefID: that.data.taskid,
+        UserID: getApp().globalData.WxUserId,
+        Title: title,
+        Content: info,
+        Attachments: fujianUrl
+      };
+      WxRequest.PostRequest(url, params).then(res => {
+        if (res.data.success) {
+          wx.showToast({
+            title: '提交成功',
+            duration: 2000
+          })
+          setTimeout(() => {
+            wx.navigateBack({
+              delta: 1,
+            })
+          }, 2000);
+        } else {
+          WxRequest.ShowAlert(res.data.msg);
+        }
       })
-      setTimeout(() => {
-        wx.navigateBack({
-          delta: 1,
-        })
-      }, 2000);
     }
   },
   /**

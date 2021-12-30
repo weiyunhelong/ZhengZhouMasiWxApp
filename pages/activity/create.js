@@ -9,6 +9,8 @@ Page({
    * 页面的初始数据
    */
   data: {
+    id:0,
+    taskid:0,
     actstartdt: "",
     actenddt: "",
     bookstartdt: "",
@@ -17,53 +19,86 @@ Page({
     number: "",
     title: "",
     desc: "",
+    isComplete:false
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    var that = this;
+    that.setData({
+      id: options.id
+    })
+  },
+  ChargeIsComplete(){//检测是否完成填写
+    var that=this;
+    var actstartdt= that.data.actenddt,
+    actenddt= that.data.actenddt,
+    bookstartdt= that.data.bookstartdt,
+    bookenddt= that.data.bookenddt,
+    name= that.data.name,
+    number= that.data.number,
+    title= that.data.title,
+    desc= that.data.desc;
 
+    if(actstartdt!=''&&actenddt!=''&&bookstartdt!=''&&bookenddt!=''&&name!=''&&number!=''&&title!=''&&desc!=''){
+      that.setData({
+        isComplete:true
+      })
+    }else{
+      that.setData({
+        isComplete:false
+      })
+    }
   },
   getActStartDt(e) {
     this.setData({
       actstartdt: e.detail.value
     })
+    this.ChargeIsComplete();
   },
   getActEndDt(e) {
     this.setData({
       actenddt: e.detail.value
     })
+    this.ChargeIsComplete();
   },
   getBookStartDt(e) {
     this.setData({
       bookstartdt: e.detail.value
     })
+    this.ChargeIsComplete();
   },
   getBookEndDt(e) {
     this.setData({
       bookenddt: e.detail.value
     })
+    this.ChargeIsComplete();
   },
   getName(e) {
     this.setData({
       name: e.detail.value
     })
+    this.ChargeIsComplete();
   },
   getNumber(e) {
     this.setData({
       number: e.detail.value
     })
+    this.ChargeIsComplete();
   },
   getTitle(e) {
     this.setData({
       title: e.detail.value
     })
+    this.ChargeIsComplete();
   },
   getDesc(e) {
     this.setData({
       desc: e.detail.value
     })
+    this.ChargeIsComplete();
   },
   postOpt() {
     var that=this;
@@ -94,15 +129,34 @@ Page({
       WxRequest.ShowAlert("请输入活动内容");
     }else{
         //TODO 请求接口
-        wx.showToast({
-          title: '创建活动成功',
-          duration:2000
+        var url=requestUrl+"/API/PracticalActivity/CreatePracticalActivity";
+        var params={
+          PracticalID:that.data.id,
+          UserID: getApp().globalData.WxUserId,
+          Title:title,
+          Contents:desc,
+          JoinCountNum:number,
+          StarTime:actstartdt,
+          EndTime:actenddt,
+          ApplyStarTime:bookstartdt,
+          ApplyEndTime:bookenddt
+        };
+        WxRequest.PostRequest(url,params).then(res=>{
+          if(res.data.success){
+            wx.showToast({
+              title: '创建活动成功',
+              duration:2000
+            })
+            setTimeout(() => {
+              wx.navigateBack({
+                delta: 1,
+              })
+            }, 2000);
+          }else{
+            WxRequest.ShowAlert(res.data.msg);
+          }
         })
-        setTimeout(() => {
-          wx.navigateBack({
-            delta: 1,
-          })
-        }, 2000);
+       
     }
   },
   /**

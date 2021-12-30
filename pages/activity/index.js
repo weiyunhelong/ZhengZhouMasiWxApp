@@ -8,15 +8,10 @@ Page({
    * 页面的初始数据
    */
   data: {
-    id: 0,
+    id: 0,//课程id
+    activityid:0,//活动id
     dataobj: {},
-    desc: '<p>三亚市，是海南省地级市，简称崖，古称崖州，别称鹿城，地处海南岛的最南端。三亚东邻陵水黎族自治县，西接乐东黎族自治县，北毗保亭黎族苗族自治县，南临南海，三亚市陆地总面积1921平方千米，海域总面积3226平方千米。东西长91.6千米，南北宽51公里，下辖四个区。</p>\
-    <img style="width:100%;border-radius:10px;margin:10px 0;" src="https://bkimg.cdn.bcebos.com/pic/0b55b319ebc4b74543a93692ffb609178a82b901bf57"/>\
-    <p>三亚市，是海南省地级市，简称崖，古称崖州，别称鹿城，地处海南岛的最南端。三亚东邻陵水黎族自治县，西接乐东黎族自治县，北毗保亭黎族苗族自治县，南临南海，三亚市陆地总面积1921平方千米，海域总面积3226平方千米。东西长91.6千米，南北宽51公里，下辖四个区。</p>\
-    <img style="width:100%;border-radius:10px;margin:10px 0;" src="https://bkimg.cdn.bcebos.com/pic/0b55b319ebc4b74543a93692ffb609178a82b901bf57"/>\
-    <p>三亚市，是海南省地级市，简称崖，古称崖州，别称鹿城，地处海南岛的最南端。三亚东邻陵水黎族自治县，西接乐东黎族自治县，北毗保亭黎族苗族自治县，南临南海，三亚市陆地总面积1921平方千米，海域总面积3226平方千米。东西长91.6千米，南北宽51公里，下辖四个区。</p>',
-
-    chkTab: '任务一', //当前的任务
+    chkTab: 0, //当前的任务
   },
 
   /**
@@ -43,14 +38,68 @@ Page({
   bookOpt() { //报名
     var that = this;
     wx.navigateTo({
-      url: '../activity/book?id=' + that.data.id + "&task=" + that.data.chkTab,
+      url: '../activity/book?id=' + that.data.id + "&taskid=" + that.data.activityid,
     })
   },
   UploadOpt() { //上传作品
     var that = this;
     wx.navigateTo({
-      url: '../activity/upload?id=' + that.data.id + "&task=" + that.data.chkTab,
+      url: '../activity/upload?id=' + that.data.id + "&taskid=" + that.data.activityid,
     })
+  },
+  CancelBookOpt(){//取消报名
+    var that = this;
+    var url = requestUrl + "/API/PracticalActivity/CancelApply?activityID=" + that.data.activityid+"&userID="+getApp().globalData.WxUserId;
+    WxRequest.PostRequest(url, {}).then(res => {
+      if (res.data.success) {
+        var dataobj=that.data.dataobj;
+        dataobj.IsApply=false;
+        that.setData({
+          dataobj: dataobj
+        })
+      }else{
+        WxRequest.ShowAlert(res.data.msg);
+      }
+    })
+  },
+  showModalOpt(){//显示全部活动
+    var that = this;
+
+    that.setData({
+      showMask: true,
+      showMaskAni: true,
+    })
+  },
+  hideMaskOpt(){//收起全部活动
+    var that = this;
+    that.setData({
+      showMaskAni: false
+    })
+    setTimeout(() => {
+      that.setData({
+        showMask: false
+      })
+    }, 2000);
+  },
+  NextOpt(){//下一个活动
+    var that = this;
+    var dataobj=that.data.dataobj;
+    if(dataobj.NextID==0){
+      WxRequest.ShowAlert("已是最后一个");
+    }else{
+      that.setData({
+        activityid:dataobj.NextID
+      })
+      that.InitObjData();
+    }
+  },
+  checkhuodong(e){//切换活动
+    var that = this;
+    that.setData({
+      activityid:e.currentTarget.dataset.id
+    })
+    that.InitObjData();
+    that.hideMaskOpt();
   },
   /**
    * 生命周期函数--监听页面初次渲染完成
@@ -63,9 +112,33 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
+    var that = this;
+    that.InitData();
   },
-
+  InitData() { //获取全部活动
+    var that = this;
+    var url = requestUrl + "/API/PracticalActivity/GetPracticalActivityList?page=1&rows=100&practicalID=" + that.data.id;
+    WxRequest.PostRequest(url, {}).then(res => {
+      if (res.data.success) {
+        that.setData({
+          list: res.data.data.datas,
+          activityid: res.data.data.datas[0].ID
+        })
+        that.InitObjData();
+      }
+    })
+  },
+  InitObjData(){//获取活动详情
+    var that = this;
+    var url = requestUrl + "/API/PracticalActivity/GetPracticalActivityDetail?id=" + that.data.activityid+"&userID="+getApp().globalData.WxUserId;
+    WxRequest.PostRequest(url, {}).then(res => {
+      if (res.data.success) {
+        that.setData({
+          dataobj: res.data.data
+        })
+      }
+    })
+  },
   /**
    * 生命周期函数--监听页面隐藏
    */

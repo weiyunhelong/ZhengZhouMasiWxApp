@@ -12,6 +12,42 @@
     },
     "miniprogram": {
       "list": [
+        {
+          "name": "",
+          "pathName": "pages/course/index",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "",
+          "pathName": "pages/course/detail",
+          "query": "id=15",
+          "scene": null
+        },
+        {
+          "name": "",
+          "pathName": "pages/course/jidi",
+          "query": "id=37",
+          "scene": null
+        },
+        {
+          "name": "",
+          "pathName": "pages/course/book",
+          "query": "id=37&courseid=15",
+          "scene": null
+        },
+        {
+          "name": "",
+          "pathName": "pages/course/upload",
+          "query": "id=15",
+          "scene": null
+        },
+        {
+          "name": "",
+          "pathName": "pages/activity/upload",
+          "query": "id=15&taskid=11",
+          "scene": null
+        }
       ]
     }
   }

@@ -22,5 +22,5 @@
 <view class="btmvv"></view>
 <view class="btmv">
   <view class="cancelbtn" bindtap="cancelOpt">取消</view>
-  <view class="formbtn" bindtap="postOpt">提交上传</view>
+  <view class="formbtn {{title.length>0&&info.length>0&&fujian.length>0?'formbtnh':''}}" bindtap="{{title.length>0&&info.length>0&&fujian.length>0?'postOpt':''}}">提交上传</view>
 </view>

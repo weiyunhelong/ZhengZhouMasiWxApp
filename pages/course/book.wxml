@@ -13,5 +13,5 @@
 </view>
 
 <view class="btnv">
-  <view class="btn" bindtap="postOpt">确认报名</view>
+  <view class="btn {{name.length>0&&phone.length==11?'btnh':''}}" bindtap="postOpt">确认报名</view>
 </view>

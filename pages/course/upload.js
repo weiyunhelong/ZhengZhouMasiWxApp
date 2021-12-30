@@ -48,12 +48,35 @@ Page({
       sizeType: ['compressed'],
       sourceType: ['album', 'camera'],
       success(res) {
-        // tempFilePath可以作为img标签的src属性显示图片 
+
+        const tempFilePaths = res.tempFilePaths;
         var imgs = that.data.imgs;
-        imgs = imgs.concat(res.tempFilePaths);
-        that.setData({
-          imgs: imgs
+
+        wx.showLoading({
+          title: '上传中...',
+          mask: true
         })
+
+        for (var i = 0; i < tempFilePaths.length; i++) {
+          var index = i;
+          OssTool.uploadImgFile(tempFilePaths[i], 'course/shijianbaogao/' + getApp().globalData.WxUserId + '/',
+            function (result) {
+              imgs.push(result);
+              that.setData({
+                imgs: imgs
+              })
+              if (index == tempFilePaths.length - 1) {
+                wx.hideLoading();
+              }
+            },
+            function (result) {
+              WxRequest.ShowAlert("上传失败" + result);
+              wx.hideLoading();
+            }
+          )
+
+        }
+        //
       }
     })
   },
@@ -80,6 +103,11 @@ Page({
       }
     })
   },
+  getImgdesc(e) { //获取图片说明
+    this.setData({
+      imgdesc: e.detail.value
+    })
+  },
   chooseFileOpt() { //上传文件
     var that = this;
     wx.chooseMessageFile({
@@ -88,9 +116,24 @@ Page({
       extension: ["pdf", "doc", "docx", "PDF", "DOC", "DOCX", ],
       success: function (res) {
 
-        that.setData({
-          fujian: res.tempFiles[0].name
+        wx.showLoading({
+          title: '上传中...',
+          mask: true
         })
+        OssTool.uploadPdfFile(res.tempFiles[0].path, 'course/shijianbaogao/' + getApp().globalData.WxUserId + '/',
+          function (result) {
+            that.setData({
+              fujian: res.tempFiles[0].name,
+              fujianUrl: result
+            })
+            wx.hideLoading();
+          },
+          function (result) {
+            WxRequest.ShowAlert("上传失败" + result);
+            wx.hideLoading();
+          }
+        )
+
       }
     })
   },
@@ -118,7 +161,6 @@ Page({
       info = that.data.info, //内容
       imgs = that.data.imgs, //图片
       imgdesc = that.data.imgdesc, //图片说明
-      fujian = that.data.fujian, //附件
       fujianUrl = that.data.fujianUrl, //附件上传地址
       address = that.data.address, //地址
       mark = that.data.mark; //体会
@@ -129,21 +171,35 @@ Page({
       WxRequest.ShowAlert("请输入实践报告");
     } else if (imgs.length == 0) {
       WxRequest.ShowAlert("请选择照片");
-    } else if (address == "") {
-      WxRequest.ShowAlert("请输入实践地址");
-    } else if (mark == "") {
-      WxRequest.ShowAlert("请输入实践体会");
     } else {
-      //TODO 请求接口提交报错
-      wx.showToast({
-        title: '提交成功',
-        duration: 2000
+      //TODO 请求接口提交
+      var url = requestUrl + "/API/PracticalTeaching/UploadReport";
+      var params = {
+        PracticalID: id,
+        UserID: getApp().globalData.WxUserId,
+        Title: title,
+        Contents: info,
+        Thumbnail: imgs.join('|'),
+        ImgExplain: imgdesc,
+        Experience: mark,
+        AccessoryUrl: fujianUrl,
+        Address: address
+      };
+      WxRequest.PostRequest(url, params).then(res => {
+        if (res.data.success) {
+          wx.showToast({
+            title: '提交成功',
+            duration: 2000
+          })
+          setTimeout(() => {
+            wx.navigateBack({
+              delta: 1,
+            })
+          }, 2000);
+        } else {
+          WxRequest.ShowAlert(res.data.msg);
+        }
       })
-      setTimeout(() => {
-        wx.navigateBack({
-          delta: 1,
-        })
-      }, 2000);
     }
   },
   /**
