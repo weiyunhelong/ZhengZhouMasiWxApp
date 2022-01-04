@@ -1,7 +1,13 @@
 <!--pages/test/test.wxml-->
 <view class="clockv">
-  <image src="/resources/shidu/time.png" class="timeicon"></image>
-  <view class="clocktxt">考试时间 45:00</view>
+  <view class="clockvl">
+    <image src="/resources/course/time.png" class="timeicon"></image>
+    <view class="clocktxt">考试时间 45:00</view>
+  </view>
+  <view class="clockvr">
+    <text class="mdclocknum">{{index}}</text>
+    <text class="smclocknum">/100</text>
+  </view>
 </view>
 
 <view class="formv">
@@ -22,6 +28,13 @@
 </view>
 
 <view class="btmvv"></view>
+
+<view class="btnv">
+  <view class="{{index==1?'prebtn':'nextbtn'}}" bindtap="{{index==1?'':'preOpt'}}">上一题</view>
+  <view style="width: 70rpx;height: 68rpx;"></view>
+  <view class="{{index==100?'prebtn':'nextbtn'}}" bindtap="{{index==100?'':'nextOpt'}}">下一题</view>
+</view>
+
 <view class="btmv">
   <view class="btml" bindtap="postOpt">
     <view class="btntxt">交卷</view>
@@ -29,7 +42,7 @@
   </view>
   <view class="btmr" bindtap="checkOpt">
     <image src="/resources/course/noicon.png" class="noicon"></image>
-    <view class="btnno">1</view>
+    <view class="btnno">{{index}}</view>
     <view class="btnnum">/100</view>
   </view>
 </view>
@@ -72,15 +85,41 @@
     </view>
     <view class="btmr" bindtap="checkOpt">
       <image src="/resources/course/noicon.png" class="noicon"></image>
-      <view class="btnno">1</view>
+      <view class="btnno">{{index}}</view>
       <view class="btnnum">/100</view>
     </view>
   </view>
   <scroll-view scroll-y="true" class="scrollindexv">
+    <view class="indextypetxt">选择题</view>
     <view class="indexv">
       <block wx:for="{{list}}" wx:key="item" wx:for-index="x">
-        <view class="indexc {{x<4?'indexch':''}}">{{x+1}}</view>
+        <view class="indexc {{x<4?'indexch':''}}" wx:if="{{x<27}}" catchtap="changeIndex" data-index="{{x}}">{{x+1}}</view>
+      </block>
+    </view>
+    <view class="indextypetxt">判断题</view>
+    <view class="indexv">
+      <block wx:for="{{list}}" wx:key="item" wx:for-index="x">
+        <view class="indexc {{x<4?'indexch':''}}" wx:if="{{x>26&&x<39}}" catchtap="changeIndex" data-index="{{x}}">{{x+1}}</view>
+      </block>
+    </view>
+    <view class="indextypetxt">多选题</view>
+    <view class="indexv">
+      <block wx:for="{{list}}" wx:key="item" wx:for-index="x">
+        <view class="indexc {{x<4?'indexch':''}}" wx:if="{{x>39}}" catchtap="changeIndex" data-index="{{x}}">{{x+1}}</view>
       </block>
     </view>
   </scroll-view>
+</view>
+
+<!--成绩遮罩层-->
+<view catchtouchmove="nomove" class="maskv {{showResultAni?'bounceIn':'hideMaskv'}}" wx:if="{{showResult}}">
+  <view class="chengjibgv"></view>
+  <view class="chengjiv">
+    <view class="chengjitxtnumv">
+      <view class="chengjitxtnum">65</view>
+      <view class="chengjitxtfen">分</view>
+    </view>
+  </view>
+  <view class="chengjitxt">恭喜你，本次考试已结束</view>
+  <view class="knowntn" bindtap="knowOpt">我知道了</view>
 </view>

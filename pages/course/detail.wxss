@@ -2,6 +2,7 @@
 page {
   background: #fff;
 }
+
 @import '../../styles/maskv.wxss';
 
 /*用户信息*/
@@ -138,7 +139,7 @@ page {
   color: #262626;
 }
 
-.demandtxtv {  
+.demandtxtv {
   font-size: 28rpx;
   color: #262626;
 }
@@ -210,17 +211,34 @@ page {
   margin-bottom: 28rpx;
 }
 
+.btnvv {
+  display: flex;
+  justify-content: space-between;
+  padding: 32rpx 0 60rpx;
+}
+
 .uploadbtn {
-  width: 548rpx;
+  width: 324rpx;
   height: 96rpx;
-  background: #F24540;
+  background: #FFFFFF;
   border-radius: 48rpx;
-  font-size: 32rpx;
-  font-weight: 500;
-  color: #FFFFFF;
-  margin: 60rpx auto;
+  border: 1rpx solid #F24540;
   text-align: center;
   line-height: 96rpx;
+  font-size: 32rpx;
+  color: #F24540;
+}
+
+.taolunbtn {
+  width: 324rpx;
+  height: 96rpx;
+  background: #FFFFFF;
+  border-radius: 48rpx;
+  border: 1rpx solid #E3E3E3;
+  text-align: center;
+  line-height: 96rpx;
+  font-size: 32rpx;
+  color: #262626;
 }
 
 .btmvv {
@@ -454,7 +472,7 @@ page {
   left: 0;
   z-index: 999;
   padding-bottom: constant(safe-area-inset-bottom);
-  padding-bottom: env(safe-area-inset-bottom);  
+  padding-bottom: env(safe-area-inset-bottom);
 }
 
 .maskv .subtabbar {
@@ -519,7 +537,8 @@ page {
   height: 76rpx;
   background: rgba(255, 255, 255, 0.9);
   box-shadow: 0rpx 4rpx 16rpx 0rpx rgba(0, 0, 0, 0.14);
-  border-radius: 0rpx 38rpx 38rpx 0rpx;margin-top: 16rpx;
+  border-radius: 0rpx 38rpx 38rpx 0rpx;
+  margin-top: 16rpx;
 }
 
 .maskv .tabbarvltxt {
@@ -557,7 +576,8 @@ page {
   height: 76rpx;
   background: rgba(255, 255, 255, 0.9);
   box-shadow: 0rpx 4rpx 16rpx 0rpx rgba(0, 0, 0, 0.14);
-  border-radius: 38rpx 0rpx 0rpx 38rpx;margin-top: 16rpx;
+  border-radius: 38rpx 0rpx 0rpx 38rpx;
+  margin-top: 16rpx;
 }
 
 /*基地*/

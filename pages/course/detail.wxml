@@ -73,7 +73,10 @@
       </block>
     </view>
 
-    <view class="uploadbtn" bindtap="uploadOpt">上传实践报告</view>
+    <view class="btnvv">
+      <view class="uploadbtn" bindtap="uploadOpt">上传实践报告</view>
+      <view class="taolunbtn" bindtap="gogroupOpt">发起讨论组</view>
+    </view>
     <view class="btmvv"></view>
   </view>
 

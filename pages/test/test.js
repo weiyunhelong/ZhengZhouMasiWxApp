@@ -13,9 +13,12 @@ Page({
     showMask: false,
     showMaskAni: false,
     showModal: false,
-    showModalAni: false,
+    showModalAni: false,    
+    showResult: false,
+    showResultAni: false,
     list:[],
     chkoption:-1,
+    index:1,
   },
 
   /**
@@ -60,13 +63,27 @@ Page({
       })
     }, 1000);
   },
-  confirmOpt(){
+  confirmOpt(){//提交试卷
     var that=this;
-    wx.redirectTo({
-      url: '../test/result',
-      complete:function(){
-        that.cancelOpt();
-      }
+    that.setData({
+      showMaskAni: false,
+      showMask: false
+    })
+    setTimeout(() => {
+      that.setData({
+        showResult:true,
+        showResultAni:true
+      })
+    }, 500);   
+  },
+  knowOpt(){//我知道了
+    var that=this;
+    that.setData({
+      showResult:true,
+      showResultAni:true
+    })
+    wx.navigateBack({
+      delta: 1,
     })
   },
   checkOpt(){//查看答题过程
@@ -84,6 +101,24 @@ Page({
         showModal: false
       })
     }, 1000);
+  },
+  preOpt(){//上一题
+    var that=this;
+    that.setData({
+      index:that.data.index-1
+    })
+  },
+  nextOpt(){//下一题
+    var that=this;
+    that.setData({
+      index:that.data.index+1
+    })
+  },
+  changeIndex(e){//切换题目
+    var that=this;
+    that.setData({
+      index:e.currentTarget.dataset.index+1
+    })
   },
   /**
    * 生命周期函数--监听页面初次渲染完成
