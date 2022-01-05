@@ -12,18 +12,6 @@
     },
     "miniprogram": {
       "list": [
-        {
-          "name": "",
-          "pathName": "pages/course/detail",
-          "query": "id=15",
-          "scene": null
-        },
-        {
-          "name": "",
-          "pathName": "pages/test/test",
-          "query": "",
-          "scene": null
-        }
       ]
     }
   }
