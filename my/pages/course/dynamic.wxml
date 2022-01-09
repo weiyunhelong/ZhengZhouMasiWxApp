@@ -1,2 +1,45 @@
 <!--my/pages/course/dynamic.wxml-->
-<text>my/pages/course/dynamic.wxml</text>
+<view class="tabv">
+  <view class="tabcv" bindtap="tapTab" data-type="1">
+    <view class="{{chktab==1?'tabtxth':'tabtxt'}}">我的评论</view>
+    <view class="tabline" wx:if="{{chktab==1}}"></view>
+  </view>
+  <view class="tabcv" bindtap="tapTab" data-type="2">
+    <view class="{{chktab==2?'tabtxth':'tabtxt'}}">我的赞</view>
+    <view class="tabline" wx:if="{{chktab==2}}"></view>
+  </view>
+  <view class="tabcv" bindtap="tapTab" data-type="3">
+    <view class="{{chktab==3?'tabtxth':'tabtxt'}}">我的收藏</view>
+    <view class="tabline" wx:if="{{chktab==3}}"></view>
+  </view>
+</view>
+
+<view class="bodyv">
+  <block wx:if="{{chktab==1}}">
+    <view class="statusv">
+      <view class="{{chksubtab==0?'statustxth':'statustxt'}}" bindtap="tapsubTab" data-tab="0">全部评论</view>
+      <view class="{{chksubtab==1?'statustxth':'statustxt'}}" bindtap="tapsubTab" data-tab="1">视频评论</view>
+      <view class="{{chksubtab==2?'statustxth':'statustxt'}}" bindtap="tapsubTab" data-tab="2">专栏评论</view>
+    </view>
+  </block>
+  <block wx:if="{{chktab==2}}">
+    <view class="statusv">
+      <view class="{{chksubtab==0?'statustxth':'statustxt'}}" bindtap="tapsubTab" data-tab="0">全部的赞</view>
+      <view class="{{chksubtab==1?'statustxth':'statustxt'}}" bindtap="tapsubTab" data-tab="1">视频的赞</view>
+      <view class="{{chksubtab==2?'statustxth':'statustxt'}}" bindtap="tapsubTab" data-tab="2">专栏的赞</view>
+    </view>
+  </block>
+  <block wx:if="{{chktab==3}}">
+    <view class="statusv">
+      <view class="{{chksubtab==0?'statustxth':'statustxt'}}" bindtap="tapsubTab" data-tab="0">全部收藏</view>
+      <view class="{{chksubtab==1?'statustxth':'statustxt'}}" bindtap="tapsubTab" data-tab="1">视频收藏</view>
+      <view class="{{chksubtab==2?'statustxth':'statustxt'}}" bindtap="tapsubTab" data-tab="2">专栏收藏</view>
+    </view>
+  </block>
+
+  <scroll-view scroll-y="true" class="datav">
+    <block wx:for="{{list}}" wx:key="item">
+      <dynamiccom receiveData="" showType="{{chktab}}" />
+    </block>
+  </scroll-view>
+</view>

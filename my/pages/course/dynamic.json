@@ -1,3 +1,9 @@
 {
-  "usingComponents": {}
+  "navigationBarBackgroundColor": "#f7f7f7",
+  "navigationBarTextStyle": "black",
+  "navigationBarTitleText": "我的动态",
+  "usingComponents": {
+    "loadding": "../../../components/loadding/index",
+    "dynamiccom": "../../components/dynamic/index"
+  }
 }

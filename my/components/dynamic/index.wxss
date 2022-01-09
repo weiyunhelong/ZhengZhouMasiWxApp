@@ -1,0 +1,35 @@
+/* my/components/dynamic/index.wxss */
+.comv {
+  margin: 0 32rpx;
+  padding-bottom: 32rpx;
+  display: flex;
+  border-bottom: 1rpx solid #eee;
+}
+
+.comv .avatarUrl {
+  width: 92rpx;
+  height: 92rpx;
+  border-radius: 50%;
+  margin-right: 20rpx;
+  margin-top: 52rpx;
+}
+
+.comv .comcv {
+  width: 574rpx;
+  padding-top: 52rpx;
+}
+.comv .comcv .nickName{
+  font-size: 30rpx;
+  font-weight: 500;
+  color: #262626;
+}
+.comv .comcv .comment{
+  font-size: 28rpx;
+  color: #262626;
+  margin-top: 8rpx;
+  margin-bottom: 8rpx;
+}
+.comv .comcv .date{
+  font-size: 24rpx;
+  color: #999999;
+}

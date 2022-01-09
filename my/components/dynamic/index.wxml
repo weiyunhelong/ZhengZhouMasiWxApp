@@ -1,0 +1,31 @@
+<!--my/components/dynamic/index.wxml-->
+<block wx:if="{{type==1}}">
+  <view class="comv">
+    <image src="/resources/comman/avatarUrl.jpg" class="avatarUrl"></image>
+    <view class="comcv">
+      <view class="nickName">海政</view>
+      <view class="comment">我和大家一样，在新年即将来临之际聆听了习近平主席发表的新年贺词。</view>
+      <view class="date">9分钟前 我回复了 </view>
+    </view>
+  </view>
+</block>
+<block wx:if="{{type==2}}">
+  <view class="comv">
+    <image src="/resources/comman/avatarUrl.jpg" class="avatarUrl"></image>
+    <view class="comcv">
+      <view class="nickName">华盛顿</view>
+      <view class="comment">我点赞了《某某某》</view>
+      <view class="date">9分钟前</view>
+    </view>
+  </view>
+</block>
+<block wx:if="{{type==3}}">
+  <view class="comv">
+    <image src="/resources/comman/avatarUrl.jpg" class="avatarUrl"></image>
+    <view class="comcv">
+      <view class="nickName">华盛顿</view>
+      <view class="comment">我收藏了《某某某》</view>
+      <view class="date">9分钟前</view>
+    </view>
+  </view>
+</block>

@@ -1,11 +1,15 @@
 // my/pages/course/news.js
+var requestUrl = getApp().globalData.requestUrl;
+var WxRequest = require('../../../utils/WxRequest.js');
+
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-
+    chktab: 1, //1浏览我的 2评论我的 3收到的赞 4分享我的 5收藏我的
+    list:[1,2,3,4,5,6,7,8,9,10,11,12]
   },
 
   /**
@@ -14,7 +18,12 @@ Page({
   onLoad: function (options) {
 
   },
-
+  tapTab(e){
+    var that=this;
+    that.setData({
+      chktab:e.currentTarget.dataset.tab
+    })
+  },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */

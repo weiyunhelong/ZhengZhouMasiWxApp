@@ -1,2 +1,35 @@
 <!--my/pages/course/news.wxml-->
-<text>my/pages/course/news.wxml</text>
+<view class="topborderv"></view>
+<scroll-view scroll-x="true" class="tabv">
+  <view class="tabvc" bindtap="tapTab" data-tab="1">
+    <view class="{{chktab==1?'tabtxth':'tabtxt'}}">浏览我的</view>
+    <view class="tabline" wx:if="{{chktab==1}}"></view>
+  </view>
+  <view class="tabvc" bindtap="tapTab" data-tab="2">
+    <view class="{{chktab==2?'tabtxth':'tabtxt'}}">评论我的</view>
+    <view class="tabline" wx:if="{{chktab==2}}"></view>
+  </view>
+  <view class="tabvc" bindtap="tapTab" data-tab="3">
+    <view class="{{chktab==3?'tabtxth':'tabtxt'}}">收到的赞</view>
+    <view class="tabline" wx:if="{{chktab==3}}"></view>
+  </view>
+  <view class="tabvc" bindtap="tapTab" data-tab="4">
+    <view class="{{chktab==4?'tabtxth':'tabtxt'}}">分享我的</view>
+    <view class="tabline" wx:if="{{chktab==4}}"></view>
+  </view>
+  <view class="tabvc" bindtap="tapTab" data-tab="5">
+    <view class="{{chktab==5?'tabtxth':'tabtxt'}}">收藏我的</view>
+    <view class="tabline" wx:if="{{chktab==5}}"></view>
+  </view>
+</scroll-view>
+
+<scroll-view class="datav" scroll-y="true">
+  <block wx:for="{{list}}" wx:key="item">
+    <msgcom receiveData="" showType="{{chktab}}" />
+  </block>
+
+  <view class="allredbtn">
+    <image src="../../resources/readed.png" class="readicon"></image>
+    <view class="readtxt">全部已读</view>
+  </view>
+</scroll-view>

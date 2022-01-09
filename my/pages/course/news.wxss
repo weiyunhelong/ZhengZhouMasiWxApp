@@ -1,1 +1,76 @@
 /* my/pages/course/news.wxss */
+.topborderv {
+  width: 100vw;
+  height: 1rpx;
+  background: #eee;
+  position: sticky;
+  top: 0;
+  left: 0;
+  z-index: 9;
+}
+
+.tabv {
+  display: flex;
+  height: 88rpx;
+  background: #fff;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.tabvc {
+  height: 88rpx;
+  width: 175rpx;
+  display: inline-block;
+  text-align: center;
+}
+
+.tabtxth {
+  font-size: 30rpx;
+  font-weight: 500;
+  color: #262626;
+  height: 88rpx;
+  line-height: 88rpx;
+}
+
+.tabtxt {
+  font-size: 30rpx;
+  color: #999;
+  height: 88rpx;
+  line-height: 88rpx;
+}
+
+.tabline {
+  width: 28rpx;
+  height: 4rpx;
+  background: #F24540;
+  border-radius: 3rpx;
+  margin: -4rpx auto;
+}
+
+.datav {
+  width: 100vw;
+  height: calc(100vh - 88rpx - 2rpx);
+}
+
+.allredbtn {
+  width: 686rpx;
+  height: 80rpx;
+  background: #FFFFFF;
+  border-radius: 44rpx;
+  display: flex;
+  justify-content: center;
+  margin: 58rpx auto 82rpx;
+}
+
+.readicon {
+  width: 32rpx;
+  height: 32rpx;
+  margin-top: 24rpx;
+  margin-right: 8rpx;
+}
+
+.readtxt {
+  line-height: 80rpx;
+  font-size: 32rpx;
+  color: #262626;
+}

@@ -1,0 +1,51 @@
+<!--my/components/msgcom/index.wxml-->
+<block wx:if="{{type==1}}">
+  <view class="comv">
+    <image src="/resources/comman/avatarUrl.jpg" class="avatarUrl"></image>
+    <view class="comcv">
+      <view class="nickName">华盛顿</view>
+      <view class="comment">浏览了我的《某某某》</view>
+      <view class="date">9分钟前</view>
+    </view>
+  </view>
+</block>
+<block wx:if="{{type==2}}">
+  <view class="comv">
+    <image src="/resources/comman/avatarUrl.jpg" class="avatarUrl"></image>
+    <view class="comcv">
+      <view class="nickName">华盛顿</view>
+      <view class="comment">你想怎么办？</view>
+      <view class="date">9分钟前 回复了你</view>
+    </view>
+  </view>
+</block>
+<block wx:if="{{type==3}}">
+  <view class="comv">
+    <image src="/resources/comman/avatarUrl.jpg" class="avatarUrl"></image>
+    <view class="comcv">
+      <view class="nickName">华盛顿</view>
+      <view class="comment">点赞了我的《某某某你》</view>
+      <view class="date">9分钟前</view>
+    </view>
+  </view>
+</block>
+<block wx:if="{{type==4}}">
+  <view class="comv">
+    <image src="/resources/comman/avatarUrl.jpg" class="avatarUrl"></image>
+    <view class="comcv">
+      <view class="nickName">华盛顿</view>
+      <view class="comment">分享了我的《点点滴滴》</view>
+      <view class="date">9分钟前</view>
+    </view>
+  </view>
+</block>
+<block wx:if="{{type==5}}">
+  <view class="comv">
+    <image src="/resources/comman/avatarUrl.jpg" class="avatarUrl"></image>
+    <view class="comcv">
+      <view class="nickName">华盛顿</view>
+      <view class="comment">收藏了我的《点点滴滴》</view>
+      <view class="date">9分钟前</view>
+    </view>
+  </view>
+</block>

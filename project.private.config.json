@@ -12,12 +12,6 @@
     },
     "miniprogram": {
       "list": [
-        {
-          "name": "",
-          "pathName": "my/pages/course/content",
-          "query": "",
-          "scene": null
-        }
       ]
     }
   }
