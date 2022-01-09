@@ -60,6 +60,11 @@
       "pages/collect/index",
       "pages/study/index",
       "pages/news/index",
+      "pages/course/index",
+      "pages/course/dynamic",
+      "pages/course/news",
+      "pages/course/content",
+      "pages/course/data",
       "pages/account/index"
     ]
   }, {

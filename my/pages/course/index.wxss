@@ -1,0 +1,168 @@
+/* my/pages/course/index.wxss */
+/*用户信息*/
+.userinfov {
+  padding: 0 32rpx;
+  height: 176rpx;
+  display: flex;
+  justify-content: space-between;
+}
+
+.userinfov .userv {
+  display: flex;
+  max-width: 550rpx;
+}
+
+.userinfov .avatarUrl {
+  width: 104rpx;
+  height: 104rpx;
+  margin: 36rpx 20rpx 0 0;
+  border-radius: 50%;
+}
+
+.userinfov .usercv {
+  padding-top: 52rpx;
+}
+
+.userinfov .username {
+  font-size: 32rpx;
+  color: #000000;
+}
+
+.userinfov .userdesc {
+  font-size: 28rpx;
+  color: #999999;
+  margin-top: 5rpx;
+}
+
+.userinfov .tougaobtn {
+  width: 120rpx;
+  height: 64rpx;
+  border-radius: 32rpx;
+  border: 1rpx solid #F24540;
+  font-size: 28rpx;
+  color: #F24540;
+  text-align: center;
+  line-height: 64rpx;
+  margin-top: 56rpx;
+}
+
+/*数据中心*/
+.datav {
+  width: 686rpx;
+  height: 248rpx;
+  background: #fff;
+  border-radius: 12rpx;
+  margin: 12rpx auto 30rpx;
+}
+
+.datav .datatagv {
+  display: flex;
+  justify-content: space-between;
+  height: 88rpx;
+  line-height: 88rpx;
+}
+
+.datav .datatag {
+  font-size: 32rpx;
+  color: #262626;
+  padding-left: 28rpx;
+}
+
+.datav .datatip {
+  padding-right: 28rpx;
+  font-size: 24rpx;
+  color: #999999;
+}
+
+.datav .datacv {
+  padding: 0 32rpx;
+  display: flex;
+  justify-content: space-between;
+}
+
+.datav .datacitem {
+  width: 342rpx;
+  height: 160rpx;
+}
+
+.datav .datactitle {
+  font-size: 28rpx;
+  color: #999999;
+  padding-top: 28rpx;
+}
+
+.datav .datanumv {
+  display: flex;
+  justify-content: space-between;
+}
+
+.datav .datamdnum {
+  font-size: 44rpx;
+  font-weight: 500;
+  color: #000000;
+}
+
+.datav .datasmnum {
+  font-size: 28rpx;
+  color: #666666;
+  padding-right: 28rpx;
+}
+
+.datav .dataline {
+  width: 2rpx;
+  height: 40rpx;
+  background: #EEEEEE;
+  margin-top: 60rpx;
+}
+
+/*菜单部分*/
+.menuv {
+  width: 686rpx;
+  height: 192rpx;
+  background: #FFFFFF;
+  border-radius: 12rpx;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+}
+
+.menuv .menucv {
+  width: 172rpx;
+  height: 192rpx;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+
+.menuv .menuicon {
+  width: 60rpx;
+  height: 60rpx;
+}
+
+.menuv .menutext {
+  margin-top: 12rpx;
+  font-size: 28rpx;
+  color: #000000;
+}
+
+/*标题部分*/
+.titlev {
+  height: 100rpx;
+  line-height: 100rpx;
+  display: flex;
+  justify-content: space-between;
+  padding: 30rpx 32rpx 0;
+}
+
+.titlev .titlel {
+  font-size: 32rpx;
+  font-weight: 500;
+  color: #262626;
+}
+
+.titlev .titler {
+  font-size: 24rpx;
+  color: #999999;
+}

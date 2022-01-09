@@ -1,0 +1,68 @@
+<!--my/pages/course/data.wxml-->
+<view class="tabv">
+  <view class="tabcv" bindtap="tapTab" data-type="1">
+    <view class="{{chktab==1?'tabtxth':'tabtxt'}}">我的视频</view>
+    <view class="tabline" wx:if="{{chktab==1}}"></view>
+  </view>
+  <view class="tabcv" bindtap="tapTab" data-type="2">
+    <view class="{{chktab==2?'tabtxth':'tabtxt'}}">我的专栏</view>
+    <view class="tabline" wx:if="{{chktab==2}}"></view>
+  </view>
+</view>
+<view class="numberv">
+  <view class="numbertitlev">
+    <image src="../../resources/zonglan.png" class="numbertitleicon"></image>
+    <view class="numbertitletxt">数据总览</view>
+  </view>
+  <view class="numbercv">
+    <view class="numberc">
+      <view class="numbertag">总浏览量</view>
+      <view class="numberval">693</view>
+      <view class="numbertoday">今日 0</view>
+    </view>
+    <view class="numberline"></view>
+    <view class="numberc">
+      <view class="numbertag">总评论数</view>
+      <view class="numberval">4</view>
+      <view class="numbertoday">今日 0</view>
+    </view>
+    <view class="numberc">
+      <view class="numbertag">总分享数</view>
+      <view class="numberval">4</view>
+      <view class="numbertoday">今日 0</view>
+    </view>
+    <view class="numberline"></view>
+    <view class="numberc">
+      <view class="numbertag">总浏览量</view>
+      <view class="numberval">4</view>
+      <view class="numbertoday">今日 0</view>
+    </view>
+    <view class="numberc">
+      <view class="numbertag">总点赞数</view>
+      <view class="numberval">4</view>
+      <view class="numbertoday">今日 0</view>
+    </view>
+    <view class="numberline"></view>
+    <view class="numberc">
+      <view class="numbertag"></view>
+      <view class="numberval"></view>
+      <view class="numbertoday"></view>
+    </view>
+  </view>
+</view>
+
+<view class="datachartv">
+  <view class="datatitlev">
+    <view class="datatitlelv">
+      <image src="../../resources/zonglan.png" class="datatitleicon"></image>
+      <view class="datatitletxt">数据总览</view>
+    </view>
+    <view class="datatitlerv" bindtap="chooseDayOpt">
+      <view class="datadate">{{days[chkday]}}</view>
+      <image src="../../resources/downicon.png" class="datadownicon"></image>
+    </view>
+  </view>
+  <view class="echartv">
+    <ec-canvas id="mychart-dom-line" canvas-id="mychart-line" ec="{{ ecline }}"></ec-canvas>
+  </view>
+</view>

@@ -58,6 +58,9 @@ Page({
         //   url = "../../my/pages/account/index";
         //   break;
         // }
+      case 6:
+        url = "../../my/pages/course/index";
+        break;
     }
     wx.navigateTo({
       url: url
@@ -96,10 +99,10 @@ Page({
       }
     })
   },
-  InitUserInfo() {//获取用户信息
+  InitUserInfo() { //获取用户信息
     var that = this;
     var url = requestUrl + "/API/LoginApi/GetUserData?userId=" + getApp().globalData.WxUserId;
-    WxRequest.PostRequest(url,{}).then(res=>{
+    WxRequest.PostRequest(url, {}).then(res => {
 
     })
   },

@@ -82,6 +82,13 @@
     </view>
     <image src="/resources/comman/righticon.png" class="righticon"></image>
   </view>
+  <view class="menuc" bindtap="tapMenu" data-index="6">
+    <view class="menucl">
+      <image src="/resources/my/my-11.png" class="menuicon"></image>
+      <view class="menutxt">创课中心</view>
+    </view>
+    <image src="/resources/comman/righticon.png" class="righticon"></image>
+  </view>
 </view>
 
 

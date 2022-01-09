@@ -1,0 +1,9 @@
+{
+  "navigationBarTitleText": "创课中心",
+  "navigationBarBackgroundColor": "#f7f7f7",
+  "navigationBarTextStyle": "black",
+  "usingComponents": {
+    "loadding": "../../../components/loadding/index",
+    "contentcom": "../../components/content/index"
+  }
+}

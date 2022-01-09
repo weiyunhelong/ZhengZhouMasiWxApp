@@ -1,0 +1,71 @@
+<!--my/pages/course/index.wxml-->
+<!--用户信息-->
+<view class="userinfov">
+  <view class="userv">
+    <image src="/resources/comman/avatarUrl.jpg" class="avatarUrl"></image>
+    <view class="usercv">
+      <view class="username">李云飞</view>
+      <view class="userdesc">未设置签名</view>
+    </view>
+  </view>
+  <view class="tougaobtn" bindtap="TouGaoOpt">投稿</view>
+</view>
+
+<!--数据部分-->
+<view class="datav">
+  <view class="datatagv" bindtap="goDataOpt">
+    <view class="datatag">数据中心</view>
+    <view class="datatip">更多 ></view>
+  </view>
+  <view class="datacv">
+    <view class="datacitem">
+      <view class="datactitle">总浏览数</view>
+      <view class="datanumv">
+        <view class="datamdnum">8,321</view>
+        <view class="datasmnum">
+          <text decode="true">今日&nbsp;5</text>
+        </view>
+      </view>
+    </view>
+    <view class="dataline"></view>
+    <view class="datacitem" style="padding-left: 28rpx;">
+      <view class="datactitle">总评论数</view>
+      <view class="datanumv">
+        <view class="datamdnum">8,321</view>
+        <view class="datasmnum">
+          <text decode="true">今日&nbsp;5</text>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>
+
+<!--icon部分-->
+<view class="menuv">
+  <view class="menucv" data-id="1" bindtap="goMenuOpt">
+    <image class="menuicon" src="../../resources/data.png"></image>
+    <view class="menutext">数据中心</view>
+  </view>
+  <view class="menucv" data-id="2" bindtap="goMenuOpt">
+    <image class="menuicon" src="../../resources/dontai.png"></image>
+    <view class="menutext">我的动态</view>
+  </view>
+  <view class="menucv" data-id="3" bindtap="goMenuOpt">
+    <image class="menuicon" src="../../resources/xiaoxi.png"></image>
+    <view class="menutext">消息中心</view>
+  </view>
+  <view class="menucv" data-id="4" bindtap="goMenuOpt">
+    <image class="menuicon" src="../../resources/connent.png"></image>
+    <view class="menutext">内容管理</view>
+  </view>
+</view>
+
+<!--内容管理-->
+<view class="titlev" bindtap="goContentOpt">
+ <view class="titlel">内容管理</view>
+ <view class="titler">更多 ></view>
+</view>
+
+<contentcom receiveData="" showType="1"/>
+<contentcom receiveData="" showType="2"/>
+<contentcom receiveData="" showType="3"/>

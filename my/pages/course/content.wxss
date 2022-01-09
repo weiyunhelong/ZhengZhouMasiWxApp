@@ -1,0 +1,224 @@
+/* my/pages/course/content.wxss */
+/*TAB部分*/
+.tabv {
+  display: flex;
+  justify-content: space-around;
+  width: 100vw;
+  height: 88rpx;
+  margin-bottom: 8rpx;
+}
+
+.tabv .tabcv {
+  display: flex;
+  flex-direction: column;
+  justify-items: center;
+}
+
+.tabv .tabtxth {
+  padding-top: 24rpx;
+  padding-bottom: 18rpx;
+  font-size: 30rpx;
+  font-weight: 500;
+  color: #262626;
+}
+
+.tabv .tabtxt {
+  padding-top: 24rpx;
+  font-size: 30rpx;
+  color: #262626;
+}
+
+.tabv .tabline {
+  width: 28rpx;
+  height: 4rpx;
+  background: #F24540;
+  border-radius: 3rpx;
+  margin: 0 auto;
+}
+
+/*数据部分*/
+.bodyv {
+  background: #FFFFFF;
+  width: 100vw;
+  height: calc(100vh - 88rpx - 8rpx);
+  border-radius: 20rpx 20rpx 0px 0px;
+}
+
+.bodyv .statusv {
+  height: 88rpx;
+  padding-left: 32rpx;
+  display: flex;
+  line-height: 88rpx;
+}
+
+.bodyv .statusv .statustxth {
+  font-size: 30rpx;
+  font-weight: 500;
+  color: #262626;
+  margin-right: 40rpx;
+}
+
+.bodyv .statusv .statustxt {
+  font-size: 26rpx;
+  color: #999999;
+  margin-right: 40rpx;
+}
+
+.datav {
+  width: 100vw;
+  height: calc(100vh - 88rpx - 8rpx - 88rpx);
+}
+
+
+/*遮罩层部分*/
+.maskv {
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  z-index: 9999;
+  top: 0rpx;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.showMaskv {
+  animation: fadeInUp 1s ease-in-out forwards;
+  -webkit-animation: fadeInUp 1s ease-in-out forwards;
+  -moz-animation: fadeInUp 1s ease-in-out forwards;
+}
+
+.hideMaskv {
+  animation: fadeOutDown 1s ease-in-out forwards;
+  -webkit-animation: fadeOutDown 1s ease-in-out forwards;
+  -moz-animation: fadeOutDown 1s ease-in-out forwards;
+}
+
+
+@-webkit-keyframes fadeInUp {
+  from {
+    opacity: 0;
+    -webkit-transform: translate3d(0, 100%, 0);
+    transform: translate3d(0, 100%, 0);
+  }
+
+  to {
+    opacity: 1;
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    -webkit-transform: translate3d(0, 100%, 0);
+    transform: translate3d(0, 100%, 0);
+  }
+
+  to {
+    opacity: 1;
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+.fadeInUp {
+  -webkit-animation-name: fadeInUp;
+  animation-name: fadeInUp;
+}
+
+
+@-webkit-keyframes fadeOutDown {
+  from {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 0;
+    -webkit-transform: translate3d(0, 100%, 0);
+    transform: translate3d(0, 100%, 0);
+  }
+}
+
+@keyframes fadeOutDown {
+  from {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 0;
+    -webkit-transform: translate3d(0, 100%, 0);
+    transform: translate3d(0, 100%, 0);
+  }
+}
+
+.fadeOutDown {
+  -webkit-animation-name: fadeOutDown;
+  animation-name: fadeOutDown;
+}
+
+.maskv .maskcv {
+  width: 100vw;
+  height: 1100rpx;
+  background: #FFFFFF;
+  border-radius: 24rpx 24rpx 0rpx 0rpx;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+}
+
+.maskv .maskcv .title {
+  height: 100rpx;
+  padding-left: 32rpx;
+  line-height: 100rpx;
+  font-size: 30rpx;
+  font-weight: 500;
+  color: #262626;
+}
+
+.maskv .maskcv .reasontag {
+  font-size: 28rpx;
+  color: #999;
+  padding-left: 32rpx;
+}
+
+.maskv .maskcv .reasontxt {
+  font-size: 28rpx;
+  color: #666;
+  padding: 0 32rpx;
+}
+
+.maskv .maskcv .markv {
+  margin: 40rpx auto;
+  width: 686rpx;
+  height: 220rpx;
+  background: #F7F7F7;
+  border-radius: 12rpx;
+}
+
+.maskv .maskcv .marktxt {
+  padding: 20rpx 28rpx;
+  font-size: 28rpx;
+  color: #262626;
+  height: 180rpx;
+  width: 630rpx;
+}
+
+.maskv .maskcv .marktip {
+  color: #999999;
+}
+
+.maskv .maskcv .maskbtn {
+  width: 686rpx;
+  height: 92rpx;
+  background: #F24540;
+  border-radius: 46rpx;
+  position: absolute;
+  bottom: 76rpx;
+  left: 32rpx;
+  font-size: 32rpx;
+  font-weight: 500;
+  color: #FFFFFF;
+  text-align: center;
+  line-height: 92rpx;
+}
