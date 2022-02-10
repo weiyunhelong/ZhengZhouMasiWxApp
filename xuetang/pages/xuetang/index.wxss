@@ -1,0 +1,113 @@
+/* xuetang/pages/xuetang/index.wxss */
+.bodyv {
+  padding: 36rpx 32rpx;
+}
+
+.userv {
+  display: flex;
+}
+
+.avatar {
+  width: 104rpx;
+  height: 104rpx;
+  border-radius: 50%;
+  margin-right: 20rpx;
+}
+
+.nickname {
+  padding-top: 10rpx;
+  font-size: 32rpx;
+  color: #000000;
+}
+
+.userdesc {
+  padding-top: 10rpx;
+  font-size: 28rpx;
+  color: #999999;
+}
+
+.menuv {
+  width: 686rpx;
+  height: 340rpx;
+  background: #FFFFFF;
+  border-radius: 12rpx;
+  margin: 48rpx auto;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.menuc {
+  width: 170rpx;
+  height: 170rpx;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  justify-self: center;
+}
+
+.menuicon {
+  width: 60rpx;
+  height: 60rpx;
+  margin: 0 auto;
+}
+
+.menutxt {
+  font-size: 24rpx;
+  color: #262626;
+  padding-top: 16rpx;
+}
+
+.titlev {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 58rpx;
+}
+
+.titlev .title {
+  font-size: 32rpx;
+  font-weight: 500;
+  color: #000000;
+}
+
+.titlev .moretxt {
+  font-size: 24rpx;
+  color: #999999;
+  line-height: 50rpx;
+}
+
+.coursev {
+  display: flex;
+  margin-bottom: 58rpx;
+}
+
+.coursecover {
+  width: 260rpx;
+  height: 146rpx;
+  border-radius: 6rpx;
+  margin-right: 20rpx;
+}
+
+.coursec {
+  width: 406rpx;
+}
+
+.coursename {
+  font-size: 30rpx;
+  height: 112rpx;
+}
+
+.coursestatusv {
+  display: flex;
+  justify-content: space-between;
+  font-size: 24rpx;
+  color: #999999;
+}
+
+.coursestatus {
+  color: #262626;
+}
+
+.coursestatus2 {
+  color: #F24540;
+}

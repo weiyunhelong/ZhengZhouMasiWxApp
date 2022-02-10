@@ -1,0 +1,91 @@
+<!--xuetang/pages/xuetang/index.wxml-->
+<view class="bodyv">
+  <view class="userv">
+    <image src="/resources/comman/avatarUrl.jpg" class="avatar"></image>
+    <view class="userc">
+      <view class="nickname">貌似你很厉害</view>
+      <view class="userdesc">未设置签名</view>
+    </view>
+  </view>
+  <view class="menuv">
+    <view class="menuc" bindtap="tapMenu" data-menu="1">
+      <image src="../../resources/menu1.png" class="menuicon"></image>
+      <view class="menutxt">实践课</view>
+    </view>
+    <view class="menuc" bindtap="tapMenu" data-menu="2">
+      <image src="../../resources/menu2.png" class="menuicon"></image>
+      <view class="menutxt">实践报告</view>
+    </view>
+    <view class="menuc" bindtap="tapMenu" data-menu="3">
+      <image src="../../resources/menu3.png" class="menuicon"></image>
+      <view class="menutxt">我的作品</view>
+    </view>
+    <view class="menuc" bindtap="tapMenu" data-menu="4">
+      <image src="../../resources/menu4.png" class="menuicon"></image>
+      <view class="menutxt">我的考试</view>
+    </view>
+    <view class="menuc" bindtap="tapMenu" data-menu="5">
+      <image src="../../resources/menu5.png" class="menuicon"></image>
+      <view class="menutxt">我的创建</view>
+    </view>
+    <view class="menuc" bindtap="tapMenu" data-menu="6">
+      <image src="../../resources/menu6.png" class="menuicon"></image>
+      <view class="menutxt">活动预约</view>
+    </view>
+  </view>
+  <view class="titlev" bindtap="tapMenu" data-menu="1">
+    <view class="title">我的实践课</view>
+    <view class="moretxt">更多 ></view>
+  </view>
+
+  <view class="coursev">
+    <image src="/resources/comman/avatarUrl.jpg" class="coursecover" mode="aspectFill"></image>
+    <view class="coursec">
+      <view class="coursename showTwohangTxt">红色摇篮-安远路矿工人运动纪念馆</view>
+      <view class="coursestatusv">
+        <view class="coursesowner">负责人：李某</view>
+        <view class="coursestatus">进行中</view>
+      </view>
+    </view>
+  </view>
+  <view class="coursev">
+    <image src="/resources/comman/avatarUrl.jpg" class="coursecover" mode="aspectFill"></image>
+    <view class="coursec">
+      <view class="coursename showTwohangTxt">红色摇篮-安远路矿工人运动纪念馆</view>
+      <view class="coursestatusv">
+        <view class="coursesowner">负责人：李某</view>
+        <view class="coursestatus2">报名中</view>
+      </view>
+    </view>
+  </view>
+  <view class="coursev">
+    <image src="/resources/comman/avatarUrl.jpg" class="coursecover" mode="aspectFill"></image>
+    <view class="coursec">
+      <view class="coursename showTwohangTxt">红色摇篮-安远路矿工人运动纪念馆</view>
+      <view class="coursestatusv">
+        <view class="coursesowner">负责人：李某</view>
+        <view class="">已完成</view>
+      </view>
+    </view>
+  </view>
+  <view class="coursev">
+    <image src="/resources/comman/avatarUrl.jpg" class="coursecover" mode="aspectFill"></image>
+    <view class="coursec">
+      <view class="coursename showTwohangTxt">红色摇篮-安远路矿工人运动纪念馆</view>
+      <view class="coursestatusv">
+        <view class="coursesowner">负责人：李某</view>
+        <view class="coursestatus">进行中</view>
+      </view>
+    </view>
+  </view>
+  <view class="coursev">
+    <image src="/resources/comman/avatarUrl.jpg" class="coursecover" mode="aspectFill"></image>
+    <view class="coursec">
+      <view class="coursename showTwohangTxt">红色摇篮-安远路矿工人运动纪念馆</view>
+      <view class="coursestatusv">
+        <view class="coursesowner">负责人：李某</view>
+        <view class="coursestatus">进行中</view>
+      </view>
+    </view>
+  </view>
+</view>

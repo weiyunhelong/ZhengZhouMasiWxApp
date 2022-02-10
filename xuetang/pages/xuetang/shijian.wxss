@@ -1,0 +1,45 @@
+/* xuetang/pages/xuetang/shijian.wxss */
+page{
+  background-color: #fff;
+}
+
+.coursev {
+  display: flex;
+  height: 202rpx;
+  border-bottom: 1rpx solid #eee;
+  margin: 0 auto;
+  width: 686rpx;
+}
+
+.coursecover {
+  width: 260rpx;
+  height: 146rpx;
+  border-radius: 6rpx;
+  margin-right: 20rpx;
+  margin-top: 28rpx;
+}
+
+.coursec {
+  width: 406rpx;
+  margin-top: 28rpx;
+}
+
+.coursename {
+  font-size: 30rpx;
+  height: 112rpx;
+}
+
+.coursestatusv {
+  display: flex;
+  justify-content: space-between;
+  font-size: 24rpx;
+  color: #999999;
+}
+
+.coursestatus {
+  color: #262626;
+}
+
+.coursestatus2 {
+  color: #F24540;
+}

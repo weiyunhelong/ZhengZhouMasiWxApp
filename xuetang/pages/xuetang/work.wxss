@@ -1,0 +1,271 @@
+/* xuetang/pages/xuetang/work.wxss */
+.tabv {
+  width: 100vw;
+  height: 88rpx;
+  display: flex;
+}
+
+.tabv .tabc {
+  width: 25vw;
+  height: 88rpx;
+  text-align: center;
+}
+
+.tabv .tabc .tabtxth {
+  height: 88rpx;
+  line-height: 88rpx;
+  font-size: 30rpx;
+  font-weight: 600;
+  color: #262626;
+}
+
+.tabv .tabc .tabtxt {
+  height: 88rpx;
+  line-height: 88rpx;
+  font-size: 30rpx;
+  color: #999;
+}
+
+.tabv .tabc .tabline {
+  width: 28rpx;
+  height: 4rpx;
+  background: #F24540;
+  border-radius: 3rpx;
+  margin: -6rpx auto 0;
+}
+
+.listv {
+  width: 100vw;
+  height: calc(100vh - 88rpx - 20rpx);
+  padding-top: 20rpx;
+  text-align: center;
+}
+
+.workv {
+  width: 686rpx;
+  height: 150rpx;
+  border-bottom: 1rpx solid #eee;
+  margin: 0 auto;
+  display: flex;
+  padding: 28rpx 0;
+}
+
+.worklv {
+  width: 268rpx;
+  height: 150rpx;
+  margin-right: 24rpx;
+  position: relative;
+}
+
+.workcover {
+  width: 268rpx;
+  height: 150rpx;
+  border-radius: 6rpx;
+}
+
+.finishiconv {
+  width: 268rpx;
+  height: 150rpx;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.4);
+  border-radius: 6rpx;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  justify-self: center;
+}
+
+.finishicon {
+  width: 92rpx;
+  height: 92rpx;
+  margin: 0 auto;
+}
+
+.workname {
+  width: 380rpx;
+  font-size: 30rpx;
+  color: #262626;
+}
+
+.workowner {
+  height: 58rpx;
+  line-height: 58rpx;
+  text-align: left;
+  font-size: 24rpx;
+  color: #999999;
+}
+
+.workcommentv {
+  display: flex;
+}
+
+.workcommenttxt {
+  font-size: 28rpx;
+  color: #666666;
+}
+
+.workcommenttxt2 {
+  font-size: 28rpx;
+  color: #F24540;
+}
+
+.msgicon {
+  width: 30rpx;
+  height: 28rpx;
+  margin: 8rpx;
+}
+
+.worktypev {
+  width: 268rpx;
+  height: 44rpx;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, #000000 100%);
+  border-radius: 6rpx;
+  opacity: 0.4;
+  text-align: center;
+  line-height: 44rpx;
+  position: absolute;
+  top: 106rpx;
+  left: 0;
+}
+
+.worktypetxt {
+  font-size: 20rpx;
+  color: #FFFFFF;
+}
+
+/*遮罩层部分*/
+.maskv {
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  z-index: 9999;
+  top: 0rpx;
+  left: 0rpx;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.showMaskv {
+  animation: fadeInUp 1s ease-in-out forwards;
+  -webkit-animation: fadeInUp 1s ease-in-out forwards;
+  -moz-animation: fadeInUp 1s ease-in-out forwards;
+}
+
+.hideMaskv {
+  animation: fadeOutDown 1s ease-in-out forwards;
+  -webkit-animation: fadeOutDown 1s ease-in-out forwards;
+  -moz-animation: fadeOutDown 1s ease-in-out forwards;
+}
+
+
+@-webkit-keyframes fadeInUp {
+  from {
+    opacity: 0;
+    -webkit-transform: translate3d(0, 100%, 0);
+    transform: translate3d(0, 100%, 0);
+  }
+
+  to {
+    opacity: 1;
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    -webkit-transform: translate3d(0, 100%, 0);
+    transform: translate3d(0, 100%, 0);
+  }
+
+  to {
+    opacity: 1;
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+.fadeInUp {
+  -webkit-animation-name: fadeInUp;
+  animation-name: fadeInUp;
+}
+
+
+@-webkit-keyframes fadeOutDown {
+  from {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 0;
+    -webkit-transform: translate3d(0, 100%, 0);
+    transform: translate3d(0, 100%, 0);
+  }
+}
+
+@keyframes fadeOutDown {
+  from {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 0;
+    -webkit-transform: translate3d(0, 100%, 0);
+    transform: translate3d(0, 100%, 0);
+  }
+}
+
+.fadeOutDown {
+  -webkit-animation-name: fadeOutDown;
+  animation-name: fadeOutDown;
+}
+
+.maskbodyv {
+  width: 100vw;
+  height: 60vh;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  z-index: 999;
+  background: #fff;
+  border-top-left-radius: 20rpx;
+  border-top-right-radius: 20rpx;
+}
+
+.masktitle {
+  height: 100rpx;
+  line-height: 100rpx;
+  padding-left: 32rpx;
+  font-size: 30rpx;
+  font-weight: 500;
+  color: #262626;
+}
+
+.masktip {
+  padding-left: 32rpx;
+  font-size: 28rpx;
+  color: #999999;
+}
+
+.masktxt {
+  width: 686rpx;
+  height: calc(60vh - 300rpx);
+  font-size: 28rpx;
+  color: #666;
+  margin: 0 auto;
+}
+
+.maskbtn {
+  width: 686rpx;
+  height: 92rpx;
+  background: #F24540;
+  border-radius: 46rpx;
+  margin: 0 auto;
+  font-size: 32rpx;
+  font-weight: 500;
+  color: #FFFFFF;
+  text-align: center;
+  line-height: 92rpx;
+}

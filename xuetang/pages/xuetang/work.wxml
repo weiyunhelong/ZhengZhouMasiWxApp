@@ -1,0 +1,102 @@
+<!--xuetang/pages/xuetang/work.wxml-->
+<!--TAB部分-->
+<view class="tabv">
+  <view class="tabc" bindtap="tapTab" data-tab="0">
+    <view class="{{chktab==0?'tabtxth':'tabtxt'}}">全部</view>
+    <view class="tabline" wx:if="{{chktab==0}}"></view>
+  </view>
+  <view class="tabc" bindtap="tapTab" data-tab="1">
+    <view class="{{chktab==1?'tabtxth':'tabtxt'}}">活动</view>
+    <view class="tabline" wx:if="{{chktab==1}}"></view>
+  </view>
+  <view class="tabc" bindtap="tapTab" data-tab="2">
+    <view class="{{chktab==2?'tabtxth':'tabtxt'}}">任务</view>
+    <view class="tabline" wx:if="{{chktab==2}}"></view>
+  </view>
+  <view class="tabc" bindtap="tapTab" data-tab="3">
+    <view class="{{chktab==3?'tabtxth':'tabtxt'}}">优质</view>
+    <view class="tabline" wx:if="{{chktab==3}}"></view>
+  </view>
+</view>
+
+<!--列表数据部分-->
+<scroll-view scroll-y="true" class="listv">
+  <view class="workv">
+    <view class="worklv">
+      <image src="/resources/comman/avatarUrl.jpg" mode="aspectFill" class="workcover"></image>
+      <view class="finishiconv">
+        <image src="../../resources/finish.png" class="finishicon"></image>
+      </view>
+    </view>
+    <view class="workrv">
+      <view class="workname showOnehangTxt">有些事情想想难，其实只要行动起来，也很简单</view>
+      <view class="workowner">负责人：某某</view>
+      <view class="workcommentv" bindtap="showCommentOpt">
+        <view class="workcommenttxt">评论：</view>
+        <view class="workcommenttxt2">有评论</view>
+        <image src="../../resources/msg.png" class="msgicon"></image>
+      </view>
+    </view>
+  </view>
+  <view class="workv">
+    <view class="worklv">
+      <image src="/resources/comman/avatarUrl.jpg" mode="aspectFill" class="workcover"></image>
+      <view class="worktypev">
+        <view class="worktypetxt">活动</view>
+      </view>
+    </view>
+    <view class="workrv">
+      <view class="workname showOnehangTxt">有些事情想想难，其实只要行动起来，也很简单</view>
+      <view class="workowner">负责人：某某</view>
+      <view class="workcommentv">
+        <view class="workcommenttxt">评论：</view>
+        <view class="workcommenttxt2">有评论</view>
+        <image src="../../resources/msg.png" class="msgicon"></image>
+      </view>
+    </view>
+  </view>
+  <view class="workv">
+    <view class="worklv">
+      <image src="/resources/comman/avatarUrl.jpg" mode="aspectFill" class="workcover"></image>
+      <view class="worktypev">
+        <view class="worktypetxt">任务</view>
+      </view>
+    </view>
+    <view class="workrv">
+      <view class="workname showOnehangTxt">有些事情想想难，其实只要行动起来，也很简单</view>
+      <view class="workowner">负责人：某某</view>
+      <view class="workcommentv">
+        <view class="workcommenttxt">评论：</view>
+        <view class="workcommenttxt2">有评论</view>
+        <image src="../../resources/msg.png" class="msgicon"></image>
+      </view>
+    </view>
+  </view>
+  <view class="workv">
+    <view class="worklv">
+      <image src="/resources/comman/avatarUrl.jpg" mode="aspectFill" class="workcover"></image>
+      <view class="worktypev">
+        <view class="worktypetxt">优质</view>
+      </view>
+    </view>
+    <view class="workrv">
+      <view class="workname showOnehangTxt">有些事情想想难，其实只要行动起来，也很简单</view>
+      <view class="workowner">负责人：某某</view>
+      <view class="workcommentv">
+        <view class="workcommenttxt">评论：</view>
+        <view class="workcommenttxt2">有评论</view>
+        <image src="../../resources/msg.png" class="msgicon"></image>
+      </view>
+    </view>
+  </view>
+</scroll-view>
+
+<!--显示操作浮窗-->
+<view class="maskv {{showMaskAni?'showMaskv':'hideMaskv'}}" wx:if="{{showMask}}">
+  <view class="maskbodyv">
+    <view class="masktitle">老师评论</view>
+    <view class="masktip">评论:</view>
+    <scroll-view scroll-y="true" class="masktxt">习近平新时代中国特色社会主义思想是当代中国马克思主义、二十一世纪马克思主义，是中华文化和中国精神的时代精华，实现了马克思主义中国化新的飞跃。十九届六中全会决议，用10个“明确”概括了核心内容</scroll-view>
+    <view class="maskbtn" bindtap="closeMask">关闭</view>
+  </view>
+</view>

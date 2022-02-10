@@ -14,26 +14,8 @@
       "list": [
         {
           "name": "",
-          "pathName": "my/pages/chengji/index",
+          "pathName": "xuetang/pages/xuetang/work",
           "query": "",
-          "scene": null
-        },
-        {
-          "name": "",
-          "pathName": "chat/pages/chat/index",
-          "query": "",
-          "scene": null
-        },
-        {
-          "name": "",
-          "pathName": "chat/pages/chat/adduser",
-          "query": "",
-          "scene": null
-        },
-        {
-          "name": "",
-          "pathName": "chat/pages/chat/member",
-          "query": "id=0",
           "scene": null
         }
       ]

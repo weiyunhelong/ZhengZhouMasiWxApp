@@ -1,0 +1,8 @@
+{
+  "navigationBarBackgroundColor": "#ffffff",
+  "navigationBarTextStyle": "black",
+  "navigationBarTitleText": "我的实践课",
+  "usingComponents": {
+    "loadding": "../../../components/loadding/index"
+  }
+}

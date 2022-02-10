@@ -1,7 +1,4 @@
-// my/pages/chengji/index.js
-var requestUrl = getApp().globalData.requestUrl;
-var WxRequest = require('../../../utils/WxRequest.js');
-
+// xuetang/pages/xuetang/test.js
 Page({
 
   /**

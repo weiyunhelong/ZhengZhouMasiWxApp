@@ -1,4 +1,4 @@
-// my/pages/chengji/index.js
+// xuetang/pages/xuetang/work.js
 var requestUrl = getApp().globalData.requestUrl;
 var WxRequest = require('../../../utils/WxRequest.js');
 
@@ -8,7 +8,9 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    chktab: 0,
+    showMask: false,
+    showMaskAni: false,
   },
 
   /**
@@ -17,7 +19,30 @@ Page({
   onLoad: function (options) {
 
   },
-
+  tapTab(e) { //切换tab
+    var that = this;
+    that.setData({
+      chktab: e.currentTarget.dataset.tab
+    })
+  },
+  showCommentOpt(e) { //显示评论浮窗
+    var that = this;
+    that.setData({
+      showMask: true,
+      showMaskAni: true,
+    })
+  },
+  closeMask() {//关闭评论浮窗
+    var that = this;
+    that.setData({
+      showMaskAni: false,
+    })
+    setTimeout(() => {
+      that.setData({
+        showMask: false,
+      })
+    }, 1000);
+  },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */

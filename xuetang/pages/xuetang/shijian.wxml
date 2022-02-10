@@ -1,0 +1,51 @@
+<!--xuetang/pages/xuetang/shijian.wxml-->
+<view class="coursev">
+  <image src="/resources/comman/avatarUrl.jpg" class="coursecover" mode="aspectFill"></image>
+  <view class="coursec">
+    <view class="coursename showTwohangTxt">红色摇篮-安远路矿工人运动纪念馆</view>
+    <view class="coursestatusv">
+      <view class="coursesowner">负责人：李某</view>
+      <view class="coursestatus">进行中</view>
+    </view>
+  </view>
+</view>
+<view class="coursev">
+  <image src="/resources/comman/avatarUrl.jpg" class="coursecover" mode="aspectFill"></image>
+  <view class="coursec">
+    <view class="coursename showTwohangTxt">红色摇篮-安远路矿工人运动纪念馆</view>
+    <view class="coursestatusv">
+      <view class="coursesowner">负责人：李某</view>
+      <view class="coursestatus2">报名中</view>
+    </view>
+  </view>
+</view>
+<view class="coursev">
+  <image src="/resources/comman/avatarUrl.jpg" class="coursecover" mode="aspectFill"></image>
+  <view class="coursec">
+    <view class="coursename showTwohangTxt">红色摇篮-安远路矿工人运动纪念馆</view>
+    <view class="coursestatusv">
+      <view class="coursesowner">负责人：李某</view>
+      <view class="">已完成</view>
+    </view>
+  </view>
+</view>
+<view class="coursev">
+  <image src="/resources/comman/avatarUrl.jpg" class="coursecover" mode="aspectFill"></image>
+  <view class="coursec">
+    <view class="coursename showTwohangTxt">红色摇篮-安远路矿工人运动纪念馆</view>
+    <view class="coursestatusv">
+      <view class="coursesowner">负责人：李某</view>
+      <view class="coursestatus">进行中</view>
+    </view>
+  </view>
+</view>
+<view class="coursev">
+  <image src="/resources/comman/avatarUrl.jpg" class="coursecover" mode="aspectFill"></image>
+  <view class="coursec">
+    <view class="coursename showTwohangTxt">红色摇篮-安远路矿工人运动纪念馆</view>
+    <view class="coursestatusv">
+      <view class="coursesowner">负责人：李某</view>
+      <view class="coursestatus">进行中</view>
+    </view>
+  </view>
+</view>

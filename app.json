@@ -90,6 +90,17 @@
       "pages/info/index",
       "pages/webview/index"
     ]
+  }, {
+    "root": "xuetang",
+    "pages": [
+      "pages/xuetang/index",
+      "pages/xuetang/shijian",
+      "pages/xuetang/baogao",
+      "pages/xuetang/work",
+      "pages/xuetang/test",
+      "pages/xuetang/create",
+      "pages/xuetang/book"
+    ]
   }],
   "window": {
     "backgroundTextStyle": "light",

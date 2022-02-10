@@ -1,4 +1,4 @@
-// my/pages/chengji/index.js
+// xuetang/pages/xuetang/index.js
 var requestUrl = getApp().globalData.requestUrl;
 var WxRequest = require('../../../utils/WxRequest.js');
 
@@ -17,7 +17,34 @@ Page({
   onLoad: function (options) {
 
   },
-
+  tapMenu(e) { //点击菜单
+    var that = this;
+    var url = "";
+    var index =parseInt(e.currentTarget.dataset.menu);
+    switch (index) {
+      case 1:
+        url = "../xuetang/shijian";
+        break;
+      case 2:
+        url = "../xuetang/baogao";
+        break;
+      case 3:
+        url = "../xuetang/work";
+        break;
+      case 4:
+        url = "../xuetang/test";
+        break;
+      case 5:
+        url = "../xuetang/create";
+        break;
+      case 6:
+        url = "../xuetang/book";
+        break;
+    }
+    wx.navigateTo({
+      url: url
+    })
+  },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */

@@ -1,0 +1,8 @@
+{
+  "navigationBarBackgroundColor": "#f7f7f7",
+  "navigationBarTextStyle": "black",
+  "navigationBarTitleText": "实践报告",
+  "usingComponents": {
+    "loadding": "../../../components/loadding/index"
+  }
+}
