@@ -1,0 +1,38 @@
+<!--chat/pages/chat/member.wxml-->
+<view class="typev">群主</view>
+<view class="memberv">
+  <image src="/resources/comman/avatarUrl.jpg" class="avatarUrl"></image>
+  <view class="membername">矫瑶海</view>
+</view>
+
+<view class="typev">教师团队</view>
+<view class="memberv">
+  <image src="/resources/comman/avatarUrl.jpg" class="avatarUrl"></image>
+  <view class="membername">矫瑶海</view>
+</view>
+
+<view class="typev">成员</view>
+<view class="memberv">
+  <image src="/resources/comman/avatarUrl.jpg" class="avatarUrl"></image>
+  <view class="membername">矫瑶海</view>
+</view>
+<view class="memberv">
+  <image src="/resources/comman/avatarUrl.jpg" class="avatarUrl"></image>
+  <view class="membername">矫瑶海</view>
+</view>
+<view class="memberv">
+  <image src="/resources/comman/avatarUrl.jpg" class="avatarUrl"></image>
+  <view class="membername">矫瑶海</view>
+</view>
+<view class="memberv">
+  <image src="/resources/comman/avatarUrl.jpg" class="avatarUrl"></image>
+  <view class="membername">矫瑶海</view>
+</view>
+<view class="memberv">
+  <image src="/resources/comman/avatarUrl.jpg" class="avatarUrl"></image>
+  <view class="membername">矫瑶海</view>
+</view>
+<view class="memberv">
+  <image src="/resources/comman/avatarUrl.jpg" class="avatarUrl"></image>
+  <view class="membername">矫瑶海</view>
+</view>

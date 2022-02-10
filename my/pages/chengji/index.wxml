@@ -1,0 +1,58 @@
+<!--my/pages/chengji/index.wxml-->
+<view class="topv">
+  <view class="userv">
+    <view class="usercv">
+      <image class="usertx" src="/resources/comman/avatarUrl.jpg"></image>
+      <view class="usertxt">已获得1枚勋章</view>
+    </view>
+  </view>
+</view>
+<image src="../../resources/btmlinev.png" class="btmlinev"></image>
+
+<view class="xunzhangv">
+  <view class="title">所有勋章</view>
+  <view class="xunzhangvv">
+    <view class="xunzhangc">
+      <image src="../../resources/xunzhang1.png" class="xunzhangicon"></image>
+      <view class="xunzhangtxt xunzhangtxtblue">已获得</view>
+      <view class="progressv">
+        <view class="progressh" style="width: 100%;"></view>
+      </view>
+    </view>
+    <view class="xunzhangc">
+      <image src="../../resources/xunzhang2.png" class="xunzhangicon"></image>
+      <view class="xunzhangtxt xunzhangtxtblack">Lv.2勋章</view>
+      <view class="progressv">
+        <view class="progressh" style="width: 20%;"></view>
+      </view>
+    </view>
+    <view class="xunzhangc">
+      <image src="../../resources/xunzhang3.png" class="xunzhangicon"></image>
+      <view class="xunzhangtxt">Lv.3勋章</view>
+      <view class="progressv">
+        <view class="progressh" style="width: 0%;"></view>
+      </view>
+    </view>
+    <view class="xunzhangc">
+      <image src="../../resources/xunzhang4.png" class="xunzhangicon"></image>
+      <view class="xunzhangtxt">Lv.4勋章</view>
+      <view class="progressv">
+        <view class="progressh" style="width: 0%;"></view>
+      </view>
+    </view>
+    <view class="xunzhangc">
+      <image src="../../resources/xunzhang5.png" class="xunzhangicon"></image>
+      <view class="xunzhangtxt">Lv.5勋章</view>
+      <view class="progressv">
+        <view class="progressh" style="width: 0%;"></view>
+      </view>
+    </view>
+    <view class="xunzhangc">
+      <image src="../../resources/xunzhang6.png" class="xunzhangicon"></image>
+      <view class="xunzhangtxt">Lv.6勋章</view>
+      <view class="progressv">
+        <view class="progressh" style="width: 0%;"></view>
+      </view>
+    </view>
+  </view>
+</view>

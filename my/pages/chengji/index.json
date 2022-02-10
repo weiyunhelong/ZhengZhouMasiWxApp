@@ -1,0 +1,8 @@
+{
+  "navigationBarBackgroundColor": "#141B2D",
+  "navigationBarTextStyle": "white",
+  "navigationBarTitleText": "我的勋章",
+  "usingComponents": {
+    "loadding": "../../../components/loadding/index"
+  }
+}

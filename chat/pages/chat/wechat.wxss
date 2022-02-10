@@ -1,0 +1,401 @@
+/* chat/pages/chat/wechat.wxss */
+page {
+  background-color: #fff;
+}
+
+.topborder {
+  width: 100vw;
+  height: 1rpx;
+  background-color: #eee;
+  position: sticky;
+  top: 0;
+  left: 0;
+  z-index: 999;
+}
+
+.bodyv {
+  width: 100vw;
+  height: calc(100vh - 255rpx);
+}
+
+.datetxt {
+  text-align: center;
+  height: 100rpx;
+  line-height: 100rpx;
+  font-size: 28rpx;
+  color: #999999;
+}
+
+.leftv {
+  margin-bottom: 32rpx;
+  padding-left: 32rpx;
+  display: flex;
+}
+
+.txicon {
+  width: 60rpx;
+  height: 60rpx;
+  border-radius: 50%;
+  margin-right: 16rpx;
+}
+
+.name {
+  font-size: 24rpx;
+  color: #666666;
+  margin-bottom: 8rpx;
+}
+
+.msgcv {
+  font-size: 34rpx;
+  color: #000000;
+  background: #F7F7F7;
+  border-radius: 12rpx;
+  padding: 20rpx 28rpx;
+  max-width: 464rpx;
+}
+
+
+.rightv {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 32rpx;
+  margin-right: 32rpx;
+}
+
+.workv {
+  width: 490rpx;
+  height: 260rpx;
+  background: #FFFFFF;
+  border: 1rpx solid #E3E3E3;
+  border-radius: 12rpx;
+}
+
+.workc {
+  width: 442rpx;
+  height: 168rpx;
+  border-bottom: 1rpx solid #E3E3E3;
+  margin: 24rpx auto 0;
+  display: flex;
+}
+
+.workcover {
+  width: 144rpx;
+  height: 144rpx;
+  border-radius: 8rpx;
+  margin-right: 24rpx;
+}
+
+.workname {
+  width: 275rpx;
+  max-height: 132rpx;
+  font-size: 32rpx;
+  color: #262626;
+}
+
+.workowner {
+  height: 68rpx;
+  line-height: 68rpx;
+  font-size: 24rpx;
+  color: #999999;
+  padding-left: 24rpx;
+}
+
+.msgcv2 {
+  color: #fff;
+  background: #F24540;
+  margin-right: 16rpx;
+}
+
+.btmvv {
+  width: 100vw;
+  background: #FFFFFF;
+  border-top: 1rpx solid #eee;
+  position: fixed;
+  z-index: 999;
+  bottom: 0;
+  left: 0;
+}
+
+.btmv {
+  display: flex;
+  padding: 16rpx 32rpx;
+}
+
+.btmbtn {
+  width: 208rpx;
+  height: 60rpx;
+  line-height: 60rpx;
+  background: #FFFFFF;
+  border-radius: 30rpx;
+  border: 1rpx solid #E3E3E3;
+  display: flex;
+  justify-content: center;
+  margin-right: 20rpx;
+}
+
+.btmbtnicon {
+  width: 30rpx;
+  height: 30rpx;
+  margin-top: 16rpx;
+  margin-right: 8rpx;
+}
+
+.btmbtntxt {
+  font-size: 28rpx;
+  color: #262626;
+}
+
+.btmc {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0 32rpx;
+  justify-content: space-between;
+}
+
+.btminput {
+  width: 610rpx;
+  height: 80rpx;
+  background: #F7F7F7;
+  border-radius: 40rpx;
+}
+
+.btmoptv {
+  width: 76rpx;
+  height: 80rpx;
+  text-align: center;
+}
+
+.btmopticon {
+  width: 44rpx;
+  height: 44rpx;
+  margin: 18rpx 0rpx 0rpx 18rpx;
+}
+
+.btminputtxt {
+  width: 550rpx;
+  height: 80rpx;
+  line-height: 80rpx;
+  padding-left: 32rpx;
+  font-size: 28rpx;
+  color: #262626;
+}
+
+.btminputtip {
+  color: #999999;
+}
+
+.btmoptvc {
+  width: 100%;
+  height: 420rpx;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.btmoptc {
+  width: 120rpx;
+  margin-top: 40rpx;
+  text-align: center;
+  margin-right: 68rpx;
+}
+
+.btmoptcblock {
+  width: 120rpx;
+  height: 120rpx;
+  background: #F7F7F7;
+  border-radius: 20rpx;
+  text-align: center;
+}
+
+.btmoptcicon {
+  width: 60rpx;
+  height: 60rpx;
+  margin: 30rpx auto;
+}
+
+.btmoptctxt {
+  padding-top: 10rpx;
+  font-size: 24rpx;
+  color: #262626;
+}
+.jiesan{  
+  width: 100%;
+  text-align: center;
+  font-size: 28rpx;
+  color: #999;
+  height: 100rpx;
+  line-height: 100rpx;
+}
+
+/*遮罩层部分*/
+.maskv {
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  z-index: 9999;
+  top: 0rpx;
+  left: 0rpx;
+  background-color: #f7f7f7;
+  border-top-right-radius: 20rpx;
+  border-top-left-radius: 20rpx;
+}
+
+.showMaskv {
+  animation: fadeInUp 1s ease-in-out forwards;
+  -webkit-animation: fadeInUp 1s ease-in-out forwards;
+  -moz-animation: fadeInUp 1s ease-in-out forwards;
+}
+
+.hideMaskv {
+  animation: fadeOutDown 1s ease-in-out forwards;
+  -webkit-animation: fadeOutDown 1s ease-in-out forwards;
+  -moz-animation: fadeOutDown 1s ease-in-out forwards;
+}
+
+
+@-webkit-keyframes fadeInUp {
+  from {
+    opacity: 0;
+    -webkit-transform: translate3d(0, 100%, 0);
+    transform: translate3d(0, 100%, 0);
+  }
+
+  to {
+    opacity: 1;
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    -webkit-transform: translate3d(0, 100%, 0);
+    transform: translate3d(0, 100%, 0);
+  }
+
+  to {
+    opacity: 1;
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+.fadeInUp {
+  -webkit-animation-name: fadeInUp;
+  animation-name: fadeInUp;
+}
+
+
+@-webkit-keyframes fadeOutDown {
+  from {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 0;
+    -webkit-transform: translate3d(0, 100%, 0);
+    transform: translate3d(0, 100%, 0);
+  }
+}
+
+@keyframes fadeOutDown {
+  from {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 0;
+    -webkit-transform: translate3d(0, 100%, 0);
+    transform: translate3d(0, 100%, 0);
+  }
+}
+
+.fadeOutDown {
+  -webkit-animation-name: fadeOutDown;
+  animation-name: fadeOutDown;
+}
+
+.masktopv {
+  width: 100%;
+  height: 108rpx;
+  background: #f3f3f3;
+  border-radius: 20rpx 20rpx 0rpx 0rpx;
+  display: flex;
+}
+
+.masktoptxt {
+  width: 300rpx;
+  height: 108rpx;
+  line-height: 108rpx;
+  text-align: center;
+  margin-left: 225rpx;
+  font-size: 30rpx;
+  font-weight: 500;
+  color: #262626;
+}
+
+.masktopopt {
+  width: 108rpx;
+  height: 108rpx;
+  text-align: center;
+  font-size: 28rpx;
+  color: #999999;
+  line-height: 108rpx;
+  margin-left: 117rpx;
+}
+
+.masklistv {
+  width: 100%;
+  text-align: center;
+  height: calc(100vh - 110rpx - 28rpx);
+  padding-top: 28rpx;
+}
+
+.maskworkv {
+  width: 686rpx;
+  height: 184rpx;
+  background: #FFFFFF;
+  border-radius: 12rpx;
+  margin: 0rpx auto 30rpx;
+  display: flex;
+  justify-content: center;
+}
+
+.maskworkcc {
+  width: 452rpx;
+  padding-top: 46rpx;
+  margin-right: 74rpx;
+}
+
+.maskworkname {
+  font-size: 30rpx;
+  font-weight: 500;
+  color: #262626;
+}
+
+.maskworkdesc {
+  padding-top: 12rpx;
+  font-size: 24rpx;
+  color: #999999;
+}
+
+.maskworkcv {
+  width: 100rpx;
+  padding-top: 46rpx;
+  text-align: center;
+}
+
+.sendicon {
+  width: 40rpx;
+  height: 40rpx;
+  margin: 0 auto;
+}
+
+.sendtxt {
+  font-size: 24rpx;
+  color: #F24540;
+}
+.msgimg{
+  width: 320rpx;
+  height: 320rpx;  
+}

@@ -1,0 +1,9 @@
+{
+  "navigationBarBackgroundColor": "#fff",
+  "navigationBarTextStyle": "black",
+  "navigationBarTitleText": "",
+  "usingComponents": {
+    "loadding": "../../../components/loadding/index",
+    "nodatacom": "../../../components/nodata/index"
+  }
+}

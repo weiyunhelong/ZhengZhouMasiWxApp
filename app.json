@@ -41,6 +41,14 @@
     "pages/logs/logs"
   ],
   "subPackages": [{
+    "root": "chat",
+    "pages": [
+      "pages/chat/index",
+      "pages/chat/wechat",
+      "pages/chat/member",
+      "pages/chat/adduser"
+    ]
+  }, {
     "root": "wxauth",
     "pages": [
       "pages/register/index",
@@ -51,6 +59,7 @@
   }, {
     "root": "my",
     "pages": [
+      "pages/chengji/index",
       "pages/info/index",
       "pages/info/nickname",
       "pages/info/desc",

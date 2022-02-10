@@ -1,0 +1,60 @@
+/* chat/pages/chat/adduser.wxss */
+page {
+  background-color: #fff;
+}
+
+.topborder {
+  width: 100vw;
+  height: 1rpx;
+  background-color: #eee;
+  position: sticky;
+  top: 0;
+  left: 0;
+  z-index: 999;
+}
+
+.datav {
+  width: 100vw;
+  height: calc(100vh - 178rpx);
+}
+
+.datac {
+  display: flex;
+  height: 128rpx;
+  padding-left: 32rpx;
+}
+.radio{
+  margin-top: 45rpx;
+}
+.avatar {
+  width: 80rpx;
+  height: 80rpx;
+  margin: 24rpx 20rpx;
+  border-radius: 50%;
+}
+
+.name {
+  height: 128rpx;
+  line-height: 128rpx;
+  font-size: 32rpx;
+  color: #262626;
+}
+
+.btmv {
+  width: 100vw;
+  height: 108rpx;
+  border-top: 1rpx solid #eee;
+}
+
+.btn {
+  width: 686rpx;
+  height: 92rpx;
+  background: #F24540;
+  border-radius: 46rpx;
+  margin: 8rpx auto;
+  font-size: 32rpx;
+  font-weight: 500;
+  color: #FFFFFF;
+  line-height: 92rpx;
+  text-align: center;
+}

@@ -1,0 +1,25 @@
+<!--chat/pages/chat/index.wxml-->
+<view class="kindv">
+  <view class="kindcv {{chkkind==0?'chkkindtxt':'kindtxt'}}" data-tab="0" bindtap="tapKind">实践群</view>
+  <view class="kindcv {{chkkind==1?'chkkindtxt':'kindtxt'}}" data-tab="1" bindtap="tapKind">讨论组</view>
+</view>
+
+<scroll-view scroll-y="true" class="datav">
+
+  <view class="msgv" bindtap="goChatOpt" data-id="1" data-type="{{chkkind}}">
+    <image src="/resources/comman/avatarUrl.jpg" class="avatarUrl"></image>
+    <view class="msgc">
+      <view class="msgtopc">
+        <view class="msgname showOnehangTxt">内涵段子实践交流群内涵段子实践交流群</view>
+        <view class="msgdate">07:30</view>
+      </view>
+      <view class="msgbtmc">
+        <view class="msgtxt showOnehangTxt">王艳：[课程]</view>
+        <view class="msgnum">23</view>
+      </view>
+    </view>
+  </view>
+  
+  <view class="nomoretxt">暂时没有更多了</view>
+  
+</scroll-view>

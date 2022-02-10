@@ -1,0 +1,105 @@
+/* my/pages/chengji/index.wxss */
+.topv {
+  width: 100vw;
+  height: 254rpx;
+  background: #141B2D;
+}
+
+.userv {
+  width: 100vw;
+  height: 88rpx;
+  padding: 12rpx 0 20rpx;
+}
+
+.usercv {
+  width: 292rpx;
+  height: 52rpx;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 26rpx;
+  margin: 18rpx auto;
+  display: flex;
+  justify-content: center;
+}
+
+.usertx {
+  width: 36rpx;
+  height: 36rpx;
+  margin: 8rpx 8rpx 0 0;
+  border-radius: 50%;
+}
+
+.usertxt {
+  height: 52rpx;
+  line-height: 52rpx;
+  font-size: 28rpx;
+  font-weight: 400;
+  color: #E2B97A;
+}
+
+.btmlinev {
+  width: 100vw;
+  height: 34rpx;
+  display: block;
+}
+
+.xunzhangv {
+  width: 686rpx;
+  height: 808rpx;
+  background: #FFFFFF;
+  border-radius: 12rpx;
+  margin: -170rpx auto 0;
+}
+
+.title {
+  padding-left: 32rpx;
+  height: 100rpx;
+  line-height: 100rpx;
+  font-size: 32rpx;
+  font-size: 34rpx;
+  color: #262626;
+  margin-bottom: 26rpx;
+}
+
+.xunzhangvv {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.xunzhangc {
+  width: 192rpx;
+  margin-bottom: 66rpx;
+}
+
+.xunzhangicon {
+  width: 192rpx;
+  height: 198rpx;
+}
+
+.xunzhangtxt {
+  font-size: 32rpx;
+  color: #999999;
+  text-align: center;
+}
+
+.xunzhangtxtblue {
+  font-family: YouSheBiaoTiHei;
+  color: #4A8DFF;
+}
+
+.xunzhangtxtblack {
+  color: #262626
+}
+
+.progressv {
+  width: 148rpx;
+  height: 4rpx;
+  background:#eee;
+  border-radius: 2rpx;
+  margin: 16rpx auto;
+}
+.progressh{
+  height: 4rpx;
+  background: linear-gradient(90deg, #81C1FF 0%, #4A8DFF 100%);
+}

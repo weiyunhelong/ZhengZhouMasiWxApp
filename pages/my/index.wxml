@@ -22,17 +22,17 @@
 
 <!--数据部分-->
 <view class="numberv">
-  <view class="numberc">
+  <view class="numberc" bindtap="goTabOpt" data-index="1">
     <view class="numbertxt">0</view>
     <view class="numbertag">已经学习/时</view>
   </view>
   <view class="numberline"></view>
-  <view class="numberc">
+  <view class="numberc" bindtap="goTabOpt" data-index="2">
     <view class="numbertxt">0</view>
     <view class="numbertag">答题数目/个</view>
   </view>
   <view class="numberline"></view>
-  <view class="numberc">
+  <view class="numberc" bindtap="goTabOpt" data-index="3">
     <view class="numbertxt">0</view>
     <view class="numbertag">我的成就</view>
   </view>

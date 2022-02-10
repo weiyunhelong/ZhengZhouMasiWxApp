@@ -28,6 +28,24 @@ Page({
       url: '../../my/pages/account/index',
     })
   },
+  goTabOpt(e) { //点击3个tab
+    var index = e.currentTarget.dataset.index;
+    var url = "";
+    switch (parseInt(index)) {
+      case 1:
+        url = "../../my/pages/study/index";
+        break;
+      case 2:
+        url = "../../my/pages/dati/index";
+        break;
+      case 3:
+        url = "../../my/pages/chengji/index";
+        break;
+    }
+    wx.navigateTo({
+      url: url
+    })
+  },
   tapMenu(e) { //跳转到菜单
     var that = this;
     var url = "",
