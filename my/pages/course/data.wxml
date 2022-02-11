@@ -63,6 +63,6 @@
     </view>
   </view>
   <view class="echartv">
-    <ec-canvas id="mychart-dom-line" canvas-id="mychart-line" ec="{{ ecline }}"></ec-canvas>
+    <ec-canvas id="mychart-dom-line" canvas-id="mychart-dom-line" ec="{{ ecline }}"></ec-canvas>
   </view>
 </view>

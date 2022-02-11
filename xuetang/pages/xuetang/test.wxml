@@ -1,2 +1,65 @@
 <!--xuetang/pages/xuetang/test.wxml-->
-<text>xuetang/pages/xuetang/test.wxml</text>
+<!--TAB部分-->
+<view class="tabv">
+  <view class="tabc" bindtap="tapTab" data-tab="0">
+    <view class="{{chktab==0?'tabtxth':'tabtxt'}}">全部</view>
+    <view class="tabline" wx:if="{{chktab==0}}"></view>
+  </view>
+  <view class="tabc" bindtap="tapTab" data-tab="1">
+    <view class="{{chktab==1?'tabtxth':'tabtxt'}}">未考试</view>
+    <view class="tabline" wx:if="{{chktab==1}}"></view>
+  </view>
+  <view class="tabc" bindtap="tapTab" data-tab="2">
+    <view class="{{chktab==2?'tabtxth':'tabtxt'}}">已考试</view>
+    <view class="tabline" wx:if="{{chktab==2}}"></view>
+  </view>
+</view>
+
+<scroll-view scroll-y="true" class="listv">
+  
+  <view class="blockv" bindtap="goTest">
+    <view class="blockl">
+      <view class="name showOnehangTxt">安远路矿工人运动实践报告</view>
+      <view class="status">考试时间：2021.23.23</view>
+    </view>
+    <view class="blockr">
+      <image src="/resources/course/test.png" class="testicon"></image>
+      <view class="blocktxt">开始考试</view>
+    </view>
+  </view>
+
+  <view class="blockv">
+    <view class="blockl">
+      <view class="name showOnehangTxt">安远路矿工人运动实践报告</view>
+      <view class="status">考试完成</view>
+    </view>
+    <view class="blockr">
+      <view class="blocktxth">27分</view>
+      <view class="blocktxtg">开始考试</view>
+    </view>
+  </view>
+
+
+  <view class="blockv">
+    <view class="blockl">
+      <view class="name showOnehangTxt">安远路矿工人运动实践报告</view>
+      <view class="status">考试时间：2022.03.23</view>
+    </view>
+    <view class="blockr">
+      <image src="/resources/course/notest.png" class="testicon"></image>
+      <view class="blocktxtg">暂未开放</view>
+    </view>
+  </view>
+
+  <view class="blockv">
+    <view class="blockl">
+      <view class="name showOnehangTxt">安远路矿工人运动实践报告</view>
+      <view class="status">考试时间：2021.03.23</view>
+    </view>
+    <view class="blockr">
+      <image src="/resources/course/notest.png" class="testicon"></image>
+      <view class="blocktxtg">过期未考</view>
+    </view>
+  </view>
+
+</scroll-view>

@@ -1,1 +1,104 @@
 /* xuetang/pages/xuetang/test.wxss */
+.tabv {
+  width: 100vw;
+  height: 88rpx;
+  display: flex;
+}
+
+.tabv .tabc {
+  width: 33vw;
+  height: 88rpx;
+  text-align: center;
+}
+
+.tabv .tabc .tabtxth {
+  height: 88rpx;
+  line-height: 88rpx;
+  font-size: 30rpx;
+  font-weight: 600;
+  color: #262626;
+}
+
+.tabv .tabc .tabtxt {
+  height: 88rpx;
+  line-height: 88rpx;
+  font-size: 30rpx;
+  color: #999;
+}
+
+.tabv .tabc .tabline {
+  width: 28rpx;
+  height: 4rpx;
+  background: #F24540;
+  border-radius: 3rpx;
+  margin: -6rpx auto 0;
+}
+
+.listv {
+  width: 100vw;
+  height: calc(100vh - 88rpx - 20rpx);
+  padding-top: 20rpx;
+  text-align: center;
+}
+
+.blockv {
+  width: 686rpx;
+  height: 184rpx;
+  background: #fff;
+  border-radius: 12rpx;
+  margin: 28rpx 32rpx 0;
+  display: flex;
+  justify-content: space-between;
+}
+
+.blockl {
+  width: 502rpx;
+  height: 184rpx;
+}
+
+.name {
+  padding: 46rpx 32rpx 10rpx;
+  font-size: 30rpx;
+  font-weight: 500;
+  color: #262626;
+  text-align: left;
+}
+
+.status {
+  padding: 0rpx 32rpx;
+  font-size: 24rpx;
+  color: #666666;
+  text-align: left;
+}
+
+.blockr {
+  width: 184rpx;
+  height: 184rpx;
+  background: #FFFFFF;
+  text-align: center;
+  border-left: 1rpx solid #eee;
+  border-top-right-radius: 12rpx;
+  border-bottom-right-radius: 12rpx;
+}
+
+.testicon {
+  width: 36rpx;
+  height: 30rpx;
+  margin: 58rpx auto 0rpx;
+}
+
+.blocktxt {
+  font-size: 24rpx;
+  color: #262626;
+}
+
+.blocktxtg {
+  font-size: 24rpx;
+  color: #999;
+}
+
+.blocktxth {
+  padding-top: 54rpx;
+  font-size: 28rpx;
+  color: #666666;
+}

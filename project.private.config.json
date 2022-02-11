@@ -12,12 +12,7 @@
     },
     "miniprogram": {
       "list": [
-        {
-          "name": "",
-          "pathName": "xuetang/pages/xuetang/work",
-          "query": "",
-          "scene": null
-        }
+        
       ]
     }
   }

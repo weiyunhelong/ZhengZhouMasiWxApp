@@ -1,2 +1,80 @@
 <!--xuetang/pages/xuetang/create.wxml-->
-<text>xuetang/pages/xuetang/create.wxml</text>
+<!--TAB部分-->
+<view class="tabv">
+  <view class="tabc" bindtap="tapTab" data-tab="0">
+    <view class="{{chktab==0?'tabtxth':'tabtxt'}}">全部</view>
+    <view class="tabline" wx:if="{{chktab==0}}"></view>
+  </view>
+  <view class="tabc" bindtap="tapTab" data-tab="1">
+    <view class="{{chktab==1?'tabtxth':'tabtxt'}}">待审核</view>
+    <view class="tabline" wx:if="{{chktab==1}}"></view>
+  </view>
+  <view class="tabc" bindtap="tapTab" data-tab="2">
+    <view class="{{chktab==2?'tabtxth':'tabtxt'}}">进行中</view>
+    <view class="tabline" wx:if="{{chktab==2}}"></view>
+  </view>
+  <view class="tabc" bindtap="tapTab" data-tab="3">
+    <view class="{{chktab==3?'tabtxth':'tabtxt'}}">报名中</view>
+    <view class="tabline" wx:if="{{chktab==3}}"></view>
+  </view>
+  <view class="tabc" bindtap="tapTab" data-tab="4">
+    <view class="{{chktab==4?'tabtxth':'tabtxt'}}">已结束</view>
+    <view class="tabline" wx:if="{{chktab==4}}"></view>
+  </view>
+</view>
+
+<!--列表数据部分-->
+<scroll-view scroll-y="true" class="listv">
+  <view class="activityv">
+    <view class="activityname">不要以"为别人考虑"做理由，其实丢弃了"舍我其谁"的使命感</view>
+    <view class="activitynum">活动人数：3</view>
+    <view class="activitystartv">
+      <view class="activitytag">开始时间：</view>
+      <view class="activitydate">2021.02.23 14:00</view>
+    </view>
+    <view class="activitystartv" style="padding-top:16rpx;">
+      <view class="activitytag">结束时间：</view>
+      <view class="activitydate">2021.12.23 14:00</view>
+      <view class="activitystatus activitystatus1">待审核</view>
+    </view>
+  </view>
+  <view class="activityv">
+    <view class="activityname">不要以"为别人考虑"做理由，其实丢弃了"舍我其谁"的使命感</view>
+    <view class="activitynum">活动人数：3</view>
+    <view class="activitystartv">
+      <view class="activitytag">开始时间：</view>
+      <view class="activitydate">2021.02.23 14:00</view>
+    </view>
+    <view class="activitystartv" style="padding-top:16rpx;">
+      <view class="activitytag">结束时间：</view>
+      <view class="activitydate">2021.12.23 14:00</view>
+      <view class="activitystatus activitystatus2">进行中</view>
+    </view>
+  </view>
+  <view class="activityv">
+    <view class="activityname">不要以"为别人考虑"做理由，其实丢弃了"舍我其谁"的使命感</view>
+    <view class="activitynum">活动人数：3</view>
+    <view class="activitystartv">
+      <view class="activitytag">开始时间：</view>
+      <view class="activitydate">2021.02.23 14:00</view>
+    </view>
+    <view class="activitystartv" style="padding-top:16rpx;">
+      <view class="activitytag">结束时间：</view>
+      <view class="activitydate">2021.12.23 14:00</view>
+      <view class="activitystatus activitystatus3">报名中</view>
+    </view>
+  </view>
+  <view class="activityv">
+    <view class="activityname">不要以"为别人考虑"做理由，其实丢弃了"舍我其谁"的使命感</view>
+    <view class="activitynum">活动人数：3</view>
+    <view class="activitystartv">
+      <view class="activitytag">开始时间：</view>
+      <view class="activitydate">2021.02.23 14:00</view>
+    </view>
+    <view class="activitystartv" style="padding-top:16rpx;">
+      <view class="activitytag">结束时间：</view>
+      <view class="activitydate">2021.12.23 14:00</view>
+      <view class="activitystatus">已结束</view>
+    </view>
+  </view>
+</scroll-view>

@@ -1,11 +1,14 @@
 // xuetang/pages/xuetang/create.js
+var requestUrl = getApp().globalData.requestUrl;
+var WxRequest = require('../../../utils/WxRequest.js');
+
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-
+    chktab: 0,
   },
 
   /**
@@ -14,7 +17,12 @@ Page({
   onLoad: function (options) {
 
   },
-
+  tapTab(e) { //切换tab
+    var that = this;
+    that.setData({
+      chktab: e.currentTarget.dataset.tab
+    })
+  },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */

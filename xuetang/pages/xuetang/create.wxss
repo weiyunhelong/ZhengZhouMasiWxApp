@@ -1,1 +1,98 @@
 /* xuetang/pages/xuetang/create.wxss */
+.tabv {
+  width: 100vw;
+  height: 88rpx;
+  display: flex;
+}
+
+.tabv .tabc {
+  width: 20vw;
+  height: 88rpx;
+  text-align: center;
+}
+
+.tabv .tabc .tabtxth {
+  height: 88rpx;
+  line-height: 88rpx;
+  font-size: 30rpx;
+  font-weight: 600;
+  color: #262626;
+}
+
+.tabv .tabc .tabtxt {
+  height: 88rpx;
+  line-height: 88rpx;
+  font-size: 30rpx;
+  color: #999;
+}
+
+.tabv .tabc .tabline {
+  width: 28rpx;
+  height: 4rpx;
+  background: #F24540;
+  border-radius: 3rpx;
+  margin: -6rpx auto 0;
+}
+
+.listv {
+  width: 100vw;
+  height: calc(100vh - 88rpx - 20rpx);
+  padding-top: 20rpx;
+  text-align: center;
+}
+
+.activityv {
+  width: 622rpx;
+  height: auto;
+  background: #FFFFFF;
+  border-radius: 12rpx;
+  padding: 32rpx 32rpx;
+  margin: 0 auto 30rpx;
+}
+
+.activityname {
+  font-size: 30rpx;
+  font-weight: 600;
+  color: #262626;
+  text-align: left;
+}
+
+.activitynum {
+  height: 66rpx;
+  line-height: 66rpx;
+  font-size: 28rpx;
+  color: #999999;
+  text-align: left;
+}
+
+.activitystartv {
+  display: flex;
+}
+
+.activitytag {
+  font-size: 28rpx;
+  color: #999999;
+}
+
+.activitydate {
+  font-size: 28rpx;
+  color: #666;
+}
+
+.activitystatus {
+  font-size: 28rpx;
+  width: 150rpx;
+  margin-left: 100rpx;
+  text-align: right;
+  color: #999;
+}
+
+.activitystatus1 {
+  color: #FF803A;
+}
+.activitystatus2 {
+  color: #10B950;
+}
+.activitystatus3 {
+  color: #F24640;
+}
