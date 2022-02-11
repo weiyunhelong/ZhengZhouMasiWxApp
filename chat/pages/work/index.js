@@ -1,4 +1,4 @@
-// chat/pages/chat/index.js
+// chat/pages/work/index.js
 var requestUrl = getApp().globalData.requestUrl;
 var WxRequest = require('../../../utils/WxRequest.js');
 
@@ -8,40 +8,18 @@ Page({
    * 页面的初始数据
    */
   data: {
-    chkkind: 0, //0:全部题目 1:错题集
-    list: [], //列表数据
+
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    var that = this;
-    wx.getSystemInfo({
-      success: (res) => {
-        that.setData({
-          navigationBarHeight: res.statusBarHeight
-        })
-      },
-    })
+
   },
-  tapKind(e) { //选中类型
-    var that = this;
-    that.setData({
-      chkkind: e.currentTarget.dataset.tab
-    })
-    that.InitData();
-  },
-  InitData() { //获取消息列表
-    var that = this;
-    var chkkind = that.data.chkkind;
-    that.setData({
-      list: [1,2,3,4,5,6,7,8,9,10]
-    })
-  },
-  goChatOpt(e){
+  goDetail(e){//点击跳转到详情
     wx.navigateTo({
-      url: '../chat/wechat?id='+e.currentTarget.dataset.id+"&type="+e.currentTarget.dataset.id
+      url: '../work/detail?id='+e.currentTarget.dataset.id
     })
   },
   /**
@@ -55,8 +33,7 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-    var that=this;
-    that.InitData();
+
   },
 
   /**

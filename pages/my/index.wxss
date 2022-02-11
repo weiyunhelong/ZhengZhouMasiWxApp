@@ -3,122 +3,263 @@ page {
   background: #fff;
 }
 
+/*用户信息部分*/
 .topbgv {
   width: 100vw;
-  height: 452rpx;
-  background: #F24540;
-  border-bottom-left-radius: 30rpx;
-  border-bottom-right-radius: 30rpx;
+  height: 356rpx;
+  background: url(https://zhengzhousizheng.oss-cn-beijing.aliyuncs.com/zhengzhouv2/topbg.png) no-repeat;
+  background-size: cover;
+  position: sticky;
+  top: 0;
+  left: 0;
+  z-index: 9;
 }
 
-.qiziv {
-  width: 230rpx;
-  height: 200rpx;
-  margin-left: 150rpx;
-  padding-top: 18rpx;
-}
-
-.qiziicon {
-  width: 100%;
-  height: 100%;
-}
-
-.userv {
+.topbgv .pagetitlev {
+  width: 555rpx;
+  height: 60rpx;
   display: flex;
-  padding: 0 38rpx;
+  padding-left: 32rpx;
 }
 
-.userv .txv {
-  width: 116rpx;
-  height: 116rpx;
-  background: linear-gradient(180deg, #EEEEEE 0%, #D8D8D8 100%);
+.topbgv .backiconv {
+  width: 70rpx;
+  height: 60rpx;
+}
+
+.topbgv .backicon {
+  width: 27rpx;
+  height: 54rpx;
   border-radius: 50%;
-  margin-right: 20rpx;
+  margin-top: 8rpx;
 }
 
-.userv .tximg {
-  width: 116rpx;
-  height: 116rpx;
-  border-radius: 50%;
-  margin-right: 20rpx;
-}
-
-.userv .userc {
-  width: 450rpx;
-  padding-top: 8rpx;
-}
-
-.userv .username {
-  font-size: 40rpx;
-  font-weight: 500;
-  color: #FFFFFF;
-}
-
-.userv .userdesc {
-  margin-top: 10rpx;
-  font-size: 28rpx;
-  color: #FFFFFF;
-}
-
-.numberv {
-  width: 686rpx;
-  height: 160rpx;
-  background: #FFFFFF;
-  box-shadow: 0px 4rpx 16rpx 0rpx rgba(0, 0, 0, 0.1);
-  margin: -60rpx auto 0;
-  border-radius: 10rpx;
-  display: flex;
-}
-
-.numberv .numberc {
-  width: 226rpx;
-  height: 160rpx;
+.topbgv .pagetitle {
+  width: 385rpx;
+  height: 60rpx;
   text-align: center;
+  line-height: 60rpx;
+  font-size: 34rpx;
+  color: #FFFFFF;
+  margin-left: 84rpx;
 }
 
-.numberv .numbertxt {
-  padding-top: 34rpx;
-  font-size: 40rpx;
+.uservv {
+  width: 686rpx;
+  height: 276rpx;
+  margin: -160rpx auto 0rpx;
+  background: #FFFFFF;
+  box-shadow: 0rpx 4rpx 16rpx 0rpx rgba(0, 0, 0, 0.1);
+  border-radius: 12rpx;
+  position: relative;
+  z-index: 20;
+}
+
+.uservvl {
+  display: flex;
+  justify-content: space-between;
+  height: 176rpx;
+  overflow: hidden;
+}
+
+.uservv .userc {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 36rpx;
+  padding-left: 32rpx;
+}
+
+.uservv .userc .txv {
+  width: 104rpx;
+  height: 104rpx;
+  border-radius: 50%;
+  background-color: #f7f7f7;
+  margin-right: 20rpx;
+}
+
+.uservv .userc .usercv {
+  padding-top: 10rpx;
+}
+
+.uservv .username {
+  font-size: 32rpx;
   font-weight: 500;
   color: #262626;
 }
 
-.numberv .numbertag {
+.uservv .userdesc {
+  font-size: 28rpx;
+  color: #999;
+  padding-top: 4rpx;
+}
+
+.uservv .uservc {
+  display: flex;
+  height: 176rpx;
+  padding-top: 36rpx;
+  padding-left: 32rpx;
+}
+
+.uservv .uservc .tximg {
+  width: 104rpx;
+  height: 104rpx;
+  border-radius: 50%;
+  margin-right: 20rpx;
+}
+
+.uservv .uservc .userinfo {
+  padding-top: 6rpx;
+  max-width: 350rpx;
+}
+
+.uservv .userinfov {
+  width: 160rpx;
+  height: 56rpx;
+  background: rgba(242, 69, 64, 0.1);
+  border-radius: 28rpx 0rpx 0rpx 28rpx;
+  text-align: center;
+  line-height: 56rpx;
+  margin-top: 60rpx;
   font-size: 24rpx;
-  color: #999999;
+  color: #F24540;
 }
 
-.numberv .numberline {
-  width: 2rpx;
-  height: 28rpx;
-  background: #EEEEEE;
-  margin-top: 62rpx;
-}
-
-.menuv {
-  margin: 28rpx 32rpx;
-}
-
-.menuc {
+.numberv {
   display: flex;
-  justify-content: space-between;
-}
-
-.menucl {
-  display: flex;
+  justify-content: space-around;
   height: 100rpx;
   line-height: 100rpx;
 }
 
-.menuicon {
-  width: 40rpx;
-  height: 40rpx;
-  margin-top: 30rpx;
-  margin-right: 16rpx;
+.numberv .numberc {
+  display: flex;
 }
 
-.righticon {
-  width: 12rpx;
-  height: 20rpx;
-  margin-top:40rpx;
+.numberv .numbertag {
+  font-size: 24rpx;
+  color: #666666;
+}
+
+.numberv .numberval {
+  font-size: 40rpx;
+  font-weight: bold;
+  color: #262626;
+  margin-left: 10rpx;
+}
+
+.numberv .numberline {
+  width: 2rpx;
+  height: 24rpx;
+  background: #EEEEEE;
+  margin-top: 38rpx;
+}
+
+/*勋章部分*/
+.xunzhangv {
+  width: 626rpx;
+  height: 80rpx;
+  background: linear-gradient(135deg, #FBFBFB 0%, #FAFAFA 100%);
+  border-radius: 12rpx;
+  border: 1rpx solid #F7F7F7;
+  margin: 28rpx auto 12rpx;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 32rpx 0 28rpx;
+}
+
+.xunzhangv .xunzhangl {
+  display: flex;
+  height: 80rpx;
+  line-height: 80rpx;
+}
+
+.xunzhangv .xunzhangl .xunzhang {
+  width: 40rpx;
+  height: 40rpx;
+  margin-top: 20rpx;
+  margin-right: 4rpx;
+}
+
+.xunzhangv .xunzhangl .xzhlevel {
+  font-size: 26rpx;
+  color: #262626;
+}
+
+.xunzhangv .xunzhangr {
+  height: 80rpx;
+  line-height: 80rpx;
+  color: #999999;
+  font-size: 26rpx;
+}
+
+.mdtitle {
+  height: 88rpx;
+  line-height: 88rpx;
+  background: #FFFFFF;
+  padding-left: 32rpx;
+  font-size: 32rpx;
+  font-weight: 600;
+  color: #262626;
+}
+
+.menuv {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.menuv .menuc {
+  width: 250rpx;
+  height: 180rpx;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  justify-self: center;
+}
+
+.menuv .menuc .menuicon {
+  width: 52rpx;
+  height: 52rpx;
+  margin: 0 auto;
+}
+
+.menuv .menuc .menutxt {
+  font-size: 28rpx;
+  color: #262626;
+  padding-top: 8rpx;
+}
+
+.optv {
+  padding: 0 32rpx;
+  display: flex;
+  justify-content: space-between;
+}
+
+.optv .optc {
+  width: 328rpx;
+  height: 136rpx;
+  background: #F7F7F7;
+  border-radius: 12rpx;
+  display: flex;
+  justify-content: center;
+}
+.optcl{
+  padding-top: 32rpx;
+}
+.optclname {
+  font-size: 28rpx;
+  color: #262626;
+}
+
+.optcldesc {
+  font-size: 20rpx;
+  color: #999999;
+}
+
+.optv .optc .opticon {
+  width: 52rpx;
+  height: 52rpx;
+  margin-left: 28rpx;
+  margin-top: 42rpx;
 }

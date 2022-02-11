@@ -36,7 +36,16 @@ Page({
     })
   },
   goCourse() { //实践课程
-
+    var that = this;
+    wx.navigateTo({
+      url: '../work/index?id=' + that.data.id,
+    })
+  },
+  goWorkOpt(e){//作品详情
+    var that = this;
+    wx.navigateTo({
+      url: '../work/detail?id=' + e.currentTarget.dataset.id,
+    })
   },
   goGrouper() { //组成员
     var that = this;
@@ -95,22 +104,22 @@ Page({
       })
     }, 1000);
   },
-  sendCheckWorkOpt(e){//发送选择的操作
-    var that=this;
-    var obj=e.currentTarget.dataset.obj;
+  sendCheckWorkOpt(e) { //发送选择的操作
+    var that = this;
+    var obj = e.currentTarget.dataset.obj;
     //TODO 发送消息
     wx.showToast({
       title: '发送成功',
     })
   },
-  previewImg(e){//预览图片
+  previewImg(e) { //预览图片
     wx.previewImage({
       urls: [e.currentTarget.dataset.url],
     })
   },
-  jiesanOpt(){//解散群组
-    var that=this;
-    
+  jiesanOpt() { //解散群组
+    var that = this;
+
     wx.showModal({
       cancelColor: '#666666',
       cancelText: '取消',
@@ -120,7 +129,7 @@ Page({
       showCancel: true,
       title: '',
       success: (result) => {
-        if(result.confirm){
+        if (result.confirm) {
           //TODO　请求接口解散群组
           wx.showToast({
             title: '解散成功',

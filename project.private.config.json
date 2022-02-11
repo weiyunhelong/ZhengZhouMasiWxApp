@@ -12,7 +12,42 @@
     },
     "miniprogram": {
       "list": [
-        
+        {
+          "name": "",
+          "pathName": "chat/pages/chat/index",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "",
+          "pathName": "chat/pages/work/index",
+          "query": "id=0",
+          "scene": null
+        },
+        {
+          "name": "",
+          "pathName": "chat/pages/work/detail",
+          "query": "id=1",
+          "scene": null
+        },
+        {
+          "name": "",
+          "pathName": "pages/my/index",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "",
+          "pathName": "my/pages/account/index",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "",
+          "pathName": "my/pages/dati/index",
+          "query": "",
+          "scene": null
+        }
       ]
     }
   }

@@ -1,7 +1,27 @@
 <!--my/pages/dati/index.wxml-->
-<view class="kindv">
-  <view class="kindcv {{chkkind==0?'chkkindtxt':'kindtxt'}}" data-tab="0" bindtap="tapKind">全部题目</view>
+<view class="kindv" style="margin-top:{{navigationBarHeight + 5}}px;">
+  <view class="kindcv {{chkkind==0?'chkkindtxt':'kindtxt'}}" data-tab="0" bindtap="tapKind">答题记录</view>
   <view class="kindcv {{chkkind==1?'chkkindtxt':'kindtxt'}}" data-tab="1" bindtap="tapKind">错题集</view>
+</view>
+<view class="typev">
+  <view class="typelv">
+    <view class="typelc" bindtap="tapType" data-type="0">
+      <view class="{{chktype==0?'typeltxth':'typeltxt'}}">全部</view>
+      <view class="typeline" wx:if="{{chktype==0}}"></view>
+    </view>
+    <view class="typelc" bindtap="tapType" data-type="1">
+      <view class="{{chktype==1?'typeltxth':'typeltxt'}}">选择题</view>
+      <view class="typeline" wx:if="{{chktype==1}}"></view>
+    </view>
+    <view class="typelc" bindtap="tapType" data-type="2">
+      <view class="{{chktype==2?'typeltxth':'typeltxt'}}">判断题</view>
+      <view class="typeline" wx:if="{{chktype==2}}"></view>
+    </view>
+  </view>
+  <view class="typerv">
+    <view class="typertxt">筛选</view>
+    <image src="./filter.png" class="filter"></image>
+  </view>
 </view>
 
 <scroll-view scroll-y="true" class="datav">
@@ -25,7 +45,7 @@
     <view class="answertxt">正确答案: B</view>
     <view class="jiexiv">
       <view class="jiexioptv">
-        <view class="jiexiopttxt">题目解析</view>
+        <view class="jiexiopttxt">试题详解</view>
         <image class="downicon" src="./down.png"></image>
       </view>
     </view>
@@ -83,5 +103,5 @@
   </view>
 
   <nodatacom />
-  
+
 </scroll-view>

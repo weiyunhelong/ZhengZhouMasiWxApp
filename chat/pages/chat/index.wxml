@@ -1,5 +1,5 @@
 <!--chat/pages/chat/index.wxml-->
-<view class="kindv">
+<view class="kindv" style="margin-top:{{navigationBarHeight + 5}}px;">
   <view class="kindcv {{chkkind==0?'chkkindtxt':'kindtxt'}}" data-tab="0" bindtap="tapKind">实践群</view>
   <view class="kindcv {{chkkind==1?'chkkindtxt':'kindtxt'}}" data-tab="1" bindtap="tapKind">讨论组</view>
 </view>
@@ -19,7 +19,7 @@
       </view>
     </view>
   </view>
-  
+
   <view class="nomoretxt">暂时没有更多了</view>
-  
+
 </scroll-view>

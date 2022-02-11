@@ -36,10 +36,70 @@
   border-radius: 8rpx;
 }
 
+.typev {
+  width: 100vw;
+  height: 88rpx;
+  background: #fff;
+  display: flex;
+  justify-content: space-between;
+}
+
+.typev .typelv {
+  display: flex;
+  height: 88rpx;
+  line-height: 88rpx;
+}
+
+.typev .typelc {
+  width: 120rpx;
+  text-align: center;
+  height: 88rpx;
+  line-height: 88rpx;
+}
+
+.typev .typelc .typeltxth {
+  font-size: 30rpx;
+  font-weight: 500;
+  color: #262626;
+}
+
+.typev .typelc .typeltxt {
+  font-size: 26rpx;
+  color: #999999;
+}
+
+.typev .typelc .typeline {
+  width: 28rpx;
+  height: 4rpx;
+  background: #F24540;
+  border-radius: 3rpx;
+  margin: -4rpx auto 0;
+}
+
+.typev .typerv {
+  display: flex;
+  justify-content: flex-end;
+  height: 88rpx;
+  line-height: 88rpx;
+  margin-right: 32rpx;
+}
+
+.typev .typerv .typertxt {
+  font-size: 26rpx;
+  color: #999999;
+}
+
+.typev .typerv .filter {
+  width: 38rpx;
+  height: 38rpx;
+  margin-top: 25rpx;
+}
+
 /*数据部分*/
 .datav {
   width: 100vw;
-  height: calc(100vh - 120rpx);
+  height: calc(100vh - 120rpx - 88rpx - 32rpx);
+  padding-top: 32rpx;
 }
 
 .questionv {
@@ -137,6 +197,6 @@
 .jiexitxt {
   font-size: 28rpx;
   color: #000000;
-  padding-bottom:40rpx;
+  padding-bottom: 40rpx;
   line-height: 40rpx;
 }

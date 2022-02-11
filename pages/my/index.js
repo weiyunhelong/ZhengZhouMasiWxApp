@@ -16,16 +16,28 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    var that = this;
+    wx.getSystemInfo({
+      success: (res) => {
+        that.setData({
+          navigationBarHeight: res.statusBarHeight
+        })
+      },
+    })
   },
   goLogin() { //去登录
     wx.navigateTo({
       url: '../../wxauth/pages/wxlogin/index',
     })
   },
-  goAccount() { //账号管理
+  goAccount() { //个人资料
     wx.navigateTo({
-      url: '../../my/pages/account/index',
+      url: '../../my/pages/info/index',
+    })
+  },
+  goXunZhang() { //我的成就
+    wx.navigateTo({
+      url: '../../my/pages/chengji/index',
     })
   },
   goTabOpt(e) { //点击3个tab
@@ -49,11 +61,9 @@ Page({
   tapMenu(e) { //跳转到菜单
     var that = this;
     var url = "",
-      menu = parseInt(e.currentTarget.dataset.index);
+      menu = parseInt(e.currentTarget.dataset.menu);
     switch (menu) {
       case 0:
-        url = "../../my/pages/datacenter/index";
-        break;
       case 1:
         url = "../../my/pages/news/index";
         break;
@@ -67,21 +77,19 @@ Page({
         url = "../../my/pages/dati/index";
         break;
       case 5:
-        url = "../../my/pages/info/index";
+        url = "../kecheng/index";
         break;
-        // if (!that.data.IsLogin) {
-        //   url = "../../wxauth/pages/wxlogin/index";
-        //   break;
-        // } else {
-        //   url = "../../my/pages/account/index";
-        //   break;
-        // }
       case 6:
-        url = "../../my/pages/course/index";
+        url = "../../xuetang/pages/xuetang/index";
         break;
     }
     wx.navigateTo({
-      url: url
+      url: url,
+      fail: function () {
+        wx.switchTab({
+          url: url
+        })
+      }
     })
 
   },

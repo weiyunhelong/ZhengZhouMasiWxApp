@@ -1,0 +1,33 @@
+<!--chat/pages/work/index.wxml-->
+<view scroll-y="true" class="listv">
+  <view class="workv" bindtap="goDetail" data-id="1">
+    <image src="/resources/comman/avatarUrl.jpg" class="cover" mode="aspectFill"></image>
+    <view class="name showOnehangTxt">黄花塘新四军军部纪念馆子</view>
+    <view class="owner showOnehangTxt">创作人：某某</view>
+  </view>
+  <view class="workv" bindtap="goDetail" data-id="1">
+    <image src="/resources/comman/avatarUrl.jpg" class="cover" mode="aspectFill"></image>
+    <view class="name showOnehangTxt">少即是多</view>
+    <view class="owner showOnehangTxt">创作人：某某</view>
+  </view>
+  <view class="workv" bindtap="goDetail" data-id="1">
+    <image src="/resources/comman/avatarUrl.jpg" class="cover" mode="aspectFill"></image>
+    <view class="name showOnehangTxt">少即是多</view>
+    <view class="owner showOnehangTxt">创作人：某某</view>
+  </view>
+  <view class="workv" bindtap="goDetail" data-id="1">
+    <image src="/resources/comman/avatarUrl.jpg" class="cover" mode="aspectFill"></image>
+    <view class="name showOnehangTxt">少即是多</view>
+    <view class="owner showOnehangTxt">创作人：某某</view>
+  </view>
+  <view class="workv" bindtap="goDetail" data-id="1">
+    <image src="/resources/comman/avatarUrl.jpg" class="cover" mode="aspectFill"></image>
+    <view class="name showOnehangTxt">少即是多</view>
+    <view class="owner showOnehangTxt">创作人：某某</view>
+  </view>
+  <view class="workv" bindtap="goDetail" data-id="1">
+    <image src="/resources/comman/avatarUrl.jpg" class="cover" mode="aspectFill"></image>
+    <view class="name showOnehangTxt">少即是多</view>
+    <view class="owner showOnehangTxt">创作人：某某</view>
+  </view>
+</view>

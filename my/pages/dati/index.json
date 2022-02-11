@@ -1,7 +1,6 @@
 {
-  "navigationBarBackgroundColor": "#fff",
-  "navigationBarTextStyle": "black",
-  "navigationBarTitleText": "错题集",
+  "navigationBarTitleText": "",
+  "navigationStyle": "custom",
   "usingComponents": {
     "loadding": "../../../components/loadding/index",
     "ec-canvas": "../../../ec-canvas/ec-canvas",

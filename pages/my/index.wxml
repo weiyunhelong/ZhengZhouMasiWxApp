@@ -1,93 +1,97 @@
 <!--pages/my/index.wxml-->
-<!--用户部分-->
+
+<!--顶部状态栏-->
 <view class="topbgv">
-  <view class="qiziv">
-    <image class="qiziicon" src="/resources/comman/qizi.png"></image>
-  </view>
-  <view class="userv" wx:if="{{!IsLogin}}" bindtap="goLogin">
-    <view class="txv"></view>
-    <view class="userc">
-      <view class="username">点击登录</view>
-      <view class="userdesc">完成登录使用更多功能</view>
+  <view style="width: 100vw;height:{{navigationBarHeight}}px;margin-bottom: 10rpx;"></view>
+  <view class="pagetitlev">
+    <view class="backiconv" bindtap="goBackOpt">
+      <image src="/resources/comman/backiconw.png" class="backicon"></image>
     </view>
+    <view class="pagetitle"></view>
   </view>
-  <view class="userv" wx:else>
-    <image src="{{userInfo.tx}}" class="tximg"></image>
-    <view class="userc">
-      <view class="username">{{userInfo.name}}</view>
-      <view class="userdesc showOnehangTxt">{{userInfo.desc}}</view>
+</view>
+
+<!--用户信息部分-->
+<view class="uservv">
+  <view class="uservvl">
+    <view class="userc" wx:if="{{IsLogin}}" bindtap="goLogin">
+      <view class="txv"></view>
+      <view class="usercv">
+        <view class="username">点击登录</view>
+        <view class="userdesc">完成登录使用更多功能</view>
+      </view>
+    </view>
+    <block wx:else>
+      <view class="uservc">
+        <image src="/resources/comman/avatarUrl.jpg" class="tximg"></image>
+        <view class="userinfo">
+          <view class="username">Jarrett Cawsey</view>
+          <view class="userdesc showOnehangTxt">个人资料</view>
+        </view>
+      </view>
+      <view class="userinfov" bindtap="goAccount">个人资料</view>
+    </block>
+  </view>
+  <view class="numberv">
+    <view class="numberc">
+      <view class="numbertag">已学习/时:</view>
+      <view class="numberval">0</view>
+    </view>
+    <view class="numberline"></view>
+    <view class="numberc">
+      <view class="numbertag">答题数/个:</view>
+      <view class="numberval">0</view>
     </view>
   </view>
 </view>
 
-<!--数据部分-->
-<view class="numberv">
-  <view class="numberc" bindtap="goTabOpt" data-index="1">
-    <view class="numbertxt">0</view>
-    <view class="numbertag">已经学习/时</view>
+<!--勋章部分-->
+<view class="xunzhangv" bindtap="goXunZhang">
+  <view class="xunzhangl">
+    <image src="../../resources/my/xunzhang.png" class="xunzhang"></image>
+    <view class="xzhlevel">Lv.1勋章</view>
   </view>
-  <view class="numberline"></view>
-  <view class="numberc" bindtap="goTabOpt" data-index="2">
-    <view class="numbertxt">0</view>
-    <view class="numbertag">答题数目/个</view>
-  </view>
-  <view class="numberline"></view>
-  <view class="numberc" bindtap="goTabOpt" data-index="3">
-    <view class="numbertxt">0</view>
-    <view class="numbertag">我的成就</view>
-  </view>
+  <view class="xunzhangr">我的成就 ></view>
 </view>
 
-<!--菜单部分-->
+<!--我的功能-->
+<view class="mdtitle">我的功能</view>
 <view class="menuv">
-  <view class="menuc" bindtap="tapMenu" data-index="0">
-    <view class="menucl">
-      <image src="/resources/my/my-6.png" class="menuicon"></image>
-      <view class="menutxt">数据中心</view>
-    </view>
-    <image src="/resources/comman/righticon.png" class="righticon"></image>
+  <view class="menuc" bindtap="tapMenu" data-menu="1">
+    <image src="/resources/my/xiaoxi.png" class="menuicon"></image>
+    <view class="menutxt">我的消息</view>
   </view>
-  <view class="menuc" bindtap="tapMenu" data-index="1">
-    <view class="menucl">
-      <image src="/resources/my/my-7.png" class="menuicon"></image>
-      <view class="menutxt">消息中心</view>
-    </view>
-    <image src="/resources/comman/righticon.png" class="righticon"></image>
+  <view class="menuc" bindtap="tapMenu" data-menu="2">
+    <image src="/resources/my/xuexi.png" class="menuicon"></image>
+    <view class="menutxt">学习记录</view>
   </view>
-  <view class="menuc" bindtap="tapMenu" data-index="2">
-    <view class="menucl">
-      <image src="/resources/my/my-8.png" class="menuicon"></image>
-      <view class="menutxt">学习记录</view>
-    </view>
-    <image src="/resources/comman/righticon.png" class="righticon"></image>
+  <view class="menuc" bindtap="tapMenu" data-menu="3">
+    <image src="/resources/my/shoucang.png" class="menuicon"></image>
+    <view class="menutxt">我的收藏</view>
   </view>
-  <view class="menuc" bindtap="tapMenu" data-index="3">
-    <view class="menucl">
-      <image src="/resources/my/my-9.png" class="menuicon"></image>
-      <view class="menutxt">我的收藏</view>
-    </view>
-    <image src="/resources/comman/righticon.png" class="righticon"></image>
+  <view class="menuc" bindtap="tapMenu" data-menu="4">
+    <image src="/resources/my/dati.png" class="menuicon"></image>
+    <view class="menutxt">答题记录</view>
   </view>
-  <view class="menuc" bindtap="tapMenu" data-index="4">
-    <view class="menucl">
-      <image src="/resources/my/my-10.png" class="menuicon"></image>
-      <view class="menutxt">错题集</view>
+</view>
+<view style="width: 100%;height: 16rpx;background-color: #f7f7f7;margin-top: 20rpx;"></view>
+
+<!--创作中心-->
+<view class="mdtitle">创作中心</view>
+<view class="optv">
+  <view class="optc"  bindtap="tapMenu" data-menu="5">
+    <view class="optcl">
+      <view class="optclname">创课中心</view>
+      <view class="optcldesc">数据消息都在这里～</view>
     </view>
-    <image src="/resources/comman/righticon.png" class="righticon"></image>
+    <image src="/resources/my/chuangke.png" class="opticon"></image>
   </view>
-  <view class="menuc" bindtap="tapMenu" data-index="5">
-    <view class="menucl">
-      <image src="/resources/my/my-11.png" class="menuicon"></image>
-      <view class="menutxt">账户设置</view>
+  <view class="optc" bindtap="tapMenu" data-menu="6">
+    <view class="optcl">
+      <view class="optclname">进德学堂</view>
+      <view class="optcldesc">看看实践课情况～</view>
     </view>
-    <image src="/resources/comman/righticon.png" class="righticon"></image>
-  </view>
-  <view class="menuc" bindtap="tapMenu" data-index="6">
-    <view class="menucl">
-      <image src="/resources/my/my-11.png" class="menuicon"></image>
-      <view class="menutxt">创课中心</view>
-    </view>
-    <image src="/resources/comman/righticon.png" class="righticon"></image>
+    <image src="/resources/my/xuetang.png" class="opticon"></image>
   </view>
 </view>
 

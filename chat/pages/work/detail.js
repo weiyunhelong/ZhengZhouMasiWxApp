@@ -1,4 +1,4 @@
-// my/pages/dati/index.js
+// chat/pages/work/detail.js
 var requestUrl = getApp().globalData.requestUrl;
 var WxRequest = require('../../../utils/WxRequest.js');
 
@@ -8,16 +8,14 @@ Page({
    * 页面的初始数据
    */
   data: {
-    chkkind: 0, //0:答题记录 1:错题集
-    chktype: 0, //0:全部 1:选择题 2:判断题
-    list: [], //列表数据
-    pageindex:1,
+
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+
     var that = this;
     wx.getSystemInfo({
       success: (res) => {
@@ -26,31 +24,13 @@ Page({
         })
       },
     })
-  },
-  tapKind(e) { //选中类型
-    var that = this;
     that.setData({
-      chkkind: e.currentTarget.dataset.tab,
-      chktype:0,
-      pageindex:1
+      id: options.id
     })
-    that.InitData();
   },
-  tapType(e) { //选中类型
-    var that = this;
-    that.setData({
-      chktype: e.currentTarget.dataset.type,
-      pageindex:1
-    })
-    that.InitData();
-  },
-  InitData() { //获取消息列表
-    var that = this;
-    var chkkind = that.data.chkkind;
-    var chktype = that.data.chktype;
-    var pageindex = that.data.pageindex;
-    that.setData({
-      list: [1,2,3,4,5,6,7,8,9,10]
+  goBackOpt(){//点击返回
+    wx.navigateBack({
+      delta: 1,
     })
   },
   /**
@@ -64,8 +44,7 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-    var that=this;
-    that.InitData();
+
   },
 
   /**

@@ -43,6 +43,8 @@
   "subPackages": [{
     "root": "chat",
     "pages": [
+      "pages/work/index",
+      "pages/work/detail",
       "pages/chat/index",
       "pages/chat/wechat",
       "pages/chat/member",
