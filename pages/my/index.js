@@ -25,6 +25,11 @@ Page({
       },
     })
   },
+  goBackOpt(){//点击返回
+    wx.navigateBack({
+      delta: 1,
+    })
+  },
   goLogin() { //去登录
     wx.navigateTo({
       url: '../../wxauth/pages/wxlogin/index',
@@ -77,19 +82,14 @@ Page({
         url = "../../my/pages/dati/index";
         break;
       case 5:
-        url = "../kecheng/index";
+        url = "../../my/pages/course/index";
         break;
       case 6:
         url = "../../xuetang/pages/xuetang/index";
         break;
     }
     wx.navigateTo({
-      url: url,
-      fail: function () {
-        wx.switchTab({
-          url: url
-        })
-      }
+      url: url
     })
 
   },

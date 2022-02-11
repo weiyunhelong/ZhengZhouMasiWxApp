@@ -1,5 +1,5 @@
 <!--xuetang/pages/xuetang/shijian.wxml-->
-<view class="coursev">
+<view class="coursev" bindtap="goCourseOpt" data-id="28">
   <image src="/resources/comman/avatarUrl.jpg" class="coursecover" mode="aspectFill"></image>
   <view class="coursec">
     <view class="coursename showTwohangTxt">红色摇篮-安远路矿工人运动纪念馆</view>
@@ -9,7 +9,7 @@
     </view>
   </view>
 </view>
-<view class="coursev">
+<view class="coursev" bindtap="goCourseOpt" data-id="28">
   <image src="/resources/comman/avatarUrl.jpg" class="coursecover" mode="aspectFill"></image>
   <view class="coursec">
     <view class="coursename showTwohangTxt">红色摇篮-安远路矿工人运动纪念馆</view>
@@ -19,7 +19,7 @@
     </view>
   </view>
 </view>
-<view class="coursev">
+<view class="coursev" bindtap="goCourseOpt" data-id="28">
   <image src="/resources/comman/avatarUrl.jpg" class="coursecover" mode="aspectFill"></image>
   <view class="coursec">
     <view class="coursename showTwohangTxt">红色摇篮-安远路矿工人运动纪念馆</view>
@@ -29,7 +29,7 @@
     </view>
   </view>
 </view>
-<view class="coursev">
+<view class="coursev" bindtap="goCourseOpt" data-id="28">
   <image src="/resources/comman/avatarUrl.jpg" class="coursecover" mode="aspectFill"></image>
   <view class="coursec">
     <view class="coursename showTwohangTxt">红色摇篮-安远路矿工人运动纪念馆</view>
@@ -39,7 +39,7 @@
     </view>
   </view>
 </view>
-<view class="coursev">
+<view class="coursev" bindtap="goCourseOpt" data-id="28">
   <image src="/resources/comman/avatarUrl.jpg" class="coursecover" mode="aspectFill"></image>
   <view class="coursec">
     <view class="coursename showTwohangTxt">红色摇篮-安远路矿工人运动纪念馆</view>

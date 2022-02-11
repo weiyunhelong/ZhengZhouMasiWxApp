@@ -53,6 +53,7 @@
 
 <!--浮窗再次申请部分-->
 <view class="maskv {{showMaskAni?'showMaskv':'hideMaskv'}}" wx:if="{{showMask}}">
+  <view bindtap="hideMaskOpt" style="width: 100vw;height: calc(100vh - 1100rpx);"></view>
   <view class="maskcv">
     <view class="title">再次申请</view>
     <view class="reasontag">未通过原因：</view>

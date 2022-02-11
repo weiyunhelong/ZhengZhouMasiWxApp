@@ -17,10 +17,15 @@ Page({
   onLoad: function (options) {
 
   },
+  goUserOpt() { //点击用户
+    wx.navigateTo({
+      url: '../../../my/pages/info/index',
+    })
+  },
   tapMenu(e) { //点击菜单
     var that = this;
     var url = "";
-    var index =parseInt(e.currentTarget.dataset.menu);
+    var index = parseInt(e.currentTarget.dataset.menu);
     switch (index) {
       case 1:
         url = "../xuetang/shijian";
@@ -43,6 +48,11 @@ Page({
     }
     wx.navigateTo({
       url: url
+    })
+  },
+  goCourseOpt(e) { //点击我的实践课
+    wx.navigateTo({
+      url: '../../../pages/course/detail?id=' + e.currentTarget.dataset.id
     })
   },
   /**

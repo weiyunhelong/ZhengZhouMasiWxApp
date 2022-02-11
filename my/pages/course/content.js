@@ -66,6 +66,17 @@ Page({
       }, 1000);
     }
   },
+  hideMaskOpt(){//关闭遮罩层
+    var that=this;
+    that.setData({
+      showMaskAni: false
+    })
+    setTimeout(() => {
+      that.setData({
+        showMask: false
+      })
+    }, 1000);
+  },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */

@@ -1,7 +1,7 @@
 <!--my/pages/course/index.wxml-->
 <!--用户信息-->
 <view class="userinfov">
-  <view class="userv">
+  <view class="userv" bindtap="goUserOpt">
     <image src="/resources/comman/avatarUrl.jpg" class="avatarUrl"></image>
     <view class="usercv">
       <view class="username">李云飞</view>

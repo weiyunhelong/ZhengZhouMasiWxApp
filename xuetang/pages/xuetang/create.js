@@ -23,6 +23,11 @@ Page({
       chktab: e.currentTarget.dataset.tab
     })
   },
+  goActivity(e){//点击活动
+    wx.navigateTo({
+      url: '../../../pages/activity/detail?id='+e.currentTarget.dataset.id
+    })
+  },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */

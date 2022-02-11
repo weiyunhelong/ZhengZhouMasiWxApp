@@ -25,7 +25,7 @@
 
 <!--列表数据部分-->
 <scroll-view scroll-y="true" class="listv">
-  <view class="activityv">
+  <view class="activityv" bindtap="goActivity" data-id="11">
     <view class="activityname">不要以"为别人考虑"做理由，其实丢弃了"舍我其谁"的使命感</view>
     <view class="activitynum">活动人数：3</view>
     <view class="activitystartv">
@@ -38,7 +38,7 @@
       <view class="activitystatus activitystatus1">待审核</view>
     </view>
   </view>
-  <view class="activityv">
+  <view class="activityv" bindtap="goActivity" data-id="11">
     <view class="activityname">不要以"为别人考虑"做理由，其实丢弃了"舍我其谁"的使命感</view>
     <view class="activitynum">活动人数：3</view>
     <view class="activitystartv">
@@ -51,7 +51,7 @@
       <view class="activitystatus activitystatus2">进行中</view>
     </view>
   </view>
-  <view class="activityv">
+  <view class="activityv" bindtap="goActivity" data-id="11">
     <view class="activityname">不要以"为别人考虑"做理由，其实丢弃了"舍我其谁"的使命感</view>
     <view class="activitynum">活动人数：3</view>
     <view class="activitystartv">
@@ -64,7 +64,7 @@
       <view class="activitystatus activitystatus3">报名中</view>
     </view>
   </view>
-  <view class="activityv">
+  <view class="activityv" bindtap="goActivity" data-id="11">
     <view class="activityname">不要以"为别人考虑"做理由，其实丢弃了"舍我其谁"的使命感</view>
     <view class="activitynum">活动人数：3</view>
     <view class="activitystartv">

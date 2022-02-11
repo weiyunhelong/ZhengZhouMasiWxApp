@@ -17,6 +17,11 @@ Page({
   onLoad: function (options) {
 
   },
+  goUserOpt(){//点击用户信息
+    wx.navigateTo({
+      url: '../info/index',
+    })
+  },
   TouGaoOpt(){//投稿
     wx.showModal({
       confirmColor: '#262626',

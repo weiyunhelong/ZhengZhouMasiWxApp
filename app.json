@@ -15,6 +15,7 @@
     "pages/test/test",
     "pages/test/result",
     "pages/activity/index",
+    "pages/activity/detail",
     "pages/activity/create",
     "pages/activity/upload",
     "pages/activity/book",

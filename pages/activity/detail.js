@@ -1,6 +1,6 @@
-// xuetang/pages/xuetang/shijian.js
+// pages/activity/detail.js
 var requestUrl = getApp().globalData.requestUrl;
-var WxRequest = require('../../../utils/WxRequest.js');
+var WxRequest = require('../../utils/WxRequest.js');
 
 Page({
 
@@ -8,18 +8,28 @@ Page({
    * 页面的初始数据
    */
   data: {
-    list: []
+    activityid: 0,
+    dataobj:{}
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    var that = this;
+    that.setData({
+      activityid: options.id
+    })
+    that.InitObjData();
   },
-  goCourseOpt(e) { //点击我的实践课
-    wx.navigateTo({
-      url: '../../../pages/course/detail?id=' + e.currentTarget.dataset.id
+  InitObjData() { //获取活动详情
+    var that = this;
+    var url = requestUrl + "/API/PracticalActivity/GetPracticalActivityDetail?id=" + that.data.activityid + "&userID=" + getApp().globalData.WxUserId;
+   
+    WxRequest.PostRequest(url, {}).then(res => {
+      that.setData({
+        dataobj: res.data.data
+      })
     })
   },
   /**
