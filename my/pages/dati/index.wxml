@@ -18,10 +18,12 @@
       <view class="typeline" wx:if="{{chktype==2}}"></view>
     </view>
   </view>
-  <view class="typerv">
-    <view class="typertxt">筛选</view>
-    <image src="./filter.png" class="filter"></image>
-  </view>
+  <picker mode="date" bindchange="dateFilter">
+    <view class="typerv">
+      <view class="typertxt">{{filterdate==''?'筛选':filterdate}}</view>
+      <image src="./filter.png" class="filter"></image>
+    </view>
+  </picker>
 </view>
 
 <scroll-view scroll-y="true" class="datav">

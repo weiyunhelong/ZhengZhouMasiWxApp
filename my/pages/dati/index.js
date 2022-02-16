@@ -12,6 +12,7 @@ Page({
     chktype: 0, //0:全部 1:选择题 2:判断题
     list: [], //列表数据
     pageindex:1,
+    filterdate:"",
   },
 
   /**
@@ -43,6 +44,11 @@ Page({
       pageindex:1
     })
     that.InitData();
+  },
+  dateFilter(e){//日期筛选
+    this.setData({
+      filterdate:e.detail.value
+    })
   },
   InitData() { //获取消息列表
     var that = this;
