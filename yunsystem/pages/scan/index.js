@@ -21,14 +21,13 @@ Page({
     timer = setInterval(() => {
       that.takePhoto();
     }, 2000);
-    that.ShiBieImgOPt(1);
   },
   takePhoto() { //拍照
     var that = this;
     const ctx = wx.createCameraContext();
 
     ctx.takePhoto({
-      quality: 'medium',
+      quality: 'high',
       success: (res) => {        
         var src = res.tempImagePath;
         wx.getFileSystemManager().readFile({
