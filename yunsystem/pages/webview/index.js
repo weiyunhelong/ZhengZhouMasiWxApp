@@ -16,11 +16,12 @@ Page({
     let link = options.url;
 
     if (options.type == 1) {
-      link = decodeURIComponent(link);
+      link = decodeURIComponent(link);      
       that.setData({
         link: link
       })
     } else {
+     
       that.setData({
         link: link
       })

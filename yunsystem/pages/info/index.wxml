@@ -1,28 +1,28 @@
 <!--yunsystem/pages/info/index.wxml-->
 <view class="topborder"></view>
 <view class="bodyv">
-  <view class="title">爱过主义教育基地纪念馆爱过主义教育基地纪念馆</view>
-  <parser html="{{desc}}" />
+  <view class="title">{{dataobj.Title}}</view>
+  <parser html="{{dataobj.Contents}}" />
 </view>
 <view class="tabbarv"></view>
 <view class="tabbar">
   <view class="tabbaritem">
     <image src="../../resources/view.png" class="tabbaricon"></image>
-    <view class="tabbarnum">823</view>
+    <view class="tabbarnum">{{dataobj.BrowseNum}}</view>
   </view>
   <view class="tabbaritem" bindtap="ZanOpt">
     <image src="{{IsZan?'../../resources/zanh.png':'../../resources/zan.png'}}" class="tabbaricon"></image>
-    <view class="{{IsZan?'tabbarnumh':'tabbarnum'}}">824</view>
+    <view class="{{IsZan?'tabbarnumh':'tabbarnum'}}">{{dataobj.LikesNum}}</view>
   </view>
   <view class="tabbaritem" bindtap="CollectOpt">
     <image src="{{IsCollect?'../../resources/xingh.png':'../../resources/xing.png'}}" class="tabbaricon"></image>
-    <view class="{{IsCollect?'tabbarnumh':'tabbarnum'}}">1.2k</view>
+    <view class="{{IsCollect?'tabbarnumh':'tabbarnum'}}">{{dataobj.CollectionNum}}</view>
   </view>
 </view>
 
-<view class="vrbtn" bindtap="goVROpt">
+<view class="vrbtn" bindtap="goVROpt" wx:if="{{dataobj.VRUrl!=''}}">
   <view class="vriconv">
-    <image src="./vr.png" class="vricon"></image>
+    <image src="../../resources/vr.png" class="vricon"></image>
   </view>
   <view class="vrtxt">全景体验</view>
 </view>

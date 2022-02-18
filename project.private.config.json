@@ -12,12 +12,7 @@
     },
     "miniprogram": {
       "list": [
-        {
-          "name": "",
-          "pathName": "pages/activity/detail",
-          "query": "id=11",
-          "scene": null
-        }
+        
       ]
     }
   }

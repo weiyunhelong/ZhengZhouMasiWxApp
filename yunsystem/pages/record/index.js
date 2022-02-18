@@ -23,13 +23,8 @@ Page({
     })
   },
   ScanOpt() { //扫码操作
-    var that = this;
-    wx.scanCode({
-      onlyFromCamera: true,
-      scanType: ['scanType'],
-      success: function (res) {
-
-      }
+    wx.navigateTo({
+      url: '../scan/index',
     })
   },
   goHome() { //首页

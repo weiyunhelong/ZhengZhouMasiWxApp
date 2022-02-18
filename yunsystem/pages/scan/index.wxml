@@ -1,0 +1,6 @@
+<!--yunsystem/pages/scan/index.wxml-->
+<view class="scanbtnv">
+  <camera device-position="back" binderror="ErrorOpt" resolution="medium" frame-size="small" class="camerav"></camera>
+  <image src="../../resources/scanbg.png" class="swiper-animate"></image>
+</view>
+

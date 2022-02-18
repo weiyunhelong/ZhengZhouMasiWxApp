@@ -1,0 +1,128 @@
+/* yunsystem/pages/scan/index.wxss */
+page {
+  background: transparent;
+}
+
+.scanbtnv {
+  width: 100vw;
+  height: 100vh;
+  text-align: center;
+}
+
+.camerav {
+  width: 100vw;
+  height: 100vh;
+}
+
+.codetip {
+  width: 590rpx;
+  height: 10vh;
+  border-radius: 8rpx;
+  margin: 0 auto;
+  line-height: 10vh;
+  font-size: 28rpx;
+}
+
+.codev {
+  width: 590rpx;
+  height: 88rpx;
+  background: #F4F5F7;
+  border-radius: 8rpx;
+  display: flex;
+  justify-content: space-between;
+  margin: 0 auto 5vh auto;
+}
+
+.txtcss {
+  height: 88rpx;
+  padding-left: 24rpx;
+  font-size: 32rpx;
+  color: #000;
+  line-height: 88rpx;
+  width: 565rpx;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.tipcss {
+  font-size: 24rpx;
+  font-weight: 500;
+  color: #969AA1;
+}
+
+.comfirmbtn {
+  font-size: 26rpx;
+  font-weight: 500;
+  color: #FFFFFF;
+  width: 590rpx;
+  height: 88rpx;
+  background: #D61819;
+  border-radius: 12rpx;
+  text-align: center;
+  line-height: 88rpx;
+  margin: 0 auto 10vh;
+}
+
+.optv {
+  width: 100vw;
+  height: 242rpx;
+  display: flex;
+  background: #1C1C20;
+  position: fixed;
+  bottom: 0;
+  z-index: 11;
+}
+
+.optitemv {
+  width: 50vw;
+  height: 242rpx;
+  text-align: center;
+}
+
+.opticon {
+  width: 72rpx;
+  height: 72rpx;
+  margin: 56rpx auto 24rpx;
+}
+
+.optitemtxt {
+  font-size: 24rpx;
+  font-weight: 500;
+  color: #969AA1;
+}
+
+
+/*扫一扫动画*/
+.swiper-animate {
+  position: absolute;
+  width: 100%;
+  height: 121rpx;
+  left: 0;
+  top: 0;
+  z-index: 9; 
+  animation: scan 3s linear infinite;
+  -webkit-animation: scan 3s linear infinite;
+}
+
+@keyframes scan {
+  from {
+    top: 0rpx;
+  }
+
+  /*网格移动到显示区域的外面*/
+  to {
+    top: 100vh;
+  }
+}
+
+@-webkit-keyframes scan {
+  from {
+    top: 0rpx;
+  }
+
+  /*网格移动到显示区域的外面*/
+  to {
+    top: 100vh;
+  }
+}

@@ -27,7 +27,7 @@ Page({
   goBack() { //点击返回
     wx.navigateBack({
       delta: 1,
-      fail:function(){
+      fail: function () {
         wx.reLaunch({
           url: '../../../pages/home/index',
         })
@@ -59,13 +59,8 @@ Page({
     })
   },
   ScanOpt() { //扫码操作
-    var that = this;
-    wx.scanCode({
-      onlyFromCamera: true,
-      scanType: ['scanType'],
-      success: function (res) {
-
-      }
+    wx.navigateTo({
+      url: '../scan/index',
     })
   },
   goRecord() { //体验记录

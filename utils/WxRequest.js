@@ -37,14 +37,6 @@ function PostRequest(url, params) {
       },
       success: function (res) { //服务器返回数据
         
-        // if(res.data.Result==4001||res.data.Result=='4001'){
-        //   getApp().UpdateWxOpenId().then(res=>{
-        //     that.PostRequest(url, params);
-        //   })
-        // }else{
-        //   resolve(res);
-        // }
-
         resolve(res);
        
       },
@@ -56,6 +48,31 @@ function PostRequest(url, params) {
   return promise;
 }
 
+//promise post请求方式
+function PostFormRequest(url, params) {
+  var that=this;
+  var promise = new Promise((resolve, reject) => {
+
+    //网络请求
+    wx.request({
+      url: url,
+      data: params,
+      method: 'POST',
+      header: {
+        'content-type': 'application/x-www-form-urlencoded;charset=utf-8',
+      },
+      success: function (res) { //服务器返回数据
+        
+        resolve(res);
+       
+      },
+      fail: function (e) {
+        reject("网络请求出错",e);
+      }
+    })
+  });
+  return promise;
+}
 //查询用户信息
 function GetWxUserInfo() {
   var promise = new Promise((resolve, reject) => {
@@ -124,4 +141,5 @@ module.exports = {
   ShowAlert: ShowAlert, //弹窗提示  
   GetWxUserInfo:GetWxUserInfo,//查询用户信息
   UploadImgOpt:UploadImgOpt,//上传图片
+  PostFormRequest:PostFormRequest,//表单提交
 }

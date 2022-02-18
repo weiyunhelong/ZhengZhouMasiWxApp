@@ -91,6 +91,7 @@
       "pages/hongsehenan/index",
       "pages/xinzhengzhou/index",
       "pages/info/index",
+      "pages/scan/index",
       "pages/webview/index"
     ]
   }, {
