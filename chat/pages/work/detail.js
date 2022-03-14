@@ -9,7 +9,8 @@ Page({
    */
   data: {
     id: 0,
-    dataobj: {}
+    dataobj: {},
+    imgh:0,
   },
 
   /**
@@ -27,6 +28,17 @@ Page({
     })
     that.setData({
       id: options.id
+    })
+  },
+  ImgLoad(e){//获取图片高度
+    var ratio = 0;
+    var $width = e.detail.width, //获取图片真实宽度
+      $height = e.detail.height,
+      ratio = $width / $height; //图片的真实宽高比例
+    var viewWidth = 750, //设置图片显示宽度，左右留有16rpx边距
+      viewHeight = viewWidth / ratio; //计算的高度值
+    this.setData({
+      imgh: viewHeight
     })
   },
   goBackOpt() { //点击返回
