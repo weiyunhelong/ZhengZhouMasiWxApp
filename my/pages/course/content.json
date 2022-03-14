@@ -4,6 +4,7 @@
   "navigationBarTitleText": "内容管理",
   "usingComponents": {
     "loadding": "../../../components/loadding/index",
-    "contentcom": "../../components/content/index"
+    "contentcom": "../../components/content/index",
+    "nodatacom": "../../../components/nodata/index"
   }
 }

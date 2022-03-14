@@ -12,7 +12,20 @@
     },
     "miniprogram": {
       "list": [
-        
+        {
+          "name": "",
+          "pathName": "my/pages/course/content",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "",
+          "pathName": "my/pages/course/news",
+          "query": "",
+          "scene": null,
+          "launchMode": "default"
+        }
       ]
     }
   }

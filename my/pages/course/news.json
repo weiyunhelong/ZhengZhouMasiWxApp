@@ -4,6 +4,7 @@
   "navigationBarTitleText": "消息中心",
   "usingComponents": {
     "loadding": "../../../components/loadding/index",
-    "msgcom": "../../components/msgcom/index"
+    "msgcom": "../../components/msgcom/index",
+    "nodatacom": "../../../components/nodata/index"
   }
 }

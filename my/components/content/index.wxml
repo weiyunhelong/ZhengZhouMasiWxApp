@@ -1,63 +1,51 @@
 <!--my/components/connent/index.wxml-->
-<!--内容-->
+<!--稿件管理-->
 <block wx:if="{{type==1}}">
   <view class="comv">
-    <image src="/resources/comman/avatarUrl.jpg" class="smcover"></image>
+    <image src="{{dataobj.Thumbnail}}" mode="aspectFill" class="smcover"></image>
     <view class="comcv">
-      <view class="comcname showOnehangTxt">但无论是哪种类型用户</view>
+      <view class="comcname showOnehangTxt">{{dataobj.Title}}</view>
       <view class="comctype showOnehangTxt"></view>
-      <view class="comcstatus" wx:if="{{!iscaogao}}">
+      <view class="comcstatus">
         <view class="comcstatusl">
           <text>状态：</text>
-          <text class="greytxt">审核中</text>
+          <text class="greytxt">{{dataobj.State}}</text>
         </view>
-        <view class="comcstatusr" wx:if="{{isshowmsg}}" catchtap="replyOpt">
+        <view class="comcstatusr" wx:if="{{dataobj.State=='未通过'}}" catchtap="replyOpt">
           <image src="../../resources/msg.png" class="msgicon"></image>
         </view>
       </view>
-      <view class="comdate"  wx:if="{{iscaogao}}">1个月前 专栏稿件</view>
     </view>
   </view>
 </block>
 
-<!--视频稿件-->
+<!--申诉管理-->
 <block wx:if="{{type==2}}">
   <view class="comv">
-    <image src="/resources/comman/avatarUrl.jpg" class="mdcover"></image>
-    <view class="comcv" style="width: 375rpx;">
-      <view class="comcname showOnehangTxt">但无论是哪种类型用户</view>
-      <view class="comctype showOnehangTxt">{{iscaogao?'开会不能总讲和气，越和气就越微徐爱越和气就越微徐爱':'视频稿件'}}</view>
-      <view class="comcstatus" wx:if="{{!iscaogao}}">
+    <image src="{{dataobj.Thumbnail}}" mode="aspectFill" class="{{dataobj.Type=='视频'?'mdcover':'smcover'}}"></image>
+    <view class="comcv" style="width: {{dataobj.Type=='视频'?375:504}}rpx;">
+      <view class="comcname showOnehangTxt">{{dataobj.Title}}</view>
+      <view class="comctype showOnehangTxt">{{dataobj.Type}}</view>
+      <view class="comcstatus">
         <view class="comcstatusl">
           <text>状态：</text>
-          <text class="redtxt">未通过</text>
+          <text class="redtxt">{{dataobj.State}}</text>
         </view>
-        <view class="comcstatusr" wx:if="{{isshowmsg}}" catchtap="replyOpt">
+        <view class="comcstatusr" wx:if="{{dataobj.State=='未通过'}}" catchtap="replyOpt">
           <image src="../../resources/msg.png" class="msgicon"></image>
         </view>
       </view>
-      <view class="comdate" wx:if="{{iscaogao}}">1个月前 视频稿件</view>
     </view>
   </view>
 </block>
 
-<!--专栏稿件-->
+<!--草稿箱-->
 <block wx:if="{{type==3}}">
   <view class="comv">
-    <image src="/resources/comman/avatarUrl.jpg" class="smcover"></image>
-    <view class="comcv">
-      <view class="comcname showOnehangTxt">但无论是哪种类型用户</view>
-      <view class="comctype showOnehangTxt">{{iscaogao?'':'专栏稿件'}}</view>
-      <view class="comcstatus" wx:if="{{!iscaogao}}">
-        <view class="comcstatusl">
-          <text>状态：</text>
-          <text class="orangetxt">申诉中</text>
-        </view>
-        <view class="comcstatusr" wx:if="{{isshowmsg}}" catchtap="replyOpt">
-          <image src="../../resources/msg.png" class="msgicon"></image>
-        </view>
-      </view>
-      <view class="comdate" wx:if="{{iscaogao}}">1个月前 专栏稿件</view>
+    <image src="{{dataobj.Thumbnail}}" mode="aspectFill" class="{{dataobj.Type=='视频'?'mdcover':'smcover'}}"></image>
+    <view class="comcv" style="width: {{dataobj.Type=='视频'?375:504}}rpx;">
+      <view class="comcname showOnehangTxt">{{dataobj.Title}}</view>
+      <view class="comdate">{{dataobj.Type}} {{dataobj.Type}}</view>
     </view>
   </view>
 </block>

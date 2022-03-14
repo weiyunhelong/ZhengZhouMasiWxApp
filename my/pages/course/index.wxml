@@ -21,9 +21,9 @@
     <view class="datacitem">
       <view class="datactitle">总浏览数</view>
       <view class="datanumv">
-        <view class="datamdnum">8,321</view>
+        <view class="datamdnum">{{dataobj.browse}}</view>
         <view class="datasmnum">
-          <text decode="true">今日&nbsp;5</text>
+          <text decode="true">今日&nbsp;{{dataobj.today_browse}}</text>
         </view>
       </view>
     </view>
@@ -31,9 +31,9 @@
     <view class="datacitem" style="padding-left: 28rpx;">
       <view class="datactitle">总评论数</view>
       <view class="datanumv">
-        <view class="datamdnum">8,321</view>
+        <view class="datamdnum">{{dataobj.comment}}</view>
         <view class="datasmnum">
-          <text decode="true">今日&nbsp;5</text>
+          <text decode="true">今日&nbsp;{{dataobj.today_comment}}</text>
         </view>
       </view>
     </view>

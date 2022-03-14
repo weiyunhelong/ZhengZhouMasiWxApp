@@ -10,7 +10,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-    chktab: 1, //1:我的视频 2:我的专栏
+    chktab: 1, //0专栏稿件 1视频稿件 2红读 3四史 4主题
     ecline: {
       lazyLoad: true,
     },
@@ -149,6 +149,7 @@ Page({
     that.setData({
       chktab: e.currentTarget.dataset.type
     })
+    that.InitData();
     that.InitChartData();
   },
   chooseDayOpt() {
@@ -169,22 +170,19 @@ Page({
     var that = this;
     var chktab = that.data.chktab, //选中的tab
       chkday = that.data.chkday; //选择的天
-
-    var xData = ["11.01", "11.02", "11.03", "11.04", "11.05", "11.06", "11.07", "11.08"];
-    var yData1 = [],
-      yData2 = [],
-      yData3 = [],
-      yData4 = [],
-      yData5 = [];
-    for (var i = 0; i < xData.length; i++) {
-      yData1.push(parseInt(Math.random() * 1000));
-      yData2.push(parseInt(Math.random() * 1000));
-      yData3.push(parseInt(Math.random() * 1000));
-      yData4.push(parseInt(Math.random() * 1000));
-      yData5.push(parseInt(Math.random() * 1000));
-    }
-    that.InitChart(xData, yData1, yData2, yData3, yData4, yData5);
-
+    var url = requestUrl + "/API/UserCenterManuApi/DataWhereDate?userid=" + getApp().globalData.WxUserId + "&typeid=" + chktab + "&day=" +(chkday==0?30:(chkday==1?14:7));
+    WxRequest.PostRequest(url, {}).then(res => {
+      if (res.data.success) {
+        var dataobj = res.data.data;
+        var xData = dataobj.Date;
+        var yData1 = dataobj.browse;
+        var yData2 = dataobj.comment;
+        var yData3 = dataobj.share;
+        var yData4 = dataobj.likes;
+        var yData5 = dataobj.collection;
+        that.InitChart(xData, yData1, yData2, yData3, yData4, yData5);
+      }
+    })
   },
   /**
    * 生命周期函数--监听页面初次渲染完成
@@ -198,8 +196,30 @@ Page({
    */
   onShow: function () {
     var that = this;
-    that.InitChartData();
+    
+    if (getApp().globalData.WxUserId == 0) {
+      wx.reLaunch({
+        url: '../../../wxauth/pages/wxlogin/index',
+      })
+    } else {
+      //获取数据总揽
+      that.InitData();
+      //获取图形数据
+      that.InitChartData();
+    }
   },
+  InitData() { //获取数据
+    var that = this;
+    var url = requestUrl + "/API/UserCenterManuApi/DataScreening?userid=" + getApp().globalData.WxUserId + "&&typeid=" + that.data.chktab;
+    WxRequest.PostRequest(url, {}).then(res => {
+      if (res.data.success) {
+        that.setData({
+          dataobj: res.data.data
+        })
+      }
+    })
+  },
+
 
   /**
    * 生命周期函数--监听页面隐藏

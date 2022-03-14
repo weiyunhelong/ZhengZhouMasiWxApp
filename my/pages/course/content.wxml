@@ -17,50 +17,44 @@
 <view class="bodyv">
   <block wx:if="{{chktab==1}}">
     <view class="statusv">
-      <view class="{{chksubtab==0?'statustxth':'statustxt'}}" bindtap="tapsubTab" data-tab="0">全部稿件</view>
-      <view class="{{chksubtab==1?'statustxth':'statustxt'}}" bindtap="tapsubTab" data-tab="1">审核中</view>
-      <view class="{{chksubtab==2?'statustxth':'statustxt'}}" bindtap="tapsubTab" data-tab="2">已通过</view>
-      <view class="{{chksubtab==3?'statustxth':'statustxt'}}" bindtap="tapsubTab" data-tab="3">未通过</view>
+      <view class="{{chksubtab==-1?'statustxth':'statustxt'}}" bindtap="tapsubTab" data-tab="-1">全部稿件</view>
+      <view class="{{chksubtab==0?'statustxth':'statustxt'}}" bindtap="tapsubTab" data-tab="0">审核中</view>
+      <view class="{{chksubtab==1?'statustxth':'statustxt'}}" bindtap="tapsubTab" data-tab="1">已通过</view>
+      <view class="{{chksubtab==2?'statustxth':'statustxt'}}" bindtap="tapsubTab" data-tab="2">未通过</view>
     </view>
   </block>
   <block wx:if="{{chktab==2}}">
     <view class="statusv">
-      <view class="{{chksubtab==0?'statustxth':'statustxt'}}" bindtap="tapsubTab" data-tab="0">全部稿件</view>
-      <view class="{{chksubtab==1?'statustxth':'statustxt'}}" bindtap="tapsubTab" data-tab="1">申述中</view>
+      <view class="{{chksubtab==-1?'statustxth':'statustxt'}}" bindtap="tapsubTab" data-tab="-1">全部稿件</view>
+      <view class="{{chksubtab==0?'statustxth':'statustxt'}}" bindtap="tapsubTab" data-tab="0">申述中</view>
       <view class="{{chksubtab==2?'statustxth':'statustxt'}}" bindtap="tapsubTab" data-tab="2">未通过</view>
     </view>
   </block>
   <block wx:if="{{chktab==3}}">
     <view class="statusv">
-      <view class="{{chksubtab==0?'statustxth':'statustxt'}}" bindtap="tapsubTab" data-tab="0">全部稿件</view>
+      <view class="{{chksubtab==-1?'statustxth':'statustxt'}}" bindtap="tapsubTab" data-tab="-1">全部稿件</view>
       <view class="{{chksubtab==1?'statustxth':'statustxt'}}" bindtap="tapsubTab" data-tab="1">视频稿件</view>
-      <view class="{{chksubtab==2?'statustxth':'statustxt'}}" bindtap="tapsubTab" data-tab="2">专栏稿件</view>
+      <view class="{{chksubtab==0?'statustxth':'statustxt'}}" bindtap="tapsubTab" data-tab="0">专栏稿件</view>
     </view>
   </block>
 
-  <scroll-view scroll-y="true" class="datav">
-    <contentcom receiveData="" showType="1" showMsg="0" caogaoType="{{chktab==3?1:0}}" bind:replayOpt="replayOpt"/>
-    <contentcom receiveData="" showType="2" showMsg="1" caogaoType="{{chktab==3?1:0}}" bind:replayOpt="replayOpt"/>
-    <contentcom receiveData="" showType="3" showMsg="0" caogaoType="{{chktab==3?1:0}}" bind:replayOpt="replayOpt"/>
-    <contentcom receiveData="" showType="1" showMsg="0" caogaoType="{{chktab==3?1:0}}" bind:replayOpt="replayOpt"/>
-    <contentcom receiveData="" showType="2" showMsg="1" caogaoType="{{chktab==3?1:0}}" bind:replayOpt="replayOpt"/>
-    <contentcom receiveData="" showType="3" showMsg="0" caogaoType="{{chktab==3?1:0}}" bind:replayOpt="replayOpt"/>
-    <contentcom receiveData="" showType="1" showMsg="0" caogaoType="{{chktab==3?1:0}}" bind:replayOpt="replayOpt"/>
-    <contentcom receiveData="" showType="2" showMsg="1" caogaoType="{{chktab==3?1:0}}" bind:replayOpt="replayOpt"/>
-    <contentcom receiveData="" showType="3" showMsg="0" caogaoType="{{chktab==3?1:0}}" bind:replayOpt="replayOpt"/>
+  <scroll-view scroll-y="true" class="datav" bindscrolltoupper="ShowMore">
+    <block wx:if="{{list.length==0}}">
+      <nodatacom />
+    </block>
+    <block wx:for="{{list}}" wx:key="item">
+      <contentcom receiveData="{{item}}" showType="{{chktab}}" bind:replayOpt="replayOpt" />
+    </block>
   </scroll-view>
 </view>
 
-<!--浮窗再次申请部分-->
+<!--浮窗未通过原因部分-->
 <view class="maskv {{showMaskAni?'showMaskv':'hideMaskv'}}" wx:if="{{showMask}}">
   <view bindtap="hideMaskOpt" style="width: 100vw;height: calc(100vh - 1100rpx);"></view>
   <view class="maskcv">
-    <view class="title">再次申请</view>
-    <view class="reasontag">未通过原因：</view>
-    <view class="reasontxt">习近平新时代中国特色社会主义思想是当代中国马克思主义、二十一世纪马克思主义，是中华文化和中国精神的时代精华，实现了马克思主义中国化新的飞跃。十九届六中全会决议，用10个“明确”概括了核心内容</view>
-    <view class="markv">
-      <textarea placeholder="请输入再次申请的内容" placeholder-class="marktip" class="marktxt" value="{{mark}}" bindinput="getMark"></textarea>
-    </view>
-    <view class="maskbtn" bindtap="replyOpt">提交申请</view>
+    <view class="title">未通过原因</view>
+    <view class="reasontag">原因：</view>
+    <view class="reasontxt">{{reason}}</view>
+    <view class="maskbtn" bindtap="hideMaskOpt">关闭</view>
   </view>
 </view>

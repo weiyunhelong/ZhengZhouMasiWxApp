@@ -17,29 +17,30 @@
 <view class="bodyv">
   <block wx:if="{{chktab==1}}">
     <view class="statusv">
-      <view class="{{chksubtab==0?'statustxth':'statustxt'}}" bindtap="tapsubTab" data-tab="0">全部评论</view>
+      <view class="{{chksubtab==-1?'statustxth':'statustxt'}}" bindtap="tapsubTab" data-tab="-1">全部评论</view>
       <view class="{{chksubtab==1?'statustxth':'statustxt'}}" bindtap="tapsubTab" data-tab="1">视频评论</view>
-      <view class="{{chksubtab==2?'statustxth':'statustxt'}}" bindtap="tapsubTab" data-tab="2">专栏评论</view>
+      <view class="{{chksubtab==0?'statustxth':'statustxt'}}" bindtap="tapsubTab" data-tab="0">专栏评论</view>
     </view>
   </block>
   <block wx:if="{{chktab==2}}">
     <view class="statusv">
-      <view class="{{chksubtab==0?'statustxth':'statustxt'}}" bindtap="tapsubTab" data-tab="0">全部的赞</view>
+      <view class="{{chksubtab==-1?'statustxth':'statustxt'}}" bindtap="tapsubTab" data-tab="-1">全部的赞</view>
       <view class="{{chksubtab==1?'statustxth':'statustxt'}}" bindtap="tapsubTab" data-tab="1">视频的赞</view>
-      <view class="{{chksubtab==2?'statustxth':'statustxt'}}" bindtap="tapsubTab" data-tab="2">专栏的赞</view>
+      <view class="{{chksubtab==0?'statustxth':'statustxt'}}" bindtap="tapsubTab" data-tab="0">专栏的赞</view>
     </view>
   </block>
   <block wx:if="{{chktab==3}}">
     <view class="statusv">
-      <view class="{{chksubtab==0?'statustxth':'statustxt'}}" bindtap="tapsubTab" data-tab="0">全部收藏</view>
+      <view class="{{chksubtab==-1?'statustxth':'statustxt'}}" bindtap="tapsubTab" data-tab="-1">全部收藏</view>
       <view class="{{chksubtab==1?'statustxth':'statustxt'}}" bindtap="tapsubTab" data-tab="1">视频收藏</view>
-      <view class="{{chksubtab==2?'statustxth':'statustxt'}}" bindtap="tapsubTab" data-tab="2">专栏收藏</view>
+      <view class="{{chksubtab==0?'statustxth':'statustxt'}}" bindtap="tapsubTab" data-tab="0">专栏收藏</view>
     </view>
   </block>
 
-  <scroll-view scroll-y="true" class="datav">
+  <scroll-view scroll-y="true" class="datav" bindscrolltolower="showMore">
     <block wx:for="{{list}}" wx:key="item">
-      <dynamiccom receiveData="" showType="{{chktab}}" />
+      <dynamiccom receiveData="{{item}}" showType="{{chktab}}" />
     </block>
+    <nodatacom wx:if="{{list.length==0}}"/>
   </scroll-view>
 </view>

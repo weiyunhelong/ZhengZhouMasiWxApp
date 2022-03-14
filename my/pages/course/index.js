@@ -74,7 +74,25 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
+    var that = this;
+    if (getApp().globalData.WxUserId == 0) {
+      wx.reLaunch({
+        url: '../../../wxauth/pages/wxlogin/index',
+      })
+    } else {
+      that.InitData();
+    }
+  },
+  InitData(){//获取数据
+    var that=this;
+    var url=requestUrl+"/API/UserCenterManuApi/DataScreening?userid="+getApp().globalData.WxUserId+"&&typeid=1";
+    WxRequest.PostRequest(url,{}).then(res=>{
+      if(res.data.success){
+        that.setData({
+          dataobj:res.data.data
+        })
+      }
+    })
   },
 
   /**

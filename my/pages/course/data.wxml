@@ -4,9 +4,9 @@
     <view class="{{chktab==1?'tabtxth':'tabtxt'}}">我的视频</view>
     <view class="tabline" wx:if="{{chktab==1}}"></view>
   </view>
-  <view class="tabcv" bindtap="tapTab" data-type="2">
-    <view class="{{chktab==2?'tabtxth':'tabtxt'}}">我的专栏</view>
-    <view class="tabline" wx:if="{{chktab==2}}"></view>
+  <view class="tabcv" bindtap="tapTab" data-type="0">
+    <view class="{{chktab==0?'tabtxth':'tabtxt'}}">我的专栏</view>
+    <view class="tabline" wx:if="{{chktab==0}}"></view>
   </view>
 </view>
 <view class="numberv">
@@ -17,30 +17,30 @@
   <view class="numbercv">
     <view class="numberc">
       <view class="numbertag">总浏览量</view>
-      <view class="numberval">693</view>
-      <view class="numbertoday">今日 0</view>
+      <view class="numberval">{{dataobj.browse}}</view>
+      <view class="numbertoday">今日 {{dataobj.today_browse}}</view>
     </view>
     <view class="numberline"></view>
     <view class="numberc">
       <view class="numbertag">总评论数</view>
-      <view class="numberval">4</view>
-      <view class="numbertoday">今日 0</view>
+      <view class="numberval">{{dataobj.comment}}</view>
+      <view class="numbertoday">今日 {{dataobj.today_comment}}</view>
     </view>
     <view class="numberc">
       <view class="numbertag">总分享数</view>
-      <view class="numberval">4</view>
-      <view class="numbertoday">今日 0</view>
+      <view class="numberval">{{dataobj.share}}</view>
+      <view class="numbertoday">今日 {{dataobj.today_share}}</view>
     </view>
     <view class="numberline"></view>
     <view class="numberc">
-      <view class="numbertag">总浏览量</view>
-      <view class="numberval">4</view>
-      <view class="numbertoday">今日 0</view>
+      <view class="numbertag">总收藏量</view>
+      <view class="numberval">{{dataobj.collection}}</view>
+      <view class="numbertoday">今日 {{dataobj.today_collection}}</view>
     </view>
     <view class="numberc">
       <view class="numbertag">总点赞数</view>
-      <view class="numberval">4</view>
-      <view class="numbertoday">今日 0</view>
+      <view class="numberval">{{dataobj.likes}}</view>
+      <view class="numbertoday">今日 {{dataobj.today_likes}}</view>
     </view>
     <view class="numberline"></view>
     <view class="numberc">

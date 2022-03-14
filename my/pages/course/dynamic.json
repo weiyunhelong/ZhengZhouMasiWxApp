@@ -4,6 +4,7 @@
   "navigationBarTitleText": "我的动态",
   "usingComponents": {
     "loadding": "../../../components/loadding/index",
-    "dynamiccom": "../../components/dynamic/index"
+    "dynamiccom": "../../components/dynamic/index",
+    "nodatacom": "../../../components/nodata/index"
   }
 }

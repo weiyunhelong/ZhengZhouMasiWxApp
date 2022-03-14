@@ -23,13 +23,17 @@
   </view>
 </scroll-view>
 
-<scroll-view class="datav" scroll-y="true">
-  <block wx:for="{{list}}" wx:key="item">
-    <msgcom receiveData="" showType="{{chktab}}" />
+<scroll-view class="datav" scroll-y="true" bindscrolltolower="ShowMore">
+  <block wx:if="{{list.length==0}}">
+    <nodatacom />
   </block>
-
-  <view class="allredbtn">
-    <image src="../../resources/readed.png" class="readicon"></image>
-    <view class="readtxt">全部已读</view>
-  </view>
+  <block wx:else>
+    <block wx:for="{{list}}" wx:key="item">
+      <msgcom receiveData="{{item}}" showType="{{chktab}}" />
+    </block>
+    <view class="allredbtn">
+      <image src="../../resources/readed.png" class="readicon"></image>
+      <view class="readtxt">全部已读</view>
+    </view>
+  </block>
 </scroll-view>
