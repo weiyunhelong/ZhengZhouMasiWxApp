@@ -9,10 +9,7 @@ Page({
    */
   data: {
     tabs: [],
-    chktab: 0,
-    list: [1, 2, 3, 4, 5, 6, ],
     pageindex: 1,
-    studyobj: {}, //最近学习
   },
 
   /**
@@ -40,42 +37,15 @@ Page({
     })
   },
   tapMenu(e) { //跳转到对应的分类列表
+    var obj=e.currentTarget.dataset.menu;
     wx.navigateTo({
-      url: '../shidu/list?id=' + e.currentTarget.dataset.menu,
+      url: '../shidu/list?id=' + obj.Key+'&name='+obj.Value,
     })
   },
   goDetail(e) { //跳转到详情页面
     wx.navigateTo({
       url: '../shidu/chapter?id=' + e.currentTarget.dataset.id,
     })
-  },
-  InitData() { //获取列表数据
-    var that = this;
-    var pageindex = that.data.pageindex;
-    var url = requestUrl + "/API/ReadRedTimeApi/GetReadRedTimeList?keywords=&userId=" + getApp().globalData.WxUserId + "&page=" + pageindex + "&rows=10&type=" + that.data.chktab;
-    WxRequest.PostRequest(url, {}).then(res => {
-      if (res.data.success) {
-        if (pageindex == 1) {
-          that.setData({
-            studyobj: res.data.data.RecentLearning,
-            list: res.data.data.datas
-          })
-        } else {
-          that.setData({
-            list: that.data.list.concat(res.data.data.datas)
-          })
-        }
-      }
-    })
-  },
-  tapTab(e) { //切换tab
-    var that = this;
-    that.setData({
-      chktab: e.currentTarget.dataset.index,
-      pageindex: 1
-    })
-    //获取列表数据
-    //that.InitData();
   },
   /**
    * 生命周期函数--监听页面初次渲染完成
@@ -88,9 +58,44 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
+    var that = this;
+    if (getApp().globalData.WxUserId == 0) {
+      wx.reLaunch({
+        url: '../../wxauth/pages/wxlogin/index',
+      })
+    } else {
+      //获取数据
+      that.InitTABData();
+    }
   },
-
+  InitTABData(){//获取数据
+    var that=this;
+    var url=requestUrl+"/API/CategoryApi/GetReadRedTypeList";
+    WxRequest.PostRequest(url,{}).then(res=>{
+      if(res.data.success){
+        var tabs=res.data.data;
+        that.setData({
+          tabs:tabs
+        })
+        for(var i=0;i<tabs.length;i++){
+          that.InitData(tabs[i].Key,i);
+        }
+      }
+    })
+  },
+  InitData(id,i){//获取分类下的列表数据
+    var that=this;
+    var tabs=that.data.tabs;
+    var url=requestUrl+"/API/ReadRedTimeApi/GetReadRedTimeList?page=1&rows=6&type="+id;
+    WxRequest.PostRequest(url,{}).then(res=>{
+      if(res.data.success){
+        tabs[i].list=res.data.data.datas;
+        that.setData({
+          tabs:tabs
+        })
+      }
+    })
+  },
   /**
    * 生命周期函数--监听页面隐藏
    */

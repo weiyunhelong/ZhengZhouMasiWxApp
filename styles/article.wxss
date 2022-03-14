@@ -5,6 +5,11 @@
   display: flex;
   justify-content: space-around;
   border-bottom: 1rpx solid #eee;
+  position: sticky;
+  top: 0;
+  left: 0;
+  z-index: 999;
+  background: #fff;
 }
 
 .tabv .tabitem {
@@ -173,7 +178,7 @@
 
 .commentuv .commentul {
   display: flex;
-  width: 450rpx;
+  width: 500rpx;
 }
 
 .commentuv .commentul .commentutx {
@@ -242,6 +247,7 @@
   margin-left: 35rpx;
   font-size: 22rpx;
   color: #999999;
+  margin-top: 22rpx;
 }
 
 .commentv .commentdesc {
@@ -287,7 +293,7 @@
   color: #F24540;
   text-align: center;
   line-height: 28rpx;
-  margin-left: 12rpx;
+  margin-left: 6rpx;
 }
 
 .commentv .commentreplayv .commentreplaytip {

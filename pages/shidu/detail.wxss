@@ -144,7 +144,10 @@ page {
   font-size: 22rpx;
   color: #F24540;
 }
-
+.voinceoptv .voincesharetxt {
+  font-size: 22rpx;
+  color: #999999;
+}
 .voinceoptv .voinceoptc {
   width: 240rpx;
   height: 120rpx;

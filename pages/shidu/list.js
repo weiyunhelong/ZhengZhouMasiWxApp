@@ -8,9 +8,9 @@ Page({
    * 页面的初始数据
    */
   data: {
-    id:0,
-   list:[1,2,3,4,5,6,7,8],
-   pageindex:1,
+    id: 0,
+    list: [],
+    pageindex: 1,
   },
 
   /**
@@ -18,30 +18,17 @@ Page({
    */
   onLoad: function (options) {
     var that = this;
-    var pagetitle = "";
-    var type =parseInt(options.type);
-    switch (type) {
-      case 1:
-        pagetitle = "红色人物";
-        break;
-      case 2:
-        pagetitle = "党史";
-        break;
-      case 3:
-        pagetitle = "时事评论";
-        break;
-      case 4:
-        pagetitle = "红色文化思想";
-        break;
-    }
+    that.setData({
+      id: options.id
+    })
     wx.setNavigationBarTitle({
-      title: pagetitle,
+      title: options.name,
     })
   },
-  goDetail(e){//跳转到详情
-    var that=this;
+  goDetail(e) { //跳转到详情
+    var that = this;
     wx.navigateTo({
-      url: '../shidu/chapter?type='+e.currentTarget.dataset.type+"&id="+that.data.id
+      url: "../shidu/chapter?id=" + e.currentTarget.dataset.id
     })
   },
   /**
@@ -55,9 +42,34 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
+    var that = this;
+    if (getApp().globalData.WxUserId == 0) {
+      wx.reLaunch({
+        url: '../../wxauth/pages/wxlogin/index',
+      })
+    } else {
+      //获取数据
+      that.InitData();
+    }
   },
-
+  InitData() { //获取数据
+    var that = this;
+    var pageindex = that.data.pageindex;
+    var url = requestUrl + "/API/ReadRedTimeApi/GetReadRedTimeList?page=" + pageindex + "&rows=10&type=" + that.data.id;
+    WxRequest.PostRequest(url, {}).then(res => {
+      if (res.data.success) {
+        if (pageindex == 1) {
+          that.setData({
+            list: res.data.data.datas
+          })
+        } else {
+          that.setData({
+            list:that.data.list.concat(res.data.data.datas) 
+          })
+        }
+      }
+    })
+  },
   /**
    * 生命周期函数--监听页面隐藏
    */

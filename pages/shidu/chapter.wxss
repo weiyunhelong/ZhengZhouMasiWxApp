@@ -211,10 +211,13 @@ page {
 .chapterv .chapternamev {
   width: 542rpx;
   padding-top: 20rpx;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  justify-self: center;
 }
 
 .chapterv .chaptername {
-  height: 88rpx;
   font-size: 32rpx;
   color: #262626;
 }

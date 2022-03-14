@@ -10,17 +10,14 @@ Page({
   /**
    * 页面的初始数据
    */
-  data: {    
+  data: {
     IsPlay: false, //判断是否在播放
-    chktab: 1, //1：文章赏析 2：学习交流
-   
+    chktab: 1, //1：介绍 2：学习交流
     id: 0,
     dataobj: {},
     commentId: 0, //
-    placeholdertxt: "说点什么吧...",
+    placeholdertxt: "发布留言...",
     comment: "", //评论
-
-    Introduce:'<p>测试内容 ，测试内容<span style="font-family: &quot;microsoft yahei&quot;; font-size: 12px; white-space: normal;">测试内容 ，测试内容</span><span style="font-family: &quot;microsoft yahei&quot;; font-size: 12px; white-space: normal;">测试内容 ，测试内容</span><span style="font-family: &quot;microsoft yahei&quot;; font-size: 12px; white-space: normal;">测试内容 ，测试内容</span><span style="font-family: &quot;microsoft yahei&quot;; font-size: 12px; white-space: normal;">测试内容 ，测试内容</span><span style="font-family: &quot;microsoft yahei&quot;; font-size: 12px; white-space: normal;">测试内容 ，测试内容</span><span style="font-family: &quot;microsoft yahei&quot;; font-size: 12px; white-space: normal;">测试内容 ，测试内容</span><span style="font-family: &quot;microsoft yahei&quot;; font-size: 12px; white-space: normal;">测试内容 ，测试内容</span><span style="font-family: &quot;microsoft yahei&quot;; font-size: 12px; white-space: normal;">测试内容 ，测试内容</span><span style="font-family: &quot;microsoft yahei&quot;; font-size: 12px; white-space: normal;">测试内容 ，测试内容</span><span style="font-family: &quot;microsoft yahei&quot;; font-size: 12px; white-space: normal;">测试内容 ，测试内容</span><span style="font-family: &quot;microsoft yahei&quot;; font-size: 12px; white-space: normal;">测试内容 ，测试内容</span><span style="font-family: &quot;microsoft yahei&quot;; font-size: 12px; white-space: normal;">测试内容 ，测试内容</span><span style="font-family: &quot;microsoft yahei&quot;; font-size: 12px; white-space: normal;">测试内容 ，测试内容</span><span style="font-family: &quot;microsoft yahei&quot;; font-size: 12px; white-space: normal;">测试内容 ，测试内容</span><span style="font-family: &quot;microsoft yahei&quot;; font-size: 12px; white-space: normal;">测试内容 ，测试内容。</span></p><p><span style="font-family: &quot;microsoft yahei&quot;; font-size: 12px; white-space: normal;"><img src="https://sqyr2021.oss-cn-shanghai.aliyuncs.com/imgesfiles/17.png" title="17.png" _src="https://sqyr2021.oss-cn-shanghai.aliyuncs.com/imgesfiles/17.png" alt="17.png"/></span></p><p><img src="https://sqyr2021.oss-cn-shanghai.aliyuncs.com/imgesfiles/23.png" _src="https://sqyr2021.oss-cn-shanghai.aliyuncs.com/imgesfiles/23.png" style="" title="23.png"/></p><p><img src="https://sqyr2021.oss-cn-shanghai.aliyuncs.com/imgesfiles/24.png" _src="https://sqyr2021.oss-cn-shanghai.aliyuncs.com/imgesfiles/24.png" style="" title="24.png"/></p><p><img src="https://sqyr2021.oss-cn-shanghai.aliyuncs.com/imgesfiles/7.png" _src="https://sqyr2021.oss-cn-shanghai.aliyuncs.com/imgesfiles/7.png" style="" title="7.png"/></p><p>投稿内容<span style="font-family: &quot;microsoft yahei&quot;; font-size: 12px; white-space: normal;">投稿内容</span><span style="font-family: &quot;microsoft yahei&quot;; font-size: 12px; white-space: normal;">投稿内容</span><span style="font-family: &quot;microsoft yahei&quot;; font-size: 12px; white-space: normal;">投稿内容</span><span style="font-family: &quot;microsoft yahei&quot;; font-size: 12px; white-space: normal;">投稿内容</span><span style="font-family: &quot;microsoft yahei&quot;; font-size: 12px;">投稿内容</span><span style="font-family: &quot;microsoft yahei&quot;; font-size: 12px; white-space: normal;">投稿内容</span><span style="font-family: &quot;microsoft yahei&quot;; font-size: 12px;">投稿内容</span><span style="font-family: &quot;microsoft yahei&quot;; font-size: 12px; white-space: normal;">投稿内容</span><span style="font-family: &quot;microsoft yahei&quot;; font-size: 12px; white-space: normal;">投稿内容</span><span style="font-family: &quot;microsoft yahei&quot;; font-size: 12px; white-space: normal;">投稿内容</span><span style="font-family: &quot;microsoft yahei&quot;; font-size: 12px;">投稿内容</span><span style="font-family: &quot;microsoft yahei&quot;; font-size: 12px; white-space: normal;">投稿内容</span><span style="font-family: &quot;microsoft yahei&quot;; font-size: 12px; white-space: normal;">投稿内容</span><span style="font-family: &quot;microsoft yahei&quot;; font-size: 12px;">投稿内容</span><span style="font-family: &quot;microsoft yahei&quot;; font-size: 12px; white-space: normal;">投稿内容</span><span style="font-family: &quot;microsoft yahei&quot;; font-size: 12px;">投稿内容。</span><span style="font-family: &quot;microsoft yahei&quot;; font-size: 12px; white-space: normal;"></span><br/></p><p><span style="font-family: &quot;microsoft yahei&quot;; font-size: 12px;"><br/></span></p><p><span style="font-family: &quot;microsoft yahei&quot;; font-size: 12px;"><br/></span></p><p><span style="font-family: &quot;microsoft yahei&quot;; font-size: 12px;"><span style="font-family: &quot;microsoft yahei&quot;; font-size: 12px; white-space: normal;">投稿内容</span><span style="font-family: &quot;microsoft yahei&quot;; font-size: 12px; white-space: normal;">投稿内容</span><span style="font-family: &quot;microsoft yahei&quot;; font-size: 12px; white-space: normal;">投稿内容</span><span style="font-family: &quot;microsoft yahei&quot;; font-size: 12px; white-space: normal;">投稿内容</span><span style="font-family: &quot;microsoft yahei&quot;; font-size: 12px;">投稿内容</span><span style="font-family: &quot;microsoft yahei&quot;; font-size: 12px; white-space: normal;">投稿内容</span><span style="font-family: &quot;microsoft yahei&quot;; font-size: 12px;">投稿内容</span><span style="font-family: &quot;microsoft yahei&quot;; font-size: 12px; white-space: normal;">投稿内容</span><span style="font-family: &quot;microsoft yahei&quot;; font-size: 12px; white-space: normal;">投稿内容</span><span style="font-family: &quot;microsoft yahei&quot;; font-size: 12px; white-space: normal;">投稿内容</span><span style="font-family: &quot;microsoft yahei&quot;; font-size: 12px; white-space: normal;">投稿内容</span><span style="font-family: &quot;microsoft yahei&quot;; font-size: 12px;">投稿内容</span><span style="font-family: &quot;microsoft yahei&quot;; font-size: 12px; white-space: normal;">投稿内容</span><span style="font-family: &quot;microsoft yahei&quot;; font-size: 12px; white-space: normal;">投稿内容</span><span style="font-family: &quot;microsoft yahei&quot;; font-size: 12px;">投稿内容</span><span style="font-family: &quot;microsoft yahei&quot;; font-size: 12px; white-space: normal;">投稿内容</span><span style="font-family: &quot;microsoft yahei&quot;; font-size: 12px; white-space: normal;">投稿内容</span><span style="font-family: &quot;microsoft yahei&quot;; font-size: 12px; white-space: normal;">投稿内容</span><span style="font-family: &quot;microsoft yahei&quot;; font-size: 12px;">投稿内容</span><span style="font-family: &quot;microsoft yahei&quot;; font-size: 12px; white-space: normal;">投稿内容</span><span style="font-family: &quot;microsoft yahei&quot;; font-size: 12px; white-space: normal;">投稿内容</span><span style="font-family: &quot;microsoft yahei&quot;; font-size: 12px;">投稿内容</span><span style="font-family: &quot;microsoft yahei&quot;; font-size: 12px; white-space: normal;">投稿内容</span><span style="font-family: &quot;microsoft yahei&quot;; font-size: 12px; white-space: normal;">投稿内容</span><span style="font-family: &quot;microsoft yahei&quot;; font-size: 12px; white-space: normal;">投稿内容</span><span style="font-family: &quot;microsoft yahei&quot;; font-size: 12px;">投稿内容</span><span style="font-family: &quot;microsoft yahei&quot;; font-size: 12px; white-space: normal;">投稿内容</span><span style="font-family: &quot;microsoft yahei&quot;; font-size: 12px; white-space: normal;">投稿内容</span><span style="font-family: &quot;microsoft yahei&quot;; font-size: 12px; white-space: normal;">投稿内容</span><span style="font-family: &quot;microsoft yahei&quot;; font-size: 12px;">投稿内容</span><span style="font-family: &quot;microsoft yahei&quot;; font-size: 12px;">投稿内容</span><span style="font-family: &quot;microsoft yahei&quot;; font-size: 12px; white-space: normal;">投稿内容</span><span style="font-family: &quot;microsoft yahei&quot;; font-size: 12px; white-space: normal;">投稿内容</span><span style="font-family: &quot;microsoft yahei&quot;; font-size: 12px; white-space: normal;">投稿内容</span><span style="font-family: &quot;microsoft yahei&quot;; font-size: 12px;">投稿内容</span><span style="font-family: &quot;microsoft yahei&quot;; font-size: 12px; white-space: normal;">投稿内容</span><span style="font-family: &quot;microsoft yahei&quot;; font-size: 12px; white-space: normal;">投稿内容</span><span style="font-family: &quot;microsoft yahei&quot;; font-size: 12px;">投稿内容</span><span style="font-family: &quot;microsoft yahei&quot;; font-size: 12px; white-space: normal;">投稿内容</span><span style="font-family: &quot;microsoft yahei&quot;; font-size: 12px; white-space: normal;">投稿内容</span><span style="font-family: &quot;microsoft yahei&quot;; font-size: 12px; white-space: normal;">投稿内容</span><span style="font-family: &quot;microsoft yahei&quot;; font-size: 12px;">投稿内容</span><span style="font-family: &quot;microsoft yahei&quot;; font-size: 12px; white-space: normal;">投稿内容</span><span style="font-family: &quot;microsoft yahei&quot;; font-size: 12px;">投稿内容</span><span style="font-family: &quot;microsoft yahei&quot;; font-size: 12px; white-space: normal;">投稿内容</span><span style="font-family: &quot;microsoft yahei&quot;; font-size: 12px; white-space: normal;">投稿内容</span><span style="font-family: &quot;microsoft yahei&quot;; font-size: 12px; white-space: normal;">投稿内容</span><span style="font-family: &quot;microsoft yahei&quot;; font-size: 12px; white-space: normal;">投稿内容</span><span style="font-family: &quot;microsoft yahei&quot;; font-size: 12px; white-space: normal;">投稿内容</span><span style="font-family: &quot;microsoft yahei&quot;; font-size: 12px;">投稿内容</span><span style="font-family: &quot;microsoft yahei&quot;; font-size: 12px; white-space: normal;">投稿内容</span><span style="font-family: &quot;microsoft yahei&quot;; font-size: 12px;">投稿内容</span><span style="font-family: &quot;microsoft yahei&quot;; font-size: 12px; white-space: normal;">投稿内容</span><span style="font-family: &quot;microsoft yahei&quot;; font-size: 12px;">投稿内容</span><span style="font-family: &quot;microsoft yahei&quot;; font-size: 12px; white-space: normal;">投稿内容</span><span style="font-family: &quot;microsoft yahei&quot;; font-size: 12px;">投稿内容</span><span style="font-family: &quot;microsoft yahei&quot;; font-size: 12px; white-space: normal;">投稿内容</span><span style="font-family: &quot;microsoft yahei&quot;; font-size: 12px; white-space: normal;">投稿内容</span><span style="font-family: &quot;microsoft yahei&quot;; font-size: 12px;">投稿内容</span><span style="font-family: &quot;microsoft yahei&quot;; font-size: 12px; white-space: normal;">投稿内容</span><span style="font-family: &quot;microsoft yahei&quot;; font-size: 12px;">投稿内容</span><span style="font-family: &quot;microsoft yahei&quot;; font-size: 12px;">投稿内容</span><span style="font-family: &quot;microsoft yahei&quot;; font-size: 12px; white-space: normal;">投稿内容</span><span style="font-family: &quot;microsoft yahei&quot;; font-size: 12px; white-space: normal;">投稿内容</span><span style="font-family: &quot;microsoft yahei&quot;; font-size: 12px; white-space: normal;">投稿内容。</span></span></p>',
   },
 
   /**
@@ -30,7 +27,7 @@ Page({
     var that = this;
     that.setData({
       id: options.id
-    }) 
+    })
     wx.getSystemInfo({
       success: (res) => {
         that.setData({
@@ -44,14 +41,36 @@ Page({
       delta: 1,
     })
   },
+  CollectOpt() { //收藏操作
+    var that = this;
+    var dataobj = that.data.dataobj;
+    var url = requestUrl;
+    var params = "";
+    if (dataobj.IsCollect) { //取消收藏操作
+      url += "/API/ReadRedTimeApi/CancelCollect";
+      params += "?userId=" + getApp().globalData.WxUserId + "&id=" + dataobj.ID;
+    } else { //收藏操作
+      url += "/API/ReadRedTimeApi/Collect";
+      params += "?userId=" + getApp().globalData.WxUserId + "&id=" + dataobj.ID + "&title=" + dataobj.Title + "&thumbnail=" + dataobj.Thumbnail;
+    }
+    WxRequest.PostRequest(url + params, {}).then(res => {
+      if (res.data.success) {
+        dataobj.IsCollect = !dataobj.IsCollect;
+        that.setData({
+          dataobj: dataobj
+        })
+        WxRequest.ShowAlert(res.data.msg)
+      }
+    })
+  },
   playOpt() { //播放操作
     var that = this;
     var dataobj = that.data.dataobj;
     var src = dataobj.Audio;
     myaudio.src = src;
-    if(dataobj.Progress!="0:00"){
-      var currtime=dataobj.Progress;
-      var secnum=parseInt(currtime.split(':')[0])*60+ parseInt(currtime.split(':')[1]);
+    if (dataobj.Progress != "0:00") {
+      var currtime = dataobj.Progress;
+      var secnum = parseInt(currtime.split(':')[0]) * 60 + parseInt(currtime.split(':')[1]);
       myaudio.seek(secnum);
     }
     myaudio.play();
@@ -86,41 +105,41 @@ Page({
   },
   SaveVideoProgress(progress) { //保存播放记录
     var that = this;
-    var url = requestUrl + "/API/ReadRedTimeApi/SavePlayhistory?userId=" + getApp().globalData.WxUserId + "&id=" + that.data.id + "&progress=" + progress;
-
-    WxRequest.PostRequest(url, {}).then(res => {});
+    var dataobj = that.data.dataobj;
+    var url = requestUrl + "/API/ReadRedTimeApi/SavePlayhistory";
+    var params={
+      userId:getApp().globalData.WxUserId,
+      RID:dataobj.ID,
+      TypeID:0,
+      Level:1,
+      Progress:progress,
+      Title:dataobj.Title,
+      Thumbnail:dataobj.Thumbnail
+    };
+    WxRequest.PostRequest(url, params).then(res => {});
 
   },
-  CollectOpt() { //收藏操作
+  prebtnOpt() { //前一个
     var that = this;
     var dataobj = that.data.dataobj;
-    var IsCollect = dataobj.IsCollect;
-    if (IsCollect) { //取消收藏      
-      var url = requestUrl + "/API/ReadRedTimeApi/CancelCollect?userId=" + getApp().globalData.WxUserId + "&id=" + that.data.id;
-      WxRequest.PostRequest(url, {}).then(res => {
-        dataobj.IsCollect = false;
-        that.setData({
-          dataobj: dataobj
-        })
-        wx.showToast({
-          title: '已取消收藏',
-        })
+    if (dataobj.PreID == 0) {
+      wx.redirectTo({
+        url: '../shidu/detail?id=' + dataobj.PreID,
       })
-    } else { //收藏成功
-      var url = requestUrl + "/API/ReadRedTimeApi/Collect?userId=" + getApp().globalData.WxUserId + "&id=" + that.data.id;
-      WxRequest.PostRequest(url, {}).then(res => {
-        dataobj.IsCollect = true;
-        that.setData({
-          dataobj: dataobj
-        })
-        wx.showToast({
-          title: '收藏成功',
-        })
-      })
+    } else {
+      WxRequest.ShowAlert("已是第一个");
     }
-    that.setData({
-      IsCollect: !IsCollect
-    })
+  },
+  nextbtnOpt() { //下一个
+    var that = this;
+    var dataobj = that.data.dataobj;
+    if (dataobj.NextID == 0) {
+      wx.redirectTo({
+        url: '../shidu/detail?id=' + dataobj.NextID,
+      })
+    } else {
+      WxRequest.ShowAlert("已是最后一个");
+    }
   },
   tapTab(e) { //切换tab
     var that = this;
@@ -157,7 +176,8 @@ Page({
   },
   PostComment(comment) { //提交评论
     var that = this;
-    var url = requestUrl + "/API/ReadRedTimeApi/PostComment?userId=" + getApp().globalData.WxUserId + "&id=" + that.data.id + "&contents=" + comment;
+    var dataobj=that.data.dataobj;
+    var url = requestUrl + "/API/ReadRedTimeApi/PostManuComment?userId=" + getApp().globalData.WxUserId + "&id=" + that.data.id + "&contents=" + comment+"&title="+dataobj.Title+"&thumbnail="+dataobj.Thumbnail;
 
     WxRequest.PostRequest(url, {}).then(res => {
 
@@ -169,7 +189,7 @@ Page({
         that.setData({
           comment: "",
           commentId: 0,
-          placeholdertxt: "说点什么吧...",
+          placeholdertxt: "发布留言...",
         })
         that.InitData();
       } else {
@@ -177,19 +197,20 @@ Page({
       }
     })
   },
-  PostFeedback(comment, id) { //提交回复评论
+  PostFeedback(comment, commentId) { //提交回复评论
     var that = this;
-    var url = requestUrl + "/API/ReadRedTimeApi/ReplyComment?userId=" + getApp().globalData.WxUserId + "&commentId=" + id + "&contents=" + comment;
+    var dataobj=that.data.dataobj;
+    var url = requestUrl + "/API/ReadRedTimeApi/ReplyComment?userId=" + getApp().globalData.WxUserId + "&id=" + that.data.id + "&contents=" + comment + "&title=" + dataobj.Title + "&thumbnail=" + dataobj.Thumbnail + "&commentId=" + commentId + "&level=1"
 
     WxRequest.PostRequest(url, {}).then(res => {
       if (res.data.success) {
         wx.showToast({
-          title: '评论成功',
+          title: '回复成功',
           duration: 2000
         })
         that.setData({
           commentId: 0,
-          placeholdertxt: "说点什么吧...",
+          placeholdertxt: "发布留言...",
           comment: ""
         })
         that.InitData();
@@ -210,12 +231,12 @@ Page({
   ZanCommentOpt(e) { //点赞评论
     var that = this;
     var index = e.currentTarget.dataset.index;
-    var id = e.currentTarget.dataset.id;
+    var commId = e.currentTarget.dataset.id;
     var status = e.currentTarget.dataset.status;
     var dataobj = that.data.dataobj;
 
     if (status == false) {
-      var url = requestUrl + "/API/ReadRedTimeApi/LikeComment?userId=" + getApp().globalData.WxUserId + "&commentId=" + id;
+      var url = requestUrl + "/API/ReadRedTimeApi/LikeComment?userId=" + getApp().globalData.WxUserId + "&commentId=" + commId + "&level=1&title=" + dataobj.Title + "&thumbnail=" + dataobj.Thumbnail;
       WxRequest.PostRequest(url, {}).then(res => {
         if (res.data.success) {
           dataobj.CommentList[index].IsLike = true;
@@ -231,7 +252,7 @@ Page({
         }
       })
     } else {
-      var url = requestUrl + "/API/ReadRedTimeApi/CancelLikeComment?userId=" + getApp().globalData.WxUserId + "&commentId=" + id;
+      var url = requestUrl + "/API/ReadRedTimeApi/CancelLikeComment?userId=" + getApp().globalData.WxUserId + "&commentId=" + commId+"&level=1";
       WxRequest.PostRequest(url, {}).then(res => {
         if (res.data.success) {
           dataobj.CommentList[index].IsLike = false;
@@ -260,11 +281,18 @@ Page({
    */
   onShow: function () {
     var that = this;
-    //that.InitData();
+    if (getApp().globalData.WxUserId == 0) {
+      wx.reLaunch({
+        url: '../../wxauth/pages/wxlogin/index',
+      })
+    } else {
+      //获取数据
+      that.InitData();
+    }
   },
   InitData() { //获取详情
     var that = this;
-    var url = requestUrl + "/API/ReadRedTimeApi/GetReadRedTimeDetail?userId=" + getApp().globalData.WxUserId + "&id=" + that.data.id;
+    var url = requestUrl + "/API/ReadRedTimeApi/GetRedManuDetail?userId=" + getApp().globalData.WxUserId + "&id=" + that.data.id;
     WxRequest.PostRequest(url, {}).then(res => {
 
       if (res.data.success) {
@@ -316,6 +344,9 @@ Page({
    * 用户点击右上角分享
    */
   onShareAppMessage: function () {
+    var that = this;
+    var url = requestUrl + "/API/ReadRedTimeApi/Foward?userId=" + getApp().globalData.WxUserId + "&id=" + that.data.id;
+    WxRequest.PostRequest(url, {}).then(res => {});
 
   }
 })
