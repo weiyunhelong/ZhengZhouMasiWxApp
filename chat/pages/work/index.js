@@ -8,7 +8,8 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    pageindex:1,
+    list:[]
   },
 
   /**
@@ -16,6 +17,13 @@ Page({
    */
   onLoad: function (options) {
 
+  },
+  ShowMore(){
+    var that=this;
+    that.setData({
+      pageindex:that.data.pageindex+1
+    })
+    that.InitData();
   },
   goDetail(e){//点击跳转到详情
     wx.navigateTo({
@@ -33,9 +41,34 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
+    var that = this;
+    if (getApp().globalData.WxUserId == 0) {
+      wx.reLaunch({
+        url: '../../../wxauth/pages/wxlogin/index',
+      })
+    } else {
+      //获取数据
+      that.InitData();
+    }
   },
-
+  InitData(){//获取列表数据
+   var that=this;
+   var pageindex=that.data.pageindex;
+   var url=requestUrl+"/API/QualityWorksApi/GetQualityWorksList?page="+pageindex+"&rows=20";
+   WxRequest.PostRequest(url,{}).then(res=>{
+     if(res.data.success){
+       if(pageindex==1){
+         that.setData({
+           list:res.data.data.datas
+         })
+       }else{
+        that.setData({
+          list:that.data.list.concat(res.data.data.datas) 
+        })
+       }
+     }
+   })
+  },
   /**
    * 生命周期函数--监听页面隐藏
    */

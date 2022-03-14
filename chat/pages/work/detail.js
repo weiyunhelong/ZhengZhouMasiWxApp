@@ -8,7 +8,8 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    id: 0,
+    dataobj: {}
   },
 
   /**
@@ -28,7 +29,7 @@ Page({
       id: options.id
     })
   },
-  goBackOpt(){//点击返回
+  goBackOpt() { //点击返回
     wx.navigateBack({
       delta: 1,
     })
@@ -44,9 +45,27 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
+    var that = this;
+    if (getApp().globalData.WxUserId == 0) {
+      wx.reLaunch({
+        url: '../../../wxauth/pages/wxlogin/index',
+      })
+    } else {
+      //获取数据
+      that.InitData();
+    }
   },
-
+  InitData() { //获取列表数据
+    var that = this;
+    var url = requestUrl + "/API/QualityWorksApi/GetQualityWorksDetail?id="+that.data.id;
+    WxRequest.PostRequest(url, {}).then(res => {
+      if (res.data.success) {
+        that.setData({
+          dataobj: res.data.data
+        })
+      }
+    })
+  },
   /**
    * 生命周期函数--监听页面隐藏
    */

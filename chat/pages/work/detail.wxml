@@ -1,6 +1,6 @@
 <!--chat/pages/work/detail.wxml-->
 <!--顶部用户信息-->
-<view class="topbgv" bindtap="hideMaskOpt" style="background:url(https://sqyr2021.oss-cn-shanghai.aliyuncs.com/imgesfiles/202112281422584976.jpg) no-repeat;background-size: cover;">
+<view class="topbgv" bindtap="hideMaskOpt" style="background:url({{dataobj.AccessoryUrl}}) no-repeat;background-size: cover;">
   <view style="width: 100vw;height:{{navigationBarHeight}}px;margin-bottom: 10rpx;"></view>
   <view class="pagetitlev">
     <view class="backiconv" catchtap="goBackOpt">
@@ -11,8 +11,8 @@
 </view>
 
 <view class="infov">
-  <view class="namev">设计工作上最重要的是针对人们习以为常，认为理所当然的事物来做一些思考</view>
-  <view class="owner">创作者：某某</view>
+  <view class="namev">{{dataobj.Title}}</view>
+  <view class="owner">创作者：{{dataobj.ReadName}}</view>
 </view>
 <view class="greyv"></view>
 
@@ -22,7 +22,9 @@
   <view class="lefticonv">
     <image src="/resources/home/lefttop.png" class="icon"></image>
   </view>
-  <view class="desc">清把认市观族样导又角争的长总党验什内权交要队期次适即证报才义许市你生龙京称所格万程际们于制清高么七家。快感完万育化老开行与省三口和常是或局队保采国值观分证始值指者难程对决划长流办高县基气青非心对派五见团比头务车现质毛相回酸总。育近己问厂马面利度流到头经们与给六状存白党号场低情更每研从省法积安起压求商能据队。准器百度更先带做程力青引越合些感技素素规工本备花当厂细酸志音布克一步前书儿林习花算么千眼等思治水任集步已住许石关路周受养业里。清把认市观族样导又角争的长总党验什内权交要队期次适即证报才义许市你生龙京称所格万程际们于制清高么七家。快感完万育化老开行与省三口和常是或局队保采国值观分证始值指者难程对决划长流办高县基气青非心对派五见团比头务车现质毛相回酸总。育近己问厂马面利度流到头经们与给六状存白党号场低情更每研从省法积安起压求商能据队。准器百度更先带做程力青引越合些感技素素规工本备花当厂细酸志音布克一步前书儿林习花算么千眼等思治水任集步已住许石关路周受养业里。</view>
+  <view class="desc">
+    <parser html="{{dataobj.Contents}}"/>
+  </view>
   <view class="righticonv">
     <image src="/resources/home/rightbtm.png" class="icon"></image>
   </view>

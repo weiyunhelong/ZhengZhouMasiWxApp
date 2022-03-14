@@ -14,6 +14,7 @@ page {
   height: 300rpx;
   margin-bottom: 30rpx;
   margin-left: 32rpx;
+  display: inline-block;
 }
 
 .cover {

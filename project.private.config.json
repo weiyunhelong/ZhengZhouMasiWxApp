@@ -12,6 +12,20 @@
     },
     "miniprogram": {
       "list": [
+        {
+          "name": "",
+          "pathName": "chat/pages/work/index",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "",
+          "pathName": "chat/pages/work/detail",
+          "query": "id=15",
+          "scene": null,
+          "launchMode": "default"
+        }
       ]
     }
   }
