@@ -105,6 +105,15 @@
       "pages/xuetang/create",
       "pages/xuetang/book"
     ]
+  }, {
+    "root": "changzhenglu",
+    "pages": [
+      "pages/home/index",
+      "pages/my/index",
+      "pages/info/index",
+      "pages/webview/index",
+      "pages/map/index"
+    ]
   }],
   "window": {
     "backgroundTextStyle": "light",

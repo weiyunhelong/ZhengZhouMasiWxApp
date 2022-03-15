@@ -5,6 +5,7 @@
 * 
 * 蓝湖地址
 * https://lanhuapp.com/url/0LKbD-WyYMp
+* https://lanhuapp.com/url/i8ZMa-Ap29Vh
 * 
 * 微信开发平台
 * https://mp.weixin.qq.com

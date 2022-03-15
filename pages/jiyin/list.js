@@ -8,7 +8,8 @@ Page({
    * 页面的初始数据
    */
   data: {
-    list: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
+    list: [],
+    pageindex:1,
   },
 
   /**
@@ -45,7 +46,33 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
+    var that = this;
+    if (getApp().globalData.WxUserId == 0) {
+      wx.reLaunch({
+        url: '../../wxauth/pages/wxlogin/index',
+      })
+    } else {
+      //获取数据
+      that.InitData();
+    }
+  },
+  InitData() { //获取数据
+    var that = this;
+    var pageindex = that.data.pageindex;
+    var url = requestUrl + "/API/RedGeneApi/GetPanoramList?page=" + pageindex + "&rows=10&type=" + that.data.id;
+    WxRequest.PostRequest(url, {}).then(res => {
+      if (res.data.success) {
+        if (pageindex == 1) {
+          that.setData({
+            list: res.data.data.datas
+          })
+        } else {
+          that.setData({
+            list:that.data.list.concat(res.data.data.datas) 
+          })
+        }
+      }
+    })
   },
 
   /**

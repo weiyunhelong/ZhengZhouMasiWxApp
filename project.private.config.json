@@ -12,6 +12,20 @@
     },
     "miniprogram": {
       "list": [
+        {
+          "name": "",
+          "pathName": "pages/jiyin/list",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "",
+          "pathName": "changzhenglu/pages/home/index",
+          "query": "",
+          "scene": null,
+          "launchMode": "default"
+        }
       ]
     }
   }

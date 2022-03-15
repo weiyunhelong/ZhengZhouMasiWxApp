@@ -1,0 +1,265 @@
+/* changzhenglu/pages/home/index.wxss */
+page {
+  background: #fff;
+}
+
+/*用户信息*/
+.topbgv {
+  width: 100vw;
+  height: 340rpx;
+}
+
+.topbgv .pagetitlev {
+  width: 555rpx;
+  height: 60rpx;
+  display: flex;
+  padding-left: 32rpx;
+}
+
+.topbgv .backiconv {
+  width: 70rpx;
+  height: 60rpx;
+}
+
+.topbgv .backicon {
+  width: 27rpx;
+  height: 54rpx;
+  border-radius: 50%;
+  margin-top: 8rpx;
+}
+
+.topbgv .pagetitle {
+  width: 385rpx;
+  height: 60rpx;
+  text-align: center;
+  line-height: 60rpx;
+  font-size: 34rpx;
+  color: #000;
+  padding-left: 84rpx;
+}
+
+/*用户信息*/
+.userinfov {
+  padding: 0 32rpx;
+  position: relative;
+  top: -200rpx;
+  z-index: 9999;
+  height: 340rpx;
+}
+
+.userinfov .userv {
+  width: 270rpx;
+  height: 72rpx;
+  background: #FFFFFF;
+  border-radius: 36rpx;
+  border: 2rpx solid #EEEEEE;
+  display: flex;
+}
+
+.userinfov .userv .avatarUrl {
+  width: 52rpx;
+  height: 52rpx;
+  border-radius: 50%;
+  margin-top: 10rpx;
+  margin-left: 12rpx;
+}
+
+.userinfov .userv .nickname {
+  width: 150rpx;
+  margin: 0 12rpx;
+  height: 72rpx;
+  line-height: 72rpx;
+  font-size: 30rpx;
+  color: #262626;
+}
+
+.userinfov .userv .righticon {
+  width: 12rpx;
+  height: 20rpx;
+  margin-top: 26rpx;
+}
+
+/*半圆环*/
+.circlev {
+  width: 512rpx;
+  height: 264rpx;
+  text-align: center;
+  margin: 40rpx auto 0;
+  border-radius: 512rpx 512rpx 0 0;
+  border: 24rpx solid #f5f5f5;
+  border-bottom: 0;
+  background-clip: padding-box;
+  padding: 10rpx 10rpx;
+  position: relative;
+}
+
+.circletag {
+  font-size: 28rpx;
+  color: #999999;
+  padding-top: 85rpx;
+}
+
+.circlenum {
+  font-size: 140rpx;
+  font-weight: bold;
+  color: #262626;
+}
+
+.currrankv {
+  display: flex;
+  justify-content: center;
+  font-size: 28rpx;
+  color: #262626;
+  margin-top: 32rpx;
+  margin-bottom: 40rpx;
+}
+
+.smavatar {
+  width: 32rpx;
+  height: 32rpx;
+  border-radius: 50%;
+  margin: 2rpx 8rpx;
+}
+
+.btn {
+  width: 392rpx;
+  height: 92rpx;
+  background: linear-gradient(90deg, #F24540 0%, #FA7B74 100%);
+  border-radius: 46rpx;
+  margin: 0 auto;
+  font-size: 34rpx;
+  color: #FFFFFF;
+  line-height: 92rpx;
+  text-align: center;
+}
+
+/*排行榜*/
+.rankv {
+  width: 686rpx;
+  height: 788rpx;
+  background: #FFFFFF;
+  box-shadow: 0rpx 4rpx 28rpx 0rpx rgba(0, 0, 0, 0.1);
+  border-radius: 12rpx;
+  margin: 60rpx auto 0;
+}
+
+.rankv .ranktopv {
+  padding: 20rpx 24rpx 4rpx;
+  display: flex;
+  justify-content: space-between;
+  height: 88rpx;
+}
+
+.ranktopv .toptab {
+  height: 88rpx;
+  line-height: 88rpx;
+  font-size: 32rpx;
+  font-weight: 500;
+  color: #262626;
+}
+
+.ranktopv .toptabh {
+  width: 180rpx;
+  height: 56rpx;
+  background: #FFFFFF;
+  border-radius: 30rpx;
+  border: 2rpx solid #F24540;
+  margin-top: 12rpx;
+  font-size: 28rpx;
+  color: #F24540;
+  line-height: 56rpx;
+  text-align: center;
+}
+
+.rankcv {
+  display: flex;
+  width: 638rpx;
+  height: 146rpx;
+  border-bottom: 2rpx solid #EEEEEE;
+  margin: 0 auto;
+}
+
+.ranknov {
+  width: 64rpx;
+  height: 146rpx;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  justify-self: center;
+  font-size: 30rpx;
+  color: #999999;
+  text-align: center;
+}
+
+.rankuserv {
+  display: flex;
+  width: 368rpx;
+}
+
+.mdavatar {
+  width: 80rpx;
+  height: 80rpx;
+  border-radius: 50%;
+  margin-top: 32rpx;
+}
+
+.mduser {
+  margin-left: 16rpx;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  justify-self: center;
+}
+
+.username {
+  font-size: 28rpx;
+  color: #262626;
+}
+
+.userdesc {
+  font-size: 24rpx;
+  color: #999999;
+}
+
+.ranknumv {
+  display: flex;
+  justify-content: flex-end;
+  width: 200rpx;
+}
+
+.ranknum {
+  font-size: 36rpx;
+  color: #F24540;
+  line-height: 146rpx;
+}
+
+.rankbu {
+  font-size: 24rpx;
+  color: #262626;
+  line-height: 150rpx;
+}
+
+.noicon {
+  width: 44rpx;
+  height: 44rpx;
+}
+
+.rankmorev {
+  width: 100%;
+  height: 88rpx;
+  display: flex;
+  justify-content: center;
+}
+
+.moretxt {
+  height: 88rpx;
+  line-height: 88rpx;
+  font-size: 24rpx;
+  color: #999999;
+  margin-right: 8rpx;
+}
+.moreicon{
+  width: 12rpx;
+  height: 20rpx;
+  margin-top: 34rpx;
+}

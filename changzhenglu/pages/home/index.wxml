@@ -1,0 +1,105 @@
+<!--changzhenglu/pages/home/index.wxml-->
+<!--顶部用户信息-->
+<view class="topbgv" bindtap="hideMaskOpt" style="background:url(../../resources/bg.png) no-repeat;background-size: cover;">
+  <view style="width: 100vw;height:{{navigationBarHeight}}px;margin-bottom: 10rpx;"></view>
+  <view class="pagetitlev">
+    <view class="backiconv" catchtap="goBackOpt">
+      <image src="/resources/comman/backiconw.png" class="backicon"></image>
+    </view>
+    <view class="pagetitle">重走长征路</view>
+  </view>
+</view>
+
+<!--用户信息-->
+<view class="userinfov">
+  <view class="userv">
+    <image src="/resources/comman/avatarUrl.jpg" mode="aspectFill" class="avatarUrl"></image>
+    <view class="nickname">长征突击手</view>
+    <image src="../../resources/right.png" class="righticon"></image>
+  </view>
+  <view class="circlev">
+    <view class="circlec"></view>
+    <view class="circletag">今日步数</view>
+    <view class="circlenum">2234</view>
+  </view>
+  <view class="currrankv">
+    <text>距离</text>
+    <image src="/resources/comman/avatarUrl.jpg" mode="aspectFill" class="smavatar"></image>
+    <text>马斯特、相差93里程，长征榜排名第34</text>
+  </view>
+</view>
+<view class="btn">进入长征</view>
+
+<!--排行榜-->
+<view class="rankv">
+  <view class="ranktopv">
+    <view class="toptab">今日排行榜</view>
+    <view class="toptabh">长征排行榜</view>
+  </view>
+  <view class="rankcv">
+    <view class="ranknov">无</view>
+    <view class="rankuserv">
+      <image src="/resources/comman/avatarUrl.jpg" mode="aspectFill" class="mdavatar"></image>
+      <view class="mduser">
+        <view class="username">李某人（我自己）</view>
+        <view class="userdesc">“小红军”</view>
+      </view>
+    </view>
+    <view class="ranknumv">
+      <view class="ranknum">8788</view>
+      <view class="rankbu">步</view>
+    </view>
+  </view>
+  <view class="rankcv">
+    <view class="ranknov">
+      <image src="../../resources/no1.png" class="noicon"></image>
+    </view>
+    <view class="rankuserv">
+      <image src="/resources/comman/avatarUrl.jpg" mode="aspectFill" class="mdavatar"></image>
+      <view class="mduser">
+        <view class="username">李某人（我自己）</view>
+        <view class="userdesc">“小红军”</view>
+      </view>
+    </view>
+    <view class="ranknumv">
+      <view class="ranknum">8788</view>
+      <view class="rankbu">步</view>
+    </view>
+  </view>
+  <view class="rankcv">
+    <view class="ranknov">
+      <image src="../../resources/no2.png" class="noicon"></image>
+    </view>
+    <view class="rankuserv">
+      <image src="/resources/comman/avatarUrl.jpg" mode="aspectFill" class="mdavatar"></image>
+      <view class="mduser">
+        <view class="username">李某人（我自己）</view>
+        <view class="userdesc">“小红军”</view>
+      </view>
+    </view>
+    <view class="ranknumv">
+      <view class="ranknum">8788</view>
+      <view class="rankbu">步</view>
+    </view>
+  </view>
+  <view class="rankcv">
+    <view class="ranknov">
+      <image src="../../resources/no3.png" class="noicon"></image>
+    </view>
+    <view class="rankuserv">
+      <image src="/resources/comman/avatarUrl.jpg" mode="aspectFill" class="mdavatar"></image>
+      <view class="mduser">
+        <view class="username">李某人（我自己）</view>
+        <view class="userdesc">“小红军”</view>
+      </view>
+    </view>
+    <view class="ranknumv">
+      <view class="ranknum">8788</view>
+      <view class="rankbu">步</view>
+    </view>
+  </view>
+  <view class="rankmorev">
+    <view class="moretxt">查看更多</view>
+    <image src="../../resources/right.png" class="moreicon"></image>
+  </view>
+</view>
