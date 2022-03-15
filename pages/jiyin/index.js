@@ -27,6 +27,7 @@ Page({
   goMenu(e) { //点击菜单
     var url = "";
     var menu = parseInt(e.currentTarget.dataset.menu);
+    //10 新中国从这里走来 11习总书记的红色足迹 12习总书记的扶贫足迹 14探寻红色基因
     switch (menu) {
       case 1:
         url = "../xinzhongguo/index";

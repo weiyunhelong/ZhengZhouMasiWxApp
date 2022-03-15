@@ -1,0 +1,37 @@
+/* chat/pages/work/index.wxss */
+page {
+  background-color: #fff;
+}
+
+.listv {
+  padding-top: 20rpx;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.workv {
+  width: 328rpx;
+  height: 300rpx;
+  margin-bottom: 30rpx;
+  margin-left: 32rpx;
+  display: inline-block;
+}
+
+.cover {
+  width: 328rpx;
+  height: 184rpx;
+  border-radius: 6rpx;
+}
+
+.name {
+  padding-top: 8rpx;
+  width: 328rpx;
+  font-size: 30rpx;
+  color: #262626;
+}
+
+.owner {
+  padding-top: 8rpx;
+  font-size: 24rpx;
+  color: #999999;
+}

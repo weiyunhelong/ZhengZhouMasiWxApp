@@ -52,46 +52,16 @@
 
   <!--红色时时读-->
   <scroll-view class="xscrollview" scroll-x="true">
-    <view class="xscrollviewc" bindtap="goShiduOpt" data-id="93">
-      <image mode="aspectFill" lazy-load="true" src="/resources/comman/avatarUrl.jpg" class="xscrollviewcover"></image>
-      <view class="xscrollviewnumberv">
-        <image src="/resources/home/voice.png" class="voiceicon"></image>
-        <view class="numbertxt">1.2万</view>
+    <block wx:for="{{dataobj.RedAlwaysRead}}" wx:key="item">
+      <view class="xscrollviewc" bindtap="goShiduOpt" data-id="{{item.ID}}">
+        <image mode="aspectFill" lazy-load="true" src="{{item.Thumbnail}}" class="xscrollviewcover"></image>
+        <view class="xscrollviewnumberv">
+          <image src="/resources/home/voice.png" class="voiceicon"></image>
+          <view class="numbertxt">{{item.PlayNum}}</view>
+        </view>
+        <view class="xscrollviewname showOnehangTxt">{{item.Title}}</view>
       </view>
-      <view class="xscrollviewname showOnehangTxt">做发动机不好使</view>
-    </view>
-    <view class="xscrollviewc" bindtap="goShiduOpt" data-id="93">
-      <image mode="aspectFill" lazy-load="true" src="/resources/comman/avatarUrl.jpg" class="xscrollviewcover"></image>
-      <view class="xscrollviewnumberv">
-        <image src="/resources/home/voice.png" class="voiceicon"></image>
-        <view class="numbertxt">1.2万</view>
-      </view>
-      <view class="xscrollviewname showOnehangTxt">做发动机不好使</view>
-    </view>
-    <view class="xscrollviewc" bindtap="goShiduOpt" data-id="93">
-      <image mode="aspectFill" lazy-load="true" src="/resources/comman/avatarUrl.jpg" class="xscrollviewcover"></image>
-      <view class="xscrollviewnumberv">
-        <image src="/resources/home/voice.png" class="voiceicon"></image>
-        <view class="numbertxt">1.2万</view>
-      </view>
-      <view class="xscrollviewname showOnehangTxt">做发动机不好使</view>
-    </view>
-    <view class="xscrollviewc" bindtap="goShiduOpt" data-id="93">
-      <image mode="aspectFill" lazy-load="true" src="/resources/comman/avatarUrl.jpg" class="xscrollviewcover"></image>
-      <view class="xscrollviewnumberv">
-        <image src="/resources/home/voice.png" class="voiceicon"></image>
-        <view class="numbertxt">1.2万</view>
-      </view>
-      <view class="xscrollviewname showOnehangTxt">做发动机不好使</view>
-    </view>
-    <view class="xscrollviewc" bindtap="goShiduOpt" data-id="93">
-      <image mode="aspectFill" lazy-load="true" src="/resources/comman/avatarUrl.jpg" class="xscrollviewcover"></image>
-      <view class="xscrollviewnumberv">
-        <image src="/resources/home/voice.png" class="voiceicon"></image>
-        <view class="numbertxt">1.2万</view>
-      </view>
-      <view class="xscrollviewname showOnehangTxt">做发动机不好使</view>
-    </view>
+    </block>
   </scroll-view>
 
   <!--分类部分-->
@@ -108,42 +78,17 @@
 
   <!--创课中心-->
   <view class="chuangkev">
-    <view class="chuangkec" bindtap="goChuangkeOpt" data-id="124">
-      <image mode="aspectFill" lazy-load="true" src="/resources/comman/avatarUrl.jpg" class="chuangkecover"></image>
-      <view class="chuangkenumberv">
-        <image src="/resources/home/video.png" class="videoicon"></image>
-        <view class="numbertxt">1.2万</view>
+    <block wx:for="{{dataobj.CourseCenter}}" wx:key="item">
+      <view class="chuangkec" bindtap="goChuangkeOpt" data-id="{{item.ID}}">
+        <image mode="aspectFill" lazy-load="true" src="{{item.Thumbnail}}" class="chuangkecover"></image>
+        <view class="chuangkenumberv">
+          <image src="/resources/home/video.png" class="videoicon"></image>
+          <view class="numbertxt">{{item.PlayNum}}</view>
+        </view>
+        <view class="chuangkename showOnehangTxt">{{item.Title}}</view>
+        <view class="chuangketime">{{item.UserName}}</view>
       </view>
-      <view class="chuangkename showOnehangTxt">使用设计工具的好处在省时省力</view>
-      <view class="chuangketime">时长：19:23</view>
-    </view>
-    <view class="chuangkec" bindtap="goChuangkeOpt" data-id="124">
-      <image mode="aspectFill" lazy-load="true" src="/resources/comman/avatarUrl.jpg" class="chuangkecover"></image>
-      <view class="chuangkenumberv">
-        <image src="/resources/home/video.png" class="videoicon"></image>
-        <view class="numbertxt">1.2万</view>
-      </view>
-      <view class="chuangkename showOnehangTxt">使用设计工具的好处在省时省力</view>
-      <view class="chuangketime">时长：19:23</view>
-    </view>
-    <view class="chuangkec" bindtap="goChuangkeOpt" data-id="124">
-      <image mode="aspectFill" lazy-load="true" src="/resources/comman/avatarUrl.jpg" class="chuangkecover"></image>
-      <view class="chuangkenumberv">
-        <image src="/resources/home/video.png" class="videoicon"></image>
-        <view class="numbertxt">1.2万</view>
-      </view>
-      <view class="chuangkename showOnehangTxt">使用设计工具的好处在省时省力</view>
-      <view class="chuangketime">时长：19:23</view>
-    </view>
-    <view class="chuangkec" bindtap="goChuangkeOpt" data-id="124">
-      <image mode="aspectFill" lazy-load="true" src="/resources/comman/avatarUrl.jpg" class="chuangkecover"></image>
-      <view class="chuangkenumberv">
-        <image src="/resources/home/video.png" class="videoicon"></image>
-        <view class="numbertxt">1.2万</view>
-      </view>
-      <view class="chuangkename showOnehangTxt">使用设计工具的好处在省时省力</view>
-      <view class="chuangketime">时长：19:23</view>
-    </view>
+    </block>
   </view>
 
   <!--分类部分-->
@@ -159,33 +104,38 @@
   </view>
 
   <!--探寻红色基因-->
-  <view class="jiyinv" bindtap="goJiYinOpt" data-id="1">
-    <image mode="aspectFill" lazy-load="true" src="/resources/comman/avatarUrl.jpg" class="jiyincover"></image>
-    <view class="jiyinc">
-      <view class="jiyinname">红色摇篮-安远路矿工人运动纪念馆</view>
-      <view class="jiyinnumv">1.4k浏览 · 231点赞 · 233收藏</view>
+  <block wx:for="{{dataobj.RedGene}}" wx:key="item">
+    <view class="jiyinv" bindtap="goJiYinOpt" data-id="{{item.ID}}">
+      <image mode="aspectFill" lazy-load="true" src="{{item.Thumbnail}}" class="jiyincover"></image>
+      <view class="jiyinc">
+        <view class="jiyinname">{{item.Title}}</view>
+        <view class="jiyinnumv">{{item.PageView}}浏览 · {{item.Praise}}点赞 · {{item.CollectionNum}}收藏</view>
+      </view>
+    </view>
+  </block>
+
+  <!--优质作品部分-->
+  <view class="categoryv">
+    <view class="categoryvl">
+      <view class="categoryvlie"></view>
+      <view class="categoryvtxt">优质作品</view>
+    </view>
+    <view class="categoryvr" bindtap="goWork">
+      <view class="categoryvmore">更多</view>
+      <image src="/resources/comman/right.png" class="righticon"></image>
     </view>
   </view>
-  <view class="jiyinv" bindtap="goJiYinOpt" data-id="1">
-    <image mode="aspectFill" lazy-load="true" src="/resources/comman/avatarUrl.jpg" class="jiyincover"></image>
-    <view class="jiyinc">
-      <view class="jiyinname">鲁迅纪念馆平展</view>
-      <view class="jiyinnumv">1.4k浏览 · 231点赞 · 233收藏</view>
-    </view>
-  </view>
-  <view class="jiyinv" bindtap="goJiYinOpt" data-id="1">
-    <image mode="aspectFill" lazy-load="true" src="/resources/comman/avatarUrl.jpg" class="jiyincover"></image>
-    <view class="jiyinc">
-      <view class="jiyinname">鳄鱼园革命纪念馆</view>
-      <view class="jiyinnumv">1.4k浏览 · 231点赞 · 233收藏</view>
-    </view>
-  </view>
-  <view class="jiyinv" bindtap="goJiYinOpt" data-id="1">
-    <image mode="aspectFill" lazy-load="true" src="/resources/comman/avatarUrl.jpg" class="jiyincover"></image>
-    <view class="jiyinc">
-      <view class="jiyinname">黄花塘新四军军部纪念馆</view>
-      <view class="jiyinnumv">1.4k浏览 · 231点赞 · 233收藏</view>
-    </view>
+  <view class="chuangkev">
+    <block wx:for="{{dataobj.HighGrade}}" wx:key="item">
+      <view class="chuangkec" bindtap="goWorkOpt" data-id="{{item.ID}}">
+        <image mode="aspectFill" lazy-load="true" src="{{item.Thumbnail}}" class="chuangkecover"></image>
+        <view class="workvc">
+          <image src="/resources/comman/work.png" class="workicon"></image>
+        </view>
+        <view class="chuangkename showOnehangTxt" style="margin-top: 0rpx;">{{item.Title}}</view>
+        <view class="chuangketime">创作人：{{item.UserName}}</view>
+      </view>
+    </block>
   </view>
 
   <!--分类部分-->
@@ -201,23 +151,12 @@
   </view>
 
   <!--四史天天讲-->
-  <view class="sishiv" bindtap="goSiJiangOpt" data-id="1">
-    <image mode="widthFix" lazy-load="true" src="/resources/comman/avatarUrl.jpg" class="sishicover"></image>
-    <view class="sishiname showOnehangTxt">北京市朝阳区嵩山路118号</view>
-  </view>
-  <view class="sishiv" bindtap="goSiJiangOpt" data-id="1">
-    <image mode="widthFix" lazy-load="true" src="/resources/comman/avatarUrl.jpg" class="sishicover"></image>
-    <view class="sishiname showOnehangTxt">北京市朝阳区嵩山路118号</view>
-  </view>
-  <view class="sishiv" bindtap="goSiJiangOpt" data-id="1">
-    <image mode="widthFix" lazy-load="true" src="/resources/comman/avatarUrl.jpg" class="sishicover"></image>
-    <view class="sishiname showOnehangTxt">北京市朝阳区嵩山路118号</view>
-  </view>
-  <view class="sishiv" bindtap="goSiJiangOpt" data-id="1">
-    <image mode="widthFix" lazy-load="true" src="/resources/comman/avatarUrl.jpg" class="sishicover"></image>
-    <view class="sishiname showOnehangTxt">北京市朝阳区嵩山路118号</view>
-  </view>
-
+  <block wx:for="{{dataobj.Fourhistories}}">
+    <view class="sishiv" bindtap="goSiJiangOpt" data-id="{{item.ID}}">
+      <image mode="widthFix" lazy-load="true" src="{{item.Thumbnail}}" class="sishicover"></image>
+      <view class="sishiname showOnehangTxt">{{item.Title}}</view>
+    </view>
+  </block>
   <view class="tabbarcvc"></view>
 
 </scroll-view>

@@ -23,6 +23,20 @@
           "name": "",
           "pathName": "changzhenglu/pages/home/index",
           "query": "",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "",
+          "pathName": "pages/jiyin/list",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "",
+          "pathName": "pages/jiyin/index",
+          "query": "",
           "scene": null,
           "launchMode": "default"
         }

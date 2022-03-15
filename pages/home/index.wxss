@@ -35,17 +35,20 @@ page {
   font-size: 32rpx;
   color: #FFFFFF;
 }
-.bodyv{
+
+.bodyv {
   width: 100vw;
   height: calc(100vh - 150rpx - 100px);
   position: relative;
   top: -150rpx;
   z-index: 99;
 }
-.tabbarcvc{
+
+.tabbarcvc {
   width: 100vw;
   height: 64rpx;
 }
+
 /*顶部的banner*/
 .bannerv {
   width: 100vw;
@@ -225,12 +228,33 @@ page {
   width: 328rpx;
   height: auto;
   margin-bottom: 30rpx;
+  position: relative;
 }
 
 .chuangkev .chuangkecover {
   width: 328rpx;
   height: 184rpx;
   border-radius: 6rpx;
+}
+
+.chuangkev .workvc {
+  width: 328rpx;
+  height: 184rpx;
+  border-radius: 6rpx;
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  justify-self: center;
+  background: rgba(0, 0, 0, 0.4);
+  margin-bottom: 28rpx;
+}
+.chuangkev .workvc .workicon{
+  width: 54rpx;
+  height: 54rpx;
+  margin: 0 auto;
 }
 
 .chuangkev .chuangkenumberv {

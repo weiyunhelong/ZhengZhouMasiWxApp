@@ -24,7 +24,7 @@ Page({
       },
     })
   },
-  goUserOpt(){//点击跳转到用户信息
+  goUserOpt() { //点击跳转到用户信息
     wx.navigateTo({
       url: '../my/index',
     })
@@ -41,7 +41,7 @@ Page({
         url = "../zuji/fupin";
         break;
       case 3:
-        url = "../jinian/index";
+        url = "../jiyin/list";
         break;
       case 4:
         url = "../zuji/red";
@@ -79,17 +79,27 @@ Page({
       url: '../kecheng/video?id=' + e.currentTarget.dataset.id
     })
   },
-  goJiyin(){//红色基因
+  goJiyin() { //红色基因
     wx.switchTab({
       url: '../jiyin/index',
     })
   },
-  goJiYinOpt(e){//点击探寻红色基因
+  goJiYinOpt(e) { //点击探寻红色基因
     wx.navigateTo({
       url: '../jiyin/detail?id=' + e.currentTarget.dataset.id
     })
   },
-  goSiJiangOpt(e){//点击探寻四讲
+  goWork() { //优质作品
+    wx.navigateTo({
+      url: '../work/index'
+    })
+  },
+  goWorkOpt(e) { //优质作品详情
+    wx.navigateTo({
+      url: '../work/detail?id=' + e.currentTarget.dataset.id
+    })
+  },
+  goSiJiangOpt(e) { //点击探寻四讲
     wx.navigateTo({
       url: '../sijiang/detail?id=' + e.currentTarget.dataset.id
     })
@@ -108,6 +118,13 @@ Page({
     var that = this;
     //获取菜单的列表数据
     that.setTabbarlist();
+    if (getApp().globalData.WxUserId == 0) {
+      wx.redirectTo({
+        url: '../../wxauth/pages/wxlogin/index',
+      })
+    } else {
+      that.InitData();
+    }
   },
   setTabbarlist: function () { //获取菜单的列表数据
     var that = this;
@@ -124,6 +141,17 @@ Page({
         }
       }
     }
+  },
+  InitData() { //获取首页数据
+    var that = this;
+    var url = requestUrl + "/API/XRIdeology/HomeDateList?uid=" + getApp().globalData.WxUserId;
+    WxRequest.PostRequest(url, {}).then(res => {
+      if (res.data.success) {
+        that.setData({
+          dataobj: res.data.data
+        })
+      }
+    })
   },
   /**
    * 生命周期函数--监听页面隐藏

@@ -37,7 +37,9 @@
     "pages/shidu/detail",
     "pages/jinian/index",
     "pages/xinzhongguo/index",
-    "pages/webview/index",
+    "pages/webview/index", 
+    "pages/work/index",
+    "pages/work/detail",
     "pages/index/index",
     "pages/logs/logs"
   ],

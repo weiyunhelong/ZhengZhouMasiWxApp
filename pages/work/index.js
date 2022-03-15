@@ -1,4 +1,4 @@
-// pages/jiyin/list.js
+// chat/pages/work/index.js
 var requestUrl = getApp().globalData.requestUrl;
 var WxRequest = require('../../utils/WxRequest.js');
 
@@ -8,36 +8,26 @@ Page({
    * 页面的初始数据
    */
   data: {
-    list: [],
     pageindex:1,
+    list:[]
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    var that = this;
-    wx.getSystemInfo({
-      success: (res) => {
-        that.setData({
-          navigationBarHeight: res.statusBarHeight
-        })
-      },
-    })
-    that.setData({
-      id:14,
-      pagetitle:'探寻红色基因',
-    })
 
   },
-  goBackOpt(){//点击返回
-    wx.navigateBack({
-      delta: 1,
+  ShowMore(){
+    var that=this;
+    that.setData({
+      pageindex:that.data.pageindex+1
     })
+    that.InitData();
   },
-  goJiYinOpt(e){//点击到详情
+  goDetail(e){//点击跳转到详情
     wx.navigateTo({
-      url: '../jiyin/detail?id='+e.currentTarget.dataset.id,
+      url: '../work/detail?id='+e.currentTarget.dataset.id
     })
   },
   /**
@@ -54,32 +44,31 @@ Page({
     var that = this;
     if (getApp().globalData.WxUserId == 0) {
       wx.reLaunch({
-        url: '../../wxauth/pages/wxlogin/index',
+        url: '../../../wxauth/pages/wxlogin/index',
       })
     } else {
       //获取数据
       that.InitData();
     }
   },
-  InitData() { //获取数据
-    var that = this;
-    var pageindex = that.data.pageindex;
-    var url = requestUrl + "/API/RedGeneApi/GetPanoramList?page=" + pageindex + "&rows=10&type=" + that.data.id;
-    WxRequest.PostRequest(url, {}).then(res => {
-      if (res.data.success) {
-        if (pageindex == 1) {
-          that.setData({
-            list: res.data.data.datas
-          })
-        } else {
-          that.setData({
-            list:that.data.list.concat(res.data.data.datas) 
-          })
-        }
-      }
-    })
+  InitData(){//获取列表数据
+   var that=this;
+   var pageindex=that.data.pageindex;
+   var url=requestUrl+"/API/QualityWorksApi/GetQualityWorksList?page="+pageindex+"&rows=20";
+   WxRequest.PostRequest(url,{}).then(res=>{
+     if(res.data.success){
+       if(pageindex==1){
+         that.setData({
+           list:res.data.data.datas
+         })
+       }else{
+        that.setData({
+          list:that.data.list.concat(res.data.data.datas) 
+        })
+       }
+     }
+   })
   },
-
   /**
    * 生命周期函数--监听页面隐藏
    */

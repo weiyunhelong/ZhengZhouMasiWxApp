@@ -1,0 +1,40 @@
+<!--chat/pages/work/detail.wxml-->
+<!--顶部用户信息-->
+<view class="topbgv">
+  <view style="width: 100vw;height:{{navigationBarHeight}}px;margin-bottom: 10rpx;"></view>
+  <view class="pagetitlev">
+    <view class="backiconv" catchtap="goBackOpt">
+      <image src="/resources/comman/backiconw.png" class="backicon"></image>
+    </view>
+    <view class="pagetitle"></view>
+  </view>
+</view>
+<!--轮播图-->
+<swiper indicator-dots="{{dataobj.AccessoryUrlList.length>1}}" style="width:100vw;height: {{imgh}}rpx;" interval="3000" duration="1500" autoplay="{{true}}">
+ <block wx:for="{{dataobj.AccessoryUrlList}}" wx:key="item" wx:for-index="x">
+  <swiper-item>
+    <image src="{{item}}" mode="{{x==0?'widthFix':'aspectFill'}}" class="swiperimg" bindload="{{x==0?'ImgLoad':''}}" style="height: {{imgh}}rpx;"></image>
+  </swiper-item>
+ </block>
+</swiper>
+
+<!--基本信息-->
+<view class="infov">
+  <view class="namev">{{dataobj.Title}}</view>
+  <view class="owner">创作者：{{dataobj.UserName}}</view>
+</view>
+<view class="greyv"></view>
+
+<!--课程详情-->
+<scroll-view scroll-y="true" class="contentv">
+  <view class="title">简介</view>
+  <view class="lefticonv">
+    <image src="/resources/home/lefttop.png" class="icon"></image>
+  </view>
+  <view class="desc">
+    <parser html="{{dataobj.Contents}}"/>
+  </view>
+  <view class="righticonv">
+    <image src="/resources/home/rightbtm.png" class="icon"></image>
+  </view>
+</scroll-view>
