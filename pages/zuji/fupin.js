@@ -8,7 +8,8 @@ Page({
    * 页面的初始数据
    */
   data: {
-    list: []
+    list: [],
+    urllist: [],
   },
 
   /**
@@ -23,7 +24,7 @@ Page({
         })
       },
     })
-   
+
     //数据
     var arry = [];
     for (var i = 1; i < 32; i++) {
@@ -33,43 +34,19 @@ Page({
       list: arry
     })
   },
-  goBackOpt(){//点击返回
+  goBackOpt() { //点击返回
     wx.navigateBack({
       delta: 1,
     })
   },
-  goDetail(e){//点击到详情
-    var urls=[
-      "",
-      "",
-      "",
-      "",
-      "",
-      "",
-      "",
-      "",
-      "",
-      "",
-      "",
-      "",
-      "",
-      "",
-      "",
-      "",
-      "",
-      "",
-      "",
-      "",
-      "",
-      "",
-      "",
-      "",
-    ];
-    var index=e.currentTarget.dataset.index;
-    var url=urls[index];
-    if(url!=""){
+  goDetail(e) { //点击到详情
+    var urls = this.data.urllist;
+    var index = e.currentTarget.dataset.index;
+    var url = urls[index].Address==undefined?'':urls[index].Address;
+    WxRequest.ViewRedGenePage(list[index].ID);
+    if (url != "") {
       wx.navigateTo({
-        url: '../webview/index?url='+url,
+        url: '../webview/index?url=' + url,
       })
     }
   },
@@ -84,9 +61,26 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
+    var that = this;
+    if (getApp().globalData.WxUserId == 0) {
+      wx.redirectTo({
+        url: '../../wxauth/pages/wxlogin/index',
+      })
+    } else {
+      that.InitData();
+    }
   },
-
+  InitData() { //获取数据
+    var that = this;
+    var url = requestUrl + "/API/RedGeneApi/GetPanoramList?type=12&rows=100&page=1";
+    WxRequest.PostRequest(url, {}).then(res => {
+      if (res.data.success) {
+        that.setData({
+          urllist: res.data.data.datas
+        })
+      }
+    })
+  },
   /**
    * 生命周期函数--监听页面隐藏
    */

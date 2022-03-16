@@ -24,38 +24,18 @@ Page({
       },
     })
   },
-  goBackOpt(){//点击返回
+  goBackOpt() { //点击返回
     wx.navigateBack({
       delta: 1,
     })
   },
-  goDetail(e){
-    var urls=[
-      "https://720.vrkejiao.com/10067",
-      "https://720.vrkejiao.com/10013",
-      "https://720.vrkejiao.com/10070",
-      "",
-      "https://720.vrkejiao.com/10079",
-      "https://720.vrkejiao.com/jgsgmjng",
-      "",
-      "https://720.vrkejiao.com/10025",
-      "",
-      "https://720.vrkejiao.com/10073",
-      "https://720.vrkejiao.com/zgydjng",
-      "",
-      "https://720.vrkejiao.com/10078",
-      "",
-      "",
-      "https://720.vrkejiao.com/10004",
-      "https://720.vrkejiao.com/10063",
-      "",
-      "https://720.vrkejiao.com/10065",
-    ];
-    var index=e.currentTarget.dataset.index;
-    var url=urls[index];
-    if(url!=""){
+  goDetail(e) {
+    var list=this.data.list;
+    var index = e.currentTarget.dataset.index;
+    WxRequest.ViewRedGenePage(list[index].ID);
+    if (list[index].Address != "") {
       wx.navigateTo({
-        url: '../webview/index?url='+url,
+        url: '../webview/index?url=' + list[index].Address,
       })
     }
   },
@@ -70,9 +50,26 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
+    var that = this;
+    if (getApp().globalData.WxUserId == 0) {
+      wx.redirectTo({
+        url: '../../wxauth/pages/wxlogin/index',
+      })
+    } else {
+      that.InitData();
+    }
   },
-
+  InitData() { //获取数据
+    var that = this;
+    var url = requestUrl + "/API/RedGeneApi/GetPanoramList?type=11&rows=100&page=1";
+    WxRequest.PostRequest(url, {}).then(res => {
+     if(res.data.success){
+       that.setData({
+         list:res.data.data.datas
+       })
+     }
+    })
+  },
   /**
    * 生命周期函数--监听页面隐藏
    */

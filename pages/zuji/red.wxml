@@ -14,16 +14,20 @@
 <scroll-view scroll-y="true" class="datav">
   <view class="info1">
     <view class="infov1" bindtap="goDetail" data-index="0">
-      <view class="title">西柏坡纪念馆</view>
-      <view class="desc">西柏坡位于河北省平山县中部，是解放战争时期中央工委、中共中央和解放军总部的所在地。</view>
+      <view class="title">{{list[0].Name}}</view>
+      <view class="desc" style="height: 80rpx;">
+        <parser html="{{list[0].Contents}}" />
+      </view>
       <view class="btnv">
         <view class="btntxt">查看详情</view>
         <image class="btnicon" src="https://zhengzhousizheng.oss-cn-beijing.aliyuncs.com/zujired/right.png"></image>
       </view>
     </view>
     <view class="infov2" bindtap="goDetail" data-index="1">
-      <view class="title" style="text-align: right;">华东革命烈士陵园</view>
-      <view class="desc">西柏坡位于河北省平山县中部，是解放战争时期中央工委、中共中央和解放军总部的所在地。</view>
+      <view class="title" style="text-align: right;">{{list[1].Name}}</view>
+      <view class="desc" style="height: 155rpx;">
+        <parser html="{{list[1].Contents}}" />
+      </view>
       <view class="btnv" style="margin-left: 136rpx;">
         <view class="btntxt">查看详情</view>
         <image class="btnicon" src="https://zhengzhousizheng.oss-cn-beijing.aliyuncs.com/zujired/right.png"></image>
@@ -32,16 +36,20 @@
   </view>
   <view class="info2">
     <view class="infov3" bindtap="goDetail" data-index="2">
-      <view class="title">古田会议纪念馆</view>
-      <view class="desc">西柏坡位于河北省平山县中部，是解放战争时期中央工委、中共中央和解放军总部的所在地。</view>
+      <view class="title">{{list[2].Name}}</view>
+      <view class="desc" style="height: 155rpx;">
+        <parser html="{{list[2].Contents}}" />
+      </view>
       <view class="btnv">
         <view class="btntxt">查看详情</view>
         <image class="btnicon" src="https://zhengzhousizheng.oss-cn-beijing.aliyuncs.com/zujired/right.png"></image>
       </view>
     </view>
     <view class="infov4" bindtap="goDetail" data-index="3">
-      <view class="title">陕甘边革命根据地照金纪念馆</view>
-      <view class="desc">西柏坡位于河北省平山县中部，是解放战争时期中央工委、中共中央和解放军总部的所在地。</view>
+      <view class="title">{{list[3].Name}}</view>
+      <view class="desc"  style="height: 125rpx;">
+        <parser html="{{list[3].Contents}}" />
+      </view>
       <view class="btnv" style="margin-left: 136rpx;">
         <view class="btntxt">查看详情</view>
         <image class="btnicon" src="https://zhengzhousizheng.oss-cn-beijing.aliyuncs.com/zujired/right.png"></image>
@@ -50,16 +58,20 @@
   </view>
   <view class="info3">
     <view class="infov5" bindtap="goDetail" data-index="4">
-      <view class="title">遵义会议陈列馆</view>
-      <view class="desc">西柏坡位于河北省平山县中部，是解放战争时期中央工委、中共中央和解放军总部的所在地。</view>
+      <view class="title">{{list[4].Name}}</view>
+      <view class="desc" style="height: 120rpx;">
+        <parser html="{{list[4].Contents}}" />
+      </view>
       <view class="btnv">
         <view class="btntxt">查看详情</view>
         <image class="btnicon" src="https://zhengzhousizheng.oss-cn-beijing.aliyuncs.com/zujired/right.png"></image>
       </view>
     </view>
-    <view class="infov6"  bindtap="goDetail" data-index="5">
-      <view class="title" style="text-align: right;font-size: 34rpx;">井冈山革命烈士陵园</view>
-      <view class="desc">西柏坡位于河北省平山县中部，是解放战争时期中央工委、中共中央和解放军总部的所在地。</view>
+    <view class="infov6" bindtap="goDetail" data-index="5">
+      <view class="title">{{list[5].Name}}</view>
+      <view class="desc" style="height: 120rpx;">
+        <parser html="{{list[5].Contents}}" />
+      </view>
       <view class="btnv" style="margin-left: 136rpx;">
         <view class="btntxt">查看详情</view>
         <image class="btnicon" src="https://zhengzhousizheng.oss-cn-beijing.aliyuncs.com/zujired/right.png"></image>
@@ -68,16 +80,20 @@
   </view>
   <view class="info4">
     <view class="infov7" bindtap="goDetail" data-index="6">
-      <view class="title">金寨县革命博物馆</view>
-      <view class="desc">西柏坡位于河北省平山县中部，是解放战争时期中央工委、中共中央和解放军总部的所在地。</view>
+      <view class="title">{{list[6].Name}}</view>
+      <view class="desc" style="height: 120rpx;">
+        <parser html="{{list[6].Contents}}" />
+      </view>
       <view class="btnv">
         <view class="btntxt">查看详情</view>
         <image class="btnicon" src="https://zhengzhousizheng.oss-cn-beijing.aliyuncs.com/zujired/right.png"></image>
       </view>
     </view>
     <view class="infov8" bindtap="goDetail" data-index="7">
-      <view class="title" style="text-align: right;">长征会师纪念馆</view>
-      <view class="desc">西柏坡位于河北省平山县中部，是解放战争时期中央工委、中共中央和解放军总部的所在地。</view>
+      <view class="title">{{list[7].Name}}</view>
+      <view class="desc" style="height: 160rpx;">
+        <parser html="{{list[7].Contents}}" />
+      </view>
       <view class="btnv" style="margin-left: 136rpx;">
         <view class="btntxt">查看详情</view>
         <image class="btnicon" src="https://zhengzhousizheng.oss-cn-beijing.aliyuncs.com/zujired/right.png"></image>
@@ -86,8 +102,10 @@
   </view>
   <view class="info5">
     <view class="infov9" bindtap="goDetail" data-index="8">
-      <view class="title">晋绥边区革命纪念馆</view>
-      <view class="desc">西柏坡位于河北省平山县中部，是解放战争时期中央工委、中共中央和解放军总部的所在地。</view>
+      <view class="title">{{list[8].Name}}</view>
+      <view class="desc" style="height: 80rpx;">
+        <parser html="{{list[8].Contents}}" />
+      </view>
       <view class="btnv">
         <view class="btntxt">查看详情</view>
         <image class="btnicon" src="https://zhengzhousizheng.oss-cn-beijing.aliyuncs.com/zujired/right.png"></image>
@@ -96,16 +114,20 @@
   </view>
   <view class="info6">
     <view class="infov10" bindtap="goDetail" data-index="9">
-      <view class="title" style="font-size: 34rpx;">井冈山革命烈士陵园</view>
-      <view class="desc">西柏坡位于河北省平山县中部，是解放战争时期中央工委、中共中央和解放军总部的所在地。</view>
+      <view class="title">{{list[9].Name}}</view>
+      <view class="desc" style="height: 120rpx;">
+        <parser html="{{list[9].Contents}}" />
+      </view>
       <view class="btnv" style="margin-left:136rpx;">
         <view class="btntxt">查看详情</view>
         <image class="btnicon" src="https://zhengzhousizheng.oss-cn-beijing.aliyuncs.com/zujired/right.png"></image>
       </view>
     </view>
     <view class="infov11" bindtap="goDetail" data-index="10">
-      <view class="title">金寨县革命博物馆</view>
-      <view class="desc">西柏坡位于河北省平山县中部，是解放战争时期中央工委、中共中央和解放军总部的所在地。</view>
+      <view class="title">{{list[10].Name}}</view>
+      <view class="desc" style="height: 120rpx;">
+        <parser html="{{list[10].Contents}}" />
+      </view>
       <view class="btnv">
         <view class="btntxt">查看详情</view>
         <image class="btnicon" src="https://zhengzhousizheng.oss-cn-beijing.aliyuncs.com/zujired/right.png"></image>
@@ -113,9 +135,11 @@
     </view>
   </view>
   <view class="info7">
-    <view class="infov12" bindtap="goDetail" data-index="11">
-      <view class="title" style="text-align: right;">长征会师纪念馆</view>
-      <view class="desc">西柏坡位于河北省平山县中部，是解放战争时期中央工委、中共中央和解放军总部的所在地。</view>
+    <view class="infov12" bindtap="goDetail"  data-index="11">
+      <view class="title">{{list[11].Name}}</view>
+      <view class="desc" style="height: 120rpx;">
+        <parser html="{{list[11].Contents}}" />
+      </view>
       <view class="btnv" style="margin-left:136rpx;">
         <view class="btntxt">查看详情</view>
         <image class="btnicon" src="https://zhengzhousizheng.oss-cn-beijing.aliyuncs.com/zujired/right.png"></image>
@@ -124,8 +148,10 @@
   </view>
   <view class="info8">
     <view class="infov13" bindtap="goDetail" data-index="12">
-      <view class="title">遵义会议陈列馆</view>
-      <view class="desc">西柏坡位于河北省平山县中部，是解放战争时期中央工委、中共中央和解放军总部的所在地。</view>
+      <view class="title">{{list[12].Name}}</view>
+      <view class="desc" style="height: 80rpx;">
+        <parser html="{{list[12].Contents}}" />
+      </view>
       <view class="btnv">
         <view class="btntxt">查看详情</view>
         <image class="btnicon" src="https://zhengzhousizheng.oss-cn-beijing.aliyuncs.com/zujired/right.png"></image>
@@ -134,8 +160,10 @@
   </view>
   <view class="info9">
     <view class="infov14" bindtap="goDetail" data-index="13">
-      <view class="title" style="text-align: right;">遵义会议陈列馆</view>
-      <view class="desc">西柏坡位于河北省平山县中部，是解放战争时期中央工委、中共中央和解放军总部的所在地。</view>
+      <view class="title">{{list[13].Name}}</view>
+      <view class="desc" style="height: 80rpx;">
+        <parser html="{{list[13].Contents}}" />
+      </view>
       <view class="btnv" style="margin-left: 136rpx;">
         <view class="btntxt">查看详情</view>
         <image class="btnicon" src="https://zhengzhousizheng.oss-cn-beijing.aliyuncs.com/zujired/right.png"></image>
@@ -144,8 +172,10 @@
   </view>
   <view class="info10">
     <view class="infov15" bindtap="goDetail" data-index="14">
-      <view class="title">遵义会议陈列馆</view>
-      <view class="desc">西柏坡位于河北省平山县中部，是解放战争时期中央工委、中共中央和解放军总部的所在地。</view>
+      <view class="title">{{list[14].Name}}</view>
+      <view class="desc" style="height: 80rpx;">
+        <parser html="{{list[14].Contents}}" />
+      </view>
       <view class="btnv">
         <view class="btntxt">查看详情</view>
         <image class="btnicon" src="https://zhengzhousizheng.oss-cn-beijing.aliyuncs.com/zujired/right.png"></image>
@@ -154,8 +184,10 @@
   </view>
   <view class="info11">
     <view class="infov16" bindtap="goDetail" data-index="15">
-      <view class="title" style="text-align: right;">遵义会议陈列馆</view>
-      <view class="desc">西柏坡位于河北省平山县中部，是解放战争时期中央工委、中共中央和解放军总部的所在地。</view>
+      <view class="title">{{list[15].Name}}</view>
+      <view class="desc" style="height: 80rpx;">
+        <parser html="{{list[15].Contents}}" />
+      </view>
       <view class="btnv" style="margin-left: 136rpx;">
         <view class="btntxt">查看详情</view>
         <image class="btnicon" src="https://zhengzhousizheng.oss-cn-beijing.aliyuncs.com/zujired/right.png"></image>
@@ -164,8 +196,10 @@
   </view>
   <view class="info12">
     <view class="infov17" bindtap="goDetail" data-index="16">
-      <view class="title">遵义会议陈列馆</view>
-      <view class="desc">西柏坡位于河北省平山县中部，是解放战争时期中央工委、中共中央和解放军总部的所在地。</view>
+      <view class="title">{{list[16].Name}}</view>
+      <view class="desc" style="height: 80rpx;">
+        <parser html="{{list[16].Contents}}" />
+      </view>
       <view class="btnv">
         <view class="btntxt">查看详情</view>
         <image class="btnicon" src="https://zhengzhousizheng.oss-cn-beijing.aliyuncs.com/zujired/right.png"></image>
@@ -174,16 +208,20 @@
   </view>
   <view class="info13">
     <view class="infov19" bindtap="goDetail" data-index="17">
-      <view class="title" style="text-align: right;">遵义会议陈列馆</view>
-      <view class="desc">西柏坡位于河北省平山县中部，是解放战争时期中央工委、中共中央和解放军总部的所在地。</view>
+      <view class="title">{{list[17].Name}}</view>
+      <view class="desc" style="height: 120rpx;">
+        <parser html="{{list[17].Contents}}" />
+      </view>
       <view class="btnv" style="margin-left: 136rpx;">
         <view class="btntxt">查看详情</view>
         <image class="btnicon" src="https://zhengzhousizheng.oss-cn-beijing.aliyuncs.com/zujired/right.png"></image>
       </view>
     </view>
     <view class="infov20" bindtap="goDetail" data-index="18">
-      <view class="title">遵义会议陈列馆</view>
-      <view class="desc">西柏坡位于河北省平山县中部，是解放战争时期中央工委、中共中央和解放军总部的所在地。</view>
+      <view class="title">{{list[18].Name}}</view>
+      <view class="desc" style="height: 120rpx;">
+        <parser html="{{list[18].Contents}}" />
+      </view>
       <view class="btnv">
         <view class="btntxt">查看详情</view>
         <image class="btnicon" src="https://zhengzhousizheng.oss-cn-beijing.aliyuncs.com/zujired/right.png"></image>

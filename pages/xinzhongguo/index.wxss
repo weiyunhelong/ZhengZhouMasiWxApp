@@ -99,120 +99,153 @@
   width: 217rpx;
   height: 217rpx;
   margin-right: 26rpx;
+  border-radius: 50%;
 }
 
 .blockinfo {
   width: 385rpx;
   height: 207rpx;
   margin-right: 26rpx;
-  padding-top:10rpx;
+  padding-top: 10rpx;
 }
+
 .smblockinfo {
   width: 358rpx;
   height: 207rpx;
-  margin-left:31rpx;
-  padding-top:10rpx;
+  margin-left: 31rpx;
+  padding-top: 10rpx;
 }
+
+.stepname {
+  color: #AD000F;
+  font-weight: bold;
+  font-size: 32rpx;
+}
+
 .blockdesc {
   padding-top: 30rpx;
   font-size: 24rpx;
   color: #333333;
   text-align: justify;
 }
-image{
+
+image {
   display: block;
 }
+
 .step1icon {
   width: 283rpx;
   height: 29rpx;
 }
+
 .step2icon {
   width: 268rpx;
   height: 29rpx;
 }
+
 .step3icon {
   width: 149rpx;
   height: 28rpx;
 }
+
 .step4icon {
   width: 269rpx;
   height: 29rpx;
 }
-.step5icon{  
+
+.step5icon {
   width: 269rpx;
   height: 29rpx;
 }
-.step6icon{  
+
+.step6icon {
   width: 269rpx;
   height: 29rpx;
 }
-.step7icon{  
+
+.step7icon {
   width: 209rpx;
   height: 30rpx;
 }
-.step8icon{
+
+.step8icon {
   width: 239rpx;
-  height: 29rpx;    
+  height: 29rpx;
   margin-left: 146rpx;
 }
-.step9icon{  
+
+.step9icon {
   width: 208rpx;
-  height: 29rpx;    
+  height: 29rpx;
   margin-left: 170rpx;
 }
-.step10icon{
+
+.step10icon {
   width: 251rpx;
   height: 59rpx;
 }
-.step11icon{
+
+.step11icon {
   width: 328rpx;
   height: 29rpx;
 }
-.step12icon{  
+
+.step12icon {
   width: 329rpx;
   height: 29rpx;
 }
-.step13icon{
+
+.step13icon {
   width: 239rpx;
   height: 29rpx;
 }
-.step14icon{
+
+.step14icon {
   width: 299rpx;
   height: 29rpx;
 }
-.step15icon{
+
+.step15icon {
   width: 210rpx;
   height: 29rpx;
 }
-.step16icon{  
+
+.step16icon {
   width: 208rpx;
   height: 29rpx;
 }
-.step17icon{  
+
+.step17icon {
   width: 299rpx;
   height: 29rpx;
 }
-.step18icon{  
+
+.step18icon {
   width: 299rpx;
   height: 29rpx;
 }
-.step19icon{
+
+.step19icon {
   width: 421rpx;
   height: 29rpx;
 }
-.step20icon{  
+
+.step20icon {
   width: 420rpx;
   height: 29rpx;
 }
-.step21icon{
+
+.step21icon {
   width: 209rpx;
   height: 30rpx;
 }
-.step22icon{
+
+.step22icon {
   width: 268rpx;
   height: 55rpx;
 }
-.step23icon{
+
+.step23icon {
   width: 179rpx;
   height: 29rpx;
 }

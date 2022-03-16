@@ -14,29 +14,22 @@
       "list": [
         {
           "name": "",
-          "pathName": "pages/jiyin/list",
+          "pathName": "pages/xinzhongguo/index",
           "query": "",
           "launchMode": "default",
           "scene": null
         },
         {
           "name": "",
-          "pathName": "changzhenglu/pages/home/index",
+          "pathName": "pages/sijiang/index",
           "query": "",
           "launchMode": "default",
           "scene": null
         },
         {
           "name": "",
-          "pathName": "pages/jiyin/list",
-          "query": "",
-          "launchMode": "default",
-          "scene": null
-        },
-        {
-          "name": "",
-          "pathName": "pages/jiyin/index",
-          "query": "",
+          "pathName": "pages/sijiang/detail",
+          "query": "id=97",
           "scene": null,
           "launchMode": "default"
         }

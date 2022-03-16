@@ -43,6 +43,7 @@ Page({
     })
   },
   goDetail(e) { //跳转到详情页面
+    WxRequest.ViewRedGenePage(e.currentTarget.dataset.id);
     wx.navigateTo({
       url: '../shidu/chapter?id=' + e.currentTarget.dataset.id,
     })

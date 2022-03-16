@@ -36,9 +36,15 @@ Page({
     })
   },
   goJiYinOpt(e){//点击到详情
-    wx.navigateTo({
-      url: '../jiyin/detail?id='+e.currentTarget.dataset.id,
-    })
+    var list=this.data.list;
+    var index=e.currentTarget.dataset.index;
+    var url=list[index].Address;
+    WxRequest.ViewRedGenePage(list[index].ID);
+    if(url!=""){
+      wx.navigateTo({
+        url: '../webview/index?url='+url
+      })
+    }
   },
   /**
    * 生命周期函数--监听页面初次渲染完成

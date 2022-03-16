@@ -8,7 +8,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-    list: [1,2,3,4,5,6],
+    list: [],
     pageindex: 1,
   },
 
@@ -36,6 +36,7 @@ Page({
     })
   },
   goDetail(e) { //跳转到详情页面
+    WxRequest.ViewRedGenePage(e.currentTarget.dataset.id);
     wx.navigateTo({
       url: '../sijiang/detail?id=' + e.currentTarget.dataset.id,
     })
@@ -51,9 +52,14 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
     var that = this;
-    //that.InitData();
+    if (getApp().globalData.WxUserId == 0) {
+      wx.redirectTo({
+        url: '../../wxauth/pages/wxlogin/index',
+      })
+    } else {
+      that.InitData();
+    }
   },
   InitData() { //获取列表数据
     var that = this;

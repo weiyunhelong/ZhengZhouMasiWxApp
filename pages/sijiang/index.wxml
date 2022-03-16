@@ -10,7 +10,7 @@
   </view>
 </view>
 
-<scroll-view scroll-y="true" class="datalistv">
+<scroll-view scroll-y="true" class="datalistv" bindscrolltoupper="ShowMoreData">
 
   <!--banner部分-->
   <view class="bannerv" bindtap="goSystem">
@@ -19,12 +19,12 @@
 
   <block wx:for="{{list}}" wx:key="item">
     <view class="datav" bindtap="goDetail" data-id="{{item.ID}}">
-      <image mode="aspectFill" lazy-load="true" src="/resources/comman/avatarUrl.jpg" class="datacover"></image>
+      <image mode="aspectFill" lazy-load="true" src="{{item.Thumbnail}}" class="datacover"></image>
       <view class="datac">
-        <view class="dataname showOnehangTxt">听到，知道，悟到，做到听到，知道，悟到，做到</view>
+        <view class="dataname showOnehangTxt">{{item.Title}}</view>
         <image src="/resources/home/lefttop.png" class="lefttopicon"></image>
         <view class="datadescv">
-          <view class="datadesc showTwohangTxt">那些更棒的点子来自于个体依然用过去习惯的方式思考创意时——坐在意时——坐在</view>
+          <view class="datadesc showTwohangTxt">{{item.Summarize}}</view>
         </view>
         <image src="/resources/home/rightbtm.png" class="rightbtmicon"></image>
       </view>

@@ -73,6 +73,7 @@ function PostFormRequest(url, params) {
   });
   return promise;
 }
+
 //查询用户信息
 function GetWxUserInfo() {
   var promise = new Promise((resolve, reject) => {
@@ -97,7 +98,6 @@ function GetWxUserInfo() {
   });
   return promise;
 }
-
 
 //上传图片
 function UploadImgOpt(file) {
@@ -133,6 +133,31 @@ function ShowAlert(msg) {
   })
 }
 
+//浏览红色基因页面
+function ViewRedGenePage(id){
+  var that=this;
+  var promise = new Promise((resolve, reject) => {
+
+    //网络请求
+    wx.request({
+      url: getApp().globalData.requestUrl+"/API/RedGeneApi/SaveBrowse?panorid="+id+"&userid="+getApp().globalData.WxUserId,
+      data: {},
+      method: 'POST',
+      header: {
+        'content-type': 'application/json;charset=utf-8',
+      },
+      success: function (res) { //服务器返回数据
+        
+        resolve(res);
+       
+      },
+      fail: function (e) {
+        reject("网络请求出错",e);
+      }
+    })
+  });
+  return promise;
+}
 
 //对外暴露的方法
 module.exports = {
@@ -142,4 +167,5 @@ module.exports = {
   GetWxUserInfo:GetWxUserInfo,//查询用户信息
   UploadImgOpt:UploadImgOpt,//上传图片
   PostFormRequest:PostFormRequest,//表单提交
+  ViewRedGenePage:ViewRedGenePage,//红色基因浏览记录
 }

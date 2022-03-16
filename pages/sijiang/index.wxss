@@ -108,7 +108,7 @@ page {
 
 .datav .datadescv {
   width: 368rpx;
-  height: auto;
+  height: 72rpx;
   padding: 12rpx 12rpx;
   background: #F9F9F9;
 }
