@@ -288,6 +288,7 @@ Page({
     } else {
       //获取数据
       that.InitData();
+
     }
   },
   InitData() { //获取详情

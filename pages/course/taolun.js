@@ -10,7 +10,7 @@ Page({
   data: {
     id: 0, //
     title: "",
-    desc: "",
+    info: "",
   },
 
   /**
@@ -32,27 +32,40 @@ Page({
       info: e.detail.value
     })
   },
-  PostOpt(){//点击提交
-    var that=this;
-    var id= 0, //
-    title= "";
-    desc= "";
+  PostOpt() { //点击提交
+    var that = this;
+    var id = that.data.id, //
+      title = that.data.title,
+      info = that.data.info;
 
-    if(title==""){
+    if (title == "") {
       WxRequest.ShowAlert("请输入讨论标题");
-    }else if(desc==""){
+    } else if (info == "") {
       WxRequest.ShowAlert("请输入讨论内容");
-    }else{
+    } else {
       //TODO 请求接口
-      wx.showToast({
-        title: '发起讨论成功',
-        duration:2000
+      var url = requestUrl + "/API/TopicInforList/SaveTopicInfor";
+      var params = {
+        PracticalID: id,
+        UserId: getApp().globalData.WxUserId,
+        Title: title,
+        Contents: info,
+      };
+      WxRequest.PostFormRequest(url, params).then(res => {
+        if (res.data.success) {
+          wx.showToast({
+            title: '发起讨论成功',
+            duration: 2000
+          })
+          setTimeout(() => {
+            wx.navigateBack({
+              delta: 1,
+            })
+          }, 2000);
+        } else {
+          WxRequest.ShowAlert(res.data.msg);
+        }
       })
-      setTimeout(() => {
-        wx.navigateBack({
-          delta: 1,
-        })
-      }, 2000);
     }
   },
   /**

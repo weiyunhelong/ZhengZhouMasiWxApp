@@ -45,10 +45,10 @@ Page({
       url: '../course/detail?id=' + e.currentTarget.dataset.id,
     })
   },
-  showModaData(){//滚动加载更多
+  showModaData() { //滚动加载更多
     var that = this;
     that.setData({
-      pageindex: 1+that.data.pageindex
+      pageindex: 1 + that.data.pageindex
     })
     that.InitData();
   },
@@ -66,9 +66,14 @@ Page({
     var that = this;
     //获取菜单的列表数据
     that.setTabbarlist();
-    //获取课程列表
-    that.InitData();
-
+    if (getApp().globalData.WxUserId == 0) {
+      wx.redirectTo({
+        url: '../../wxauth/pages/wxlogin/index',
+      })
+    } else {
+      //获取课程列表
+      that.InitData();
+    }
   },
   setTabbarlist: function () { //获取菜单的列表数据
     var that = this;
@@ -86,24 +91,21 @@ Page({
       }
     }
   },
-  InitData(){//获取课程列表
-    var that=this;
-    var pageindex=that.data.pageindex;
-    var chktab=that.data.chktab;
-    var url=requestUrl+"/API/PracticalTeaching/GetPracticalTeachingList?page="+pageindex+"&rows=10";
+  InitData() { //获取课程列表
+    var that = this;
+    var pageindex = that.data.pageindex;
+    var chktab = that.data.chktab;
+    var url = requestUrl + "/API/PracticalTeaching/GetPracticalTeachingList?page=" + pageindex + "&rows=10&userID="+(chktab==1?getApp().globalData.WxUserId:"");
 
-    if(chktab==1){//我的实践课
-      url+="&userID="+getApp().globalData.WxUserId;
-    }
-    WxRequest.PostRequest(url,{}).then(res=>{
-      if(res.data.success){
-        if(pageindex==1){
+    WxRequest.PostRequest(url, {}).then(res => {
+      if (res.data.success) {
+        if (pageindex == 1) {
           that.setData({
-            list:res.data.data.datas
+            list: res.data.data.datas
           })
-        }else{
+        } else {
           that.setData({
-            list:that.data.list.concat(res.data.data.datas) 
+            list: that.data.list.concat(res.data.data.datas)
           })
         }
       }

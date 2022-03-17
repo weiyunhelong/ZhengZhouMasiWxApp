@@ -31,7 +31,7 @@ Page({
   },
   getInfo(e) {
     this.setData({
-      info: e.detail.value
+      desc: e.detail.value
     })
   },
   PostOpt() { //点击提交
@@ -49,10 +49,10 @@ Page({
       var url = requestUrl + "/API/PracticalTask/UploadWork";
       var params = {
         PracticalID: id,
-        RefID: that.data.taskid,
+        TaskID: that.data.taskid,
         UserID: getApp().globalData.WxUserId,
         Title: title,
-        Content: desc
+        Contents: desc
       };
       WxRequest.PostRequest(url, params).then(res => {
         if (res.data.success) {
@@ -75,7 +75,9 @@ Page({
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-
+    wx.hideShareMenu({
+      menus: ['shareAppMessage', 'shareTimeline']
+    })
   },
 
   /**

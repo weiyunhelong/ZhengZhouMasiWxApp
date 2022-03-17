@@ -53,3 +53,15 @@ page {
   line-height: 96rpx;
   margin: 0 auto;
 }
+.btnh{ 
+  width: 548rpx;
+  height: 96rpx;
+  background: rgba(242, 69, 64, 1);
+  border-radius: 48rpx;
+  font-size: 32rpx;
+  font-weight: 500;
+  color: #FFFFFF;
+  text-align: center;
+  line-height: 96rpx;
+  margin: 0 auto;
+}

@@ -14,22 +14,85 @@
       "list": [
         {
           "name": "",
-          "pathName": "pages/xinzhongguo/index",
-          "query": "",
+          "pathName": "pages/course/detail",
+          "query": "id=15",
           "launchMode": "default",
           "scene": null
         },
         {
           "name": "",
-          "pathName": "pages/sijiang/index",
-          "query": "",
+          "pathName": "pages/task/index",
+          "query": "id=28",
           "launchMode": "default",
           "scene": null
         },
         {
           "name": "",
-          "pathName": "pages/sijiang/detail",
-          "query": "id=97",
+          "pathName": "pages/task/upload",
+          "query": "id=28&taskid=25",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "",
+          "pathName": "pages/activity/upload",
+          "query": "id=28&taskid=31",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "",
+          "pathName": "pages/course/detail",
+          "query": "id=15",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "",
+          "pathName": "pages/course/taolundetail",
+          "query": "id=13",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "",
+          "pathName": "pages/course/taolundetail",
+          "query": "id=13&pid=15",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "",
+          "pathName": "pages/test/index",
+          "query": "id=15",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "",
+          "pathName": "pages/test/test",
+          "query": "id=2",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "",
+          "pathName": "pages/test/test",
+          "query": "id=5&clock=22",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "",
+          "pathName": "pages/test/test",
+          "query": "tid=2&tgid=1&clock=22",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "",
+          "pathName": "pages/test/test",
+          "query": "tid=5&tgid=2&clock=20",
           "scene": null,
           "launchMode": "default"
         }

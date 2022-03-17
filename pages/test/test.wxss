@@ -97,6 +97,7 @@
   font-size: 32rpx;
   color: #262626;
   padding-top: 28rpx;
+  width: 550rpx;
 }
 
 .btmvv {

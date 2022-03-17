@@ -90,14 +90,14 @@ Page({
       //TODO 请求接口提交
       var url = requestUrl + "/API/PracticalActivity/UploadWork";
       var params = {
-        PracticalID:id,
-        RefID: that.data.taskid,
+        PracticalID:parseInt(id),
+        TaskID:parseInt(that.data.taskid),
         UserID: getApp().globalData.WxUserId,
         Title: title,
-        Content: info,
-        Attachments: fujianUrl
+        Contents: info,
+        AccessoryUrl: fujianUrl
       };
-      WxRequest.PostRequest(url, params).then(res => {
+      WxRequest.PostFormRequest(url, params).then(res => {
         if (res.data.success) {
           wx.showToast({
             title: '提交成功',

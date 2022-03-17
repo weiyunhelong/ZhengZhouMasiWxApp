@@ -274,99 +274,22 @@
   <block wx:if="{{chkTab==4}}">
     <scroll-view scroll-y="true" class="maskinfov" style="background: #f7f7f7;">
       <view style="width: 100%;height: 28rpx;"></view>
-      <view class="taolunv" bindtap="goTaoLun" data-id="1">
-        <view class="taoluntopv">
-          <view class="tltopl">
-            <image src="/resources/course/taolun.png" class="tlicon"></image>
-            <view class="tltopname showOnehangTxt">生的伟大，死的光荣</view>
+      <block wx:for="{{comments}}" wx:key="item">
+        <view class="taolunv" bindtap="goTaoLun" data-id="{{item.ID}}">
+          <view class="taoluntopv">
+            <view class="tltopl">
+              <image src="/resources/course/taolun.png" class="tlicon"></image>
+              <view class="tltopname showOnehangTxt">{{item.Title}}</view>
+            </view>
+            <view class="tltopr">
+              <text class="redtxt">{{item.CommentsCountNum}}人</text>
+              <text class="greytxt">讨论 ></text>
+            </view>
           </view>
-          <view class="tltopr">
-            <text class="redtxt">234人</text>
-            <text class="greytxt">讨论 ></text>
-          </view>
+          <view class="taolunbtmv">发起人：{{item.ReadName}} · {{item.CreateTime}}</view>
         </view>
-        <view class="taolunbtmv">发起人：李某 · 2021-03-12</view>
-      </view>
-      <view class="taolunv" bindtap="goTaoLun" data-id="1">
-        <view class="taoluntopv">
-          <view class="tltopl">
-            <image src="/resources/course/taolun.png" class="tlicon"></image>
-            <view class="tltopname showOnehangTxt">临危受命，誓死挺进浙江</view>
-          </view>
-          <view class="tltopr">
-            <text class="redtxt">234人</text>
-            <text class="greytxt">讨论 ></text>
-          </view>
-        </view>
-        <view class="taolunbtmv">发起人：瓷器厂 · 2021-03-12</view>
-      </view>
-      <view class="taolunv" bindtap="goTaoLun" data-id="1">
-        <view class="taoluntopv">
-          <view class="tltopl">
-            <image src="/resources/course/taolun.png" class="tlicon"></image>
-            <view class="tltopname showOnehangTxt">我是共产党员，请准许我去</view>
-          </view>
-          <view class="tltopr">
-            <text class="redtxt">234人</text>
-            <text class="greytxt">讨论 ></text>
-          </view>
-        </view>
-        <view class="taolunbtmv">发起人：欧耶 · 2021-03-12</view>
-      </view>
-      <view class="taolunv" bindtap="goTaoLun" data-id="1">
-        <view class="taoluntopv">
-          <view class="tltopl">
-            <image src="/resources/course/taolun.png" class="tlicon"></image>
-            <view class="tltopname showOnehangTxt">抗日战争时期王二小</view>
-          </view>
-          <view class="tltopr">
-            <text class="redtxt">234人</text>
-            <text class="greytxt">讨论 ></text>
-          </view>
-        </view>
-        <view class="taolunbtmv">发起人：李某 · 20201-03-12</view>
-      </view>
-      <view class="taolunv" bindtap="goTaoLun" data-id="1">
-        <view class="taoluntopv">
-          <view class="tltopl">
-            <image src="/resources/course/taolun.png" class="tlicon"></image>
-            <view class="tltopname showOnehangTxt">“英烈千秋”挽匾以资表扬</view>
-          </view>
-          <view class="tltopr">
-            <text class="redtxt">234人</text>
-            <text class="greytxt">讨论 ></text>
-          </view>
-        </view>
-        <view class="taolunbtmv">发起人：非树下 · 2021-03-12</view>
-      </view>
-      <view class="taolunv" bindtap="goTaoLun" data-id="1">
-        <view class="taoluntopv">
-          <view class="tltopl">
-            <image src="/resources/course/taolun.png" class="tlicon"></image>
-            <view class="tltopname showOnehangTxt">“英烈千秋”挽匾以资表扬</view>
-          </view>
-          <view class="tltopr">
-            <text class="redtxt">234人</text>
-            <text class="greytxt">讨论 ></text>
-          </view>
-        </view>
-        <view class="taolunbtmv">发起人：李某 · 2021-03-12</view>
-      </view>
-      <view class="taolunv" bindtap="goTaoLun" data-id="1">
-        <view class="taoluntopv">
-          <view class="tltopl">
-            <image src="/resources/course/taolun.png" class="tlicon"></image>
-            <view class="tltopname showOnehangTxt">生的伟大，死的光荣</view>
-          </view>
-          <view class="tltopr">
-            <text class="redtxt">234人</text>
-            <text class="greytxt">讨论 ></text>
-          </view>
-        </view>
-        <view class="taolunbtmv">发起人：李某 · 20201-03-12</view>
-      </view>
-
-
+      </block>
+      <nodatacom wx:if="{{comments.length==0}}"/>
     </scroll-view>
     <view class="faqitlbtn" bindtap="goPublicTaolun">
       <image src="/resources/course/taolunw.png" class="taolunwicon"></image>

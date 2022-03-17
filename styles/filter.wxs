@@ -140,77 +140,95 @@ function IsDaySigned(datas, day) {
   } else {
     var obj = datas[day];
 
-    return obj == undefined ? false : obj.Integral!=0;
+    return obj == undefined ? false : obj.Integral != 0;
   }
 }
 
 //显示2个时间段
-function ShowDate2Range(date1,date2) {
- 
-  var dt1=date1.substring(5,date1.length);
-  var dt2=date2.substring(5,date2.length);
-  dt1=dt1.replace('-','/');
-  dt2=dt2.replace('-','/');
-  return dt1 + "-" +dt2;
+function ShowDate2Range(date1, date2) {
+
+  var dt1 = date1.substring(5, date1.length);
+  var dt2 = date2.substring(5, date2.length);
+  dt1 = dt1.replace('-', '/');
+  dt2 = dt2.replace('-', '/');
+  return dt1 + "-" + dt2;
 }
 
 //显示2个时间段
 function ShowDate2DT(date) {
- 
-  var dt=date.substring(0,10);
+
+  var dt = date.substring(0, 10);
   return dt;
 }
 
 //手机号码隐藏
 function hidePhoneStr(phone) {
- 
-  if(phone==undefined){
+
+  if (phone == undefined) {
     return "";
-  }else{
-    return phone.substring(0,3)+"****"+phone.substring(8,11);
+  } else {
+    return phone.substring(0, 3) + "****" + phone.substring(8, 11);
   }
- 
+
 }
 
 //2个数字相加
-function Add2Summary(num1,num2) {
- 
-  var he=parseFloat(num1)+parseFloat(num2);
+function Add2Summary(num1, num2) {
+
+  var he = parseFloat(num1) + parseFloat(num2);
   return he.toFixed(4);
 }
 
 //显示2个时间段 2020.12.30 00:00=> 2020/12/30
 function Datestr2DT(date) {
- 
-  if(date==undefined||date==''){
+
+  if (date == undefined || date == '') {
     return "";
-  }else{
-    var dt=date.substring(0,10);
-    dt=dt.replace('.','/').replace('.','/');
+  } else {
+    var dt = date.substring(0, 10);
+    dt = dt.replace('.', '/').replace('.', '/');
     return dt;
-  } 
+  }
 }
 
 //字符型转成数组
-function string2Arry(txt){
+function string2Arry(txt) {
 
-  if(txt==undefined||txt==null||txt==''){
+  if (txt == undefined || txt == null || txt == '') {
     return [];
-  }else{
+  } else {
     return txt.split('|')
   }
 }
 
 //时长换成百分比
-function time2Percent(currtime,summarytime){
-  if(currtime==undefined||currtime==null||currtime==null||summarytime==undefined||summarytime==null||summarytime==null){
+function time2Percent(currtime, summarytime) {
+  if (currtime == undefined || currtime == null || currtime == null || summarytime == undefined || summarytime == null || summarytime == null) {
     return 0;
-  }else{
-    var currnum=parseInt(currtime.split(':')[0])*60+ parseInt(currtime.split(':')[1]);
-    var summarynum=parseInt(summarytime.split(':')[0])*60+ parseInt(summarytime.split(':')[1]);
-    var percent=currnum/summarynum;
-    return parseFloat(percent*100).toFixed(0); 
-  } 
+  } else {
+    var currnum = parseInt(currtime.split(':')[0]) * 60 + parseInt(currtime.split(':')[1]);
+    var summarynum = parseInt(summarytime.split(':')[0]) * 60 + parseInt(summarytime.split(':')[1]);
+    var percent = currnum / summarynum;
+    return parseFloat(percent * 100).toFixed(0);
+  }
+}
+
+
+//判断多选 选中
+function IsMoreChk(nums, index) {
+  if (nums == '' || nums == undefined || nums == null || nums == -1) {
+    return false;
+  } else {
+    var result = false,nums=nums+'',
+      arry = nums.split(',');
+    for (var i = 0; i < arry.length; i++) {
+      if (index == arry[i]) {
+        result = true;
+        break;
+      }
+    }
+    return result;
+  }
 }
 
 // 导出对外暴露的属性
@@ -223,13 +241,14 @@ module.exports = {
   time2String: time2String,
   replacedot: replacedot,
   IndexOfArry: IndexOfArry,
-  GetIndexOfArry: GetIndexOfArry,  
-  IsDaySigned:IsDaySigned,
-  ShowDate2Range:ShowDate2Range,
-  ShowDate2DT:ShowDate2DT,
-  hidePhoneStr:hidePhoneStr,
-  Add2Summary:Add2Summary,
-  Datestr2DT:Datestr2DT,
-  string2Arry:string2Arry,
-  time2Percent:time2Percent,
+  GetIndexOfArry: GetIndexOfArry,
+  IsDaySigned: IsDaySigned,
+  ShowDate2Range: ShowDate2Range,
+  ShowDate2DT: ShowDate2DT,
+  hidePhoneStr: hidePhoneStr,
+  Add2Summary: Add2Summary,
+  Datestr2DT: Datestr2DT,
+  string2Arry: string2Arry,
+  time2Percent: time2Percent,
+  IsMoreChk: IsMoreChk,
 }

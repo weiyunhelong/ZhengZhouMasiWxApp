@@ -21,6 +21,7 @@ page {
   width: 36rpx;
   height: 36rpx;
   margin-right: 12rpx;
+  margin-top: 2rpx;
 }
 
 .nametxt {

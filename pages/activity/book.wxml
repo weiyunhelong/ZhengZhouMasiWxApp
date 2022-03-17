@@ -11,40 +11,7 @@
     <input type="number" maxlength="11" placeholder="请输入手机号码" placeholder-class="tipcss" class="txtcss" value="{{phone}}" bindinput="getPhone" />
   </view>
 </view>
-<view class="hangv">
-  <view class="hangtag">学号</view>
-  <view class="hangval">
-    <input type="text" placeholder="请输入学号" placeholder-class="tipcss" class="txtcss" value="{{studyno}}" bindinput="getStudyno" />
-  </view>
-</view>
-
-<view class="hangv">
-  <view class="hangtag">院系</view>
-  <picker range="{{departments}}" value="{{dindex}}" bindchange="departmentchange">
-    <view class="hangval">
-      <input type="text" disabled="true" placeholder="请选择院系" placeholder-class="tipcss" class="txtcss" value="{{departments[dindex]}}" />
-    </view>
-  </picker>
-</view>
-
-<view class="hangv">
-  <view class="hangtag">专业</view>
-  <picker range="{{majors}}" value="{{mindex}}" bindchange="majorchange">
-    <view class="hangval">
-      <input type="text" disabled="true" placeholder="请选择专业" placeholder-class="tipcss" class="txtcss" value="{{majors[mindex]}}" />
-    </view>
-  </picker>
-</view>
-
-<view class="hangv">
-  <view class="hangtag">班级</view>
-  <picker range="{{classes}}" value="{{cindex}}" bindchange="classeschange">
-    <view class="hangval">
-      <input type="text" disabled="true" placeholder="请选择班级" placeholder-class="tipcss" class="txtcss" value="{{classes[cindex]}}" />
-    </view>
-  </picker>
-</view>
 
 <view class="btnv">
-  <view class="btn" bindtap="postOpt">确认报名</view>
+  <view class="{{name.length>0&&phone.length>0?'btnh':'btn'}}" bindtap="{{name.length>0&&phone.length>0?'postOpt':''}}">确认报名</view>
 </view>

@@ -4,10 +4,10 @@
     <input type="text" placeholder="请输入作品标题" placeholder-class="tipcss" class="txtcss" value="{{title}}" bindinput="getTitle" />
   </view>
   <view class="formhangv">
-    <textarea type="text" placeholder="请输入作品内容…" placeholder-class="tipcss" class="textarea" value="{{info}}" bindinput="getInfo" />
+    <textarea type="text" placeholder="请输入作品内容…" placeholder-class="tipcss" class="textarea" value="{{desc}}" bindinput="getInfo" />
   </view>
 </view>
 <view class="btmvv"></view>
 <view class="btmv">
-  <view class="btn {{title.length>0&&info.length>0?'btnh':''}}" bindtap="{{title.length>0&&info.length>0?'PostOpt':''}}">提交上传</view>
+  <view class="btn {{title.length>0&&desc.length>0?'btnh':''}}" bindtap="{{title.length>0&&desc.length>0?'PostOpt':''}}">提交上传</view>
 </view>

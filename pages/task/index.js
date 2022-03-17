@@ -10,9 +10,9 @@ Page({
   data: {
     id: 0,
     taskid:-1,
-    dataobj: {},
+    dataobj: {},//当前的任务
     IsVr: true, //是否有VR视频
-    tasks:[], //当前的任务
+    tasks:[], //任务列表
   },
 
   /**
@@ -72,7 +72,14 @@ Page({
    */
   onShow: function () {
     var that = this;
-    that.InitData();
+    if (getApp().globalData.WxUserId == 0) {
+      wx.redirectTo({
+        url: '../../wxauth/pages/wxlogin/index',
+      })
+    } else {
+      //获取全部任务
+      that.InitData();
+    }
   },
   InitData() { //获取全部任务
     var that = this;
@@ -80,7 +87,7 @@ Page({
     WxRequest.PostRequest(url, {}).then(res => {
       if (res.data.success) {
         that.setData({
-          list: res.data.data.datas,
+          tasks: res.data.data.datas,
           taskid:res.data.data.datas.length==0?-1:res.data.data.datas[0].ID
         })
         if(that.data.taskid!=-1){

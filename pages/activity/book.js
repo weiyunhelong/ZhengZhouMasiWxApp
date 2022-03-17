@@ -41,38 +41,10 @@ Page({
       phone: e.detail.value
     })
   },
-  getStudyno(e) {
-    this.setData({
-      studyno: e.detail.value
-    })
-  },
-  departmentchange(e) {
-    this.setData({
-      dindex: e.detail.value
-    })
-  },
-  majorchange(e) {
-    this.setData({
-      mindex: e.detail.value
-    })
-  },
-  classeschange(e) {
-    this.setData({
-      cindex: e.detail.value
-    })
-  },
   postOpt() {
     var that=this;
-    var id=that.data.id,
-    name=that.data.name,
-    phone=that.data.phone,
-    studyno=that.data.studyno,
-    departments=that.data.departments,
-    dindex=that.data.dindex,
-    majors=that.data.majors,
-    mindex=that.data.mindex,
-    classess=that.data.classess,
-    cindex=that.data.cindex;
+    var name=that.data.name,
+    phone=that.data.phone;
 
     if(name==""){
       WxRequest.ShowAlert("请输入姓名");
@@ -80,29 +52,11 @@ Page({
       WxRequest.ShowAlert("请输入手机号");
     }else if(!validator.validateMobile(phone)){
       WxRequest.ShowAlert("手机号不正确");
-    }else if(studyno==""){
-      WxRequest.ShowAlert("请输入学号");
-    }else if(dindex==-1){
-      WxRequest.ShowAlert("请选择院系");
-    }else if(mindex==-1){
-      WxRequest.ShowAlert("请选择专业");
-    }else if(cindex==-1){
-      WxRequest.ShowAlert("请选择班级");
     }else{
       //TODO 请求接口
-      var url=requestUrl+"/API/PracticalActivity/ApplyActivity";
-      var params={
-        PracticalID:that.data.id,
-        ProjectID:that.data.taskid,
-        UserID:getApp().globalData.WxUserId,
-        Name:name,
-        Phone:phone,
-        StuNum:studyno,
-        DepartmentID:departments[dindex].ID,
-        ProfessionalID:majors[mindex].ID,
-        ClassID:classess[cindex].ID,
-      };
-      WxRequest.PostRequest(url,params).then(res=>{
+      var url=requestUrl+"/API/PracticalActivity/ApplyActivity?practicalid="+that.data.id+"&projectid="+that.data.taskid+"&name="+name+"&phone="+phone;
+      
+      WxRequest.PostRequest(url,{}).then(res=>{
         if(res.data.success){
           wx.showToast({
             title: '报名成功',

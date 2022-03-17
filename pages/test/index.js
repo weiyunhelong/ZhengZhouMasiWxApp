@@ -10,21 +10,29 @@ Page({
   data: {
     showMask: false,
     showMaskAni: false,
+    id: 0,
+    list: [],
+    dataobj:{},
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    this.setData({
+      id: options.id
+    })
   },
   nomove() {
     return false;
   },
-  goTest() { //跳转到测试
+  goTest(e) { //跳转到测试
+    var dataobj=e.currentTarget.dataset.obj;
+   
     this.setData({
       showMask: true,
       showMaskAni: true,
+      dataobj:dataobj
     })
   },
   cancelOpt() {
@@ -37,12 +45,19 @@ Page({
       })
     }, 1000);
   },
-  confirmOpt(){
-    var that=this;
-    wx.navigateTo({
-      url: '../test/test',
-      complete:function(){
-        that.cancelOpt();
+  confirmOpt() {
+    var that = this;
+    var url=requestUrl+"/API/ExamAnswer/SaveTestGradesInfo?tid="+that.data.dataobj.ID+"&uid="+getApp().globalData.WxUserId;
+    WxRequest.PostRequest(url,{}).then(res=>{
+      if(res.data.success){
+        wx.navigateTo({
+          url: '../test/test?tid='+that.data.dataobj.ID+"&tgid="+res.data.data.testgradesid+"&clock="+that.data.dataobj.Duration,
+          complete: function () {
+            that.cancelOpt();
+          }
+        })
+      }else{
+        WxRequest.ShowAlert(res.data.msg);
       }
     })
   },
@@ -57,7 +72,26 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
+    var that = this;
+    if (getApp().globalData.WxUserId == 0) {
+      wx.redirectTo({
+        url: '../../wxauth/pages/wxlogin/index',
+      })
+    } else {
+      //获取全部试卷
+      that.InitData();
+    }
+  },
+  InitData() { //获取全部试卷
+    var that = this;
+    var url = requestUrl + "/API/ExamAnswer/TestPaperList?pid=" + that.data.id+"&uid="+getApp().globalData.WxUserId;
+    WxRequest.PostRequest(url, {}).then(res => {
+      if (res.data.success) {
+        that.setData({
+          list: res.data.data.datas
+        })      
+      }
+    })
   },
 
   /**

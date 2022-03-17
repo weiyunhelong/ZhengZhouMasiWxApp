@@ -1,69 +1,48 @@
 <!--pages/test/index.wxml-->
-<view class="blockv" bindtap="goTest">
-  <view class="blockl">
-    <view class="name showOnehangTxt">安远路矿工人运动实践报告</view>
-    <view class="status">考试时间：2021.23.23</view>
+<block wx:for="{{list}}" wx:key="item">
+  <view class="blockv" bindtap="{{item.IsTest==0?'goTest':''}}" data-obj="{{item}}">
+    <view class="blockl">
+      <view class="name showOnehangTxt">{{item.Title}}</view>
+      <view class="status" wx:if="{{item.IsTest!=1}}">考试时间：{{item.TestTimeStr}}</view>
+      <view class="status" wx:else>考试完成</view>
+    </view>
+    <!--IsTest 是否考试 0未考 1已考 2过期未考  -1未到考试时间-->
+    <view class="blockr" wx:if="{{item.IsTest==-1}}">
+      <image src="/resources/course/notest.png" class="testicon"></image>
+      <view class="blocktxtg">暂未开放</view>
+    </view>
+    <view class="blockr" wx:if="{{item.IsTest==0}}">
+      <image src="/resources/course/test.png" class="testicon"></image>
+      <view class="blocktxt">开始考试</view>
+    </view>
+    <view class="blockr" wx:elif="{{item.IsTest==1}}">
+      <view class="blocktxth">{{item.TestGrade}}分</view>
+      <view class="blocktxtg">考试成绩</view>
+    </view>
+    <view class="blockr" wx:if="{{item.IsTest==2}}">
+      <image src="/resources/course/notest.png" class="testicon"></image>
+      <view class="blocktxtg">过期未考</view>
+    </view>
   </view>
-  <view class="blockr">
-    <image src="/resources/course/test.png" class="testicon"></image>
-    <view class="blocktxt">开始考试</view>
-  </view>
-</view>
-
-<view class="blockv">
-  <view class="blockl">
-    <view class="name showOnehangTxt">安远路矿工人运动实践报告</view>
-    <view class="status">考试完成</view>
-  </view>
-  <view class="blockr">
-    <view class="blocktxth">27分</view>
-    <view class="blocktxtg">开始考试</view>
-  </view>
-</view>
-
-
-<view class="blockv">
-  <view class="blockl">
-    <view class="name showOnehangTxt">安远路矿工人运动实践报告</view>
-    <view class="status">考试时间：2022.03.23</view>
-  </view>
-  <view class="blockr">
-    <image src="/resources/course/notest.png" class="testicon"></image>
-    <view class="blocktxtg">暂未开放</view>
-  </view>
-</view>
-
-<view class="blockv">
-  <view class="blockl">
-    <view class="name showOnehangTxt">安远路矿工人运动实践报告</view>
-    <view class="status">考试时间：2021.03.23</view>
-  </view>
-  <view class="blockr">
-    <image src="/resources/course/notest.png" class="testicon"></image>
-    <view class="blocktxtg">过期未考</view>
-  </view>
-</view>
+</block>
+<nodatacom wx:if="{{list.length==0}}"/>
 
 <!--显示遮罩层-->
 <view catchtouchmove="nomove" class="maskv {{showMaskAni?'showMaskv':'hideMaskv'}}" wx:if="{{showMask}}">
   <view class="modalv">
     <view class="modaltitle">确认开始考试吗</view>
-    <view class="modalsubtitle">2020年现代设计史</view>
+    <view class="modalsubtitle">{{dataobj.Title}}</view>
     <view class="modaliconv">
       <image src="/resources/course/testicon.png" class="modalicon"></image>
     </view>
     <view class="modalnumv">
       <view class="modalnumc">
-        <view class="modalnumtxt">100</view>
+        <view class="modalnumtxt">{{dataobj.Score}}</view>
         <view class="modalnumtag">考题数</view>
       </view>
       <view class="modalnumc">
-        <view class="modalnumtxt">2小时</view>
+        <view class="modalnumtxt">{{dataobj.Duration}}分</view>
         <view class="modalnumtag">考试时间</view>
-      </view>
-      <view class="modalnumc">
-        <view class="modalnumtxt">90分</view>
-        <view class="modalnumtag">合格标准</view>
       </view>
     </view>
     <view class="modalnumv" style="padding-top: 46rpx;">

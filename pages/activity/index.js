@@ -113,7 +113,14 @@ Page({
    */
   onShow: function () {
     var that = this;
-    that.InitData();
+    if (getApp().globalData.WxUserId == 0) {
+      wx.redirectTo({
+        url: '../../wxauth/pages/wxlogin/index',
+      })
+    } else {
+      //获取全部活动
+      that.InitData();
+    }
   },
   InitData() { //获取全部活动
     var that = this;
@@ -124,7 +131,7 @@ Page({
           list: res.data.data.datas,
           activityid:res.data.data.datas.length==0?-1:res.data.data.datas[0].ID
         })
-        if(activityid!=-1){
+        if(that.data.activityid!=-1){
           that.InitObjData();
         }        
       }

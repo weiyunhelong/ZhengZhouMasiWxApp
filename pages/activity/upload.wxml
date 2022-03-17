@@ -9,12 +9,12 @@
 </view>
 
 <view style="width: 100vw;height: 20rpx;background: #f7f7f7;"></view>
-<view class="formv">
+<view class="formv"  bindtap="chooseFileOpt" >
   <view class="formline"></view>
   <view class="hangv">
     <view class="hangtag">添加附件</view>
-    <view class="hangval" bindtap="chooseFileOpt" wx:if="{{fujian==''}}">系统附件 ></view>
-    <view class="hangval" bindtap="chooseFileOpt" wx:else><text>{{fujian}}</text> ></view>
+    <view class="hangval"wx:if="{{fujian==''}}">系统附件 ></view>
+    <view class="hangval" wx:else><text>{{fujian}}</text> ></view>
   </view>
 </view>
 

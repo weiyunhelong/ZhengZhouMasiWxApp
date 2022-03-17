@@ -1,6 +1,7 @@
 {
   "navigationBarTitleText": "答题测试",
   "usingComponents": {
-    "loadding": "../../components/loadding/index"
+    "loadding": "../../components/loadding/index",
+    "nodatacom": "../../components/nodata/index"
   }
 }

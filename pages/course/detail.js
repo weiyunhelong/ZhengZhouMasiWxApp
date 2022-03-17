@@ -162,7 +162,7 @@ Page({
   goTaoLun(e) { //点击到讨论专区
     var that = this;
     wx.navigateTo({
-      url: '../course/taolundetail?id=' + that.data.id
+      url: '../course/taolundetail?id=' + e.currentTarget.dataset.id+"&pid="+that.data.id
     })
   },
   goPublicTaolun() { //点击发起讨论
@@ -183,17 +183,27 @@ Page({
    */
   onShow: function () {
     var that = this;
-    //获取课程详情
-    that.InitData();
+    if (getApp().globalData.WxUserId == 0) {
+      wx.redirectTo({
+        url: '../../wxauth/pages/wxlogin/index',
+      })
+    } else {
+      //获取课程详情
+      that.InitData();
 
-    //获取教学方案
-    that.InitFangAn();
+      //获取教学方案
+      that.InitFangAn();
 
-    //获取实践基地
-    that.InitJiDi();
+      //获取实践基地
+      that.InitJiDi();
 
-    //获取实践资源
-    that.InitZiYuan();
+      //获取实践资源
+      that.InitZiYuan();
+
+      //获取讨论区
+      that.InitComment();
+
+    }
   },
   InitData() { //获取详情
     var that = this;
@@ -238,6 +248,18 @@ Page({
         })
       }
     })
+  },
+  InitComment(){//获取讨论区
+    var that = this;
+    var url = requestUrl + "/API/TopicInforList/GetTopicInforList?page=1&rows=100&practicalid=" + that.data.id;
+    WxRequest.PostRequest(url, {}).then(res => {
+      if (res.data.success) {
+        that.setData({
+          comments: res.data.data.datas,
+        })
+      }
+    })
+   
   },
   /**
    * 生命周期函数--监听页面隐藏

@@ -3,30 +3,30 @@
 <!--有实践任务-->
 <block wx:if="{{taskid!=-1}}">
   <view class="bodyv">
-    <view class="title">{{chkTab}}:爱过主义教育基地纪念馆爱过主义教育基地纪念馆</view>
+    <view class="title">{{dataobj.Title}}</view>
     <view class="infov">
       <view class="infov1">
         <view class="infol">
           <text class="infotxt1">负责人：</text>
-          <text class="infotxt2">李某人</text>
+          <text class="infotxt2">{{dataobj.UserName}}</text>
         </view>
-        <view class="infor">必选</view>
+        <view class="infor">{{dataobj.TypeName}}</view>
       </view>
       <view class="infov2">
         <view class="infol">
           <text class="infotxt1">截止时间：</text>
-          <text class="infotxt2">2021.12.23</text>
+          <text class="infotxt2">{{dataobj.EndTime}}</text>
         </view>
       </view>
       <view class="infov3">
         <view class="infol">
           <text class="infotxt1">参加人数：</text>
-          <text class="infotxt2">50人</text>
+          <text class="infotxt2">{{dataobj.JoinNum}}人</text>
         </view>
       </view>
     </view>
     <view class="parserv">
-      <parser html="{{desc}}" />
+      <parser html="{{dataobj.Content}}" />
     </view>
   </view>
   <view class="btnv">

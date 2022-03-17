@@ -1,29 +1,42 @@
 <!--pages/test/test.wxml-->
+<wxs module="filter" src="../../styles/filter.wxs" />
+
 <view class="clockv">
   <view class="clockvl">
     <image src="/resources/course/time.png" class="timeicon"></image>
-    <view class="clocktxt">考试时间 45:00</view>
+    <view class="clocktxt">考试时间 {{clock}}</view>
   </view>
   <view class="clockvr">
     <text class="mdclocknum">{{index}}</text>
-    <text class="smclocknum">/100</text>
+    <text class="smclocknum">/{{sumNum}}</text>
   </view>
 </view>
 
 <view class="formv">
   <view class="questionv">
-    <text class="typetxt">判断</text>
-    <text class="text">不要以“为别人考虑”做理由，其实丢弃了“舍我其谁”的使命感</text>
+    <text class="typetxt">{{questionobj.TypeName}}</text>
+    <text class="text">{{questionobj.Question}}</text>
   </view>
   <view class="optionv">
-    <view class="optionc" bindtap="tapOption" data-index="0">
-      <view class="optionno {{chkoption==0?'optionnoh':''}}">A</view>
-      <view class="optiontxt">错误</view>
-    </view>
-    <view class="optionc" bindtap="tapOption" data-index="1">
-      <view class="optionno  {{chkoption==1?'optionnoh':''}}">B</view>
-      <view class="optiontxt">正确</view>
-    </view>
+    <!--单选和判断-->
+    <block wx:if="{{questionobj.TypeID!=2}}">
+      <block wx:for="{{questionobj.Options}}" wx:key="item" wx:for-index="x">
+        <view class="optionc" bindtap="tapOneOption" data-index="{{x}}">
+          <view class="optionno {{chkoption==x?'optionnoh':''}}">{{ZiMus[x]}}</view>
+          <view class="optiontxt">{{item.Contents}}</view>
+        </view>
+      </block>
+    </block>
+    <!--多选题-->
+    <block wx:else>
+      <block wx:for="{{questionobj.Options}}" wx:key="item" wx:for-index="x">
+        <view class="optionc" bindtap="tapThreeOption" data-index="{{x}}">
+          <view class="optionno {{filter.IsMoreChk(chkoption,x)?'optionnoh':''}}">{{ZiMus[x]}}</view>
+          <view class="optiontxt">{{item.Contents}}</view>
+        </view>
+      </block>
+    </block>
+
   </view>
 </view>
 
@@ -32,7 +45,7 @@
 <view class="btnv">
   <view class="{{index==1?'prebtn':'nextbtn'}}" bindtap="{{index==1?'':'preOpt'}}">上一题</view>
   <view style="width: 70rpx;height: 68rpx;"></view>
-  <view class="{{index==100?'prebtn':'nextbtn'}}" bindtap="{{index==100?'':'nextOpt'}}">下一题</view>
+  <view class="{{index==sumNum?'prebtn':'nextbtn'}}" bindtap="{{index==sumNum?'':'nextOpt'}}">下一题</view>
 </view>
 
 <view class="btmv">
@@ -43,7 +56,7 @@
   <view class="btmr" bindtap="checkOpt">
     <image src="/resources/course/noicon.png" class="noicon"></image>
     <view class="btnno">{{index}}</view>
-    <view class="btnnum">/100</view>
+    <view class="btnnum">/{{sumNum}}</view>
   </view>
 </view>
 
@@ -57,21 +70,17 @@
     </view>
     <view class="modalnumv">
       <view class="modalnumc">
-        <view class="modalnumtxt">100</view>
+        <view class="modalnumtxt">{{sumNum}}</view>
         <view class="modalnumtag">考题数</view>
       </view>
       <view class="modalnumc">
-        <view class="modalnumtxt">50</view>
+        <view class="modalnumtxt">{{answereds.length}}</view>
         <view class="modalnumtag">已做题</view>
-      </view>
-      <view class="modalnumc">
-        <view class="modalnumtxt">90分</view>
-        <view class="modalnumtag">合格标准</view>
       </view>
     </view>
     <view class="modalnumv" style="padding-top: 46rpx;">
       <view class="btn btnl" bindtap="cancelOpt">继续答题</view>
-      <view class="btn btnr" bindtap="confirmOpt">确认提交</view>
+      <view class="btn btnr" bindtap="postOpt">确认提交</view>
     </view>
   </view>
 </view>
@@ -86,28 +95,36 @@
     <view class="btmr" bindtap="checkOpt">
       <image src="/resources/course/noicon.png" class="noicon"></image>
       <view class="btnno">{{index}}</view>
-      <view class="btnnum">/100</view>
+      <view class="btnnum">/{{sumNum}}</view>
     </view>
   </view>
   <scroll-view scroll-y="true" class="scrollindexv">
-    <view class="indextypetxt">选择题</view>
-    <view class="indexv">
-      <block wx:for="{{list}}" wx:key="item" wx:for-index="x">
-        <view class="indexc {{x<4?'indexch':''}}" wx:if="{{x<27}}" catchtap="changeIndex" data-index="{{x}}">{{x+1}}</view>
-      </block>
-    </view>
-    <view class="indextypetxt">判断题</view>
-    <view class="indexv">
-      <block wx:for="{{list}}" wx:key="item" wx:for-index="x">
-        <view class="indexc {{x<4?'indexch':''}}" wx:if="{{x>26&&x<39}}" catchtap="changeIndex" data-index="{{x}}">{{x+1}}</view>
-      </block>
-    </view>
-    <view class="indextypetxt">多选题</view>
-    <view class="indexv">
-      <block wx:for="{{list}}" wx:key="item" wx:for-index="x">
-        <view class="indexc {{x<4?'indexch':''}}" wx:if="{{x>39}}" catchtap="changeIndex" data-index="{{x}}">{{x+1}}</view>
-      </block>
-    </view>
+    <block wx:if="{{list.SingleChoiceNum>0}}">
+      <view class="indextypetxt">选择题</view>
+      <view class="indexv">
+        <block wx:for="{{list.SingleChoiceList}}" wx:key="item" wx:for-index="x">
+          <view class="indexc {{filter.IndexOfArry(answereds,x+1)?'indexch':''}}" catchtap="changeIndex" data-index="{{x}}">{{x+1}}</view>
+        </block>
+      </view>
+    </block>
+
+    <block wx:if="{{list.JudgeNum>0}}">
+      <view class="indextypetxt">判断题</view>
+      <view class="indexv">
+        <block wx:for="{{list.JudgeList}}" wx:key="item" wx:for-index="x">
+          <view class="indexc {{filter.IndexOfArry(answereds,x+list.SingleChoiceNum+1)?'indexch':''}}" catchtap="changeIndex" data-index="{{x+list.SingleChoiceNum}}">{{x+1+list.SingleChoiceNum}}</view>
+        </block>
+      </view>
+    </block>
+
+    <block wx:if="{{list.MultipleChoiceNum>0}}">
+      <view class="indextypetxt">多选题</view>
+      <view class="indexv">
+        <block wx:for="{{list.MultipleChoiceList}}" wx:key="item" wx:for-index="x">
+          <view class="indexc {{filter.IndexOfArry(answereds,x+list.SingleChoiceNum+list.JudgeNum+1)?'indexch':''}}" catchtap="changeIndex" data-index="{{x+list.SingleChoiceNum+list.JudgeNum}}">{{x+list.SingleChoiceNum+list.JudgeNum+1}}</view>
+        </block>
+      </view>
+    </block>
   </scroll-view>
 </view>
 
