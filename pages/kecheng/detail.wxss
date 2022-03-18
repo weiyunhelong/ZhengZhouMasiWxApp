@@ -1,349 +1,101 @@
 /* pages/kecheng/video.wxss */
 page {
-  overflow-x: hidden;
+  background: #fff;
 }
 
-.coverv {
-  width: 900rpx;
-  height: 900rpx;
-  background: url(https://zhengzhousizheng.oss-cn-beijing.aliyuncs.com/chuangke/7.png) no-repeat;
-  background-size: cover;
-  background-position-y: -230rpx;
-  background-position-x: -75rpx;
+.infov {
+  height: 248rpx;
+  display: flex;
+  padding: 32rpx 32rpx 40rpx;
 }
 
-.coverc {
-  width: 100vw;
-  text-align: center;
-  padding-top: 70rpx;
+.infocover {
+  width: 252rpx;
+  height: 252rpx;
+  border-radius: 12rpx;
+  margin-right: 32rpx;
 }
 
-.cover {
-  width: 300rpx;
-  height: 300rpx;
-  border-radius: 50%;
+.infoc {
+  width: 402rpx;
 }
 
-.nametxt {
-  padding: 70rpx 30rpx 10rpx;
-  font-size: 36rpx;
-  font-weight: bold;
-  color: #333333;
+.infoc .name {
+  font-size: 34rpx;
+  font-weight: 500;
+  color: #262626;
 }
 
-.owner {
+.infoc .origin {
   font-size: 28rpx;
   color: #999999;
 }
 
-.optv {
-  width: 80vw;
-  display: flex;
-  justify-content: space-around;
-  margin: 50rpx auto;
-}
-
-.optc {
-  display: flex;
-  font-size: 26rpx;
+.infoc .numtxt {
+  font-size: 28rpx;
   color: #999999;
-  line-height: 32rpx;
-}
-.optc .optnumh{
-  color: red;
-} 
-.opticon1 {
-  width: 25rpx;
-  height: 19rpx;
-  margin-right: 10rpx;
-  margin-top: 8rpx;
+  margin-top: 20rpx;
+  margin-bottom: 12rpx;
 }
 
-.opticon2 {
-  width: 24rpx;
-  height: 24rpx;
-  margin-right: 10rpx;
-  margin-top: 4rpx;
+.kongv {
+  width: 100vw;
+  height: 16rpx;
+  background: #f7f7f7;
 }
 
-.opticon3 {
-  width: 26rpx;
-  height: 24rpx;
-  margin-right: 10rpx;
-  margin-top: 4rpx;
-}
-
-.xuanzhuanv {
-  animation: spin 10s 0s infinite linear;
-}
-
-@-webkit-keyframes spin {
-  from {
-    -webkit-transform: rotate(0deg);
-  }
-
-  to {
-    -webkit-transform: rotate(360deg);
-  }
-}
-
-@keyframes spin {
-  from {
-    transform: rotate(0deg);
-  }
-
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-.progreesv {
-  width: 80vw;
-  margin: 30rpx auto 60rpx;
+.audiov {
+  width: 686rpx;
+  height: 132rpx;
+  background: #F5F6F8;
+  border-radius: 8rpx;
+  margin: 20rpx auto;
   display: flex;
 }
 
-.startnum,
-.endnum {
+.audiov .audiocover {
+  width: 60rpx;
+  height: 76rpx;
+  margin: 28rpx 24rpx 0 40rpx;
+}
+.audiov  .audiovc{
+  width: 455rpx;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  justify-self: center;
+}
+.audiov .audioname{
+  font-size: 32rpx;
+  color: #262626;
+}
+.audiov .audiotime{
   font-size: 24rpx;
   color: #999999;
-  line-height: 1;
 }
-
-.progreesc {
-  width: 562rpx;
-  height: 12rpx;
-  margin: 6rpx 14rpx;
-  border-radius: 6rpx;
-}
-
-.iconv {
-  width: 80vw;
+.audiov .audioc {
+  width: 68rpx;
+  height: 68rpx;
+  background: #FFFFFF;
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
+  flex-direction: column;
+  justify-self: center;
+  border-radius: 50%;
+  margin-top: 32rpx;
+  text-align: center;
+}
+
+.audiov .audioc1 {
+  width: 24rpx;
+  height: 28rpx;
   margin: 0 auto;
 }
 
-.smicon {
-  width: 33rpx;
-  height: 18rpx;
-  margin-top: 18rpx;
+.audiov .audioc2 {
+  width: 28rpx;
+  height: 28rpx;
+  margin: 0 auto;
 }
 
-.mdicon1 {
-  width: 48rpx;
-  height: 54rpx;
-}
-
-.mdicon2 {
-  width: 39rpx;
-  height: 54rpx;
-  margin: 0 4.5rpx;
-}
-
-.tabv {
-  display: flex;
-  justify-content: center;
-}
-
-.tabkong {
-  width: 74rpx;
-  height: auto;
-}
-
-.tabitem {
-  text-align: center;
-}
-
-.tabtxth {
-  font-size: 30rpx;
-  font-weight: bold;
-  color: #333333;
-}
-
-.tabtxt {
-  font-size: 30rpx;
-  color: #999999;
-}
-
-.tabline {
-  width: 40rpx;
-  height: 10rpx;
-  background: #124361;
-  border-radius: 5rpx;
-  margin: 10rpx auto 0;
-}
-
-.contentv {
-  padding: 60rpx 20rpx 0;
-  font-size: 24rpx;
-  color: #333333;
-  line-height: 50rpx;
-}
-
-.kongw {
-  width: 100vw;
-  height: 20rpx;
-  background: #FFFFFF;
-  margin: 60rpx 0;
-}
-
-.btmvv {
-  width: 100vw;
-  height: 140rpx;
-}
-
-.btmv {
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  z-index: 999;
-  width: 100vw;
-  height: 120rpx;
-  display: flex;
-  justify-content: center;
-  background: #f2f2f2;
-  padding-top: 20rpx;
-}
-
-.textv {
-  width: 605rpx;
-  height: 80rpx;
-  background: #E8E8E8;
-  border-radius: 10rpx;
-  margin-right: 18rpx;
-}
-
-.sendbtn {
-  width: 88rpx;
-  height: 80rpx;
-  background: #124361;
-  border-radius: 10rpx;
-  text-align: center;
-  line-height: 80rpx;
-}
-
-.sendicon {
-  width: 34rpx;
-  height: 35rpx;
-  margin: 23rpx auto;
-}
-
-.commenttxt {
-  padding: 0 20rpx;
-  height: 80rpx;
-  line-height: 80rpx;
-  font-size: 26rpx;
-  color: #333;
-}
-
-.commenttip {
-  color: #999999;
-}
-
-/*评论部分*/
-.commentv {
-  padding: 50rpx 20rpx 0;
-}
-
-.commentv .commentuv {
-  display: flex;
-  justify-content: space-between;
-}
-
-.commentuv .commentul {
-  display: flex;
-  width: 450rpx;
-}
-
-.commentuv .commentul .commentutx {
-  width: 80rpx;
-  height: 80rpx;
-  border-radius: 50%;
-  margin-right: 20rpx;
-}
-
-.commentuv .commentul .commentuname {
-  font-size: 26rpx;
-  font-weight: bold;
-  color: #333333;
-}
-
-.commentuv .commentul .commentudate {
-  font-size: 22rpx;
-  color: #999999;
-  margin-top: 15rpx;
-}
-
-.commentuv .commentur {
-  display: flex;
-  justify-content: flex-end;
-  padding-top: 20rpx;
-}
-
-.commentuv .commentur .commentuzanicon {
-  width: 20rpx;
-  height: 20rpx;
-  margin-right: 10rpx;
-  margin-top:6rpx;
-}
-
-.commentuv .commentur .commentuzannum {
-  font-size: 22rpx;
-  color: #999;
-}
-
-.commentuv .commentur .commentuzannumr {
-  font-size: 22rpx;
-  color: #F00808;
-}
-
-.commentuv .commentur .commentuhuifu {
-  margin-left: 35rpx;
-  font-size: 22rpx;
-  color: #999999;
-}
-
-.commentv .commentdesc {
-  width: 605rpx;
-  font-size: 26rpx;
-  color: #333333;
-  margin-left: 95rpx;
-  margin-top: 20rpx;
-  line-height: 40rpx;
-  text-align: justify;
-}
-
-.commentv .commentreplayv {
-  width: 605rpx;
-  background: #E8E8E8;
-  border-radius: 10rpx;
-  margin-left: 95rpx;
-  margin-top: 30rpx;
-  padding-bottom: 20rpx;
-}
-
-.commentv .commentreplayv .commentreplayc {
-  padding: 15rpx 20rpx 0;
-  font-size: 26rpx;
-}
-
-.commentv .commentreplayv .commentreplayer {
-  color: #124361;
-}
-
-.commentv .commentreplayv .commentreplaytxt {
-  color: #333;
-}
-
-.commentreplayor {
-  width: 80rpx;
-  height: 24rpx;
-  background: rgba(18, 67, 97, 0.2);
-  border-radius: 12rpx;
-  font-size: 20rpx;
-  color: #124361;
-  text-align: center;
-  line-height: 24rpx;
-  margin: 0 10rpx;
-}
+@import '../../styles/article.wxss';

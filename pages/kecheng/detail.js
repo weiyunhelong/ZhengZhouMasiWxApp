@@ -1,4 +1,4 @@
-// pages/kecheng/video.js
+// pages/kecheng/detail.js
 var requestUrl = getApp().globalData.requestUrl;
 var WxRequest = require('../../utils/WxRequest.js');
 const myaudio = wx.createInnerAudioContext({}); //录音播放
@@ -100,6 +100,7 @@ Page({
 
         if (res.data.success) {
           dataobj.IsLike = false;
+          dataobj.LikesNum = dataobj.LikesNum-1;
           that.setData({
             dataobj: dataobj
           })
@@ -117,6 +118,7 @@ Page({
       WxRequest.PostRequest(url, {}).then(res => {
         if (res.data.success) {
           dataobj.IsLike = true;
+          dataobj.LikesNum = dataobj.LikesNum+1;
           that.setData({
             dataobj: dataobj
           })
@@ -138,6 +140,7 @@ Page({
       WxRequest.PostRequest(url, {}).then(res => {
         if (res.data.success) {
           dataobj.IsCollect = false;
+          dataobj.CollectionNum = dataobj.CollectionNum-1;
           that.setData({
             dataobj: dataobj
           })
@@ -153,6 +156,7 @@ Page({
       WxRequest.PostRequest(url, {}).then(res => {
         if (res.data.success) {
           dataobj.IsCollect = true;
+          dataobj.CollectionNum = dataobj.CollectionNum+1;
           that.setData({
             dataobj: dataobj
           })

@@ -1,133 +1,127 @@
 <!--pages/kecheng/video.wxml-->
-<wxs module="filter" src="../../styles/filter.wxs" />
 
-<!--顶部基本信息-->
-<view class="coverv">
-  <view class="coverc">
-    <image class="cover {{IsPlay?'xuanzhuanv':''}}" src="{{dataobj.Thumbnail}}"></image>
-
-    <view class="nametxt">{{dataobj.Title}}</view>
-    <view class="owner">{{dataobj.LabelName}}</view>
-
-    <view class="optv">
-      <view class="optc">
-        <image src="/resources/comman/view.png" class="opticon1"></image>
-        <view class="optnum">{{dataobj.PlayNum}}</view>
-      </view>
-      <view class="optc" bindtap="ZanOpt">
-        <image src="{{dataobj.IsLike?'/resources/comman/zanh.png':'/resources/comman/zan.png'}}" class="opticon2"></image>
-        <view class="{{dataobj.IsLike?'optnumh':'optnum'}}">点赞</view>
-      </view>
-      <view class="optc" bindtap="CollectOpt">
-        <image src="{{dataobj.IsCollect?'/resources/comman/xingh.png':'/resources/comman/xing.png'}}" class="opticon3"></image>
-        <view class="{{dataobj.IsCollect?'optnumh':'optnum'}}">收藏</view>
-      </view>
-    </view>
-
-    <view class="progreesv">
-      <view class="startnum">00:00</view>
-      <view class="progreesc">
-        <progress percent="{{filter.time2Percent(dataobj.Progress,dataobj.summarytime)}}" color="#124361" backgroundColor="#BAC6CE" active stroke-width="6"></progress>
-      </view>
-      <view class="endnum">{{dataobj.summarytime}}</view>
-    </view>
-
-    <view class="iconv">
-      <view class="iconc" bindtap="preVideo">
-        <image src="/resources/comman/prevideo.png" class="smicon"></image>
-      </view>
-      <view class="iconc">
-        <image src="/resources/comman/playicon.png" class="mdicon1" wx:if="{{!IsPlay}}" bindtap="playOpt"></image>
-        <image src="/resources/comman/pauseicon.png" class="mdicon2" wx:else bindtap="pauseOpt"></image>
-      </view>
-      <view class="iconc" bindtap="nextVideo">
-        <image src="/resources/comman/nextvideo.png" class="smicon"></image>
-      </view>
-    </view>
+<!--专栏信息部分-->
+<view class="infov">
+  <image src="{{dataobj.Thumbnail}}" mode="aspectFill" class="infocover"></image>
+  <view class="infoc">
+    <view class="name">{{dataobj.Title}}</view>
+    <view class="numtxt">{{dataobj.PlayNum}}次播放</view>
+    <view class="origin">来源：{{dataobj.UserName}}</view>
   </view>
 </view>
+<view class="kongv"></view>
 
 <!--分类部分-->
 <view class="tabv">
   <view class="tabitem" bindtap="tapTab" data-tab="1">
-    <view class="{{chktab==1?'tabtxth':'tabtxt'}}">文章赏析</view>
+    <view class="{{chktab==1?'tabtxth':'tabtxt'}}">专栏内容</view>
     <view class="tabline" wx:if="{{chktab==1}}"></view>
   </view>
   <view class="tabkong"></view>
   <view class="tabitem" bindtap="tapTab" data-tab="2">
-    <view class="{{chktab==2?'tabtxth':'tabtxt'}}">学习交流</view>
+    <view class="{{chktab==2?'tabtxth':'tabtxt'}}">学习交流（{{dataobj.CommentNum}}）</view>
     <view class="tabline" wx:if="{{chktab==2}}"></view>
   </view>
 </view>
 
-<!--文章赏析部分-->
-<block wx:if="{{chktab==1}}">
-  <!--内容简介-->
-  <view class="contentv">
-    <view class="desc" style="margin-bottom:37rpx;">
-      <h5parser html="{{dataobj.Contents}}" />
+<scroll-view scroll-y="true" class="objinfov" style="height: calc(100vh - 720rpx);">
+
+  <!--专栏内容部分-->
+  <block wx:if="{{chktab==1}}">
+    <!--内容简介-->
+    <view class="audiov">
+      <image src="/resources/comman/audio.png" class="audiocover"></image>
+      <view class="audiovc">
+      <view class="audioname showOnehangTxt">{{dataobj.Title}}</view>
     </view>
-    <block wx:for="{{filter.string2Arry(dataobj.ImgList)}}" wx:key="item">
-      <image mode="widthFix" style="width: 100%;min-height: 0rpx;" src="{{item}}"></image>
-    </block>
-  </view>
-</block>
-
-<!--学习交流部分-->
-<block wx:if="{{chktab==2}}">
-
-  <!--评论部分-->
-  <block wx:for="{{dataobj.CommentList}}" wx:key="item" wx:for-index="x">
-    <view class="commentv">
-      <view class="commentuv">
-        <view class="commentul">
-          <image class="commentutx" mode="aspectFill" src="{{item.Avatar}}"></image>
-          <view style="width: 400rpx;">
-            <view class="commentunamev">
-              <view class="commentuname">{{item.NickName}}</view>
-              <view class="commentuowner" wx:if="{{item.IsAuthor}}">作者</view>
-            </view>
-            <view class="commentudate">{{item.CreateTime}}</view>
-          </view>
-        </view>
-        <view class="commentur" bindtap="ZanCommentOpt" data-index="{{x}}" data-status="{{item.IsLike}}" data-id="{{item.CommentId}}">
-          <image src="{{item.IsLike?'/resources/icon/zanh.png':'/resources/icon/zan.png'}}" class="commentuzanicon"></image>
-          <view class="{{item.IsLike?'commentuzannumr':'commentuzannum'}}">赞{{LikesNum}}</view>
-          <view class="commentuhuifu">回复{{item.ReplyNum}}</view>
-        </view>
+      <view class="audioc" bindtap="{{IsPlay?'pauseOpt':'playOpt'}}">
+        <image src="/resources/comman/player.png" class="audioc1" wx:if="{{!IsPlay}}"></image>
+        <image src="/resources/comman/pause.png" class="audioc2" wx:else></image>
       </view>
-      <view class="commentdesc" bindtap="tapFeedback" data-id="{{item.CommentId}}" data-name="{{item.NickName}}">{{item.Contents}}</view>
+    </view>
 
-      <block wx:if="{{item.ReplyCommentList.length>0}}">
-        <view class="commentreplayv">
-          <block wx:for="{{item.ReplyCommentList}}" wx:key="ritem" wx:for-item="ritem" wx:for-index="rx">
-            <view class="commentreplayc" wx:if="{{item.IsOpen?rx<item.ReplyCommentList.length:rx<3}}" bindtap="tapFeedback" data-id="{{ritem.ReplyId}}" data-name="{{ritem.ReplyUser}}">
-              <text class="commentreplayer">{{ritem.ReplyUser}}</text>
-              <text class="commentreplayor" wx:if="{{ritem.IsAuthor}}">作者</text>
-              <text class="commentreplaytip">回复</text>
-              <text class="commentreplayer">{{ritem.CommentUser}}</text>
-              <text class=" commentreplaytxt">:{{ritem.Contents}}</text>
-            </view>
-          </block>
-          <view class="commentreplayc" wx:if="{{item.ReplyCommentList.length>3&&!item.IsOpen}}" catchtap="ShowMoreComment" data-index="{{x}}">
-            <text class="commentreplayer">共{{item.ReplyCommentList.length}}条回复></text>
-          </view>
-        </view>
-      </block>
+    <view class="contentv">
+      <h5parser html="{{dataobj.Introduce}}" />
+    </view>
+
+    <view class="optbtmvv"></view>
+    <view class="optbtmv">
+      <button open-type="share" class="optitem">
+        <image src="/resources/icon/share.png" class="optitemshareicon"></image>
+        <view class="optitemtxt">转发</view>
+      </button>
+      <view class="optitem">
+        <image src="/resources/icon/xiaoxi.png" class="optitemxiaoxiicon"></image>
+        <view class="optitemtxt">消息</view>
+      </view>
+      <view class="optitem" bindtap="CollectOpt">
+        <image src="{{dataobj.IsCollect?'/resources/icon/collecth.png':'/resources/icon/collect.png'}}" class="optitemshareicon"></image>
+        <view class="{{dataobj.IsCollect?'optitemtxth':'optitemtxt'}}">{{dataobj.CollectionNum}}</view>
+      </view>
+      <view class="optitem" bindtap="ZanOpt">
+        <image src="{{dataobj.IsLike?'/resources/icon/zanh.png':'/resources/icon/zan.png'}}" class="optitemshareicon"></image>
+        <view class="{{dataobj.IsLike?'optitemtxth':'optitemtxt'}}">{{dataobj.LikesNum}}</view>
+      </view>
     </view>
   </block>
-  <nodatacom wx:if="{{dataobj.CommentList.length==0}}" />
 
+  <!--学习交流部分-->
+  <block wx:if="{{chktab==2}}">
+    <view style="width: 100%;height: 30rpx;"></view>
 
-  <!--底部按钮部分-->
-  <view class="btmvv"></view>
-  <view class="btmv">
-    <view class="textv">
-      <input class="commenttxt" placeholder-class="commenttip" placeholder="{{placeholdertxt}}" type="text" value="{{comment}}" bindinput="getComment" />
+    <!--评论部分-->
+    <block wx:for="{{dataobj.CommentList}}" wx:key="item" wx:for-index="x">
+      <view class="commentv">
+        <view class="commentuv">
+          <view class="commentul">
+            <image class="commentutx" mode="aspectFill" src="{{item.Avatar}}"></image>
+            <view style="width: 400rpx;">
+              <view class="commentunamev">
+                <view class="commentuname">{{item.NickName}}</view>
+                <view class="commentuowner" wx:if="{{item.IsAuthor}}">作者</view>
+              </view>
+              <view class="commentudate">{{item.CreateTime}}</view>
+            </view>
+          </view>
+          <view class="commentur" bindtap="ZanCommentOpt" data-index="{{x}}" data-status="{{item.IsLike}}" data-id="{{item.CommentId}}">
+            <image src="{{item.IsLike?'/resources/icon/zanh.png':'/resources/icon/zan.png'}}" class="commentuzanicon"></image>
+            <view class="{{item.IsLike?'commentuzannumr':'commentuzannum'}}">赞{{LikesNum}}</view>
+            <view class="commentuhuifu">回复{{item.ReplyNum}}</view>
+          </view>
+        </view>
+        <view class="commentdesc" bindtap="tapFeedback" data-id="{{item.CommentId}}" data-name="{{item.NickName}}">{{item.Contents}}</view>
+
+        <block wx:if="{{item.ReplyCommentList.length>0}}">
+          <view class="commentreplayv">
+            <block wx:for="{{item.ReplyCommentList}}" wx:key="ritem" wx:for-item="ritem" wx:for-index="rx">
+              <view class="commentreplayc" wx:if="{{item.IsOpen?rx<item.ReplyCommentList.length:rx<3}}" bindtap="tapFeedback" data-id="{{ritem.ReplyId}}" data-name="{{ritem.ReplyUser}}">
+                <text class="commentreplayer">{{ritem.ReplyUser}}</text>
+                <text class="commentreplayor" wx:if="{{ritem.IsAuthor}}">作者</text>
+                <text class="commentreplaytip">回复</text>
+                <text class="commentreplayer">{{ritem.CommentUser}}</text>
+                <text class=" commentreplaytxt">:{{ritem.Contents}}</text>
+              </view>
+            </block>
+            <view class="commentreplayc" wx:if="{{item.ReplyCommentList.length>3&&!item.IsOpen}}" catchtap="ShowMoreComment" data-index="{{x}}">
+              <text class="commentreplayer">共{{item.ReplyCommentList.length}}条回复></text>
+            </view>
+          </view>
+        </block>
+      </view>
+    </block>
+    <nodatacom wx:if="{{dataobj.CommentList.length==0}}" />
+
+    <!--底部按钮部分-->
+    <view class="btmvv"></view>
+    <view class="btmv">
+      <view class="textv">
+        <input class="commenttxt" placeholder-class="commenttip" placeholder="{{placeholdertxt}}" type="text" value="{{comment}}" bindinput="getComment" />
+      </view>
+      <view class="sendbtn" bindtap="sendMsgOpt">
+        <image src="/resources/comman/send.png" class="sendicon"></image>
+      </view>
     </view>
-    <view class="sendbtn" bindtap="sendMsgOpt">
-      <image src="/resources/comman/send.png" class="sendicon"></image>
-    </view>
-  </view>
 
-</block>
+  </block>
+
+</scroll-view>

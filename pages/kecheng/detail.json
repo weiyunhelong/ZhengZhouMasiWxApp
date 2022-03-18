@@ -1,9 +1,8 @@
 {
-  "navigationBarBackgroundColor": "#124361",
-  "navigationBarTextStyle": "white",
-  "navigationBarTitleText": "创课中心",
+  "navigationBarTitleText": "",
   "usingComponents": {
     "loadding": "../../components/loadding/index",
+    "nodatacom": "../../components/nodata/index",
     "h5parser": "../../h5parser/parser"
   }
 }

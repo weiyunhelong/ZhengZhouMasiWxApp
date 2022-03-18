@@ -37,6 +37,13 @@
           "name": "",
           "pathName": "pages/kecheng/video",
           "query": "id=164",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "",
+          "pathName": "pages/kecheng/detail",
+          "query": "id=166",
           "scene": null,
           "launchMode": "default"
         }
