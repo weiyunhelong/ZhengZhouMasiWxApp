@@ -1,16 +1,29 @@
 <!--my/pages/collect/index.wxml-->
-<block wx:for="{{list}}" wx:key="item">
-  <view class="blockv">
-     <view class="blockcover" style="background: url({{item.cover}}) no-repeat;background-size: cover;">
-       <view class="jinduv">{{item.percent}}%</view>
-     </view>
-    <view class="blockc">
-      <view class="name showTwohangTxt">{{item.name}}</view>
-      <view class="infov">
-        <view class="date">时长：{{item.datetime}}</view>
+<view class="tabv">
+  <view class="tabc" bindtap="tapTabOpt" data-tab="1">
+    <view class="{{chktab==1?'tabtxth':'tabtxt'}}">视频</view>
+    <view class="tabline" wx:if="{{chktab==1}}"></view>
+  </view>
+  <view class="tabc" bindtap="tapTabOpt" data-tab="2">
+    <view class="{{chktab==2?'tabtxth':'tabtxt'}}">专栏</view>
+    <view class="tabline" wx:if="{{chktab==2}}"></view>
+  </view>
+</view>
+
+<scroll-view class="listv" bindscrolltoupper="ShowMoreOpt">
+  <block wx:for="{{list}}" wx:key="item">
+    <view class="blockv">
+      <view class="blockcover" style="background: url({{item.cover}}) no-repeat;background-size: cover;">
+        <view class="jinduv">{{item.percent}}%</view>
+      </view>
+      <view class="blockc">
+        <view class="name showTwohangTxt">{{item.name}}</view>
+        <view class="infov">
+          <view class="date">时长：{{item.datetime}}</view>
+        </view>
       </view>
     </view>
-  </view>
-</block>
+  </block>
 
-<nodatacom wx:if="{{list.length==0}}"/>
+  <nodatacom wx:if="{{list.length==0}}" />
+</scroll-view>

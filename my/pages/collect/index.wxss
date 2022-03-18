@@ -1,14 +1,46 @@
 /* my/pages/collect/index.wxss */
-page{
+page {
   background: #fff;
 }
+
+.tabv {
+  width: 100vw;
+  height: 88rpx;
+  display: flex;
+  justify-content: space-around;
+}
+
+.tabv .tabc {
+  width: 200rpx;
+  height: 88rpx;
+  line-height: 88rpx;
+  text-align: center;
+}
+
+.tabv .tabtxth {
+  font-size: 30rpx;
+  font-weight: 500;
+  color: #262626;
+}
+.tabv .tabtxt{
+  font-size: 30rpx;
+  color: #999999;
+}
+.tabv .tabline {
+  width: 28rpx;
+  height: 4rpx;
+  background: #F24540;
+  border-radius: 3rpx;
+  margin: -4rpx auto 0;
+}
+
 .blockv {
   width: 686rpx;
   height: 208rpx;
   border-radius: 10rpx;
   margin: 0rpx auto;
   display: flex;
-  border-bottom:1rpx solid #eee;
+  border-bottom: 1rpx solid #eee;
 }
 
 .blockcover {
@@ -32,8 +64,8 @@ page{
 }
 
 .blockc {
-  width:392rpx;
-  padding-top:28rpx;
+  width: 392rpx;
+  padding-top: 28rpx;
 }
 
 .name {

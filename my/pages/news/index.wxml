@@ -22,13 +22,13 @@
     <block wx:for="{{list}}" wx:key="item">
       <view class="commentv">
         <view class="commentuserv">
-          <image lazy-load="true" class="commentusertx" src="https://zhengzhousizheng.oss-cn-beijing.aliyuncs.com/my/mydefaulttx.png"></image>
+          <image lazy-load="true" class="commentusertx" src="{{item.UserAvatar}}"></image>
           <view class="commentcv">
-            <view class="commentusernickname">无敌钳子抓抓抓</view>
-            <view class="commenttxt">如果你既不热爱你的工作，也不对之嗤之以鼻，那说明你做的还不够多</view>
-            <view class="commenttime">5分钟前 回复了你</view>
+            <view class="commentusernickname">{{item.replyName}}</view>
+            <view class="commenttxt">{{item.replyCon}}</view>
+            <view class="commenttime">{{item.CreateTime}} 回复了你</view>
           </view>
-          <image lazy-load="true" mode="aspectFill" class="commentcover" src="/resources/comman/avatarUrl.jpg"></image>
+          <image lazy-load="true" mode="aspectFill" class="commentcover" src="{{item.Avatar}}"></image>
         </view>
       </view>
     </block>
@@ -38,15 +38,14 @@
   <block wx:if="{{chkkind==1}}">
     <block wx:for="{{list}}" wx:key="item">
       <view class="blockv">
-        <image src="https://zhengzhousizheng.oss-cn-beijing.aliyuncs.com/my/mydefaulttx.png" class="blockcover" lazy-load="true"></image>
+        <image src="{{item.Avatar}}" class="blockcover" lazy-load="true"></image>
         <view class="blockc">
-          <view class="name">海思</view>
+          <view class="name">{{item.NickName}}</view>
           <view class="infov">
             <view class="percent">赞了你的作品</view>
-            <view class="date">9分钟前</view>
+            <view class="date">{{item.CreateTime}}</view>
           </view>
         </view>
-        <image lazy-load="true" mode="aspectFill" class="commentcover" src="/resources/comman/avatarUrl.jpg"></image>
       </view>
     </block>
   </block>
@@ -55,13 +54,13 @@
   <block wx:if="{{chkkind==2}}">
     <block wx:for="{{list}}" wx:key="item">
       <view class="gonggaov">
-        <image class="gonggaoicon" src="https://zhengzhousizheng.oss-cn-beijing.aliyuncs.com/mysucai/gonggao.png"></image>
+        <image class="gonggaoicon" src="{{item.Avatar}}"></image>
         <view class="gonggaoc">
           <view class="gonggaotop">
             <view class="gonggaotype">系统消息</view>
           </view>
-          <view class="gonggaodesc showOnehangTxt">快来投稿吧~好礼等你来领！</view>          
-          <view class="gonggaodate">18分钟前</view>
+          <view class="gonggaodesc showOnehangTxt" style="max-width: 500rpx;">{{item.Contents}}</view>          
+          <view class="gonggaodate">{{item.CreateTime}}</view>
         </view>
       </view>
     </block>

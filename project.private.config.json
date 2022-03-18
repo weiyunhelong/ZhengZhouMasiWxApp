@@ -12,41 +12,6 @@
     },
     "miniprogram": {
       "list": [
-        {
-          "name": "",
-          "pathName": "pages/test/test",
-          "query": "tid=5&tgid=2&clock=20",
-          "launchMode": "default",
-          "scene": null
-        },
-        {
-          "name": "",
-          "pathName": "pages/test/test",
-          "query": "tid=6&tgid=3&clock=10",
-          "launchMode": "default",
-          "scene": null
-        },
-        {
-          "name": "",
-          "pathName": "pages/kecheng/index",
-          "query": "",
-          "launchMode": "default",
-          "scene": null
-        },
-        {
-          "name": "",
-          "pathName": "pages/kecheng/video",
-          "query": "id=164",
-          "launchMode": "default",
-          "scene": null
-        },
-        {
-          "name": "",
-          "pathName": "pages/kecheng/detail",
-          "query": "id=166",
-          "scene": null,
-          "launchMode": "default"
-        }
       ]
     }
   }

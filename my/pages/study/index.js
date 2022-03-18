@@ -8,79 +8,8 @@ Page({
    * 页面的初始数据
    */
   data: {
-    list: [{
-      id: 1,
-      cover: "https://zhengzhousizheng.oss-cn-beijing.aliyuncs.com/mysucai/studycover.png",
-      name: "爱国主义教育基地纪念关贵爱国主义教育基地纪念关贵",
-      datetime: "刚刚",
-      percent: "12"
-    },{
-      id: 2,
-      cover: "https://zhengzhousizheng.oss-cn-beijing.aliyuncs.com/mysucai/studycover.png",
-      name: "爱国主义教育基地纪念关贵爱国主义教育基地纪念关贵",
-      datetime: "2分钟前",
-      percent: "56"
-    },{
-      id: 3,
-      cover: "https://zhengzhousizheng.oss-cn-beijing.aliyuncs.com/mysucai/studycover.png",
-      name: "爱国主义教育基地纪念关贵爱国主义教育基地纪念关贵",
-      datetime: "1小时前",
-      percent: "12"
-    },{
-      id: 4,
-      cover: "https://zhengzhousizheng.oss-cn-beijing.aliyuncs.com/mysucai/studycover.png",
-      name: "爱国主义教育基地纪念关贵爱国主义教育基地纪念关贵",
-      datetime: "2021-11-08",
-      percent: "12"
-    },{
-      id: 5,
-      cover: "https://zhengzhousizheng.oss-cn-beijing.aliyuncs.com/mysucai/studycover.png",
-      name: "爱国主义教育基地纪念关贵爱国主义教育基地纪念关贵",
-      datetime: "2021-11-08",
-      percent: "12"
-    },{
-      id: 6,
-      cover: "https://zhengzhousizheng.oss-cn-beijing.aliyuncs.com/mysucai/studycover.png",
-      name: "爱国主义教育基地纪念关贵爱国主义教育基地纪念关贵",
-      datetime: "2021-11-08",
-      percent: "12"
-    },{
-      id: 7,
-      cover: "https://zhengzhousizheng.oss-cn-beijing.aliyuncs.com/mysucai/studycover.png",
-      name: "爱国主义教育基地纪念关贵爱国主义教育基地纪念关贵",
-      datetime: "2021-11-08",
-      percent: "12"
-    },{
-      id: 8,
-      cover: "https://zhengzhousizheng.oss-cn-beijing.aliyuncs.com/mysucai/studycover.png",
-      name: "爱国主义教育基地纪念关贵爱国主义教育基地纪念关贵",
-      datetime: "2021-11-08",
-      percent: "12"
-    },{
-      id: 9,
-      cover: "https://zhengzhousizheng.oss-cn-beijing.aliyuncs.com/mysucai/studycover.png",
-      name: "爱国主义教育基地纪念关贵爱国主义教育基地纪念关贵",
-      datetime: "2021-11-08",
-      percent: "12"
-    },{
-      id: 10,
-      cover: "https://zhengzhousizheng.oss-cn-beijing.aliyuncs.com/mysucai/studycover.png",
-      name: "爱国主义教育基地纪念关贵爱国主义教育基地纪念关贵",
-      datetime: "2021-11-08",
-      percent: "12"
-    },{
-      id: 11,
-      cover: "https://zhengzhousizheng.oss-cn-beijing.aliyuncs.com/mysucai/studycover.png",
-      name: "爱国主义教育基地纪念关贵爱国主义教育基地纪念关贵",
-      datetime: "2021-11-08",
-      percent: "12"
-    },{
-      id: 12,
-      cover: "https://zhengzhousizheng.oss-cn-beijing.aliyuncs.com/mysucai/studycover.png",
-      name: "爱国主义教育基地纪念关贵爱国主义教育基地纪念关贵",
-      datetime: "2021-11-08",
-      percent: "12"
-    }]
+    list: [],
+    pageindex: 1,
   },
 
   /**
@@ -101,9 +30,34 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
+    var that = this;
+    if (getApp().globalData.WxUserId == 0) {
+      wx.redirectTo({
+        url: '../../../wxauth/pages/wxlogin/index',
+      })
+    } else {
+      that.InitData();
+    }
   },
-
+  InitData() {
+    var that = this;
+    var pageindex = that.data.pageindex;
+    var url = requestUrl + "/API/UserCenterApi/GetDurationListWhereUser?page=" + pageindex + "&row=20&userid=" + getApp().globalData.WxUserId;
+    
+    WxRequest.PostRequest(url, {}).then(res => {
+      if (res.data.success) {
+        if (pageindex == 1) {
+          that.setData({
+            list: res.data.data.datas
+          })
+        } else {
+          that.setData({
+            list: that.data.list.concat(res.data.data.datas)
+          })
+        }
+      }
+    })
+  },
   /**
    * 生命周期函数--监听页面隐藏
    */
