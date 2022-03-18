@@ -9,7 +9,7 @@ Page({
    */
   data: {
     chktab: 1, //1视频 0专栏
-    list: [1,2,3,4,5,6],
+    list: [],
     pageindex: 1,
   },
 
@@ -37,23 +37,20 @@ Page({
       chktab: e.currentTarget.dataset.tab,
       pageindex:1
     })
-    //that.InitData();
+    that.InitData();
   },
   goDetail(e) { //点击到详情
     var that = this;
-    //var chktab = that.data.chktab;
-    // if (chktab == 0) { //专栏
-    //   wx.navigateTo({
-    //     url: '../kecheng/detail?id=' + e.currentTarget.dataset.id,
-    //   })
-    // } else { //视频
-    //   wx.navigateTo({
-    //     url: '../kecheng/video?id=' + e.currentTarget.dataset.id,
-    //   })
-    // }
-    wx.navigateTo({
-      url: '../kecheng/video?id=123',
-    })
+    var chktab = that.data.chktab;
+    if (chktab == 0) { //专栏
+      wx.navigateTo({
+        url: '../kecheng/detail?id=' + e.currentTarget.dataset.id,
+      })
+    } else { //视频
+      wx.navigateTo({
+        url: '../kecheng/video?id=' + e.currentTarget.dataset.id,
+      })
+    }
   },
   /**
    * 生命周期函数--监听页面初次渲染完成
@@ -69,8 +66,14 @@ Page({
     var that = this;
     //获取菜单的列表数据
     that.setTabbarlist();
-
-    //that.InitData();
+    if(getApp().globalData.WxUserId==0){
+      wx.redirectTo({
+        url: '../../wxauth/pages/wxlogin/index',
+      })
+    }else{
+      that.InitData();
+    }
+   
   },
   setTabbarlist: function () { //获取菜单的列表数据
     var that = this;
@@ -93,7 +96,7 @@ Page({
 
     var pageindex = that.data.pageindex;
     var chktab = that.data.chktab; //0视频 1专栏
-    var url=requestUrl+"/API/ManuscriptApi/GetManuscriptList?keywords=&userId="+getApp().globalData.WxUserId+"page="+pageindex+"&rows=10"+"&type="+chktab;
+    var url=requestUrl+"/API/ManuscriptApi/GetManuscriptList?page="+pageindex+"&rows=10"+"&type="+chktab;
     WxRequest.PostRequest(url,{}).then(res=>{
       if(res.data.success){
         if(pageindex==1){

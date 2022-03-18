@@ -39,8 +39,8 @@ Page({
 
     //倒计时
     timer = setInterval(function () {
-      var minNum = that.data.clock.split(':')[0];
-      var secNum = that.data.clock.split(':')[1];
+      var minNum =parseInt(that.data.clock.split(':')[0]);
+      var secNum = parseInt(that.data.clock.split(':')[1]);
       if (parseInt(minNum == 0) && secNum == 0) { //倒计时结束
         that.confirmOpt();
       } else {
@@ -62,29 +62,38 @@ Page({
     var url = requestUrl + "/API/ExamAnswer/TestQuestionPaperInfo?id=" + that.data.tid + "&uid=" + getApp().globalData.WxUserId;
     WxRequest.PostRequest(url, {}).then(res => {
       if (res.data.success) {
-        var list = res.data.data;
+        var dataobj = res.data.data;
+        var list = dataobj.SingleChoiceList.concat(dataobj.JudgeList).concat(dataobj.MultipleChoiceList);
         that.setData({
           list: list,
-          sumNum: list.JudgeNum + list.MultipleChoiceNum + list.SingleChoiceNum
+          dataobj: dataobj,
+          sumNum: list.length,
         })
         //获取题目
         that.InitQuestion(1);
+        that.InitAnsereds();
       }
+    })
+  },
+  InitAnsereds() { //获取已经答题
+    var that = this;
+    var list = that.data.list;
+    var answereds = [];
+    for (var i = 0; i < list.length; i++) {
+      if (list[i].UserAnswer != '' && list[i].UserAnswer != null) {
+        answereds.push(i + 1);
+      }
+    }
+    that.setData({
+      answereds: answereds
     })
   },
   InitQuestion(index) { //获取题目
     var that = this;
     var list = that.data.list;
-    var questionobj = {},
-      index = index - 1;
+    var index = index - 1;
+    var questionobj = list[index];
 
-    if (index < list.SingleChoiceNum) {
-      questionobj = list.SingleChoiceList[index];
-    } else if (index - list.SingleChoiceNum < list.JudgeNum) {
-      questionobj = list.JudgeList[index];
-    } else if (index - list.JudgeNum - list.SingleChoiceNum < list.MultipleChoiceNum) {
-      questionobj = list.MultipleChoiceList[index];
-    }
     that.setData({
       questionobj: questionobj,
       chkoption: that.GetZiMuIndex(questionobj.UserAnswer, questionobj.TypeID)
@@ -181,14 +190,7 @@ Page({
 
     var list = that.data.list;
     var index = that.data.index - 1;
-
-    if (index < list.SingleChoiceNum) {
-      list.SingleChoiceList[index].UserAnswer = answer;
-    } else if (index - list.SingleChoiceNum < list.JudgeNum) {
-      list.JudgeList[index].UserAnswer = answer;
-    } else if (index - list.JudgeNum - list.SingleChoiceNum < list.MultipleChoiceNum) {
-      list.MultipleChoiceList[index].UserAnswer = answer;
-    }
+    list[index].UserAnswer = answer;
     that.setData({
       list: list
     })
@@ -238,16 +240,25 @@ Page({
   confirmOpt() { //提交试卷
     var that = this;
 
-    that.setData({
-      showMaskAni: false,
-      showMask: false
+    var url = requestUrl + "/API/ExamAnswer/SubmitTestPaper?tid=" + that.data.tid + "&uid=" + getApp().globalData.WxUserId + "&tgid=" + that.data.tgid;
+    WxRequest.PostRequest(url, {}).then(res => {
+      if (res.data.success) {
+        that.setData({
+          showMaskAni: false,
+          showMask: false,
+          score:res.data.data.TestGrade
+        })
+        setTimeout(() => {
+          that.setData({
+            showResult: true,
+            showResultAni: true
+          })
+        }, 500);
+      } else {
+        WxRequest.ShowAlert(res.data.data);
+      }
+
     })
-    setTimeout(() => {
-      that.setData({
-        showResult: true,
-        showResultAni: true
-      })
-    }, 500);
   },
   knowOpt() { //继续答题
     var that = this;
@@ -258,9 +269,6 @@ Page({
     wx.navigateBack({
       delta: 1,
     })
-  },
-  postOpt() { //提交试卷
-
   },
   checkOpt() { //查看答题过程
     this.setData({

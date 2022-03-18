@@ -81,37 +81,43 @@
     <view class="commentv">
       <view class="commentuv">
         <view class="commentul">
-          <image class="commentutx" src="{{item.Avatar}}"></image>
-          <view style="width: 300rpx;">
-            <view class="commentuname">{{item.NickName}}</view>
+          <image class="commentutx" mode="aspectFill" src="{{item.Avatar}}"></image>
+          <view style="width: 400rpx;">
+            <view class="commentunamev">
+              <view class="commentuname">{{item.NickName}}</view>
+              <view class="commentuowner" wx:if="{{item.IsAuthor}}">作者</view>
+            </view>
             <view class="commentudate">{{item.CreateTime}}</view>
           </view>
         </view>
         <view class="commentur" bindtap="ZanCommentOpt" data-index="{{x}}" data-status="{{item.IsLike}}" data-id="{{item.CommentId}}">
-          <image src="{{item.IsLike?'/resources/comman/zanh.png':'/resources/comman/zan.png'}}" class="commentuzanicon"></image>
+          <image src="{{item.IsLike?'/resources/icon/zanh.png':'/resources/icon/zan.png'}}" class="commentuzanicon"></image>
           <view class="{{item.IsLike?'commentuzannumr':'commentuzannum'}}">赞{{LikesNum}}</view>
           <view class="commentuhuifu">回复{{item.ReplyNum}}</view>
         </view>
       </view>
-      <view class="commentdesc"  bindtap="tapFeedback" data-id="{{item.CommentId}}" data-name="{{item.NickName}}">{{item.Contents}}</view>
+      <view class="commentdesc" bindtap="tapFeedback" data-id="{{item.CommentId}}" data-name="{{item.NickName}}">{{item.Contents}}</view>
 
       <block wx:if="{{item.ReplyCommentList.length>0}}">
         <view class="commentreplayv">
-          <block wx:for="{{item.ReplyCommentList}}" wx:key="ritem" wx:for-item="ritem"  wx:for-index="rx">
-            <view class="commentreplayc" wx:if="{{item.IsOpen?rx<item.ReplyCommentList.length:rx<3}}">
-              <text class="commentreplayer">{{ritem.NickName}}</text>
-              <text class="commentreplayor" wx:if="{{ritem.IsAuther}}">作者</text>
+          <block wx:for="{{item.ReplyCommentList}}" wx:key="ritem" wx:for-item="ritem" wx:for-index="rx">
+            <view class="commentreplayc" wx:if="{{item.IsOpen?rx<item.ReplyCommentList.length:rx<3}}" bindtap="tapFeedback" data-id="{{ritem.ReplyId}}" data-name="{{ritem.ReplyUser}}">
+              <text class="commentreplayer">{{ritem.ReplyUser}}</text>
+              <text class="commentreplayor" wx:if="{{ritem.IsAuthor}}">作者</text>
+              <text class="commentreplaytip">回复</text>
+              <text class="commentreplayer">{{ritem.CommentUser}}</text>
               <text class=" commentreplaytxt">:{{ritem.Contents}}</text>
             </view>
           </block>
-          <view class="commentreplayc" wx:if="{{item.ReplyCommentList.length>3&&!item.IsOpen}}" catchtap="ShowMoreComment"  data-index="{{x}}">
+          <view class="commentreplayc" wx:if="{{item.ReplyCommentList.length>3&&!item.IsOpen}}" catchtap="ShowMoreComment" data-index="{{x}}">
             <text class="commentreplayer">共{{item.ReplyCommentList.length}}条回复></text>
           </view>
         </view>
       </block>
     </view>
   </block>
-  <view class="nodatav" wx:if="{{dataobj.CommentList.length==0}}">暂无记录~</view>
+  <nodatacom wx:if="{{dataobj.CommentList.length==0}}" />
+
 
   <!--底部按钮部分-->
   <view class="btmvv"></view>

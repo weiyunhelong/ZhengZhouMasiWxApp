@@ -18,8 +18,8 @@
     <text class="text">{{questionobj.Question}}</text>
   </view>
   <view class="optionv">
-    <!--单选和判断-->
-    <block wx:if="{{questionobj.TypeID!=2}}">
+    <!--单选-->
+    <block wx:if="{{questionobj.TypeID==0}}">
       <block wx:for="{{questionobj.Options}}" wx:key="item" wx:for-index="x">
         <view class="optionc" bindtap="tapOneOption" data-index="{{x}}">
           <view class="optionno {{chkoption==x?'optionnoh':''}}">{{ZiMus[x]}}</view>
@@ -27,8 +27,19 @@
         </view>
       </block>
     </block>
+    <!--判断-->
+    <block wx:if="{{questionobj.TypeID==1}}">
+      <view class="optionc" bindtap="tapOneOption" data-index="0">
+        <view class="optionno {{chkoption==0?'optionnoh':''}}">A</view>
+        <view class="optiontxt">错误</view>
+      </view>
+      <view class="optionc" bindtap="tapOneOption" data-index="1">
+        <view class="optionno {{chkoption==1?'optionnoh':''}}">B</view>
+        <view class="optiontxt">正确</view>
+      </view>
+    </block>
     <!--多选题-->
-    <block wx:else>
+    <block wx:if="{{questionobj.TypeID==2}}">
       <block wx:for="{{questionobj.Options}}" wx:key="item" wx:for-index="x">
         <view class="optionc" bindtap="tapThreeOption" data-index="{{x}}">
           <view class="optionno {{filter.IsMoreChk(chkoption,x)?'optionnoh':''}}">{{ZiMus[x]}}</view>
@@ -39,8 +50,6 @@
 
   </view>
 </view>
-
-<view class="btmvv"></view>
 
 <view class="btnv">
   <view class="{{index==1?'prebtn':'nextbtn'}}" bindtap="{{index==1?'':'preOpt'}}">上一题</view>
@@ -64,7 +73,7 @@
 <view catchtouchmove="nomove" class="maskv {{showMaskAni?'showMaskv':'hideMaskv'}}" wx:if="{{showMask}}">
   <view class="modalv">
     <view class="modaltitle">确认结束考试吗</view>
-    <view class="modalsubtitle">还有<text class="redtxt">50道</text>题未做</view>
+    <view class="modalsubtitle" wx:if="{{sumNum-answereds.length>0}}">还有<text class="redtxt">{{sumNum-answereds.length}}道</text>题未做</view>
     <view class="modaliconv">
       <image src="/resources/course/posttip.png" class="modalicon"></image>
     </view>
@@ -80,7 +89,7 @@
     </view>
     <view class="modalnumv" style="padding-top: 46rpx;">
       <view class="btn btnl" bindtap="cancelOpt">继续答题</view>
-      <view class="btn btnr" bindtap="postOpt">确认提交</view>
+      <view class="btn btnr" bindtap="confirmOpt">确认提交</view>
     </view>
   </view>
 </view>
@@ -99,29 +108,29 @@
     </view>
   </view>
   <scroll-view scroll-y="true" class="scrollindexv">
-    <block wx:if="{{list.SingleChoiceNum>0}}">
+    <block wx:if="{{dataobj.SingleChoiceNum>0}}">
       <view class="indextypetxt">选择题</view>
       <view class="indexv">
-        <block wx:for="{{list.SingleChoiceList}}" wx:key="item" wx:for-index="x">
+        <block wx:for="{{dataobj.SingleChoiceList}}" wx:key="item" wx:for-index="x">
           <view class="indexc {{filter.IndexOfArry(answereds,x+1)?'indexch':''}}" catchtap="changeIndex" data-index="{{x}}">{{x+1}}</view>
         </block>
       </view>
     </block>
 
-    <block wx:if="{{list.JudgeNum>0}}">
+    <block wx:if="{{dataobj.JudgeNum>0}}">
       <view class="indextypetxt">判断题</view>
       <view class="indexv">
-        <block wx:for="{{list.JudgeList}}" wx:key="item" wx:for-index="x">
-          <view class="indexc {{filter.IndexOfArry(answereds,x+list.SingleChoiceNum+1)?'indexch':''}}" catchtap="changeIndex" data-index="{{x+list.SingleChoiceNum}}">{{x+1+list.SingleChoiceNum}}</view>
+        <block wx:for="{{dataobj.JudgeList}}" wx:key="item" wx:for-index="x">
+          <view class="indexc {{filter.IndexOfArry(answereds,x+dataobj.SingleChoiceNum+1)?'indexch':''}}" catchtap="changeIndex" data-index="{{x+dataobj.SingleChoiceNum}}">{{x+1+dataobj.SingleChoiceNum}}</view>
         </block>
       </view>
     </block>
 
-    <block wx:if="{{list.MultipleChoiceNum>0}}">
+    <block wx:if="{{dataobj.MultipleChoiceNum>0}}">
       <view class="indextypetxt">多选题</view>
       <view class="indexv">
-        <block wx:for="{{list.MultipleChoiceList}}" wx:key="item" wx:for-index="x">
-          <view class="indexc {{filter.IndexOfArry(answereds,x+list.SingleChoiceNum+list.JudgeNum+1)?'indexch':''}}" catchtap="changeIndex" data-index="{{x+list.SingleChoiceNum+list.JudgeNum}}">{{x+list.SingleChoiceNum+list.JudgeNum+1}}</view>
+        <block wx:for="{{dataobj.MultipleChoiceList}}" wx:key="item" wx:for-index="x">
+          <view class="indexc {{filter.IndexOfArry(answereds,x+dataobj.SingleChoiceNum+list.JudgeNum+1)?'indexch':''}}" catchtap="changeIndex" data-index="{{x+dataobj.SingleChoiceNum+list.JudgeNum}}">{{x+dataobj.SingleChoiceNum+dataobj.JudgeNum+1}}</view>
         </block>
       </view>
     </block>
@@ -133,7 +142,7 @@
   <view class="chengjibgv"></view>
   <view class="chengjiv">
     <view class="chengjitxtnumv">
-      <view class="chengjitxtnum">65</view>
+      <view class="chengjitxtnum">{{score}}</view>
       <view class="chengjitxtfen">分</view>
     </view>
   </view>
