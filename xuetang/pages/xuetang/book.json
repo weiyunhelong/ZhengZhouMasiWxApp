@@ -3,6 +3,7 @@
   "navigationBarTextStyle": "black",
   "navigationBarTitleText": "活动预约",
   "usingComponents": {
-    "loadding": "../../../components/loadding/index"
+    "loadding": "../../../components/loadding/index",
+    "nodatacom": "../../../components/nodata/index"
   }
 }

@@ -38,54 +38,16 @@
     <view class="moretxt">更多 ></view>
   </view>
 
-  <view class="coursev" bindtap="goCourseOpt" data-id="28">
-    <image src="/resources/comman/avatarUrl.jpg" class="coursecover" mode="aspectFill"></image>
-    <view class="coursec">
-      <view class="coursename showTwohangTxt">红色摇篮-安远路矿工人运动纪念馆</view>
-      <view class="coursestatusv">
-        <view class="coursesowner">负责人：李某</view>
-        <view class="coursestatus">进行中</view>
+  <block wx:for="{{list}}" wx:key="item">
+    <view class="coursev" bindtap="goCourseOpt" data-id="{{item.ID}}">
+      <image src="{{item.Thumbnail}}" class="coursecover" mode="aspectFill"></image>
+      <view class="coursec">
+        <view class="coursename showTwohangTxt">{{item.Title}}</view>
+        <view class="coursestatusv">
+          <view class="coursesowner">负责人：{{item.ReadName}}</view>
+          <view class="coursestatus coursestatus2"></view>
+        </view>
       </view>
     </view>
-  </view>
-  <view class="coursev" bindtap="goCourseOpt" data-id="28">
-    <image src="/resources/comman/avatarUrl.jpg" class="coursecover" mode="aspectFill"></image>
-    <view class="coursec">
-      <view class="coursename showTwohangTxt">红色摇篮-安远路矿工人运动纪念馆</view>
-      <view class="coursestatusv">
-        <view class="coursesowner">负责人：李某</view>
-        <view class="coursestatus2">报名中</view>
-      </view>
-    </view>
-  </view>
-  <view class="coursev" bindtap="goCourseOpt" data-id="28">
-    <image src="/resources/comman/avatarUrl.jpg" class="coursecover" mode="aspectFill"></image>
-    <view class="coursec">
-      <view class="coursename showTwohangTxt">红色摇篮-安远路矿工人运动纪念馆</view>
-      <view class="coursestatusv">
-        <view class="coursesowner">负责人：李某</view>
-        <view class="">已完成</view>
-      </view>
-    </view>
-  </view>
-  <view class="coursev" bindtap="goCourseOpt" data-id="28">
-    <image src="/resources/comman/avatarUrl.jpg" class="coursecover" mode="aspectFill"></image>
-    <view class="coursec">
-      <view class="coursename showTwohangTxt">红色摇篮-安远路矿工人运动纪念馆</view>
-      <view class="coursestatusv">
-        <view class="coursesowner">负责人：李某</view>
-        <view class="coursestatus">进行中</view>
-      </view>
-    </view>
-  </view>
-  <view class="coursev" bindtap="goCourseOpt" data-id="28">
-    <image src="/resources/comman/avatarUrl.jpg" class="coursecover" mode="aspectFill"></image>
-    <view class="coursec">
-      <view class="coursename showTwohangTxt">红色摇篮-安远路矿工人运动纪念馆</view>
-      <view class="coursestatusv">
-        <view class="coursesowner">负责人：李某</view>
-        <view class="coursestatus">进行中</view>
-      </view>
-    </view>
-  </view>
+  </block>
 </view>

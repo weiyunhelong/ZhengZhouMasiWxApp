@@ -192,6 +192,11 @@ Page({
     var that = this;
     wx.navigateBack({
       delta: 1,
+      fail:function(){
+        wx.reLaunch({
+          url: '../../../pages/home/index',
+        })
+      }
     })
   },
   /**

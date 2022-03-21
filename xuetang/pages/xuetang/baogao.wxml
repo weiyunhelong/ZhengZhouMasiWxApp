@@ -1,60 +1,44 @@
 <!--xuetang/pages/xuetang/baogao.wxml-->
 <!--TAB部分-->
 <view class="tabv">
+  <view class="tabc" bindtap="tapTab" data-tab="-1">
+    <view class="{{chktab==-1?'tabtxth':'tabtxt'}}">全部</view>
+    <view class="tabline" wx:if="{{chktab==-1}}"></view>
+  </view>
   <view class="tabc" bindtap="tapTab" data-tab="0">
-    <view class="{{chktab==0?'tabtxth':'tabtxt'}}">全部</view>
+    <view class="{{chktab==0?'tabtxth':'tabtxt'}}">待批阅</view>
     <view class="tabline" wx:if="{{chktab==0}}"></view>
   </view>
   <view class="tabc" bindtap="tapTab" data-tab="1">
-    <view class="{{chktab==1?'tabtxth':'tabtxt'}}">待批阅</view>
+    <view class="{{chktab==1?'tabtxth':'tabtxt'}}">已通过</view>
     <view class="tabline" wx:if="{{chktab==1}}"></view>
   </view>
   <view class="tabc" bindtap="tapTab" data-tab="2">
-    <view class="{{chktab==2?'tabtxth':'tabtxt'}}">已通过</view>
+    <view class="{{chktab==2?'tabtxth':'tabtxt'}}">未通过</view>
     <view class="tabline" wx:if="{{chktab==2}}"></view>
-  </view>
-  <view class="tabc" bindtap="tapTab" data-tab="3">
-    <view class="{{chktab==3?'tabtxth':'tabtxt'}}">未通过</view>
-    <view class="tabline" wx:if="{{chktab==3}}"></view>
   </view>
 </view>
 
 <!--列表数据部分-->
-<scroll-view scroll-y="true" class="listv">
-  <view class="baogaov">
-    <view class="baogaoname">不要以"为别人考虑"做理由，其实丢弃了"舍我其谁"的使命感</view>
-    <view class="baogaoowner">负责人：某李</view>
-    <view class="baogaoc">
-      <view class="baogaoleftc" bindtap="showCommentOpt">
-        <view class="baogaolefttxt">评论：</view>
-        <view class="baogaolefttxt2">有评论</view>
-        <image src="../../resources/msg.png" class="msgicon"></image>
+<scroll-view scroll-y="true" class="listv" bindscrolltolower="ShowMoreData">
+  <block wx:for="{{list}}" wx:key="item">
+    <view class="baogaov">
+      <view class="baogaoname">不要以"为别人考虑"做理由，其实丢弃了"舍我其谁"的使命感</view>
+      <view class="baogaoowner">负责人：某李</view>
+      <view class="baogaoc">
+        <view class="baogaoleftc" bindtap="showCommentOpt" data-obj="{{item}}">
+          <view class="baogaolefttxt">评论：</view>
+          <view class="baogaolefttxt">暂无评论</view>
+          <view class="baogaolefttxt2">有评论</view>
+          <image src="../../resources/msg.png" class="msgicon"></image>
+        </view>
+        <view class="baogaorightc">已通过</view>
+        <view class="baogaorightc1">待批阅</view>
+        <view class="baogaorightc2">未通过</view>
       </view>
-      <view class="baogaorightc">已通过</view>
     </view>
-  </view>
-  <view class="baogaov">
-    <view class="baogaoname">不要以"为别人考虑"做理由，其实丢弃了"舍我其谁"的使命感</view>
-    <view class="baogaoowner">负责人：某李</view>
-    <view class="baogaoc">
-      <view class="baogaoleftc">
-        <view class="baogaolefttxt">评论：暂无评论</view>
-      </view>
-      <view class="baogaorightc1">待批阅</view>
-    </view>
-  </view>
-  <view class="baogaov">
-    <view class="baogaoname">总是想要证明自己的，就没投入工作的心态</view>
-    <view class="baogaoowner">负责人：某李</view>
-    <view class="baogaoc">
-      <view class="baogaoleftc">
-        <view class="baogaolefttxt">评论：</view>
-        <view class="baogaolefttxt2">有评论</view>
-        <image src="../../resources/msg.png" class="msgicon"></image>
-      </view>
-      <view class="baogaorightc2">未通过</view>
-    </view>
-  </view>
+  </block>
+  <nodatacom wx:if="{{list.length==0}}"/>
 </scroll-view>
 
 <!--显示操作浮窗-->
@@ -62,7 +46,7 @@
   <view class="maskbodyv">
     <view class="masktitle">老师评论</view>
     <view class="masktip">评论:</view>
-    <scroll-view scroll-y="true" class="masktxt">习近平新时代中国特色社会主义思想是当代中国马克思主义、二十一世纪马克思主义，是中华文化和中国精神的时代精华，实现了马克思主义中国化新的飞跃。十九届六中全会决议，用10个“明确”概括了核心内容</scroll-view>
+    <scroll-view scroll-y="true" class="masktxt">{{commentTxt}}</scroll-view>
     <view class="maskbtn" bindtap="closeMask">关闭</view>
   </view>
 </view>

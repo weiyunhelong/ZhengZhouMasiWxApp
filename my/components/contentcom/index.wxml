@@ -1,0 +1,17 @@
+<!--my/components/connentcom/index.wxml-->
+<view class="comv">
+  <image src="{{dataobj.Thumbnail}}" mode="aspectFill" class="{{dataobj.Type=='视频'?'mdcover':'smcover'}}"></image>
+  <view class="comcv" style="width: {{dataobj.Type=='视频'?375:504}}rpx;">
+    <view class="comcname showOnehangTxt">{{dataobj.Title}}</view>
+    <view class="comctype showOnehangTxt">{{dataobj.Type}}</view>
+    <view class="comcstatus">
+      <view class="comcstatusl">
+        <text>状态：</text>
+        <text class="redtxt">{{dataobj.State}}</text>
+      </view>
+      <view class="comcstatusr" wx:if="{{dataobj.State=='未通过'}}">
+        <image src="../../resources/msg.png" class="msgicon"></image>
+      </view>
+    </view>
+  </view>
+</view>

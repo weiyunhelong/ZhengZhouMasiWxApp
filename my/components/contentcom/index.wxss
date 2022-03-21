@@ -1,0 +1,79 @@
+/* my/components/connentcom/index.wxss */
+.comv {
+  margin: 0 32rpx;
+  border-bottom: 1rpx solid #eee;
+  height: 206rpx;
+  display: flex;
+}
+
+.comv .smcover {
+  width: 150rpx;
+  height: 150rpx;
+  border-radius: 6rpx;
+  margin: 28rpx 24rpx 0 0;
+}
+
+.comv .mdcover {
+  width: 268rpx;
+  height: 150rpx;
+  border-radius: 6rpx;
+  margin: 28rpx 24rpx 0 0;
+}
+
+.comv .comcv {
+  width: 504rpx;
+  padding-top: 16rpx;
+}
+
+.comv .comcv .comcname {
+  font-size: 30rpx;
+  color: #262626;
+}
+
+.comv .comcv .comctype {
+  height: 34rpx;
+  font-size: 24rpx;
+  color: #999999;
+  height: 62rpx;
+  padding-top: 12rpx;
+}
+
+.comv .comcv .comcstatus {
+  font-size: 24rpx;
+  color: #999999;
+  display: flex;
+  justify-content: space-between;
+}
+
+.comv .comcv .greytxt {
+  color: #999999;
+}
+
+.comv .comcv .orangetxt {
+  color: #FF8501;
+}
+
+.comv .comcv .redtxt {
+  color: #F24540;
+}
+
+.comv .comcstatusr {
+  width: 100rpx;
+  text-align: right;
+}
+
+.comv .comcstatusr .msgicon {
+  width: 40rpx;
+  height: 38rpx;
+}
+
+.comv .comdate {
+  font-size: 24rpx;
+  color: #999999;
+}
+
+.showOnehangTxt {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}

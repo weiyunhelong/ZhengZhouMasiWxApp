@@ -8,7 +8,8 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    dataobj: {}, //数据部分
+    list: [], //内容管理部分
   },
 
   /**
@@ -17,12 +18,12 @@ Page({
   onLoad: function (options) {
 
   },
-  goUserOpt(){//点击用户信息
+  goUserOpt() { //点击用户信息
     wx.navigateTo({
       url: '../info/index',
     })
   },
-  TouGaoOpt(){//投稿
+  TouGaoOpt() { //投稿
     wx.showModal({
       confirmColor: '#262626',
       confirmText: '我知道了',
@@ -31,14 +32,14 @@ Page({
       title: '',
     })
   },
-  goDataOpt(){//数据中心
+  goDataOpt() { //数据中心
     wx.navigateTo({
       url: '../course/data',
     })
   },
   goMenuOpt(e) { //点击菜单
     var that = this;
-    var id =parseInt(e.currentTarget.dataset.id);
+    var id = parseInt(e.currentTarget.dataset.id);
     var url = '';
     switch (id) {
       case 1:
@@ -58,7 +59,7 @@ Page({
       url: url
     })
   },
-  goContentOpt(){//内容管理
+  goContentOpt() { //内容管理
     wx.navigateTo({
       url: '../course/content',
     })
@@ -81,20 +82,31 @@ Page({
       })
     } else {
       that.InitData();
+      that.InitList();
     }
   },
-  InitData(){//获取数据
-    var that=this;
-    var url=requestUrl+"/API/UserCenterManuApi/DataScreening?userid="+getApp().globalData.WxUserId+"&&typeid=1";
-    WxRequest.PostRequest(url,{}).then(res=>{
-      if(res.data.success){
+  InitData() { //获取数据
+    var that = this;
+    var url = requestUrl + "/API/UserCenterManuApi/DataScreening?userid=" + getApp().globalData.WxUserId + "&&typeid=1";
+    WxRequest.PostRequest(url, {}).then(res => {
+      if (res.data.success) {
         that.setData({
-          dataobj:res.data.data
+          dataobj: res.data.data
         })
       }
     })
   },
-
+  InitList() { //获取内容管理
+    var that = this;
+    var url = requestUrl + "/API/UserCenterManuApi/GetManuListByHome?userid=" + getApp().globalData.WxUserId;
+    WxRequest.PostRequest(url, {}).then(res => {
+      if (res.data.success) {
+        that.setData({
+          list: res.data.data.datas
+        })
+      }
+    })
+  },
   /**
    * 生命周期函数--监听页面隐藏
    */

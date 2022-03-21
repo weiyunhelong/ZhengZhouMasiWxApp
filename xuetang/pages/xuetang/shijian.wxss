@@ -2,7 +2,10 @@
 page{
   background-color: #fff;
 }
-
+.bodyv{
+  width: 100vw;
+  height: 100vh;
+}
 .coursev {
   display: flex;
   height: 202rpx;

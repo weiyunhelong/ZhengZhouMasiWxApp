@@ -12,6 +12,55 @@
     },
     "miniprogram": {
       "list": [
+        {
+          "name": "",
+          "pathName": "my/pages/course/index",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "",
+          "pathName": "xuetang/pages/xuetang/index",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "",
+          "pathName": "xuetang/pages/xuetang/shijian",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "",
+          "pathName": "xuetang/pages/xuetang/baogao",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "",
+          "pathName": "xuetang/pages/xuetang/work",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "",
+          "pathName": "xuetang/pages/xuetang/test",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "",
+          "pathName": "xuetang/pages/xuetang/create",
+          "query": "",
+          "scene": null,
+          "launchMode": "default"
+        }
       ]
     }
   }

@@ -8,7 +8,8 @@ Page({
    * 页面的初始数据
    */
   data: {
-    list: []
+    pageindex:1,
+    list: [],
   },
 
   /**
@@ -22,6 +23,13 @@ Page({
       url: '../../../pages/course/detail?id=' + e.currentTarget.dataset.id
     })
   },
+  ShowMoreData(){//加载更多
+    var that=this;
+    that.setData({
+      pageindex:that.data.pageindex+1
+    })
+    that.InitData();
+  },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
@@ -33,7 +41,32 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
+    var that = this;
+    if (getApp().globalData.WxUserId == 0) {
+      wx.navigateTo({
+        url: '../../../wxauth/pages/wxlogin/index',
+      })
+    } else {
+      that.InitData();
+    }
+  },
+  InitData() { //获取我的实践课
+    var that = this;
+    var pageindex=that.data.pageindex;
+    var url = requestUrl + "/API/UserCenterJindeSchool/GetPracticeListWhereUser?page="+pageindex+"&rows=10&userid=" + getApp().globalData.WxUserId;
+    WxRequest.PostRequest(url, {}).then(res => {
+      if (res.data.success) {
+        if(pageindex==1){
+          that.setData({
+            list: res.data.data.datas
+          })
+        }else{
+          that.setData({
+            list:that.data.list.concat(res.data.data.datas) 
+          })
+        }
+      }
+    })
   },
 
   /**

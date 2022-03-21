@@ -62,10 +62,11 @@
 
 <!--内容管理-->
 <view class="titlev" bindtap="goContentOpt">
- <view class="titlel">内容管理</view>
- <view class="titler">更多 ></view>
+  <view class="titlel">内容管理</view>
+  <view class="titler">更多 ></view>
 </view>
 
-<contentcom receiveData="" showType="1"/>
-<contentcom receiveData="" showType="2"/>
-<contentcom receiveData="" showType="3"/>
+<block wx:for="{{list}}" wx:key="item">
+  <contentcom receiveData="{{item}}" showType="1" />
+</block>
+<nodatacom wx:if="{{list.length==0}}"/>

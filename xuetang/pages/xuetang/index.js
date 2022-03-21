@@ -8,7 +8,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    list: []
   },
 
   /**
@@ -66,9 +66,26 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
+    var that = this;
+    if (getApp().globalData.WxUserId == 0) {
+      wx.redirectTo({
+        url: '../../../wxauth/pages/wxlogin/index',
+      })
+    } else {
+      that.InitData();
+    }
   },
-
+  InitData() { //获取我的实践课
+    var that = this;
+    var url = requestUrl + "/API/UserCenterJindeSchool/GetPracticeListWhereUser?page=1&rows=10&userid=" + getApp().globalData.WxUserId;
+    WxRequest.PostRequest(url, {}).then(res => {
+      if (res.data.success) {
+        that.setData({
+          list: res.data.data.datas
+        })
+      }
+    })
+  },
   /**
    * 生命周期函数--监听页面隐藏
    */

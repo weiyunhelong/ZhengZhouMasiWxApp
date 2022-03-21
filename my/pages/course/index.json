@@ -4,6 +4,7 @@
   "navigationBarTextStyle": "black",
   "usingComponents": {
     "loadding": "../../../components/loadding/index",
-    "contentcom": "../../components/content/index"
+    "contentcom": "../../components/contentcom/index",
+    "nodatacom": "../../../components/nodata/index"
   }
 }
