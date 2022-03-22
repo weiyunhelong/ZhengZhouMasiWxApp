@@ -30,9 +30,16 @@ Page({
         // tempFilePath可以作为img标签的src属性显示图片 
         OssTool.uploadImgFile(res.tempFilePaths[0], 'avatarUrl/' + getApp().globalData.openId + '/',
           function (result) {
-
-            that.setData({
-              tx: result
+            var userInfo=that.data.userInfo;
+            var url=requestUrl+"/API/UserCenterApi/UpdateUserAvatar?userid="+getApp().globalData.WxUserId+"&useravatar="+result;
+            WxRequest.PostRequest(url,{}).then(res=>{
+              if(res.data.success){
+                userInfo.Avatar=result;
+                getApp().globalData.userInfo=userInfo;
+                that.setData({
+                  userInfo:userInfo
+                })
+              }
             })
           })
       }
@@ -41,7 +48,13 @@ Page({
   goNickName(){
     var that=this;
     wx.navigateTo({
-      url: '../info/nickname?name='+that.data.userInfo.NickName,
+      url: '../info/nickname?name='+that.data.userInfo.NickName+"&type=1",
+    })
+  },
+  goName(){
+    var that=this;
+    wx.navigateTo({
+      url: '../info/nickname?name='+that.data.userInfo.ReadName+"&type=2",
     })
   },
   goDescOpt(){
@@ -53,6 +66,22 @@ Page({
     var that=this;
     wx.showActionSheet({
       itemList: ["保密","男","女"],
+      success:function(res){
+        var index=res.tapIndex;
+        var url=requestUrl+"/API/UserCenterApi/UpdateUserSex?userid="+getApp().globalData.WxUserId+"&usersex="+index;
+        WxRequest.PostRequest(url,{}).then(res=>{
+          if(res.data.success){
+            var userInfo=that.data.userInfo;
+            userInfo.Sex=index;
+            getApp().globalData.userInfo=userInfo;
+            that.setData({
+              userInfo:userInfo
+            })
+          }else{
+            WxRequest.ShowAlert(res.data.msg);
+          }
+        })
+      }
     })
   },
   goPwdOpt(){

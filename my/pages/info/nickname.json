@@ -1,7 +1,6 @@
 {
   "navigationBarBackgroundColor": "#fff",
   "navigationBarTextStyle": "black",
-  "navigationBarTitleText": "设置昵称",
   "usingComponents": {
     "loadding": "../../../components/loadding/index"
   }

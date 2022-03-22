@@ -18,8 +18,18 @@ Page({
   onLoad: function (options) {
     var that = this;
     that.setData({
-      val: options.name
+      val: options.name,
+      type:options.type
     })
+    if(options.type==1){
+      wx.setNavigationBarTitle({
+        title: '设置昵称',
+      })
+    }else{
+      wx.setNavigationBarTitle({
+        title: '设置姓名',
+      })
+    }
   },
   getval(e) {
     this.setData({
@@ -30,10 +40,16 @@ Page({
     var that = this;
     var val = that.data.val;
     if (val == "") {
-      WxRequest.ShowAlert("请输入您的昵称");
+      WxRequest.ShowAlert("请输入");
     } else {
       //TODO 请求接口
-      var url = requestUrl + "/API/LoginApi/UpdateUserNickName?UserID=" + getApp().globalData.WxUserId + "&nickName=" + val;
+      var url = requestUrl;
+      if(that.data.type==1){
+        url += "/API/LoginApi/UpdateUserNickName?UserID=" + getApp().globalData.WxUserId + "&nickName=" + val;
+      }else{
+        url+= "/API/UserCenterApi/UpdateUserName?UserID=" + getApp().globalData.WxUserId + "&username=" + val;
+      }
+
       WxRequest.PostRequest(url, {}).then(res => {
         if (res.data.success) {
           getApp().globalData.userInfo.NickName = val;

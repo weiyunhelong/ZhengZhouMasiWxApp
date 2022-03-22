@@ -25,7 +25,7 @@
 </view>
 
 <view class="hangv">
-  <view class="hangc">
+  <view class="hangc" bindtap="goName">
     <view class="hangtag">姓名</view>
     <view class="hangval">
       <view class="hangtxt">{{userInfo.ReadName}}</view>

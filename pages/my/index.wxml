@@ -26,7 +26,7 @@
         <image src="{{userInfo.Avatar}}" class="tximg"></image>
         <view class="userinfo">
           <view class="username">{{userInfo.ReadName}}</view>
-          <view class="userdesc showOnehangTxt">个人资料</view>
+          <view class="userdesc showOnehangTxt">{{userInfo.Asign}}</view>
         </view>
       </view>
       <view class="userinfov" bindtap="goAccount">个人资料</view>
