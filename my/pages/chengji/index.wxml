@@ -2,8 +2,9 @@
 <view class="topv">
   <view class="userv">
     <view class="usercv">
-      <image class="usertx" src="/resources/comman/avatarUrl.jpg"></image>
-      <view class="usertxt">已获得1枚勋章</view>
+      <image class="usertx" src="{{userInfo.Avatar}}"></image>
+      <view class="usertxt" wx:if="{{1==1}}">已获得1枚勋章</view>
+      <view class="usertxt" wx:else>暂未获取勋章</view>
     </view>
   </view>
 </view>

@@ -2,10 +2,10 @@
 <!--用户信息-->
 <view class="userinfov">
   <view class="userv" bindtap="goUserOpt">
-    <image src="/resources/comman/avatarUrl.jpg" class="avatarUrl"></image>
+    <image src="{{userInfo.Avatar}}" class="avatarUrl"></image>
     <view class="usercv">
-      <view class="username">李云飞</view>
-      <view class="userdesc">未设置签名</view>
+      <view class="username">{{userInfo.ReadName}}</view>
+      <view class="userdesc">{{userInfo.Asign==null||userInfo.Asign==''?'未设置签名':userInfo.Asign}}</view>
     </view>
   </view>
   <view class="tougaobtn" bindtap="TouGaoOpt">投稿</view>

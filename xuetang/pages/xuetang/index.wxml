@@ -1,10 +1,10 @@
 <!--xuetang/pages/xuetang/index.wxml-->
 <view class="bodyv">
   <view class="userv" bindtap="goUserOpt">
-    <image src="/resources/comman/avatarUrl.jpg" class="avatar"></image>
+    <image src="{{userInfo.Avatar}}" class="avatar"></image>
     <view class="userc">
-      <view class="nickname">貌似你很厉害</view>
-      <view class="userdesc">未设置签名</view>
+      <view class="nickname">{{userInfo.ReadName}}</view>
+      <view class="userdesc">{{userInfo.Asign==null||userInfo.Asign==''?'未设置签名':userInfo.Asign}}</view>
     </view>
   </view>
   <view class="menuv">

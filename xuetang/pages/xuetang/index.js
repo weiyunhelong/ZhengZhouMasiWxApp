@@ -85,7 +85,8 @@ Page({
     WxRequest.PostRequest(url, {}).then(res => {
       if (res.data.success) {
         that.setData({
-          list: res.data.data.datas
+          list: res.data.data.datas,
+          userInfo:getApp().globalData.userInfo,
         })
       }
     })

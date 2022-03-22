@@ -8,7 +8,8 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    userInfo:{},
+    dataobj:[],
   },
 
   /**
@@ -29,9 +30,27 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
+    var that=this;
+    if (getApp().globalData.WxUserId == 0) {
+      getApp().ChargeLogin().then(res=>{
+        if(getApp().globalData.WxUserId == 0){
+          wx.navigateTo({
+            url: '../../wxauth/pages/wxlogin/index',
+          })
+        }
+      })
+    } else {
+      that.InitData();
+    }
   },
+  InitData(){//获取数据
+    var that=this;
 
+    //TODO 请求接口
+    that.setData({
+      userInfo:getApp().globalData.userInfo
+    })
+  },
   /**
    * 生命周期函数--监听页面隐藏
    */
