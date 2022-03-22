@@ -8,6 +8,7 @@ Page({
    * 页面的初始数据
    */
   data: {
+    showloadingMask:true,
     chktab: 1, //1视频 0专栏
     list: [],
     pageindex: 1,
@@ -112,6 +113,11 @@ Page({
           })
         }
       }
+      setTimeout(() => {
+        that.setData({
+          showloadingMask:false
+        })
+      }, 1000);
     })
   },
   /**

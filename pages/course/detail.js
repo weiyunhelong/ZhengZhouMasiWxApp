@@ -8,6 +8,7 @@ Page({
    * 页面的初始数据
    */
   data: {
+    showloadingMask:true,
     id: 0,
     dataobj: {},
 
@@ -218,6 +219,11 @@ Page({
           dataobj: res.data.data
         })
       }
+      setTimeout(() => {
+        that.setData({
+          showloadingMask:false
+        })
+      }, 1000);
     })
   },
   InitFangAn() { //获取教学方案
@@ -262,6 +268,7 @@ Page({
           comments: res.data.data.datas,
         })
       }
+     
     })
 
   },

@@ -63,3 +63,6 @@
 
   <view class="tabbarv"></view>
 </scroll-view>
+
+<!--loadding 加载-->
+<loadding showloadingMask="{{showloadingMask}}"/>

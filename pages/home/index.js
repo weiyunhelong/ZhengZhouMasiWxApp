@@ -8,6 +8,7 @@ Page({
    * 页面的初始数据
    */
   data: {
+    showloadingMask:true,
     userInfo:{},//用户信息
     dataobj:{},//首页数据
   },
@@ -155,8 +156,12 @@ Page({
           dataobj: res.data.data,
           userInfo:getApp().globalData.userInfo
         })
-        console.error('userInfo',getApp().globalData.userInfo);
       }
+      setTimeout(() => {
+        that.setData({
+          showloadingMask:false
+        })
+      }, 1000);
     })
   },
   /**

@@ -8,6 +8,7 @@ Page({
    * 页面的初始数据
    */
   data: {
+    showloadingMask:true,
     tabs: [],
     pageindex: 1,
   },
@@ -85,6 +86,11 @@ Page({
           that.InitData(tabs[i].Key, i);
         }
       }
+      setTimeout(() => {
+        that.setData({
+          showloadingMask:false
+        })
+      }, 1000);
     })
   },
   InitData(id, i) { //获取分类下的列表数据

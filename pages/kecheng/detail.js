@@ -11,6 +11,7 @@ Page({
    * 页面的初始数据
    */
   data: {
+    showloadingMask:true,
     chktab: 1, //1：文章赏析 2：学习交流
     IsPlay: false, //是否在播放状态
 
@@ -328,6 +329,11 @@ Page({
           })
         }, 2000);
       }
+      setTimeout(() => {
+        that.setData({
+          showloadingMask:false
+        })
+      }, 1000);
     })
   },
   /**

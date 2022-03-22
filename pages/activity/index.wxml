@@ -85,3 +85,6 @@
     <view style="width: 100%;height: 10rpx;"></view>
   </scroll-view>
 </view>
+
+<!--loadding 加载-->
+<loadding showloadingMask="{{showloadingMask}}"/>

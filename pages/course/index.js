@@ -8,6 +8,7 @@ Page({
    * 页面的初始数据
    */
   data: {
+    showloadingMask:true,
     chktab: 1, //1:我的实践课 2:更多课程
     pageindex: 1,
     list: [],
@@ -113,6 +114,11 @@ Page({
           })
         }
       }
+      setTimeout(() => {
+        that.setData({
+          showloadingMask:false
+        })
+      }, 1000);
     })
   },
   /**

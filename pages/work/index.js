@@ -9,7 +9,8 @@ Page({
    */
   data: {
     pageindex:1,
-    list:[]
+    list:[],
+    showloadingMask:true,
   },
 
   /**
@@ -67,6 +68,12 @@ Page({
         })
        }
      }
+
+     setTimeout(() => {
+       that.setData({
+        showloadingMask:false
+       })
+     }, 1000);
    })
   },
   /**

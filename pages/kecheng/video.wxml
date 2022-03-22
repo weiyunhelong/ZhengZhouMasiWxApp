@@ -124,3 +124,6 @@
   </block>
 
 </scroll-view>
+
+<!--loadding 加载-->
+<loadding showloadingMask="{{showloadingMask}}"/>

@@ -9,7 +9,7 @@ Page({
    */
   data: {
     chktab: 1, //1：文章赏析 2：学习交流
-
+    showloadingMask:true,
     id: 0,
     dataobj: {},
     commentId: 0, //
@@ -249,6 +249,12 @@ Page({
           })
         }, 2000);
       }
+
+      setTimeout(() => {
+        that.setData({
+          showloadingMask:false
+        })
+      }, 1000);
     })
   },
   /**

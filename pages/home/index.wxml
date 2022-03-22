@@ -160,3 +160,6 @@
   <view class="tabbarcvc"></view>
 
 </scroll-view>
+
+<!--loadding 加载-->
+<loadding showloadingMask="{{showloadingMask}}"/>

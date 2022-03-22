@@ -8,6 +8,7 @@ Page({
    * 页面的初始数据
    */
   data: {
+    showloadingMask:true,
     list: [],
     pageindex: 1,
   },
@@ -80,6 +81,11 @@ Page({
           })
         }
       }
+      setTimeout(() => {
+        that.setData({
+          showloadingMask:false
+        })
+      }, 1000);
     })
   },
   ShowMoreData() { //加载下一页

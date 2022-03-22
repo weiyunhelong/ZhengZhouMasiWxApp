@@ -38,3 +38,6 @@
     <image src="/resources/home/rightbtm.png" class="icon"></image>
   </view>
 </scroll-view>
+
+<!--loadding 加载-->
+<loadding showloadingMask="{{showloadingMask}}"/>

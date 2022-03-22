@@ -11,6 +11,7 @@ Page({
    * 页面的初始数据
    */
   data: {
+    showloadingMask:true,
     IsPlay: false, //判断是否在播放
     chktab: 1, //1：介绍 2：学习交流
     id: 0,
@@ -313,6 +314,11 @@ Page({
           })
         }, 2000);
       }
+      setTimeout(() => {
+        that.setData({
+          showloadingMask:false
+        })
+      }, 1000);
     })
   },
   /**

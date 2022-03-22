@@ -37,6 +37,13 @@
           "name": "",
           "pathName": "my/pages/course/index",
           "query": "",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "",
+          "pathName": "pages/shidu/chapter",
+          "query": "id=144",
           "scene": null,
           "launchMode": "default"
         }

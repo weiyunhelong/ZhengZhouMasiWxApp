@@ -70,3 +70,6 @@
     </block>
   </scroll-view>
 </view>
+
+<!--loadding 加载-->
+<loadding showloadingMask="{{showloadingMask}}"/>

@@ -316,7 +316,7 @@ page {
 .maskv {
   width: 100vw;
   height: calc(100vh - 220rpx);
-  position: absolute;
+  position: fixed;
   z-index: 999;
   top: 220rpx;
   left: 0;

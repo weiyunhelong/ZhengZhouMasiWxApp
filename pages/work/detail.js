@@ -11,6 +11,7 @@ Page({
     id: 0,
     dataobj: {},
     imgh: 0,
+    showloadingMask:true,
   },
 
   /**
@@ -79,6 +80,11 @@ Page({
           dataobj: res.data.data
         })
       }
+      setTimeout(() => {
+        that.setData({
+         showloadingMask:false
+        })
+      }, 1000);
     })
   },
   /**

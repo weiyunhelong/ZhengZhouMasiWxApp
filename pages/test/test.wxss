@@ -181,7 +181,7 @@
   height: 100vh;
   position: fixed;
   z-index: 999;
-  top: 0rpx;
+  bottom: 0rpx;
   left: 0;
   background-color: rgba(0, 0, 0, 0.4);
 }

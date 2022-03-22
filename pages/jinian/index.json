@@ -1,8 +1,0 @@
-{
-  "navigationBarBackgroundColor": "#124361",
-  "navigationBarTextStyle": "white",
-  "navigationBarTitleText": "纪念地",
-  "usingComponents": {
-    "loadding": "../../components/loadding/index"
-  }
-}

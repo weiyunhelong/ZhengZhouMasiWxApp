@@ -8,6 +8,7 @@ Page({
    * 页面的初始数据
    */
   data: {
+    showloadingMask:true,
     id: 0,
     taskid: -1,
     dataobj: {}, //当前的任务
@@ -97,6 +98,11 @@ Page({
           that.InitObjData();
         }
       }
+      setTimeout(() => {
+        that.setData({
+          showloadingMask:false
+        })
+      }, 1000);
     })
   },
   InitObjData() { //获取任务详情

@@ -8,6 +8,7 @@ Page({
    * 页面的初始数据
    */
   data: {
+    showloadingMask:true,
     list: [],
     urllist: [],
   },
@@ -82,6 +83,11 @@ Page({
           urllist: res.data.data.datas
         })
       }
+      setTimeout(() => {
+        that.setData({
+          showloadingMask:false
+        })
+      }, 1000);
     })
   },
   /**

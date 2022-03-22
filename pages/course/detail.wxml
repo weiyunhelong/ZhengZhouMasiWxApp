@@ -297,3 +297,6 @@
     </view>
   </block>
 </view>
+
+<!--loadding 加载-->
+<loadding showloadingMask="{{showloadingMask}}"/>

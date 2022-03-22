@@ -8,6 +8,7 @@ Page({
    * 页面的初始数据
    */
   data: {
+    showloadingMask:true,
     chktab: 1, //1:声音 2:简介 3:评论
     id: 0,
     dataobj: {},
@@ -186,6 +187,11 @@ Page({
           dataobj: res.data.data
         })
       }
+      setTimeout(() => {
+        that.setData({
+          showloadingMask:false
+        })
+      }, 1000);
     })
   },
 

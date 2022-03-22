@@ -269,9 +269,9 @@ page {
 .maskv {
   width: 100vw;
   height:100vh;
-  position: absolute;
+  position: fixed;
   z-index: 999;
-  top: 0rpx;
+  bottom: 0rpx;
   left: 0rpx;
   background-color: #fff;
   border-top-left-radius: 20rpx;

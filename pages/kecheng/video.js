@@ -8,6 +8,7 @@ Page({
    * 页面的初始数据
    */
   data: {
+    showloadingMask:true,
     chktab: 1, //1：文章赏析 2：学习交流
     id: 0,
     dataobj: {},
@@ -297,6 +298,11 @@ Page({
           })
         }, 2000);
       }
+      setTimeout(() => {
+        that.setData({
+          showloadingMask:false
+        })
+      }, 1000);
     })
   },
   /**

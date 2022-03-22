@@ -35,7 +35,6 @@
     "pages/shidu/list",
     "pages/shidu/chapter",
     "pages/shidu/detail",
-    "pages/jinian/index",
     "pages/xinzhongguo/index",
     "pages/webview/index", 
     "pages/work/index",

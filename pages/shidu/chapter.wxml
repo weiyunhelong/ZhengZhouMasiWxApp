@@ -117,6 +117,7 @@
         </view>
       </view>
     </block>
+    <nodatacom wx:if="{{dataobj.CommentList.length==0}}"/>
     <!--底部按钮部分-->
     <view class="btmvv"></view>
     <view class="btmv">
@@ -131,3 +132,6 @@
   </block>
 
 </scroll-view>
+
+<!--loadding 加载-->
+<loadding showloadingMask="{{showloadingMask}}"/>
