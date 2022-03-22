@@ -8,8 +8,8 @@ Page({
    * 页面的初始数据
    */
   data: {
-    id: 0,//课程id
-    activityid:-1,//活动id
+    id: 0, //课程id
+    activityid: -1, //活动id
     dataobj: {},
     chkTab: 0, //当前的任务
   },
@@ -47,22 +47,22 @@ Page({
       url: '../activity/upload?id=' + that.data.id + "&taskid=" + that.data.activityid,
     })
   },
-  CancelBookOpt(){//取消报名
+  CancelBookOpt() { //取消报名
     var that = this;
-    var url = requestUrl + "/API/PracticalActivity/CancelApply?activityID=" + that.data.activityid+"&userID="+getApp().globalData.WxUserId;
+    var url = requestUrl + "/API/PracticalActivity/CancelApply?activityID=" + that.data.activityid + "&userID=" + getApp().globalData.WxUserId;
     WxRequest.PostRequest(url, {}).then(res => {
       if (res.data.success) {
-        var dataobj=that.data.dataobj;
-        dataobj.IsApply=false;
+        var dataobj = that.data.dataobj;
+        dataobj.IsApply = false;
         that.setData({
           dataobj: dataobj
         })
-      }else{
+      } else {
         WxRequest.ShowAlert(res.data.msg);
       }
     })
   },
-  showModalOpt(){//显示全部活动
+  showModalOpt() { //显示全部活动
     var that = this;
 
     that.setData({
@@ -70,7 +70,7 @@ Page({
       showMaskAni: true,
     })
   },
-  hideMaskOpt(){//收起全部活动
+  hideMaskOpt() { //收起全部活动
     var that = this;
     that.setData({
       showMaskAni: false
@@ -81,22 +81,22 @@ Page({
       })
     }, 2000);
   },
-  NextOpt(){//下一个活动
+  NextOpt() { //下一个活动
     var that = this;
-    var dataobj=that.data.dataobj;
-    if(dataobj.NextID==0){
+    var dataobj = that.data.dataobj;
+    if (dataobj.NextID == 0) {
       WxRequest.ShowAlert("已是最后一个");
-    }else{
+    } else {
       that.setData({
-        activityid:dataobj.NextID
+        activityid: dataobj.NextID
       })
       that.InitObjData();
     }
   },
-  checkhuodong(e){//切换活动
+  checkhuodong(e) { //切换活动
     var that = this;
     that.setData({
-      activityid:e.currentTarget.dataset.id
+      activityid: e.currentTarget.dataset.id
     })
     that.InitObjData();
     that.hideMaskOpt();
@@ -114,8 +114,12 @@ Page({
   onShow: function () {
     var that = this;
     if (getApp().globalData.WxUserId == 0) {
-      wx.redirectTo({
-        url: '../../wxauth/pages/wxlogin/index',
+      getApp().ChargeLogin().then(res => {
+        if (getApp().globalData.WxUserId == 0) {
+          wx.navigateTo({
+            url: '../../wxauth/pages/wxlogin/index',
+          })
+        }
       })
     } else {
       //获取全部活动
@@ -129,17 +133,17 @@ Page({
       if (res.data.success) {
         that.setData({
           list: res.data.data.datas,
-          activityid:res.data.data.datas.length==0?-1:res.data.data.datas[0].ID
+          activityid: res.data.data.datas.length == 0 ? -1 : res.data.data.datas[0].ID
         })
-        if(that.data.activityid!=-1){
+        if (that.data.activityid != -1) {
           that.InitObjData();
-        }        
+        }
       }
     })
   },
-  InitObjData(){//获取活动详情
+  InitObjData() { //获取活动详情
     var that = this;
-    var url = requestUrl + "/API/PracticalActivity/GetPracticalActivityDetail?id=" + that.data.activityid+"&userID="+getApp().globalData.WxUserId;
+    var url = requestUrl + "/API/PracticalActivity/GetPracticalActivityDetail?id=" + that.data.activityid + "&userID=" + getApp().globalData.WxUserId;
     WxRequest.PostRequest(url, {}).then(res => {
       if (res.data.success) {
         that.setData({

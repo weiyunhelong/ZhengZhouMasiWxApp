@@ -30,7 +30,7 @@ Page({
     })
   },
   goDetail(e) {
-    var list=this.data.list;
+    var list = this.data.list;
     var index = e.currentTarget.dataset.index;
     WxRequest.ViewRedGenePage(list[index].ID);
     if (list[index].Address != "") {
@@ -52,8 +52,12 @@ Page({
   onShow: function () {
     var that = this;
     if (getApp().globalData.WxUserId == 0) {
-      wx.redirectTo({
-        url: '../../wxauth/pages/wxlogin/index',
+      getApp().ChargeLogin().then(res => {
+        if (getApp().globalData.WxUserId == 0) {
+          wx.navigateTo({
+            url: '../../wxauth/pages/wxlogin/index',
+          })
+        }
       })
     } else {
       that.InitData();
@@ -63,11 +67,11 @@ Page({
     var that = this;
     var url = requestUrl + "/API/RedGeneApi/GetPanoramList?type=11&rows=100&page=1";
     WxRequest.PostRequest(url, {}).then(res => {
-     if(res.data.success){
-       that.setData({
-         list:res.data.data.datas
-       })
-     }
+      if (res.data.success) {
+        that.setData({
+          list: res.data.data.datas
+        })
+      }
     })
   },
   /**

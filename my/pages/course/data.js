@@ -170,7 +170,7 @@ Page({
     var that = this;
     var chktab = that.data.chktab, //选中的tab
       chkday = that.data.chkday; //选择的天
-    var url = requestUrl + "/API/UserCenterManuApi/DataWhereDate?userid=" + getApp().globalData.WxUserId + "&typeid=" + chktab + "&day=" +(chkday==0?30:(chkday==1?14:7));
+    var url = requestUrl + "/API/UserCenterManuApi/DataWhereDate?userid=" + getApp().globalData.WxUserId + "&typeid=" + chktab + "&day=" + (chkday == 0 ? 30 : (chkday == 1 ? 14 : 7));
     WxRequest.PostRequest(url, {}).then(res => {
       if (res.data.success) {
         var dataobj = res.data.data;
@@ -196,10 +196,14 @@ Page({
    */
   onShow: function () {
     var that = this;
-    
+
     if (getApp().globalData.WxUserId == 0) {
-      wx.reLaunch({
-        url: '../../../wxauth/pages/wxlogin/index',
+      getApp().ChargeLogin().then(res => {
+        if (getApp().globalData.WxUserId == 0) {
+          wx.navigateTo({
+            url: '../../../wxauth/pages/wxlogin/index',
+          })
+        }
       })
     } else {
       //获取数据总揽

@@ -107,14 +107,14 @@ Page({
     var that = this;
     var dataobj = that.data.dataobj;
     var url = requestUrl + "/API/ReadRedTimeApi/SavePlayhistory";
-    var params={
-      userId:getApp().globalData.WxUserId,
-      RID:dataobj.ID,
-      TypeID:0,
-      Level:1,
-      Progress:progress,
-      Title:dataobj.Title,
-      Thumbnail:dataobj.Thumbnail
+    var params = {
+      userId: getApp().globalData.WxUserId,
+      RID: dataobj.ID,
+      TypeID: 0,
+      Level: 1,
+      Progress: progress,
+      Title: dataobj.Title,
+      Thumbnail: dataobj.Thumbnail
     };
     WxRequest.PostRequest(url, params).then(res => {});
 
@@ -176,8 +176,8 @@ Page({
   },
   PostComment(comment) { //提交评论
     var that = this;
-    var dataobj=that.data.dataobj;
-    var url = requestUrl + "/API/ReadRedTimeApi/PostManuComment?userId=" + getApp().globalData.WxUserId + "&id=" + that.data.id + "&contents=" + comment+"&title="+dataobj.Title+"&thumbnail="+dataobj.Thumbnail;
+    var dataobj = that.data.dataobj;
+    var url = requestUrl + "/API/ReadRedTimeApi/PostManuComment?userId=" + getApp().globalData.WxUserId + "&id=" + that.data.id + "&contents=" + comment + "&title=" + dataobj.Title + "&thumbnail=" + dataobj.Thumbnail;
 
     WxRequest.PostRequest(url, {}).then(res => {
 
@@ -199,7 +199,7 @@ Page({
   },
   PostFeedback(comment, commentId) { //提交回复评论
     var that = this;
-    var dataobj=that.data.dataobj;
+    var dataobj = that.data.dataobj;
     var url = requestUrl + "/API/ReadRedTimeApi/ReplyComment?userId=" + getApp().globalData.WxUserId + "&id=" + that.data.id + "&contents=" + comment + "&title=" + dataobj.Title + "&thumbnail=" + dataobj.Thumbnail + "&commentId=" + commentId + "&level=1"
 
     WxRequest.PostRequest(url, {}).then(res => {
@@ -252,7 +252,7 @@ Page({
         }
       })
     } else {
-      var url = requestUrl + "/API/ReadRedTimeApi/CancelLikeComment?userId=" + getApp().globalData.WxUserId + "&commentId=" + commId+"&level=1";
+      var url = requestUrl + "/API/ReadRedTimeApi/CancelLikeComment?userId=" + getApp().globalData.WxUserId + "&commentId=" + commId + "&level=1";
       WxRequest.PostRequest(url, {}).then(res => {
         if (res.data.success) {
           dataobj.CommentList[index].IsLike = false;
@@ -282,8 +282,12 @@ Page({
   onShow: function () {
     var that = this;
     if (getApp().globalData.WxUserId == 0) {
-      wx.reLaunch({
-        url: '../../wxauth/pages/wxlogin/index',
+      getApp().ChargeLogin().then(res => {
+        if (getApp().globalData.WxUserId == 0) {
+          wx.navigateTo({
+            url: '../../wxauth/pages/wxlogin/index',
+          })
+        }
       })
     } else {
       //获取数据

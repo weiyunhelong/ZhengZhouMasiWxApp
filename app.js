@@ -8,11 +8,143 @@ App({
   },
   onShow() {
     var that = this;
+    
     //下载字体文件
     that.DownFontFile();
+
     //更新微信小程序代码
     that.UpdateWxCode();
 
+  },
+  ChargeLogin(){//判断用户是否登录
+    var that = this;
+
+    return new Promise((resolve, reject) => {
+
+      wx.getStorage({
+        key: "LoginObj",
+        success: function (res) {
+
+          if (res.data.indexOf('&type=3') > -1) { //微信快捷登录
+            wx.login({
+              success: res => {
+
+                // 发送 res.code 到后台换取 openId, sessionKey, unionId
+                if (res.code) {
+
+                  //发送res.code 到后台
+                  wx.request({
+                    url: that.globalData.requestUrl + '/SmallProgramInfo/LoginByCode?code=' + res.code,
+                    method: 'POST',
+                    header: {
+                      'content-type': 'application/x-www-form-urlencoded;charset=utf-8',
+                    },
+                    success: function (ress) {
+
+                      if (ress.data.success) {
+
+                        //成功返回数据后，将openid值存储到localStorage中
+                        that.globalData.userInfo = ress.data.data;
+                        that.globalData.openId = ress.data.data.openid;
+                        that.globalData.WxUserId = ress.data.data.userid;
+                        
+                        var resArg = ress.data.data.userid;
+                        resolve(resArg);
+
+                      } else {
+                        reject();
+                      }
+
+                    },
+                    fail() {
+                      reject();
+                    }
+                  })
+                }
+              },
+              fail: res => {
+                reject();
+              }
+            })
+          } else { //账户密码登录
+
+            var userId = res.data.replace('&type=1', '').replace('&type=2', '').replace('userid=', '');
+            wx.request({
+              url: that.globalData.requestUrl + '/UserInfoApi/GetUserInfoHome?userId=' + userId,
+              method: 'POST',
+              header: {
+                'content-type': 'application/x-www-form-urlencoded;charset=utf-8',
+              },
+              success: function (ress) {
+
+                if (ress.data.success) {
+
+                  //成功返回数据后，将openid值存储到localStorage中
+                  that.globalData.userInfo = ress.data.data;
+                  that.globalData.openId = ress.data.data.openid;
+                  that.globalData.WxUserId = ress.data.data.userid;
+
+                  var resArg = ress.data.data.userid;
+                  resolve(resArg);
+
+                } else {
+                  reject();
+                }
+
+              },
+              fail() {
+                reject();
+              }
+            })
+          }
+        },
+        fail: function () {
+          wx.login({
+            success: res => {
+
+              // 发送 res.code 到后台换取 openId, sessionKey, unionId
+              if (res.code) {
+
+                //发送res.code 到后台
+                wx.request({
+                  url: that.globalData.requestUrl + '/SmallProgramInfo/LoginByCode?code=' + res.code,
+                  method: 'POST',
+                  header: {
+                    'content-type': 'application/x-www-form-urlencoded;charset=utf-8',
+                  },
+                  success: function (ress) {
+
+                    if (ress.data.success) {
+
+                      //成功返回数据后，将openid值存储到localStorage中
+                      that.globalData.userInfo = ress.data.data;
+                      that.globalData.openId = ress.data.data.openid;
+                      that.globalData.WxUserId = ress.data.data.userId==undefined?0:ress.data.data.userId;
+                      var resArg = ress.data.data.openid;
+                      resolve(resArg);
+
+                    } else {
+                      that.globalData.WxUserId=0;
+                      resolve(0);
+                    }
+
+                  },
+                  fail() {
+                    that.globalData.WxUserId=0;
+                    resolve(0);
+                  }
+                })
+              }
+            },
+            fail: res => {
+              that.globalData.WxUserId=0;
+              resolve(0);
+            }
+          })
+        }
+      })
+
+    })
   },
   DownFontFile() { //下载字体
    
@@ -94,7 +226,7 @@ App({
     userInfo: null, //用户信息
     openId: "", //openid
     userType: 1, //1：学生 2：教师
-    WxUserId:204,//userId204
+    WxUserId:0,//userId204
     requestUrl: "https://edu.vrkejiao.com", //接口地址
     tabbar: [{
         pagePath: "pages/home/index",

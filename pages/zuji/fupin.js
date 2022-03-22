@@ -42,7 +42,7 @@ Page({
   goDetail(e) { //点击到详情
     var urls = this.data.urllist;
     var index = e.currentTarget.dataset.index;
-    var url = urls[index].Address==undefined?'':urls[index].Address;
+    var url = urls[index].Address == undefined ? '' : urls[index].Address;
     WxRequest.ViewRedGenePage(list[index].ID);
     if (url != "") {
       wx.navigateTo({
@@ -63,8 +63,12 @@ Page({
   onShow: function () {
     var that = this;
     if (getApp().globalData.WxUserId == 0) {
-      wx.redirectTo({
-        url: '../../wxauth/pages/wxlogin/index',
+      getApp().ChargeLogin().then(res => {
+        if (getApp().globalData.WxUserId == 0) {
+          wx.navigateTo({
+            url: '../../wxauth/pages/wxlogin/index',
+          })
+        }
       })
     } else {
       that.InitData();

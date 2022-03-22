@@ -20,19 +20,19 @@ Page({
   onLoad: function (options) {
 
   },
-  tapTab(e) {//切换tab
+  tapTab(e) { //切换tab
     var that = this;
     that.setData({
       chktab: e.currentTarget.dataset.tab,
-      pageindex:1,
-      list:[]
+      pageindex: 1,
+      list: []
     })
     that.InitData();
   },
-  ShowMore(){//加载更多
+  ShowMore() { //加载更多
     var that = this;
     that.setData({
-      pageindex:1+that.data.pageindex
+      pageindex: 1 + that.data.pageindex
     })
     that.InitData();
   },
@@ -49,8 +49,12 @@ Page({
   onShow: function () {
     var that = this;
     if (getApp().globalData.WxUserId == 0) {
-      wx.reLaunch({
-        url: '../../../wxauth/pages/wxlogin/index',
+      getApp().ChargeLogin().then(res => {
+        if (getApp().globalData.WxUserId == 0) {
+          wx.navigateTo({
+            url: '../../../wxauth/pages/wxlogin/index',
+          })
+        }
       })
     } else {
       that.InitData();
@@ -58,7 +62,7 @@ Page({
   },
   InitData() { //获取数据
     var that = this;
-    var chktab =parseInt(that.data.chktab); //1浏览我的 2评论我的 3收到的赞 4分享我的 5收藏我的
+    var chktab = parseInt(that.data.chktab); //1浏览我的 2评论我的 3收到的赞 4分享我的 5收藏我的
     var pageindex = that.data.pageindex;
     var pagesize = that.data.pagesize;
 
@@ -82,14 +86,14 @@ Page({
         break;
     }
     WxRequest.PostRequest(url, {}).then(res => {
-      if(res.data.success){
-        if(pageindex==1){
+      if (res.data.success) {
+        if (pageindex == 1) {
           that.setData({
-            list:res.data.data.datas
+            list: res.data.data.datas
           })
-        }else{
+        } else {
           that.setData({
-            list:that.data.list.concat(res.data.data.datas) 
+            list: that.data.list.concat(res.data.data.datas)
           })
         }
       }

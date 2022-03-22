@@ -43,7 +43,7 @@ Page({
   onShow: function () {
     var that = this;
     if (getApp().globalData.WxUserId == 0) {
-      wx.reLaunch({
+      wx.navigateTo({
         url: '../../../wxauth/pages/wxlogin/index',
       })
     } else {

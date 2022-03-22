@@ -57,7 +57,7 @@ Page({
 
         if (res.data.success) {
           dataobj.IsLike = false;
-          dataobj.LikesNum = dataobj.LikesNum-1;
+          dataobj.LikesNum = dataobj.LikesNum - 1;
 
           that.setData({
             dataobj: dataobj
@@ -76,7 +76,7 @@ Page({
       WxRequest.PostRequest(url, {}).then(res => {
         if (res.data.success) {
           dataobj.IsLike = true;
-          dataobj.LikesNum = dataobj.LikesNum+1;
+          dataobj.LikesNum = dataobj.LikesNum + 1;
 
           that.setData({
             dataobj: dataobj
@@ -99,7 +99,7 @@ Page({
       WxRequest.PostRequest(url, {}).then(res => {
         if (res.data.success) {
           dataobj.IsCollect = false;
-          dataobj.CollectionNum = dataobj.CollectionNum-1;
+          dataobj.CollectionNum = dataobj.CollectionNum - 1;
           that.setData({
             dataobj: dataobj
           })
@@ -115,7 +115,7 @@ Page({
       WxRequest.PostRequest(url, {}).then(res => {
         if (res.data.success) {
           dataobj.IsCollect = true;
-          dataobj.CollectionNum = dataobj.CollectionNum+1;
+          dataobj.CollectionNum = dataobj.CollectionNum + 1;
           that.setData({
             dataobj: dataobj
           })
@@ -266,11 +266,15 @@ Page({
    */
   onShow: function () {
     var that = this;
-    if(getApp().globalData.WxUserId==0){
-      wx.redirectTo({
-        url: '../../wxauth/pages/wxlogin/index',
+    if (getApp().globalData.WxUserId == 0) {
+      getApp().ChargeLogin().then(res => {
+        if (getApp().globalData.WxUserId == 0) {
+          wx.navigateTo({
+            url: '../../wxauth/pages/wxlogin/index',
+          })
+        }
       })
-    }else{
+    } else {
       that.InitData();
     }
   },

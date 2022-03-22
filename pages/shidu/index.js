@@ -37,9 +37,9 @@ Page({
     })
   },
   tapMenu(e) { //跳转到对应的分类列表
-    var obj=e.currentTarget.dataset.menu;
+    var obj = e.currentTarget.dataset.menu;
     wx.navigateTo({
-      url: '../shidu/list?id=' + obj.Key+'&name='+obj.Value,
+      url: '../shidu/list?id=' + obj.Key + '&name=' + obj.Value,
     })
   },
   goDetail(e) { //跳转到详情页面
@@ -61,38 +61,42 @@ Page({
   onShow: function () {
     var that = this;
     if (getApp().globalData.WxUserId == 0) {
-      wx.reLaunch({
-        url: '../../wxauth/pages/wxlogin/index',
+      getApp().ChargeLogin().then(res => {
+        if (getApp().globalData.WxUserId == 0) {
+          wx.navigateTo({
+            url: '../../wxauth/pages/wxlogin/index',
+          })
+        }
       })
     } else {
       //获取数据
       that.InitTABData();
     }
   },
-  InitTABData(){//获取数据
-    var that=this;
-    var url=requestUrl+"/API/CategoryApi/GetReadRedTypeList";
-    WxRequest.PostRequest(url,{}).then(res=>{
-      if(res.data.success){
-        var tabs=res.data.data;
+  InitTABData() { //获取数据
+    var that = this;
+    var url = requestUrl + "/API/CategoryApi/GetReadRedTypeList";
+    WxRequest.PostRequest(url, {}).then(res => {
+      if (res.data.success) {
+        var tabs = res.data.data;
         that.setData({
-          tabs:tabs
+          tabs: tabs
         })
-        for(var i=0;i<tabs.length;i++){
-          that.InitData(tabs[i].Key,i);
+        for (var i = 0; i < tabs.length; i++) {
+          that.InitData(tabs[i].Key, i);
         }
       }
     })
   },
-  InitData(id,i){//获取分类下的列表数据
-    var that=this;
-    var tabs=that.data.tabs;
-    var url=requestUrl+"/API/ReadRedTimeApi/GetReadRedTimeList?page=1&rows=6&type="+id;
-    WxRequest.PostRequest(url,{}).then(res=>{
-      if(res.data.success){
-        tabs[i].list=res.data.data.datas;
+  InitData(id, i) { //获取分类下的列表数据
+    var that = this;
+    var tabs = that.data.tabs;
+    var url = requestUrl + "/API/ReadRedTimeApi/GetReadRedTimeList?page=1&rows=6&type=" + id;
+    WxRequest.PostRequest(url, {}).then(res => {
+      if (res.data.success) {
+        tabs[i].list = res.data.data.datas;
         that.setData({
-          tabs:tabs
+          tabs: tabs
         })
       }
     })

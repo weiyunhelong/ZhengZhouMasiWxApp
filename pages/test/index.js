@@ -12,7 +12,7 @@ Page({
     showMaskAni: false,
     id: 0,
     list: [],
-    dataobj:{},
+    dataobj: {},
   },
 
   /**
@@ -27,12 +27,12 @@ Page({
     return false;
   },
   goTest(e) { //跳转到测试
-    var dataobj=e.currentTarget.dataset.obj;
-   
+    var dataobj = e.currentTarget.dataset.obj;
+
     this.setData({
       showMask: true,
       showMaskAni: true,
-      dataobj:dataobj
+      dataobj: dataobj
     })
   },
   cancelOpt() {
@@ -47,16 +47,16 @@ Page({
   },
   confirmOpt() {
     var that = this;
-    var url=requestUrl+"/API/ExamAnswer/SaveTestGradesInfo?tid="+that.data.dataobj.ID+"&uid="+getApp().globalData.WxUserId;
-    WxRequest.PostRequest(url,{}).then(res=>{
-      if(res.data.success){
+    var url = requestUrl + "/API/ExamAnswer/SaveTestGradesInfo?tid=" + that.data.dataobj.ID + "&uid=" + getApp().globalData.WxUserId;
+    WxRequest.PostRequest(url, {}).then(res => {
+      if (res.data.success) {
         wx.navigateTo({
-          url: '../test/test?tid='+that.data.dataobj.ID+"&tgid="+res.data.data.testgradesid+"&clock="+that.data.dataobj.Duration,
+          url: '../test/test?tid=' + that.data.dataobj.ID + "&tgid=" + res.data.data.testgradesid + "&clock=" + that.data.dataobj.Duration,
           complete: function () {
             that.cancelOpt();
           }
         })
-      }else{
+      } else {
         WxRequest.ShowAlert(res.data.msg);
       }
     })
@@ -74,8 +74,12 @@ Page({
   onShow: function () {
     var that = this;
     if (getApp().globalData.WxUserId == 0) {
-      wx.redirectTo({
-        url: '../../wxauth/pages/wxlogin/index',
+      getApp().ChargeLogin().then(res => {
+        if (getApp().globalData.WxUserId == 0) {
+          wx.navigateTo({
+            url: '../../wxauth/pages/wxlogin/index',
+          })
+        }
       })
     } else {
       //获取全部试卷
@@ -84,12 +88,12 @@ Page({
   },
   InitData() { //获取全部试卷
     var that = this;
-    var url = requestUrl + "/API/ExamAnswer/TestPaperList?pid=" + that.data.id+"&uid="+getApp().globalData.WxUserId;
+    var url = requestUrl + "/API/ExamAnswer/TestPaperList?pid=" + that.data.id + "&uid=" + getApp().globalData.WxUserId;
     WxRequest.PostRequest(url, {}).then(res => {
       if (res.data.success) {
         that.setData({
           list: res.data.data.datas
-        })      
+        })
       }
     })
   },

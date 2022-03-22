@@ -27,19 +27,19 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    var that=this;
+    var that = this;
     that.InitSexs();
   },
-  InitSexs(){//获取性别
-    var that=this;
-    var url=requestUrl+"/API/CategoryApi/GetSexTypeList";
-    WxRequest.PostRequest(url,{}).then(res=>{
-      if(res.data.success){
+  InitSexs() { //获取性别
+    var that = this;
+    var url = requestUrl + "/API/CategoryApi/GetSexTypeList";
+    WxRequest.PostRequest(url, {}).then(res => {
+      if (res.data.success) {
         that.setData({
-          sexs:res.data.data
+          sexs: res.data.data
         })
       }
-    })  
+    })
   },
   chooseTx() { //上传头像
     var that = this;
@@ -90,11 +90,11 @@ Page({
     } else if (!validator.validateMobile(that.data.phone)) {
       WxRequest.ShowAlert("手机号不正确");
     } else {
-      var url=requestUrl+"/API/PublicDataApi/SendMsgCode?contact="+that.data.phone;
-      WxRequest.PostRequest(url,{}).then(res=>{
-        if(res.data.success){
+      var url = requestUrl + "/API/PublicDataApi/SendMsgCode?contact=" + that.data.phone;
+      WxRequest.PostRequest(url, {}).then(res => {
+        if (res.data.success) {
           that.setData({
-            recode:res.data.data.msgcode
+            recode: res.data.data.msgcode
           })
           timer = setInterval(function () {
             var clock = that.data.clock;
@@ -109,12 +109,12 @@ Page({
                 clock: clock - 1
               })
             }
-    
+
           }, 1000)
-        }else{
+        } else {
           WxRequest.ShowAlert(res.data.msg);
         }
-      })    
+      })
     }
   },
   getCode(e) { //获取验证码
@@ -160,39 +160,34 @@ Page({
         Avatar: that.data.tx,
         NickName: that.data.nickName,
         ReadName: that.data.name,
-        Sex:sexs[sex].Key,
+        Sex: sexs[sex].Key,
         Asign: that.data.desc,
         mobile: that.data.phone
       };
       WxRequest.PostRequest(url, params).then(res => {
-        if(res.data.success){
-          wx.setStorage({
-            key: "loginobj",
-            data: {
-              tx: that.data.tx, //头像
-              nickName: that.data.nickName, //昵称
-              name: that.data.name, //姓名
-              sex: that.data.sex, //性别
-              desc: that.data.desc, //签名
-              phone: that.data.phone
-            },
-            success: function () {
-              wx.navigateBack({
-                delta: 1,
-              })
-            }
+        if (res.data.success) {
+          getApp().globalData.userInfo = {
+            Avatar: that.data.tx, //头像
+            NickName: that.data.nickName, //昵称
+            ReadName: that.data.name, //姓名
+            Sex: sexs[sex].Key, //性别
+            Asign: that.data.desc, //签名
+            mobile: that.data.phone
+          };
+          wx.navigateBack({
+            delta: 1,
           })
-        }else{
+        } else {
           WxRequest.ShowAlert(res.data.msg);
         }
-      })      
+      })
     }
   },
   skipOpt() { //点击跳过
     var that = this;
     wx.navigateBack({
       delta: 1,
-      fail:function(){
+      fail: function () {
         wx.reLaunch({
           url: '../../../pages/home/index',
         })

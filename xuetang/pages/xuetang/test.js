@@ -54,8 +54,12 @@ Page({
   onShow: function () {
     var that = this;
     if (getApp().globalData.WxUserId == 0) {
-      wx.navigateTo({
-        url: '../../../wxauth/pages/wxlogin/index',
+      getApp().ChargeLogin().then(res => {
+        if (getApp().globalData.WxUserId == 0) {
+          wx.navigateTo({
+            url: '../../../wxauth/pages/wxlogin/index',
+          })
+        }
       })
     } else {
       that.InitData();

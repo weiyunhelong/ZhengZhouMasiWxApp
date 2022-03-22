@@ -120,33 +120,33 @@ Page({
       var url = requestUrl + "/API/ReadRedTimeApi/LikeComment?userId=" + getApp().globalData.WxUserId + "&commentId=" + commId + "&level=0&title=" + dataobj.Name + "&thumbnail=" + dataobj.Thumbnail;
       WxRequest.PostRequest(url, {}).then(res => {
 
-        if(res.data.success){
-          dataobj.CommentList[index].IsLike=true;
-          dataobj.CommentList[index].LikesNum=likenum+1;
+        if (res.data.success) {
+          dataobj.CommentList[index].IsLike = true;
+          dataobj.CommentList[index].LikesNum = likenum + 1;
           that.setData({
-            dataobj:dataobj
+            dataobj: dataobj
           })
           wx.showToast({
             title: '点赞成功',
           })
-        }else{
+        } else {
           WxRequest.ShowAlert(res.data.msg);
         }
       })
     } else {
-      var url = requestUrl + "/API/ReadRedTimeApi/CancelLikeComment?userId=" + getApp().globalData.WxUserId + "&commentId=" + commId+"&level=0";
+      var url = requestUrl + "/API/ReadRedTimeApi/CancelLikeComment?userId=" + getApp().globalData.WxUserId + "&commentId=" + commId + "&level=0";
       WxRequest.PostRequest(url, {}).then(res => {
 
-        if(res.data.success){
-          dataobj.CommentList[index].IsLike=false;
-          dataobj.CommentList[index].LikesNum=likenum-1;
+        if (res.data.success) {
+          dataobj.CommentList[index].IsLike = false;
+          dataobj.CommentList[index].LikesNum = likenum - 1;
           that.setData({
-            dataobj:dataobj
+            dataobj: dataobj
           })
           wx.showToast({
             title: '点赞已取消',
           })
-        }else{
+        } else {
           WxRequest.ShowAlert(res.data.msg);
         }
       })
@@ -166,8 +166,12 @@ Page({
   onShow: function () {
     var that = this;
     if (getApp().globalData.WxUserId == 0) {
-      wx.reLaunch({
-        url: '../../wxauth/pages/wxlogin/index',
+      getApp().ChargeLogin().then(res => {
+        if (getApp().globalData.WxUserId == 0) {
+          wx.navigateTo({
+            url: '../../wxauth/pages/wxlogin/index',
+          })
+        }
       })
     } else {
       //获取数据

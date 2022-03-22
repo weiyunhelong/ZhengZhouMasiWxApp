@@ -14,7 +14,7 @@
 <!--用户信息部分-->
 <view class="uservv">
   <view class="uservvl">
-    <view class="userc" wx:if="{{IsLogin}}" bindtap="goLogin">
+    <view class="userc" wx:if="{{!IsLogin}}" bindtap="goLogin">
       <view class="txv"></view>
       <view class="usercv">
         <view class="username">点击登录</view>
@@ -23,9 +23,9 @@
     </view>
     <block wx:else>
       <view class="uservc">
-        <image src="/resources/comman/avatarUrl.jpg" class="tximg"></image>
+        <image src="{{userInfo.Avatar}}" class="tximg"></image>
         <view class="userinfo">
-          <view class="username">Jarrett Cawsey</view>
+          <view class="username">{{userInfo.ReadName}}</view>
           <view class="userdesc showOnehangTxt">个人资料</view>
         </view>
       </view>
@@ -47,9 +47,13 @@
 
 <!--勋章部分-->
 <view class="xunzhangv" bindtap="goXunZhang">
-  <view class="xunzhangl">
-    <image src="../../resources/my/xunzhang.png" class="xunzhang"></image>
+  <view class="xunzhangl" wx:if="{{1==2}}">
+    <image src="../../resources/my/xunzhang1.png" class="xunzhang"></image>
     <view class="xzhlevel">Lv.1勋章</view>
+  </view>
+  <view class="xunzhangl" wx:else>
+    <image src="../../resources/my/xunzhang.png" class="xunzhang"></image>
+    <view class="xzhlevel">暂无获取</view>
   </view>
   <view class="xunzhangr">我的成就 ></view>
 </view>

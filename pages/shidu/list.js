@@ -26,7 +26,7 @@ Page({
     })
   },
   goDetail(e) { //跳转到详情
-    
+
     WxRequest.ViewRedGenePage(e.currentTarget.dataset.id);
     wx.navigateTo({
       url: "../shidu/chapter?id=" + e.currentTarget.dataset.id
@@ -45,8 +45,12 @@ Page({
   onShow: function () {
     var that = this;
     if (getApp().globalData.WxUserId == 0) {
-      wx.reLaunch({
-        url: '../../wxauth/pages/wxlogin/index',
+      getApp().ChargeLogin().then(res => {
+        if (getApp().globalData.WxUserId == 0) {
+          wx.navigateTo({
+            url: '../../wxauth/pages/wxlogin/index',
+          })
+        }
       })
     } else {
       //获取数据
@@ -65,7 +69,7 @@ Page({
           })
         } else {
           that.setData({
-            list:that.data.list.concat(res.data.data.datas) 
+            list: that.data.list.concat(res.data.data.datas)
           })
         }
       }

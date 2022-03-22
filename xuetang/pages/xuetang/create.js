@@ -23,8 +23,8 @@ Page({
     var that = this;
     that.setData({
       chktab: e.currentTarget.dataset.tab,
-      pageindex:1,
-      list:[]
+      pageindex: 1,
+      list: []
     })
     that.InitData();
   },
@@ -53,8 +53,12 @@ Page({
   onShow: function () {
     var that = this;
     if (getApp().globalData.WxUserId == 0) {
-      wx.navigateTo({
-        url: '../../../wxauth/pages/wxlogin/index',
+      getApp().ChargeLogin().then(res => {
+        if (getApp().globalData.WxUserId == 0) {
+          wx.navigateTo({
+            url: '../../../wxauth/pages/wxlogin/index',
+          })
+        }
       })
     } else {
       that.InitData();
@@ -62,18 +66,18 @@ Page({
   },
   InitData() { //获取我的活动
     var that = this;
-    var pageindex=that.data.pageindex;
-    var url = requestUrl + "/API/UserCenterJindeSchool/GetUserCreateActivityList?page="+pageindex+"&rows=10&userid=" + getApp().globalData.WxUserId+"&state=";//+that.data.chktab;
+    var pageindex = that.data.pageindex;
+    var url = requestUrl + "/API/UserCenterJindeSchool/GetUserCreateActivityList?page=" + pageindex + "&rows=10&userid=" + getApp().globalData.WxUserId + "&state="; //+that.data.chktab;
 
     WxRequest.PostRequest(url, {}).then(res => {
       if (res.data.success) {
-        if(pageindex==1){
+        if (pageindex == 1) {
           that.setData({
             list: res.data.data.datas
           })
-        }else{
+        } else {
           that.setData({
-            list:that.data.list.concat(res.data.data.datas) 
+            list: that.data.list.concat(res.data.data.datas)
           })
         }
       }

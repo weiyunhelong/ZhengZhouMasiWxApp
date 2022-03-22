@@ -35,7 +35,7 @@ Page({
     var that = this;
     that.setData({
       chktab: e.currentTarget.dataset.tab,
-      pageindex:1
+      pageindex: 1
     })
     that.InitData();
   },
@@ -66,14 +66,18 @@ Page({
     var that = this;
     //获取菜单的列表数据
     that.setTabbarlist();
-    if(getApp().globalData.WxUserId==0){
-      wx.redirectTo({
-        url: '../../wxauth/pages/wxlogin/index',
+    if (getApp().globalData.WxUserId == 0) {
+      getApp().ChargeLogin().then(res => {
+        if (getApp().globalData.WxUserId == 0) {
+          wx.navigateTo({
+            url: '../../wxauth/pages/wxlogin/index',
+          })
+        }
       })
-    }else{
+    } else {
       that.InitData();
     }
-   
+
   },
   setTabbarlist: function () { //获取菜单的列表数据
     var that = this;
@@ -96,16 +100,16 @@ Page({
 
     var pageindex = that.data.pageindex;
     var chktab = that.data.chktab; //0视频 1专栏
-    var url=requestUrl+"/API/ManuscriptApi/GetManuscriptList?page="+pageindex+"&rows=10"+"&type="+chktab;
-    WxRequest.PostRequest(url,{}).then(res=>{
-      if(res.data.success){
-        if(pageindex==1){
+    var url = requestUrl + "/API/ManuscriptApi/GetManuscriptList?page=" + pageindex + "&rows=10" + "&type=" + chktab;
+    WxRequest.PostRequest(url, {}).then(res => {
+      if (res.data.success) {
+        if (pageindex == 1) {
           that.setData({
-            list:res.data.data.datas
+            list: res.data.data.datas
           })
-        }else{
+        } else {
           that.setData({
-            list:that.data.list.concat(res.data.data.datas) 
+            list: that.data.list.concat(res.data.data.datas)
           })
         }
       }

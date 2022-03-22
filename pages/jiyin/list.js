@@ -9,7 +9,7 @@ Page({
    */
   data: {
     list: [],
-    pageindex:1,
+    pageindex: 1,
   },
 
   /**
@@ -25,24 +25,24 @@ Page({
       },
     })
     that.setData({
-      id:14,
-      pagetitle:'探寻红色基因',
+      id: 14,
+      pagetitle: '探寻红色基因',
     })
 
   },
-  goBackOpt(){//点击返回
+  goBackOpt() { //点击返回
     wx.navigateBack({
       delta: 1,
     })
   },
-  goJiYinOpt(e){//点击到详情
-    var list=this.data.list;
-    var index=e.currentTarget.dataset.index;
-    var url=list[index].Address;
+  goJiYinOpt(e) { //点击到详情
+    var list = this.data.list;
+    var index = e.currentTarget.dataset.index;
+    var url = list[index].Address;
     WxRequest.ViewRedGenePage(list[index].ID);
-    if(url!=""){
+    if (url != "") {
       wx.navigateTo({
-        url: '../webview/index?url='+url
+        url: '../webview/index?url=' + url
       })
     }
   },
@@ -59,8 +59,12 @@ Page({
   onShow: function () {
     var that = this;
     if (getApp().globalData.WxUserId == 0) {
-      wx.reLaunch({
-        url: '../../wxauth/pages/wxlogin/index',
+      getApp().ChargeLogin().then(res => {
+        if (getApp().globalData.WxUserId == 0) {
+          wx.navigateTo({
+            url: '../../wxauth/pages/wxlogin/index',
+          })
+        }
       })
     } else {
       //获取数据
@@ -79,7 +83,7 @@ Page({
           })
         } else {
           that.setData({
-            list:that.data.list.concat(res.data.data.datas) 
+            list: that.data.list.concat(res.data.data.datas)
           })
         }
       }

@@ -8,7 +8,8 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    userInfo:{},//用户信息
+    dataobj:{},//首页数据
   },
 
   /**
@@ -119,8 +120,12 @@ Page({
     //获取菜单的列表数据
     that.setTabbarlist();
     if (getApp().globalData.WxUserId == 0) {
-      wx.redirectTo({
-        url: '../../wxauth/pages/wxlogin/index',
+      getApp().ChargeLogin().then(res=>{
+        if(getApp().globalData.WxUserId == 0){
+          wx.navigateTo({
+            url: '../../wxauth/pages/wxlogin/index',
+          })
+        }
       })
     } else {
       that.InitData();
@@ -148,7 +153,8 @@ Page({
     WxRequest.PostRequest(url, {}).then(res => {
       if (res.data.success) {
         that.setData({
-          dataobj: res.data.data
+          dataobj: res.data.data,
+          userInfo:getApp().globalData.userInfo
         })
       }
     })

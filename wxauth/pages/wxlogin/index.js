@@ -55,17 +55,27 @@ Page({
       var url = requestUrl + "/API/LoginApi/Login?account=" + account + "&password=" + pwd;
       var params = {};
       WxRequest.PostRequest(url, params).then(res => {
-        console.error("学生登录", res);
-      })
-
-      wx.setStorage({
-        key: "loginObj",
-        data: "account:" + account + ",pwd:" + pwd + ",type:1",
-        success: function () {
-          wx.reLaunch({
-            //url: '../../../pages/middle/index',
-            url: '../auth/teacher',
-          })
+       
+        if (res.data.success) {
+          getApp().globalData.userInfo = res.data.data;
+          getApp().globalData.WxUserId = res.data.data.id;
+          if (res.data.data.ReadName == null || res.data.data.ReadName == '') {
+            wx.redirectTo({
+              url: '../auth/info',
+            })
+          } else {
+            wx.setStorage({
+              key: "loginObj",
+              data: "account:" + account + ",pwd:" + pwd + ",type:1",
+              success: function () {
+                wx.navigateBack({
+                  delta: 1,
+                })
+              }
+            })
+          }
+        }else{
+          WxRequest.ShowAlert(res.data.msg);
         }
       })
     } else if (chkTab == 2) { //教师登录
@@ -73,20 +83,31 @@ Page({
       var url = requestUrl + "/API/LoginApi/Login?account=" + account + "&password=" + pwd;
       var params = {};
       WxRequest.PostRequest(url, params).then(res => {
-
-      })
-
-      //TODO 学生登录
-      wx.setStorage({
-        key: "loginObj",
-        data: "account:" + account + ",pwd:" + pwd + ",type:2",
-        success: function () {
-          wx.reLaunch({
-            //url: '../../../pages/middle/index',
-            url: '../auth/study',
-          })
+       
+        if (res.data.success) {
+          getApp().globalData.userInfo = res.data.data;
+          getApp().globalData.WxUserId = res.data.data.id;
+          if (res.data.data.ReadName == null || res.data.data.ReadName == '') {
+            wx.redirectTo({
+              url: '../auth/info',
+            })
+          } else {
+            wx.setStorage({
+              key: "loginObj",
+              data: "account:" + account + ",pwd:" + pwd + ",type:2",
+              success: function () {
+                wx.navigateBack({
+                  delta: 1,
+                })
+              }
+            })
+           
+          }
+        }else{
+          WxRequest.ShowAlert(res.data.msg);
         }
       })
+      
     }
   },
   wxOpt() { //微信登录
@@ -101,13 +122,33 @@ Page({
         if (res.data.success) {
           var wxurl = requestUrl + "/API/LoginApi/WXLogin?openid=" + getApp().globalData.openId;
           WxRequest.PostRequest(wxurl, {}).then(res => {
-
+            
+            if (res.data.success) {
+              getApp().globalData.userInfo = res.data.data;
+              getApp().globalData.WxUserId = res.data.data.id;
+              if (res.data.data.ReadName == null || res.data.data.ReadName == '') {
+                wx.redirectTo({
+                  url: '../auth/info',
+                })
+              } else {
+                wx.setStorage({
+                  key: "loginObj",
+                  data: "account:" + account + ",pwd:" + pwd + ",type:3",
+                  success: function () {
+                    wx.navigateBack({
+                      delta: 1,
+                    })
+                  }
+                })
+               
+              }
+            }else{
+              WxRequest.ShowAlert(res.data.msg);
+            }
           })
         }
       })
-      wx.redirectTo({
-        url: '../auth/info',
-      })
+
     }
   },
 

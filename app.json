@@ -56,7 +56,6 @@
   }, {
     "root": "wxauth",
     "pages": [
-      "pages/register/index",
       "pages/wxlogin/index",
       "pages/auth/info",
       "pages/auth/password"

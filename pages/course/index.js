@@ -67,8 +67,12 @@ Page({
     //获取菜单的列表数据
     that.setTabbarlist();
     if (getApp().globalData.WxUserId == 0) {
-      wx.redirectTo({
-        url: '../../wxauth/pages/wxlogin/index',
+      getApp().ChargeLogin().then(res => {
+        if (getApp().globalData.WxUserId == 0) {
+          wx.navigateTo({
+            url: '../../wxauth/pages/wxlogin/index',
+          })
+        }
       })
     } else {
       //获取课程列表
@@ -95,7 +99,7 @@ Page({
     var that = this;
     var pageindex = that.data.pageindex;
     var chktab = that.data.chktab;
-    var url = requestUrl + "/API/PracticalTeaching/GetPracticalTeachingList?page=" + pageindex + "&rows=10&userID="+(chktab==1?getApp().globalData.WxUserId:"");
+    var url = requestUrl + "/API/PracticalTeaching/GetPracticalTeachingList?page=" + pageindex + "&rows=10&userID=" + (chktab == 1 ? getApp().globalData.WxUserId : "");
 
     WxRequest.PostRequest(url, {}).then(res => {
       if (res.data.success) {

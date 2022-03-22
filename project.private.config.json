@@ -58,6 +58,13 @@
           "name": "",
           "pathName": "xuetang/pages/xuetang/create",
           "query": "",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "",
+          "pathName": "pages/my/index",
+          "query": "",
           "scene": null,
           "launchMode": "default"
         }

@@ -9,20 +9,20 @@ Page({
    */
   data: {
     id: 0,
-    taskid:-1,
-    dataobj: {},//当前的任务
+    taskid: -1,
+    dataobj: {}, //当前的任务
     IsVr: true, //是否有VR视频
-    tasks:[], //任务列表
+    tasks: [], //任务列表
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    var that=this;
+    var that = this;
     that.setData({
-      id:options.id
-    })    
+      id: options.id
+    })
   },
   tapTab(e) { //切换任务
     var that = this;
@@ -73,8 +73,12 @@ Page({
   onShow: function () {
     var that = this;
     if (getApp().globalData.WxUserId == 0) {
-      wx.redirectTo({
-        url: '../../wxauth/pages/wxlogin/index',
+      getApp().ChargeLogin().then(res => {
+        if (getApp().globalData.WxUserId == 0) {
+          wx.redirectTo({
+            url: '../../wxauth/pages/wxlogin/index',
+          })
+        }
       })
     } else {
       //获取全部任务
@@ -88,15 +92,15 @@ Page({
       if (res.data.success) {
         that.setData({
           tasks: res.data.data.datas,
-          taskid:res.data.data.datas.length==0?-1:res.data.data.datas[0].ID
+          taskid: res.data.data.datas.length == 0 ? -1 : res.data.data.datas[0].ID
         })
-        if(that.data.taskid!=-1){
+        if (that.data.taskid != -1) {
           that.InitObjData();
-        }        
+        }
       }
     })
   },
-  InitObjData(){//获取任务详情
+  InitObjData() { //获取任务详情
     var that = this;
     var url = requestUrl + "/API/PracticalTask/GetPracticalTaskDetail?id=" + that.data.taskid;
     WxRequest.PostRequest(url, {}).then(res => {

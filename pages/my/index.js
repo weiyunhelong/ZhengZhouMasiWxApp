@@ -10,6 +10,9 @@ Page({
   data: {
     IsLogin: false, //是否登录
     userInfo: {}, //用户信息
+    dataobj:{
+      
+    },//数据信息
   },
 
   /**
@@ -108,29 +111,30 @@ Page({
     //获取菜单的列表数据
     that.setTabbarlist();
 
-    wx.getStorage({
-      key: "loginobj",
-      success: function (res) {
-        that.setData({
-          IsLogin: true,
-          userInfo: res.data
-        })
-        that.InitUserInfo();
-      },
-      fail: function () {
-        that.setData({
-          IsLogin: false,
-          userInfo: []
-        })
-      }
-    })
-  },
-  InitUserInfo() { //获取用户信息
-    var that = this;
-    var url = requestUrl + "/API/LoginApi/GetUserData?userId=" + getApp().globalData.WxUserId;
-    WxRequest.PostRequest(url, {}).then(res => {
-
-    })
+    //判断用户是否登录
+    if (getApp().globalData.WxUserId == 0) {
+      getApp().ChargeLogin().then(res=>{
+     
+        if(getApp().globalData.WxUserId == 0){
+          that.setData({
+            IsLogin: false,
+            userInfo: {}
+          })
+        }else{
+          that.setData({
+            IsLogin: true,
+            userInfo: getApp().globalData.userInfo
+          })
+          that.InitData();
+        }
+      })
+    } else {
+      that.setData({
+        IsLogin: true,
+        userInfo: getApp().globalData.userInfo
+      })
+      that.InitData();
+    }
   },
   setTabbarlist: function () { //获取菜单的列表数据
     var that = this;
@@ -148,7 +152,19 @@ Page({
       }
     }
   },
+  InitData(){//获取用户数据
+    var that=this;
+    //TODO 获取学习时间，答题个数，勋章
+    var url=requestUrl+"?userid="+getApp().globalData.WxUserId;
+    WxRequest.PostRequest(url,{}).then(res=>{
+      if(res.data.success){
+        that.setData({
+          dataobj:res.data.data
+        })
+      }
+    })
 
+  },
   /**
    * 生命周期函数--监听页面隐藏
    */

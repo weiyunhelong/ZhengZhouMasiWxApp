@@ -8,12 +8,12 @@ Page({
    * 页面的初始数据
    */
   data: {
-    chktab: -1,//分类 -1:全部 0:待批阅 1:已通过 2未通过
-    pageindex:1,//下标
-    list:[],//列表
+    chktab: -1, //分类 -1:全部 0:待批阅 1:已通过 2未通过
+    pageindex: 1, //下标
+    list: [], //列表
     showMask: false,
     showMaskAni: false,
-    commentTxt:'',//老师回复
+    commentTxt: '', //老师回复
   },
 
   /**
@@ -26,15 +26,15 @@ Page({
     var that = this;
     that.setData({
       chktab: e.currentTarget.dataset.tab,
-      pageindex:1,
-      list:[]
+      pageindex: 1,
+      list: []
     })
     that.InitData();
   },
-  ShowMoreData(){//加载更多
-    var that=this;
+  ShowMoreData() { //加载更多
+    var that = this;
     that.setData({
-      pageindex:that.data.pageindex+1
+      pageindex: that.data.pageindex + 1
     })
     that.InitData();
   },
@@ -43,7 +43,7 @@ Page({
     that.setData({
       showMask: true,
       showMaskAni: true,
-      commentTxt:e.currentTarget.dataset.obj.msg
+      commentTxt: e.currentTarget.dataset.obj.msg
     })
   },
   closeMask() { //关闭评论浮窗
@@ -53,7 +53,7 @@ Page({
     })
     setTimeout(() => {
       that.setData({
-        commentTxt:'',
+        commentTxt: '',
         showMask: false,
       })
     }, 1000);
@@ -71,8 +71,12 @@ Page({
   onShow: function () {
     var that = this;
     if (getApp().globalData.WxUserId == 0) {
-      wx.redirectTo({
-        url: '../../../wxauth/pages/wxlogin/index',
+      getApp().ChargeLogin().then(res => {
+        if (getApp().globalData.WxUserId == 0) {
+          wx.navigateTo({
+            url: '../../../wxauth/pages/wxlogin/index',
+          })
+        }
       })
     } else {
       that.InitData();

@@ -22,7 +22,7 @@ Page({
   tapTabOpt(e) { //切换tab
     var that = this;
     that.setData({
-      chktab:e.currentTarget.dataset.tab,
+      chktab: e.currentTarget.dataset.tab,
       pageindex: 1
     })
     that.InitData();
@@ -47,8 +47,12 @@ Page({
   onShow: function () {
     var that = this;
     if (getApp().globalData.WxUserId == 0) {
-      wx.redirectTo({
-        url: '../../../wxauth/pages/wxlogin/index',
+      getApp().ChargeLogin().then(res => {
+        if (getApp().globalData.WxUserId == 0) {
+          wx.navigateTo({
+            url: '../../../wxauth/pages/wxlogin/index',
+          })
+        }
       })
     } else {
       that.InitData();
@@ -62,10 +66,10 @@ Page({
     var url = requestUrl;
     switch (chktab) {
       case 1:
-        url += '/API/UserCenterApi/GetReadCollectionList?userid='+getApp().globalData.WxUserId+"&page="+pageindex+"&rows=10";
+        url += '/API/UserCenterApi/GetReadCollectionList?userid=' + getApp().globalData.WxUserId + "&page=" + pageindex + "&rows=10";
         break;
       case 2:
-        url += '/API/UserCenterApi/GetFourCollectionList?userid='+getApp().globalData.WxUserId+"&page="+pageindex+"&rows=10";
+        url += '/API/UserCenterApi/GetFourCollectionList?userid=' + getApp().globalData.WxUserId + "&page=" + pageindex + "&rows=10";
         break
     }
     WxRequest.PostRequest(url, {}).then(res => {

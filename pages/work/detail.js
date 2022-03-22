@@ -10,7 +10,7 @@ Page({
   data: {
     id: 0,
     dataobj: {},
-    imgh:0,
+    imgh: 0,
   },
 
   /**
@@ -30,7 +30,7 @@ Page({
       id: options.id
     })
   },
-  ImgLoad(e){//获取图片高度
+  ImgLoad(e) { //获取图片高度
     var ratio = 0;
     var $width = e.detail.width, //获取图片真实宽度
       $height = e.detail.height,
@@ -59,8 +59,12 @@ Page({
   onShow: function () {
     var that = this;
     if (getApp().globalData.WxUserId == 0) {
-      wx.reLaunch({
-        url: '../../../wxauth/pages/wxlogin/index',
+      getApp().ChargeLogin().then(res => {
+        if (getApp().globalData.WxUserId == 0) {
+          wx.navigateTo({
+            url: '../../../wxauth/pages/wxlogin/index',
+          })
+        }
       })
     } else {
       //获取数据
@@ -69,7 +73,7 @@ Page({
   },
   InitData() { //获取列表数据
     var that = this;
-    var url = requestUrl + "/API/QualityWorksApi/GetQualityWorksDetail?id="+that.data.id;
+    var url = requestUrl + "/API/QualityWorksApi/GetQualityWorksDetail?id=" + that.data.id;
     WxRequest.PostRequest(url, {}).then(res => {
       if (res.data.success) {
         that.setData({

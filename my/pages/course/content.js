@@ -12,9 +12,9 @@ Page({
     chksubtab: -1, //-1全部 0审核中 1已通过 2未通过
     pageindex: 1,
     pagesize: 10,
-    list:[],
+    list: [],
     mark: "",
-    reason:"",
+    reason: "",
   },
 
   /**
@@ -28,7 +28,7 @@ Page({
     that.setData({
       chktab: e.currentTarget.dataset.type,
       chksubtab: -1,
-      pageindex:1
+      pageindex: 1
     })
     that.InitData();
   },
@@ -36,7 +36,7 @@ Page({
     var that = this;
     that.setData({
       chksubtab: e.currentTarget.dataset.tab,
-      pageindex:1
+      pageindex: 1
     })
     that.InitData();
   },
@@ -46,7 +46,7 @@ Page({
     that.setData({
       showMask: true,
       showMaskAni: true,
-      reason:dataobj.Cause
+      reason: dataobj.Cause
     })
   },
   getMark(e) { //获取申请的内容
@@ -82,8 +82,8 @@ Page({
     })
     setTimeout(() => {
       that.setData({
-        reason:"",
-        mark:"",
+        reason: "",
+        mark: "",
         showMask: false
       })
     }, 1000);
@@ -108,40 +108,47 @@ Page({
   onShow: function () {
     var that = this;
     if (getApp().globalData.WxUserId == 0) {
-      wx.reLaunch({
-        url: '../../../wxauth/pages/wxlogin/index',
+      getApp().ChargeLogin().then(res => {
+        if (getApp().globalData.WxUserId == 0) {
+          wx.navigateTo({
+            url: '../../../wxauth/pages/wxlogin/index',
+          })
+        }
       })
     } else {
       //获取数据总揽
       that.InitData();
     }
   },
-  InitData(){ //获取数据
-    var that=this;
-    var chktab=parseInt(that.data.chktab), //1:稿件管理 2:申诉管理 3:草稿箱
-    chksubtab=that.data.chksubtab, //-1全部 0审核中 1已通过 2未通过
-    pageindex=that.data.pageindex,
-    pagesize=that.data.pagesize;
+  InitData() { //获取数据
+    var that = this;
+    var chktab = parseInt(that.data.chktab), //1:稿件管理 2:申诉管理 3:草稿箱
+      chksubtab = that.data.chksubtab, //-1全部 0审核中 1已通过 2未通过
+      pageindex = that.data.pageindex,
+      pagesize = that.data.pagesize;
 
-    var url=requestUrl+"/API/UserCenterManuApi/GetManuListWhereState";
-    var params="?page="+pageindex+"&rows="+pagesize+"&userid="+getApp().globalData.WxUserId+"&datatype="+chktab;
-    switch(chktab){
+    var url = requestUrl + "/API/UserCenterManuApi/GetManuListWhereState";
+    var params = "?page=" + pageindex + "&rows=" + pagesize + "&userid=" + getApp().globalData.WxUserId + "&datatype=" + chktab;
+    switch (chktab) {
       case 1:
-        params+='&state='+chksubtab+'&type=-1';break;
-        case 2:
-        params+='&state='+chksubtab+'&type=-1';break;
-        case 3:
-        params+='&type='+chksubtab+'&state=-1';break;
+        params += '&state=' + chksubtab + '&type=-1';
+        break;
+      case 2:
+        params += '&state=' + chksubtab + '&type=-1';
+        break;
+      case 3:
+        params += '&type=' + chksubtab + '&state=-1';
+        break;
     }
-    WxRequest.PostRequest(url+params,{}).then(res=>{
-      if(res.data.success){
-        if(pageindex==1){
+    WxRequest.PostRequest(url + params, {}).then(res => {
+      if (res.data.success) {
+        if (pageindex == 1) {
           that.setData({
-            list:res.data.data.datas
+            list: res.data.data.datas
           })
-        }else{
+        } else {
           that.setData({
-            list:that.data.list.concat(res.data.data.datas) 
+            list: that.data.list.concat(res.data.data.datas)
           })
         }
       }

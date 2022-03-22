@@ -9,7 +9,7 @@ Page({
    */
   data: {
     chkkind: 0, //0:评论 1:点赞 2:公告
-    pageindex:1,
+    pageindex: 1,
     list: [], //列表数据
   },
 
@@ -26,40 +26,41 @@ Page({
     })
     that.InitData();
   },
-  ShowMoreData(){//加载更多
-   var that=this;
-   that.setData({
-     pageindex:that.data.pageindex+1
-   })
-   that.InitData();
+  ShowMoreData() { //加载更多
+    var that = this;
+    that.setData({
+      pageindex: that.data.pageindex + 1
+    })
+    that.InitData();
   },
   InitData() { //获取消息列表
     var that = this;
     var chkkind = that.data.chkkind;
     var pageindex = that.data.pageindex;
-    var url=requestUrl;
-    var params="?page="+pageindex+"&rows=20";
-    switch(chkkind+''){
-      case '0'://评论
-      url+="/API/UserCenterApi/GetCommentList";
-      params+="&userid="+getApp().globalData.WxUserId;
-      break;
-      case '1'://点赞
-      url+="/API/UserCenterApi/GetLikesList";
-      params+="&userid="+getApp().globalData.WxUserId;
-      break;
-      case '2'://公告
-      url+="/API/UserCenterApi/GetNotice";break;
+    var url = requestUrl;
+    var params = "?page=" + pageindex + "&rows=20";
+    switch (chkkind + '') {
+      case '0': //评论
+        url += "/API/UserCenterApi/GetCommentList";
+        params += "&userid=" + getApp().globalData.WxUserId;
+        break;
+      case '1': //点赞
+        url += "/API/UserCenterApi/GetLikesList";
+        params += "&userid=" + getApp().globalData.WxUserId;
+        break;
+      case '2': //公告
+        url += "/API/UserCenterApi/GetNotice";
+        break;
     }
-    WxRequest.PostRequest(url+params,{}).then(res=>{
-      if(res.data.success){
-        if(pageindex==1){
+    WxRequest.PostRequest(url + params, {}).then(res => {
+      if (res.data.success) {
+        if (pageindex == 1) {
           that.setData({
-            list:res.data.data.datas
+            list: res.data.data.datas
           })
-        }else{
+        } else {
           that.setData({
-            list:that.data.list.concat(res.data.data.datas) 
+            list: that.data.list.concat(res.data.data.datas)
           })
         }
       }
@@ -77,11 +78,15 @@ Page({
    */
   onShow: function () {
     var that = this;
-    if(getApp().globalData.WxUserId==0){
-      wx.redirectTo({
-        url: '../../../wxauth/pages/wxlogin/index',
+    if (getApp().globalData.WxUserId == 0) {
+      getApp().ChargeLogin().then(res => {
+        if (getApp().globalData.WxUserId == 0) {
+          wx.navigateTo({
+            url: '../../../wxauth/pages/wxlogin/index',
+          })
+        }
       })
-    }else{
+    } else {
       that.InitData();
     }
   },
