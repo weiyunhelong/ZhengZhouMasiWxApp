@@ -76,27 +76,27 @@ Page({
    */
   onShow: function () {
     var that = this;
-    if (getApp().globalData.WxUserId == 0) {
-      getApp().ChargeLogin().then(res => {
-        if (getApp().globalData.WxUserId == 0) {
-          wx.navigateTo({
-            url: '../../../wxauth/pages/wxlogin/index',
-          })
-        }
-      })
-    } else {
-      that.InitData();
-      that.InitList();
-    }
+    getApp().ChargeLogin().then(res => {
+      if (getApp().globalData.WxUserId == 0) {
+        wx.navigateTo({
+          url: '../../../wxauth/pages/wxlogin/index',
+        })
+      } else {
+        that.InitData();
+        that.InitList();
+      }
+    })
   },
   InitData() { //获取数据
-    var that = this;
-    var url = requestUrl + "/API/UserCenterManuApi/DataScreening?userid=" + getApp().globalData.WxUserId + "&&typeid=1";
+    var that = this; 
+    that.setData({
+      userInfo:getApp().globalData.userInfo
+    })
+    var url = requestUrl + "/API/UserCenterManuApi/DataScreening?userid=" + getApp().globalData.WxUserId + "&typeid=1";
     WxRequest.PostRequest(url, {}).then(res => {
       if (res.data.success) {
         that.setData({
-          dataobj: res.data.data,
-          userInfo:getApp().globalData.userInfo
+          dataobj: res.data.data
         })
       }
     })

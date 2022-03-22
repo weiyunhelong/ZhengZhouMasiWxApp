@@ -2,9 +2,9 @@
 <!--顶部用户信息-->
 <view class="topbgv" bindtap="hideMaskOpt" style="background:url(../../resources/bg.png) no-repeat;background-size: cover;">
   <view style="width: 100vw;height:{{navigationBarHeight}}px;margin-bottom: 10rpx;"></view>
-  <view class="pagetitlev">
-    <view class="backiconv" catchtap="goBackOpt">
-      <image src="/resources/comman/backiconw.png" class="backicon"></image>
+  <view class="pagetitlev" catchtap="goBackOpt">
+    <view class="backiconv">
+      <image src="/resources/comman/backiconb.png" class="backicon"></image>
     </view>
     <view class="pagetitle">重走长征路</view>
   </view>
@@ -12,7 +12,7 @@
 
 <!--用户信息-->
 <view class="userinfov">
-  <view class="userv">
+  <view class="userv" bindtap="showMaskOpt">
     <image src="/resources/comman/avatarUrl.jpg" mode="aspectFill" class="avatarUrl"></image>
     <view class="nickname">长征突击手</view>
     <image src="../../resources/right.png" class="righticon"></image>
@@ -28,7 +28,7 @@
     <text>马斯特、相差93里程，长征榜排名第34</text>
   </view>
 </view>
-<view class="btn">进入长征</view>
+<view class="btn" bindtap="goMapOpt">进入长征</view>
 
 <!--排行榜-->
 <view class="rankv">
@@ -101,5 +101,74 @@
   <view class="rankmorev">
     <view class="moretxt">查看更多</view>
     <image src="../../resources/right.png" class="moreicon"></image>
+  </view>
+</view>
+
+<!--显示操作浮窗-->
+<view class="maskv {{showMaskAni?'showMaskv':'hideMaskv'}}" wx:if="{{showMask}}" bindtouchmove="nomove">
+  <view class="maskbodyv">
+    <view class="masktopv">
+      <view class="masktxv">
+        <image src="/resources/comman/avatarUrl.jpg" mode="aspectFill" class="masktx"></image>
+        <view class="maskname">LiYunFei</view>
+      </view>
+      <view class="closev" bindtap="hideMaskOpt">
+        <image src="../../resources/close.png" class="closeicon"></image>
+      </view>
+      <view class="maskinfov">
+        <view class="maskinfoc">
+          <view class="maskinfotag">总长征里程</view>
+          <view class="maskinfoval">4,906</view>
+          <view class="maskinfotxt">千里之行，始于足下</view>
+        </view>
+        <view class="maskinfoc">
+          <view class="maskinfotag">总长征时间（天）</view>
+          <view class="maskinfoval">12</view>
+          <view class="maskinfotxt">准好持久战的决心</view>
+        </view>
+      </view>
+      <view class="masktitle">达到路线</view>
+    </view>
+    <scroll-view scroll-y="true" class="masklistv">
+      <view class="maskitemv">
+        <view class="maskitemnotxt">还没有达到任何一个路线哦～加油</view>
+      </view>
+      <view class="maskitemv maskitemv2">
+        <image src="/resources/comman/avatarUrl.jpg" class="avataricon"></image>
+        <view class="maskitemv2c">
+          <view class="maskname2 showOnehangTxt">飞夺泸定桥（四川省甘孜自治州）</view>
+          <view class="maskbunumv">
+            <image src="../../resources/map.png" class="mapicon"></image>
+            <view class="maskbunum">已到达 733里程</view>
+          </view>
+          <view class="masknumbtnv">
+            <view class="masknumv">
+              <view class="masknumtip">共</view>
+              <view class="masknum">2323</view>
+              <view class="masknumtip">人浏览</view>
+            </view>
+            <view class="maskbtnv">浏览</view>
+          </view>
+        </view>
+      </view>
+      <view class="maskitemv maskitemv2">
+        <image src="/resources/comman/avatarUrl.jpg" class="avataricon"></image>
+        <view class="maskitemv2c">
+          <view class="maskname2 showOnehangTxt">飞夺泸定桥（四川省甘孜自治州）</view>
+          <view class="maskbunumv">
+            <image src="../../resources/map.png" class="mapicon"></image>
+            <view class="maskbunum">已到达 733里程</view>
+          </view>
+          <view class="masknumbtnv">
+            <view class="masknumv">
+              <view class="masknumtip">共</view>
+              <view class="masknum">2323</view>
+              <view class="masknumtip">人浏览</view>
+            </view>
+            <view class="maskbtnv">浏览</view>
+          </view>
+        </view>
+      </view>
+    </scroll-view>
   </view>
 </view>

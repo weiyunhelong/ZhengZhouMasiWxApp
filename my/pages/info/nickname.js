@@ -1,7 +1,7 @@
 // my/pages/info/nickname.js
 var WxRequest = require('../../../utils/WxRequest.js');
 var validator = require('../../../utils/validator.js');
-var requesturl = getApp().globalData.requestUrl;
+var requestUrl = getApp().globalData.requestUrl;
 
 Page({
 
@@ -33,15 +33,24 @@ Page({
       WxRequest.ShowAlert("请输入您的昵称");
     } else {
       //TODO 请求接口
-      wx.showToast({
-        title: '保存成功',
-        duration: 2000
+      var url = requestUrl + "/API/LoginApi/UpdateUserNickName?UserID=" + getApp().globalData.WxUserId + "&nickName=" + val;
+      WxRequest.PostRequest(url, {}).then(res => {
+        if (res.data.success) {
+          getApp().globalData.userInfo.NickName = val;
+          wx.showToast({
+            title: '保存成功',
+            duration: 2000
+          })
+          setTimeout(() => {
+            wx.navigateBack({
+              delta: 1,
+            })
+          }, 2000);
+        }else{
+          WxRequest.ShowAlert(res.data.msg);
+        }
       })
-      setTimeout(() => {
-        wx.navigateBack({
-          delta: 1,
-        })
-      }, 2000);
+
     }
   },
   /**

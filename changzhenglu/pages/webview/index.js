@@ -5,16 +5,26 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    weburl: ""
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    var that = this;
+    if (options.type == 1) {
+      that.setData({
+        type: 1,
+        weburl: decodeURIComponent(options.url)
+      })
+    } else {
+      that.setData({
+        type: 0,
+        weburl: options.url
+      })
+    }
   },
-
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
@@ -61,6 +71,11 @@ Page({
    * 用户点击右上角分享
    */
   onShareAppMessage: function () {
-
+    var that = this;
+    var type = that.data.type;
+    var weburl = that.data.weburl;
+    return {
+      path: '/changzhenglu/pages/webview?type=' + type + "&url=" + (type == 1 ? encodeURIComponent(weburl):weburl)
+    }
   }
 })

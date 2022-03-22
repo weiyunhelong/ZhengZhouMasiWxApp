@@ -1,4 +1,6 @@
 // app.js
+var WxRequest = require('./utils/WxRequest.js');
+
 App({
   onLaunch() {
     // 展示本地存储能力
@@ -8,7 +10,7 @@ App({
   },
   onShow() {
     var that = this;
-    
+
     //下载字体文件
     that.DownFontFile();
 
@@ -16,13 +18,13 @@ App({
     that.UpdateWxCode();
 
   },
-  ChargeLogin(){//判断用户是否登录
+  ChargeLogin() { //判断用户是否登录
     var that = this;
 
     return new Promise((resolve, reject) => {
 
       wx.getStorage({
-        key: "LoginObj",
+        key: "loginObj",
         success: function (res) {
 
           if (res.data.indexOf('&type=3') > -1) { //微信快捷登录
@@ -34,7 +36,7 @@ App({
 
                   //发送res.code 到后台
                   wx.request({
-                    url: that.globalData.requestUrl + '/SmallProgramInfo/LoginByCode?code=' + res.code,
+                    url: that.globalData.requestUrl + '/API/SmallProgramInfo/GetOpenIdByCode?code=' + res.code,
                     method: 'POST',
                     header: {
                       'content-type': 'application/x-www-form-urlencoded;charset=utf-8',
@@ -43,21 +45,27 @@ App({
 
                       if (ress.data.success) {
 
-                        //成功返回数据后，将openid值存储到localStorage中
-                        that.globalData.userInfo = ress.data.data;
-                        that.globalData.openId = ress.data.data.openid;
-                        that.globalData.WxUserId = ress.data.data.userid;
-                        
-                        var resArg = ress.data.data.userid;
-                        resolve(resArg);
+                        var wxurl = that.globalData.requestUrl + "/API/LoginApi/WXLogin?openid=" + ress.data.data.openid;
+                        WxRequest.PostRequest(wxurl, {}).then(resobj => {
 
+                          if (resobj.data.success) {
+                            that.globalData.userInfo = resobj.data.data;
+                            that.globalData.WxUserId = resobj.data.data.UserId;
+                            var resArg = resobj.data.data.UserId;
+                            resolve(resArg);
+                          } else {
+                            that.globalData.WxUserId = 0;
+                            resolve(0);
+                          }
+                        })
                       } else {
-                        reject();
+                        that.globalData.WxUserId = 0;
+                        resolve(0);
                       }
-
                     },
                     fail() {
-                      reject();
+                      that.globalData.WxUserId = 0;
+                      resolve(0);
                     }
                   })
                 }
@@ -68,9 +76,9 @@ App({
             })
           } else { //账户密码登录
 
-            var userId = res.data.replace('&type=1', '').replace('&type=2', '').replace('userid=', '');
+            var accounts = res.data.replace('&type=1', '').replace('&type=2', '').split('&');
             wx.request({
-              url: that.globalData.requestUrl + '/UserInfoApi/GetUserInfoHome?userId=' + userId,
+              url: that.globalData.requestUrl + "/API/LoginApi/Login?account=" + accounts[0].split('=')[1] + "&password=" + accounts[1].split('=')[1],
               method: 'POST',
               header: {
                 'content-type': 'application/x-www-form-urlencoded;charset=utf-8',
@@ -81,19 +89,19 @@ App({
 
                   //成功返回数据后，将openid值存储到localStorage中
                   that.globalData.userInfo = ress.data.data;
-                  that.globalData.openId = ress.data.data.openid;
-                  that.globalData.WxUserId = ress.data.data.userid;
-
-                  var resArg = ress.data.data.userid;
+                  that.globalData.WxUserId = ress.data.data.UserId;
+                  var resArg = ress.data.data.UserId;
                   resolve(resArg);
 
                 } else {
-                  reject();
+                  that.globalData.WxUserId = 0;
+                  resolve(0);
                 }
 
               },
               fail() {
-                reject();
+                that.globalData.WxUserId = 0;
+                resolve(0);
               }
             })
           }
@@ -107,7 +115,7 @@ App({
 
                 //发送res.code 到后台
                 wx.request({
-                  url: that.globalData.requestUrl + '/SmallProgramInfo/LoginByCode?code=' + res.code,
+                  url: that.globalData.requestUrl + '/API/SmallProgramInfo/GetOpenIdByCode?code=' + res.code,
                   method: 'POST',
                   header: {
                     'content-type': 'application/x-www-form-urlencoded;charset=utf-8',
@@ -117,27 +125,26 @@ App({
                     if (ress.data.success) {
 
                       //成功返回数据后，将openid值存储到localStorage中
-                      that.globalData.userInfo = ress.data.data;
                       that.globalData.openId = ress.data.data.openid;
-                      that.globalData.WxUserId = ress.data.data.userId==undefined?0:ress.data.data.userId;
+                      that.globalData.WxUserId = 0;
                       var resArg = ress.data.data.openid;
                       resolve(resArg);
 
                     } else {
-                      that.globalData.WxUserId=0;
+                      that.globalData.WxUserId = 0;
                       resolve(0);
                     }
 
                   },
                   fail() {
-                    that.globalData.WxUserId=0;
+                    that.globalData.WxUserId = 0;
                     resolve(0);
                   }
                 })
               }
             },
             fail: res => {
-              that.globalData.WxUserId=0;
+              that.globalData.WxUserId = 0;
               resolve(0);
             }
           })
@@ -147,9 +154,9 @@ App({
     })
   },
   DownFontFile() { //下载字体
-   
+
     wx.loadFontFace({
-      global:true,
+      global: true,
       family: 'PangMenZhengDao',
       source: 'url("https://zhengzhousizheng.oss-cn-beijing.aliyuncs.com/zujired/%E5%BA%9E%E9%97%A8%E6%AD%A3%E9%81%93%E7%B2%97%E4%B9%A6%E4%BD%936.0.ttf")',
       success: function () {
@@ -226,7 +233,7 @@ App({
     userInfo: null, //用户信息
     openId: "", //openid
     userType: 1, //1：学生 2：教师
-    WxUserId:0,//userId204
+    WxUserId: 0, //userId204
     requestUrl: "https://edu.vrkejiao.com", //接口地址
     tabbar: [{
         pagePath: "pages/home/index",

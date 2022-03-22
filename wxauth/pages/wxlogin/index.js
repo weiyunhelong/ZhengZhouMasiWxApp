@@ -58,15 +58,15 @@ Page({
        
         if (res.data.success) {
           getApp().globalData.userInfo = res.data.data;
-          getApp().globalData.WxUserId = res.data.data.id;
-          if (res.data.data.ReadName == null || res.data.data.ReadName == '') {
+          getApp().globalData.WxUserId = res.data.data.UserId;
+          if (res.data.data.Avatar == null || res.data.data.Avatar == '') {
             wx.redirectTo({
               url: '../auth/info',
             })
           } else {
             wx.setStorage({
               key: "loginObj",
-              data: "account:" + account + ",pwd:" + pwd + ",type:1",
+              data: "account=" + account + "&pwd=" + pwd + "&type=1",
               success: function () {
                 wx.navigateBack({
                   delta: 1,
@@ -86,15 +86,15 @@ Page({
        
         if (res.data.success) {
           getApp().globalData.userInfo = res.data.data;
-          getApp().globalData.WxUserId = res.data.data.id;
-          if (res.data.data.ReadName == null || res.data.data.ReadName == '') {
+          getApp().globalData.WxUserId = res.data.data.UserId;
+          if (res.data.data.Avatar == null || res.data.data.Avatar == '') {
             wx.redirectTo({
               url: '../auth/info',
             })
           } else {
             wx.setStorage({
               key: "loginObj",
-              data: "account:" + account + ",pwd:" + pwd + ",type:2",
+              data: "account=" + account + "&pwd=" + pwd + "&type=2",
               success: function () {
                 wx.navigateBack({
                   delta: 1,
@@ -125,15 +125,15 @@ Page({
             
             if (res.data.success) {
               getApp().globalData.userInfo = res.data.data;
-              getApp().globalData.WxUserId = res.data.data.id;
-              if (res.data.data.ReadName == null || res.data.data.ReadName == '') {
+              getApp().globalData.WxUserId = res.data.data.UserId;
+              if (res.data.data.Avatar == null || res.data.data.Avatar == '') {
                 wx.redirectTo({
                   url: '../auth/info',
                 })
               } else {
                 wx.setStorage({
                   key: "loginObj",
-                  data: "account:" + account + ",pwd:" + pwd + ",type:3",
+                  data: "account=" + that.data.account + "&type=3",
                   success: function () {
                     wx.navigateBack({
                       delta: 1,

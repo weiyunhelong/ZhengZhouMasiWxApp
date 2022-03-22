@@ -1,2 +1,2 @@
 <!--changzhenglu/pages/webview/index.wxml-->
-<text>changzhenglu/pages/webview/index.wxml</text>
+<web-view src="{{weburl}}"></web-view>

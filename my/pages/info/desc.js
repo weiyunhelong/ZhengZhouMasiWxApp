@@ -1,7 +1,6 @@
 // my/pages/info/desc.js
 var WxRequest = require('../../../utils/WxRequest.js');
-var validator = require('../../../utils/validator.js');
-var requesturl = getApp().globalData.requestUrl;
+var requestUrl = getApp().globalData.requestUrl;
 
 Page({
 
@@ -9,7 +8,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-    val:""
+    val: ""
   },
 
   /**
@@ -18,27 +17,35 @@ Page({
   onLoad: function (options) {
 
   },
-  getval(e){
+  getval(e) {
     this.setData({
-      val:e.detail.value
+      val: e.detail.value
     })
   },
-  finshOpt(){
-    var that=this;
-    var val=that.data.val;
-    if(val==""){
+  finshOpt() {
+    var that = this;
+    var val = that.data.val;
+    if (val == "") {
       WxRequest.ShowAlert("请输入");
-    }else{
+    } else {
       //TODO 保存
-      wx.showToast({
-        title: '保存成功',
-        duration:2000
+      var url = requestUrl + "/API/LoginApi/UpdateUserAsign?UserID=" + getApp().globalData.WxUserId + "&asign=" + val;
+      WxRequest.PostRequest(url, {}).then(res => {
+        if (res.data.success) {
+          getApp().globalData.userInfo.Asign = val;
+          wx.showToast({
+            title: '保存成功',
+            duration: 2000
+          })
+          setTimeout(() => {
+            wx.navigateBack({
+              delta: 1,
+            })
+          }, 2000);
+        } else {
+          WxRequest.ShowAlert(res.data.msg);
+        }
       })
-      setTimeout(() => {
-        wx.navigateBack({
-          delta: 1,
-        })
-      }, 2000);
     }
   },
   /**
@@ -52,7 +59,11 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
+    var that = this;
+    var userInfo = getApp().globalData.userInfo;
+    that.setData({
+      val: userInfo.Asign
+    })
   },
 
   /**

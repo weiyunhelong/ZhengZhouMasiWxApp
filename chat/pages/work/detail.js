@@ -58,18 +58,16 @@ Page({
    */
   onShow: function () {
     var that = this;
-    if (getApp().globalData.WxUserId == 0) {
-      getApp().ChargeLogin().then(res => {
-        if (getApp().globalData.WxUserId == 0) {
-          wx.navigateTo({
-            url: '../../../wxauth/pages/wxlogin/index',
-          })
-        }
-      })
-    } else {
-      //获取数据
-      that.InitData();
-    }
+    getApp().ChargeLogin().then(res => {
+      if (getApp().globalData.WxUserId == 0) {
+        wx.navigateTo({
+          url: '../../../wxauth/pages/wxlogin/index',
+        })
+      }else {
+        //获取数据
+        that.InitData();
+      }
+    }) 
   },
   InitData() { //获取列表数据
     var that = this;

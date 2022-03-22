@@ -28,7 +28,9 @@
   </view>
 
   <view class="btn {{account.length>0&&pwd.length>0?'btnh':''}}" bindtap="{{account.length>0&&pwd.length>0?'loginOpt':''}}">登录</view>
-  <view class="pwdtxt" bindtap="forgetpwdOpt">找回密码?</view>
+  
+  <!-- <view class="pwdtxt" bindtap="forgetpwdOpt">找回密码?</view> -->
+
   <view class="btmv">
     <view class="tagv">
       <view class="taglinel"></view>

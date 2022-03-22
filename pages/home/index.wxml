@@ -3,8 +3,8 @@
 <view class="topbgv">
   <view style="width: 100vw;height:{{navigationBarHeight}}px;margin-bottom: 10rpx;"></view>
   <view class="userv" bindtap="goUserOpt">
-    <image src="{{dataobj.Avatar}}" class="avatarUrl"></image>
-    <view class="username">{{dataobj.ReadName}}</view>
+    <image src="{{userInfo.Avatar}}" class="avatarUrl"></image>
+    <view class="username">{{userInfo.ReadName}}</view>
   </view>
 </view>
 

@@ -183,31 +183,31 @@ Page({
    */
   onShow: function () {
     var that = this;
-    if (getApp().globalData.WxUserId == 0) {
-      getApp().ChargeLogin().then(res => {
-        if (getApp().globalData.WxUserId == 0) {
-          wx.navigateTo({
-            url: '../../wxauth/pages/wxlogin/index',
-          })
-        }
-      })
-    } else {
-      //获取课程详情
-      that.InitData();
 
-      //获取教学方案
-      that.InitFangAn();
+    getApp().ChargeLogin().then(res => {
+      if (getApp().globalData.WxUserId == 0) {
+        wx.navigateTo({
+          url: '../../wxauth/pages/wxlogin/index',
+        })
+      } else {
+        //获取课程详情
+        that.InitData();
 
-      //获取实践基地
-      that.InitJiDi();
+        //获取教学方案
+        that.InitFangAn();
 
-      //获取实践资源
-      that.InitZiYuan();
+        //获取实践基地
+        that.InitJiDi();
 
-      //获取讨论区
-      that.InitComment();
+        //获取实践资源
+        that.InitZiYuan();
 
-    }
+        //获取讨论区
+        that.InitComment();
+
+      }
+    })
+
   },
   InitData() { //获取详情
     var that = this;

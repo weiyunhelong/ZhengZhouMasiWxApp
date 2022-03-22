@@ -1,7 +1,7 @@
 <!--my/pages/info/index.wxml-->
 <view class="txv" bindtap="chooseTxOpt">
   <view class="txc">
-    <image src="/resources/comman/avatarUrl.jpg" class="txicon"></image>
+    <image src="{{userInfo.Avatar}}" class="txicon"></image>
     <view class="txtxt">更换头像</view>
   </view>
   <image src="/resources/comman/right.png" class="righticon"></image>
@@ -11,14 +11,14 @@
   <view class="hangc" bindtap="goNickName">
     <view class="hangtag">昵称</view>
     <view class="hangval">
-      <view class="hangtxt">用户名</view>
+      <view class="hangtxt">{{userInfo.NickName}}</view>
       <image src="/resources/comman/right.png" class="righticon"></image>
     </view>
   </view>
   <view class="hangc" bindtap="goDescOpt">
     <view class="hangtag">简介</view>
     <view class="hangval">
-      <view class="hangtxtr">未完成</view>
+      <view class="{{userInfo.Asign==null||userInfo.Asign==''?'hangtxtr':'hangtxt'}}">{{userInfo.Asign==null||userInfo.Asign==''?'未完成':userInfo.Asign}}</view>
       <image src="/resources/comman/right.png" class="righticon"></image>
     </view>
   </view>
@@ -28,21 +28,21 @@
   <view class="hangc">
     <view class="hangtag">姓名</view>
     <view class="hangval">
-      <view class="hangtxt">李云飞</view>
+      <view class="hangtxt">{{userInfo.ReadName}}</view>
       <image src="/resources/comman/right.png" class="righticon"></image>
     </view>
   </view>
   <view class="hangc" bindtap="goSexOpt">
     <view class="hangtag">性别</view>
     <view class="hangval">
-      <view class="hangtxt">男</view>
+      <view class="hangtxt">{{userInfo.Sex==0?'保密':(userInfo.Sex==1?'男':'女')}}</view>
       <image src="/resources/comman/right.png" class="righticon"></image>
     </view>
   </view>
   <view class="hangc">
     <view class="hangtag">手机号码</view>
     <view class="hangval">
-      <view class="hangtxt">13812345678</view>
+      <view class="hangtxt">{{userInfo.mobile}}</view>
       <image src="/resources/comman/right.png" class="righticon"></image>
     </view>
   </view>

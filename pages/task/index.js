@@ -72,18 +72,17 @@ Page({
    */
   onShow: function () {
     var that = this;
-    if (getApp().globalData.WxUserId == 0) {
-      getApp().ChargeLogin().then(res => {
-        if (getApp().globalData.WxUserId == 0) {
-          wx.redirectTo({
-            url: '../../wxauth/pages/wxlogin/index',
-          })
-        }
-      })
-    } else {
-      //获取全部任务
-      that.InitData();
-    }
+
+    getApp().ChargeLogin().then(res => {
+      if (getApp().globalData.WxUserId == 0) {
+        wx.redirectTo({
+          url: '../../wxauth/pages/wxlogin/index',
+        })
+      } else {
+        //获取全部任务
+        that.InitData();
+      }
+    })
   },
   InitData() { //获取全部任务
     var that = this;

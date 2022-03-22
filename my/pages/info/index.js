@@ -1,7 +1,8 @@
 // my/pages/info/index.js
 var WxRequest = require('../../../utils/WxRequest.js');
 var validator = require('../../../utils/validator.js');
-var requesturl = getApp().globalData.requestUrl;
+var requestUrl = getApp().globalData.requestUrl;
+var OssTool = require('../../../ossutils/uploadFile.js');
 
 Page({
 
@@ -29,6 +30,7 @@ Page({
         // tempFilePath可以作为img标签的src属性显示图片 
         OssTool.uploadImgFile(res.tempFilePaths[0], 'avatarUrl/' + getApp().globalData.openId + '/',
           function (result) {
+
             that.setData({
               tx: result
             })
@@ -37,8 +39,9 @@ Page({
     })
   },  
   goNickName(){
+    var that=this;
     wx.navigateTo({
-      url: '../info/nickname?name=用户名',
+      url: '../info/nickname?name='+that.data.userInfo.NickName,
     })
   },
   goDescOpt(){
@@ -68,7 +71,20 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
+    var that = this;
 
+    getApp().ChargeLogin().then(res => {
+      if (getApp().globalData.WxUserId == 0) {
+        wx.navigateTo({
+          url: '../../../wxauth/pages/wxlogin/index',
+        })
+      } else {
+        //获取数据总揽
+        that.setData({
+          userInfo:getApp().globalData.userInfo
+        });
+      }
+    })
   },
 
   /**

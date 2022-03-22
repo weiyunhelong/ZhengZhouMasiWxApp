@@ -112,29 +112,21 @@ Page({
     that.setTabbarlist();
 
     //判断用户是否登录
-    if (getApp().globalData.WxUserId == 0) {
-      getApp().ChargeLogin().then(res=>{
+    getApp().ChargeLogin().then(res=>{
      
-        if(getApp().globalData.WxUserId == 0){
-          that.setData({
-            IsLogin: false,
-            userInfo: {}
-          })
-        }else{
-          that.setData({
-            IsLogin: true,
-            userInfo: getApp().globalData.userInfo
-          })
-          that.InitData();
-        }
-      })
-    } else {
-      that.setData({
-        IsLogin: true,
-        userInfo: getApp().globalData.userInfo
-      })
-      that.InitData();
-    }
+      if(getApp().globalData.WxUserId == 0){
+        that.setData({
+          IsLogin: false,
+          userInfo: {}
+        })
+      }else{
+        that.setData({
+          IsLogin: true,
+          userInfo: getApp().globalData.userInfo
+        })
+        that.InitData();
+      }
+    })
   },
   setTabbarlist: function () { //获取菜单的列表数据
     var that = this;

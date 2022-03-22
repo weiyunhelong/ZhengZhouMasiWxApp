@@ -8,7 +8,8 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    showMask: false,
+    showMaskAni: false,
   },
 
   /**
@@ -25,7 +26,32 @@ Page({
       },
     })
   },
-
+  showMaskOpt() { //浮窗显示信息
+    var that = this;
+    that.setData({
+      showMask: true,
+      showMaskAni: true,
+    })
+  },
+  hideMaskOpt() { //关闭浮窗
+    var that = this;
+    that.setData({
+      showMaskAni: false,
+    })
+    setTimeout(() => {
+      that.setData({
+        showMask: false,
+      })
+    }, 1000);
+  },
+  nomove() {
+    return false
+  },
+  goMapOpt() { //点击进入长征
+    wx.navigateTo({
+      url: '../map/index',
+    })
+  },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */

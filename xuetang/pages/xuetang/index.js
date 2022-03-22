@@ -67,17 +67,16 @@ Page({
    */
   onShow: function () {
     var that = this;
-    if (getApp().globalData.WxUserId == 0) {
-      getApp().ChargeLogin().then(res => {
-        if (getApp().globalData.WxUserId == 0) {
-          wx.navigateTo({
-            url: '../../../wxauth/pages/wxlogin/index',
-          })
-        }
-      })
-    } else {
-      that.InitData();
-    }
+
+    getApp().ChargeLogin().then(res => {
+      if (getApp().globalData.WxUserId == 0) {
+        wx.navigateTo({
+          url: '../../../wxauth/pages/wxlogin/index',
+        })
+      } else {
+        that.InitData();
+      }
+    })
   },
   InitData() { //获取我的实践课
     var that = this;
@@ -86,7 +85,7 @@ Page({
       if (res.data.success) {
         that.setData({
           list: res.data.data.datas,
-          userInfo:getApp().globalData.userInfo,
+          userInfo: getApp().globalData.userInfo,
         })
       }
     })

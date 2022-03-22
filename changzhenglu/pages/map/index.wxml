@@ -1,2 +1,22 @@
 <!--changzhenglu/pages/map/index.wxml-->
-<text>changzhenglu/pages/map/index.wxml</text>
+<!--顶部用户信息-->
+<view class="topbgv" bindtap="hideMaskOpt" style="height:calc({{navigationBarHeight}}px + 100rpx);">
+  <view style="width: 100vw;height:{{navigationBarHeight}}px;margin-bottom: 10rpx;"></view>
+  <view class="pagetitlev" catchtap="goBackOpt">
+    <view class="backiconv">
+      <image src="/resources/comman/backiconb.png" class="backicon"></image>
+    </view>
+    <view class="pagetitle">重走长征路</view>
+  </view>
+</view>
+<!--用户信息-->
+<view class="userv" bindtap="showMaskOpt">
+  <image src="/resources/comman/avatarUrl.jpg" mode="aspectFill" class="avatarUrl"></image>
+  <view class="nickname">长征突击手</view>
+  <image src="../../resources/right.png" class="righticon"></image>
+</view>
+
+<!--定位按钮-->
+<view class="postionv">
+ <image src="../../resources/postion.png" class="postion"></image>
+</view>
