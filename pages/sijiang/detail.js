@@ -237,7 +237,7 @@ Page({
     WxRequest.PostRequest(url, {}).then(res => {
       if (res.data.success) {
         var dataobj = res.data.data;
-        dataobj.Progress = dataobj.Progress == "" ? '0:00' : dataobj.Progress;
+        dataobj.Progress = '0:00' ;
         that.setData({
           dataobj: dataobj
         })

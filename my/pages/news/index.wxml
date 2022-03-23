@@ -69,3 +69,6 @@
   <nodatacom wx:if="{{list.length==0}}"/>
 
 </scroll-view>
+
+<!--loadding 加载-->
+<loadding showloadingMask="{{showloadingMask}}"/>

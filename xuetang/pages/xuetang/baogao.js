@@ -43,7 +43,7 @@ Page({
     that.setData({
       showMask: true,
       showMaskAni: true,
-      commentTxt: e.currentTarget.dataset.obj.msg
+      commentTxt: e.currentTarget.dataset.obj.Remark
     })
   },
   closeMask() { //关闭评论浮窗
@@ -85,7 +85,7 @@ Page({
     var that = this;
     var pageindex = that.data.pageindex;
     var chktab = that.data.chktab;
-    var url = requestUrl + "/API/UserCenterJindeSchool/GetReportListWhereUser?page=" + pageindex + "&rows=10&userid=" + getApp().globalData.WxUserId + "&state=" + chktab;
+    var url = requestUrl + "/API/UserCenterJindeSchool/GetReportListWhereUser?page=" + pageindex + "&rows=10&userid=" + getApp().globalData.WxUserId + "&state=" + (chktab==-1?'':chktab);
     WxRequest.PostRequest(url, {}).then(res => {
       if (res.data.success) {
         if (pageindex == 1) {

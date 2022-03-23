@@ -35,25 +35,24 @@
   <view class="numberv">
     <view class="numberc">
       <view class="numbertag">已学习/时:</view>
-      <view class="numberval">0</view>
+      <view class="numberval">{{dataobj.studyTimes}}</view>
     </view>
     <view class="numberline"></view>
     <view class="numberc">
       <view class="numbertag">答题数/个:</view>
-      <view class="numberval">0</view>
+      <view class="numberval">{{dataobj.answerNum}}</view>
     </view>
   </view>
 </view>
 
 <!--勋章部分-->
 <view class="xunzhangv" bindtap="goXunZhang">
-  <view class="xunzhangl" wx:if="{{1==2}}">
-    <image src="../../resources/my/xunzhang1.png" class="xunzhang"></image>
-    <view class="xzhlevel">Lv.1勋章</view>
+  <view class="xunzhangl" wx:if="{{dataobj.gradeNum>0}}">
+    <image src="../../resources/my/xunzhang{{dataobj.gradeNum}}.png" class="xunzhang"></image>
+    <view class="xzhlevel">Lv.{{dataobj.gradeNum}}勋章</view>
   </view>
   <view class="xunzhangl" wx:else>
-    <image src="../../resources/my/xunzhang.png" class="xunzhang"></image>
-    <view class="xzhlevel">暂无获取</view>
+    <view class="xunzhangr">暂无勋章</view>
   </view>
   <view class="xunzhangr">我的成就 ></view>
 </view>

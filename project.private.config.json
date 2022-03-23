@@ -14,50 +14,50 @@
       "list": [
         {
           "name": "",
-          "pathName": "changzhenglu/pages/home/index",
+          "pathName": "xuetang/pages/xuetang/create",
           "query": "",
           "launchMode": "default",
           "scene": null
         },
         {
           "name": "",
-          "pathName": "changzhenglu/pages/map/index",
+          "pathName": "pages/activity/detail",
+          "query": "id=67",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "",
+          "pathName": "xuetang/pages/xuetang/book",
           "query": "",
           "launchMode": "default",
           "scene": null
         },
         {
           "name": "",
-          "pathName": "my/pages/info/index",
+          "pathName": "pages/my/index",
           "query": "",
           "launchMode": "default",
           "scene": null
         },
         {
           "name": "",
-          "pathName": "my/pages/course/index",
+          "pathName": "my/pages/study/index",
           "query": "",
           "launchMode": "default",
           "scene": null
         },
         {
           "name": "",
-          "pathName": "pages/shidu/chapter",
-          "query": "id=144",
+          "pathName": "my/pages/dati/index",
+          "query": "",
           "launchMode": "default",
           "scene": null
         },
         {
           "name": "",
-          "pathName": "pages/course/jidi",
-          "query": "id=124&courseid=55",
-          "launchMode": "default",
-          "scene": null
-        },
-        {
-          "name": "",
-          "pathName": "pages/course/detail",
-          "query": "id=55",
+          "pathName": "my/pages/study/index",
+          "query": "",
           "scene": null,
           "launchMode": "default"
         }

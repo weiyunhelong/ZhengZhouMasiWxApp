@@ -11,6 +11,7 @@ Page({
     chkkind: 0, //0:评论 1:点赞 2:公告
     pageindex: 1,
     list: [], //列表数据
+    showloadingMask:true,
   },
 
   /**
@@ -22,7 +23,12 @@ Page({
   tapKind(e) { //选中类型
     var that = this;
     that.setData({
-      chkkind: e.currentTarget.dataset.tab
+      chkkind: e.currentTarget.dataset.tab,
+      pageindex:1,
+      list:[]
+    })
+    wx.showLoading({
+      title: '加载中',
     })
     that.InitData();
   },
@@ -64,6 +70,12 @@ Page({
           })
         }
       }
+      setTimeout(() => {
+        wx.hideLoading();
+        that.setData({
+          showloadingMask:false
+        })
+      }, 1000);
     })
   },
   /**

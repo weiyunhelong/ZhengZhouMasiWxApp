@@ -1,16 +1,62 @@
 <!--my/pages/study/index.wxml-->
-<block wx:for="{{list}}" wx:key="item">
-  <view class="blockv">
-     <view class="blockcover" style="background: url({{item.cover}}) no-repeat;background-size: cover;">
-       <view class="jinduv">{{item.percent}}%</view>
-     </view>
-    <view class="blockc">
-      <view class="name showTwohangTxt">{{item.name}}</view>
-      <view class="infov">
-        <view class="date">{{item.datetime}}</view>
+<!--顶部用户信息-->
+<view class="topbgv">
+  <view style="width: 100vw;height:{{navigationBarHeight}}px;margin-bottom: 10rpx;"></view>
+  <view class="pagetitlev">
+    <view class="backiconv" bindtap="backOpt">
+      <image src="/resources/comman/backiconw.png" class="backicon"></image>
+    </view>
+    <view class="pagetitle">学习记录</view>
+  </view>
+</view>
+<view class="numv">
+  <view class="numvc">
+    <view class="numval">{{numobj.TotalTime}}</view>
+    <view class="numtag">累积学习（分钟）</view>
+  </view>
+  <view class="numline"></view>
+  <view class="numvc">
+    <view class="numval">{{numobj.todayTime}}</view>
+    <view class="numtag">今日学习（分钟）</view>
+  </view>
+</view>
+<!--tab部分-->
+<view class="tabv">
+  <view class="tabitem" bindtap="tapTab" data-tab="-1">
+    <view class="{{chktab==-1?'tabtxth':'tabtxt'}}">全部</view>
+    <view class="tabline" wx:if="{{chktab==-1}}"></view>
+  </view>
+  <view class="tabitem" bindtap="tapTab" data-tab="2">
+    <view class="{{chktab==2?'tabtxth':'tabtxt'}}">探寻红色基因</view>
+    <view class="tabline" wx:if="{{chktab==2}}"></view>
+  </view>
+  <view class="tabitem" bindtap="tapTab" data-tab="3">
+    <view class="{{chktab==3?'tabtxth':'tabtxt'}}">红色时时读</view>
+    <view class="tabline" wx:if="{{chktab==3}}"></view>
+  </view>
+  <view class="tabitem" bindtap="tapTab" data-tab="4">
+    <view class="{{chktab==4?'tabtxth':'tabtxt'}}">四史天天讲</view>
+    <view class="tabline" wx:if="{{chktab==4}}"></view>
+  </view>
+</view>
+
+<scroll-view class="listv" scroll-y="true" bindscrolltolower="ShowMoreData">
+  <block wx:for="{{list}}" wx:key="item">
+    <view class="blockv">
+      <view class="blockcover" style="background: url({{item.Thumbnail}}) no-repeat;background-size: cover;">
+        <view class="jinduv">{{item.Schedule}}%</view>
+      </view>
+      <view class="blockc">
+        <view class="name showTwohangTxt">{{item.Title}}</view>
+        <view class="infov">
+          <view class="date">{{item.CreateTime}}</view>
+        </view>
       </view>
     </view>
-  </view>
-</block>
+  </block>
 
-<nodatacom wx:if="{{list.length==0}}"/>
+  <nodatacom wx:if="{{list.length==0}}" />
+</scroll-view>
+
+<!--loadding 加载-->
+<loadding showloadingMask="{{showloadingMask}}" />

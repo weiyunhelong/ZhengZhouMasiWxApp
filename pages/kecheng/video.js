@@ -291,7 +291,7 @@ Page({
             url: '../kecheng/detail?id='+that.data.id,
           })
         }else{
-          dataobj.Progress = dataobj.Progress == "" ? '0:00' : dataobj.Progress;
+          dataobj.Progress = '0:00';
           that.setData({
             dataobj: dataobj
           })

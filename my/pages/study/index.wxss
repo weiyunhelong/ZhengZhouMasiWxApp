@@ -1,6 +1,121 @@
 /* my/pages/study/index.wxss */
-page{
+page {
   background: #fff;
+}
+
+/*用户信息*/
+.topbgv {
+  width: 100vw;
+  height: 356rpx;
+  background: url(https://zhengzhousizheng.oss-cn-beijing.aliyuncs.com/zhengzhouv2/topbg.png) no-repeat;
+  background-size: cover;
+}
+
+.topbgv .pagetitlev {
+  width: 555rpx;
+  height: 60rpx;
+  display: flex;
+  padding-left: 32rpx;
+}
+
+.topbgv .backiconv {
+  width: 70rpx;
+  height: 60rpx;
+}
+
+.topbgv .backicon {
+  width: 27rpx;
+  height: 54rpx;
+  border-radius: 50%;
+  margin-top: 8rpx;
+}
+
+.topbgv .pagetitle {
+  width: 385rpx;
+  height: 60rpx;
+  text-align: center;
+  line-height: 60rpx;
+  font-size: 34rpx;
+  color: #FFFFFF;
+  margin-left: 84rpx;
+}
+
+/*数据部分*/
+.numv {
+  width: 686rpx;
+  height: 196rpx;
+  background: #FFFFFF;
+  margin: -180rpx auto 0rpx;
+  box-shadow: 0 5rpx 5rpx #E3E3E3;
+  border-radius: 20rpx;
+  display: flex;
+  justify-content: space-around;
+}
+.numv .numvc{
+  width: 330rpx;
+  height: 196rpx;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  justify-self: center;
+  text-align: center;
+}
+.numv .numval{
+  font-size: 44rpx;
+  font-weight: 500;
+  color: #262626;
+}
+.numv .numtag{
+  font-size: 24rpx;
+  color: #999999;
+}
+.numv .numline{
+  width: 2rpx;
+  height: 43rpx;
+  background: #E3E3E3;
+  margin-top: 76rpx;
+}
+/*获取tab部分*/
+.tabv {
+  display: flex;
+  justify-content: space-around;
+  width: 100vw;
+  height: 88rpx;
+  background: #FFFFFF;
+  line-height: 88rpx;
+  margin-top: 20rpx;
+}
+
+.tabv .tabitem {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  justify-self: center;
+  text-align: center;
+}
+
+.tabv .tabtxth {
+  font-size: 30rpx;
+  color: #262626;
+  font-weight: 500;
+}
+
+.tabv .tabtxt {
+  font-size: 30rpx;
+  color: #999999;
+}
+
+.tabv .tabline {
+  width: 28rpx;
+  height: 5rpx;
+  background: #F24540;
+  border-radius: 3rpx;
+  margin: -5rpx auto 0;
+}
+/*列表数据部分*/
+.listv{
+  width: 100vw;
+  height: calc(100vh - 480rpx);
 }
 .blockv {
   width: 686rpx;
@@ -8,7 +123,7 @@ page{
   border-radius: 10rpx;
   margin: 0rpx auto;
   display: flex;
-  border-bottom:1rpx solid #eee;
+  border-bottom: 1rpx solid #eee;
 }
 
 .blockcover {
@@ -32,8 +147,8 @@ page{
 }
 
 .blockc {
-  width:392rpx;
-  padding-top:28rpx;
+  width: 392rpx;
+  padding-top: 28rpx;
 }
 
 .name {

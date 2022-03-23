@@ -1,7 +1,12 @@
 <!--my/pages/dati/index.wxml-->
-<view class="kindv" style="margin-top:{{navigationBarHeight + 5}}px;">
-  <view class="kindcv {{chkkind==0?'chkkindtxt':'kindtxt'}}" data-tab="0" bindtap="tapKind">答题记录</view>
-  <view class="kindcv {{chkkind==1?'chkkindtxt':'kindtxt'}}" data-tab="1" bindtap="tapKind">错题集</view>
+<view class="topv" style="margin-top:{{navigationBarHeight + 5}}px;display: flex;">
+  <view class="backiconv" bindtap="backOpt">
+    <image src="/resources/comman/backiconb.png" class="backicon"></image>
+  </view>
+  <view class="kindv">
+    <view class="kindcv {{chkkind==0?'chkkindtxt':'kindtxt'}}" data-tab="0" bindtap="tapKind">答题记录</view>
+    <view class="kindcv {{chkkind==1?'chkkindtxt':'kindtxt'}}" data-tab="1" bindtap="tapKind">错题集</view>
+  </view>
 </view>
 <view class="typev">
   <view class="typelv">
@@ -17,13 +22,15 @@
       <view class="{{chktype==2?'typeltxth':'typeltxt'}}">判断题</view>
       <view class="typeline" wx:if="{{chktype==2}}"></view>
     </view>
-  </view>
-  <picker mode="date" bindchange="dateFilter">
-    <view class="typerv">
-      <view class="typertxt">{{filterdate==''?'筛选':filterdate}}</view>
-      <image src="./filter.png" class="filter"></image>
+    <view class="typelc" bindtap="tapType" data-type="3">
+      <view class="{{chktype==3?'typeltxth':'typeltxt'}}">多选题</view>
+      <view class="typeline" wx:if="{{chktype==3}}"></view>
     </view>
-  </picker>
+  </view>
+  <view class="typerv" bindtap="dateFilter">
+    <view class="{{filterdate==''?'typertxt':'typertxth'}}">{{filterdate==''?'筛选':filterdate}}</view>
+    <image src="./filter.png" class="filter"></image>
+  </view>
 </view>
 
 <scroll-view scroll-y="true" class="datav">

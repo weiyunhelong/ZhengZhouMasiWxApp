@@ -11,8 +11,8 @@ Page({
     chkkind: 0, //0:答题记录 1:错题集
     chktype: 0, //0:全部 1:选择题 2:判断题
     list: [], //列表数据
-    pageindex:1,
-    filterdate:"",
+    pageindex: 1,
+    filterdate: "",
   },
 
   /**
@@ -28,12 +28,22 @@ Page({
       },
     })
   },
+  backOpt() { //返回操作
+    wx.navigateBack({
+      delta: 1,
+      fail:function(){
+        wx.reLaunch({
+          url: '../../../pages/home/index',
+        })
+      }
+    })
+  },
   tapKind(e) { //选中类型
     var that = this;
     that.setData({
       chkkind: e.currentTarget.dataset.tab,
-      chktype:0,
-      pageindex:1
+      chktype: 0,
+      pageindex: 1
     })
     that.InitData();
   },
@@ -41,22 +51,36 @@ Page({
     var that = this;
     that.setData({
       chktype: e.currentTarget.dataset.type,
-      pageindex:1
+      pageindex: 1
     })
     that.InitData();
   },
-  dateFilter(e){//日期筛选
-    this.setData({
-      filterdate:e.detail.value
+  dateFilter(e) { //日期筛选
+    var that=this;
+    wx.showActionSheet({
+      itemList: ['近30天','近3个月','近6个月'],
+      success:function(res){
+        that.setData({
+          filterdate:res.tapIndex==0?'近30天':(res.tapIndex==1?'近3个月':'近6个月'),
+          pageindex:1,
+        })
+        that.InitData();
+      },
+      fail:function(){
+        that.setData({
+          filterdate:''
+        })
+      }
     })
   },
   InitData() { //获取消息列表
     var that = this;
-    var chkkind = that.data.chkkind;
-    var chktype = that.data.chktype;
-    var pageindex = that.data.pageindex;
+    var chkkind = that.data.chkkind;//答题类型
+    var chktype = that.data.chktype;//题目类型
+    var pageindex = that.data.pageindex;//下标
+    var filterdate = that.data.filterdate;//时间类型
     that.setData({
-      list: [1,2,3,4,5,6,7,8,9,10]
+      list: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
     })
   },
   /**
@@ -70,7 +94,7 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-    var that=this;
+    var that = this;
     that.InitData();
   },
 

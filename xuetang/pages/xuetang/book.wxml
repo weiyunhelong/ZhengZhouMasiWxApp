@@ -2,10 +2,10 @@
 <scroll-view scroll-y="true" class="listv" bindscrolltolower="ShowMoreData">
   <block wx:for="{{list}}" wx:key="item">
     <view class="blockv">
-      <view class="blockname">那些更棒的点子来自于个体依然用过去习惯的方式思考创意时——坐在办公桌前时。</view>
+      <view class="blockname showTwohangTxt">{{item.Title}}</view>
       <view class="blockc">
-        <view class="blockuser">某某某</view>
-        <view class="blockdate">2021.23.23</view>
+        <view class="blockuser">{{item.ReadName}}</view>
+        <view class="blockdate">{{item.CreateTime}}</view>
       </view>
     </view>
   </block>

@@ -87,6 +87,7 @@
   width: 380rpx;
   font-size: 30rpx;
   color: #262626;
+  text-align: left;
 }
 
 .workowner {
@@ -126,7 +127,7 @@
   text-align: center;
   line-height: 44rpx;
   position: absolute;
-  top: 106rpx;
+  top: 110rpx;
   left: 0;
 }
 

@@ -317,7 +317,7 @@ Page({
       if (res.data.success) {
         var dataobj = res.data.data;
         dataobj.summarytime = "02:30";
-        dataobj.Progress = dataobj.Progress == "" ? '0:00' : dataobj.Progress;
+        dataobj.Progress ='0:00';
         that.setData({
           dataobj: dataobj
         })
@@ -341,6 +341,7 @@ Page({
    */
   onHide: function () {
     clearInterval(timer);
+    that.pauseOpt();
   },
 
   /**
@@ -348,6 +349,7 @@ Page({
    */
   onUnload: function () {
     clearInterval(timer);
+    that.pauseOpt();
   },
 
   /**

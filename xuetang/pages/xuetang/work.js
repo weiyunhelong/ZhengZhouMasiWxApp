@@ -8,6 +8,7 @@ Page({
    * 页面的初始数据
    */
   data: {
+    showloadingMask:true,
     chktab: -1, //-1全部 0:活动 1：任务 2:优质
     pageindex: 1,
     list: [],
@@ -43,7 +44,7 @@ Page({
     that.setData({
       showMask: true,
       showMaskAni: true,
-      commentTxt: e.currentTarget.dataset.obj
+      commentTxt: e.currentTarget.dataset.obj.Remark
     })
   },
   closeMask() { //关闭评论浮窗
@@ -86,13 +87,18 @@ Page({
     var chktab = that.data.chktab, //-1全部 0:活动 1：任务 2:优质
       pageindex = that.data.pageindex;
 
-    var url = requestUrl + "/API/UserCenterJindeSchool/GetWorksListWhereUser?page=" + pageindex + "&rows=10&userid=" + getApp().globalData.WxUserId + "&state=-1&type=" + chktab;
+    var url = requestUrl + "/API/UserCenterJindeSchool/GetWorksListWhereUser?page=" + pageindex + "&rows=10&userid=" + getApp().globalData.WxUserId + "&state=&type=" + (chktab==-1?'':chktab);
     WxRequest.PostRequest(url, {}).then(res => {
       if (res.data.success) {
         that.setData({
           list: res.data.data.datas
         })
       }
+      setTimeout(() => {
+        that.setData({
+          showloadingMask:false
+        })
+      }, 1000);
     })
   },
   /**

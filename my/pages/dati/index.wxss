@@ -1,11 +1,21 @@
 /* my/pages/dati/index.wxss */
+.backiconv{
+  width: 100rpx;
+  height: 60rpx;
+}
+.backicon{
+  width: 18rpx;
+  height: 34rpx;
+  margin-top: 13rpx;
+  padding-left: 32rpx;
+}
 /*分类部分*/
 .kindv {
   width: 300rpx;
   height: 60rpx;
   line-height: 60rpx;
   border: 1rpx solid #262626;
-  margin: 30rpx auto;
+  margin: 0rpx 0 30rpx 90rpx;
   border-radius: 8rpx;
   display: flex;
   justify-content: space-between;
@@ -88,7 +98,11 @@
   font-size: 26rpx;
   color: #999999;
 }
-
+.typev .typerv .typertxth {
+  font-size: 26rpx;
+  color: #F24540;
+  margin-right:4rpx;
+}
 .typev .typerv .filter {
   width: 38rpx;
   height: 38rpx;

@@ -23,22 +23,24 @@
 <scroll-view scroll-y="true" class="listv" bindscrolltolower="ShowMoreData">
   <block wx:for="{{list}}" wx:key="item">
     <view class="baogaov">
-      <view class="baogaoname">不要以"为别人考虑"做理由，其实丢弃了"舍我其谁"的使命感</view>
-      <view class="baogaoowner">负责人：某李</view>
+      <view class="baogaoname">{{item.Title}}</view>
+      <view class="baogaoowner">负责人：{{item.ReadName}}</view>
       <view class="baogaoc">
-        <view class="baogaoleftc" bindtap="showCommentOpt" data-obj="{{item}}">
+        <view class="baogaoleftc" bindtap="{{item.Remark=='暂无评论'?'':'showCommentOpt'}}" data-obj="{{item}}">
           <view class="baogaolefttxt">评论：</view>
-          <view class="baogaolefttxt">暂无评论</view>
-          <view class="baogaolefttxt2">有评论</view>
-          <image src="../../resources/msg.png" class="msgicon"></image>
+          <view class="baogaolefttxt" wx:if="{{item.Remark=='暂无评论'}}">暂无评论</view>
+          <block wx:else>
+            <view class="baogaolefttxt2">有评论</view>
+            <image src="../../resources/msg.png" class="msgicon"></image>
+          </block>
         </view>
-        <view class="baogaorightc">已通过</view>
-        <view class="baogaorightc1">待批阅</view>
-        <view class="baogaorightc2">未通过</view>
+        <view class="baogaorightc"  wx:if="{{item.State=='已通过'}}">已通过</view>
+        <view class="baogaorightc1" wx:if="{{item.State=='审核中'}}">待批阅</view>
+        <view class="baogaorightc2" wx:if="{{item.State=='未通过'}}">未通过</view>
       </view>
     </view>
   </block>
-  <nodatacom wx:if="{{list.length==0}}"/>
+  <nodatacom wx:if="{{list.length==0}}" />
 </scroll-view>
 
 <!--显示操作浮窗-->

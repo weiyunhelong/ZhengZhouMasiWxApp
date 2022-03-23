@@ -10,9 +10,12 @@ Page({
   data: {
     IsLogin: false, //是否登录
     userInfo: {}, //用户信息
-    dataobj:{
-      
-    },//数据信息
+    dataobj: {
+      answerNum: 0,
+      gradeNum: 0,
+      result: true,
+      studyTimes: 0,
+    }, //数据信息
   },
 
   /**
@@ -28,7 +31,7 @@ Page({
       },
     })
   },
-  goBackOpt(){//点击返回
+  goBackOpt() { //点击返回
     wx.navigateBack({
       delta: 1,
     })
@@ -112,14 +115,14 @@ Page({
     that.setTabbarlist();
 
     //判断用户是否登录
-    getApp().ChargeLogin().then(res=>{
-     
-      if(getApp().globalData.WxUserId == 0){
+    getApp().ChargeLogin().then(res => {
+
+      if (getApp().globalData.WxUserId == 0) {
         that.setData({
           IsLogin: false,
           userInfo: {}
         })
-      }else{
+      } else {
         that.setData({
           IsLogin: true,
           userInfo: getApp().globalData.userInfo
@@ -144,14 +147,14 @@ Page({
       }
     }
   },
-  InitData(){//获取用户数据
-    var that=this;
+  InitData() { //获取用户数据
+    var that = this;
     //TODO 获取学习时间，答题个数，勋章
-    var url=requestUrl+"?userid="+getApp().globalData.WxUserId;
-    WxRequest.PostRequest(url,{}).then(res=>{
-      if(res.data.success){
+    var url = requestUrl + "/API/UserCenterApi/UserCenterStatistics?userid=" + getApp().globalData.WxUserId;
+    WxRequest.PostRequest(url, {}).then(res => {
+      if (res.data.success) {
         that.setData({
-          dataobj:res.data.data
+          dataobj: res.data.data
         })
       }
     })

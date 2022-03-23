@@ -25,65 +25,20 @@
     <view class="workv">
       <view class="worklv">
         <image src="/resources/comman/avatarUrl.jpg" mode="aspectFill" class="workcover"></image>
-        <view class="finishiconv">
+        <view class="finishiconv" wx:if="{{item.Type=='优质'}}">
           <image src="../../resources/finish.png" class="finishicon"></image>
         </view>
-      </view>
-      <view class="workrv">
-        <view class="workname showOnehangTxt">有些事情想想难，其实只要行动起来，也很简单</view>
-        <view class="workowner">负责人：某某</view>
-        <view class="workcommentv" bindtap="showCommentOpt">
-          <view class="workcommenttxt">评论：</view>
-          <view class="workcommenttxt2">有评论</view>
-          <image src="../../resources/msg.png" class="msgicon"></image>
-        </view>
-      </view>
-    </view>
-    <view class="workv">
-      <view class="worklv">
-        <image src="/resources/comman/avatarUrl.jpg" mode="aspectFill" class="workcover"></image>
-        <view class="worktypev">
-          <view class="worktypetxt">活动</view>
+        <view class="worktypev" wx:else>
+          <view class="worktypetxt">{{item.Type}}</view>
         </view>
       </view>
       <view class="workrv">
-        <view class="workname showOnehangTxt">有些事情想想难，其实只要行动起来，也很简单</view>
-        <view class="workowner">负责人：某某</view>
-        <view class="workcommentv">
-          <view class="workcommenttxt">评论：</view>
-          <view class="workcommenttxt2">有评论</view>
-          <image src="../../resources/msg.png" class="msgicon"></image>
+        <view class="workname showOnehangTxt">{{item.Title}}</view>
+        <view class="workowner">负责人：{{item.ReadName}}</view>
+        <view class="workcommentv"  wx:if="{{item.Remark=='暂无评论'}}">
+          <view class="workcommenttxt">评论：暂无评论</view>
         </view>
-      </view>
-    </view>
-    <view class="workv">
-      <view class="worklv">
-        <image src="/resources/comman/avatarUrl.jpg" mode="aspectFill" class="workcover"></image>
-        <view class="worktypev">
-          <view class="worktypetxt">任务</view>
-        </view>
-      </view>
-      <view class="workrv">
-        <view class="workname showOnehangTxt">有些事情想想难，其实只要行动起来，也很简单</view>
-        <view class="workowner">负责人：某某</view>
-        <view class="workcommentv">
-          <view class="workcommenttxt">评论：</view>
-          <view class="workcommenttxt2">有评论</view>
-          <image src="../../resources/msg.png" class="msgicon"></image>
-        </view>
-      </view>
-    </view>
-    <view class="workv">
-      <view class="worklv">
-        <image src="/resources/comman/avatarUrl.jpg" mode="aspectFill" class="workcover"></image>
-        <view class="worktypev">
-          <view class="worktypetxt">优质</view>
-        </view>
-      </view>
-      <view class="workrv">
-        <view class="workname showOnehangTxt">有些事情想想难，其实只要行动起来，也很简单</view>
-        <view class="workowner">负责人：某某</view>
-        <view class="workcommentv">
+        <view class="workcommentv" bindtap="showCommentOpt" wx:else>
           <view class="workcommenttxt">评论：</view>
           <view class="workcommenttxt2">有评论</view>
           <image src="../../resources/msg.png" class="msgicon"></image>
@@ -99,7 +54,10 @@
   <view class="maskbodyv">
     <view class="masktitle">老师评论</view>
     <view class="masktip">评论:</view>
-    <scroll-view scroll-y="true" class="masktxt">习近平新时代中国特色社会主义思想是当代中国马克思主义、二十一世纪马克思主义，是中华文化和中国精神的时代精华，实现了马克思主义中国化新的飞跃。十九届六中全会决议，用10个“明确”概括了核心内容</scroll-view>
+    <scroll-view scroll-y="true" class="masktxt">{{commentTxt}}</scroll-view>
     <view class="maskbtn" bindtap="closeMask">关闭</view>
   </view>
 </view>
+
+<!--loadding 加载-->
+<loadding showloadingMask="{{showloadingMask}}"/>

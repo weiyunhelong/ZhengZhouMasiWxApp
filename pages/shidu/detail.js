@@ -302,7 +302,7 @@ Page({
       if (res.data.success) {
         var dataobj = res.data.data;
         dataobj.summarytime = "02:30";
-        dataobj.Progress = dataobj.Progress == "" ? '0:00' : dataobj.Progress;
+        dataobj.Progress = '0:00';
         that.setData({
           dataobj: dataobj
         })
@@ -325,14 +325,18 @@ Page({
    * 生命周期函数--监听页面隐藏
    */
   onHide: function () {
+    var that=this;
     clearInterval(timer);
+    that.pauseOpt();
   },
 
   /**
    * 生命周期函数--监听页面卸载
    */
   onUnload: function () {
+    var that=this;
     clearInterval(timer);
+    that.pauseOpt();
   },
 
   /**

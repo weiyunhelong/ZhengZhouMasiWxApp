@@ -11,6 +11,7 @@ Page({
     chktab: 1, //分类
     pageindex: 1,
     list: [],
+    showloadingMask: true,
   },
 
   /**
@@ -23,7 +24,11 @@ Page({
     var that = this;
     that.setData({
       chktab: e.currentTarget.dataset.tab,
-      pageindex: 1
+      pageindex: 1,
+      list:[],
+    })
+    wx.showLoading({
+      title: '加载中',
     })
     that.InitData();
   },
@@ -33,6 +38,19 @@ Page({
       pageindex: 1 + that.data.pageindex
     })
     that.InitData();
+  },
+  goDetail(e) { //调整详情
+    var that = this;
+    var chktab = that.data.chktab;
+    if (chktab == 1) { //视频
+      wx.navigateTo({
+        url: '../../../pages/kecheng/video?id=' + e.currentTarget.dataset.id,
+      })
+    } else {
+      wx.navigateTo({
+        url: '../../../pages/kecheng/detail?id=' + e.currentTarget.dataset.id,
+      })
+    }
   },
   /**
    * 生命周期函数--监听页面初次渲染完成
@@ -46,16 +64,16 @@ Page({
    */
   onShow: function () {
     var that = this;
-    
+
     getApp().ChargeLogin().then(res => {
       if (getApp().globalData.WxUserId == 0) {
         wx.navigateTo({
           url: '../../../wxauth/pages/wxlogin/index',
         })
-      }else {
+      } else {
         that.InitData();
       }
-    }) 
+    })
   },
   InitData() { //获取数据
     var that = this;
@@ -83,6 +101,13 @@ Page({
           })
         }
       }
+
+      setTimeout(() => {
+        wx.hideLoading();
+        that.setData({
+          showloadingMask: false
+        })
+      }, 1000);
     })
   },
   /**

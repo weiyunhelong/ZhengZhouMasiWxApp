@@ -8,7 +8,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-    chktab: -1, //-1全部 0:待审核 1:进行中 2:报名中 3:已结束
+    chktab: -2, //-2全部 -1:待审核 0:进行中 1:报名中 2:已结束
     pageindex: 1,
     list: [],
   },
@@ -66,7 +66,7 @@ Page({
   InitData() { //获取我的活动
     var that = this;
     var pageindex = that.data.pageindex;
-    var url = requestUrl + "/API/UserCenterJindeSchool/GetUserCreateActivityList?page=" + pageindex + "&rows=10&userid=" + getApp().globalData.WxUserId + "&state="; //+that.data.chktab;
+    var url = requestUrl + "/API/UserCenterJindeSchool/GetUserCreateActivityList?page=" + pageindex + "&rows=10&userid=" + getApp().globalData.WxUserId + "&state="+(that.data.chktab==-2?'':that.data.chktab);
 
     WxRequest.PostRequest(url, {}).then(res => {
       if (res.data.success) {
