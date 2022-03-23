@@ -207,7 +207,7 @@
           </view>
         </block>
       </block>
-
+      <nodatacom wx:if="{{jidis.length==0}}"/>
       <view class="subtabbarv"></view>
     </scroll-view>
     <view class="maskbtmv" style="background-color: #f7f7f7;">

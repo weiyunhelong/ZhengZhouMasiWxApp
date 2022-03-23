@@ -1,9 +1,9 @@
 <!--pages/course/jidi.wxml-->
 <view class="topborder"></view>
 <view class="bodyv">
-  <view class="title">管理者要学会自己舔伤口，舔完自己的伤口还要去舔别人的伤口</view>
+  <view class="title">{{dataobj.Title}}</view>
   <view class="parserv">
-    <parser html="{{desc}}" />
+    <parser html="{{dataobj.Contents}}" />
   </view>
 </view>
 <view class="tabbarv"></view>
@@ -11,7 +11,7 @@
   <view class="bookbtn" bindtap="bookOpt">报名预约</view>
 </view>
 
-<view class="vrbtn" bindtap="goVROpt">
+<view class="vrbtn" bindtap="goVROpt" wx:if="{{dataobj.Address!=''&&dataobj.Address!=null}}">
   <view class="vriconv">
     <image src="/resources/comman/vr.png" class="vricon"></image>
   </view>

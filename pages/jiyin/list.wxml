@@ -25,3 +25,6 @@
     </view>
   </view>
 </block>
+
+<!--loadding 加载-->
+<loadding showloadingMask="{{showloadingMask}}"/>

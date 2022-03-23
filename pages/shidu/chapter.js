@@ -80,7 +80,7 @@ Page({
     if (comment == "") {
       WxRequest.ShowAlert("请输入评论内容");
     } else if (commentId == 0) { //评论
-      var url = requestUrl + "/API/ReadRedTimeApi/PostManuComment?userId=" + getApp().globalData.WxUserId + "&id=" + that.data.id + "&contents=" + comment + "&title=" + dataobj.Name + "&thumbnail=" + dataobj.Thumbnail;
+      var url = requestUrl + "/API/ReadRedTimeApi/PostComment?userId=" + getApp().globalData.WxUserId + "&id=" + that.data.id + "&contents=" + comment + "&title=" + dataobj.Name + "&thumbnail=" + dataobj.Thumbnail;
       WxRequest.PostRequest(url, {}).then(res => {
         if (res.data.success) {
           wx.showToast({

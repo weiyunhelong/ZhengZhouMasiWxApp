@@ -44,8 +44,8 @@ Page({
     var urls = this.data.urllist;
     var index = e.currentTarget.dataset.index;
     var url = urls[index].Address == undefined ? '' : urls[index].Address;
-    WxRequest.ViewRedGenePage(list[index].ID);
-    if (url != "") {
+    WxRequest.ViewRedGenePage(urls[index].ID);
+    if (url != ""&&url != "https://") {
       wx.navigateTo({
         url: '../webview/index?url=' + url,
       })

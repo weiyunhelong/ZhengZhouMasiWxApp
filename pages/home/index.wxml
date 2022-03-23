@@ -105,7 +105,7 @@
 
   <!--探寻红色基因-->
   <block wx:for="{{dataobj.RedGene}}" wx:key="item">
-    <view class="jiyinv" bindtap="goJiYinOpt" data-id="{{item.ID}}">
+    <view class="jiyinv" bindtap="goJiYinOpt" data-url="{{item.Address}}">
       <image mode="aspectFill" lazy-load="true" src="{{item.Thumbnail}}" class="jiyincover"></image>
       <view class="jiyinc">
         <view class="jiyinname">{{item.Title}}</view>

@@ -8,7 +8,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-    showloadingMask:true,
+    showloadingMask: true,
     id: 0,
     taskid: -1,
     dataobj: {}, //当前的任务
@@ -61,6 +61,18 @@ Page({
       })
     }, 2000);
   },
+  showNextOpt() { //下一个任务
+    var that = this;
+    var dataobj = that.data.dataobj;
+    if (dataobj.NextID == 0) {
+      WxRequest.ShowAlert("已是最后一个");
+    } else {
+      that.setData({
+        taskid: dataobj.NextID
+      })
+      that.InitObjData();
+    }
+  },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
@@ -96,13 +108,14 @@ Page({
         })
         if (that.data.taskid != -1) {
           that.InitObjData();
+        } else {
+          setTimeout(() => {
+            that.setData({
+              showloadingMask: false
+            })
+          }, 1000);
         }
       }
-      setTimeout(() => {
-        that.setData({
-          showloadingMask:false
-        })
-      }, 1000);
     })
   },
   InitObjData() { //获取任务详情
@@ -114,6 +127,11 @@ Page({
           dataobj: res.data.data
         })
       }
+      setTimeout(() => {
+        that.setData({
+          showloadingMask: false
+        })
+      }, 1000);
     })
   },
 

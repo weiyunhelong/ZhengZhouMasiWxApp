@@ -87,9 +87,12 @@ Page({
     })
   },
   goJiYinOpt(e) { //点击探寻红色基因
-    wx.navigateTo({
-      url: '../jiyin/detail?id=' + e.currentTarget.dataset.id
-    })
+    var url=e.currentTarget.dataset.url;
+    if(url!=''&&url!=null){
+      wx.navigateTo({
+        url: '../webview/index?url=' + e.currentTarget.dataset.url
+      })
+    }
   },
   goWork() { //优质作品
     wx.navigateTo({

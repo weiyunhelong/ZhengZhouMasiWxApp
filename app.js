@@ -23,17 +23,97 @@ App({
 
     return new Promise((resolve, reject) => {
 
-      wx.getStorage({
-        key: "loginObj",
-        success: function (res) {
-
-          if (res.data.indexOf('&type=3') > -1) { //微信快捷登录
+      if(that.globalData.WxUserId==0){
+        wx.getStorage({
+          key: "loginObj",
+          success: function (res) {
+  
+            if (res.data.indexOf('&type=3') > -1) { //微信快捷登录
+              wx.login({
+                success: res => {
+  
+                  // 发送 res.code 到后台换取 openId, sessionKey, unionId
+                  if (res.code) {
+  
+                    //发送res.code 到后台
+                    wx.request({
+                      url: that.globalData.requestUrl + '/API/SmallProgramInfo/GetOpenIdByCode?code=' + res.code,
+                      method: 'POST',
+                      header: {
+                        'content-type': 'application/x-www-form-urlencoded;charset=utf-8',
+                      },
+                      success: function (ress) {
+  
+                        if (ress.data.success) {
+  
+                          var wxurl = that.globalData.requestUrl + "/API/LoginApi/WXLogin?openid=" + ress.data.data.openid;
+                          WxRequest.PostRequest(wxurl, {}).then(resobj => {
+  
+                            if (resobj.data.success) {
+                              that.globalData.userInfo = resobj.data.data;
+                              that.globalData.WxUserId = resobj.data.data.UserId;
+                              var resArg = resobj.data.data.UserId;
+                              resolve(resArg);
+                            } else {
+                              that.globalData.WxUserId = 0;
+                              resolve(0);
+                            }
+                          })
+                        } else {
+                          that.globalData.WxUserId = 0;
+                          resolve(0);
+                        }
+                      },
+                      fail() {
+                        that.globalData.WxUserId = 0;
+                        resolve(0);
+                      }
+                    })
+                  }
+                },
+                fail: res => {
+                  reject();
+                }
+              })
+            } else { //账户密码登录
+  
+              var accounts = res.data.replace('&type=1', '').replace('&type=2', '').split('&');
+              wx.request({
+                url: that.globalData.requestUrl + "/API/LoginApi/Login?account=" + accounts[0].split('=')[1] + "&password=" + accounts[1].split('=')[1],
+                method: 'POST',
+                header: {
+                  'content-type': 'application/x-www-form-urlencoded;charset=utf-8',
+                },
+                success: function (ress) {
+  
+                  if (ress.data.success) {
+  
+                    //成功返回数据后，将openid值存储到localStorage中
+                    that.globalData.userInfo = ress.data.data;
+                    that.globalData.WxUserId = ress.data.data.UserId;
+                    var resArg = ress.data.data.UserId;
+                    resolve(resArg);
+  
+                  } else {
+                    that.globalData.WxUserId = 0;
+                    resolve(0);
+                  }
+  
+                },
+                fail() {
+                  that.globalData.WxUserId = 0;
+                  resolve(0);
+                }
+              })
+            }
+          },
+          fail: function () {
             wx.login({
               success: res => {
-
+  
                 // 发送 res.code 到后台换取 openId, sessionKey, unionId
                 if (res.code) {
-
+  
                   //发送res.code 到后台
                   wx.request({
                     url: that.globalData.requestUrl + '/API/SmallProgramInfo/GetOpenIdByCode?code=' + res.code,
@@ -42,26 +122,20 @@ App({
                       'content-type': 'application/x-www-form-urlencoded;charset=utf-8',
                     },
                     success: function (ress) {
-
+  
                       if (ress.data.success) {
-
-                        var wxurl = that.globalData.requestUrl + "/API/LoginApi/WXLogin?openid=" + ress.data.data.openid;
-                        WxRequest.PostRequest(wxurl, {}).then(resobj => {
-
-                          if (resobj.data.success) {
-                            that.globalData.userInfo = resobj.data.data;
-                            that.globalData.WxUserId = resobj.data.data.UserId;
-                            var resArg = resobj.data.data.UserId;
-                            resolve(resArg);
-                          } else {
-                            that.globalData.WxUserId = 0;
-                            resolve(0);
-                          }
-                        })
+  
+                        //成功返回数据后，将openid值存储到localStorage中
+                        that.globalData.openId = ress.data.data.openid;
+                        that.globalData.WxUserId = 0;
+                        var resArg = ress.data.data.openid;
+                        resolve(resArg);
+  
                       } else {
                         that.globalData.WxUserId = 0;
                         resolve(0);
                       }
+  
                     },
                     fail() {
                       that.globalData.WxUserId = 0;
@@ -71,85 +145,16 @@ App({
                 }
               },
               fail: res => {
-                reject();
-              }
-            })
-          } else { //账户密码登录
-
-            var accounts = res.data.replace('&type=1', '').replace('&type=2', '').split('&');
-            wx.request({
-              url: that.globalData.requestUrl + "/API/LoginApi/Login?account=" + accounts[0].split('=')[1] + "&password=" + accounts[1].split('=')[1],
-              method: 'POST',
-              header: {
-                'content-type': 'application/x-www-form-urlencoded;charset=utf-8',
-              },
-              success: function (ress) {
-
-                if (ress.data.success) {
-
-                  //成功返回数据后，将openid值存储到localStorage中
-                  that.globalData.userInfo = ress.data.data;
-                  that.globalData.WxUserId = ress.data.data.UserId;
-                  var resArg = ress.data.data.UserId;
-                  resolve(resArg);
-
-                } else {
-                  that.globalData.WxUserId = 0;
-                  resolve(0);
-                }
-
-              },
-              fail() {
                 that.globalData.WxUserId = 0;
                 resolve(0);
               }
             })
           }
-        },
-        fail: function () {
-          wx.login({
-            success: res => {
-
-              // 发送 res.code 到后台换取 openId, sessionKey, unionId
-              if (res.code) {
-
-                //发送res.code 到后台
-                wx.request({
-                  url: that.globalData.requestUrl + '/API/SmallProgramInfo/GetOpenIdByCode?code=' + res.code,
-                  method: 'POST',
-                  header: {
-                    'content-type': 'application/x-www-form-urlencoded;charset=utf-8',
-                  },
-                  success: function (ress) {
-
-                    if (ress.data.success) {
-
-                      //成功返回数据后，将openid值存储到localStorage中
-                      that.globalData.openId = ress.data.data.openid;
-                      that.globalData.WxUserId = 0;
-                      var resArg = ress.data.data.openid;
-                      resolve(resArg);
-
-                    } else {
-                      that.globalData.WxUserId = 0;
-                      resolve(0);
-                    }
-
-                  },
-                  fail() {
-                    that.globalData.WxUserId = 0;
-                    resolve(0);
-                  }
-                })
-              }
-            },
-            fail: res => {
-              that.globalData.WxUserId = 0;
-              resolve(0);
-            }
-          })
-        }
-      })
+        })
+      }else{
+        that.globalData.WxUserId = that.globalData.WxUserId;
+        resolve(that.globalData.WxUserId);
+      }
 
     })
   },

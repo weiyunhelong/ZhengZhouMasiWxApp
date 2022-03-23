@@ -10,6 +10,7 @@ Page({
   data: {
     list: [],
     pageindex: 1,
+    showloadingMask:true,
   },
 
   /**
@@ -87,6 +88,11 @@ Page({
           })
         }
       }
+      setTimeout(() => {
+        that.setData({
+          showloadingMask:false
+        })
+      }, 1000);
     })
   },
 

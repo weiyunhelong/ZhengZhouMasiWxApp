@@ -8,7 +8,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-    showloadingMask:true,
+    showloadingMask: true,
     id: 0, //课程id
     activityid: -1, //活动id
     dataobj: {},
@@ -139,12 +139,14 @@ Page({
         if (that.data.activityid != -1) {
           that.InitObjData();
         }
+      } else {
+        setTimeout(() => {
+          that.setData({
+            showloadingMask: false
+          })
+        }, 1000);
       }
-      setTimeout(() => {
-        that.setData({
-          showloadingMask:false
-        })
-      }, 1000);
+
     })
   },
   InitObjData() { //获取活动详情
@@ -156,6 +158,11 @@ Page({
           dataobj: res.data.data
         })
       }
+      setTimeout(() => {
+        that.setData({
+          showloadingMask: false
+        })
+      }, 1000);
     })
   },
   /**

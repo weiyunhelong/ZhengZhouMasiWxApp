@@ -51,7 +51,7 @@
     <!--类型2，大模块部分-->
     <block wx:else>
       <block wx:for="{{item.list}}" wx:key="citem" wx:for-item="citem">
-        <view class="zhuanlanv" bindtap="goDetail" data-id="{{item.ID}}">
+        <view class="zhuanlanv" bindtap="goDetail" data-id="{{citem.ID}}">
           <image mode="aspectFill" lazy-load="true" src="{{citem.Thumbnail}}" class="zhuanlancover"></image>
           <view class="zhuanlanc">
             <view class="zhuanlanname showOnehangTxt">{{citem.Name}}</view>

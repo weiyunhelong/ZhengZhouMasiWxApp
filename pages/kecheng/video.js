@@ -286,10 +286,16 @@ Page({
     WxRequest.PostRequest(url, {}).then(res => {
       if (res.data.success) {
         var dataobj = res.data.data;
-        dataobj.Progress = dataobj.Progress == "" ? '0:00' : dataobj.Progress;
-        that.setData({
-          dataobj: dataobj
-        })
+        if(dataobj.Audio!=null&&Audio!=''){
+          wx.redirectTo({
+            url: '../kecheng/detail?id='+that.data.id,
+          })
+        }else{
+          dataobj.Progress = dataobj.Progress == "" ? '0:00' : dataobj.Progress;
+          that.setData({
+            dataobj: dataobj
+          })
+        }
       } else {
         WxRequest.ShowAlert("该记录已不存在");
         setTimeout(() => {
@@ -339,6 +345,8 @@ Page({
   onShareAppMessage: function () {
     var that = this;
     var dataobj = that.data.dataobj;
+    var url=requestUrl+"/API/ManuscriptApi/Foward?userId="+getApp().globalData.WxUserId+"&id="+dataobj.id;
+    WxRequest.PostRequest(url,{}).then(res=>{});
     return {
       title: dataobj.Title,
       imageUrl: dataobj.Thumbnail,

@@ -8,7 +8,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-    showloadingMask:true,
+    showloadingMask: true,
     id: 0,
     dataobj: {},
 
@@ -86,26 +86,38 @@ Page({
     var fangans = that.data.fangans;
     var chksubTab = parseInt(that.data.chksubTab);
     if (chksubTab + 1 == fangans.length) {
-      chksubTab = 0;
+      WxRequest.ShowAlert('已经是最后一个');
     } else {
+      wx.showLoading({
+        title: '加载中...',
+      })
       chksubTab = chksubTab + 1;
+      that.setData({
+        chksubTab: chksubTab
+      })
+      setTimeout(() => {
+        wx.hideLoading();
+      }, 1000);
     }
-    that.setData({
-      chksubTab: chksubTab
-    })
   },
   showZiYuanNextOpt() { //显示下个资源
     var that = this;
     var ziyuans = that.data.ziyuans;
     var chksubTab = parseInt(that.data.chksubTab);
     if (chksubTab + 1 == ziyuans.length) {
-      chksubTab = 0;
+      WxRequest.ShowAlert('已经是最后一个');
     } else {
+      wx.showLoading({
+        title: '加载中...',
+      })
       chksubTab = chksubTab + 1;
+      that.setData({
+        chksubTab: chksubTab
+      })
+      setTimeout(() => {
+        wx.hideLoading();
+      }, 1000);
     }
-    that.setData({
-      chksubTab: chksubTab
-    })
   },
   hideMaskListOpt() { //点击收起
     this.setData({
@@ -141,6 +153,12 @@ Page({
       url: '../course/upload?id=' + that.data.id,
     })
   },
+  gogroupOpt() { //发起讨论组
+    var that = this;
+    wx.navigateTo({
+      url: '../course/taolun?id=' + that.data.id,
+    })
+  },
   tapSubTab(e) { //点击子分类
     var that = this;
     that.setData({
@@ -150,7 +168,11 @@ Page({
   tapJidiSubTab(e) { //点击子分类
     var that = this;
     that.setData({
-      chksubTab: e.currentTarget.dataset.tab
+      chksubTab: e.currentTarget.dataset.tab,
+      jidis: []
+    })
+    wx.showLoading({
+      title: '加载中...',
     })
     that.InitJiDi();
   },
@@ -221,7 +243,7 @@ Page({
       }
       setTimeout(() => {
         that.setData({
-          showloadingMask:false
+          showloadingMask: false
         })
       }, 1000);
     })
@@ -246,6 +268,10 @@ Page({
           jidis: res.data.data.datas,
         })
       }
+      setTimeout(() => {
+        wx.hideLoading();
+      }, 500);
+
     })
   },
   InitZiYuan() { //获取实践资源
@@ -268,7 +294,7 @@ Page({
           comments: res.data.data.datas,
         })
       }
-     
+
     })
 
   },

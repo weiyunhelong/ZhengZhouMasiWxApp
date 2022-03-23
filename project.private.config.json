@@ -44,6 +44,20 @@
           "name": "",
           "pathName": "pages/shidu/chapter",
           "query": "id=144",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "",
+          "pathName": "pages/course/jidi",
+          "query": "id=124&courseid=55",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "",
+          "pathName": "pages/course/detail",
+          "query": "id=55",
           "scene": null,
           "launchMode": "default"
         }
