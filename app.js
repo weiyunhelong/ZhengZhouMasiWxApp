@@ -263,6 +263,12 @@ App({
         iconPath: "/custom-tab-bar/imgs/kecheng.png",
         selectedIconPath: "/custom-tab-bar/imgs/kechengh.png",
         text: "创课中心"
+      },
+      {
+        pagePath: "pages/group/index",
+        iconPath: "/custom-tab-bar/imgs/group.png",
+        selectedIconPath: "/custom-tab-bar/imgs/grouph.png",
+        text: "实践消息"
       }
     ],
   }

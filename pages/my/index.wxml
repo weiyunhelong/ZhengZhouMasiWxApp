@@ -45,8 +45,8 @@
   </view>
 </view>
 
-<!--勋章部分-->
-<view class="xunzhangv" bindtap="goXunZhang">
+<!--勋章部分 bindtap="goXunZhang"-->
+<view class="xunzhangv">
   <view class="xunzhangl" wx:if="{{dataobj.gradeNum>0}}">
     <image src="../../resources/my/xunzhang{{dataobj.gradeNum}}.png" class="xunzhang"></image>
     <view class="xzhlevel">Lv.{{dataobj.gradeNum}}勋章</view>
@@ -72,7 +72,7 @@
     <image src="/resources/my/shoucang.png" class="menuicon"></image>
     <view class="menutxt">我的收藏</view>
   </view>
-  <view class="menuc" bindtap="tapMenu" data-menu="4">
+  <view class="menuc" bindtap="tapMenu" data-menu="4" wx:if="{{1==2}}">
     <image src="/resources/my/dati.png" class="menuicon"></image>
     <view class="menutxt">答题记录</view>
   </view>

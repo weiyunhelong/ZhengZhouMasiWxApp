@@ -15,17 +15,9 @@ Component({
       //切换的跳转
       if (that.data.selected != e.currentTarget.dataset.index) {
         var urlpath = e.currentTarget.dataset.path;
-
-        if (urlpath.indexOf('/card/index') > -1) { //添加名片
-          wx.navigateTo({
-            url: '../../idcard/pages/idcard/index',
-          })
-        } else {
-          wx.switchTab({
-            url: "../../" + urlpath
-          });
-        }
-
+        wx.switchTab({
+          url: "../../" + urlpath
+        });
       } else {
         return false;
       }

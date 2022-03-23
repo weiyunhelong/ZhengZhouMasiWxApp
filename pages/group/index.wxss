@@ -1,0 +1,187 @@
+/* pages/group/index.wxss */
+page {
+  background: #fff;
+}
+
+/*顶部状态栏*/
+.backiconv {
+  width: 100rpx;
+  height: 60rpx;
+}
+
+.kindv {
+  width: 300rpx;
+  height: 60rpx;
+  line-height: 60rpx;
+  border: 1rpx solid #262626;
+  margin: 0rpx 0 30rpx 90rpx;
+  border-radius: 8rpx;
+  display: flex;
+  justify-content: space-between;
+}
+
+.kindcv {
+  width: 150rpx;
+  text-align: center;
+  height: 60rpx;
+  line-height: 60rpx;
+}
+
+.chkkindtxt {
+  width: 150rpx;
+  font-size: 28rpx;
+  font-weight: bold;
+  color: #fff;
+  background: #262626;
+  border-radius: 8rpx;
+}
+
+.kindtxt {
+  width: 150rpx;
+  font-size: 28rpx;
+  font-weight: bold;
+  color: #262626;
+  background: #fff;
+  border-radius: 8rpx;
+}
+
+.typev {
+  width: 100vw;
+  height: 88rpx;
+  background: #fff;
+  display: flex;
+  justify-content: space-between;
+}
+
+.typev .typelv {
+  display: flex;
+  height: 88rpx;
+  line-height: 88rpx;
+}
+
+.typev .typelc {
+  width: 120rpx;
+  text-align: center;
+  height: 88rpx;
+  line-height: 88rpx;
+}
+
+.typev .typelc .typeltxth {
+  font-size: 30rpx;
+  font-weight: 500;
+  color: #262626;
+}
+
+.typev .typelc .typeltxt {
+  font-size: 26rpx;
+  color: #999999;
+}
+
+.typev .typelc .typeline {
+  width: 28rpx;
+  height: 4rpx;
+  background: #F24540;
+  border-radius: 3rpx;
+  margin: -4rpx auto 0;
+}
+
+.typev .typerv {
+  display: flex;
+  justify-content: flex-end;
+  height: 88rpx;
+  line-height: 88rpx;
+  margin-right: 32rpx;
+}
+
+.typev .typerv .typertxt {
+  font-size: 26rpx;
+  color: #999999;
+}
+
+.typev .typerv .typertxth {
+  font-size: 26rpx;
+  color: #F24540;
+  margin-right: 4rpx;
+}
+
+.typev .typerv .filter {
+  width: 38rpx;
+  height: 38rpx;
+  margin-top: 25rpx;
+}
+
+/*列表数据部分*/
+.listv {
+  width: 100vw;
+  height: calc(100vh - 285rpx);
+}
+
+.blockv {
+  height: 144rpx;
+  background: #FFFFFF;
+  display: flex;
+}
+
+.avatar {
+  width: 96rpx;
+  height: 96rpx;
+  border-radius: 48rpx;
+  margin: 24rpx 24rpx 0 32rpx;
+}
+
+.blockc {
+  width: 566rpx;
+  height: 144rpx;
+  border-bottom: 2rpx solid #eee;
+  padding-right: 32rpx;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  justify-self: center;
+}
+
+.blockcv {
+  display: flex;
+  justify-content: space-between;
+}
+
+.blockname {
+  width: 360rpx;
+  font-size: 32rpx;
+  color: #262626;
+}
+
+.blockdate {
+  font-size: 24rpx;
+  color: #999999;
+  line-height: 42rpx;
+}
+
+.blocktxt {
+  width: 400rpx;
+  font-size: 26rpx;
+  color: #999999;
+}
+
+.blocknum {
+  padding: 0 6rpx;
+  height: 34rpx;
+  line-height: 34rpx;
+  background: #F24540;
+  border-radius: 18rpx;
+  font-size: 24rpx;
+  color: #FFFFFF;
+}
+
+.nomorev {
+  width: 100vw;
+  height: 100rpx;
+  text-align: center;
+  line-height: 100rpx;
+  font-size: 26rpx;
+  color: #999999;
+  border-top: 1rpx solid #eee;
+}
+.noborder{
+  border: none;
+}

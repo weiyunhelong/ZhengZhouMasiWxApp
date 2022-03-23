@@ -1,0 +1,39 @@
+<!--pages/group/index.wxml-->
+<!--状态栏部分-->
+<view class="topv" style="margin-top:{{navigationBarHeight + 5}}px;display: flex;border-bottom:1rpx solid #eee;">
+  <view class="backiconv"></view>
+  <view class="kindv">
+    <view class="kindcv {{chkkind==1?'chkkindtxt':'kindtxt'}}" data-tab="1" bindtap="tapKind">实践群</view>
+    <view class="kindcv {{chkkind==2?'chkkindtxt':'kindtxt'}}" data-tab="2" bindtap="tapKind">讨论组</view>
+  </view>
+</view>
+
+<scroll-view scroll-y="true" class="listv" bindscrolltolower="ShowMoreData">
+  <nodatacom wx:if="{{list.length==0}}" />
+  <block wx:for="{{list}}" wx:key="item" wx:for-index="x">
+    <view class="blockv {{x+1==list.length?'noborder':''}}" bindtap="goDetail" data-obj="{{item}}">
+      <image src="/resources/comman/avatarUrl.jpg" mode="aspectFill" class="avatar"></image>
+      <view class="blockc">
+        <view class="blockcv">
+          <view class="blockname showOnehangTxt">布里斯班</view>
+          <view class="blockdate">2022.03.23 10:15</view>
+        </view>
+        <view class="blockcv" style="margin-top: 10rpx;">
+          <view class="blocktxt showOnehangTxt">
+            <text>王艳：</text>
+            <text>Carolyn Pierce</text>
+            <text>[课程]</text>
+            <text>[图片]</text>
+            <text>[作品]</text>
+          </view>
+          <view class="blocknum">15</view>
+        </view>
+      </view>
+    </view>
+  </block>
+  <view class="nomorev" wx:if="{{list.length>0}}">暂时没有更多了</view>
+  <view class="tabbarcvc"></view>
+</scroll-view>
+
+<!--loadding 加载-->
+<loadding showloadingMask="{{showloadingMask}}" />

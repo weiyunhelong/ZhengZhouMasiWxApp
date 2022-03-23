@@ -58,6 +58,20 @@
           "name": "",
           "pathName": "my/pages/study/index",
           "query": "",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "",
+          "pathName": "pages/group/user",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "",
+          "pathName": "chat/pages/chat/wechat",
+          "query": "",
           "scene": null,
           "launchMode": "default"
         }

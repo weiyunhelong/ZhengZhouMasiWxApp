@@ -2,6 +2,8 @@
   "pages": [
     "pages/middle/index",
     "pages/home/index",
+    "pages/group/index",
+    "pages/group/user",
     "pages/course/index",
     "pages/course/detail",
     "pages/course/upload",
@@ -44,12 +46,8 @@
   "subPackages": [{
     "root": "chat",
     "pages": [
-      "pages/work/index",
-      "pages/work/detail",
-      "pages/chat/index",
       "pages/chat/wechat",
-      "pages/chat/member",
-      "pages/chat/adduser"
+      "pages/chat/member"
     ]
   }, {
     "root": "wxauth",
@@ -147,6 +145,12 @@
         "iconPath": "/custom-tab-bar/imgs/kecheng.png",
         "selectedIconPath": "/custom-tab-bar/imgs/kechengh.png",
         "text": "创课中心"
+      },
+      {
+        "pagePath": "pages/group/index",
+        "iconPath": "/custom-tab-bar/imgs/group.png",
+        "selectedIconPath": "/custom-tab-bar/imgs/grouph.png",
+        "text": "实践消息"
       }
     ]
   },

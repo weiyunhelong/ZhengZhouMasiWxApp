@@ -1,40 +1,45 @@
-/* chat/pages/chat/adduser.wxss */
+/* pages/group/user.wxss */
 page {
-  background-color: #fff;
+  background: #fff;
 }
 
-.topborder {
+.topborderv {
   width: 100vw;
   height: 1rpx;
-  background-color: #eee;
-  position: sticky;
+  background: #eee;
+  position: fixed;
   top: 0;
   left: 0;
   z-index: 999;
 }
 
-.datav {
+.listv {
   width: 100vw;
-  height: calc(100vh - 178rpx);
+  height: calc(100vh - 180rpx);
 }
 
-.datac {
+.blockv {
   display: flex;
+  padding: 0 32rpx;
   height: 128rpx;
-  padding-left: 32rpx;
 }
-.radio{
-  margin-top: 45rpx;
+
+.radio {
+  width: 40rpx;
+  height: 40rpx;
+  margin-top: 44rpx;
+  margin-right: 24rpx;
 }
+
 .avatar {
   width: 80rpx;
   height: 80rpx;
-  margin: 24rpx 20rpx;
   border-radius: 50%;
+  margin-top: 24rpx;
+  margin-right: 28rpx;
 }
 
-.name {
-  height: 128rpx;
+.username {
   line-height: 128rpx;
   font-size: 32rpx;
   color: #262626;
@@ -42,19 +47,20 @@ page {
 
 .btmv {
   width: 100vw;
-  height: 108rpx;
+  height: 176rpx;
+  background: #FFFFFF;
+  text-align: center;
   border-top: 1rpx solid #eee;
 }
 
-.btn {
+.btnv {
   width: 686rpx;
   height: 92rpx;
   background: #F24540;
   border-radius: 46rpx;
   margin: 8rpx auto;
+  line-height: 92rpx;
   font-size: 32rpx;
   font-weight: 500;
   color: #FFFFFF;
-  line-height: 92rpx;
-  text-align: center;
 }

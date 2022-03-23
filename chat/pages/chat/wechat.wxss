@@ -365,6 +365,7 @@ page {
   width: 452rpx;
   padding-top: 46rpx;
   margin-right: 74rpx;
+  text-align: left;
 }
 
 .maskworkname {

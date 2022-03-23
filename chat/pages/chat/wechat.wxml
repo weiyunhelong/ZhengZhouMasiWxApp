@@ -1,7 +1,7 @@
 <!--chat/pages/chat/wechat.wxml-->
 <view class="topborder"></view>
 
-<!--消息列表部分-->
+<!--消息列表部分，1:文字 2:图片 3:作品 4:实践课-->
 <scroll-view scroll-y="true" class="bodyv">
 
   <view class="datetxt">19:46</view>
@@ -33,7 +33,6 @@
       <!-- 
         <view class="msgcv">没猜中我奶是群主我奶是群主我奶是群主我奶是群主我奶是群主我奶是群主</view> 
         <image src="/resources/comman/avatarUrl.jpg" class="msgimg" bindtap="previewImg" data-url="/resources/comman/avatarUrl.jpg"></image>
-      -->
 
       <view class="workv" bindtap="goWorkOpt" data-id="1">
         <view class="workc">
@@ -43,13 +42,21 @@
         <view class="workowner showOnehangTxt">我奶是群主的作品</view>
       </view>
 
+      -->
+      <view class="workv" bindtap="goCourseOpt" data-id="1">
+        <view class="workc">
+          <image src="/resources/comman/avatarUrl.jpg" mode="aspectFill" class="workcover"></image>
+          <view class="workname showThreehangTxt">红色摇篮-安远路矿工人运动纪念馆</view>
+        </view>
+        <view class="workowner showOnehangTxt">负责人：李某</view>
+      </view>
     </view>
   </view>
 
   <view class="rightv">
     <view class="msgv">
       <!-- <view class="msgcv msgcv2">没猜中我奶是群主我奶是群主我奶是群主我奶是群主我奶是群主我奶是群主</view> -->
-      <view class="workv" style="margin-right:16rpx;" >
+      <view class="workv" style="margin-right:16rpx;">
         <view class="workc" bindtap="goWorkOpt" data-id="1">
           <image src="/resources/comman/avatarUrl.jpg" mode="aspectFill" class="workcover"></image>
           <view class="workname showThreehangTxt">“一粒种子改变一个世界一粒种子改变一个世界一粒种子改变一个世界一粒种子改变一个世界”</view>
@@ -62,12 +69,20 @@
   <view class="rightv">
     <view class="msgv">
       <!-- <view class="msgcv msgcv2">没猜中我奶是群主我奶是群主我奶是群主我奶是群主我奶是群主我奶是群主</view> 
+       <image src="/resources/comman/avatarUrl.jpg" class="msgimg" bindtap="previewImg" data-url="/resources/comman/avatarUrl.jpg"></image>
       <view class="workv" style="margin-right:16rpx;">
-        <view class="workc">
+        <view class="workc" bindtap="goWorkOpt" data-id="1">
           <image src="/resources/comman/avatarUrl.jpg" mode="aspectFill" class="workcover"></image>
           <view class="workname showThreehangTxt">“一粒种子改变一个世界一粒种子改变一个世界一粒种子改变一个世界一粒种子改变一个世界”</view>
         </view>
         <view class="workowner showOnehangTxt">我奶是群主的作品</view>
+      </view>
+       <view class="workv" style="margin-right:16rpx;">
+        <view class="workc" bindtap="goCourseOpt" data-id="1">
+          <image src="/resources/comman/avatarUrl.jpg" mode="aspectFill" class="workcover"></image>
+          <view class="workname showThreehangTxt">红色摇篮-安远路矿工人运动纪念馆</view>
+        </view>
+        <view class="workowner showOnehangTxt">负责人：李某</view>
       </view>
       -->
       <image src="/resources/comman/avatarUrl.jpg" class="msgimg" style="margin-right:16rpx;" bindtap="previewImg" data-url="/resources/comman/avatarUrl.jpg"></image>
@@ -85,7 +100,7 @@
 <!--底部操作部分-->
 <view class="btmvv" style="height: {{showModal?'580':'255'}}rpx;">
   <view class="btmv">
-    <view class="btmbtn" bindtap="goCourse">
+    <view class="btmbtn" bindtap="showMaskOpt" data-type="1">
       <image src="../../resources/video.png" class="btmbtnicon"></image>
       <view class="btmbtntxt">实践课程</view>
     </view>
@@ -108,7 +123,7 @@
         </view>
         <view class="btmoptctxt">发送图片</view>
       </view>
-      <view class="btmoptc" bindtap="sendWorkOpt">
+      <view class="btmoptc" bindtap="showMaskOpt" data-type="2">
         <view class="btmoptcblock">
           <image src="../../resources/work.png" class="btmoptcicon"></image>
         </view>
@@ -122,21 +137,42 @@
 <!--显示操作浮窗-->
 <view class="maskv {{showMaskAni?'showMaskv':'hideMaskv'}}" wx:if="{{showMask}}">
   <view class="masktopv" bindtap="hideMaskOpt">
-    <view class="masktoptxt">发送作品</view>
+    <view class="masktoptxt">{{masktype==1?'发送实践课程':'发送作品'}}</view>
     <view class="masktopopt">收起</view>
   </view>
   <scroll-view scroll-y="true" class="masklistv">
-    <block wx:for="{{list}}" wx:key="item">
-      <view class="maskworkv" bindtap="goWorkOpt" data-id="1">
-        <view class="maskworkcc">
-          <view class="maskworkname showOnehangTxt">你刚来可以抱怨你的手下是一群菜鸟菜鸟</view>
-          <view class="maskworkdesc showOnehangTxt">员工为自己的发展负责，管理者为下属指导前进的方向</view>
+    <!--实践课程-->
+    <block wx:if="{{masktype==1}}">
+      <block wx:for="{{courses}}" wx:key="item">
+        <view class="maskworkv">
+          <view class="maskworkcc">
+            <view class="maskworkname showOnehangTxt">{{item.Title}}</view>
+            <view class="maskworkdesc showOnehangTxt">负责人：{{item.AuthorName}}</view>
+          </view>
+          <view class="maskworkcv" catchtap="sendCheckWorkOpt" data-obj="{{item}}">
+            <image src="../../resources/send.png" class="sendicon"></image>
+            <view class="sendtxt">发送课程</view>
+          </view>
         </view>
-        <view class="maskworkcv" catchtap="sendCheckWorkOpt" data-obj="{{item}}">
-          <image src="../../resources/send.png" class="sendicon"></image>
-          <view class="sendtxt">发送作品</view>
-        </view>
-      </view>
+      </block>
+      <nodatacom wx:if="{{courses.length==0}}"/>
     </block>
+    <!--发送作品-->
+    <block wx:else>
+      <block wx:for="{{works}}" wx:key="item">
+        <view class="maskworkv">
+          <view class="maskworkcc">
+            <view class="maskworkname showOnehangTxt">{{item.Title}}</view>
+            <view class="maskworkdesc showOnehangTxt">创作人：{{item.UserName}}</view>
+          </view>
+          <view class="maskworkcv" catchtap="sendCheckWorkOpt" data-obj="{{item}}">
+            <image src="../../resources/send.png" class="sendicon"></image>
+            <view class="sendtxt">发送作品</view>
+          </view>
+        </view>
+      </block>
+      <nodatacom wx:if="{{works.length==0}}"/>
+    </block>
+   
   </scroll-view>
 </view>

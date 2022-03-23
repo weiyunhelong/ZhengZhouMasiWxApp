@@ -1,6 +1,6 @@
-// my/pages/collect/index.js
+// pages/group/user.js
 var requestUrl = getApp().globalData.requestUrl;
-var WxRequest = require('../../../utils/WxRequest.js');
+var WxRequest = require('../../utils/WxRequest.js');
 
 Page({
 
@@ -8,10 +8,10 @@ Page({
    * 页面的初始数据
    */
   data: {
-    chktab: -1, //分类
-    pageindex: 1,
     list: [],
-    showloadingMask: true,
+    pageindex: 1,
+    chkIds: [],
+    id: 0, //讨论组
   },
 
   /**
@@ -20,35 +20,53 @@ Page({
   onLoad: function (options) {
 
   },
-  tapTabOpt(e) { //切换tab
+  chkTapOpt(e) { //点击操作
     var that = this;
+    var list = that.data.list,
+      chkIds = [];
+    var id = e.currentTarget.dataset.id;
+    for (var i = 0; i < list.length; i++) {
+      if (id == list[i].ID) {
+        list[i].IsChk = !list[i].IsChk;
+        break;
+      }
+    }
+    for (var i = 0; i < list.length; i++) {
+      if (list[i].IsChk) {
+        chkIds.push(list[i].ID);
+      }
+    }
     that.setData({
-      chktab: e.currentTarget.dataset.tab,
-      pageindex: 1,
-      list:[],
+      list: list,
+      chkIds: chkIds,
     })
-    wx.showLoading({
-      title: '加载中',
-    })
-    that.InitData();
   },
-  ShowMoreOpt() { //加载更多
+  ShowMoreData() { //加载更多
     var that = this;
     that.setData({
       pageindex: 1 + that.data.pageindex
     })
     that.InitData();
   },
-  goDetail(e) { //调整详情
-   
-    var obj=e.currentTarget.dataset.obj;
-    if(obj.DataType==3){//四讲
-      wx.navigateTo({
-        url: '../../../pages/sijiang/detail?id='+obj.ArticleID
-      })
-    }else{//时时读
-      wx.navigateTo({
-        url: '../../../pages/shidu/detail?id='+obj.ArticleID
+  confirmOpt() { //点击确定操作
+    var that = this;
+    var chkIds = that.data.chkIds;
+    if (chkIds.length == 0) {
+      WxRequest.ShowAlert("请选择成员");
+    } else {
+      //TODO 请求接口
+      var url = requestUrl + "?id=" + that.data.id + "&userIds=" + chkIds.join(',');
+      WxRequest.PostRequest(url, {}).then(res => {
+        if (res.data.success) {
+          wx.showToast({
+            title: '创建成功',
+          })
+          wx.navigateBack({
+            delta: 1,
+          })
+        } else {
+          WxRequest.ShowAlert(res.data.msg);
+        }
       })
     }
   },
@@ -68,24 +86,23 @@ Page({
     getApp().ChargeLogin().then(res => {
       if (getApp().globalData.WxUserId == 0) {
         wx.navigateTo({
-          url: '../../../wxauth/pages/wxlogin/index',
+          url: '../../wxauth/pages/wxlogin/index',
         })
       } else {
         that.InitData();
       }
     })
   },
-  InitData() { //获取数据
+  InitData() { //获取首页数据
     var that = this;
-    var chktab = parseInt(that.data.chktab), //分类
-      pageindex = that.data.pageindex;
-
-    var url = requestUrl+'/API/UserCenterApi/GetMyCollectionList?userid=' + getApp().globalData.WxUserId + "&page=" + pageindex + "&rows=10&datatype="+chktab;
+    var pageindx = that.data.pageindex;
+    var chkkind = that.data.chkkind;
+    var url = requestUrl + "/API/XRIdeology/HomeDateList?uid=" + getApp().globalData.WxUserId + "&dataType=" + chkkind;
     WxRequest.PostRequest(url, {}).then(res => {
       if (res.data.success) {
-        if (pageindex == 1) {
+        if (pageindx == 1) {
           that.setData({
-            list: res.data.data.datas
+            list: res.data.data.CourseCenter, //res.data.data.datas
           })
         } else {
           that.setData({
@@ -93,7 +110,6 @@ Page({
           })
         }
       }
-
       setTimeout(() => {
         wx.hideLoading();
         that.setData({

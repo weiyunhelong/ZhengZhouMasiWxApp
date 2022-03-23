@@ -35,9 +35,8 @@ Page({
         })
       },
       fail:function(){
-        
         wx.reLaunch({
-          url: '../home/index',
+          url: '../../wxauth/pages/wxlogin/index',
         })
       }
     })
