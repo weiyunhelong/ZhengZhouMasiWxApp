@@ -42,7 +42,7 @@
 </view>
 <view class="kongv"></view>
 <view class="btmv">
-  <view class="btn" bindtap="saveOpt">解散讨论组</view>
+  <view class="btn" bindtap="jiesanOpt">解散讨论组</view>
 </view>
 
 <!--loadding 加载-->

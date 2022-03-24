@@ -49,8 +49,12 @@ Page({
   goDetail(e) {//进入到详情
     var that = this;
     var dataobj = e.currentTarget.dataset.obj;
-    wx.navigateTo({
-      url: '../../chat/pages/chat/wechat?id=' + dataobj.id+"&type="+that.data.chkkind,
+    //消息更新为已读
+    var url=requestUrl+"/API/GroupsInfo/PostReadGroupMsg?gId="+dataobj.id+"&UserId="+getApp().globalData.WxUserId;
+    WxRequest.PostRequest(url,{}).then(res=>{
+      wx.navigateTo({
+        url: '../../chat/pages/chat/wechat?id=' +dataobj.id+"&type="+that.data.chkkind,
+      })
     })
   },
   /**

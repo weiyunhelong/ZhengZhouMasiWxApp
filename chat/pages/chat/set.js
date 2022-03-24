@@ -55,6 +55,40 @@ Page({
       url: '../chat/invite?id=' + that.data.id + "&type="+e.currentTarget.dataset.type,
     })
   },
+  jiesanOpt(){//解散讨论组
+    var that = this;
+
+    wx.showModal({
+      cancelColor: '#666666',
+      cancelText: '取消',
+      confirmColor: '#000000',
+      confirmText: '确定',
+      content: '确定要解散此讨论组吗',
+      showCancel: true,
+      title: '',
+      success: (result) => {
+        if (result.confirm) {
+          //TODO　请求接口解散群组
+          var url = requestUrl + "/API/GroupsInfo/PostDeleteGroupInfo?gId=" + that.data.groupid + "&UserId=" + getApp().globalData.WxUserId;
+          WxRequest.PostRequest(url, {}).then(res => {
+            if (res.data.success) {
+              wx.showToast({
+                title: '解散成功',
+              })
+              setTimeout(() => {
+                wx.navigateBack({
+                  delta: 2,
+                })
+              }, 2000);
+            } else {
+              WxRequest.ShowAlert(res.data.msg);
+            }
+          })
+
+        }
+      }
+    })
+  },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */

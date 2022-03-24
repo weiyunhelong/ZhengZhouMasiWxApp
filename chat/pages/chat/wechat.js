@@ -36,12 +36,11 @@ Page({
 
     //获取用户在群聊中的角色
     that.InitMeRole();
-    //获取对话的自己信息
-    that.InitMeInfo();
     //获取作品
     that.InitWork();
     //获取实践课程
     that.InitCourse();
+
   },
   InitMeRole() { //获取用户在群聊中的角色
     var that = this;
@@ -50,19 +49,6 @@ Page({
       that.setData({
         userAuth: res.data.data.UserType
       })
-    })
-  },
-  InitMeInfo() { //获取对话的自己信息
-    var that = this;
-    var url = requestUrl + "/SingleChatInfo/PostUserInfo?UserId=" + that.data.userId;
-    WxRequest.PostRequest(url, {}).then(res => {
-      that.setData({
-        oopenid: that.data.userId,
-        oname: res.data.data.NickName,
-        oavataUrl: res.data.data.Avatar,
-      })
-      //获取历史消息
-      that.InitOldHistory();
     })
   },
   InitWork() { //获取作品
@@ -84,64 +70,6 @@ Page({
         courses: res.data.data.datas
       })
     })
-  },
-  InitOldHistory() { //获取历史消息
-    var that = this;
-    var url = requestUrl + "/API/GroupsInfo/GetGroupMsgNewList?keywords=&userId=" + that.data.userId + "&gid=" + that.data.groupid + "&queryTime=" + timeTool.formatNowTime();
-
-    WxRequest.PostRequest(url, {}).then(res => {
-
-      if (res.data.success) {
-        that.setData({
-          list: res.data.data.datas
-        })
-        //获取未读消息
-        that.InitHistory(1);
-        timer = setInterval(() => {
-          that.InitHistory(0);
-        }, 2000);
-      }
-      setTimeout(() => {
-        that.setData({
-          showLoading: false,
-          btmv: that.data.btmv
-        })
-      }, 2000);
-    })
-  },
-  InitHistory(type) { //获取历史消息
-    var that = this;
-    var url = requestUrl + "/API/GroupsInfo/GetGroupMsgNewListByNew?keywords=&userId=" + getApp().globalData.openId + "&objId=" + getApp().globalData.CompanyID + "&gid=" + that.data.groupid + "&queryTime=" + timeTool.formatNowTime();
-
-    WxRequest.PostRequest(url, {}).then(res => {
-
-      if (res.data.success) {
-        that.setData({
-          list: that.data.list.concat(res.data.data.datas),
-          btmv: type == 1 ? "btmv1" : ""
-        })
-      }
-      setTimeout(() => {
-        that.setData({
-          showLoading: false
-        })
-      }, 2000);
-    })
-  },
-  showMoreData() { //加载更多
-    var that = this;
-    that.setData({
-      pageindex: 1 + that.data.pageindex
-    })
-    that.InitHistory(1);
-  },
-  freshData() { //刷新数据
-    var that = this;
-    that.setData({
-      pageindex: 1,
-      msgtxt: "",
-    })
-    that.InitHistory(1);
   },
   previewImg(e) { //预览图片
     wx.previewImage({
@@ -329,9 +257,9 @@ Page({
     })
   },
   setOpt() { //讨论组设置
-    var that=this;
+    var that = this;
     wx.navigateTo({
-      url: '../chat/set?id='+that.data.groupid,
+      url: '../chat/set?id=' + that.data.groupid,
     })
   },
   /**
@@ -347,9 +275,81 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
+    var that = this;
+    //获取对话的自己信息
+    that.InitMeInfo();
   },
+  InitMeInfo() { //获取对话的自己信息
+    var that = this;
+    var url = requestUrl + "/SingleChatInfo/PostUserInfo?UserId=" + that.data.userId;
+    WxRequest.PostRequest(url, {}).then(res => {
+      that.setData({
+        oopenid: that.data.userId,
+        oname: res.data.data.NickName,
+        oavataUrl: res.data.data.Avatar,
+      })
+      //获取历史消息
+      that.InitOldHistory();
+    })
+  },
+  InitOldHistory() { //获取历史消息
+    var that = this;
+    var url = requestUrl + "/API/GroupsInfo/GetGroupMsgNewList?keywords=&userId=" + that.data.userId + "&gid=" + that.data.groupid + "&queryTime=" + timeTool.formatNowTime();
 
+    WxRequest.PostRequest(url, {}).then(res => {
+
+      if (res.data.success) {
+        that.setData({
+          list: res.data.data.datas
+        })
+        //获取未读消息
+        that.InitHistory(1);
+        timer = setInterval(() => {
+          that.InitHistory(0);
+        }, 2000);
+      }
+      setTimeout(() => {
+        that.setData({
+          showLoading: false,
+          btmv: that.data.btmv
+        })
+      }, 2000);
+    })
+  },
+  InitHistory(type) { //获取历史消息
+    var that = this;
+    var url = requestUrl + "/API/GroupsInfo/GetGroupMsgNewListByNew?keywords=&userId=" + getApp().globalData.openId + "&objId=" + getApp().globalData.CompanyID + "&gid=" + that.data.groupid + "&queryTime=" + timeTool.formatNowTime();
+
+    WxRequest.PostRequest(url, {}).then(res => {
+
+      if (res.data.success) {
+        that.setData({
+          list: that.data.list.concat(res.data.data.datas),
+          btmv: type == 1 ? "btmv1" : ""
+        })
+      }
+      setTimeout(() => {
+        that.setData({
+          showLoading: false
+        })
+      }, 2000);
+    })
+  },
+  showMoreData() { //加载更多
+    var that = this;
+    that.setData({
+      pageindex: 1 + that.data.pageindex
+    })
+    that.InitHistory(1);
+  },
+  freshData() { //刷新数据
+    var that = this;
+    that.setData({
+      pageindex: 1,
+      msgtxt: "",
+    })
+    that.InitHistory(1);
+  },
   /**
    * 生命周期函数--监听页面隐藏
    */
