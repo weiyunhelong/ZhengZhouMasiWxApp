@@ -8,7 +8,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-    showloadingMask: true,
+    showloadingMask:true,
     id: 0,
     dataobj: {},
 
@@ -114,9 +114,7 @@ Page({
       that.setData({
         chksubTab: chksubTab
       })
-      setTimeout(() => {
-        wx.hideLoading();
-      }, 1000);
+      
     }
   },
   hideMaskListOpt() { //点击收起
@@ -153,10 +151,10 @@ Page({
       url: '../course/upload?id=' + that.data.id,
     })
   },
-  gogroupOpt() { //发起讨论组
+  gogroupOpt(){//发起讨论组
     var that = this;
     wx.navigateTo({
-      url: '../course/taolun?id=' + that.data.id,
+      url: '../group/create?id=' + that.data.id,
     })
   },
   tapSubTab(e) { //点击子分类
@@ -169,7 +167,7 @@ Page({
     var that = this;
     that.setData({
       chksubTab: e.currentTarget.dataset.tab,
-      jidis: []
+      jidis:[]
     })
     wx.showLoading({
       title: '加载中...',
@@ -243,7 +241,7 @@ Page({
       }
       setTimeout(() => {
         that.setData({
-          showloadingMask: false
+          showloadingMask:false
         })
       }, 1000);
     })
@@ -271,7 +269,7 @@ Page({
       setTimeout(() => {
         wx.hideLoading();
       }, 500);
-
+     
     })
   },
   InitZiYuan() { //获取实践资源
@@ -294,7 +292,7 @@ Page({
           comments: res.data.data.datas,
         })
       }
-
+     
     })
 
   },

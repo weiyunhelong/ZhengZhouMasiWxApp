@@ -1,0 +1,44 @@
+<!--pages/group/create.wxml-->
+<view class="topborderv"></view>
+
+<view class="nullv"></view>
+<view class="hangv">
+  <view class="hangtag">讨论组名称</view>
+  <view class="hangval">
+    <input type="text" placeholder="请输入讨论组名称名称（2-12字）" placeholder-class="hangtip" class="hangtxt" value="{{name}}"
+      bindinput="getName" />
+  </view>
+</view>
+<view class="hangv">
+  <view class="hangtag">讨论组logo</view>
+  <view class="hangval" bindtap="logoOpt">
+      <view class="pickerv">
+        <input disabled="true" type="text" placeholder="请上传logo" placeholder-class="hangtip" class="hangtxt" wx:if="{{logo==''}}"/>
+        <image src="{{logo}}" class="logoicon" wx:else></image>
+        <image src="https://idcardassets.oss-cn-shanghai.aliyuncs.com/assets/right.png" class="righticon"></image>
+      </view>
+  </view>
+</view>
+<view class="hangv">
+  <view class="hangtag">讨论组成员</view>
+  <view class="hangval" wx:if="{{friends.length==0}}">
+    <view class="pickerv" bindtap="goFriend">
+      <input disabled="true" type="text" placeholder="选择成员" placeholder-class="hangtip" class="hangtxt" />
+      <image src="https://idcardassets.oss-cn-shanghai.aliyuncs.com/assets/right.png" class="righticon"></image>
+    </view>
+  </view>
+</view>
+<view class="hangvalc" wx:if="{{friends.length>0}}">
+  <block wx:for="{{friends}}" wx:key="item" wx:for-index="x">
+    <view class="userv">
+      <image src="{{item.Thumbnail}}" class="avatarUrl"></image>
+      <view class="username">{{item.UserName}}</view>
+      <image src="https://idcardassets.oss-cn-shanghai.aliyuncs.com/assets/delicon.png" class="delicon" bindtap="deleteOpt" data-index="{{x}}"></image>
+    </view>
+  </block>
+  <view class="userv"  bindtap="goFriend">
+    <image src="https://idcardassets.oss-cn-shanghai.aliyuncs.com/assets/jiaicon.png" class="jiaicon"></image>
+  </view>
+</view>
+
+<view class="btn" bindtap="saveOpt">创建</view>

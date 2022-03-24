@@ -13,8 +13,8 @@
 <scroll-view scroll-y="true" class="datalistv">
 
   <!--banner部分-->
-  <view class="bannerv" bindtap="goSystem">
-    <image lazy-load="true" class="banner" src="https://zhengzhousizheng.oss-cn-beijing.aliyuncs.com/zhengzhouv2/homebanner.png"></image>
+  <view class="bannerv">
+    <image lazy-load="true" class="banner" src="https://zhengzhousizheng.oss-cn-beijing.aliyuncs.com/bannerimgv/%E7%BA%A2%E8%89%B2%E6%97%B6%E6%97%B6%E8%AF%BB.png"></image>
   </view>
 
   <!--分类部分-->

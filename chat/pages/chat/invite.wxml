@@ -1,4 +1,4 @@
-<!--pages/group/user.wxml-->
+<!--chat/pages/chat/invite.wxml-->
 <view class="topborderv"></view>
 <scroll-view scroll-y="true" class="listv" bindscrolltolower="ShowMoreData">
   <block wx:for="{{list}}" wx:key="item">
@@ -15,6 +15,3 @@
 <view class="btmv">
   <view class="btnv" bindtap="confirmOpt">确认（{{chkIds.length}}）</view>
 </view>
-
-<!--loadding 加载-->
-<loadding showloadingMask="{{showloadingMask}}"/>

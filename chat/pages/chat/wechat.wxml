@@ -1,100 +1,73 @@
 <!--chat/pages/chat/wechat.wxml-->
+<wxs module="filter" src="../../../styles/filter.wxs" />
 <view class="topborder"></view>
 
 <!--消息列表部分，1:文字 2:图片 3:作品 4:实践课-->
 <scroll-view scroll-y="true" class="bodyv">
+  <block wx:for="{{list}}" wx:key="citem" wx:for-item="citem">
+    <view class="datetxt" wx:if="{{filter.ChatShowDateTime(citem.Key)}}">{{citem.Key}}</view>
 
-  <view class="datetxt">19:46</view>
-  <view class="leftv">
-    <image src="/resources/comman/avatarUrl.jpg" class="txicon"></image>
-    <view class="msgv">
-      <view class="name">我奶是群主</view>
-      <view class="msgcv">没猜中</view>
-    </view>
-  </view>
-  <view class="leftv">
-    <image src="/resources/comman/avatarUrl.jpg" class="txicon"></image>
-    <view class="msgv">
-      <view class="name">我奶是群主</view>
-      <image src="/resources/comman/avatarUrl.jpg" class="msgimg" bindtap="previewImg" data-url="/resources/comman/avatarUrl.jpg"></image>
-    </view>
-  </view>
-  <view class="leftv">
-    <image src="/resources/comman/avatarUrl.jpg" class="txicon"></image>
-    <view class="msgv">
-      <view class="name">我奶是群主</view>
-      <view class="msgcv">没猜中我奶是群主我奶是群主我奶是群主我奶是群主我奶是群主我奶是群主</view>
-    </view>
-  </view>
-  <view class="leftv">
-    <image src="/resources/comman/avatarUrl.jpg" class="txicon"></image>
-    <view class="msgv">
-      <view class="name">我奶是群主</view>
-      <!-- 
-        <view class="msgcv">没猜中我奶是群主我奶是群主我奶是群主我奶是群主我奶是群主我奶是群主</view> 
-        <image src="/resources/comman/avatarUrl.jpg" class="msgimg" bindtap="previewImg" data-url="/resources/comman/avatarUrl.jpg"></image>
+    <block wx:for="{{citem.group}}" wx:key="item" wx:for-item="item">
 
-      <view class="workv" bindtap="goWorkOpt" data-id="1">
-        <view class="workc">
-          <image src="/resources/comman/avatarUrl.jpg" mode="aspectFill" class="workcover"></image>
-          <view class="workname showThreehangTxt">“一粒种子改变一个世界一粒种子改变一个世界一粒种子改变一个世界一粒种子改变一个世界”</view>
+      <!--其他人-->
+      <view class="leftv" wx:if="{{item.FromUserID!=userId}}">
+        <image src="{{item.FromUserPic}}" class="txicon"></image>
+        <view class="msgv">
+          <view class="name">{{item.UserName}}</view>
+
+          <view class="msgcv" wx:if="{{item.MsgType==1}}">{{item.Description}}</view>
+
+          <image src="{{item.Description}}" class="msgimg" bindtap="previewImg" data-url="{{item.Description}}" wx:if="{{item.MsgType==2}}"></image>
+
+          <view class="workv" bindtap="goWorkOpt" data-id="{{filter.str2Arry(item.Description)[0]}}" wx:if="{{item.MsgType==3}}">
+            <view class="workc">
+              <image src="{{filter.str2Arry(item.Description)[3]}}" mode="aspectFill" class="workcover"></image>
+              <view class="workname showThreehangTxt">{{filter.str2Arry(item.Description)[1]}}</view>
+            </view>
+            <view class="workowner showOnehangTxt">{{filter.str2Arry(item.Description)[2]}}的作品</view>
+          </view>
+
+          <view class="workv" bindtap="goCourseOpt" data-id="{{filter.str2Arry(item.Description)[0]}}" wx:if="{{item.MsgType==4}}">
+            <view class="workc">
+              <image src="{{filter.str2Arry(item.Description)[3]}}" mode="aspectFill" class="workcover"></image>
+              <view class="workname showThreehangTxt">{{filter.str2Arry(item.Description)[1]}}</view>
+            </view>
+            <view class="workowner showOnehangTxt">负责人：{{filter.str2Arry(item.Description)[2]}}</view>
+          </view>
         </view>
-        <view class="workowner showOnehangTxt">我奶是群主的作品</view>
       </view>
 
-      -->
-      <view class="workv" bindtap="goCourseOpt" data-id="1">
-        <view class="workc">
-          <image src="/resources/comman/avatarUrl.jpg" mode="aspectFill" class="workcover"></image>
-          <view class="workname showThreehangTxt">红色摇篮-安远路矿工人运动纪念馆</view>
+      <!--自己-->
+      <view class="rightv" wx:else>
+        <view class="msgv">
+          <view class="msgcv msgcv2" wx:if="{{item.MsgType==1}}">{{item.Description}}</view>
+        
+          <image src="{{item.Description}}" class="msgimg" style="margin-right:16rpx;" bindtap="previewImg" data-url="{{item.Description}}" wx:if="{{item.MsgType==1}}"></image>
+        
+          <view class="workv" style="margin-right:16rpx;" wx:if="{{item.MsgType==3}}">
+            <view class="workc" bindtap="goWorkOpt" data-id="{{filter.str2Arry(item.Description)[0]}}">
+              <image src="{{filter.str2Arry(item.Description)[3]}}" mode="aspectFill" class="workcover"></image>
+              <view class="workname showThreehangTxt">{{filter.str2Arry(item.Description)[1]}}</view>
+            </view>
+            <view class="workowner showOnehangTxt">{{filter.str2Arry(item.Description)[2]}}的作品</view>
+          </view>
+       
+          <view class="workv" style="margin-right:16rpx;" wx:if="{{item.MsgType==4}}">
+            <view class="workc" bindtap="goCourseOpt" data-id="{{filter.str2Arry(item.Description)[0]}}">
+              <image src="{{filter.str2Arry(item.Description)[3]}}" mode="aspectFill" class="workcover"></image>
+              <view class="workname showThreehangTxt">{{filter.str2Arry(item.Description)[1]}}</view>
+            </view>
+            <view class="workowner showOnehangTxt">负责人：{{filter.str2Arry(item.Description)[2]}}</view>
+          </view>
+        
         </view>
-        <view class="workowner showOnehangTxt">负责人：李某</view>
-      </view>
-    </view>
-  </view>
 
-  <view class="rightv">
-    <view class="msgv">
-      <!-- <view class="msgcv msgcv2">没猜中我奶是群主我奶是群主我奶是群主我奶是群主我奶是群主我奶是群主</view> -->
-      <view class="workv" style="margin-right:16rpx;">
-        <view class="workc" bindtap="goWorkOpt" data-id="1">
-          <image src="/resources/comman/avatarUrl.jpg" mode="aspectFill" class="workcover"></image>
-          <view class="workname showThreehangTxt">“一粒种子改变一个世界一粒种子改变一个世界一粒种子改变一个世界一粒种子改变一个世界”</view>
-        </view>
-        <view class="workowner showOnehangTxt">我奶是群主的作品</view>
+        <image src="{{item.UserPic}}" class="txicon"></image>
+
       </view>
-    </view>
-    <image src="/resources/comman/avatarUrl.jpg" class="txicon"></image>
-  </view>
-  <view class="rightv">
-    <view class="msgv">
-      <!-- <view class="msgcv msgcv2">没猜中我奶是群主我奶是群主我奶是群主我奶是群主我奶是群主我奶是群主</view> 
-       <image src="/resources/comman/avatarUrl.jpg" class="msgimg" bindtap="previewImg" data-url="/resources/comman/avatarUrl.jpg"></image>
-      <view class="workv" style="margin-right:16rpx;">
-        <view class="workc" bindtap="goWorkOpt" data-id="1">
-          <image src="/resources/comman/avatarUrl.jpg" mode="aspectFill" class="workcover"></image>
-          <view class="workname showThreehangTxt">“一粒种子改变一个世界一粒种子改变一个世界一粒种子改变一个世界一粒种子改变一个世界”</view>
-        </view>
-        <view class="workowner showOnehangTxt">我奶是群主的作品</view>
-      </view>
-       <view class="workv" style="margin-right:16rpx;">
-        <view class="workc" bindtap="goCourseOpt" data-id="1">
-          <image src="/resources/comman/avatarUrl.jpg" mode="aspectFill" class="workcover"></image>
-          <view class="workname showThreehangTxt">红色摇篮-安远路矿工人运动纪念馆</view>
-        </view>
-        <view class="workowner showOnehangTxt">负责人：李某</view>
-      </view>
-      -->
-      <image src="/resources/comman/avatarUrl.jpg" class="msgimg" style="margin-right:16rpx;" bindtap="previewImg" data-url="/resources/comman/avatarUrl.jpg"></image>
-    </view>
-    <image src="/resources/comman/avatarUrl.jpg" class="txicon"></image>
-  </view>
-  <view class="rightv">
-    <view class="msgv">
-      <view class="msgcv msgcv2">没猜中我奶是群主我奶是群主我奶是群主我奶是群主我奶是群主我奶是群主</view>
-    </view>
-    <image src="/resources/comman/avatarUrl.jpg" class="txicon"></image>
-  </view>
+
+    </block>
+  </block>
 </scroll-view>
 
 <!--底部操作部分-->
@@ -107,6 +80,10 @@
     <view class="btmbtn" style="width: 180rpx;" bindtap="goGrouper">
       <image src="../../resources/grouper.png" class="btmbtnicon" style="width: 34rpx;"></image>
       <view class="btmbtntxt">群成员</view>
+    </view>
+    <view class="btmbtn" style="width: 230rpx;" bindtap="goInvite">
+      <image src="../../resources/grouper.png" class="btmbtnicon" style="width: 34rpx;"></image>
+      <view class="btmbtntxt">邀请新成员</view>
     </view>
   </view>
   <view class="btmc">
@@ -129,7 +106,8 @@
         </view>
         <view class="btmoptctxt">发送作品</view>
       </view>
-      <view class="jiesan" bindtap="jiesanOpt">解散群组</view>
+      <view class="jiesan" bindtap="jiesanOpt" wx:if="{{userAuth==1||userAuth==2}}">解散群组</view>
+      <view class="jiesan" bindtap="OutGroupOpt" wx:else>退出群组</view>
     </view>
   </view>
 </view>
@@ -141,6 +119,7 @@
     <view class="masktopopt">收起</view>
   </view>
   <scroll-view scroll-y="true" class="masklistv">
+   
     <!--实践课程-->
     <block wx:if="{{masktype==1}}">
       <block wx:for="{{courses}}" wx:key="item">
@@ -149,14 +128,15 @@
             <view class="maskworkname showOnehangTxt">{{item.Title}}</view>
             <view class="maskworkdesc showOnehangTxt">负责人：{{item.AuthorName}}</view>
           </view>
-          <view class="maskworkcv" catchtap="sendCheckWorkOpt" data-obj="{{item}}">
+          <view class="maskworkcv" catchtap="sendCheckCourseOpt" data-obj="{{item}}">
             <image src="../../resources/send.png" class="sendicon"></image>
             <view class="sendtxt">发送课程</view>
           </view>
         </view>
       </block>
-      <nodatacom wx:if="{{courses.length==0}}"/>
+      <nodatacom wx:if="{{courses.length==0}}" />
     </block>
+
     <!--发送作品-->
     <block wx:else>
       <block wx:for="{{works}}" wx:key="item">
@@ -171,8 +151,8 @@
           </view>
         </view>
       </block>
-      <nodatacom wx:if="{{works.length==0}}"/>
+      <nodatacom wx:if="{{works.length==0}}" />
     </block>
-   
+
   </scroll-view>
 </view>

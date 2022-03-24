@@ -1,0 +1,144 @@
+/* pages/group/create.wxss */
+page{
+  background: #fff;
+}
+.topborderv{
+  width: 100vw;
+  height: 1rpx;
+  background: #eee;
+  position: sticky;
+  top: 0;
+  left: 0;
+  z-index: 999;
+}
+.nullv{
+  width: 100vw;
+  height: 50rpx;
+}
+.hangv {
+  margin: 0 30rpx 24rpx;
+}
+
+.logoicon {
+  width: 65rpx;
+  height: 65rpx;
+  border-radius: 50%;
+  margin-top: 10rpx;
+}
+
+.hangtag {
+  height: 88rpx;
+  line-height: 88rpx;
+  font-size: 32rpx;
+  font-weight: 500;
+  color: #262626;
+}
+
+.hangval {
+  height: 78rpx;
+  line-height: 78rpx;
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1rpx solid #e3e3e3;
+}
+.hangval2 {
+  height: 100rpx;
+  line-height: 100rpx;
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1rpx solid #e3e3e3;
+}
+.pickerv {
+  width: 690rpx;
+  height: 100rpx;
+  line-height: 100rpx;
+  display: flex;
+  justify-content: space-between;
+}
+.hangtxt2 {
+  width: 600rpx;
+  height: 100rpx;
+  line-height: 100rpx;
+  font-size: 32rpx;
+  font-weight: 500;
+  color: #262626;
+}
+.hangtxt {
+  width: 600rpx;
+  height: 78rpx;
+  line-height: 78rpx;
+  font-size: 32rpx;
+  font-weight: 500;
+  color: #262626;
+}
+
+.hangtip {
+  font-weight: 400;
+  color: #999;
+}
+
+.righticon {
+  width: 10rpx;
+  height: 20rpx;
+  margin-top: 29rpx;
+  display: block;
+}
+
+.btn {
+  width: 548rpx;
+  height: 96rpx;
+  background: #F24540;
+  border-radius: 48rpx;
+  font-size: 32rpx;
+  font-weight: 500;
+  color: #FFFFFF;
+  text-align: center;
+  line-height: 96rpx;
+  margin: 118rpx auto;
+}
+
+.hangvalc {
+  height: auto;
+  display: flex;
+  flex-wrap: wrap;
+  border-bottom: 1rpx solid #eff0f2;
+  padding-left: 30rpx;
+}
+
+.userv {
+  width: 100rpx;
+  height: auto;
+  position: relative;
+  margin-right: 45rpx;
+  margin-bottom: 30rpx;
+}
+
+.avatarUrl {
+  width: 100rpx;
+  height: 100rpx;
+  display: block;
+  margin-bottom: 20rpx;
+  border-radius: 50%;
+}
+
+.username {
+  text-align: center;
+  font-size: 22rpx;
+  font-weight: 500;
+  color: #636976;
+}
+
+.delicon {
+  width: 32rpx;
+  height: 32rpx;
+  position: absolute;
+  top: 0;
+  left: 78rpx;
+}
+
+.jiaicon {
+  width: 100rpx;
+  height: 100rpx;
+  display: block;
+  margin-bottom: 20rpx;
+}

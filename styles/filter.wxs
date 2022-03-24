@@ -244,6 +244,38 @@ function IsMoreChk(nums, index) {
   }
 }
 
+
+//以逗号分隔的字符串转为数组
+function str2Arry(txt) {
+
+  if (txt == undefined || txt == '' || txt == null) {
+    return [];
+  } else if (txt.indexOf(',') > -1) {
+    return txt.split(',');
+  } else if (txt.indexOf('，') > -1) {
+    return txt.split('，');
+  } else {
+    return [txt];
+  }
+}
+
+//聊天显示时间
+function ChatShowDateTime(chattime){
+  if (chattime == undefined || chattime == '' || chattime == null) {
+    return false;
+  } else {
+    var chattimestr=chattime.replace('-','/').replace('-','/').replace('-','/');
+    var chattimenum= getDate(chattimestr).getTime();
+    var nowtimenum= getDate().getTime();
+    var cha=nowtimenum-chattimenum;
+    if(cha/60000>5){
+      return true;
+    }else{
+      return false;
+    }
+  }
+}
+
 // 导出对外暴露的属性
 module.exports = {
   toThousands: toThousands,
@@ -265,4 +297,6 @@ module.exports = {
   time2Percent: time2Percent,
   IsMoreChk: IsMoreChk,
   time2Percent2: time2Percent2,
+  str2Arry:str2Arry,
+  ChatShowDateTime:ChatShowDateTime,
 }

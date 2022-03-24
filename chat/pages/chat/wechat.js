@@ -3,7 +3,7 @@ var requestUrl = getApp().globalData.requestUrl;
 var WxRequest = require('../../../utils/WxRequest.js');
 var OssTool = require('../../../ossutils/uploadFile.js');
 var timeTool = require('../../../utils/time.js'); //封装的方法
-var timer='';//计时器
+var timer = ''; //计时器
 
 Page({
 
@@ -17,9 +17,9 @@ Page({
     showMask: false, //发送作品浮层
     showMaskAni: false, //浮层动画
     list: [1, 2, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12],
-    works:[],//作品
-    courses:[],//实践课程
-    masktype:-1,//浮窗类型1:实践课程 2:作品
+    works: [], //作品
+    courses: [], //实践课程
+    masktype: -1, //浮窗类型1:实践课程 2:作品
   },
 
   /**
@@ -64,29 +64,29 @@ Page({
       that.InitOldHistory();
     })
   },
-  InitWork(){//获取作品
-    var that=this;
-    var url=requestUrl+"/API/QualityWorksApi/GetQualityWorksList?page=1&rows=100";
-    WxRequest.PostRequest(url,{}).then(res=>{
-      if(res.data.success){
+  InitWork() { //获取作品
+    var that = this;
+    var url = requestUrl + "/API/QualityWorksApi/GetQualityWorksList?page=1&rows=100";
+    WxRequest.PostRequest(url, {}).then(res => {
+      if (res.data.success) {
         that.setData({
-          works:res.data.data.datas
+          works: res.data.data.datas
         })
       }
     })
   },
-  InitCourse(){//获取实践课程
-    var that=this;
-    var url=requestUrl+"/API/PracticalTeaching/GetMorePracticalTeachingList?page=1&rows=100";
-    WxRequest.PostRequest(url,{}).then(res=>{
+  InitCourse() { //获取实践课程
+    var that = this;
+    var url = requestUrl + "/API/PracticalTeaching/GetMorePracticalTeachingList?page=1&rows=100";
+    WxRequest.PostRequest(url, {}).then(res => {
       that.setData({
-        courses:res.data.data.datas
+        courses: res.data.data.datas
       })
     })
   },
   InitOldHistory() { //获取历史消息
     var that = this;
-    var url = requestUrl + "/GroupsInfo/GetGroupMsgNewList?keywords=&userId=" + that.data.userId + "&gid=" + that.data.groupid + "&queryTime=" + timeTool.formatNowTime();
+    var url = requestUrl + "/API/GroupsInfo/GetGroupMsgNewList?keywords=&userId=" + that.data.userId + "&gid=" + that.data.groupid + "&queryTime=" + timeTool.formatNowTime();
 
     WxRequest.PostRequest(url, {}).then(res => {
 
@@ -110,7 +110,7 @@ Page({
   },
   InitHistory(type) { //获取历史消息
     var that = this;
-    var url = requestUrl + "/GroupsInfo/GetGroupMsgNewListByNew?keywords=&userId=" + getApp().globalData.openId + "&objId=" + getApp().globalData.CompanyID + "&gid=" + that.data.groupid + "&queryTime=" + timeTool.formatNowTime();
+    var url = requestUrl + "/API/GroupsInfo/GetGroupMsgNewListByNew?keywords=&userId=" + getApp().globalData.openId + "&objId=" + getApp().globalData.CompanyID + "&gid=" + that.data.groupid + "&queryTime=" + timeTool.formatNowTime();
 
     WxRequest.PostRequest(url, {}).then(res => {
 
@@ -138,7 +138,7 @@ Page({
     var that = this;
     that.setData({
       pageindex: 1,
-      msgtxt:"",
+      msgtxt: "",
     })
     that.InitHistory(1);
   },
@@ -149,7 +149,7 @@ Page({
   },
   goCourseOpt(e) { //实践课程
     wx.navigateTo({
-      url: '../../../pages/course/detail?id=' +  e.currentTarget.dataset.id,
+      url: '../../../pages/course/detail?id=' + e.currentTarget.dataset.id,
     })
   },
   goWorkOpt(e) { //作品详情
@@ -163,6 +163,12 @@ Page({
       url: '../chat/member?id=' + that.data.id,
     })
   },
+  goInvite() { //邀请新成员
+    var that = this;
+    wx.navigateTo({
+      url: '../chat/invite?groupid=' + that.data.groupid,
+    })
+  },
   sendMsg(e) { //发送模板消息
     var that = this;
     var msg = e.detail.value;
@@ -170,7 +176,7 @@ Page({
       WxRequest.ShowAlert("请输入发送的消息");
     } else {
       //TODO 发送文字消息
-      that.sendMsg2Server(msgtxt,1);
+      that.sendMsg2Server(msgtxt, 1);
     }
   },
   showModalOpt() { //点击操作按钮
@@ -212,7 +218,7 @@ Page({
     that.setData({
       showMask: true,
       showMaskAni: true,
-      masktype:e.currentTarget.dataset.type
+      masktype: e.currentTarget.dataset.type
     })
   },
   hideMaskOpt() { //收起浮窗
@@ -222,22 +228,31 @@ Page({
     })
     setTimeout(() => {
       that.setData({
-        masktype:-1,
+        masktype: -1,
         showMask: false
       })
     }, 1000);
   },
+  sendCheckCourseOpt(e) { //发送选择课程操作
+    var that = this;
+    var obj = e.currentTarget.dataset.obj;
+    var content = obj.ID + "," + obj.Title + "," + obj.AuthorName + "," + item.Thumbnail;
+    //TODO 发送消息
+    that.sendMsg2Server(content, 4);
+
+  },
   sendCheckWorkOpt(e) { //发送选择作品操作
     var that = this;
     var obj = e.currentTarget.dataset.obj;
+    var content = obj.ID + "," + obj.Title + "," + obj.UserName + "," + item.Thumbnail;
     //TODO 发送消息
-    that.sendMsg2Server(obj,3);
+    that.sendMsg2Server(content, 3);
 
   },
   sendMsg2Server(content, type) { //发送信息 1:文字 2:图片 3:作品 4:课程
     var that = this;
-    var url = requestUrl + "/GroupsInfo/PostGroupMsg";
-    var userInfo=getApp().globalData.userInfo;
+    var url = requestUrl + "/API/GroupsInfo/PostGroupMsg";
+    var userInfo = getApp().globalData.userInfo;
     var params = {
       GroupID: that.data.groupid,
       UserID: that.data.userId,
@@ -246,7 +261,7 @@ Page({
       MsgType: type,
       SendTime: timeTool.formatTime(new Date()),
       Description: content,
-      DataType:type==1?0:1, //0:默认 1:位置 2:名片
+      DataType: 0,
       Duration: 0, //时长
     };
     WxRequest.PostRequest(url, params).then(res => {
@@ -274,10 +289,41 @@ Page({
       success: (result) => {
         if (result.confirm) {
           //TODO　请求接口解散群组
-          wx.showToast({
-            title: '解散成功',
+          var url = requestUrl + "/API/GroupsInfo/PostDeleteGroupInfo?gId=" + that.data.groupid + "&UserId=" + getApp().globalData.WxUserId;
+          WxRequest.PostRequest(url, {}).then(res => {
+            if (res.data.success) {
+              wx.showToast({
+                title: '解散成功',
+              })
+              setTimeout(() => {
+                wx.navigateBack({
+                  delta: 1,
+                })
+              }, 2000);
+            } else {
+              WxRequest.ShowAlert(res.data.msg);
+            }
           })
+
         }
+      }
+    })
+  },
+  OutGroupOpt() { //退出群组
+    var that = this;
+    var url = requestUrl + "/API/GroupsInfo/DeleteGroupItem?gId=" + that.data.groupid + "&userids=" + that.data.userId;
+    WxRequest.PostRequest(url, {}).then(res => {
+      if (res.data.success) {
+        wx.showToast({
+          title: '退出成功',
+        })
+        setTimeout(() => {
+          wx.navigateBack({
+            delta: 1,
+          })
+        }, 2000);
+      } else {
+        WxRequest.ShowAlert(res.data.msg);
       }
     })
   },

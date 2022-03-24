@@ -72,6 +72,13 @@
           "name": "",
           "pathName": "chat/pages/chat/wechat",
           "query": "",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "",
+          "pathName": "pages/group/create",
+          "query": "id=53",
           "scene": null,
           "launchMode": "default"
         }

@@ -1,4 +1,4 @@
-// pages/group/user.js
+// chat/pages/chat/invite.js
 var requestUrl = getApp().globalData.requestUrl;
 var WxRequest = require('../../utils/WxRequest.js');
 
@@ -12,14 +12,16 @@ Page({
     pageindex: 1,
     chkIds: [],
     id: 0, //讨论组
-    showloadingMask:true,
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    var that = this;
+    that.setData({
+      id: options.groupid
+    })
   },
   chkTapOpt(e) { //点击操作
     var that = this;
@@ -34,7 +36,7 @@ Page({
     }
     for (var i = 0; i < list.length; i++) {
       if (list[i].IsChk) {
-        chkIds.push(list[i]);
+        chkIds.push(list[i].ID);
       }
     }
     that.setData({
@@ -56,13 +58,19 @@ Page({
       WxRequest.ShowAlert("请选择成员");
     } else {
       //TODO 请求接口
-      wx.setStorage({
-        key:"grouperobj",
-        data:chkIds,
-        success:function(res){
-          wx.navigateBack({
-            delta: 1,
+      var url = requestUrl + "/API/GroupsInfo/AddGroupItem?gId=" + that.data.id + "&userids=" + chkIds.join(',');
+      WxRequest.PostRequest(url, {}).then(res => {
+        if (res.data.success) {
+          wx.showToast({
+            title: '邀请成功',
           })
+          setTimeout(() => {
+            wx.navigateBack({
+              delta: 1,
+            })
+          }, 2000);
+        } else {
+          WxRequest.ShowAlert(res.data.msg);
         }
       })
     }
@@ -71,7 +79,9 @@ Page({
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-
+    wx.hideShareMenu({
+      menus: ['shareAppMessage', 'shareTimeline'],
+    })
   },
 
   /**
@@ -79,18 +89,9 @@ Page({
    */
   onShow: function () {
     var that = this;
-
-    getApp().ChargeLogin().then(res => {
-      if (getApp().globalData.WxUserId == 0) {
-        wx.navigateTo({
-          url: '../../wxauth/pages/wxlogin/index',
-        })
-      } else {
-        that.InitData();
-      }
-    })
+    that.InitData();
   },
-  InitData() { //获取首页数据
+  InitData() { //获取成员列表
     var that = this;
     var pageindx = that.data.pageindex;
     var chkkind = that.data.chkkind;

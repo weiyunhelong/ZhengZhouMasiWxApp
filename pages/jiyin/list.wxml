@@ -11,8 +11,8 @@
 </view>
 
 <!--banner部分-->
-<view class="bannerv" bindtap="goSystem">
-  <image lazy-load="true" class="banner" src="https://zhengzhousizheng.oss-cn-beijing.aliyuncs.com/zhengzhouv2/homebanner.png"></image>
+<view class="bannerv">
+  <image lazy-load="true" class="banner" src="https://zhengzhousizheng.oss-cn-beijing.aliyuncs.com/bannerimgv/%E5%AF%BB%E6%89%BE%E7%BA%A2%E8%89%B2%E7%B2%BE%E7%A5%9E.png"></image>
 </view>
 
 <!--探寻红色基因-->
