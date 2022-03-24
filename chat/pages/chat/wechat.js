@@ -12,7 +12,7 @@ Page({
    */
   data: {
     id: 0,
-    type: 0,
+    type: 0, //1:实践群 2:讨论组
     showModal: false, //显示操作浮层
     showMask: false, //发送作品浮层
     showMaskAni: false, //浮层动画
@@ -30,6 +30,7 @@ Page({
 
     that.setData({
       groupid: options.id,
+      type: options.type,
       userId: getApp().globalData.WxUserId
     })
 
@@ -259,7 +260,7 @@ Page({
       UserName: userInfo.NickName,
       UserPic: userInfo.AvataUrl,
       MsgType: type,
-      SendTime: timeTool.formatTime(new Date()),
+      SendTime: timeTool.formatNowTime(),
       Description: content,
       DataType: 0,
       Duration: 0, //时长
@@ -325,6 +326,12 @@ Page({
       } else {
         WxRequest.ShowAlert(res.data.msg);
       }
+    })
+  },
+  setOpt() { //讨论组设置
+    var that=this;
+    wx.navigateTo({
+      url: '../chat/set?id='+that.data.groupid,
     })
   },
   /**

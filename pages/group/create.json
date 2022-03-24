@@ -1,5 +1,5 @@
 {
-  "navigationBarTitleText": "创建讨论组",
+  "navigationBarTitleText": "发起讨论组",
   "usingComponents": {
     "loadding":"../../components/loadding/index"
   }

@@ -11,6 +11,21 @@ function formatTime(date) {
 
   return [year, month, day].map(formatNumber).join('/') + ' ' + [hour, minute, second].map(formatNumber).join(':')
 }
+
+//获取当前时间
+function formatNowTime(){
+  var date=new Date();
+  var year = date.getFullYear()
+  var month = date.getMonth() + 1
+  var day = date.getDate()
+
+  var hour = date.getHours()
+  var minute = date.getMinutes()
+  var second = date.getSeconds()
+
+
+  return [year, month, day].map(formatNumber).join('/') + ' ' + [hour, minute, second].map(formatNumber).join(':')
+}
 //不满10，补0
 function formatNumber(n) {
   n = n.toString()
@@ -461,4 +476,5 @@ module.exports = {
   Str2Date: Str2Date, //字符串日期转日期格式
   getWeekDays: getWeekDays, //获取一周的时间范围
   AddSeconds:AddSeconds,
+  formatNowTime:formatNowTime,
 }

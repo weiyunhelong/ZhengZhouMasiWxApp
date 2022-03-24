@@ -1,6 +1,6 @@
 // chat/pages/chat/invite.js
 var requestUrl = getApp().globalData.requestUrl;
-var WxRequest = require('../../utils/WxRequest.js');
+var WxRequest = require('../../../utils/WxRequest.js');
 
 Page({
 
@@ -20,8 +20,18 @@ Page({
   onLoad: function (options) {
     var that = this;
     that.setData({
-      id: options.groupid
+      id: options.groupid,
+      type:options.type
     })
+    if(options.type==1){
+      wx.setNavigationBarTitle({
+        title: '新增',
+      })
+    }else{
+      wx.setNavigationBarTitle({
+        title: '移除',
+      })
+    }
   },
   chkTapOpt(e) { //点击操作
     var that = this;
@@ -56,13 +66,30 @@ Page({
     var chkIds = that.data.chkIds;
     if (chkIds.length == 0) {
       WxRequest.ShowAlert("请选择成员");
-    } else {
+    } else if(that.data.type==1){//新增
       //TODO 请求接口
       var url = requestUrl + "/API/GroupsInfo/AddGroupItem?gId=" + that.data.id + "&userids=" + chkIds.join(',');
       WxRequest.PostRequest(url, {}).then(res => {
         if (res.data.success) {
           wx.showToast({
             title: '邀请成功',
+          })
+          setTimeout(() => {
+            wx.navigateBack({
+              delta: 1,
+            })
+          }, 2000);
+        } else {
+          WxRequest.ShowAlert(res.data.msg);
+        }
+      })
+    } else if(that.data.type==2){//移除
+      //TODO 请求接口
+      var url = requestUrl + "/API/GroupsInfo/DeleteGroupItem?gId=" + that.data.id + "&userids=" + chkIds.join(',');
+      WxRequest.PostRequest(url, {}).then(res => {
+        if (res.data.success) {
+          wx.showToast({
+            title: '操作成功',
           })
           setTimeout(() => {
             wx.navigateBack({

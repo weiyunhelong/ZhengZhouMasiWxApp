@@ -41,9 +41,9 @@
       <view class="rightv" wx:else>
         <view class="msgv">
           <view class="msgcv msgcv2" wx:if="{{item.MsgType==1}}">{{item.Description}}</view>
-        
+
           <image src="{{item.Description}}" class="msgimg" style="margin-right:16rpx;" bindtap="previewImg" data-url="{{item.Description}}" wx:if="{{item.MsgType==1}}"></image>
-        
+
           <view class="workv" style="margin-right:16rpx;" wx:if="{{item.MsgType==3}}">
             <view class="workc" bindtap="goWorkOpt" data-id="{{filter.str2Arry(item.Description)[0]}}">
               <image src="{{filter.str2Arry(item.Description)[3]}}" mode="aspectFill" class="workcover"></image>
@@ -51,7 +51,7 @@
             </view>
             <view class="workowner showOnehangTxt">{{filter.str2Arry(item.Description)[2]}}的作品</view>
           </view>
-       
+
           <view class="workv" style="margin-right:16rpx;" wx:if="{{item.MsgType==4}}">
             <view class="workc" bindtap="goCourseOpt" data-id="{{filter.str2Arry(item.Description)[0]}}">
               <image src="{{filter.str2Arry(item.Description)[3]}}" mode="aspectFill" class="workcover"></image>
@@ -59,7 +59,7 @@
             </view>
             <view class="workowner showOnehangTxt">负责人：{{filter.str2Arry(item.Description)[2]}}</view>
           </view>
-        
+
         </view>
 
         <image src="{{item.UserPic}}" class="txicon"></image>
@@ -79,11 +79,7 @@
     </view>
     <view class="btmbtn" style="width: 180rpx;" bindtap="goGrouper">
       <image src="../../resources/grouper.png" class="btmbtnicon" style="width: 34rpx;"></image>
-      <view class="btmbtntxt">群成员</view>
-    </view>
-    <view class="btmbtn" style="width: 230rpx;" bindtap="goInvite">
-      <image src="../../resources/grouper.png" class="btmbtnicon" style="width: 34rpx;"></image>
-      <view class="btmbtntxt">邀请新成员</view>
+      <view class="btmbtntxt">{{type==1?'群成员':'讨论成员'}}</view>
     </view>
   </view>
   <view class="btmc">
@@ -106,8 +102,9 @@
         </view>
         <view class="btmoptctxt">发送作品</view>
       </view>
-      <view class="jiesan" bindtap="jiesanOpt" wx:if="{{userAuth==1||userAuth==2}}">解散群组</view>
-      <view class="jiesan" bindtap="OutGroupOpt" wx:else>退出群组</view>
+
+      <view class="jiesan" bindtap="setOpt" wx:if="{{type==2}}">讨论组设置</view>
+
     </view>
   </view>
 </view>
@@ -119,7 +116,7 @@
     <view class="masktopopt">收起</view>
   </view>
   <scroll-view scroll-y="true" class="masklistv">
-   
+
     <!--实践课程-->
     <block wx:if="{{masktype==1}}">
       <block wx:for="{{courses}}" wx:key="item">

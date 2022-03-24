@@ -12,7 +12,11 @@ Page({
     courseid: 0,
     name: "",
     logo: "",
-    friends: [],
+    list: [],
+    pageindex: 1,
+    chkIds: [],
+    id: 0, //讨论组
+    showloadingMask: true,
   },
 
   /**
@@ -22,11 +26,6 @@ Page({
     var that = this;
     that.setData({
       courseid: options.id
-    })
-  },
-  getName(e) { //获取群名称
-    this.setData({
-      name: e.detail.value
     })
   },
   logoOpt() { //上传logo
@@ -48,56 +47,89 @@ Page({
       }
     })
   },
-  goFriend() { //添加群成员
+  getName(e) { //获取群名称
     var that=this;
-    wx.navigateTo({
-      url: '../group/user?id='+that.data.courseid,
+   
+    wx.showModal({
+      cancelColor: '#999999',
+      cancelText: '取消',
+      confirmColor: '#262626',
+      confirmText: '确认',
+      content: '',
+      editable: true,
+      placeholderText: '请输入讨论名称',
+      showCancel: true,
+      title: '设置讨论名称',
+      success: (result) => {
+        that.setData({
+          name:result.content
+        })
+      }
     })
   },
-  deleteOpt(e) { //删除
+  ShowMoreDta() { //添加群成员
     var that = this;
-    var friends = that.data.friends;
-    var index = e.currentTarget.dataset.index;
-    friends.splice(index, 1);
     that.setData({
-      friends: friends
+      pageindex: 1 + that.data.pageindex
+    })
+    that.InitMember();
+  },
+  chkTapOpt(e) { //点击操作
+    var that = this;
+    var list = that.data.list,
+      chkIds = [];
+    var id = e.currentTarget.dataset.id;
+    for (var i = 0; i < list.length; i++) {
+      if (id == list[i].ID) {
+        list[i].IsChk = !list[i].IsChk;
+        break;
+      }
+    }
+    for (var i = 0; i < list.length; i++) {
+      if (list[i].IsChk) {
+        chkIds.push(list[i].ID);
+      }
+    }
+    that.setData({
+      list: list,
+      chkIds: chkIds,
     })
   },
   saveOpt() { //创建操作
     var that = this;
-    var name = that.data.name,
+    var
       logo = that.data.logo,
-      friends = that.data.friends;
+      name = that.data.name,
+      chkIds = that.data.chkIds;
 
-    if (name == "") {
-      WxRequest.ShowAlert("请输入讨论组名称");
+    if (logo == '') {
+      WxRequest.ShowAlert("请上传讨论头像");
+    } else if (name == "") {
+      WxRequest.ShowAlert("请输入讨论名称");
     } else if (name.length < 2 || name.length > 12) {
       WxRequest.ShowAlert("名称长度在2-12字长");
-    } else if (logo == '') {
-      WxRequest.ShowAlert("请上传讨论组logo");
-    } else if (friends.length == 0) {
-      WxRequest.ShowAlert("请添加成员");
+    } else if (chkIds.length == 0) {
+      WxRequest.ShowAlert("请选择成员");
     } else {
-      var url = requestUrl + "/GroupsInfo/CreatGroupInfo";
+      var url = requestUrl + "/API/GroupsInfo/CreatGroupInfo";
       var params = {
         Title: name,
-        GroupLeaderID: getApp().globalData.openId,
+        GroupLeaderID: getApp().globalData.WxUserId,
         GroupImg: logo,
-        Industry: hangyes[hindex].Key,
-        ProvinceName: region[0],
-        CityName: region[1],
-        AreaName: region[2],
-        UserIds: that.DealFriends(),
+        Industry: 0,
+        ProvinceName:"",
+        CityName: "",
+        AreaName: "",
+        UserIds: chkIds.join(','),
       };
       WxRequest.PostRequest(url, params).then(res => {
         if (res.data.success) {
-          wx.removeStorage({
-            key: 'grouperobj',
+          wx.showToast({
+            title: '创建成功',
           })
-          WxRequest.ShowSuccessTip("创建群成功");
           setTimeout(() => {
-            wx.navigateTo({
-              url: '../../../chatroom/pages/chatroom/group?id=' + res.data.data.GroupID,
+            wx.switchTab({
+              url: '../group/index',
             })
           }, 2000);
         } else {
@@ -105,15 +137,6 @@ Page({
         }
       })
     }
-  },
-  DealFriends() { //获取所有的
-    var that = this;
-    var friends = that.data.friends;
-    var txtarry = [];
-    for (var i = 0; i < friends.length; i++) {
-      txtarry.push(friends[i].SendUserID);
-    }
-    return txtarry.join(',')
   },
   /**
    * 生命周期函数--监听页面初次渲染完成
@@ -129,17 +152,32 @@ Page({
    */
   onShow: function () {
     var that = this;
-    that.GetChkFriendData();
+    that.InitMember();
   },
-  GetChkFriendData() { //获取选中的好友数据
+  InitMember() { //获取成员列表
+
     var that = this;
-    wx.getStorage({
-      key: 'grouperobj',
-      success: function (res) {
-        that.setData({
-          friends: res.data
-        })
+    var pageindx = that.data.pageindex;
+    var chkkind = that.data.chkkind;
+    var url = requestUrl + "/API/XRIdeology/HomeDateList?uid=" + getApp().globalData.WxUserId + "&dataType=" + chkkind;
+    WxRequest.PostRequest(url, {}).then(res => {
+      if (res.data.success) {
+        if (pageindx == 1) {
+          that.setData({
+            list: res.data.data.CourseCenter.concat(res.data.data.Fourhistories), //res.data.data.datas
+          })
+        } else {
+          that.setData({
+            list: that.data.list.concat(res.data.data.RedGene)
+          })
+        }
       }
+      setTimeout(() => {
+        wx.hideLoading();
+        that.setData({
+          showloadingMask: false
+        })
+      }, 1000);
     })
   },
 

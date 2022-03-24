@@ -1,44 +1,37 @@
 <!--pages/group/create.wxml-->
 <view class="topborderv"></view>
 
-<view class="nullv"></view>
-<view class="hangv">
-  <view class="hangtag">讨论组名称</view>
-  <view class="hangval">
-    <input type="text" placeholder="请输入讨论组名称名称（2-12字）" placeholder-class="hangtip" class="hangtxt" value="{{name}}"
-      bindinput="getName" />
+<view class="viewv">
+  <view class="viewtag">讨论头像</view>
+  <view class="viewval" bindtap="logoOpt">
+    <view class="viewtip" wx:if="{{logo==''}}">未设置</view>
+    <image src="{{logo}}" mode="aspectFill" class="logoicon" wx:else></image>
+    <image src="https://idcardassets.oss-cn-shanghai.aliyuncs.com/assets/right.png" class="righticon"></image>
   </view>
 </view>
-<view class="hangv">
-  <view class="hangtag">讨论组logo</view>
-  <view class="hangval" bindtap="logoOpt">
-      <view class="pickerv">
-        <input disabled="true" type="text" placeholder="请上传logo" placeholder-class="hangtip" class="hangtxt" wx:if="{{logo==''}}"/>
-        <image src="{{logo}}" class="logoicon" wx:else></image>
-        <image src="https://idcardassets.oss-cn-shanghai.aliyuncs.com/assets/right.png" class="righticon"></image>
-      </view>
+<view class="viewv">
+  <view class="viewtag">讨论名称</view>
+  <view class="viewval" bindtap="getName">
+    <view class="viewtip" wx:if="{{name==''}}">未设置</view>
+    <view class="viewtxt" wx:else>{{name}}</view>
+    <image src="https://idcardassets.oss-cn-shanghai.aliyuncs.com/assets/right.png" class="righticon"></image>
   </view>
 </view>
-<view class="hangv">
-  <view class="hangtag">讨论组成员</view>
-  <view class="hangval" wx:if="{{friends.length==0}}">
-    <view class="pickerv" bindtap="goFriend">
-      <input disabled="true" type="text" placeholder="选择成员" placeholder-class="hangtip" class="hangtxt" />
-      <image src="https://idcardassets.oss-cn-shanghai.aliyuncs.com/assets/right.png" class="righticon"></image>
-    </view>
-  </view>
-</view>
-<view class="hangvalc" wx:if="{{friends.length>0}}">
-  <block wx:for="{{friends}}" wx:key="item" wx:for-index="x">
-    <view class="userv">
-      <image src="{{item.Thumbnail}}" class="avatarUrl"></image>
+<view class="kongv"></view>
+<view class="titlev">选择成员</view>
+<scroll-view scroll-y="true" class="listv" bindscrolltolower="ShowMoreDta">
+  <block wx:for="{{list}}" wx:key="item">
+    <view class="blockv" bindtap="chkTapOpt" data-id="{{item.ID}}">
+      <radio checked="{{item.IsChk}}" color="#F24540" class="radio"></radio>
+      <image src="{{item.Thumbnail}}" mode="aspectFill" class="avatar"></image>
       <view class="username">{{item.UserName}}</view>
-      <image src="https://idcardassets.oss-cn-shanghai.aliyuncs.com/assets/delicon.png" class="delicon" bindtap="deleteOpt" data-index="{{x}}"></image>
     </view>
   </block>
-  <view class="userv"  bindtap="goFriend">
-    <image src="https://idcardassets.oss-cn-shanghai.aliyuncs.com/assets/jiaicon.png" class="jiaicon"></image>
-  </view>
+</scroll-view>
+
+<view class="btmv">
+  <view class="btn {{logo==''||name==''||chkIds.length==0?'btng':''}}" bindtap="saveOpt">确认({{chkIds.length}})</view>
 </view>
 
-<view class="btn" bindtap="saveOpt">创建</view>
+<!--loadding 加载-->
+<loadding showloadingMask="{{showloadingMask}}"/>

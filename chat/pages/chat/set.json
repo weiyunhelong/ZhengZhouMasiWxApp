@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "讨论组设置",
+  "usingComponents": {
+    "loadding":"../../../components/loadding/index"
+  }
+}

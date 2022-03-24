@@ -1,4 +1,4 @@
-/* pages/group/create.wxss */
+/* chat/pages/chat/set.wxss */
 page {
   background: #fff;
 }
@@ -30,12 +30,14 @@ page {
   display: flex;
   justify-content: flex-end;
 }
-.viewv .viewval .logoicon{
+
+.viewv .viewval .logoicon {
   width: 80rpx;
   height: 80rpx;
   border-radius: 50%;
   margin-top: 10rpx;
 }
+
 .viewv .viewval .viewtip {
   font-size: 32rpx;
   color: #F24540;
@@ -62,63 +64,75 @@ page {
 
 .titlev {
   height: 100rpx;
-  padding-left: 32rpx;
+  padding: 0 32rpx;
   line-height: 100rpx;
   font-size: 32rpx;
   color: #262626;
+  display: flex;
+  justify-content: space-between;
 }
 
 .listv {
-  width: 100vw;
-  height: calc(100vh - 320rpx - 178rpx);
+  display: flex;
+  flex-wrap: wrap;
+  padding: 18rpx 0;
 }
 
 .blockv {
-  display: flex;
-  padding: 0 32rpx;
-  height: 128rpx;
-}
-
-.radio {
-  width: 40rpx;
-  height: 40rpx;
-  margin-top: 44rpx;
-  margin-right: 24rpx;
+  width: 100rpx;
+  text-align: center;
+  margin-bottom: 36rpx;
+  margin-left: 45rpx;
 }
 
 .avatar {
-  width: 80rpx;
-  height: 80rpx;
+  width: 100rpx;
+  height: 100rpx;
   border-radius: 50%;
-  margin-top: 24rpx;
-  margin-right: 28rpx;
+  margin: 0 auto 8rpx;
 }
 
 .username {
-  line-height: 128rpx;
-  font-size: 32rpx;
-  color: #262626;
+  font-size: 24rpx;
+  color: #666666;
+}
+
+.viewbtnv {
+  display: flex;
+  justify-content: center;
+  height: 100rpx;
+  line-height: 100rpx;
+}
+
+.viewbtntxt {
+  font-size: 28rpx;
+  color: #666666;
+}
+
+.downicon {
+  width: 40rpx;
+  height: 40rpx;
+  margin-top: 30rpx;
 }
 
 .btmv {
   width: 100vw;
-  height: 178rpx;
-  border-top: 1rpx solid #e3e3e3;
+  height: 312rpx;
 }
 
 .btn {
   width: 686rpx;
-  height: 92rpx;
-  background: #F24540;
-  border-radius: 46rpx;
-  margin: 8rpx auto;
-  line-height: 92rpx;
-  font-size: 32rpx;
+  height: 80rpx;
+  background: #F7F7F7;
+  border-radius: 44rpx;
+  margin: 150rpx auto 0;
+  line-height: 80rpx;
+  font-size: 28rpx;
   font-weight: 500;
-  color: #FFFFFF;
+  color: #999;
   text-align: center;
-  line-height: 92rpx;
 }
-.btng{
- opacity: 0.5;
-} 
+
+.btng {
+  opacity: 0.5;
+}

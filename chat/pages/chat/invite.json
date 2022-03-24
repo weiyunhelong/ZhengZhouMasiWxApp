@@ -1,5 +1,4 @@
 {
-  "navigationBarTitleText": "邀请成员",
   "usingComponents": {
     "loadding": "../../../components/loadding/index",
     "nodatacom": "../../../components/nodata/index"

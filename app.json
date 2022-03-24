@@ -3,7 +3,6 @@
     "pages/middle/index",
     "pages/home/index",
     "pages/group/index",
-    "pages/group/user",
     "pages/group/create",
     "pages/course/index",
     "pages/course/detail",
@@ -49,6 +48,7 @@
     "pages": [
       "pages/chat/wechat",
       "pages/chat/invite",
+      "pages/chat/set",
       "pages/chat/member"
     ]
   }, {

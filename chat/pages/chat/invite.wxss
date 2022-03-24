@@ -1,1 +1,66 @@
 /* chat/pages/chat/invite.wxss */
+page {
+  background: #fff;
+}
+
+.topborderv {
+  width: 100vw;
+  height: 1rpx;
+  background: #eee;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 999;
+}
+
+.listv {
+  width: 100vw;
+  height: calc(100vh - 180rpx);
+}
+
+.blockv {
+  display: flex;
+  padding: 0 32rpx;
+  height: 128rpx;
+}
+
+.radio {
+  width: 40rpx;
+  height: 40rpx;
+  margin-top: 44rpx;
+  margin-right: 24rpx;
+}
+
+.avatar {
+  width: 80rpx;
+  height: 80rpx;
+  border-radius: 50%;
+  margin-top: 24rpx;
+  margin-right: 28rpx;
+}
+
+.username {
+  line-height: 128rpx;
+  font-size: 32rpx;
+  color: #262626;
+}
+
+.btmv {
+  width: 100vw;
+  height: 176rpx;
+  background: #FFFFFF;
+  text-align: center;
+  border-top: 1rpx solid #eee;
+}
+
+.btnv {
+  width: 686rpx;
+  height: 92rpx;
+  background: #F24540;
+  border-radius: 46rpx;
+  margin: 8rpx auto;
+  line-height: 92rpx;
+  font-size: 32rpx;
+  font-weight: 500;
+  color: #FFFFFF;
+}
