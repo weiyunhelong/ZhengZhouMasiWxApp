@@ -111,6 +111,8 @@
       "pages/my/index",
       "pages/info/index",
       "pages/webview/index",
+      "pages/line/index",
+      "pages/rank/index",
       "pages/map/index"
     ]
   }],

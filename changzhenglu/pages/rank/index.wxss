@@ -1,0 +1,460 @@
+/* changzhenglu/pages/rank/index.wxss */
+.topv {
+  width: 100vw;
+  height: 340rpx;
+  background: url(https://zhengzhousizheng.oss-cn-beijing.aliyuncs.com/bannerimgv/%E7%BC%96%E7%BB%84%204%402x.png) no-repeat;
+  background-size: cover;
+}
+
+.tabv {
+  display: flex;
+  justify-content: center;
+  height: 112rpx;
+  line-height: 112rpx;
+  border-bottom: 0.5rpx solid #e3e3e3;
+}
+
+.tabv .tabc {
+  text-align: center;
+  font-size: 32rpx;
+  color: #262626;
+}
+
+.tabv .tabnull {
+  width: 80rpx;
+}
+
+.tabv .tabh {
+  color: #F24540;
+}
+
+.tabv .tabline {
+  width: 160rpx;
+  height: 4rpx;
+  background: #F24540;
+  border-radius: 2rpx;
+  margin: -4rpx auto 0;
+}
+
+.closev {
+  width: 86rpx;
+  height: 86rpx;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  justify-self: center;
+  flex-direction: column;
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 222;
+}
+
+.closeicon {
+  width: 40rpx;
+  height: 40rpx;
+  margin: 0 auto;
+}
+
+/*排行榜*/
+.rankv {
+  width: 100vw;
+  height: 85vh;
+  background: linear-gradient(180deg, #FFFFFF 0%, #FFF5EF 100%);
+  border-radius: 32rpx 32rpx 0rpx 0rpx;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+}
+
+.rankv .ranktopv {
+  padding: 20rpx 24rpx 4rpx;
+  display: flex;
+  justify-content: space-between;
+  height: 88rpx;
+}
+
+.ranktopv .toptab {
+  height: 88rpx;
+  line-height: 88rpx;
+  font-size: 32rpx;
+  font-weight: 500;
+  color: #262626;
+}
+
+.ranktopv .toptabh {
+  width: 180rpx;
+  height: 56rpx;
+  background: #FFFFFF;
+  border-radius: 30rpx;
+  border: 2rpx solid #F24540;
+  margin-top: 12rpx;
+  font-size: 28rpx;
+  color: #F24540;
+  line-height: 56rpx;
+  text-align: center;
+}
+
+.rankcv {
+  display: flex;
+  margin: 0 auto;
+  width: 686rpx;
+  height: 120rpx;
+  background: #FFFFFF;
+  box-shadow: 0px 4rpx 16rpx 0rpx rgba(0, 0, 0, 0.06);
+  border-radius: 12rpx;
+  margin-bottom: 16rpx;
+}
+
+.ranknov {
+  width: 64rpx;
+  height: 120rpx;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  justify-self: center;
+  font-size: 30rpx;
+  color: #999999;
+  text-align: center;
+  margin-left: 24rpx;
+}
+
+.rankuserv {
+  display: flex;
+  width: 368rpx;
+}
+
+.mdavatar {
+  width: 80rpx;
+  height: 80rpx;
+  border-radius: 50%;
+  margin-top: 20rpx;
+}
+
+.mduser {
+  margin-left: 16rpx;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  justify-self: center;
+}
+
+.username {
+  font-size: 28rpx;
+  color: #262626;
+}
+
+.userdesc {
+  font-size: 24rpx;
+  color: #999999;
+}
+
+.ranknumv {
+  display: flex;
+  justify-content: flex-end;
+  width: 200rpx;
+}
+
+.ranknum {
+  font-size: 36rpx;
+  color: #F24540;
+  line-height: 120rpx;
+}
+
+.rankbu {
+  font-size: 24rpx;
+  color: #262626;
+  line-height: 120rpx;
+}
+
+.noicon {
+  width: 44rpx;
+  height: 44rpx;
+}
+
+.rankmorev {
+  width: 100%;
+  height: 88rpx;
+  display: flex;
+  justify-content: center;
+}
+
+.moretxt {
+  height: 88rpx;
+  line-height: 88rpx;
+  font-size: 24rpx;
+  color: #999999;
+  margin-right: 8rpx;
+}
+
+.moreicon {
+  width: 12rpx;
+  height: 20rpx;
+  margin-top: 34rpx;
+}
+
+/*遮罩层*/
+.ranklist{
+  width: 100%;
+  height: calc(85vh - 340rpx);
+}
+/*遮罩层部分*/
+.maskv {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  z-index: 9999;
+  bottom: 0rpx;
+  left: 0rpx;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.showMaskv {
+  animation: fadeInUp 1s ease-in-out forwards;
+  -webkit-animation: fadeInUp 1s ease-in-out forwards;
+  -moz-animation: fadeInUp 1s ease-in-out forwards;
+}
+
+.hideMaskv {
+  animation: fadeOutDown 1s ease-in-out forwards;
+  -webkit-animation: fadeOutDown 1s ease-in-out forwards;
+  -moz-animation: fadeOutDown 1s ease-in-out forwards;
+}
+
+
+@-webkit-keyframes fadeInUp {
+  from {
+    opacity: 0;
+    -webkit-transform: translate3d(0, 100%, 0);
+    transform: translate3d(0, 100%, 0);
+  }
+
+  to {
+    opacity: 1;
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    -webkit-transform: translate3d(0, 100%, 0);
+    transform: translate3d(0, 100%, 0);
+  }
+
+  to {
+    opacity: 1;
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+.fadeInUp {
+  -webkit-animation-name: fadeInUp;
+  animation-name: fadeInUp;
+}
+
+
+@-webkit-keyframes fadeOutDown {
+  from {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 0;
+    -webkit-transform: translate3d(0, 100%, 0);
+    transform: translate3d(0, 100%, 0);
+  }
+}
+
+@keyframes fadeOutDown {
+  from {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 0;
+    -webkit-transform: translate3d(0, 100%, 0);
+    transform: translate3d(0, 100%, 0);
+  }
+}
+
+.fadeOutDown {
+  -webkit-animation-name: fadeOutDown;
+  animation-name: fadeOutDown;
+}
+
+.maskbodyv {
+  width: 100vw;
+  height: 80vh;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  z-index: 999;
+  background: #fff;
+  border-top-left-radius: 20rpx;
+  border-top-right-radius: 20rpx;
+}
+
+.masktopv {
+  width: 100vw;
+  height: 644rpx;
+  background: linear-gradient(189deg, rgba(242, 69, 64, 0.1) 0%, rgba(242, 69, 64, 0) 100%);
+  position: relative;
+}
+
+.masktxv {
+  position: absolute;
+  top: -78rpx;
+  left: 0;
+  text-align: center;
+  width: 100%;
+}
+
+.masktx {
+  width: 148rpx;
+  height: 148rpx;
+  border: 4rpx solid #FFFFFF;
+  margin: 0 auto;
+  border-radius: 50%;
+}
+
+.maskname {
+  font-size: 36rpx;
+  font-weight: 500;
+  color: #262626;
+}
+
+
+.maskinfov {
+  display: flex;
+  padding: 160rpx 32rpx 40rpx;
+  justify-content: space-between;
+}
+
+.maskinfov .maskinfoc {
+  width: 310rpx;
+  text-align: left;
+}
+
+.maskinfov .maskinfotag {
+  font-size: 24rpx;
+  color: #999999;
+}
+
+.maskinfov .maskinfoval {
+  font-size: 48rpx;
+  font-weight: 500;
+  color: #F24540;
+}
+
+.maskinfov .maskinfotxt {
+  font-size: 24rpx;
+  color: #262626;
+}
+
+.masktopv .masktitle {
+  height: 88rpx;
+  line-height: 88rpx;
+  font-size: 34rpx;
+  font-weight: 500;
+  color: #262626;
+  padding-left: 32rpx;
+}
+
+.masklistv {
+  padding: 0 32rpx;
+  height: calc(80vh - 425rpx);
+  margin-top: -220rpx;
+}
+
+.masklistv .maskitemv {
+  width: 686rpx;
+  height: 168rpx;
+  background: #FFFFFF;
+  box-shadow: 0rpx 4rpx 20rpx 0rpx rgba(0, 0, 0, 0.1);
+  border-radius: 12rpx;
+  margin: 0 auto;
+}
+
+.masklistv .maskitemv .maskitemnotxt {
+  height: 168rpx;
+  line-height: 168rpx;
+  text-align: center;
+  font-size: 32rpx;
+  color: #666666;
+}
+
+.masklistv .maskitemv2 {
+  display: flex;
+  margin-bottom: 20rpx;
+  height: 236rpx;
+}
+
+.maskitemv2 .avataricon {
+  width: 236rpx;
+  height: 236rpx;
+  border-radius: 12rpx;
+  margin-right: 24rpx;
+}
+
+.maskitemv2c {
+  width: 402rpx;
+  padding-top: 24rpx;
+}
+
+.maskname2 {
+  width: 360rpx;
+  font-size: 32rpx;
+  font-weight: 500;
+  color: #000000;
+  margin-bottom: 10rpx;
+}
+
+.maskbunumv {
+  display: flex;
+}
+
+.mapicon {
+  width: 32rpx;
+  height: 36rpx;
+  margin-top: 3rpx;
+}
+
+.maskbunum {
+  font-size: 24rpx;
+  color: #666666;
+}
+
+.masknumbtnv {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 42rpx;
+}
+
+.masknumv {
+  display: flex;
+  height: 56rpx;
+  line-height: 56rpx;
+  font-size: 24rpx;
+}
+
+.masknumtip {
+  color: #999999;
+}
+
+.masknum {
+  color: #F24540;
+}
+
+.maskbtnv {
+  width: 140rpx;
+  height: 56rpx;
+  background: linear-gradient(90deg, #F24540 0%, #FA7B74 100%);
+  border-radius: 37rpx;
+  font-size: 26rpx;
+  color: #FFFFFF;
+  text-align: center;
+  line-height: 56rpx;
+}

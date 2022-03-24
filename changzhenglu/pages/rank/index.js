@@ -1,4 +1,4 @@
-// changzhenglu/pages/map/index.js
+// changzhenglu/pages/rank/index.js
 var requestUrl = getApp().globalData.requestUrl;
 var WxRequest = require('../../../utils/WxRequest.js');
 
@@ -8,7 +8,9 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    showMask: true,
+    showMaskAni: true,
+    chktab:0,//1长征排行榜 0今日排行榜
   },
 
   /**
@@ -16,34 +18,8 @@ Page({
    */
   onLoad: function (options) {
 
-    var that = this;
-    wx.getSystemInfo({
-      success: (res) => {
-        that.setData({
-          navigationBarHeight: res.statusBarHeight
-        })
-      },
-    })
   },
-  showMaskOpt() { //点击左上角的用户信息
 
-  },
-  goPostion() { //点击定位
-
-  },
-  goRun() { //点击Go
-
-  },
-  goLine() { //点击长征路线
-    wx.navigateTo({
-      url: '../line/index',
-    })
-  },
-  goRank(){//点击排行
-   wx.navigateTo({
-     url: '../rank/index',
-   })
-  },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */

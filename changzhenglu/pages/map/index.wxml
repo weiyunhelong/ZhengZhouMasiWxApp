@@ -17,6 +17,35 @@
 </view>
 
 <!--定位按钮-->
-<view class="postionv">
- <image src="../../resources/postion.png" class="postion"></image>
+<view class="postionv" bindtap="goPostion">
+  <image src="../../resources/postion.png" class="postion"></image>
+</view>
+
+<!--底部信息部分-->
+<view class="btmvv">
+  <view class="bushuvv">
+    <view class="bushuv">
+      <image src="/resources/comman/avatarUrl.jpg" class="smavatar"></image>
+      <view class="bushunum">1932</view>
+      <view class="bushutxt">步</view>
+    </view>
+    <image src="../../resources/downicon.png" class="downicon"></image>
+  </view>
+  <view class="gobtn" bindtap="goRun"></view>
+  <view class="btmv">
+    <view class="leftbtmv">
+      <view class="leftbtmtxt">重走长征路</view>
+      <view class="leftbtmtip">全程36里程（1里程/20步）</view>
+    </view>
+    <view class="rightbtmv">
+      <view class="rightbtmc" bindtap="goLine">
+        <image src="../../resources/mapicon.png" class="rightbtmicon"></image>
+        <view class="rightbtmtxt">长征路线</view>
+      </view>
+      <view class="rightbtmc"bindtap="goRank">
+        <image src="../../resources/no0.png" class="rightbtmicon"></image>
+        <view class="rightbtmtxt">长征排名</view>
+      </view>
+    </view>
+  </view>
 </view>

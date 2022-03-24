@@ -8,9 +8,9 @@
   </view>
 </view>
 
-<scroll-view scroll-y="true" class="listv" bindscrolltolower="ShowMoreData">
-  <nodatacom wx:if="{{list.length==0}}" />
-  <block wx:for="{{list}}" wx:key="item" wx:for-index="x">
+<scroll-view scroll-y="true" class="listv">
+  <nodatacom wx:if="{{chkkind==1?dataobj.datas.length==0:dataobj.JoIndatas.length==0}}" />
+  <block wx:for="{{chkkind==1?dataobj.datas:dataobj.JoIndatas}}" wx:key="item" wx:for-index="x">
     <view class="blockv {{x+1==list.length?'noborder':''}}" bindtap="goDetail" data-obj="{{item}}">
       <image src="/resources/comman/avatarUrl.jpg" mode="aspectFill" class="avatar"></image>
       <view class="blockc">
@@ -31,7 +31,7 @@
       </view>
     </view>
   </block>
-  <view class="nomorev" wx:if="{{list.length>0}}">暂时没有更多了</view>
+  <view class="nomorev" wx:if="{{chkkind==1?dataobj.datas.length.length>0:dataobj.JoIndatas.length>0}}">暂时没有更多了</view>
   <view class="tabbarcvc"></view>
 </scroll-view>
 

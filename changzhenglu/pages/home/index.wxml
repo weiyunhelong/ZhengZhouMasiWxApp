@@ -145,7 +145,7 @@
             <view class="masknumv">
               <view class="masknumtip">共</view>
               <view class="masknum">2323</view>
-              <view class="masknumtip">人浏览</view>
+              <view class="masknumtip">人达到</view>
             </view>
             <view class="maskbtnv">浏览</view>
           </view>

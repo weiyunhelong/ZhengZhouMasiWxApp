@@ -34,15 +34,6 @@ Page({
     })
     that.setData({
       chkkind: e.currentTarget.dataset.tab,
-      pageindex: 1,
-      list: [],
-    })
-    that.InitData();
-  },
-  ShowMoreData() { //加载更多
-    var that = this;
-    that.setData({
-      pageindex: 1 + that.data.pageindex
     })
     that.InitData();
   },
@@ -100,20 +91,12 @@ Page({
   },
   InitData() { //获取首页数据
     var that = this;
-    var pageindx = that.data.pageindex;
-    var chkkind = that.data.chkkind;
-    var url = requestUrl + "/API/XRIdeology/HomeDateList?uid=" + getApp().globalData.WxUserId + "&dataType=" + chkkind;
+    var url = requestUrl + "/API/GroupsInfo/MyGroupChatList?userid=" + getApp().globalData.WxUserId + "&keywords=" ;
     WxRequest.PostRequest(url, {}).then(res => {
       if (res.data.success) {
-        if (pageindx == 1) {
-          that.setData({
-            list: res.data.data.CourseCenter,//res.data.data.datas
-          })
-        } else {
-          that.setData({
-            list: that.data.list.concat(res.data.data.datas)
-          })
-        }
+        that.setData({
+          dataobj: res.data.data
+        })
       }
       setTimeout(() => {
         wx.hideLoading();

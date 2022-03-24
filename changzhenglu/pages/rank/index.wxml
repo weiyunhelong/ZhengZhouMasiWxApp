@@ -1,0 +1,215 @@
+<!--changzhenglu/pages/rank/index.wxml-->
+<view class="maskv {{showMaskAni?'showMaskv':'hideMaskv'}}" wx:if="{{showMask}}" bindtouchmove="nomove">
+
+  <!--排行榜-->
+  <view class="rankv">
+    <view class="topv">
+      <view class="tabv">
+        <view class="tabc" bindtap="tapTab" data-tab="1">
+          <view class="{{chktab==1?'tabh':'tab'}}">长征排行榜</view>
+          <view class="tabline" wx:if="{{chktab==1}}"></view>
+        </view>
+        <view class="tabnull"></view>
+        <view class="tabc" bindtap="tapTab" data-tab="0">
+          <view class="{{chktab==0?'tabh':'tab'}}">今日排行榜</view>
+          <view class="tabline" wx:if="{{chktab==0}}"></view>
+        </view>
+      </view>
+      <view class="closev">
+        <image src="/resources/comman/close.png" class="closeicon"></image>
+      </view>
+      <view class="rankcv" style="margin-top:40rpx;">
+        <view class="ranknov">无</view>
+        <view class="rankuserv">
+          <image src="/resources/comman/avatarUrl.jpg" mode="aspectFill" class="mdavatar"></image>
+          <view class="mduser">
+            <view class="username">李某人（我自己）</view>
+            <view class="userdesc">“小红军”</view>
+          </view>
+        </view>
+        <view class="ranknumv">
+          <view class="ranknum">8788</view>
+          <view class="rankbu">步</view>
+        </view>
+      </view>
+    </view>
+    <scroll-view class="ranklist" scroll-y="true">
+      <view class="rankcv">
+        <view class="ranknov">
+          <image src="../../resources/no1.png" class="noicon"></image>
+        </view>
+        <view class="rankuserv">
+          <image src="/resources/comman/avatarUrl.jpg" mode="aspectFill" class="mdavatar"></image>
+          <view class="mduser">
+            <view class="username">李某人（我自己）</view>
+            <view class="userdesc">“小红军”</view>
+          </view>
+        </view>
+        <view class="ranknumv">
+          <view class="ranknum">8788</view>
+          <view class="rankbu">步</view>
+        </view>
+      </view>
+      <view class="rankcv">
+        <view class="ranknov">
+          <image src="../../resources/no2.png" class="noicon"></image>
+        </view>
+        <view class="rankuserv">
+          <image src="/resources/comman/avatarUrl.jpg" mode="aspectFill" class="mdavatar"></image>
+          <view class="mduser">
+            <view class="username">李某人（我自己）</view>
+            <view class="userdesc">“小红军”</view>
+          </view>
+        </view>
+        <view class="ranknumv">
+          <view class="ranknum">8788</view>
+          <view class="rankbu">步</view>
+        </view>
+      </view>
+      <view class="rankcv">
+        <view class="ranknov">
+          <image src="../../resources/no3.png" class="noicon"></image>
+        </view>
+        <view class="rankuserv">
+          <image src="/resources/comman/avatarUrl.jpg" mode="aspectFill" class="mdavatar"></image>
+          <view class="mduser">
+            <view class="username">李某人（我自己）</view>
+            <view class="userdesc">“小红军”</view>
+          </view>
+        </view>
+        <view class="ranknumv">
+          <view class="ranknum">8788</view>
+          <view class="rankbu">步</view>
+        </view>
+      </view>
+      <view class="rankcv">
+        <view class="ranknov">
+          4
+        </view>
+        <view class="rankuserv">
+          <image src="/resources/comman/avatarUrl.jpg" mode="aspectFill" class="mdavatar"></image>
+          <view class="mduser">
+            <view class="username">李某人（我自己）</view>
+            <view class="userdesc">“小红军”</view>
+          </view>
+        </view>
+        <view class="ranknumv">
+          <view class="ranknum">8788</view>
+          <view class="rankbu">步</view>
+        </view>
+      </view>
+      <view class="rankcv">
+        <view class="ranknov">
+          4
+        </view>
+        <view class="rankuserv">
+          <image src="/resources/comman/avatarUrl.jpg" mode="aspectFill" class="mdavatar"></image>
+          <view class="mduser">
+            <view class="username">李某人（我自己）</view>
+            <view class="userdesc">“小红军”</view>
+          </view>
+        </view>
+        <view class="ranknumv">
+          <view class="ranknum">8788</view>
+          <view class="rankbu">步</view>
+        </view>
+      </view>
+      <view class="rankcv">
+        <view class="ranknov">
+          4
+        </view>
+        <view class="rankuserv">
+          <image src="/resources/comman/avatarUrl.jpg" mode="aspectFill" class="mdavatar"></image>
+          <view class="mduser">
+            <view class="username">李某人（我自己）</view>
+            <view class="userdesc">“小红军”</view>
+          </view>
+        </view>
+        <view class="ranknumv">
+          <view class="ranknum">8788</view>
+          <view class="rankbu">步</view>
+        </view>
+      </view>
+      <view class="rankcv">
+        <view class="ranknov">
+          4
+        </view>
+        <view class="rankuserv">
+          <image src="/resources/comman/avatarUrl.jpg" mode="aspectFill" class="mdavatar"></image>
+          <view class="mduser">
+            <view class="username">李某人（我自己）</view>
+            <view class="userdesc">“小红军”</view>
+          </view>
+        </view>
+        <view class="ranknumv">
+          <view class="ranknum">8788</view>
+          <view class="rankbu">步</view>
+        </view>
+      </view>
+      <view class="rankcv">
+        <view class="ranknov">
+          4
+        </view>
+        <view class="rankuserv">
+          <image src="/resources/comman/avatarUrl.jpg" mode="aspectFill" class="mdavatar"></image>
+          <view class="mduser">
+            <view class="username">李某人（我自己）</view>
+            <view class="userdesc">“小红军”</view>
+          </view>
+        </view>
+        <view class="ranknumv">
+          <view class="ranknum">8788</view>
+          <view class="rankbu">步</view>
+        </view>
+      </view>
+      <view class="rankcv">
+        <view class="ranknov">
+          4
+        </view>
+        <view class="rankuserv">
+          <image src="/resources/comman/avatarUrl.jpg" mode="aspectFill" class="mdavatar"></image>
+          <view class="mduser">
+            <view class="username">李某人（我自己）</view>
+            <view class="userdesc">“小红军”</view>
+          </view>
+        </view>
+        <view class="ranknumv">
+          <view class="ranknum">8788</view>
+          <view class="rankbu">步</view>
+        </view>
+      </view>
+      <view class="rankcv">
+        <view class="ranknov">
+          4
+        </view>
+        <view class="rankuserv">
+          <image src="/resources/comman/avatarUrl.jpg" mode="aspectFill" class="mdavatar"></image>
+          <view class="mduser">
+            <view class="username">李某人（我自己）</view>
+            <view class="userdesc">“小红军”</view>
+          </view>
+        </view>
+        <view class="ranknumv">
+          <view class="ranknum">8788</view>
+          <view class="rankbu">步</view>
+        </view>
+      </view>
+      <view class="rankcv">
+        <view class="ranknov">
+          4
+        </view>
+        <view class="rankuserv">
+          <image src="/resources/comman/avatarUrl.jpg" mode="aspectFill" class="mdavatar"></image>
+          <view class="mduser">
+            <view class="username">李某人（我自己）</view>
+            <view class="userdesc">“小红军”</view>
+          </view>
+        </view>
+        <view class="ranknumv">
+          <view class="ranknum">8788</view>
+          <view class="rankbu">步</view>
+        </view>
+      </view>
+    </scroll-view>
+  </view>
+</view>

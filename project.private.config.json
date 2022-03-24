@@ -14,78 +14,22 @@
       "list": [
         {
           "name": "",
-          "pathName": "xuetang/pages/xuetang/create",
+          "pathName": "changzhenglu/pages/home/index",
           "query": "",
           "launchMode": "default",
           "scene": null
         },
         {
           "name": "",
-          "pathName": "pages/activity/detail",
-          "query": "id=67",
-          "launchMode": "default",
-          "scene": null
-        },
-        {
-          "name": "",
-          "pathName": "xuetang/pages/xuetang/book",
+          "pathName": "changzhenglu/pages/map/index",
           "query": "",
           "launchMode": "default",
           "scene": null
         },
         {
           "name": "",
-          "pathName": "pages/my/index",
+          "pathName": "changzhenglu/pages/rank/index",
           "query": "",
-          "launchMode": "default",
-          "scene": null
-        },
-        {
-          "name": "",
-          "pathName": "my/pages/study/index",
-          "query": "",
-          "launchMode": "default",
-          "scene": null
-        },
-        {
-          "name": "",
-          "pathName": "my/pages/dati/index",
-          "query": "",
-          "launchMode": "default",
-          "scene": null
-        },
-        {
-          "name": "",
-          "pathName": "my/pages/study/index",
-          "query": "",
-          "launchMode": "default",
-          "scene": null
-        },
-        {
-          "name": "",
-          "pathName": "pages/group/user",
-          "query": "",
-          "launchMode": "default",
-          "scene": null
-        },
-        {
-          "name": "",
-          "pathName": "chat/pages/chat/wechat",
-          "query": "id=1&type=2",
-          "launchMode": "default",
-          "scene": null
-        },
-        {
-          "name": "",
-          "pathName": "pages/group/create",
-          "query": "id=53",
-          "launchMode": "default",
-          "scene": null
-        },
-        {
-          "name": "",
-          "pathName": "chat/pages/chat/set",
-          "query": "id=1",
           "scene": null,
           "launchMode": "default"
         }
