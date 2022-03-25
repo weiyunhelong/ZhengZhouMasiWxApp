@@ -398,5 +398,6 @@ page {
 }
 .msgimg{
   width: 320rpx;
-  height: 320rpx;  
+  height: auto;
+  min-height: 0;  
 }

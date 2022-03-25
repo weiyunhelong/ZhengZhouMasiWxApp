@@ -18,8 +18,17 @@ Page({
   onLoad: function (options) {
     var that = this;
     that.setData({
-      groupid: options.groupid
+      groupid: options.id
     })
+    if(options.type==1){
+      wx.setNavigationBarTitle({
+        title: '群成员',
+      })
+    }else{
+      wx.setNavigationBarTitle({
+        title: '讨论成员',
+      })
+    }
   },
 
   /**

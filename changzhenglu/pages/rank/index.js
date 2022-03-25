@@ -10,7 +10,7 @@ Page({
   data: {
     showMask: true,
     showMaskAni: true,
-    chktab:0,//1长征排行榜 0今日排行榜
+    chktab: 0, //1长征排行榜 0今日排行榜
   },
 
   /**
@@ -18,8 +18,26 @@ Page({
    */
   onLoad: function (options) {
 
+    var that = this;
+    wx.getSystemInfo({
+      success: (res) => {
+        that.setData({
+          navigationBarHeight: res.statusBarHeight
+        })
+      },
+    })
   },
-
+  tapTab(e) { //切换tab
+    var that = this;
+    that.setData({
+      chktab: e.currentTarget.dataset.tab
+    })
+  },
+  hideMaskOpt() { //返回操作
+    wx.navigateBack({
+      delta: 1,
+    })
+  },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */

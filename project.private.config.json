@@ -12,27 +12,7 @@
     },
     "miniprogram": {
       "list": [
-        {
-          "name": "",
-          "pathName": "changzhenglu/pages/home/index",
-          "query": "",
-          "launchMode": "default",
-          "scene": null
-        },
-        {
-          "name": "",
-          "pathName": "changzhenglu/pages/map/index",
-          "query": "",
-          "launchMode": "default",
-          "scene": null
-        },
-        {
-          "name": "",
-          "pathName": "changzhenglu/pages/rank/index",
-          "query": "",
-          "scene": null,
-          "launchMode": "default"
-        }
+        
       ]
     }
   }

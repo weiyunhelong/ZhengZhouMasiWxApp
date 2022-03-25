@@ -34,6 +34,18 @@ Page({
     })
     that.setData({
       chkkind: e.currentTarget.dataset.tab,
+      pageindex:1,
+      list:[]
+    })
+    that.InitData();
+  },
+  ShowMoreData(){
+    var that = this;
+    wx.showLoading({
+      title: '加载中',
+    })
+    that.setData({
+      pageindex:1+that.data.pageindex,
     })
     that.InitData();
   },
@@ -41,10 +53,10 @@ Page({
     var that = this;
     var dataobj = e.currentTarget.dataset.obj;
     //消息更新为已读
-    var url=requestUrl+"/API/GroupsInfo/PostReadGroupMsg?gId="+dataobj.id+"&UserId="+getApp().globalData.WxUserId;
+    var url=requestUrl+"/API/GroupsInfo/PostReadGroupMsg?gId="+dataobj.Id+"&UserId="+getApp().globalData.WxUserId;
     WxRequest.PostRequest(url,{}).then(res=>{
       wx.navigateTo({
-        url: '../../chat/pages/chat/wechat?id=' +dataobj.id+"&type="+that.data.chkkind,
+        url: '../../chat/pages/chat/wechat?id=' +dataobj.Id+"&jxid="+dataobj.JXID+"&type="+that.data.chkkind+"&gname="+dataobj.Title,
       })
     })
   },
@@ -91,12 +103,20 @@ Page({
   },
   InitData() { //获取首页数据
     var that = this;
-    var url = requestUrl + "/API/GroupsInfo/MyGroupChatList?userid=" + getApp().globalData.WxUserId + "&keywords=" ;
+    var pageindex=that.data.pageindex;
+    
+    var url = requestUrl + "/API/GroupsInfo/MyMessgeInfoList?userid=" + getApp().globalData.WxUserId + "&datatype="+that.data.chkkind+"&pageNo="+pageindex+"&pageSize=20";
     WxRequest.PostRequest(url, {}).then(res => {
       if (res.data.success) {
-        that.setData({
-          dataobj: res.data.data
-        })
+        if(pageindex==1){
+          that.setData({
+            list: res.data.data.Models
+          })
+        }else{
+          that.setData({
+            list:that.data.list.concat(res.data.data.Models) 
+          })
+        }
       }
       setTimeout(() => {
         wx.hideLoading();

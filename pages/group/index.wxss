@@ -146,7 +146,7 @@ page {
 }
 
 .blockname {
-  width: 360rpx;
+  width: 330rpx;
   font-size: 32rpx;
   color: #262626;
 }
@@ -171,6 +171,8 @@ page {
   border-radius: 18rpx;
   font-size: 24rpx;
   color: #FFFFFF;
+  min-width: 20rpx;
+  text-align: center;
 }
 
 .nomorev {

@@ -20,13 +20,15 @@ Page({
   onLoad: function (options) {
     var that = this;
     that.setData({
-      id: options.groupid,
+      id: options.id,
+      pid: options.pid,
       type:options.type
     })
     if(options.type==1){
       wx.setNavigationBarTitle({
         title: '新增',
       })
+      
     }else{
       wx.setNavigationBarTitle({
         title: '移除',
@@ -39,14 +41,14 @@ Page({
       chkIds = [];
     var id = e.currentTarget.dataset.id;
     for (var i = 0; i < list.length; i++) {
-      if (id == list[i].ID) {
+      if (id == list[i].UserID) {
         list[i].IsChk = !list[i].IsChk;
         break;
       }
     }
     for (var i = 0; i < list.length; i++) {
       if (list[i].IsChk) {
-        chkIds.push(list[i].ID);
+        chkIds.push(list[i].UserID);
       }
     }
     that.setData({
@@ -85,7 +87,7 @@ Page({
       })
     } else if(that.data.type==2){//移除
       //TODO 请求接口
-      var url = requestUrl + "/API/GroupsInfo/DeleteGroupItem?gId=" + that.data.id + "&userids=" + chkIds.join(',');
+      var url = requestUrl + "/API/GroupsInfo/DeleteGroupItemByID?gId=" + that.data.id + "&ids=" + chkIds.join(',');
       WxRequest.PostRequest(url, {}).then(res => {
         if (res.data.success) {
           wx.showToast({
@@ -120,20 +122,18 @@ Page({
   },
   InitData() { //获取成员列表
     var that = this;
-    var pageindx = that.data.pageindex;
-    var chkkind = that.data.chkkind;
-    var url = requestUrl + "/API/XRIdeology/HomeDateList?uid=" + getApp().globalData.WxUserId + "&dataType=" + chkkind;
+    var url = requestUrl;
+    var type = that.data.type;//1新增 2删除
+    if(type==1){//新增
+      url+="/API/GroupsInfo/PracticalUserListByGID?UserId=" + getApp().globalData.WxUserId + "&pid=" + that.data.pid+"&gid="+that.data.id;
+    }else{//删除
+      url+="/API/GroupsInfo/GetGroupItemALLList?keywords=&userid=" + getApp().globalData.WxUserId + "&gId=" + that.data.id;
+    }
     WxRequest.PostRequest(url, {}).then(res => {
       if (res.data.success) {
-        if (pageindx == 1) {
-          that.setData({
-            list: res.data.data.CourseCenter, //res.data.data.datas
-          })
-        } else {
-          that.setData({
-            list: that.data.list.concat(res.data.data.datas)
-          })
-        }
+        that.setData({
+          list:type==1?res.data.data:res.data.data.datas
+        })
       }
       setTimeout(() => {
         wx.hideLoading();

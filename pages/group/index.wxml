@@ -1,4 +1,5 @@
 <!--pages/group/index.wxml-->
+<wxs module="filter" src="../../styles/filter.wxs"/>
 <!--状态栏部分-->
 <view class="topv" style="margin-top:{{navigationBarHeight + 5}}px;display: flex;border-bottom:1rpx solid #eee;">
   <view class="backiconv"></view>
@@ -8,30 +9,29 @@
   </view>
 </view>
 
-<scroll-view scroll-y="true" class="listv">
-  <nodatacom wx:if="{{chkkind==1?dataobj.datas.length==0:dataobj.JoIndatas.length==0}}" />
-  <block wx:for="{{chkkind==1?dataobj.datas:dataobj.JoIndatas}}" wx:key="item" wx:for-index="x">
+<scroll-view scroll-y="true" class="listv" bindscrolltolower="ShowMoreData">
+  <nodatacom wx:if="{{list.length==0}}" />
+  <block wx:for="{{list}}" wx:key="item" wx:for-index="x">
     <view class="blockv {{x+1==list.length?'noborder':''}}" bindtap="goDetail" data-obj="{{item}}">
-      <image src="/resources/comman/avatarUrl.jpg" mode="aspectFill" class="avatar"></image>
+      <image src="{{item.GroupImg}}" mode="aspectFill" class="avatar"></image>
       <view class="blockc">
         <view class="blockcv">
-          <view class="blockname showOnehangTxt">布里斯班</view>
-          <view class="blockdate">2022.03.23 10:15</view>
+          <view class="blockname showOnehangTxt">{{item.Title}}</view>
+          <view class="blockdate" wx:if="{{item.UseTime!='0001/01/01'}}">{{item.UseTime}}</view>
         </view>
         <view class="blockcv" style="margin-top: 10rpx;">
           <view class="blocktxt showOnehangTxt">
-            <text>王艳：</text>
-            <text>Carolyn Pierce</text>
-            <text>[课程]</text>
-            <text>[图片]</text>
-            <text>[作品]</text>
+            <text wx:if="{{item.UserName!=''}}">{{item.UserName}}：</text>
+            <text wx:if="{{item.MsgType==1}}">{{item.ReplyMessage}}</text>
+            <text wx:if="{{item.MsgType==2}}">[图片]</text>
+            <text wx:if="{{item.MsgType==3}}">[作品]</text>
           </view>
-          <view class="blocknum">15</view>
+          <view class="blocknum" wx:if="{{item.NoRead>0}}">{{item.NoRead}}</view>
         </view>
       </view>
     </view>
   </block>
-  <view class="nomorev" wx:if="{{chkkind==1?dataobj.datas.length.length>0:dataobj.JoIndatas.length>0}}">暂时没有更多了</view>
+  <view class="nomorev" wx:if="{{list.length>0}}">暂时没有更多了</view>
   <view class="tabbarcvc"></view>
 </scroll-view>
 

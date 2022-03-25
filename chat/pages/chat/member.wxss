@@ -11,17 +11,26 @@
   height: 128rpx;
   background: #FFFFFF;
   display: flex;
+  justify-content: space-between;
+  padding: 0 32rpx;
 }
-
+.memberlv{
+  display: flex;
+}
 .avatarUrl {
   width: 80rpx;
   height: 80rpx;
   border-radius: 50%;
-  margin: 24rpx 28rpx 0 32rpx;
+  margin: 24rpx 28rpx 0 0;
 }
 
 .membername {
   line-height: 128rpx;
   font-size: 32rpx;
   color: #262626;
+}
+.memberrv{
+  line-height: 128rpx;
+  font-size: 32rpx;
+  color: #F24540;
 }

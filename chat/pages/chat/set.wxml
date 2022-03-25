@@ -4,26 +4,26 @@
 <view class="viewv">
   <view class="viewtag">讨论头像</view>
   <view class="viewval">
-    <image src="/resources/comman/avatarUrl.jpg" mode="aspectFill" class="logoicon"></image>
+    <image src="{{dataobj.GroupImg}}" mode="aspectFill" class="logoicon"></image>
     <image src="https://idcardassets.oss-cn-shanghai.aliyuncs.com/assets/right.png" class="righticon"></image>
   </view>
 </view>
 <view class="viewv">
   <view class="viewtag">讨论名称</view>
   <view class="viewval">
-    <view class="viewtxt">老铁聊聊</view>
+    <view class="viewtxt">{{dataobj.Title}}</view>
     <image src="https://idcardassets.oss-cn-shanghai.aliyuncs.com/assets/right.png" class="righticon"></image>
   </view>
 </view>
 <view class="kongv"></view>
 <view class="titlev">
   <text>讨论成员</text>
-  <text>12</text>
+  <text>{{dataobj.groupitems}}</text>
 </view>
-<view class="listv">
-  <block wx:for="{{list}}" wx:key="item">
-    <view class="blockv">
-      <image src="{{item.Thumbnail}}" mode="aspectFill" class="avatar"></image>
+<view class="listv" style="max-height:{{IsShowAll?'auto':'720rpx'}};">
+  <block wx:for="{{list}}" wx:key="item" wx:for-index="x">
+    <view class="blockv" wx:if="{{!IsShowAll&&x<18||IsShowAll}}">
+      <image src="{{item.UserPic}}" mode="aspectFill" class="avatar"></image>
       <view class="username showOnehangTxt">{{item.UserName}}</view>
     </view>
   </block>
@@ -31,19 +31,20 @@
       <image src="../../resources/adduser.png" mode="aspectFill" class="avatar"></image>
       <view class="username showOnehangTxt">新增</view>
     </view>
-    <view class="blockv" bindtap="memberOpt" data-type="2">
+    <view class="blockv" bindtap="memberOpt" data-type="2" wx:if="{{dataobj.UserType==1}}">
       <image src="../../resources/adduser.png" mode="aspectFill" class="avatar"></image>
       <view class="username showOnehangTxt">移除</view>
     </view>
 </view>
-<view class="viewbtnv">
-  <view class="viewbtntxt">查看全部</view>
+<view class="viewbtnv"  bindtap="ShowMoreOpt" wx:if="{{list.length>=18}}">
+  <view class="viewbtntxt">{{IsShowAll?'收取':'查看全部'}}</view>
   <image src="/resources/comman/downicon.png" class="downicon"></image>
 </view>
 <view class="kongv"></view>
 <view class="btmv">
-  <view class="btn" bindtap="jiesanOpt">解散讨论组</view>
+  <view class="btn" bindtap="jiesanOpt" wx:if="{{dataobj.UserType==1}}">解散讨论组</view>
+  <view class="btn" bindtap="outOpt" wx:if="{{dataobj.UserType!=1}}">退出讨论组</view>
 </view>
 
-<!--loadding 加载-->
+<!--loadding 加载 wx:if="{{list.length>12}}"-->
 <loadding showloadingMask="{{showloadingMask}}" />

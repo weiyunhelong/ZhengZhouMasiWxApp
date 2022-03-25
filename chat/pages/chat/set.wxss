@@ -76,6 +76,7 @@ page {
   display: flex;
   flex-wrap: wrap;
   padding: 18rpx 0;
+  overflow: hidden;
 }
 
 .blockv {

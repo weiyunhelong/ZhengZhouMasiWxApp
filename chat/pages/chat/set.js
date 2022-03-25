@@ -10,8 +10,10 @@ Page({
   data: {
     showloadingMask: false,
     dataobj: {},
-    id: 0,
-    pageindex: 1,
+    id: 0, //群组id
+    pid: 0, //实践课程id
+    IsShowAll:false,//显示全部
+    list:[],//成员
   },
 
   /**
@@ -20,26 +22,17 @@ Page({
   onLoad: function (options) {
     var that = this;
     that.setData({
-      id: options.id
+      id: options.id,
     })
-    that.InitData();
   },
   InitData() { //获取数据
     var that = this;
-    var pageindx = that.data.pageindex;
-    var chkkind = that.data.chkkind;
-    var url = requestUrl + "/API/XRIdeology/HomeDateList?uid=" + getApp().globalData.WxUserId + "&dataType=" + chkkind;
+    var url = requestUrl + "/API/GroupsInfo/GroupInfoDetail?UserId=" + getApp().globalData.WxUserId + "&Id=" + that.data.id;
     WxRequest.PostRequest(url, {}).then(res => {
       if (res.data.success) {
-        if (pageindx == 1) {
-          that.setData({
-            list: res.data.data.CourseCenter.concat(res.data.data.Fourhistories), //res.data.data.datas
-          })
-        } else {
-          that.setData({
-            list: that.data.list.concat(res.data.data.RedGene)
-          })
-        }
+        that.setData({
+          dataobj: res.data.data
+        })
       }
       setTimeout(() => {
         wx.hideLoading();
@@ -49,13 +42,31 @@ Page({
       }, 1000);
     })
   },
-  memberOpt(e) { //
+  InitMember() { //获取用户成员
     var that = this;
-    wx.navigateTo({
-      url: '../chat/invite?id=' + that.data.id + "&type="+e.currentTarget.dataset.type,
+    var url = requestUrl + "/API/GroupsInfo/GetGroupItemALLList?keywords=&userid=" + getApp().globalData.WxUserId + "&gId=" + that.data.id;
+    WxRequest.PostRequest(url, {}).then(res => {
+      if (res.data.success) {
+        that.setData({
+          list: res.data.data.datas
+        })
+      }
     })
   },
-  jiesanOpt(){//解散讨论组
+  memberOpt(e) { //新增或者移除
+    var that = this;
+    var dataobj=that.data.dataobj;
+    wx.navigateTo({
+      url: '../chat/invite?id=' + dataobj.Id + "&type=" + e.currentTarget.dataset.type + "&pid=" + dataobj.JXID,
+    })
+  },
+  ShowMoreOpt(){//查看全部
+    var that=this;
+    that.setData({
+      IsShowAll:!that.data.IsShowAll
+    })
+  },
+  jiesanOpt() { //解散讨论组
     var that = this;
 
     wx.showModal({
@@ -69,11 +80,45 @@ Page({
       success: (result) => {
         if (result.confirm) {
           //TODO　请求接口解散群组
-          var url = requestUrl + "/API/GroupsInfo/PostDeleteGroupInfo?gId=" + that.data.groupid + "&UserId=" + getApp().globalData.WxUserId;
+          var url = requestUrl + "/API/GroupsInfo/PostDeleteGroupInfo?gId=" + that.data.id + "&UserId=" + getApp().globalData.WxUserId;
           WxRequest.PostRequest(url, {}).then(res => {
             if (res.data.success) {
               wx.showToast({
                 title: '解散成功',
+              })
+              setTimeout(() => {
+                wx.navigateBack({
+                  delta: 2,
+                })
+              }, 2000);
+            } else {
+              WxRequest.ShowAlert(res.data.msg);
+            }
+          })
+
+        }
+      }
+    })
+  },
+  outOpt() { //退出讨论组
+    var that = this;
+
+    wx.showModal({
+      cancelColor: '#666666',
+      cancelText: '取消',
+      confirmColor: '#000000',
+      confirmText: '确定',
+      content: '确定要退出讨论组吗',
+      showCancel: true,
+      title: '',
+      success: (result) => {
+        if (result.confirm) {
+          //TODO　请求接口解散群组
+          var url = requestUrl + "/API/GroupsInfo/DeleteGroupItemByID?gId=" + that.data.id + "&ids=" + getApp().globalData.WxUserId;
+          WxRequest.PostRequest(url, {}).then(res => {
+            if (res.data.success) {
+              wx.showToast({
+                title: '退出成功',
               })
               setTimeout(() => {
                 wx.navigateBack({
@@ -100,7 +145,17 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
+    var that=this;
+    getApp().ChargeLogin().then(res => {
+      if (getApp().globalData.WxUserId == 0) {
+        wx.navigateTo({
+          url: '../../wxauth/pages/wxlogin/index',
+        })
+      } else {
+        that.InitData();
+        that.InitMember();
+      }
+    })
   },
 
   /**

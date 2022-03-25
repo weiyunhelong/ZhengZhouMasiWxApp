@@ -1,4 +1,22 @@
 <!--changzhenglu/pages/rank/index.wxml-->
+
+<!--顶部用户信息-->
+<view class="topbgv" bindtap="hideMaskOpt" style="height:calc({{navigationBarHeight}}px + 100rpx);">
+  <view style="width: 100vw;height:{{navigationBarHeight}}px;margin-bottom: 10rpx;"></view>
+  <view class="pagetitlev" catchtap="goBackOpt">
+    <view class="backiconv">
+      <image src="/resources/comman/backiconb.png" class="backicon"></image>
+    </view>
+    <view class="pagetitle">重走长征路</view>
+  </view>
+</view>
+<!--用户信息-->
+<view class="userv" bindtap="showMaskOpt">
+  <image src="/resources/comman/avatarUrl.jpg" mode="aspectFill" class="avatarUrl"></image>
+  <view class="nickname">长征突击手</view>
+  <image src="../../resources/right.png" class="righticon"></image>
+</view>
+
 <view class="maskv {{showMaskAni?'showMaskv':'hideMaskv'}}" wx:if="{{showMask}}" bindtouchmove="nomove">
 
   <!--排行榜-->
@@ -15,7 +33,7 @@
           <view class="tabline" wx:if="{{chktab==0}}"></view>
         </view>
       </view>
-      <view class="closev">
+      <view class="closev" bindtap="hideMaskOpt">
         <image src="/resources/comman/close.png" class="closeicon"></image>
       </view>
       <view class="rankcv" style="margin-top:40rpx;">

@@ -27,6 +27,16 @@ Page({
     that.setData({
       courseid: options.id
     })
+
+    getApp().ChargeLogin().then(res => {
+      if (getApp().globalData.WxUserId == 0) {
+        wx.navigateTo({
+          url: '../../wxauth/pages/wxlogin/index',
+        })
+      } else {
+        that.InitMember();
+      }
+    })
   },
   logoOpt() { //上传logo
     const that = this
@@ -80,14 +90,14 @@ Page({
       chkIds = [];
     var id = e.currentTarget.dataset.id;
     for (var i = 0; i < list.length; i++) {
-      if (id == list[i].ID) {
+      if (id == list[i].UserID) {
         list[i].IsChk = !list[i].IsChk;
         break;
       }
     }
     for (var i = 0; i < list.length; i++) {
       if (list[i].IsChk) {
-        chkIds.push(list[i].ID);
+        chkIds.push(list[i].UserID);
       }
     }
     that.setData({
@@ -121,6 +131,7 @@ Page({
         CityName: "",
         AreaName: "",
         UserIds: chkIds.join(','),
+        JXID:that.data.courseid,
       };
       WxRequest.PostRequest(url, params).then(res => {
         if (res.data.success) {
@@ -151,26 +162,17 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-    var that = this;
-    that.InitMember();
+   
   },
   InitMember() { //获取成员列表
 
     var that = this;
-    var pageindx = that.data.pageindex;
-    var chkkind = that.data.chkkind;
-    var url = requestUrl + "/API/XRIdeology/HomeDateList?uid=" + getApp().globalData.WxUserId + "&dataType=" + chkkind;
+    var url = requestUrl + "/API/GroupsInfo/PracticalUserList?UserId=" + getApp().globalData.WxUserId + "&pid=" + that.data.courseid;
     WxRequest.PostRequest(url, {}).then(res => {
       if (res.data.success) {
-        if (pageindx == 1) {
-          that.setData({
-            list: res.data.data.CourseCenter.concat(res.data.data.Fourhistories), //res.data.data.datas
-          })
-        } else {
-          that.setData({
-            list: that.data.list.concat(res.data.data.RedGene)
-          })
-        }
+        that.setData({
+          list: res.data.data
+        })
       }
       setTimeout(() => {
         wx.hideLoading();

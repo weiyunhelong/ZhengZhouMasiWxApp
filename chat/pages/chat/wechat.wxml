@@ -11,13 +11,13 @@
 
       <!--其他人-->
       <view class="leftv" wx:if="{{item.FromUserID!=userId}}">
-        <image src="{{item.FromUserPic}}" class="txicon"></image>
+        <image src="{{item.UserPic}}" class="txicon"></image>
         <view class="msgv">
           <view class="name">{{item.UserName}}</view>
 
           <view class="msgcv" wx:if="{{item.MsgType==1}}">{{item.Description}}</view>
 
-          <image src="{{item.Description}}" class="msgimg" bindtap="previewImg" data-url="{{item.Description}}" wx:if="{{item.MsgType==2}}"></image>
+          <image src="{{item.Description}}" mode="widthFix" class="msgimg" bindtap="previewImg" data-url="{{item.Description}}" wx:if="{{item.MsgType==2}}"></image>
 
           <view class="workv" bindtap="goWorkOpt" data-id="{{filter.str2Arry(item.Description)[0]}}" wx:if="{{item.MsgType==3}}">
             <view class="workc">
@@ -42,7 +42,7 @@
         <view class="msgv">
           <view class="msgcv msgcv2" wx:if="{{item.MsgType==1}}">{{item.Description}}</view>
 
-          <image src="{{item.Description}}" class="msgimg" style="margin-right:16rpx;" bindtap="previewImg" data-url="{{item.Description}}" wx:if="{{item.MsgType==1}}"></image>
+          <image src="{{item.Description}}" mode="widthFix" class="msgimg" style="margin-right:16rpx;" bindtap="previewImg" data-url="{{item.Description}}" wx:if="{{item.MsgType==2}}"></image>
 
           <view class="workv" style="margin-right:16rpx;" wx:if="{{item.MsgType==3}}">
             <view class="workc" bindtap="goWorkOpt" data-id="{{filter.str2Arry(item.Description)[0]}}">
@@ -73,7 +73,7 @@
 <!--底部操作部分-->
 <view class="btmvv" style="height: {{showModal?'580':'255'}}rpx;">
   <view class="btmv">
-    <view class="btmbtn" bindtap="showMaskOpt" data-type="1">
+    <view class="btmbtn" bindtap="goCourseOpt">
       <image src="../../resources/video.png" class="btmbtnicon"></image>
       <view class="btmbtntxt">实践课程</view>
     </view>
@@ -112,44 +112,24 @@
 <!--显示操作浮窗-->
 <view class="maskv {{showMaskAni?'showMaskv':'hideMaskv'}}" wx:if="{{showMask}}">
   <view class="masktopv" bindtap="hideMaskOpt">
-    <view class="masktoptxt">{{masktype==1?'发送实践课程':'发送作品'}}</view>
+    <view class="masktoptxt">发送作品</view>
     <view class="masktopopt">收起</view>
   </view>
   <scroll-view scroll-y="true" class="masklistv">
 
-    <!--实践课程-->
-    <block wx:if="{{masktype==1}}">
-      <block wx:for="{{courses}}" wx:key="item">
-        <view class="maskworkv">
-          <view class="maskworkcc">
-            <view class="maskworkname showOnehangTxt">{{item.Title}}</view>
-            <view class="maskworkdesc showOnehangTxt">负责人：{{item.AuthorName}}</view>
-          </view>
-          <view class="maskworkcv" catchtap="sendCheckCourseOpt" data-obj="{{item}}">
-            <image src="../../resources/send.png" class="sendicon"></image>
-            <view class="sendtxt">发送课程</view>
-          </view>
+    <block wx:for="{{works}}" wx:key="item">
+      <view class="maskworkv">
+        <view class="maskworkcc">
+          <view class="maskworkname showOnehangTxt">{{item.Title}}</view>
+          <view class="maskworkdesc showOnehangTxt">创作人：{{item.ReadName}}</view>
         </view>
-      </block>
-      <nodatacom wx:if="{{courses.length==0}}" />
-    </block>
-
-    <!--发送作品-->
-    <block wx:else>
-      <block wx:for="{{works}}" wx:key="item">
-        <view class="maskworkv">
-          <view class="maskworkcc">
-            <view class="maskworkname showOnehangTxt">{{item.Title}}</view>
-            <view class="maskworkdesc showOnehangTxt">创作人：{{item.UserName}}</view>
-          </view>
-          <view class="maskworkcv" catchtap="sendCheckWorkOpt" data-obj="{{item}}">
-            <image src="../../resources/send.png" class="sendicon"></image>
-            <view class="sendtxt">发送作品</view>
-          </view>
+        <view class="maskworkcv" catchtap="sendCheckWorkOpt" data-obj="{{item}}">
+          <image src="../../resources/send.png" class="sendicon"></image>
+          <view class="sendtxt">发送作品</view>
         </view>
-      </block>
-      <nodatacom wx:if="{{works.length==0}}" />
+      </view>
     </block>
+    <nodatacom wx:if="{{works.length==0}}" />
 
   </scroll-view>
 </view>

@@ -2,9 +2,9 @@
 <view class="topborderv"></view>
 <scroll-view scroll-y="true" class="listv" bindscrolltolower="ShowMoreData">
   <block wx:for="{{list}}" wx:key="item">
-    <view class="blockv" bindtap="chkTapOpt" data-id="{{item.ID}}">
+    <view class="blockv" bindtap="chkTapOpt" data-id="{{item.UserID}}">
       <radio checked="{{item.IsChk}}" color="#F24540" class="radio"></radio>
-      <image src="{{item.Thumbnail}}" mode="aspectFill" class="avatar"></image>
+      <image src="{{item.Avatar||item.UserPic}}" mode="aspectFill" class="avatar"></image>
       <view class="username">{{item.UserName}}</view>
     </view>
   </block>

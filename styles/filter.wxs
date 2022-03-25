@@ -276,6 +276,16 @@ function ChatShowDateTime(chattime){
   }
 }
 
+//时间转换
+function Date2Txt(chattime){
+  if (chattime == undefined || chattime == '' || chattime == null) {
+    return false;
+  } else {
+    var chattimestr=chattime.replace('-','.').replace('-','.').replace('-','.');
+    return chattimestr.replace('T',' ');
+  }
+}
+
 // 导出对外暴露的属性
 module.exports = {
   toThousands: toThousands,
@@ -299,4 +309,5 @@ module.exports = {
   time2Percent2: time2Percent2,
   str2Arry:str2Arry,
   ChatShowDateTime:ChatShowDateTime,
+  Date2Txt:Date2Txt,
 }

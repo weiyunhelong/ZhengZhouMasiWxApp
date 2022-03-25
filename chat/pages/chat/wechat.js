@@ -16,7 +16,7 @@ Page({
     showModal: false, //显示操作浮层
     showMask: false, //发送作品浮层
     showMaskAni: false, //浮层动画
-    list: [1, 2, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12],
+    list: [],
     works: [], //作品
     courses: [], //实践课程
     masktype: -1, //浮窗类型1:实践课程 2:作品
@@ -31,25 +31,11 @@ Page({
     that.setData({
       groupid: options.id,
       type: options.type,
-      userId: getApp().globalData.WxUserId
     })
 
-    //获取用户在群聊中的角色
-    that.InitMeRole();
     //获取作品
     that.InitWork();
-    //获取实践课程
-    that.InitCourse();
 
-  },
-  InitMeRole() { //获取用户在群聊中的角色
-    var that = this;
-    var url = requestUrl + "/UserPublicDataAPI/PostUserGroupUserType?userid=" + that.data.userId + "&gid=" + that.data.groupid;
-    WxRequest.PostRequest(url, {}).then(res => {
-      that.setData({
-        userAuth: res.data.data.UserType
-      })
-    })
   },
   InitWork() { //获取作品
     var that = this;
@@ -62,23 +48,16 @@ Page({
       }
     })
   },
-  InitCourse() { //获取实践课程
-    var that = this;
-    var url = requestUrl + "/API/PracticalTeaching/GetMorePracticalTeachingList?page=1&rows=100";
-    WxRequest.PostRequest(url, {}).then(res => {
-      that.setData({
-        courses: res.data.data.datas
-      })
-    })
-  },
   previewImg(e) { //预览图片
     wx.previewImage({
       urls: [e.currentTarget.dataset.url],
     })
   },
   goCourseOpt(e) { //实践课程
+    var that = this;
+    var dataobj = that.data.dataobj;
     wx.navigateTo({
-      url: '../../../pages/course/detail?id=' + e.currentTarget.dataset.id,
+      url: '../../../pages/course/detail?id=' + dataobj.JXID,
     })
   },
   goWorkOpt(e) { //作品详情
@@ -89,13 +68,7 @@ Page({
   goGrouper() { //组成员
     var that = this;
     wx.navigateTo({
-      url: '../chat/member?id=' + that.data.id,
-    })
-  },
-  goInvite() { //邀请新成员
-    var that = this;
-    wx.navigateTo({
-      url: '../chat/invite?groupid=' + that.data.groupid,
+      url: '../chat/member?id=' + that.data.groupid + "&type=" + that.data.type
     })
   },
   sendMsg(e) { //发送模板消息
@@ -105,7 +78,7 @@ Page({
       WxRequest.ShowAlert("请输入发送的消息");
     } else {
       //TODO 发送文字消息
-      that.sendMsg2Server(msgtxt, 1);
+      that.sendMsg2Server(msg, 1);
     }
   },
   showModalOpt() { //点击操作按钮
@@ -162,30 +135,22 @@ Page({
       })
     }, 1000);
   },
-  sendCheckCourseOpt(e) { //发送选择课程操作
-    var that = this;
-    var obj = e.currentTarget.dataset.obj;
-    var content = obj.ID + "," + obj.Title + "," + obj.AuthorName + "," + item.Thumbnail;
-    //TODO 发送消息
-    that.sendMsg2Server(content, 4);
-
-  },
   sendCheckWorkOpt(e) { //发送选择作品操作
     var that = this;
     var obj = e.currentTarget.dataset.obj;
-    var content = obj.ID + "," + obj.Title + "," + obj.UserName + "," + item.Thumbnail;
+    var content = obj.ID + "," + obj.Title + "," + obj.ReadName + "," + obj.AccessoryUrl;
     //TODO 发送消息
     that.sendMsg2Server(content, 3);
 
   },
-  sendMsg2Server(content, type) { //发送信息 1:文字 2:图片 3:作品 4:课程
+  sendMsg2Server(content, type) { //发送信息 1:文字 2:图片 3:作品
     var that = this;
     var url = requestUrl + "/API/GroupsInfo/PostGroupMsg";
     var userInfo = getApp().globalData.userInfo;
     var params = {
       GroupID: that.data.groupid,
       UserID: that.data.userId,
-      UserName: userInfo.NickName,
+      UserName: userInfo.nickName,
       UserPic: userInfo.AvataUrl,
       MsgType: type,
       SendTime: timeTool.formatNowTime(),
@@ -201,58 +166,6 @@ Page({
           title: '发送成功',
           duration: 1000,
         })
-      }
-    })
-  },
-  jiesanOpt() { //解散群组
-    var that = this;
-
-    wx.showModal({
-      cancelColor: '#666666',
-      cancelText: '取消',
-      confirmColor: '#000000',
-      confirmText: '确定',
-      content: '确定要解散此讨论组吗',
-      showCancel: true,
-      title: '',
-      success: (result) => {
-        if (result.confirm) {
-          //TODO　请求接口解散群组
-          var url = requestUrl + "/API/GroupsInfo/PostDeleteGroupInfo?gId=" + that.data.groupid + "&UserId=" + getApp().globalData.WxUserId;
-          WxRequest.PostRequest(url, {}).then(res => {
-            if (res.data.success) {
-              wx.showToast({
-                title: '解散成功',
-              })
-              setTimeout(() => {
-                wx.navigateBack({
-                  delta: 1,
-                })
-              }, 2000);
-            } else {
-              WxRequest.ShowAlert(res.data.msg);
-            }
-          })
-
-        }
-      }
-    })
-  },
-  OutGroupOpt() { //退出群组
-    var that = this;
-    var url = requestUrl + "/API/GroupsInfo/DeleteGroupItem?gId=" + that.data.groupid + "&userids=" + that.data.userId;
-    WxRequest.PostRequest(url, {}).then(res => {
-      if (res.data.success) {
-        wx.showToast({
-          title: '退出成功',
-        })
-        setTimeout(() => {
-          wx.navigateBack({
-            delta: 1,
-          })
-        }, 2000);
-      } else {
-        WxRequest.ShowAlert(res.data.msg);
       }
     })
   },
@@ -276,20 +189,41 @@ Page({
    */
   onShow: function () {
     var that = this;
-    //获取对话的自己信息
-    that.InitMeInfo();
+    getApp().ChargeLogin().then(res => {
+      if (getApp().globalData.WxUserId == 0) {
+        wx.navigateTo({
+          url: '../../wxauth/pages/wxlogin/index',
+        })
+      } else {
+        that.setData({
+          userId:getApp().globalData.WxUserId
+        })
+        that.InitInfo();
+        that.InitOldHistory();
+      }
+    })
   },
-  InitMeInfo() { //获取对话的自己信息
+  InitInfo() { //获取用户在群聊中的角色
     var that = this;
-    var url = requestUrl + "/SingleChatInfo/PostUserInfo?UserId=" + that.data.userId;
+    var url = requestUrl + "/API/GroupsInfo/GroupInfoDetail?UserId=" + getApp().globalData.WxUserId + "&Id=" + that.data.groupid;
     WxRequest.PostRequest(url, {}).then(res => {
-      that.setData({
-        oopenid: that.data.userId,
-        oname: res.data.data.NickName,
-        oavataUrl: res.data.data.Avatar,
-      })
-      //获取历史消息
-      that.InitOldHistory();
+      if (res.data.success) {
+        var dataobj = res.data.data;
+        that.setData({
+          dataobj: dataobj
+        })
+        wx.setNavigationBarTitle({
+          title: dataobj.Title,
+        })
+      } else {
+        WxRequest.ShowAlert("该群组已解散");
+        setTimeout(() => {
+          wx.navigateBack({
+            delta: 1,
+          })
+        }, 2000);
+      }
+
     })
   },
   InitOldHistory() { //获取历史消息
@@ -318,7 +252,7 @@ Page({
   },
   InitHistory(type) { //获取历史消息
     var that = this;
-    var url = requestUrl + "/API/GroupsInfo/GetGroupMsgNewListByNew?keywords=&userId=" + getApp().globalData.openId + "&objId=" + getApp().globalData.CompanyID + "&gid=" + that.data.groupid + "&queryTime=" + timeTool.formatNowTime();
+    var url = requestUrl + "/API/GroupsInfo/GetGroupMsgNewListByNew?keywords=&userId=" + that.data.userId + "&gid=" + that.data.groupid + "&queryTime=" + timeTool.formatNowTime();
 
     WxRequest.PostRequest(url, {}).then(res => {
 

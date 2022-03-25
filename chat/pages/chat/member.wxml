@@ -1,38 +1,14 @@
 <!--chat/pages/chat/member.wxml-->
-<view class="typev">群主</view>
-<view class="memberv">
-  <image src="/resources/comman/avatarUrl.jpg" class="avatarUrl"></image>
-  <view class="membername">矫瑶海</view>
-</view>
-
-<view class="typev">教师团队</view>
-<view class="memberv">
-  <image src="/resources/comman/avatarUrl.jpg" class="avatarUrl"></image>
-  <view class="membername">矫瑶海</view>
-</view>
-
-<view class="typev">成员</view>
-<view class="memberv">
-  <image src="/resources/comman/avatarUrl.jpg" class="avatarUrl"></image>
-  <view class="membername">矫瑶海</view>
-</view>
-<view class="memberv">
-  <image src="/resources/comman/avatarUrl.jpg" class="avatarUrl"></image>
-  <view class="membername">矫瑶海</view>
-</view>
-<view class="memberv">
-  <image src="/resources/comman/avatarUrl.jpg" class="avatarUrl"></image>
-  <view class="membername">矫瑶海</view>
-</view>
-<view class="memberv">
-  <image src="/resources/comman/avatarUrl.jpg" class="avatarUrl"></image>
-  <view class="membername">矫瑶海</view>
-</view>
-<view class="memberv">
-  <image src="/resources/comman/avatarUrl.jpg" class="avatarUrl"></image>
-  <view class="membername">矫瑶海</view>
-</view>
-<view class="memberv">
-  <image src="/resources/comman/avatarUrl.jpg" class="avatarUrl"></image>
-  <view class="membername">矫瑶海</view>
-</view>
+<block wx:for="{{list}}" wx:key="item">
+  <view class="memberv">
+    <view class="memberlv">
+      <image src="{{item.UserPic}}" class="avatarUrl"></image>
+      <view class="membername">{{item.UserName}}</view>
+    </view>
+    <view class="memberrv">
+     <text wx:if="{{item.UserType==1}}">群主</text>
+     <text wx:if="{{item.UserType==2}}">教师</text>
+     <text wx:if="{{item.UserType==3}}">成员</text>
+    </view>
+  </view>
+</block>
