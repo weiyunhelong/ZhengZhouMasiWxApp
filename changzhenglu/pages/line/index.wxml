@@ -1,2 +1,85 @@
 <!--changzhenglu/pages/line/index.wxml-->
-<text>changzhenglu/pages/line/index.wxml</text>
+
+<!--顶部用户信息-->
+<view class="topbgv" bindtap="hideMaskOpt" style="height:calc({{navigationBarHeight}}px + 100rpx);">
+  <view style="width: 100vw;height:{{navigationBarHeight}}px;margin-bottom: 10rpx;"></view>
+  <view class="pagetitlev" catchtap="goBackOpt">
+    <view class="backiconv">
+      <image src="/resources/comman/backiconb.png" class="backicon"></image>
+    </view>
+    <view class="pagetitle">重走长征路</view>
+  </view>
+</view>
+
+<!--底部轮播地点-->
+<swiper class="swiperv" indicator-dots="{{false}}" previous-margin="52rpx" next-margin="24rpx" circular="{{true}}">
+  <swiper-item>
+    <view class="blockv">
+      <view class="blocknamev">
+        <image src="../../resources/map.png" class="mapicon"></image>
+        <view class="blockname showOnehangTxt">血战湘江（广西全州县）A</view>
+      </view>
+      <view class="blockc">
+         <image src="/resources/comman/avatarUrl.jpg" class="blockcover"></image>
+         <view class="blockcv">
+           <view class="daodatxt">已到达 733里程</view>
+           <view class="daodatip">共<text>2323</text>人达到</view>
+           <view class="viewbtn" bindtap="viewOpt" data-url="{{item}}">浏览</view>
+         </view>
+      </view>
+    </view>
+  </swiper-item>
+
+  <swiper-item>
+    <view class="blockv">
+      <view class="blocknamev">
+        <image src="../../resources/map.png" class="mapicon"></image>
+        <view class="blockname showOnehangTxt">血战湘江（广西全州县）B</view>
+      </view>
+      <view class="blockc">
+         <image src="/resources/comman/avatarUrl.jpg" class="blockcover"></image>
+         <view class="blockcv">
+           <view class="daodatxt">已到达 733里程</view>
+           <view class="daodatip">共<text>2323</text>人达到</view>
+           <view class="viewbtn" bindtap="viewOpt" data-url="{{item}}">浏览</view>
+         </view>
+      </view>
+    </view>
+  </swiper-item>
+
+  <swiper-item>
+    <view class="blockv">
+      <view class="blocknamev">
+        <image src="../../resources/map.png" class="mapicon"></image>
+        <view class="blockname showOnehangTxt">血战湘江（广西全州县）C</view>
+      </view>
+      <view class="blockc">
+         <image src="/resources/comman/avatarUrl.jpg" class="blockcover"></image>
+         <view class="blockcv">
+           <view class="daodatxt">已到达 733里程</view>
+           <view class="daodatip">共<text>2323</text>人达到</view>
+           <view class="viewbtn" bindtap="viewOpt" data-url="{{item}}">浏览</view>
+         </view>
+      </view>
+    </view>
+  </swiper-item>
+</swiper>
+
+<!--显示操作浮窗-->
+<view class="maskv {{showMaskAni?'showMaskv':'hideMaskv'}}" wx:if="{{showMask}}" bindtouchmove="nomove">
+ 
+ <view class="maskbodyv">
+   <view class="masktopv">
+     <image src="/resources/comman/avatarUrl.jpg" mode="aspectFill" class="maskimg"></image>
+     <view class="maskpoi">北京故宫年朝鲜</view>
+     <view class="maskdescv">
+       <view class="maskdescvl">已达到 733里程</view>
+       <view class="maskdescvr">共<text>2332</text>人到达</view>
+     </view>
+   </view>
+
+   <view class="maskbtn" bindtap="goWebOpt">进入参观</view>
+ </view>
+
+
+</view>

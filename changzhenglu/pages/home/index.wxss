@@ -263,8 +263,6 @@ page {
   margin-top: 34rpx;
 }
 
-/*遮罩层*/
-
 /*遮罩层部分*/
 .maskv {
   width: 100vw;

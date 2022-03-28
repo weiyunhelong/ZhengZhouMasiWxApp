@@ -1,2 +1,28 @@
 <!--changzhenglu/pages/info/index.wxml-->
-<text>changzhenglu/pages/info/index.wxml</text>
+<!--顶部图片-->
+<swiper style='width: 100vw;height: {{imgh}}rpx;' class="swiperv" indicator-dots="{{swipers.length>0}}" interval="3000" duration="1000">
+
+  <block wx:for="{{swipers}}" wx:key="item" wx:for-index="x">
+    <swiper-item>
+      <image style='width: 100vw;height: {{imgh}}rpx;' class="swipercover" mode="aspectFill" bindload="{{x==0?'ImgLoad':''}}" lazy-load="true" src="{{item}}"></image>
+    </swiper-item>
+  </block>
+</swiper>
+
+<view class="bodyv">
+  <view class="namev">
+    <image src="../../resources/map.png" class="mapicon"></image>
+    <view class="nametxt">上海某知名国际革命馆</view>
+  </view>
+  <view class="content">
+    <h5parser html="{{content}}"/>
+  </view>
+</view>
+
+<!--AR部分-->
+<view class="vrbtn" bindtap="goVROpt">
+  <view class="vriconv">
+    <image src="../../resources/vr.png" class="vricon"></image>
+  </view>
+  <view class="vrtxt">全景体验</view>
+</view>

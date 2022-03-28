@@ -108,7 +108,6 @@
     "root": "changzhenglu",
     "pages": [
       "pages/home/index",
-      "pages/my/index",
       "pages/info/index",
       "pages/webview/index",
       "pages/line/index",

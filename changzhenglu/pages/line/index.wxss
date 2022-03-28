@@ -1,1 +1,269 @@
 /* changzhenglu/pages/line/index.wxss */
+page {
+  background: #B58B60;
+}
+
+/*用户信息*/
+.topbgv {
+  width: 100vw;
+  height: 200rpx;
+}
+
+.topbgv .pagetitlev {
+  width: 555rpx;
+  height: 60rpx;
+  display: flex;
+  padding-left: 32rpx;
+}
+
+.topbgv .backiconv {
+  width: 40rpx;
+  height: 60rpx;
+}
+
+.topbgv .backicon {
+  width: 27rpx;
+  height: 54rpx;
+  border-radius: 50%;
+  margin-top: 4rpx;
+}
+
+.topbgv .pagetitle {
+  width: 385rpx;
+  height: 60rpx;
+  text-align: left;
+  line-height: 60rpx;
+  font-size: 34rpx;
+  color: #000;
+}
+
+/*底部轮播图*/
+.swiperv {
+  width: 100vw;
+  height: 292rpx;
+  position: fixed;
+  bottom: 68rpx;
+  left: 0;
+  z-index: 999;
+}
+
+.blockv {
+  width: 646rpx;
+  height: 292rpx;
+  background: #FFFFFF;
+  box-shadow: 0rpx 4rpx 20rpx 0rpx rgba(0, 0, 0, 0.25);
+  border-radius: 12rpx;
+}
+
+.blocknamev {
+  display: flex;
+  padding: 22rpx 24rpx 0;
+}
+
+.mapicon {
+  width: 40rpx;
+  height: 44rpx;
+}
+
+.blockname {
+  line-height: 1;
+  font-size: 32rpx;
+  font-weight: 500;
+  color: #000000;
+}
+
+.blockc {
+  display: flex;
+  padding: 22rpx 24rpx;
+}
+
+.blockcover {
+  width: 316rpx;
+  height: 176rpx;
+  border-radius: 12rpx;
+  margin-right: 24rpx;
+}
+
+.daodatxt {
+  font-size: 24rpx;
+  color: #666666;
+}
+
+.daodatip {
+  font-size: 24rpx;
+  color: #999999;
+  margin-top: 5rpx;
+}
+
+.daodatip text {
+  color: #F24540;
+}
+
+.viewbtn {
+  width: 140rpx;
+  height: 56rpx;
+  background: linear-gradient(90deg, #F24540 0%, #FA7B74 100%);
+  border-radius: 37rpx;
+  text-align: center;
+  line-height: 56rpx;
+  font-size: 26rpx;
+  color: #FFFFFF;
+  margin-top: 50rpx;
+  margin-left: 110rpx;
+}
+
+
+
+/*遮罩层部分*/
+.maskv {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  z-index: 9999;
+  bottom: 0rpx;
+  left: 0rpx;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.showMaskv {
+  animation: fadeInUp 1s ease-in-out forwards;
+  -webkit-animation: fadeInUp 1s ease-in-out forwards;
+  -moz-animation: fadeInUp 1s ease-in-out forwards;
+}
+
+.hideMaskv {
+  animation: fadeOutDown 1s ease-in-out forwards;
+  -webkit-animation: fadeOutDown 1s ease-in-out forwards;
+  -moz-animation: fadeOutDown 1s ease-in-out forwards;
+}
+
+
+@-webkit-keyframes fadeInUp {
+  from {
+    opacity: 0;
+    -webkit-transform: translate3d(0, 100%, 0);
+    transform: translate3d(0, 100%, 0);
+  }
+
+  to {
+    opacity: 1;
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    -webkit-transform: translate3d(0, 100%, 0);
+    transform: translate3d(0, 100%, 0);
+  }
+
+  to {
+    opacity: 1;
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+.fadeInUp {
+  -webkit-animation-name: fadeInUp;
+  animation-name: fadeInUp;
+}
+
+
+@-webkit-keyframes fadeOutDown {
+  from {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 0;
+    -webkit-transform: translate3d(0, 100%, 0);
+    transform: translate3d(0, 100%, 0);
+  }
+}
+
+@keyframes fadeOutDown {
+  from {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 0;
+    -webkit-transform: translate3d(0, 100%, 0);
+    transform: translate3d(0, 100%, 0);
+  }
+}
+
+.fadeOutDown {
+  -webkit-animation-name: fadeOutDown;
+  animation-name: fadeOutDown;
+}
+
+.maskbodyv {
+  width: 100vw;
+  height: 960rpx;
+  position: fixed;
+  top: calc(50vh - 480rpx);
+  left: 0;
+  z-index: 999;
+}
+
+.masktopv {
+  width: 620rpx;
+  height: 832rpx;
+  background: url(https://zhengzhousizheng.oss-cn-beijing.aliyuncs.com/bannerimgv/modalbg.png) no-repeat;
+  background-size: cover;
+  margin: 0 auto 40rpx;
+  text-align: center;
+}
+
+.maskimg {
+  width: 404rpx;
+  height: 404rpx;
+  border-radius: 4rpx;
+  margin: 164rpx auto 32rpx;
+}
+
+.maskpoi {
+  font-size: 44rpx;
+  font-weight: 500;
+  color: #BC0000;
+  text-align: left;
+  padding: 0 108rpx;
+}
+
+.maskdescv {
+  width: 404rpx;
+  margin: 10rpx auto;
+  height: 40rpx;
+  line-height: 40rpx;
+  display: flex;
+  justify-content: space-between;
+}
+.maskdescvl{
+  font-size: 28rpx;
+  color: #262626;
+}
+.maskdescvr{
+  font-size: 24rpx;
+  color: #262626;
+}
+.maskdescvr text{
+  font-size: 24rpx;
+  font-weight: 500;
+  color: #BC0000;
+}
+.maskbtn {
+  width: 400rpx;
+  height: 88rpx;
+  background: #FFECB8;
+  border-radius: 44rpx;
+  margin: 0 auto;
+  font-size: 36rpx;
+  font-weight: 500;
+  color: #BC0000;
+  text-align: center;
+  line-height: 88rpx;
+}

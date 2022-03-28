@@ -1,11 +1,15 @@
 // changzhenglu/pages/line/index.js
+var requestUrl = getApp().globalData.requestUrl;
+var WxRequest = require('../../../utils/WxRequest.js');
+
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-
+    showMask: false,
+    showMaskAni: false,
   },
 
   /**
@@ -22,7 +26,29 @@ Page({
       },
     })
   },
-
+  viewOpt(e) { //点击浏览
+    var that = this;
+    that.setData({
+      showMask: true,
+      showMaskAni: true,
+      dataobj: {
+        id:1
+      },
+    })
+  },
+  goWebOpt() { //进入参观
+    var that = this;
+    var dataobj = that.data.dataobj;
+    wx.navigateTo({
+      url: '../info/index?id=' + dataobj.id,
+      complete:function(){
+        that.setData({
+          showMaskAni: false,
+          showMask: false,
+        })
+      }
+    })
+  },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
