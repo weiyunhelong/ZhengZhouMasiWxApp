@@ -70,6 +70,11 @@ Page({
               success: function () {
                 wx.navigateBack({
                   delta: 1,
+                  fail:function(){
+                    wx.reLaunch({
+                      url: '../../../pages/middle/index',
+                    })
+                  }
                 })
               }
             })
@@ -98,6 +103,11 @@ Page({
               success: function () {
                 wx.navigateBack({
                   delta: 1,
+                  fail:function(){
+                    wx.reLaunch({
+                      url: '../../../pages/middle/index',
+                    })
+                  }
                 })
               }
             })
@@ -137,6 +147,11 @@ Page({
                   success: function () {
                     wx.navigateBack({
                       delta: 1,
+                      fail:function(){
+                        wx.reLaunch({
+                          url: '../../../pages/middle/index',
+                        })
+                      }
                     })
                   }
                 })
