@@ -1,4 +1,21 @@
 <!--index.wxml-->
+
+<view class="progress-box">
+   <view class="progress-circle"></view>
+   <view class="progress-rotate" style="transform:rotate(90deg)"></view>
+   <view class="progress-inner-circle"></view>
+</view>
+
+<view class="mdprogress-box">
+   <view class="mdprogress-circle"></view>
+   <view class="mdprogress-rotate" style="transform:rotate(180deg)"></view>
+   <view class="mdprogress-inner-circle">
+     <view class="inner-circle-txt">今日步数</view>
+     <view class="inner-circle-num">2333334</view>
+   </view>
+</view>
+<view class="mdprogress-dot">5000</view>
+
 <view class="container">
   <view class="userinfo">
     <block wx:if="{{canIUseOpenData}}">

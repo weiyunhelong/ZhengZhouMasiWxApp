@@ -14,10 +14,17 @@
       "list": [
         {
           "name": "",
-          "pathName": "changzhenglu/pages/info/index",
-          "query": "id=0",
+          "pathName": "changzhenglu/pages/home/index",
+          "query": "",
           "scene": null,
           "launchMode": "default"
+        },
+        {
+          "name": "",
+          "pathName": "pages/index/index",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
         }
       ]
     }

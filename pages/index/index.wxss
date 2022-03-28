@@ -1,4 +1,8 @@
 /**index.wxss**/
+page {
+  background: #fff;
+}
+
 .userinfo {
   display: flex;
   flex-direction: column;
@@ -16,4 +20,107 @@
 
 .usermotto {
   margin-top: 200px;
+}
+
+/*半圆环进度*/
+.progress-box {
+  width: 100px;
+  height: 50px;
+  overflow: hidden;
+  position: relative;
+  margin: 100px auto 0px;
+}
+
+.progress-circle {
+  width: 100px;
+  height: 50px;
+  border-top-left-radius: 50px;
+  border-top-right-radius: 50px;
+  background: #d5aa7c;
+}
+
+.progress-inner-circle {
+  width: 90px;
+  height: 45px;
+  border-top-left-radius: 45px;
+  border-top-right-radius: 45px;
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  background: #e9c6a2;
+}
+
+.progress-rotate {
+  width: 100px;
+  height: 50px;
+  border-bottom-left-radius: 50px;
+  border-bottom-right-radius: 50px;
+  background: #fff;
+  transform-origin: center top;
+}
+
+.mdprogress-box {
+  width: 512rpx;
+  height: 256rpx;
+  overflow: hidden;
+  position: relative;
+  margin: 100px auto 0px;
+}
+
+.mdprogress-circle {
+  width: 512rpx;
+  height: 256rpx;
+  border-top-left-radius: 256rpx;
+  border-top-right-radius: 256rpx;
+  background: #f5f5f5;
+}
+
+.mdprogress-inner-circle {
+  width: 472rpx;
+  height: 236rpx;
+  border-top-left-radius: 236rpx;
+  border-top-right-radius: 236rpx;
+  position: absolute;
+  top: 20rpx;
+  left: 20rpx;
+  background: #fff;
+}
+
+.mdprogress-rotate {
+  width: 512rpx;
+  height: 256rpx;
+  border-bottom-left-radius: 256rpx;
+  border-bottom-right-radius: 256rpx;
+  background: linear-gradient(180deg, #FA7B74 0%, #F24540 100%);
+  transform-origin: center top;
+}
+
+.mdprogress-dot {
+  width: 48rpx;
+  height: 48rpx;
+  background: #F5F5F5;
+  font-size: 16rpx;
+  color: #999999;
+  text-align: center;
+  line-height: 48rpx;
+  border-radius: 50%;
+  margin-top: -40rpx;
+  margin-left: 596rpx;
+  position: relative;
+  z-index: 2;
+}
+
+.inner-circle-txt {
+  text-align: center;
+  font-size: 28rpx;
+  color: #999999;
+  margin-top: 65rpx;
+}
+
+.inner-circle-num {
+  text-align: center;
+  font-size: 140rpx;
+  font-family: DINAlternate-Bold, DINAlternate;
+  font-weight: bold;
+  color: #262626;
 }

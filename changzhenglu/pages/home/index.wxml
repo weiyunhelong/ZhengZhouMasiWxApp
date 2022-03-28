@@ -17,11 +17,16 @@
     <view class="nickname">长征突击手</view>
     <image src="../../resources/right.png" class="righticon"></image>
   </view>
-  <view class="circlev">
-    <view class="circlec"></view>
-    <view class="circletag">今日步数</view>
-    <view class="circlenum">2234</view>
+  <view class="mdprogress-box">
+    <view class="mdprogress-circle"></view>
+    <view class="mdprogress-rotate" style="transform:rotate(60deg)"></view>
+    <view class="mdprogress-inner-circle">
+      <view class="inner-circle-txt">今日步数</view>
+      <view class="inner-circle-num">23334</view>
+    </view>
   </view>
+  <view class="mdprogress-dot">5000</view>
+
   <view class="currrankv">
     <text>距离</text>
     <image src="/resources/comman/avatarUrl.jpg" mode="aspectFill" class="smavatar"></image>
