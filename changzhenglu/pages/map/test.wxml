@@ -1,0 +1,86 @@
+<!--changzhenglu/pages/map/test.wxml-->
+<view class="mapv">
+  <!--瑞金-->
+  <view class="ruijinv">
+    <image src="../../assets/xing.png" class="xingicon"></image>
+    <image src="../../poi/ruijin.png" class="ruijinicon poiicon"></image>
+  </view>
+
+  <!--血战湘江-->
+  <view class="xiangjiangv">
+    <image src="../../poi/xiangjiang.png" class="xiangjiangicon poiicon"></image>
+    <image src="../../assets/xing.png" class="xingicon"></image>
+  </view>
+
+  <!--遵义会议-->
+  <view class="zunyiv">
+    <image src="../../assets/dot.png" class="doticon"></image>
+    <image src="../../poi/zunyih.png" class="zunyiicon poiicon"></image>
+  </view>
+
+  <!--四渡赤水-->
+  <view class="chishuiv">
+    <image src="../../poi/chishuih.png" class="chishuiicon poiicon"></image>
+    <image src="../../assets/dot.png" class="doticon"></image>
+  </view>
+
+  <!--巧渡金沙江-->
+  <view class="jinshajiangv">
+    <image src="../../poi/jinshajiangh.png" class="jinshajiangicon poiicon"></image>
+    <image src="../../assets/dot.png" class="doticon"></image>
+  </view>
+
+  <!--强渡大渡河-->
+  <view class="daduhev">
+    <image src="../../poi/daduheh.png" class="daduheicon poiicon"></image>
+    <image src="../../assets/dot.png" class="doticon"></image>
+  </view>
+
+  <!--飞夺泸定桥-->
+  <view class="ludingqiaov">
+    <image src="../../assets/dot.png" class="doticon"></image>
+    <image src="../../poi/ludingqiaoh.png" class="ludingqiaoicon poiicon"></image>
+  </view>
+
+  <!--爬雪山-->
+  <view class="paixueshanv">
+    <image src="../../assets/dot.png" class="doticon"></image>
+    <image src="../../poi/paixueshanh.png" class="paixueshanicon poiicon"></image>
+  </view>
+
+  <!--懋功会师-->
+  <view class="maogongv">
+    <image src="../../assets/dot.png" class="doticon"></image>
+    <image src="../../poi/maogongh.png" class="maogongicon poiicon"></image>
+  </view>
+
+  <!--过草地-->
+  <view class="guocaidiv">
+    <image src="../../assets/dot.png" class="doticon"></image>
+    <image src="../../poi/guocaodih.png" class="guocaidiicon poiicon"></image>
+  </view>
+
+  <!--激战腊子口-->
+  <view class="lazikouv">
+    <image src="../../poi/lazikouh.png" class="lazikouicon poiicon"></image>
+    <image src="../../assets/dot.png" class="doticon"></image>
+  </view>
+
+  <!--大会师-->
+  <view class="dahuishiv">
+    <image src="../../assets/dot.png" class="doticon"></image>
+    <image src="../../poi/dahuishih.png" class="dahuishiicon poiicon"></image>
+  </view>
+
+  <!--延安-->
+  <view class="yananv">
+    <image src="../../assets/xingh.png" class="xinghicon"></image>
+    <image src="../../poi/yananh.png" class="yananicon poiicon"></image>
+  </view>
+
+  <!--旗子位置-->
+  <view class="flagv flagv8">
+    <image src="../../assets/qi.png" class="qiicon"></image>
+  </view>
+
+</view>

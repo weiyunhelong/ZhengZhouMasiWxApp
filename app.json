@@ -112,6 +112,7 @@
       "pages/webview/index",
       "pages/line/index",
       "pages/rank/index",
+      "pages/map/test",
       "pages/map/index"
     ]
   }],

@@ -24,10 +24,11 @@ App({
     return new Promise((resolve, reject) => {
 
       if(that.globalData.WxUserId==0){
+    
         wx.getStorage({
           key: "loginObj",
           success: function (res) {
-  
+            
             if (res.data.indexOf('&type=3') > -1) { //微信快捷登录
               wx.login({
                 success: res => {
@@ -108,6 +109,7 @@ App({
             }
           },
           fail: function () {
+            
             wx.login({
               success: res => {
   

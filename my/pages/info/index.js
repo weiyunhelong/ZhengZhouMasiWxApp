@@ -19,9 +19,9 @@ Page({
   onLoad: function (options) {
 
   },
-  chooseTxOpt(){//替换头像
+  chooseTxOpt() { //替换头像
     var that = this;
-    
+
     wx.chooseImage({
       count: 1,
       sizeType: ['compressed'],
@@ -30,63 +30,87 @@ Page({
         // tempFilePath可以作为img标签的src属性显示图片 
         OssTool.uploadImgFile(res.tempFilePaths[0], 'avatarUrl/' + getApp().globalData.openId + '/',
           function (result) {
-            var userInfo=that.data.userInfo;
-            var url=requestUrl+"/API/UserCenterApi/UpdateUserAvatar?userid="+getApp().globalData.WxUserId+"&useravatar="+result;
-            WxRequest.PostRequest(url,{}).then(res=>{
-              if(res.data.success){
-                userInfo.Avatar=result;
-                getApp().globalData.userInfo=userInfo;
+            var userInfo = that.data.userInfo;
+            var url = requestUrl + "/API/UserCenterApi/UpdateUserAvatar?userid=" + getApp().globalData.WxUserId + "&useravatar=" + result;
+            WxRequest.PostRequest(url, {}).then(res => {
+              if (res.data.success) {
+                userInfo.Avatar = result;
+                getApp().globalData.userInfo = userInfo;
                 that.setData({
-                  userInfo:userInfo
+                  userInfo: userInfo
                 })
               }
             })
           })
       }
     })
-  },  
-  goNickName(){
-    var that=this;
+  },
+  goNickName() {
+    var that = this;
     wx.navigateTo({
-      url: '../info/nickname?name='+that.data.userInfo.NickName+"&type=1",
+      url: '../info/nickname?name=' + that.data.userInfo.NickName + "&type=1",
     })
   },
-  goName(){
-    var that=this;
+  goName() {
+    var that = this;
     wx.navigateTo({
-      url: '../info/nickname?name='+that.data.userInfo.ReadName+"&type=2",
+      url: '../info/nickname?name=' + that.data.userInfo.ReadName + "&type=2",
     })
   },
-  goDescOpt(){
+  goDescOpt() {
     wx.navigateTo({
       url: '../info/desc',
     })
   },
-  goSexOpt(){
-    var that=this;
+  goSexOpt() {
+    var that = this;
     wx.showActionSheet({
-      itemList: ["保密","男","女"],
-      success:function(res){
-        var index=res.tapIndex;
-        var url=requestUrl+"/API/UserCenterApi/UpdateUserSex?userid="+getApp().globalData.WxUserId+"&usersex="+index;
-        WxRequest.PostRequest(url,{}).then(res=>{
-          if(res.data.success){
-            var userInfo=that.data.userInfo;
-            userInfo.Sex=index;
-            getApp().globalData.userInfo=userInfo;
+      itemList: ["保密", "男", "女"],
+      success: function (res) {
+        var index = res.tapIndex;
+        var url = requestUrl + "/API/UserCenterApi/UpdateUserSex?userid=" + getApp().globalData.WxUserId + "&usersex=" + index;
+        WxRequest.PostRequest(url, {}).then(res => {
+          if (res.data.success) {
+            var userInfo = that.data.userInfo;
+            userInfo.Sex = index;
+            getApp().globalData.userInfo = userInfo;
             that.setData({
-              userInfo:userInfo
+              userInfo: userInfo
             })
-          }else{
+          } else {
             WxRequest.ShowAlert(res.data.msg);
           }
         })
       }
     })
   },
-  goPwdOpt(){
+  goPwdOpt() {
     wx.navigateTo({
       url: '../info/pwd',
+    })
+  },
+  logoutOpt() { //退出登录
+    
+    wx.showModal({
+      cancelColor: '#999999',
+      cancelText: '取消',
+      confirmColor: '#262626',
+      confirmText: '退出',
+      content: '是否退出当前账号',
+      showCancel: true,
+      title: '',
+      success: (result) => {
+        if(result.confirm){
+          wx.removeStorage({
+            key: 'loginObj',
+            success: function () {
+              wx.reLaunch({
+                url: '../../../wxauth/pages/wxlogin/index',
+              })
+            }
+          })
+        }
+      }
     })
   },
   /**
@@ -110,7 +134,7 @@ Page({
       } else {
         //获取数据总揽
         that.setData({
-          userInfo:getApp().globalData.userInfo
+          userInfo: getApp().globalData.userInfo
         });
       }
     })

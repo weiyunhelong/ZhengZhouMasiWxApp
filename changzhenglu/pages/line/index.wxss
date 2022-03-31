@@ -42,7 +42,7 @@ page {
   width: 100vw;
   height: 292rpx;
   position: fixed;
-  bottom: 68rpx;
+  bottom: 32rpx;
   left: 0;
   z-index: 999;
 }

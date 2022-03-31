@@ -1,7 +1,4 @@
-// pages/middle/index.js
-var requestUrl = getApp().globalData.requestUrl;
-var WxRequest = require('../../utils/WxRequest.js');
-
+// changzhenglu/pages/map/test.js
 Page({
 
   /**
@@ -10,7 +7,12 @@ Page({
   data: {
 
   },
-
+  startOpt(e){//开始移动
+    console.error("startOpt",e);
+  },
+  moveOpt(e){//移动中
+    console.error("moveOpt",e);
+  },
   /**
    * 生命周期函数--监听页面加载
    */
@@ -29,28 +31,7 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-    
-    getApp().ChargeLogin().then(res=>{
-      if(getApp().globalData.WxUserId == 0){
-        wx.navigateTo({
-          url: '../../wxauth/pages/wxlogin/index',
-        })
-      }else{
-        wx.getStorage({
-          key:"loginObj",
-          success:function(res){
-            wx.reLaunch({
-              url: '../home/index',
-            })
-          },
-          fail:function(){
-            wx.reLaunch({
-              url: '../../wxauth/pages/wxlogin/index',
-            })
-          }
-        })
-      }
-    })
+
   },
 
   /**

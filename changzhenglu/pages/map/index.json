@@ -3,6 +3,7 @@
   "navigationStyle": "custom",
   "usingComponents": {
     "loadding": "../../../components/loadding/index",
-    "nodatacom": "../../../components/nodata/index"
+    "nodatacom": "../../../components/nodata/index",
+    "mapcom": "../../components/mapcom/index"
   }
 }

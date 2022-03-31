@@ -82,7 +82,7 @@
 <!--创作中心-->
 <view class="mdtitle">创作中心</view>
 <view class="optv">
-  <view class="optc"  bindtap="tapMenu" data-menu="5">
+  <view class="optc" bindtap="tapMenu" data-menu="5">
     <view class="optcl">
       <view class="optclname">创课中心</view>
       <view class="optcldesc">数据消息都在这里～</view>
@@ -97,6 +97,4 @@
     <image src="/resources/my/xuetang.png" class="opticon"></image>
   </view>
 </view>
-
-
 <view class="tabbarv"></view>

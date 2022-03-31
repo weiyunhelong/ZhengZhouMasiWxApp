@@ -1,8 +1,4 @@
-/* changzhenglu/pages/map/index.wxss */
-page {
-  background: #B58B60;
-}
-
+/* changzhenglu/pages/map/test.wxss */
 .mapv {
   width: 100vw;
   height: 100vh;
@@ -10,8 +6,7 @@ page {
   background-size: cover;
   position: relative;
 }
-
-.optv {
+.optv{
   transform: translateX(-70px) translateY(-110px) scale(2);
 }
 
@@ -26,10 +21,9 @@ page {
   margin: 10rpx auto;
 }
 
-.poiicon {
+.poiicon{
   z-index: 222;
 }
-
 /*江西瑞金*/
 .ruijinv {
   position: absolute;
@@ -247,468 +241,195 @@ page {
   position: absolute;
   z-index: 111;
 }
-
 .flagv0 {
   top: 898rpx;
   right: 20rpx;
 }
-
 .flagv1 {
   top: 898rpx;
   right: 65rpx;
 }
-
 .flagv2 {
   top: 915rpx;
   right: 90rpx;
 }
-
 .flagv3 {
   top: 915rpx;
   right: 115rpx;
 }
-
 .flagv4 {
   top: 920rpx;
   right: 160rpx;
 }
-
 .flagv5 {
   top: 915rpx;
   right: 200rpx;
 }
-
 .flagv6 {
   top: 890rpx;
   right: 240rpx;
 }
-
 .flagv7 {
   top: 870rpx;
   right: 270rpx;
 }
-
 .flagv8 {
   top: 855rpx;
   right: 310rpx;
 }
-
 .flagv9 {
   top: 816rpx;
   left: 340rpx;
 }
-
 .flagv10 {
   top: 816rpx;
   left: 340rpx;
 }
-
 .flagv11 {
   top: 776rpx;
   left: 340rpx;
 }
-
 .flagv12 {
   top: 776rpx;
   left: 325rpx;
 }
-
 .flagv13 {
   top: 780rpx;
   left: 305rpx;
 }
-
 .flagv14 {
   top: 795rpx;
   left: 260rpx;
 }
-
 .flagv15 {
   top: 805rpx;
   left: 242rpx;
 }
-
 .flagv16 {
   top: 817rpx;
   left: 260rpx;
 }
-
 .flagv17 {
   top: 826rpx;
   left: 300rpx;
 }
-
 .flagv18 {
   top: 874rpx;
   left: 260rpx;
 }
-
 .flagv19 {
   top: 888rpx;
   left: 210rpx;
 }
-
 .flagv20 {
   top: 885rpx;
   left: 165rpx;
 }
-
 .flagv21 {
   top: 886rpx;
   left: 125rpx;
 }
-
 .flagv22 {
   top: 875rpx;
   left: 98rpx;
 }
-
 .flagv23 {
   top: 875rpx;
   left: 50rpx;
 }
-
 .flagv24 {
   top: 895rpx;
   left: 105rpx;
 }
-
 .flagv25 {
   top: 845rpx;
   left: 75rpx;
 }
-
 .flagv26 {
   top: 813rpx;
   left: 70rpx;
 }
-
 .flagv27 {
   top: 790rpx;
   left: 50rpx;
 }
-
 .flagv28 {
   top: 768rpx;
   left: 25rpx;
 }
-
 .flagv29 {
   top: 738rpx;
   left: 15rpx;
 }
-
 .flagv30 {
   top: 716rpx;
   left: 8rpx;
 }
-
 .flagv31 {
   top: 688rpx;
   left: 15rpx;
 }
-
 .flagv32 {
   top: 670rpx;
   left: 20rpx;
 }
-
 .flagv33 {
   top: 638rpx;
   left: 36rpx;
 }
-
 .flagv34 {
   top: 618rpx;
   left: 45rpx;
 }
-
 .flagv35 {
   top: 578rpx;
   left: 57rpx;
 }
-
 .flagv36 {
   top: 577rpx;
   left: 88rpx;
 }
-
 .flagv37 {
   top: 560rpx;
   left: 130rpx;
 }
-
 .flagv38 {
   top: 530rpx;
   left: 164rpx;
 }
-
 .flagv39 {
   top: 507rpx;
   left: 172rpx;
 }
-
 .flagv40 {
   top: 487rpx;
   left: 195rpx;
 }
-
 .flagv41 {
   top: 476rpx;
   left: 228rpx;
 }
-
 .flagv42 {
   top: 476rpx;
   left: 290rpx;
 }
-
 .flagv43 {
   top: 465rpx;
   left: 318rpx;
 }
-
 .flagv44 {
   top: 451rpx;
   left: 357rpx;
 }
-
 .flagv45 {
   top: 420rpx;
   left: 375rpx;
 }
-
 .flagv46 {
   top: 407rpx;
   left: 435rpx;
 }
-
 .qiicon {
   width: 50rpx;
   height: 52rpx;
-}
-
-/*用户信息*/
-.topbgv {
-  width: 100vw;
-  height: 200rpx;
-  position: relative;
-}
-
-.topbgv .pagetitlev {
-  width: 555rpx;
-  height: 60rpx;
-  display: flex;
-  padding-left: 32rpx;
-}
-
-.topbgv .backiconv {
-  width: 40rpx;
-  height: 60rpx;
-}
-
-.topbgv .backicon {
-  width: 27rpx;
-  height: 54rpx;
-  border-radius: 50%;
-  margin-top: 4rpx;
-}
-
-.topbgv .pagetitle {
-  width: 385rpx;
-  height: 60rpx;
-  text-align: left;
-  line-height: 60rpx;
-  font-size: 34rpx;
-  color: #000;
-}
-
-/*用户信息*/
-.userv {
-  width: 270rpx;
-  height: 72rpx;
-  background: #FFFFFF;
-  border-radius: 36rpx;
-  border: 2rpx solid #EEEEEE;
-  display: flex;
-  margin-left: 32rpx;
-  position: relative;
-}
-
-.userv .avatarUrl {
-  width: 52rpx;
-  height: 52rpx;
-  border-radius: 50%;
-  margin-top: 10rpx;
-  margin-left: 12rpx;
-}
-
-.userv .nickname {
-  width: 150rpx;
-  margin: 0 12rpx;
-  height: 72rpx;
-  line-height: 72rpx;
-  font-size: 30rpx;
-  color: #262626;
-}
-
-.userv .righticon {
-  width: 12rpx;
-  height: 20rpx;
-  margin-top: 26rpx;
-}
-
-/*定位icon*/
-.postionv {
-  width: 60rpx;
-  height: 60rpx;
-  background: #FFFFFF;
-  box-shadow: 0rpx 4rpx 20rpx 0rpx rgba(0, 0, 0, 0.25);
-  border-radius: 12rpx;
-  position: absolute;
-  z-index: 99;
-  left: 32rpx;
-  bottom: 362rpx;
-  text-align: center;
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  justify-self: center;
-}
-
-.postion {
-  width: 44rpx;
-  height: 44rpx;
-  margin: 0 auto;
-}
-
-/*底部信息部分*/
-.btmvv {
-  width: 686rpx;
-  height: 164rpx;
-  background: #FFF8F4;
-  box-shadow: 0rpx 4rpx 20rpx 0rpx rgba(0, 0, 0, 0.25);
-  border-radius: 12rpx;
-  position: fixed;
-  bottom: 62rpx;
-  left: 32rpx;
-  z-index: 999;
-}
-
-.bushuvv {
-  position: relative;
-  top: -180rpx;
-  left: 0;
-  text-align: center;
-  display: flex;
-  justify-content: center;
-  justify-self: center;
-  flex-direction: column;
-}
-
-.bushuv {
-  padding: 0 28rpx;
-  height: 62rpx;
-  background: #FFFFFF;
-  box-shadow: 0rpx 4rpx 16rpx 0rpx rgba(0, 0, 0, 0.2);
-  border-radius: 8rpx;
-  line-height: 62rpx;
-  display: flex;
-  justify-content: center;
-  max-width: 254rpx;
-  min-width: 144rpx;
-  margin: 0 auto;
-}
-
-.smavatar {
-  width: 44rpx;
-  height: 44rpx;
-  margin-top: 9rpx;
-  margin-right: 8rpx;
-  border-radius: 50%;
-}
-
-.bushunum {
-  font-size: 40rpx;
-  font-weight: bold;
-  color: #262626;
-  margin-right: 4rpx;
-}
-
-.bushutxt {
-  font-size: 28rpx;
-  font-weight: 600;
-  color: #262626;
-}
-
-.downicon {
-  width: 48rpx;
-  height: 40rpx;
-  margin: -12rpx auto 0;
-}
-
-.gobtn {
-  width: 180rpx;
-  height: 180rpx;
-  background: url(https://zhengzhousizheng.oss-cn-beijing.aliyuncs.com/bannerimgv/%E7%BC%96%E7%BB%84%2016%E5%A4%87%E4%BB%BD.png) no-repeat;
-  background-size: cover;
-  box-shadow: 0rpx 4rpx 16rpx 0rpx rgba(210, 127, 0, 0.3);
-  border-radius: 50%;
-  position: relative;
-  top: -180rpx;
-  left: 254rpx;
-  font-size: 72rpx;
-  color: #FFFFFF;
-  text-align: center;
-  line-height: 168rpx;
-}
-
-.btmv {
-  display: flex;
-  justify-content: space-between;
-  padding: 0 24rpx;
-  height: 164rpx;
-  margin-top: -270rpx;
-}
-
-.leftbtmv {
-  width: 320rpx;
-  height: 164rpx;
-  display: flex;
-  flex-direction: column;
-  justify-self: center;
-  justify-content: center;
-}
-
-.leftbtmtxt {
-  font-size: 32rpx;
-  font-weight: 600;
-  color: #262626;
-  margin-bottom: 8rpx;
-}
-
-.leftbtmtip {
-  font-size: 24rpx;
-  color: #262626;
-}
-
-.rightbtmicon {
-  width: 56rpx;
-  height: 56rpx;
-}
-
-.rightbtmtxt {
-  font-size: 18rpx;
-  color: #262626;
-}
-
-.rightbtmv {
-  width: 202rpx;
-  display: flex;
-  justify-content: space-between;
-  padding-top: 32rpx;
-}
-
-.rightbtmc {
-  text-align: center;
 }

@@ -57,3 +57,8 @@
     </view>
   </view>
 </view>
+
+
+<view class="btnv">
+  <view class="btn" bindtap="logoutOpt">退出登录</view>
+</view>

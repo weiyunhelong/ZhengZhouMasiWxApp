@@ -14,10 +14,10 @@
       "list": [
         {
           "name": "",
-          "pathName": "changzhenglu/pages/home/index",
+          "pathName": "changzhenglu/pages/map/test",
           "query": "",
-          "scene": null,
-          "launchMode": "default"
+          "launchMode": "default",
+          "scene": null
         },
         {
           "name": "",
@@ -25,6 +25,27 @@
           "query": "",
           "launchMode": "default",
           "scene": null
+        },
+        {
+          "name": "",
+          "pathName": "my/pages/info/index",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "",
+          "pathName": "changzhenglu/pages/map/index",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "",
+          "pathName": "changzhenglu/pages/line/index",
+          "query": "",
+          "scene": null,
+          "launchMode": "default"
         }
       ]
     }

@@ -244,9 +244,11 @@ page {
   display: flex;
   justify-content: center;
 }
-.optcl{
+
+.optcl {
   padding-top: 32rpx;
 }
+
 .optclname {
   font-size: 28rpx;
   color: #262626;
