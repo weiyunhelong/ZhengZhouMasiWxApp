@@ -6,9 +6,42 @@
   background-size: cover;
   margin-bottom: -100vh;
 }
-
-.optv {
-  transform: translateX(-70px) translateY(-110px) scale(2);
+/*地图缩放功能*/
+.optv0 {
+  transform: translateX(0rpx) translateY(0rpx) scale(1);
+}
+.optv1 {
+  transform: translateX(-340rpx) translateY(-400rpx) scale(2);
+}
+.optv2 {
+  transform: translateX(-200rpx) translateY(-350rpx) scale(2);
+}
+.optv3,.optv4{
+  transform: translateX(95rpx) translateY(-450rpx) scale(2.5);
+}
+.optv5 {
+  transform: translateX(460rpx) translateY(-385rpx) scale(2.25);
+}
+.optv6 {
+  transform: translateX(750rpx) translateY(-400rpx) scale(3);
+}
+.optv7 {
+  transform: translateX(750rpx) translateY(-350rpx) scale(3);
+}
+.optv8 {
+  transform: translateX(750rpx) translateY(-300rpx) scale(3);
+}
+.optv9 {
+  transform: translateX(750rpx) translateY(-150rpx) scale(3);
+}
+.optv10 {
+  transform: translateX(750rpx) translateY(100rpx) scale(3);
+}
+.optv11 {
+  transform: translateX(460rpx) translateY(200rpx) scale(2.25);
+}
+.optv12 {
+  transform: translateX(60rpx) translateY(200rpx) scale(2);
 }
 
 .xingicon {
@@ -56,7 +89,7 @@
   width: 100rpx;
   height: 46rpx;
   position: relative;
-  left: -20rpx;
+  left: -10rpx;
   top: 8rpx;
 }
 
@@ -245,7 +278,7 @@
 }
 
 .flagv0 {
-  top: 898rpx;
+  top: 895rpx;
   right: 20rpx;
 }
 

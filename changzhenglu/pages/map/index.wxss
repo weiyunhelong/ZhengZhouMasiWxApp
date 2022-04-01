@@ -1,6 +1,7 @@
 /* changzhenglu/pages/map/index.wxss */
 page {
   background: #B58B60;
+  overflow: hidden;
 }
 
 .mapv {
@@ -12,7 +13,7 @@ page {
 }
 
 .optv {
-  transform: translateX(-70px) translateY(-110px) scale(2);
+  transform: translateX(-140rpx) translateY(-220rpx) scale(2);
 }
 
 .xingicon {
@@ -566,7 +567,7 @@ page {
   box-shadow: 0rpx 4rpx 20rpx 0rpx rgba(0, 0, 0, 0.25);
   border-radius: 12rpx;
   position: absolute;
-  z-index: 99;
+  z-index: 444;
   left: 32rpx;
   bottom: 362rpx;
   text-align: center;
@@ -590,7 +591,7 @@ page {
   box-shadow: 0rpx 4rpx 20rpx 0rpx rgba(0, 0, 0, 0.25);
   border-radius: 12rpx;
   position: fixed;
-  bottom: 62rpx;
+  bottom: 32rpx;
   left: 32rpx;
   z-index: 999;
 }

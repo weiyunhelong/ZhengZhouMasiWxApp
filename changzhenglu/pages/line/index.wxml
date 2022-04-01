@@ -1,5 +1,5 @@
 <!--changzhenglu/pages/line/index.wxml-->
-<mapcom receiveData="{{false}}" poiIndex="2" flagIndex="8"/>
+<mapcom receiveData="{{false}}" poiIndex="13" flagIndex="28"/>
 <!--顶部用户信息-->
 <view class="topbgv" bindtap="hideMaskOpt" style="height:calc({{navigationBarHeight}}px + 100rpx);">
   <view style="width: 100vw;height:{{navigationBarHeight}}px;margin-bottom: 10rpx;"></view>
