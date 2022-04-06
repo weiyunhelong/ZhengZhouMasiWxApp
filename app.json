@@ -118,7 +118,9 @@
   }, {
     "root": "arschool",
     "pages": [
-      "pages/home/index"
+      "pages/home/index",
+      "pages/map/index",
+      "pages/preview/index"
     ]
   }],
   "window": {
