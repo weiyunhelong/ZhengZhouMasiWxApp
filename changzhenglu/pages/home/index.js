@@ -26,6 +26,16 @@ Page({
       },
     })
   },
+  goBackOpt(){//点击返回
+    wx.navigateBack({
+      delta: 1,
+      fail:function(){
+        wx.reLaunch({
+          url: '../../../pages/middle/index',
+        })
+      }
+    })
+  },
   showMaskOpt() { //浮窗显示信息
     var that = this;
     that.setData({

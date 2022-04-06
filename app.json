@@ -115,6 +115,11 @@
       "pages/map/test",
       "pages/map/index"
     ]
+  }, {
+    "root": "arschool",
+    "pages": [
+      "pages/home/index"
+    ]
   }],
   "window": {
     "backgroundTextStyle": "light",

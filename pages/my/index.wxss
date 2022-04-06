@@ -1,13 +1,13 @@
 /* pages/my/index.wxss */
 page {
-  background: #fff;
+  background: #F7F7F7;
 }
 
 /*用户信息部分*/
 .topbgv {
   width: 100vw;
-  height: 356rpx;
-  background: url(https://zhengzhousizheng.oss-cn-beijing.aliyuncs.com/zhengzhouv2/topbg.png) no-repeat;
+  height: 556rpx;
+  background: url(https://zhengzhousizheng.oss-cn-beijing.aliyuncs.com/bannerimgv/mdtopbg.png) no-repeat;
   background-size: cover;
   position: sticky;
   top: 0;
@@ -47,10 +47,7 @@ page {
 .uservv {
   width: 686rpx;
   height: 276rpx;
-  margin: -160rpx auto 0rpx;
-  background: #FFFFFF;
-  box-shadow: 0rpx 4rpx 16rpx 0rpx rgba(0, 0, 0, 0.1);
-  border-radius: 12rpx;
+  margin: -420rpx auto 0rpx;
   position: relative;
   z-index: 20;
 }
@@ -66,15 +63,24 @@ page {
   display: flex;
   justify-content: space-between;
   padding-top: 36rpx;
-  padding-left: 32rpx;
 }
 
 .uservv .userc .txv {
   width: 104rpx;
   height: 104rpx;
   border-radius: 50%;
-  background-color: #f7f7f7;
+  background-color: rgba(255, 255, 255, 0.6);
   margin-right: 20rpx;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  justify-self: center;
+}
+
+.uservv .userc .txv .defaulttx {
+  width: 50rpx;
+  height: 52rpx;
+  margin: 0 auto;
 }
 
 .uservv .userc .usercv {
@@ -84,12 +90,12 @@ page {
 .uservv .username {
   font-size: 32rpx;
   font-weight: 500;
-  color: #262626;
+  color: #fff;
 }
 
 .uservv .userdesc {
   font-size: 28rpx;
-  color: #999;
+  color: rgba(255, 255, 255, 0.6);
   padding-top: 4rpx;
 }
 
@@ -97,7 +103,6 @@ page {
   display: flex;
   height: 176rpx;
   padding-top: 36rpx;
-  padding-left: 32rpx;
 }
 
 .uservv .uservc .tximg {
@@ -115,35 +120,46 @@ page {
 .uservv .userinfov {
   width: 160rpx;
   height: 56rpx;
-  background: rgba(242, 69, 64, 0.1);
-  border-radius: 28rpx 0rpx 0rpx 28rpx;
-  text-align: center;
   line-height: 56rpx;
   margin-top: 60rpx;
   font-size: 24rpx;
-  color: #F24540;
+  color: rgba(255, 255, 255, 0.6);
+  display: flex;
+  justify-content: flex-end;
+}
+
+.righticon {
+  width: 12rpx;
+  height: 20rpx;
+  margin-top: 18rpx;
+  margin-left: 10rpx;
 }
 
 .numberv {
   display: flex;
-  justify-content: space-around;
-  height: 100rpx;
-  line-height: 100rpx;
+  justify-content: space-between;
+  height: 120rpx;
+  padding: 0 40rpx;
 }
 
 .numberv .numberc {
   display: flex;
+  height: 120rpx;
+  flex-direction: column;
+  justify-content: center;
+  justify-self: center;
+  text-align: center;
 }
 
 .numberv .numbertag {
   font-size: 24rpx;
-  color: #666666;
+  color: rgba(255, 255, 255, 0.6);
 }
 
 .numberv .numberval {
-  font-size: 40rpx;
-  font-weight: bold;
-  color: #262626;
+  font-size: 36rpx;
+  font-weight: 500;
+  color: #fff;
   margin-left: 10rpx;
 }
 
@@ -209,7 +225,7 @@ page {
 }
 
 .menuv .menuc {
-  width: 250rpx;
+  width: 226rpx;
   height: 180rpx;
   text-align: center;
   display: flex;
@@ -231,16 +247,20 @@ page {
 }
 
 .optv {
-  padding: 0 32rpx;
+  width: 686rpx;
+  height: 136rpx;
+  margin: 34rpx auto 24rpx;
   display: flex;
   justify-content: space-between;
+  background: #FFFFFF;
+  border-radius: 12rpx;
+  position: relative;
+  z-index: 10;
 }
 
 .optv .optc {
   width: 328rpx;
   height: 136rpx;
-  background: #F7F7F7;
-  border-radius: 12rpx;
   display: flex;
   justify-content: center;
 }
@@ -264,4 +284,58 @@ page {
   height: 52rpx;
   margin-left: 28rpx;
   margin-top: 42rpx;
+}
+
+/*趣味学习*/
+.blockv {
+  width: 686rpx;
+  height: auto;
+  border-radius: 12rpx;
+  margin: 0 auto;
+  background: #fff;
+}
+
+.blockv .blocktitle {
+  height: 88rpx;
+  line-height: 88rpx;
+  padding-left: 32rpx;
+  font-size: 32rpx;
+  color: #262626;
+}
+
+.blockv .blockcv {
+  display: flex;
+  justify-content: space-around;
+}
+
+.blockv .blockcv .blockc {
+  display: flex;
+  height: 180rpx;
+  text-align: center;
+  flex-direction: column;
+  justify-content: center;
+  justify-self: center;
+}
+
+.blockv .blockcv .blockicon1 {
+  width: 86rpx;
+  height: 70rpx;
+  margin: 0 auto;
+}
+
+.blockv .blockcv .blockicon2 {
+  width: 84rpx;
+  height: 70rpx;
+  margin: 0 auto;
+}
+
+.blockv .blockcv .blockicon3 {
+  width: 86rpx;
+  height: 70rpx;
+  margin: 0 auto;
+}
+
+.blockv .blockcv .blocktxt {
+  font-size: 28rpx;
+  color: #262626;
 }

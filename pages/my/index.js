@@ -51,19 +51,50 @@ Page({
       url: '../../my/pages/chengji/index',
     })
   },
+  goStudy(e) { //趣味学习
+    var that = this;
+    var IsLogin = that.data.IsLogin;
+    var index = e.currentTarget.dataset.index;
+    var url = "../../wxauth/pages/wxlogin/index";
+
+    if (!IsLogin) {
+      url = '../../wxauth/pages/wxlogin/index';
+    } else {
+      switch (parseInt(index)) {
+        case 1:
+          url = "../../yunsystem/pages/home/index";
+          break;
+        case 2:
+          url = "../../changzhenglu/pages/home/index";
+          break;
+        case 3:
+          url = "../../arschool/pages/home/index";
+          break;
+      }
+    }
+    wx.navigateTo({
+      url: url
+    })
+  },
   goTabOpt(e) { //点击3个tab
     var index = e.currentTarget.dataset.index;
     var url = "";
-    switch (parseInt(index)) {
-      case 1:
-        url = "../../my/pages/study/index";
-        break;
-      case 2:
-        url = "../../my/pages/dati/index";
-        break;
-      case 3:
-        url = "../../my/pages/chengji/index";
-        break;
+    var url = "../../wxauth/pages/wxlogin/index";
+
+    if (!IsLogin) {
+      url = '../../wxauth/pages/wxlogin/index';
+    } else {
+      switch (parseInt(index)) {
+        case 1:
+          url = "../../my/pages/study/index";
+          break;
+        case 2:
+          url = "../../my/pages/dati/index";
+          break;
+        case 3:
+          url = "../../my/pages/chengji/index";
+          break;
+      }
     }
     wx.navigateTo({
       url: url
@@ -73,26 +104,32 @@ Page({
     var that = this;
     var url = "",
       menu = parseInt(e.currentTarget.dataset.menu);
-    switch (menu) {
-      case 0:
-      case 1:
-        url = "../../my/pages/news/index";
-        break;
-      case 2:
-        url = "../../my/pages/study/index";
-        break;
-      case 3:
-        url = "../../my/pages/collect/index";
-        break;
-      case 4:
-        url = "../../my/pages/dati/index";
-        break;
-      case 5:
-        url = "../../my/pages/course/index";
-        break;
-      case 6:
-        url = "../../xuetang/pages/xuetang/index";
-        break;
+    var url = "../../wxauth/pages/wxlogin/index";
+
+    if (!IsLogin) {
+      url = '../../wxauth/pages/wxlogin/index';
+    } else {
+      switch (menu) {
+        case 0:
+        case 1:
+          url = "../../my/pages/news/index";
+          break;
+        case 2:
+          url = "../../my/pages/study/index";
+          break;
+        case 3:
+          url = "../../my/pages/collect/index";
+          break;
+        case 4:
+          url = "../../my/pages/dati/index";
+          break;
+        case 5:
+          url = "../../my/pages/course/index";
+          break;
+        case 6:
+          url = "../../xuetang/pages/xuetang/index";
+          break;
+      }
     }
     wx.navigateTo({
       url: url

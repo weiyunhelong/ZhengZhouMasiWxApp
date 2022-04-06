@@ -15,7 +15,9 @@
 <view class="uservv">
   <view class="uservvl">
     <view class="userc" wx:if="{{!IsLogin}}" bindtap="goLogin">
-      <view class="txv"></view>
+      <view class="txv">
+        <image src="/resources/my/defaulttx.png" class="defaulttx"></image>
+      </view>
       <view class="usercv">
         <view class="username">点击登录</view>
         <view class="userdesc">完成登录使用更多功能</view>
@@ -29,58 +31,29 @@
           <view class="userdesc showOnehangTxt">{{userInfo.Asign}}</view>
         </view>
       </view>
-      <view class="userinfov" bindtap="goAccount">个人资料</view>
+      <view class="userinfov" bindtap="goAccount">
+        <text>个人资料</text>
+        <image src="/resources/my/right.png" class="righticon"></image>
+      </view>
     </block>
   </view>
   <view class="numberv">
     <view class="numberc">
-      <view class="numbertag">已学习/时:</view>
       <view class="numberval">{{dataobj.studyTimes}}</view>
+      <view class="numbertag">已学习/时</view>
     </view>
-    <view class="numberline"></view>
     <view class="numberc">
-      <view class="numbertag">答题数/个:</view>
       <view class="numberval">{{dataobj.answerNum}}</view>
+      <view class="numbertag">答题数/道</view>
+    </view>
+    <view class="numberc">
+      <view class="numberval">0</view>
+      <view class="numbertag">我的成就/个</view>
     </view>
   </view>
 </view>
 
-<!--勋章部分 bindtap="goXunZhang"-->
-<view class="xunzhangv">
-  <view class="xunzhangl" wx:if="{{dataobj.gradeNum>0}}">
-    <image src="../../resources/my/xunzhang{{dataobj.gradeNum}}.png" class="xunzhang"></image>
-    <view class="xzhlevel">Lv.{{dataobj.gradeNum}}勋章</view>
-  </view>
-  <view class="xunzhangl" wx:else>
-    <view class="xunzhangr">暂无勋章</view>
-  </view>
-  <view class="xunzhangr">我的成就 ></view>
-</view>
-
-<!--我的功能-->
-<view class="mdtitle">我的功能</view>
-<view class="menuv">
-  <view class="menuc" bindtap="tapMenu" data-menu="1">
-    <image src="/resources/my/xiaoxi.png" class="menuicon"></image>
-    <view class="menutxt">我的消息</view>
-  </view>
-  <view class="menuc" bindtap="tapMenu" data-menu="2">
-    <image src="/resources/my/xuexi.png" class="menuicon"></image>
-    <view class="menutxt">学习记录</view>
-  </view>
-  <view class="menuc" bindtap="tapMenu" data-menu="3">
-    <image src="/resources/my/shoucang.png" class="menuicon"></image>
-    <view class="menutxt">我的收藏</view>
-  </view>
-  <view class="menuc" bindtap="tapMenu" data-menu="4" wx:if="{{1==2}}">
-    <image src="/resources/my/dati.png" class="menuicon"></image>
-    <view class="menutxt">答题记录</view>
-  </view>
-</view>
-<view style="width: 100%;height: 16rpx;background-color: #f7f7f7;margin-top: 20rpx;"></view>
-
-<!--创作中心-->
-<view class="mdtitle">创作中心</view>
+<!--功能区-->
 <view class="optv">
   <view class="optc" bindtap="tapMenu" data-menu="5">
     <view class="optcl">
@@ -97,4 +70,49 @@
     <image src="/resources/my/xuetang.png" class="opticon"></image>
   </view>
 </view>
+
+<!--趣味学习-->
+<view class="blockv">
+  <view class="blocktitle">趣味学习</view>
+  <view class="blockcv">
+    <view class="blockc" bindtap="goStudy" data-index="1">
+      <image src="/resources/my/yunzhan.png" class="blockicon1"></image>
+      <view class="blocktxt">云展系统</view>
+    </view>
+    <view class="blockc" bindtap="goStudy" data-index="2">
+      <image src="/resources/my/changzheng.png" class="blockicon2"></image>
+      <view class="blocktxt">重走长征路</view>
+    </view>
+    <view class="blockc" bindtap="goStudy" data-index="3">
+      <image src="/resources/my/yunzhan.png" class="blockicon3"></image>
+      <view class="blocktxt">AR校园</view>
+    </view>
+  </view>
+</view>
+<view style="width: 100%;height: 24rpx;"></view>
+
+<!--我的功能-->
+<view class="blockv">
+  <view class="blocktitle">我的功能</view>
+  <view class="menuv">
+    <view class="menuc" bindtap="tapMenu" data-menu="1">
+      <image src="/resources/my/xiaoxi.png" class="menuicon"></image>
+      <view class="menutxt">我的消息</view>
+    </view>
+    <view class="menuc" bindtap="tapMenu" data-menu="2">
+      <image src="/resources/my/xuexi.png" class="menuicon"></image>
+      <view class="menutxt">学习记录</view>
+    </view>
+    <view class="menuc" bindtap="tapMenu" data-menu="3">
+      <image src="/resources/my/shoucang.png" class="menuicon"></image>
+      <view class="menutxt">我的收藏</view>
+    </view>
+    <view class="menuc" bindtap="tapMenu" data-menu="4" wx:if="{{1==2}}">
+      <image src="/resources/my/dati.png" class="menuicon"></image>
+      <view class="menutxt">答题记录</view>
+    </view>
+  </view>
+</view>
+
+
 <view class="tabbarv"></view>

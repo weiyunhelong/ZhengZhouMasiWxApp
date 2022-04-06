@@ -12,41 +12,7 @@
     },
     "miniprogram": {
       "list": [
-        {
-          "name": "",
-          "pathName": "changzhenglu/pages/map/test",
-          "query": "",
-          "launchMode": "default",
-          "scene": null
-        },
-        {
-          "name": "",
-          "pathName": "pages/index/index",
-          "query": "",
-          "launchMode": "default",
-          "scene": null
-        },
-        {
-          "name": "",
-          "pathName": "my/pages/info/index",
-          "query": "",
-          "launchMode": "default",
-          "scene": null
-        },
-        {
-          "name": "",
-          "pathName": "changzhenglu/pages/map/index",
-          "query": "",
-          "launchMode": "default",
-          "scene": null
-        },
-        {
-          "name": "",
-          "pathName": "changzhenglu/pages/line/index",
-          "query": "",
-          "scene": null,
-          "launchMode": "default"
-        }
+        
       ]
     }
   }
