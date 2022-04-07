@@ -1,11 +1,15 @@
 // arschool/pages/preview/index.js
+var requestUrl = getApp().globalData.requestUrl;
+var WxRequest = require('../../../utils/WxRequest.js');
+
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-
+    showMask: false,
+    showMaskAni: false,
   },
 
   /**
@@ -14,7 +18,25 @@ Page({
   onLoad: function (options) {
 
   },
-
+  goArOpt(e) { //点击AR体验
+    var that = this;
+    that.setData({
+      showMask: true,
+      showMaskAni: true,
+    })
+  },
+  goMapOpt(e) { //点击我知道了
+    var that=this;
+    wx.navigateTo({
+      url: '../map/index',
+      complete:function(){
+        that.setData({
+          showMask: false,
+          showMaskAni: false,
+        })
+      }
+    })
+  },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */

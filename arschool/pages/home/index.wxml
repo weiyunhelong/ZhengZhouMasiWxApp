@@ -1,2 +1,243 @@
 <!--arschool/pages/home/index.wxml-->
-<text>arschool/pages/home/index.wxml</text>
+<view class="topv"></view>
+<scroll-view class="maskv" scroll-y="true">
+ <view style="width: 100%;height: 12rpx;"></view>
+ <view class="blockv" bindtap="goMap" data-id="1">
+   <image src="/resources/comman/avatarUrl.jpg" lazy-load="true" class="blockcover"></image>
+   <view class="blockc">
+     <view class="blockname showOnehangTxt">保卫苏区</view>
+     <view class="blocknumv">
+       <image src="/resources/comman/avatarUrl.jpg" class="blocknumicon"></image>
+       <view class="blocknum">4个学习宝藏点</view>
+     </view>
+     <view class="blockoptv">
+       <view class="blockoptc">共<text>2333</text>人探索</view>
+       <view class="blockoptbtn">浏览</view>
+     </view>
+   </view>
+ </view>
+ <view class="blockv" bindtap="goMap" data-id="1">
+   <image src="/resources/comman/avatarUrl.jpg" lazy-load="true" class="blockcover"></image>
+   <view class="blockc">
+     <view class="blockname showOnehangTxt">飞夺泸定桥（四川省绵阳市泸定桥）</view>
+     <view class="blocknumv">
+       <image src="/resources/comman/avatarUrl.jpg" class="blocknumicon"></image>
+       <view class="blocknum">4个学习宝藏点</view>
+     </view>
+     <view class="blockoptv">
+       <view class="blockoptc">共<text>2333</text>人探索</view>
+       <view class="blockoptbtn">浏览</view>
+     </view>
+   </view>
+ </view>
+ <view class="blockv" bindtap="goMap" data-id="1">
+   <image src="/resources/comman/avatarUrl.jpg" lazy-load="true" class="blockcover"></image>
+   <view class="blockc">
+     <view class="blockname showOnehangTxt">飞夺泸定桥（四川省绵阳市泸定桥）</view>
+     <view class="blocknumv">
+       <image src="/resources/comman/avatarUrl.jpg" class="blocknumicon"></image>
+       <view class="blocknum">4个学习宝藏点</view>
+     </view>
+     <view class="blockoptv">
+       <view class="blockoptc">共<text>2333</text>人探索</view>
+       <view class="blockoptbtn">浏览</view>
+     </view>
+   </view>
+ </view>
+ <view class="blockv" bindtap="goMap" data-id="1">
+   <image src="/resources/comman/avatarUrl.jpg" lazy-load="true" class="blockcover"></image>
+   <view class="blockc">
+     <view class="blockname showOnehangTxt">飞夺泸定桥（四川省绵阳市泸定桥）</view>
+     <view class="blocknumv">
+       <image src="/resources/comman/avatarUrl.jpg" class="blocknumicon"></image>
+       <view class="blocknum">4个学习宝藏点</view>
+     </view>
+     <view class="blockoptv">
+       <view class="blockoptc">共<text>2333</text>人探索</view>
+       <view class="blockoptbtn">浏览</view>
+     </view>
+   </view>
+ </view>
+ <view class="blockv" bindtap="goMap" data-id="1">
+   <image src="/resources/comman/avatarUrl.jpg" lazy-load="true" class="blockcover"></image>
+   <view class="blockc">
+     <view class="blockname showOnehangTxt">飞夺泸定桥（四川省绵阳市泸定桥）</view>
+     <view class="blocknumv">
+       <image src="/resources/comman/avatarUrl.jpg" class="blocknumicon"></image>
+       <view class="blocknum">4个学习宝藏点</view>
+     </view>
+     <view class="blockoptv">
+       <view class="blockoptc">共<text>2333</text>人探索</view>
+       <view class="blockoptbtn">浏览</view>
+     </view>
+   </view>
+ </view>
+ <view class="blockv" bindtap="goMap" data-id="1">
+   <image src="/resources/comman/avatarUrl.jpg" lazy-load="true" class="blockcover"></image>
+   <view class="blockc">
+     <view class="blockname showOnehangTxt">飞夺泸定桥（四川省绵阳市泸定桥）</view>
+     <view class="blocknumv">
+       <image src="/resources/comman/avatarUrl.jpg" class="blocknumicon"></image>
+       <view class="blocknum">4个学习宝藏点</view>
+     </view>
+     <view class="blockoptv">
+       <view class="blockoptc">共<text>2333</text>人探索</view>
+       <view class="blockoptbtn">浏览</view>
+     </view>
+   </view>
+ </view>
+ <view class="blockv" bindtap="goMap" data-id="1">
+   <image src="/resources/comman/avatarUrl.jpg" lazy-load="true" class="blockcover"></image>
+   <view class="blockc">
+     <view class="blockname showOnehangTxt">飞夺泸定桥（四川省绵阳市泸定桥）</view>
+     <view class="blocknumv">
+       <image src="/resources/comman/avatarUrl.jpg" class="blocknumicon"></image>
+       <view class="blocknum">4个学习宝藏点</view>
+     </view>
+     <view class="blockoptv">
+       <view class="blockoptc">共<text>2333</text>人探索</view>
+       <view class="blockoptbtn">浏览</view>
+     </view>
+   </view>
+ </view>
+ <view class="blockv" bindtap="goMap" data-id="1">
+   <image src="/resources/comman/avatarUrl.jpg" lazy-load="true" class="blockcover"></image>
+   <view class="blockc">
+     <view class="blockname showOnehangTxt">飞夺泸定桥（四川省绵阳市泸定桥）</view>
+     <view class="blocknumv">
+       <image src="/resources/comman/avatarUrl.jpg" class="blocknumicon"></image>
+       <view class="blocknum">4个学习宝藏点</view>
+     </view>
+     <view class="blockoptv">
+       <view class="blockoptc">共<text>2333</text>人探索</view>
+       <view class="blockoptbtn">浏览</view>
+     </view>
+   </view>
+ </view>
+ <view class="blockv" bindtap="goMap" data-id="1">
+   <image src="/resources/comman/avatarUrl.jpg" lazy-load="true" class="blockcover"></image>
+   <view class="blockc">
+     <view class="blockname showOnehangTxt">飞夺泸定桥（四川省绵阳市泸定桥）</view>
+     <view class="blocknumv">
+       <image src="/resources/comman/avatarUrl.jpg" class="blocknumicon"></image>
+       <view class="blocknum">4个学习宝藏点</view>
+     </view>
+     <view class="blockoptv">
+       <view class="blockoptc">共<text>2333</text>人探索</view>
+       <view class="blockoptbtn">浏览</view>
+     </view>
+   </view>
+ </view>
+ <view class="blockv" bindtap="goMap" data-id="1">
+   <image src="/resources/comman/avatarUrl.jpg" lazy-load="true" class="blockcover"></image>
+   <view class="blockc">
+     <view class="blockname showOnehangTxt">飞夺泸定桥（四川省绵阳市泸定桥）</view>
+     <view class="blocknumv">
+       <image src="/resources/comman/avatarUrl.jpg" class="blocknumicon"></image>
+       <view class="blocknum">4个学习宝藏点</view>
+     </view>
+     <view class="blockoptv">
+       <view class="blockoptc">共<text>2333</text>人探索</view>
+       <view class="blockoptbtn">浏览</view>
+     </view>
+   </view>
+ </view>
+ <view class="blockv" bindtap="goMap" data-id="1">
+   <image src="/resources/comman/avatarUrl.jpg" lazy-load="true" class="blockcover"></image>
+   <view class="blockc">
+     <view class="blockname showOnehangTxt">飞夺泸定桥（四川省绵阳市泸定桥）</view>
+     <view class="blocknumv">
+       <image src="/resources/comman/avatarUrl.jpg" class="blocknumicon"></image>
+       <view class="blocknum">4个学习宝藏点</view>
+     </view>
+     <view class="blockoptv">
+       <view class="blockoptc">共<text>2333</text>人探索</view>
+       <view class="blockoptbtn">浏览</view>
+     </view>
+   </view>
+ </view>
+ <view class="blockv" bindtap="goMap" data-id="1">
+   <image src="/resources/comman/avatarUrl.jpg" lazy-load="true" class="blockcover"></image>
+   <view class="blockc">
+     <view class="blockname showOnehangTxt">飞夺泸定桥（四川省绵阳市泸定桥）</view>
+     <view class="blocknumv">
+       <image src="/resources/comman/avatarUrl.jpg" class="blocknumicon"></image>
+       <view class="blocknum">4个学习宝藏点</view>
+     </view>
+     <view class="blockoptv">
+       <view class="blockoptc">共<text>2333</text>人探索</view>
+       <view class="blockoptbtn">浏览</view>
+     </view>
+   </view>
+ </view>
+ <view class="blockv" bindtap="goMap" data-id="1">
+   <image src="/resources/comman/avatarUrl.jpg" lazy-load="true" class="blockcover"></image>
+   <view class="blockc">
+     <view class="blockname showOnehangTxt">飞夺泸定桥（四川省绵阳市泸定桥）</view>
+     <view class="blocknumv">
+       <image src="/resources/comman/avatarUrl.jpg" class="blocknumicon"></image>
+       <view class="blocknum">4个学习宝藏点</view>
+     </view>
+     <view class="blockoptv">
+       <view class="blockoptc">共<text>2333</text>人探索</view>
+       <view class="blockoptbtn">浏览</view>
+     </view>
+   </view>
+ </view>
+ <view class="blockv" bindtap="goMap" data-id="1">
+   <image src="/resources/comman/avatarUrl.jpg" lazy-load="true" class="blockcover"></image>
+   <view class="blockc">
+     <view class="blockname showOnehangTxt">飞夺泸定桥（四川省绵阳市泸定桥）</view>
+     <view class="blocknumv">
+       <image src="/resources/comman/avatarUrl.jpg" class="blocknumicon"></image>
+       <view class="blocknum">4个学习宝藏点</view>
+     </view>
+     <view class="blockoptv">
+       <view class="blockoptc">共<text>2333</text>人探索</view>
+       <view class="blockoptbtn">浏览</view>
+     </view>
+   </view>
+ </view>
+ <view class="blockv" bindtap="goMap" data-id="1">
+   <image src="/resources/comman/avatarUrl.jpg" lazy-load="true" class="blockcover"></image>
+   <view class="blockc">
+     <view class="blockname showOnehangTxt">飞夺泸定桥（四川省绵阳市泸定桥）</view>
+     <view class="blocknumv">
+       <image src="/resources/comman/avatarUrl.jpg" class="blocknumicon"></image>
+       <view class="blocknum">4个学习宝藏点</view>
+     </view>
+     <view class="blockoptv">
+       <view class="blockoptc">共<text>2333</text>人探索</view>
+       <view class="blockoptbtn">浏览</view>
+     </view>
+   </view>
+ </view>
+ <view class="blockv" bindtap="goMap" data-id="1">
+   <image src="/resources/comman/avatarUrl.jpg" lazy-load="true" class="blockcover"></image>
+   <view class="blockc">
+     <view class="blockname showOnehangTxt">飞夺泸定桥（四川省绵阳市泸定桥）</view>
+     <view class="blocknumv">
+       <image src="/resources/comman/avatarUrl.jpg" class="blocknumicon"></image>
+       <view class="blocknum">4个学习宝藏点</view>
+     </view>
+     <view class="blockoptv">
+       <view class="blockoptc">共<text>2333</text>人探索</view>
+       <view class="blockoptbtn">浏览</view>
+     </view>
+   </view>
+ </view>
+ <view class="blockv" bindtap="goMap" data-id="1">
+   <image src="/resources/comman/avatarUrl.jpg" lazy-load="true" class="blockcover"></image>
+   <view class="blockc">
+     <view class="blockname showOnehangTxt">飞夺泸定桥（四川省绵阳市泸定桥）</view>
+     <view class="blocknumv">
+       <image src="/resources/comman/avatarUrl.jpg" class="blocknumicon"></image>
+       <view class="blocknum">4个学习宝藏点</view>
+     </view>
+     <view class="blockoptv">
+       <view class="blockoptc">共<text>2333</text>人探索</view>
+       <view class="blockoptbtn">浏览</view>
+     </view>
+   </view>
+ </view>
+</scroll-view>

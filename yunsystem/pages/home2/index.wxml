@@ -1,0 +1,58 @@
+<!--yunsystem/pages/home/index.wxml-->
+<view class="topbgv">
+  <view style="width: 100vw;height:{{navigationBarHeight}}px;margin-bottom: 10rpx;"></view>
+  <view class="backcv" bindtap="goBack">
+    <image src="/resources/comman/backiconw.png" class="backicon"></image>
+  </view>
+</view>
+
+<view class="menuv">
+  <view class="menuitem" bindtap="goMenu" data-menu="1">
+    <view class="iconv">
+      <image class="icon" src="https://zhengzhousizheng.oss-cn-beijing.aliyuncs.com/yunxitong/icon1.png"></image>
+    </view>
+    <view class="menutxt">新中国新郑州</view>
+    <image class="ziimg" src="https://zhengzhousizheng.oss-cn-beijing.aliyuncs.com/yunxitong/zi1.png"></image>
+  </view>
+  <view class="menuitem" bindtap="goMenu" data-menu="2">
+    <view class="iconv">
+      <image class="icon" src="https://zhengzhousizheng.oss-cn-beijing.aliyuncs.com/yunxitong/icon2.png"></image>
+    </view>
+    <view class="menutxt">站起来</view>
+    <image class="ziimg" src="https://zhengzhousizheng.oss-cn-beijing.aliyuncs.com/yunxitong/zi2.png"></image>
+  </view>
+  <view class="menuitem" bindtap="goMenu" data-menu="3">
+    <view class="iconv">
+      <image class="icon" src="https://zhengzhousizheng.oss-cn-beijing.aliyuncs.com/yunxitong/icon3.png"></image>
+    </view>
+    <view class="menutxt">红色河南</view>
+    <image class="ziimg" src="https://zhengzhousizheng.oss-cn-beijing.aliyuncs.com/yunxitong/zi3.png"></image>
+  </view>
+  <view class="menuitem" bindtap="goMenu" data-menu="4">
+    <view class="iconv">
+      <image class="icon" src="https://zhengzhousizheng.oss-cn-beijing.aliyuncs.com/yunxitong/icon4.png"></image>
+    </view>
+    <view class="menutxt">强起来</view>
+    <image class="ziimg" src="https://zhengzhousizheng.oss-cn-beijing.aliyuncs.com/yunxitong/zi4.png"></image>
+  </view>
+  <view class="menuitem" bindtap="goMenu" data-menu="5">
+    <view class="iconv">
+      <image class="icon" src="https://zhengzhousizheng.oss-cn-beijing.aliyuncs.com/yunxitong/icon5.png"></image>
+    </view>
+    <view class="menutxt">富起来</view>
+    <image class="ziimg" src="https://zhengzhousizheng.oss-cn-beijing.aliyuncs.com/yunxitong/zi5.png"></image>
+  </view>
+</view>
+<view class="btmbgv"></view>
+
+<view class="tabbarv" style="margin-top: -420rpx;"></view>
+<view class="tabbar">
+    <view class="tabbartxth">首页</view>
+    <view class="tabbarscanev" bindtap="ScanOpt">
+      <image src="../../resources/lujing.png" class="lujingicon"></image>
+      <view class="scanev">
+        <image src="../../resources/scan.png" class="scanicon"></image>
+      </view>
+    </view>
+    <view class="tabbartxt" bindtap="goRecord">记录</view>
+</view>

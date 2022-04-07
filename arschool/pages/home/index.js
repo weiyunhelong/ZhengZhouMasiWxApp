@@ -1,4 +1,7 @@
 // arschool/pages/home/index.js
+var requestUrl = getApp().globalData.requestUrl;
+var WxRequest = require('../../../utils/WxRequest.js');
+
 Page({
 
   /**
@@ -14,7 +17,11 @@ Page({
   onLoad: function (options) {
 
   },
-
+  goMap(e) { //点击浏览，跳转到地图
+    wx.navigateTo({
+      url: '../preview/index?id='+e.currentTarget.dataset.id,
+    })
+  },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */

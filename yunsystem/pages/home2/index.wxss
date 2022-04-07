@@ -1,15 +1,12 @@
-/* yunsystem/pages/middle/index.wxss */
-page{
-  overflow: hidden;
-}
-.pagev{
-  width: 100vw;
-  height: 100vh;
+/* yunsystem/pages/home/index.wxss */
+page {
+  background: #f5f5f5;
 }
 
 .topbgv {
   width: 100vw;
   height: 580rpx;
+  background: url(https://zhengzhousizheng.oss-cn-beijing.aliyuncs.com/yunxitong/topbg.png) no-repeat;
   background-size: cover;
 }
 
@@ -25,80 +22,63 @@ page{
   margin-top: 8rpx;
 }
 
-/*遮罩层部分*/
-.maskv {
-  width: 100vw;
-  height: 100vh;
-  position: fixed;
-  z-index: 9999;
-  bottom: 0rpx;
-  left: 0rpx;
-  background-color: rgba(0, 0, 0, 0.625);
+.menuv {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin-top: -220rpx;
+  padding: 0 32rpx;
 }
-.maskcv{
-  position: absolute;
-  bottom: 0rpx;
-  left: 0rpx;
+
+.menuitem {
+  width: 332rpx;
+  height: 324rpx;
+  background: linear-gradient(135deg, #F5F5F5 0%, #FFFFFF 100%);
+  box-shadow: -4rpx -4rpx 16rpx 0rpx rgba(255, 255, 255, 0.3), 4rpx 4rpx 16rpx 0rpx rgba(0, 0, 0, 0.1), 2rpx 2rpx 0rpx 0rpx rgba(255, 255, 255, 0.5), -2rpx -2rpx 0rpx 0rpx rgba(239, 239, 239, 1);
+  border-radius: 20rpx;
+  border: 3rpx solid #FFFFFF;
+  margin-bottom: 20rpx;
+}
+
+.iconv {
   width: 100%;
-  height: auto;
-}
-.stepv1{
   text-align: center;
 }
-.stepv1icon{
-  width: 100%;
-  height: 326rpx;
-}
-.steptext1{
-  text-align: center;
-  font-size: 40rpx;
-  font-weight: 300;
-  color: rgba(255, 255, 255, 0.625);
-  margin-top: 40rpx;
-}
-.steptext1 text{
-  font-weight: 600;
-  color: #FFFFFF;
-}
-.steptext2{
-  text-align: center;
-  font-size: 40rpx;
-  font-weight: 300;
-  color: rgba(255, 255, 255, 0.625);
-  margin-bottom: 60rpx;
-}
-.stepbtn{
-  width: 288rpx;
-  height: 80rpx;
-  border-radius: 40rpx;
-  border: 2rpx solid #FFFFFF;
-  font-size: 32rpx;
-  color: #FFFFFF;
-  text-align: center;
-  line-height: 80rpx;
-  margin:0 auto 38rpx;
-}
-.stepv2{
-  text-align: center;
-}
-.stepv2icon{
-  width: 122rpx;
+
+.icon {
+  width: 120rpx;
   height: 120rpx;
-  margin: 0 auto;
+  margin: 70rpx auto 20rpx;
+  display: block;
 }
-.tabbarv{
-  width: 100vw;
-  height: 70px;
-  margin: 34rpx 0rpx;
-  position: relative;
-  z-index: 9999;
+
+.menutxt {
   text-align: center;
+  font-size: 32rpx;
+  font-weight: 500;
+  color: #262626;
+  position: relative;
+  z-index: 2;
 }
-.stepv3icon{
-  width: 140rpx;
-  height: 142rpx;
-  margin: 0 auto;
+
+.ziimg {
+  width: 124rpx;
+  height: 130rpx;
+  position: relative;
+  z-index: 1;
+  top: -55rpx;
 }
+
+.btmbgv {
+  width: 100vw;
+  height: 440rpx;
+  background: url(https://zhengzhousizheng.oss-cn-beijing.aliyuncs.com/yunxitong/btmbg.png) no-repeat;
+  background-size: cover;
+  position: relative;
+  z-index: -1;
+  top: -400rpx;
+}
+
 .tabbar {
   display: flex;
   justify-content: space-around;

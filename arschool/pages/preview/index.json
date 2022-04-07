@@ -1,3 +1,7 @@
 {
-  "usingComponents": {}
+  "navigationBarTitleText": "某某某不知名路线",
+  "usingComponents": {
+    "loadding": "../../../components/loadding/index",
+    "nodatacom": "../../../components/nodata/index"
+  }
 }

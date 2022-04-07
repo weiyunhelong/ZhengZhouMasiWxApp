@@ -22,7 +22,7 @@
     <view class="mdprogress-rotate" style="transform:rotate(60deg)"></view>
     <view class="mdprogress-inner-circle">
       <view class="inner-circle-txt">今日步数</view>
-      <view class="inner-circle-num">23334</view>
+      <view class="inner-circle-num">2234</view>
     </view>
   </view>
   <view class="mdprogress-dot">5000</view>
@@ -175,5 +175,26 @@
         </view>
       </view>
     </scroll-view>
+  </view>
+</view>
+
+<!--操作步骤-->
+<view class="maskv" wx:if="{{showStep}}" bindtouchmove="nomove">
+  <view class="stepv1">
+    <image src="https://zhengzhousizheng.oss-cn-beijing.aliyuncs.com/bannerimgv/step01.png" class="stepv1icon" lazy-load="true"></image>
+    <view class="steptext" style="width: auto;"><text>每日的步数</text>可用于兑换“<text>长征里程</text>”前进</view>
+  </view>
+  <view class="stepv2">
+    <image src="https://zhengzhousizheng.oss-cn-beijing.aliyuncs.com/bannerimgv/step06.png" class="stepv2icon" lazy-load="true"></image>
+  </view>
+  <view class="stepv3">
+    <image src="https://zhengzhousizheng.oss-cn-beijing.aliyuncs.com/bannerimgv/step03.png" class="stepv1icon" lazy-load="true"></image>
+    <view class="steptext">每到达一个路线地点，可解锁一个<text>学习知识景点</text></view>
+  </view>
+  <view class="stepv4">
+    <image src="https://zhengzhousizheng.oss-cn-beijing.aliyuncs.com/bannerimgv/step04.png" class="stepv4icon" lazy-load="true"></image>
+  </view>
+  <view class="stepv5">
+    <view class="stepbtn" catchtap="knowOpt">我知道了</view>
   </view>
 </view>

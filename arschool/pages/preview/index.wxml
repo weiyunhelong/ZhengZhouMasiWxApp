@@ -1,2 +1,33 @@
 <!--arschool/pages/preview/index.wxml-->
-<text>arschool/pages/preview/index.wxml</text>
+<!--地图部分-->
+<map theme="handDraw" class="map" latitude="39.91381018715938"
+longitude="116.39720132367722" scale="15"></map>
+
+<!--POI部分-->
+<view class="viewv" bindtap="goArOpt">
+  <view class="topv">
+    <view class="topl">
+      <image src="/resources/comman/avatarUrl.jpg" class="topicon"></image>
+      <view class="toptext">文昌街</view>
+    </view>
+    <view class="topr">进入AR体验更多内容</view>
+  </view>
+  <view class="viewc">
+    <image src="/resources/comman/avatarUrl.jpg" class="viewicon"></image>
+    <view class="viewtextv">
+      <view class="viewtext">距您832m</view>
+      <view class="viewtip">学习宝藏点</view>
+    </view>
+    <view class="artxt">AR体验</view>
+  </view>
+</view>
+
+<!--显示操作浮窗-->
+<view class="maskv {{showMaskAni?'showMaskv':'hideMaskv'}}" wx:if="{{showMask}}" bindtouchmove="nomove">
+  <view class="maskbodyv">
+    <image src="/resources/comman/avatarUrl.jpg" class="maskbodycover"></image>
+    <view class="maskbodytxt">AR体验</view>
+    <view class="maskbodytip">仅支持到达该路线附近后使用</view>
+    <view class="maskbodybtn" catchtap="goMapOpt">知道了</view>
+  </view>
+</view>

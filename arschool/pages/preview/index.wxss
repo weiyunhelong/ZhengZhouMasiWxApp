@@ -1,1 +1,233 @@
 /* arschool/pages/preview/index.wxss */
+.map {
+  width: 100vw;
+  height: 100vh;
+}
+
+.viewv {
+  width: 100vw;
+  height: 380rpx;
+  background: #FFFFFF;
+  border-radius: 32rpx 32rpx 0rpx 0rpx;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  z-index: 9;
+}
+
+.topv {
+  height: 112rpx;
+  padding: 0 32rpx;
+  display: flex;
+  justify-content: space-between;
+}
+
+.topl {
+  display: flex;
+  height: 112rpx;
+  line-height: 112rpx;
+}
+
+.topicon {
+  width: 50rpx;
+  height: 50rpx;
+  border-radius: 50%;
+  margin-top: 31rpx;
+  display: block;
+  margin-right: 12rpx;
+}
+
+.toptext {
+  font-size: 36rpx;
+  font-weight: 500;
+  color: #262626;
+}
+
+.topr {
+  font-size: 24rpx;
+  color: #999999;
+  height: 112rpx;
+  line-height: 112rpx;
+}
+
+.viewc {
+  width: 686rpx;
+  height: 180rpx;
+  border-radius: 12rpx;
+  border: 2rpx solid #EEEEEE;
+  margin: 0 auto;
+  overflow: hidden;
+  background: url(https://zhengzhousizheng.oss-cn-beijing.aliyuncs.com/zhengzhouv2/jidibg.png) no-repeat;
+  background-size: cover;
+  display: flex;
+}
+
+.viewicon {
+  width: 180rpx;
+  height: 180rpx;
+  margin-right: 30rpx;
+}
+
+.viewtextv {
+  width: 296rpx;
+  height: 180rpx;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  justify-self: center;
+}
+
+.viewtext {
+  font-size: 28rpx;
+  font-weight: 500;
+  color: #262626;
+}
+
+.viewtip {
+  margin-top: 10rpx;
+  font-size: 28rpx;
+  color: #999999;
+}
+
+.artxt {
+  width: 180rpx;
+  height: 180rpx;
+  font-size: 28rpx;
+  color: #F24540;
+  background: linear-gradient(180deg, #FA7B74 0%, #F24540 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-align: center;
+  line-height: 180rpx;
+  font-weight: bold;
+}
+
+
+/*遮罩层部分*/
+.maskv {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  z-index: 9999;
+  bottom: 0rpx;
+  left: 0rpx;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.showMaskv {
+  animation: fadeInUp 1s ease-in-out forwards;
+  -webkit-animation: fadeInUp 1s ease-in-out forwards;
+  -moz-animation: fadeInUp 1s ease-in-out forwards;
+}
+
+.hideMaskv {
+  animation: fadeOutDown 1s ease-in-out forwards;
+  -webkit-animation: fadeOutDown 1s ease-in-out forwards;
+  -moz-animation: fadeOutDown 1s ease-in-out forwards;
+}
+
+
+@-webkit-keyframes fadeInUp {
+  from {
+    opacity: 0;
+    -webkit-transform: translate3d(0, 100%, 0);
+    transform: translate3d(0, 100%, 0);
+  }
+
+  to {
+    opacity: 1;
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    -webkit-transform: translate3d(0, 100%, 0);
+    transform: translate3d(0, 100%, 0);
+  }
+
+  to {
+    opacity: 1;
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+.fadeInUp {
+  -webkit-animation-name: fadeInUp;
+  animation-name: fadeInUp;
+}
+
+
+@-webkit-keyframes fadeOutDown {
+  from {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 0;
+    -webkit-transform: translate3d(0, 100%, 0);
+    transform: translate3d(0, 100%, 0);
+  }
+}
+
+@keyframes fadeOutDown {
+  from {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 0;
+    -webkit-transform: translate3d(0, 100%, 0);
+    transform: translate3d(0, 100%, 0);
+  }
+}
+
+.fadeOutDown {
+  -webkit-animation-name: fadeOutDown;
+  animation-name: fadeOutDown;
+}
+
+.maskbodyv {
+  width: 630rpx;
+  height: 552rpx;
+  background: #FFFFFF;
+  border-radius: 16rpx;
+  position: fixed;
+  top: calc(50vh - 276rpx);
+  left: calc(50vw - 315rpx);
+  text-align: center;
+}
+
+.maskbodycover {
+  width: 100%;
+  height: 172rpx;
+}
+
+.maskbodytxt {
+  padding-top: 52rpx;
+  font-size: 34rpx;
+  font-weight: 500;
+  color: #262626;
+}
+
+.maskbodytip {
+  font-size: 32rpx;
+  color: #333333;
+  margin-top: 16rpx;
+  margin-bottom: 100rpx;
+}
+
+.maskbodybtn {
+  width: 544rpx;
+  height: 80rpx;
+  background: linear-gradient(90deg, #F24540 0%, #FA7B74 100%);
+  border-radius: 40rpx;
+  font-size: 32rpx;
+  color: #FFFFFF;
+  text-align: center;
+  line-height: 80rpx;
+  margin: 0 auto;
+}

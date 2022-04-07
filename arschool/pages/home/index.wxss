@@ -1,1 +1,81 @@
 /* arschool/pages/home/index.wxss */
+.topv {
+  width: 100vw;
+  height: 380rpx;
+}
+
+.maskv {
+  width: 100vw;
+  height: 80vh;
+  background: #FFFFFF;
+  border-radius: 32rpx 32rpx 0rpx 0rpx;
+}
+
+.blockv {
+  margin: 0 32rpx;
+  height: 292rpx;
+  display: flex;
+  border-bottom: 1rpx solid #eee;
+}
+
+.blockcover {
+  width: 236rpx;
+  height: 236rpx;
+  margin: 28rpx 0rpx;
+}
+
+.blockc {
+  margin: 48rpx 0rpx 48rpx 24rpx;
+}
+
+.blockname {
+  font-size: 32rpx;
+  font-weight: 500;
+  color: #262626;
+  width: 426rpx;
+}
+
+.blocknumv {
+  display: flex;
+  margin-top: 10rpx;
+}
+
+.blocknumicon {
+  width: 18rpx;
+  height: 30rpx;
+  margin-right: 8rpx;
+}
+
+.blocknum {
+  font-size: 24rpx;
+  color: #666666;
+}
+
+.blockoptv {
+  width: 426rpx;
+  margin-top: 40rpx;
+  display: flex;
+  justify-content: space-between;
+}
+
+.blockoptc {
+  font-size: 24rpx;
+  color: #999999;
+  line-height: 56rpx;
+  height: 56rpx;
+}
+
+.blockoptc text {
+  color: #F24540;
+}
+
+.blockoptbtn {
+  width: 140rpx;
+  height: 56rpx;
+  background: linear-gradient(90deg, #F24540 0%, #FA7B74 100%);
+  border-radius: 37rpx;
+  font-size: 26rpx;
+  color: #FFFFFF;
+  line-height: 56rpx;
+  text-align: center;
+}
