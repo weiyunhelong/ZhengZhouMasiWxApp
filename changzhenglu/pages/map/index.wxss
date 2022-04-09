@@ -619,6 +619,8 @@ page {
   max-width: 254rpx;
   min-width: 144rpx;
   margin: 0 auto;
+  position: relative;
+  z-index: 2;
 }
 
 .smavatar {
@@ -670,6 +672,8 @@ page {
   padding: 0 24rpx;
   height: 164rpx;
   margin-top: -270rpx;
+  background: url(https://zhengzhousizheng.oss-cn-beijing.aliyuncs.com/bannerimgv/blockbg.png) no-repeat;
+  background-size: cover;
 }
 
 .leftbtmv {
@@ -693,14 +697,33 @@ page {
   color: #262626;
 }
 
+.rightbtmiconv {
+  width: 64rpx;
+  height: 64rpx;
+  background: #FFE6E6;
+  border: 4rpx solid #FFFFFF;
+  text-align: center;
+  border-radius: 50%;
+}
+
 .rightbtmicon {
   width: 56rpx;
   height: 56rpx;
+  margin:8rpx auto;
 }
 
 .rightbtmtxt {
   font-size: 18rpx;
   color: #262626;
+  width: 96rpx;
+  height: 32rpx;
+  background: #FFFFFF;
+  border-radius: 16rpx;
+  text-align: center;
+  line-height: 32rpx;
+  margin-top: -8rpx;
+  position: relative;
+  margin-left: -10rpx;
 }
 
 .rightbtmv {

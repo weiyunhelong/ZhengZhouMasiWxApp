@@ -259,8 +259,8 @@ page {
   z-index: 9;
   background: #fff;
   border-top-left-radius: 20rpx;
-  border-top-right-radius: 20rpx;
-  border-top: 1rpx solid #eee;
+  border-top-right-radius: 20rpx; 
+  box-shadow: 0rpx -10rpx 5rpx #eee;
 }
 
 .btmoptlinev {
@@ -589,8 +589,7 @@ page {
 
 .maskv .jidicover {
   width: 100%;
-  height: auto;
-  min-height: 0rpx;
+  height: 285rpx;
   border-radius: 6rpx;
   display: block;
 }

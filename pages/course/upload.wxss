@@ -142,10 +142,13 @@
   bottom: -5rpx;
   left: 0rpx;
   text-align: center;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, #000000 100%);
+  opacity: 0.5;
 }
 .imgv .deleteicon{
   width: 32rpx;
   height: 32rpx;
+  margin: 9rpx auto;
 }
 .imgdesv{
   margin: 0 32rpx;

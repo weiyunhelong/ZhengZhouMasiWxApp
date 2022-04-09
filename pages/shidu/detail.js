@@ -36,6 +36,17 @@ Page({
         })
       },
     })
+
+    getApp().ChargeLogin().then(res => {
+      if (getApp().globalData.WxUserId == 0) {
+        wx.navigateTo({
+          url: '../../wxauth/pages/wxlogin/index',
+        })
+      } else {
+        //获取数据
+        that.InitData();
+      }
+    })
   },
   goBackOpt() { //点击返回
     wx.navigateBack({
@@ -282,18 +293,7 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-    var that = this;
-
-    getApp().ChargeLogin().then(res => {
-      if (getApp().globalData.WxUserId == 0) {
-        wx.navigateTo({
-          url: '../../wxauth/pages/wxlogin/index',
-        })
-      } else {
-        //获取数据
-        that.InitData();
-      }
-    })
+   
   },
   InitData() { //获取详情
     var that = this;
@@ -326,9 +326,7 @@ Page({
    * 生命周期函数--监听页面隐藏
    */
   onHide: function () {
-    var that=this;
-    clearInterval(timer);
-    that.pauseOpt();
+   
   },
 
   /**

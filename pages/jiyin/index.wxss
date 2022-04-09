@@ -35,12 +35,15 @@
   color: #000;
   margin-left: 84rpx;
 }
-
+.blockvv{
+  width: 100vw;
+  height: calc(100vh - 270rpx - 70rpx);
+  margin-top: -100rpx;
+}
 .blockv {
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
-  margin-top: -100rpx;
   padding: 0 10rpx;
 }
 

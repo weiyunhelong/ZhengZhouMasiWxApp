@@ -46,8 +46,8 @@ page{
 /*顶部的banner*/
 .datalistv {
   width: 100vw;
-  height: calc(100vh - 206rpx);
-  margin-top: -150rpx;
+  height: calc(100vh - 186rpx);
+  margin-top: -180rpx;
 }
 .bannerv {
   width: 100vw;

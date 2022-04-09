@@ -1,6 +1,6 @@
 <!--pages/course/detail.wxml-->
 <!--顶部用户信息-->
-<view class="topbgv" bindtap="hideMaskOpt" style="background:url(https://sqyr2021.oss-cn-shanghai.aliyuncs.com/imgesfiles/202112281422584976.jpg) no-repeat;background-size: cover;">
+<view class="topbgv" bindtap="hideMaskOpt" style="background:{{showMaskAni?'rgba(0,0,0,0.8)':'url(https://sqyr2021.oss-cn-shanghai.aliyuncs.com/imgesfiles/202112281422584976.jpg) no-repeat'}};background-size: cover;">
   <view style="width: 100vw;height:{{navigationBarHeight}}px;margin-bottom: 10rpx;"></view>
   <view class="pagetitlev">
     <view class="backiconv" catchtap="goBackOpt">
@@ -190,7 +190,7 @@
       <block wx:if="{{chksubTab==0}}">
         <block wx:for="{{jidis}}" wx:key="item">
           <view class="jidiv" bindtap="goJiDiOpt" data-id="{{item.ID}}">
-            <image mode="widthFix" lazy-load="true" src="https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fimg.jj20.com%2Fup%2Fallimg%2F611%2F031213123016%2F130312123016-3-1200.jpg" class="jidicover"></image>
+            <image mode="aspectFill" lazy-load="true" src="{{item.Thumbnail}}" class="jidicover"></image>
             <view class="jidiname showOnehangTxt">{{item.Title}}</view>
           </view>
         </block>

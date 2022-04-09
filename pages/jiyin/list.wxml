@@ -10,21 +10,23 @@
   </view>
 </view>
 
-<!--banner部分-->
-<view class="bannerv">
-  <image lazy-load="true" class="banner" src="https://zhengzhousizheng.oss-cn-beijing.aliyuncs.com/bannerimgv/%E5%AF%BB%E6%89%BE%E7%BA%A2%E8%89%B2%E7%B2%BE%E7%A5%9E.png"></image>
-</view>
-
-<!--探寻红色基因-->
-<block wx:for="{{list}}" wx:key="item" wx:for-index="x">
-  <view class="jiyinv" bindtap="goJiYinOpt" data-index="{{x}}">
-    <image mode="aspectFill" lazy-load="true" src="{{item.Thumbnail}}" class="jiyincover"></image>
-    <view class="jiyinc">
-      <view class="jiyinname">{{item.Name}}</view>
-      <view class="jiyinnumv">{{item.BrowseNum}}浏览 · {{item.LikesNum}}点赞 · {{item.ShareNum}}收藏</view>
-    </view>
+<scroll-view scroll-y="true" class="bodyv">
+  <!--banner部分-->
+  <view class="bannerv">
+    <image lazy-load="true" class="banner" src="https://zhengzhousizheng.oss-cn-beijing.aliyuncs.com/bannerimgv/%E5%AF%BB%E6%89%BE%E7%BA%A2%E8%89%B2%E7%B2%BE%E7%A5%9E.png"></image>
   </view>
-</block>
+
+  <!--探寻红色基因-->
+  <block wx:for="{{list}}" wx:key="item" wx:for-index="x">
+    <view class="jiyinv" bindtap="goJiYinOpt" data-index="{{x}}">
+      <image mode="aspectFill" lazy-load="true" src="{{item.Thumbnail}}" class="jiyincover"></image>
+      <view class="jiyinc">
+        <view class="jiyinname">{{item.Name}}</view>
+        <view class="jiyinnumv">{{item.BrowseNum}}浏览 · {{item.LikesNum}}点赞 · {{item.ShareNum}}收藏</view>
+      </view>
+    </view>
+  </block>
+</scroll-view>
 
 <!--loadding 加载-->
-<loadding showloadingMask="{{showloadingMask}}"/>
+<loadding showloadingMask="{{showloadingMask}}" />

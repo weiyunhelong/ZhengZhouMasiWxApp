@@ -40,7 +40,7 @@ page {
 .userinfov {
   padding: 0 32rpx;
   position: relative;
-  top: -200rpx;
+  top: -160rpx;
   z-index: 9999;
   height: 340rpx;
 }
@@ -313,7 +313,7 @@ page {
   z-index: 9999;
   bottom: 0rpx;
   left: 0rpx;
-  background-color: rgba(0, 0, 0, 0.625);
+  background-color: rgba(0, 0, 0, 8);
 }
 
 .showMaskv {
@@ -599,7 +599,7 @@ page {
 .steptext {
   width: 544rpx;
   font-size: 32rpx;
-  color: rgba(255, 255, 255, 0.6);
+  color: #fff;
 }
 
 .steptext text {

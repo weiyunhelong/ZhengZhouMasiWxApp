@@ -1,5 +1,5 @@
 <!--changzhenglu/pages/map/index.wxml-->
-<mapcom receiveData="12" poiIndex="2" flagIndex="8"/>
+<mapcom receiveData="12" poiIndex="2" flagIndex="8" />
 
 <!--顶部用户信息-->
 <view class="topbgv" bindtap="hideMaskOpt" style="height:calc({{navigationBarHeight}}px + 100rpx);">
@@ -41,11 +41,15 @@
     </view>
     <view class="rightbtmv">
       <view class="rightbtmc" bindtap="goLine">
-        <image src="../../resources/mapicon.png" class="rightbtmicon"></image>
+        <view class="rightbtmiconv">
+          <image src="../../resources/mapicon.png" class="rightbtmicon"></image>
+        </view>
         <view class="rightbtmtxt">长征路线</view>
       </view>
-      <view class="rightbtmc"bindtap="goRank">
-        <image src="../../resources/no0.png" class="rightbtmicon"></image>
+      <view class="rightbtmc" bindtap="goRank">
+        <view class="rightbtmiconv">
+          <image src="../../resources/no0.png" class="rightbtmicon"></image>
+        </view>
         <view class="rightbtmtxt">长征排名</view>
       </view>
     </view>

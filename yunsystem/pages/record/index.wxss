@@ -5,7 +5,7 @@ page {
 
 .bodyv {
   width: 100vw;
-  height: calc(100vh - 220rpx);
+  height: calc(100vh - 70px);
   margin-top:20rpx;
   background:#fff;
   border-top-left-radius: 40rpx;
@@ -117,4 +117,10 @@ page {
   width: 164rpx;
   text-align: center;
   top: -30rpx;
+}
+
+.stepv3icon{
+  width: 140rpx;
+  height: 142rpx;
+  margin: 0 auto;
 }

@@ -14,7 +14,7 @@
   <view class="progressv">
     <view class="progresskong"></view>
     <progress percent="{{filter.time2Percent(dataobj.Progress,dataobj.summarytime)}}" border-radius="3rpx" backgroundColor="#F7F7F7" color="#F24540" active stroke-width="6rpx" duration="30" active-mode="forwards"/>
-    <view class="progressc" style="left:{{filter.time2Percent2(dataobj.Progress,dataobj.summarytime)}}%;">{{dataobj.Progress}}/{{dataobj.summarytime}}</view>
+    <view class="progressc" style="left:{{filter.time2Percent2(dataobj.Progress,dataobj.summarytime)}}%">{{dataobj.Progress}}/{{dataobj.summarytime}}</view>
   </view>
 
   <view class="voinceoptv">

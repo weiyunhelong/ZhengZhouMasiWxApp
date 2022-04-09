@@ -3,7 +3,7 @@
   width: 100vw;
   height: 88rpx;
   display: flex;
-  justify-content: space-around;
+  justify-content:space-between;
   border-bottom: 1rpx solid #eee;
   position: sticky;
   top: 0;
@@ -15,6 +15,7 @@
 .tabv .tabitem {
   text-align: center;
   line-height: 88rpx;
+  width: 50vw;
 }
 
 .tabv .tabitem .tabtxth {
@@ -47,8 +48,6 @@
 .optbtmvv {
   width: 100vw;
   height: 108rpx;
-  padding-bottom: constant(safe-area-inset-bottom);
-  padding-bottom: env(safe-area-inset-bottom);
 }
 
 .optbtmv {

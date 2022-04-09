@@ -32,14 +32,10 @@
 </scroll-view>
 
 <!--底部tabbar-->
-<view class="tabbarv"></view>
 <view class="tabbar">
   <view class="tabbartxt" bindtap="goHome">首页</view>
   <view class="tabbarscanev" bindtap="ScanOpt">
-    <image src="../../resources/lujing.png" class="lujingicon"></image>
-    <view class="scanev">
-      <image src="../../resources/scan.png" class="scanicon"></image>
-    </view>
+    <image src="https://zhengzhousizheng.oss-cn-beijing.aliyuncs.com/bannerimgv/buzhou03.png" class="stepv3icon"></image>
   </view>
   <view class="tabbartxth">记录</view>
 </view>

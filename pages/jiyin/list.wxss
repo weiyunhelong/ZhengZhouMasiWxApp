@@ -1,10 +1,7 @@
 /* pages/jiyin/list.wxss */
 page {
-  background: #f2f2f2;
-}
-
-page {
   background: #fff;
+  overflow: hidden;
 }
 
 /*用户信息*/
@@ -44,15 +41,17 @@ page {
   margin-left: 84rpx;
 }
 
-
+.bodyv{
+  width: 100vw;
+  height: calc(100vh - 186rpx);
+  position: relative;
+  top: -180rpx;
+}
 /*顶部的banner*/
 .bannerv {
   width: 100vw;
   height: 240rpx;
-  position: relative;
-  top: -150rpx;
   text-align: center;
-  margin-bottom: -120rpx;
 }
 
 .banner {

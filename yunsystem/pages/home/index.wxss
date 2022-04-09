@@ -33,7 +33,7 @@ page{
   z-index: 9999;
   bottom: 0rpx;
   left: 0rpx;
-  background-color: rgba(0, 0, 0, 0.625);
+  background-color: rgba(0, 0, 0, 0.8);
 }
 .maskcv{
   position: absolute;
@@ -53,7 +53,7 @@ page{
   text-align: center;
   font-size: 40rpx;
   font-weight: 300;
-  color: rgba(255, 255, 255, 0.625);
+  color: rgba(255, 255, 255, 1);
   margin-top: 40rpx;
 }
 .steptext1 text{
@@ -64,7 +64,7 @@ page{
   text-align: center;
   font-size: 40rpx;
   font-weight: 300;
-  color: rgba(255, 255, 255, 0.625);
+  color: rgba(255, 255, 255, 1);
   margin-bottom: 60rpx;
 }
 .stepbtn{

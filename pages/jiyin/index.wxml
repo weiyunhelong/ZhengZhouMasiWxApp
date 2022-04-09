@@ -8,33 +8,36 @@
   </view>
 </view>
 
-<view class="blockv">
+<scroll-view scroll-y="true" class="blockvv">
+ 
+  <view class="blockv">
 
-  <view class="block block1" bindtap="goMenu" data-menu="4">
-    <image src="https://zhengzhousizheng.oss-cn-beijing.aliyuncs.com/jiyin/icon1.png" class="icon1"></image>
-    <view class="blocktxt">习总书记的红色足迹</view>
+    <view class="block block1" bindtap="goMenu" data-menu="4">
+      <image src="https://zhengzhousizheng.oss-cn-beijing.aliyuncs.com/jiyin/icon1.png" class="icon1"></image>
+      <view class="blocktxt">习总书记的红色足迹</view>
+    </view>
+    <view class="block block2" bindtap="goMenu" data-menu="5">
+      <image src="https://zhengzhousizheng.oss-cn-beijing.aliyuncs.com/jiyin/icon2.png" class="icon2"></image>
+      <view class="blocktxt">习总书记的扶贫足迹</view>
+    </view>
+    <view class="block block3" bindtap="goMenu" data-menu="1">
+      <image src="https://zhengzhousizheng.oss-cn-beijing.aliyuncs.com/jiyin/icon3.png" class="icon3"></image>
+      <view class="blocktxt">新中国从这里走来</view>
+    </view>
+    <view class="block block4" bindtap="goMenu" data-menu="3">
+      <image src="https://zhengzhousizheng.oss-cn-beijing.aliyuncs.com/jiyin/icon4.png" class="icon4"></image>
+      <view class="blocktxt">红色时时读</view>
+    </view>
+    <view class="block block2" bindtap="goMenu" data-menu="2">
+      <image src="https://zhengzhousizheng.oss-cn-beijing.aliyuncs.com/jiyin/icon5.png" class="icon5"></image>
+      <view class="blocktxt">四史天天讲</view>
+    </view>
+    <view class="block block6" bindtap="goMenu" data-menu="6">
+      <image src="https://zhengzhousizheng.oss-cn-beijing.aliyuncs.com/jiyin/icon6.png" class="icon6"></image>
+      <view class="blocktxt">探寻红色基因</view>
+    </view>
   </view>
-  <view class="block block2" bindtap="goMenu" data-menu="5">
-    <image src="https://zhengzhousizheng.oss-cn-beijing.aliyuncs.com/jiyin/icon2.png" class="icon2"></image>
-    <view class="blocktxt">习总书记的扶贫足迹</view>
-  </view>
-  <view class="block block3" bindtap="goMenu" data-menu="1">
-    <image src="https://zhengzhousizheng.oss-cn-beijing.aliyuncs.com/jiyin/icon3.png" class="icon3"></image>
-    <view class="blocktxt">新中国从这里走来</view>
-  </view>
-  <view class="block block4" bindtap="goMenu" data-menu="3">
-    <image src="https://zhengzhousizheng.oss-cn-beijing.aliyuncs.com/jiyin/icon4.png" class="icon4"></image>
-    <view class="blocktxt">红色时时读</view>
-  </view>
-  <view class="block block2" bindtap="goMenu" data-menu="2">
-    <image src="https://zhengzhousizheng.oss-cn-beijing.aliyuncs.com/jiyin/icon5.png" class="icon5"></image>
-    <view class="blocktxt">四史天天讲</view>
-  </view>
-  <view class="block block6" bindtap="goMenu" data-menu="6">
-    <image src="https://zhengzhousizheng.oss-cn-beijing.aliyuncs.com/jiyin/icon6.png" class="icon6"></image>
-    <view class="blocktxt">探寻红色基因</view>
-  </view>
-</view>
+  <view class="btmbgv"></view>
+  <view class="btmv"></view>
 
-<view class="btmbgv"></view>
-<view class="btmv"></view>
+</scroll-view>

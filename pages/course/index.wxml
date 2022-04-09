@@ -15,7 +15,7 @@
     </view>
   </view>
 </view>
-<scroll-view scroll-y="true" class="datalistv">
+<scroll-view scroll-y="true" class="datalistv" bindscrolltolower="showModaData">
   <!--我的实践课-->
   <block wx:if="{{chktab==1}}">
     <block wx:for="{{list}}" wx:key="item">
@@ -48,19 +48,18 @@
       <view class="showmorebtn">敬请期待</view>
     </view>
 
-    <scroll-view scroll-y="true" class="bodyv" bindscrolltolower="showModaData" wx:else>
-      <block wx:for="{{list}}" wx:key="item">
-        <view class="jiyinv" bindtap="goDetail" data-id="{{item.ID}}">
-          <image mode="aspectFill" lazy-load="true" src="{{item.Thumbnail}}" class="jiyincover"></image>
-          <view class="jiyinc">
-            <view class="jiyinname">{{item.Title}}</view>
-            <view class="jiyinnumv">负责人：{{item.AuthorName}}</view>
-          </view>
+    <block wx:for="{{list}}" wx:key="item">
+      <view class="jiyinv" bindtap="goDetail" data-id="{{item.ID}}">
+        <image mode="aspectFill" lazy-load="true" src="{{item.Thumbnail}}" class="jiyincover"></image>
+        <view class="jiyinc">
+          <view class="jiyinname">{{item.Title}}</view>
+          <view class="jiyinnumv">负责人：{{item.AuthorName}}</view>
         </view>
-      </block>
-    </scroll-view>
+      </view>
+    </block>
+    
   </block>
 </scroll-view>
 
 <!--loadding 加载-->
-<loadding showloadingMask="{{showloadingMask}}"/>
+<loadding showloadingMask="{{showloadingMask}}" />
