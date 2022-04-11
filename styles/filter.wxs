@@ -286,6 +286,19 @@ function Date2Txt(chattime){
   }
 }
 
+//转k，w为单位
+function toUnit(num) {
+
+  var  numtxt='',numunit='';
+  if(num/10000>1){
+    numtxt=parseFloat(num/10000).toFixed(2);
+    numunit='w';
+  }else{
+    numtxt=num;
+  }
+  return numtxt+numunit;
+}
+
 // 导出对外暴露的属性
 module.exports = {
   toThousands: toThousands,
@@ -310,4 +323,5 @@ module.exports = {
   str2Arry:str2Arry,
   ChatShowDateTime:ChatShowDateTime,
   Date2Txt:Date2Txt,
+  toUnit:toUnit,
 }

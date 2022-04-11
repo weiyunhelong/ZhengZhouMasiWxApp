@@ -1,4 +1,5 @@
 <!--pages/home/index.wxml-->
+<wxs module="filter" src="/styles/filter.wxs"/>
 <!--顶部用户信息-->
 <view class="topbgv">
   <view style="width: 100vw;height:{{navigationBarHeight}}px;margin-bottom: 10rpx;"></view>
@@ -57,7 +58,7 @@
         <image mode="aspectFill" lazy-load="true" src="{{item.Thumbnail}}" class="xscrollviewcover"></image>
         <view class="xscrollviewnumberv">
           <image src="/resources/home/voice.png" class="voiceicon"></image>
-          <view class="numbertxt">{{item.PlayNum}}</view>
+          <view class="numbertxt">{{filter.toUnit(item.PlayNum)}}</view>
         </view>
         <view class="xscrollviewname showOnehangTxt">{{item.Title}}</view>
       </view>
@@ -83,7 +84,7 @@
         <image mode="aspectFill" lazy-load="true" src="{{item.Thumbnail}}" class="chuangkecover"></image>
         <view class="chuangkenumberv">
           <image src="/resources/home/video.png" class="videoicon"></image>
-          <view class="numbertxt">{{item.PlayNum}}</view>
+          <view class="numbertxt">{{filter.toUnit(item.PlayNum)}}</view>
         </view>
         <view class="chuangkename showOnehangTxt">{{item.Title}}</view>
         <view class="chuangketime">{{item.UserName}}</view>
