@@ -12,7 +12,13 @@
     },
     "miniprogram": {
       "list": [
-        
+        {
+          "name": "",
+          "pathName": "changzhenglu/pages/map/index",
+          "query": "",
+          "scene": null,
+          "launchMode": "default"
+        }
       ]
     }
   }

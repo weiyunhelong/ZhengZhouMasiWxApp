@@ -1,95 +1,94 @@
 <!--changzhenglu/components/index.wxml-->
 <view class="mapv {{'optv'+IsScane}}">
   <!--瑞金-->
-  <view class="ruijinv">
+  <view class="ruijinv" bindtap="tapMap" data-index="1">
     <image src="../../assets/xing.png" class="xingicon" wx:if="{{poi>0}}"></image>
     <image src="../../assets/dot.png" class="doticon" wx:else></image>
     <image src="{{poi>0?'../../poi/ruijin.png':'../../poi/ruijinh.png'}}" class="ruijinicon poiicon"></image>
   </view>
-
+  <view class="line1"  bindtap="tapLine" data-index="1"></view>
   <!--血战湘江-->
-  <view class="xiangjiangv">
+  <view class="xiangjiangv" bindtap="tapMap" data-index="2">
     <image src="{{poi>1?'../../poi/xiangjiang.png':'../../poi/xiangjiangh.png'}}" class="xiangjiangicon poiicon"></image>
     <image src="../../assets/xing.png" class="xingicon" wx:if="{{poi>1}}" style="margin-left: 10rpx;"></image>
     <image src="../../assets/dot.png" class="doticon" wx:else style="margin-left: 28rpx;"></image>
   </view>
-
+  <view class="line2"  bindtap="tapLine" data-index="2"></view>
   <!--遵义会议-->
-  <view class="zunyiv">
+  <view class="zunyiv" bindtap="tapMap" data-index="3">
     <image src="../../assets/xing.png" class="xingicon" wx:if="{{poi>2}}" style="margin-left: -20rpx;"></image>
     <image src="../../assets/dot.png" class="doticon" wx:else></image>
     <image src="{{poi>2?'../../poi/zunyi.png':'../../poi/zunyih.png'}}" class="zunyiicon poiicon"></image>
   </view>
-
+  <view class="line3"  bindtap="tapLine" data-index="3"></view>
   <!--四渡赤水-->
-  <view class="chishuiv">
+  <view class="chishuiv" bindtap="tapMap" data-index="3">
     <image src="{{poi>3?'../../poi/chishui.png':'../../poi/chishuih.png'}}" class="chishuiicon poiicon"></image>
     <image src="../../assets/xing.png" class="xingicon" wx:if="{{poi>3}}" style="margin-left: 30rpx;"></image>
     <image src="../../assets/dot.png" class="doticon" wx:else></image>
   </view>
-
+  <view class="line4"  bindtap="tapLine" data-index="3"></view>
   <!--巧渡金沙江-->
-  <view class="jinshajiangv">
+  <view class="jinshajiangv" bindtap="tapMap" data-index="3">
     <image src="{{poi>4?'../../poi/jinshajiang.png':'../../poi/jinshajiangh.png'}}" class="jinshajiangicon poiicon"></image>
     <image src="../../assets/xing.png" class="xingicon" wx:if="{{poi>4}}" style="margin-left: -16rpx;"></image>
     <image src="../../assets/dot.png" class="doticon" wx:else></image>
   </view>
-
+  <view class="line5"  bindtap="tapLine" data-index="5"></view>
   <!--强渡大渡河-->
-  <view class="daduhev">
+  <view class="daduhev" bindtap="tapMap" data-index="6">
     <image src="{{poi>5?'../../poi/daduhe.png':'../../poi/daduheh.png'}}" class="daduheicon poiicon"></image>
     <image src="../../assets/xing.png" class="xingicon" wx:if="{{poi>5}}" style="margin-left: -14rpx;"></image>
     <image src="../../assets/dot.png" class="doticon" wx:else></image>
   </view>
-
+  <view class="line6"  bindtap="tapLine" data-index="6"></view>
   <!--飞夺泸定桥-->
-  <view class="ludingqiaov">
+  <view class="ludingqiaov" bindtap="tapMap" data-index="7">
     <image src="../../assets/xing.png" class="xingicon" wx:if="{{poi>6}}" style="margin-left: -14rpx;margin-right: -18rpx;"></image>
     <image src="../../assets/dot.png" class="doticon" wx:else></image>
     <image src="{{poi>6?'../../poi/ludingqiao.png':'../../poi/ludingqiaoh.png'}}" class="ludingqiaoicon poiicon"></image>
   </view>
-
+  <view class="line7"  bindtap="tapLine" data-index="7"></view>
   <!--爬雪山-->
-  <view class="paixueshanv">
+  <view class="paixueshanv" bindtap="tapMap" data-index="8">
     <image src="../../assets/xing.png" class="xingicon" wx:if="{{poi>7}}" style="margin-left: -16rpx;margin-right: -12rpx;"></image>
     <image src="../../assets/dot.png" class="doticon" wx:else></image>
     <image src="{{poi>7?'../../poi/paixueshan.png':'../../poi/paixueshanh.png'}}" class="paixueshanicon poiicon"></image>
   </view>
-
+  <view class="line8"  bindtap="tapLine" data-index="8"></view>
   <!--懋功会师-->
-  <view class="maogongv">
+  <view class="maogongv" bindtap="tapMap" data-index="9">
     <image src="../../assets/xing.png" class="xingicon" wx:if="{{poi>8}}" style="margin-left: -16rpx;margin-right: -12rpx;"></image>
     <image src="../../assets/dot.png" class="doticon" wx:else></image>
     <image src="{{poi>8?'../../poi/maogong.png':'../../poi/maogongh.png'}}" class="maogongicon poiicon"></image>
   </view>
-
+  <view class="line9"  bindtap="tapLine" data-index="9"></view>
   <!--过草地-->
-  <view class="guocaidiv">
+  <view class="guocaidiv" bindtap="tapMap" data-index="10">
     <image src="../../assets/xing.png" class="xingicon" wx:if="{{poi>9}}" style="margin-left: -16rpx;margin-right: -12rpx;"></image>
     <image src="../../assets/dot.png" class="doticon" wx:else></image>
     <image src="{{poi>9?'../../poi/guocaodi.png':'../../poi/guocaodih.png'}}" class="guocaidiicon poiicon"></image>
   </view>
-
+  <view class="line10"  bindtap="tapLine" data-index="10"></view>
   <!--激战腊子口-->
-  <view class="lazikouv">
+  <view class="lazikouv" bindtap="tapMap" data-index="11">
     <image src="{{poi>10?'../../poi/lazikou.png':'../../poi/lazikouh.png'}}" class="lazikouicon poiicon"></image>
     <image src="../../assets/xing.png" class="xingicon" wx:if="{{poi>10}}" style="margin-left: 33rpx;"></image>
     <image src="../../assets/dot.png" class="doticon" wx:else></image>
   </view>
-
+  <view class="line11"  bindtap="tapLine" data-index="11"></view>
   <!--大会师-->
-  <view class="dahuishiv">
+  <view class="dahuishiv" bindtap="tapMap" data-index="12">
     <image src="../../assets/xing.png" class="xingicon" wx:if="{{poi>11}}" style="margin-left: 18rpx;margin-bottom: -12rpx;"></image>
     <image src="../../assets/dot.png" class="doticon" wx:else></image>
     <image src="{{poi>11?'../../poi/dahuishi.png':'../../poi/dahuishih.png'}}" class="dahuishiicon poiicon"></image>
   </view>
-
+  <view class="line12"  bindtap="tapLine" data-index="12"></view>
   <!--延安-->
-  <view class="yananv">
+  <view class="yananv" bindtap="tapMap" data-index="13">
     <image src="../../assets/xingh.png" class="xinghicon"></image>
     <image src="{{poi==13?'../../poi/yanan.png':'../../poi/yananh.png'}}" class="yananicon poiicon"></image>
   </view>
-
   <!--旗子位置-->
   <view class="flagv flagv{{flag}}">
     <image src="../../assets/qi.png" class="qiicon"></image>

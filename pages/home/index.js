@@ -8,9 +8,10 @@ Page({
    * 页面的初始数据
    */
   data: {
-    showloadingMask:true,
-    userInfo:{},//用户信息
-    dataobj:{},//首页数据
+    showloadingMask: true,
+    userInfo: {}, //用户信息
+    dataobj: {}, //首页数据
+    hideTop:false,//隐藏顶部
   },
 
   /**
@@ -87,8 +88,8 @@ Page({
     })
   },
   goJiYinOpt(e) { //点击探寻红色基因
-    var url=e.currentTarget.dataset.url;
-    if(url!=''&&url!=null){
+    var url = e.currentTarget.dataset.url;
+    if (url != '' && url != null) {
       wx.navigateTo({
         url: '../webview/index?url=' + e.currentTarget.dataset.url
       })
@@ -109,13 +110,24 @@ Page({
       url: '../sijiang/detail?id=' + e.currentTarget.dataset.id
     })
   },
+  pageScroll(e) {//页面滚动
+    var that=this;
+    if(e.detail.scrollTop>120){
+      that.setData({
+        hideTop:true
+      })
+    }else{
+      that.setData({
+        hideTop:false
+      })
+    }
+  },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
 
   },
-
   /**
    * 生命周期函数--监听页面显示
    */
@@ -123,13 +135,13 @@ Page({
     var that = this;
     //获取菜单的列表数据
     that.setTabbarlist();
-    
-    getApp().ChargeLogin().then(res=>{
-      if(getApp().globalData.WxUserId == 0){
+
+    getApp().ChargeLogin().then(res => {
+      if (getApp().globalData.WxUserId == 0) {
         wx.navigateTo({
           url: '../../wxauth/pages/wxlogin/index',
         })
-      }else{
+      } else {
         that.InitData();
       }
     })
@@ -157,12 +169,12 @@ Page({
       if (res.data.success) {
         that.setData({
           dataobj: res.data.data,
-          userInfo:getApp().globalData.userInfo
+          userInfo: getApp().globalData.userInfo
         })
       }
       setTimeout(() => {
         that.setData({
-          showloadingMask:false
+          showloadingMask: false
         })
       }, 1000);
     })

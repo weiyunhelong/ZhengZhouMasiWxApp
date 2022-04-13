@@ -43,7 +43,9 @@
 .optv12 {
   transform: translateX(60rpx) translateY(200rpx) scale(2);
 }
-
+.optv13 {
+  transform: translateX(-150rpx) translateY(600rpx) scale(2);
+}
 .xingicon {
   width: 48rpx;
   height: 48rpx;
@@ -515,4 +517,83 @@
 .qiicon {
   width: 50rpx;
   height: 52rpx;
+}
+
+
+.line1{
+  position: absolute;
+  top: 898rpx;
+  right: 30rpx;
+  width: 150rpx;
+  height: 50rpx;
+}
+.line2{
+  position: absolute;
+  top: 858rpx;
+  right: 200rpx;
+  width: 220rpx;
+  height: 80rpx;
+}
+.line3,.line4{
+  position: absolute;
+  top: 758rpx;
+  left: 250rpx;
+  width: 140rpx;
+  height: 140rpx;
+}
+.line5{
+  position: absolute;
+  top: 858rpx;
+  left: 60rpx;
+  width: 250rpx;
+  height: 100rpx;
+}
+.line6{
+  position: absolute;
+  top: 788rpx;
+  left: 50rpx;
+  width: 30rpx;
+  height: 40rpx;
+}
+.line7{
+  position: absolute;
+  top: 738rpx;
+  left: 30rpx;
+  width: 30rpx;
+  height: 40rpx;
+}
+.line8{
+  position: absolute;
+  top: 688rpx;
+  left: 30rpx;
+  width: 30rpx;
+  height: 40rpx;
+}
+.line9{
+  position: absolute;
+  top: 638rpx;
+  left: 50rpx;
+  width: 30rpx;
+  height: 40rpx;
+}
+.line10{
+  position: absolute;
+  top: 578rpx;
+  left: 65rpx;
+  width: 90rpx;
+  height: 50rpx;
+}
+.line11{
+  position: absolute;
+  top: 488rpx;
+  left: 170rpx;
+  width: 70rpx;
+  height: 80rpx;
+}
+.line12{
+  position: absolute;
+  top: 408rpx;
+  left: 260rpx;
+  width: 200rpx;
+  height: 100rpx;
 }

@@ -1,5 +1,5 @@
 <!--changzhenglu/pages/map/index.wxml-->
-<mapcom receiveData="12" poiIndex="2" flagIndex="8" />
+<mapcom receiveData="{{currIndex}}" poiIndex="{{poiIndex}}" flagIndex="{{flagIndex}}" bind:poitap="poitapOpt"/>
 
 <!--顶部用户信息-->
 <view class="topbgv" bindtap="hideMaskOpt" style="height:calc({{navigationBarHeight}}px + 100rpx);">

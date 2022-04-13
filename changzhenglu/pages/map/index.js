@@ -8,7 +8,9 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+   currIndex:-1,//当前位置
+   poiIndex:-1,//坐标点位置
+   flagIndex:0,//旗位置
   },
 
   /**
@@ -39,7 +41,16 @@ Page({
 
   },
   goPostion() { //点击定位
-
+    this.setData({
+      currIndex:-1,//当前位置
+      poiIndex:-1,//坐标点位置
+      flagIndex:0,//旗位置
+    })
+  },
+  poitapOpt(e){//点击景点
+    this.setData({
+      currIndex:e.detail,//当前位置
+    })
   },
   goRun() { //点击Go
 
