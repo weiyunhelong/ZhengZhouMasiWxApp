@@ -50,15 +50,9 @@ Page({
     };
     WxRequest.PostFormRequest(url, params).then(res => {
       if (res.data.success) {
-        wx.setStorage({
-          key:'arobj',
-          data:res.data.data,
-          complete:function(){
-            wx.redirectTo({
-              url: '../info/index?id=' + res.data.data.id,
-            })
-          }
-        })       
+        wx.redirectTo({
+          url: '../info/index?id=' + res.data.data.id,
+        })      
       }
     })
   },

@@ -1,34 +1,23 @@
 <!--yunsystem/pages/record/index.wxml-->
 <scroll-view scroll-y="auto" class="bodyv">
-  <view class="datev">
-    <view class="datetxt">12月4日</view>
-    <image src="../../resources/yun.png" class="yun"></image>
-  </view>
-  <view class="recordv">
-    <view class="recordc" bindtap="goDetail" data-id="0">
-      <image src="../../resources/qi.png" class="recordcover"></image>
-      <view class="name showOnehangTxt">革命纪念馆革命命革命纪念馆革命命</view>
+  <block wx:for="{{list}}" wx:key="item">
+    <view class="datev">
+      <view class="datetxt">{{item.BrowsingDate}}</view>
+      <image src="../../resources/yun.png" class="yun"></image>
     </view>
-    <view class="recordc" bindtap="goDetail" data-id="0">
-      <image src="../../resources/qi.png" class="recordcover"></image>
-      <view class="name showOnehangTxt">革命纪念馆革命命革命纪念馆革命命</view>
-    </view>
-    <view class="recordc" bindtap="goDetail" data-id="0">
-      <image src="../../resources/qi.png" class="recordcover"></image>
-      <view class="name showOnehangTxt">革命纪念馆革命命革命纪念馆革命命</view>
-    </view>
-  </view>
+    <block wx:for="{{item.DetailsList}}" wx:key="citem" wx:for-item="citem">
+      <view class="recordv">
+        <view class="recordc" bindtap="goDetail" data-id="{{citem.YID}}">
+          <image src="{{citem.CoverPicture}}" class="recordcover"></image>
+          <view class="name showOnehangTxt">{{citem.Title}}</view>
+        </view>
+      </view>
+    </block>
+  </block>
 
-  <view class="datev">
-    <view class="datetxt">12月3日</view>
-    <image src="../../resources/yun.png" class="yun"></image>
-  </view>
-  <view class="recordv">
-    <view class="recordc" bindtap="goDetail" data-id="0">
-      <image src="../../resources/qi.png" class="recordcover"></image>
-      <view class="name showOnehangTxt">革命纪念馆革命命革命纪念馆革命命</view>
-    </view>
-  </view>
+  <!--暂无数据-->
+  <nodatacom wx:if="{{list.length==0}}" />
+
 </scroll-view>
 
 <!--底部tabbar-->

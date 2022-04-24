@@ -1,6 +1,0 @@
-{
-  "navigationStyle": "custom",
-  "usingComponents": {
-    "loadding": "../../../components/loadding/index"
-  }
-}

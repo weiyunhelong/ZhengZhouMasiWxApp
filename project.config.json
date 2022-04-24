@@ -47,7 +47,7 @@
     "ignoreUploadUnusedFiles": true
   },
   "compileType": "miniprogram",
-  "libVersion": "2.23.2",
+  "libVersion": "2.24.0",
   "appid": "wx035444d5654f5c00",
   "projectname": "ZhengZhouMasiWxApp",
   "debugOptions": {

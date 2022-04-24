@@ -26,3 +26,6 @@
   </view>
   <view class="vrtxt">全景体验</view>
 </view>
+
+<!--loadding 加载-->
+<loadding showloadingMask="{{showloadingMask}}"/>

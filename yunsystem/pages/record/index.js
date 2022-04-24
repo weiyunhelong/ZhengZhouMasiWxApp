@@ -1,6 +1,7 @@
 // yunsystem/pages/record/index.js
 var requestUrl = getApp().globalData.requestUrl;
 var WxRequest = require('../../../utils/WxRequest.js');
+var timeTool = require('../../../utils/time.js');
 
 Page({
 
@@ -8,7 +9,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    list: [],
   },
 
   /**
@@ -17,9 +18,9 @@ Page({
   onLoad: function (options) {
 
   },
-  goDetail(e){//跳转到详情
+  goDetail(e) { //跳转到详情
     wx.navigateTo({
-      url: '../record/detail?id='+e.currentTarget.dataset.id,
+      url: '../info/index?id=' + e.currentTarget.dataset.id,
     })
   },
   ScanOpt() { //扫码操作
@@ -43,9 +44,29 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
+    var that = this;
 
+    getApp().ChargeLogin().then(res => {
+      if (getApp().globalData.WxUserId == 0) {
+        wx.navigateTo({
+          url: '../../../wxauth/pages/wxlogin/index',
+        })
+      } else {
+        that.InitData();
+      }
+    })
   },
-
+  InitData(){
+    var that=this;
+    var url=requestUrl+"/API/CloudExhibition/GetCloudExhibitionMyList?userid="+getApp().globalData.WxUserId+"&rows=10&newtime="+timeTool.getNowDate();
+    WxRequest.PostRequest(url,{}).then(res=>{
+      if(res.data.success){
+        that.setData({
+          list:res.data.data==""?[]:res.data.data.datas
+        })
+      }
+    })
+  },
   /**
    * 生命周期函数--监听页面隐藏
    */

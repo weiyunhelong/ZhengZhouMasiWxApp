@@ -12,60 +12,81 @@ Page({
     dataobj: {},
     IsZan: false, //是否点赞
     IsCollect: false, //是否收藏
-    IsVr: true, //是否有VR视频
+    IsVr: false, //是否有VR视频
+    showloadingMask:true,
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    var that = this;
+    that.setData({
+      id: options.id
+    })
   },
   ZanOpt() { //点赞
     var that = this;
     var dataobj = that.data.dataobj;
     var IsZan = that.data.IsZan;
-
-    if (IsZan) { //取消点赞
-      wx.showToast({
-        title: '已取消点赞',
-        duration: 2000
-      })
-      that.setData({
-        IsZan: false
-      })
-    } else { //点赞
-      wx.showToast({
-        title: '点赞成功',
-        duration: 2000
-      })
-      that.setData({
-        IsZan: true
-      })
-    }
+    var url = requestUrl + "/API/CloudExhibition/SaveLikesNumInfo?yid=" + dataobj.ID + "&userid=" + getApp().globalData.WxUserId;
+    WxRequest.PostRequest(url, {}).then(res => {
+      if (IsZan) { //取消点赞
+        wx.showToast({
+          title: '已取消点赞',
+          duration: 2000
+        })
+        dataobj.IsLikes=0;
+        dataobj.LikesNum=dataobj.LikesNum-1;
+        that.setData({
+          IsZan: false,
+          dataobj:dataobj
+        })
+      } else { //点赞
+        wx.showToast({
+          title: '点赞成功',
+          duration: 2000
+        })
+        dataobj.IsLikes=1;
+        dataobj.LikesNum=dataobj.LikesNum+1;
+        that.setData({
+          IsZan: true,
+          dataobj:dataobj
+        })
+      }
+    })
   },
   CollectOpt() { //收藏
     var that = this;
     var dataobj = that.data.dataobj;
     var IsCollect = that.data.IsCollect;
+    var url = requestUrl + "/API/CloudExhibition/SaveCollectionNumInfo?yid=" + dataobj.ID + "&userid=" + getApp().globalData.WxUserId;
+    WxRequest.PostRequest(url, {}).then(res => {
+      if (IsCollect) { //取消收藏
+        wx.showToast({
+          title: '已取消收藏',
+          duration: 2000
+        })
+        dataobj.IsCollection=0;
+        dataobj.CollectionNum=dataobj.CollectionNum-1;
+        that.setData({
+          IsCollect: false,
+          dataobj:dataobj
+        })
+      } else { //收藏
+        wx.showToast({
+          title: '收藏成功',
+          duration: 2000
+        })
+        dataobj.IsCollection=1;
+        dataobj.CollectionNum=dataobj.CollectionNum+1;
+        that.setData({
+          IsCollect: true,
+          dataobj:dataobj
+        })
+      }
+    })
 
-    if (IsCollect) { //取消收藏
-      wx.showToast({
-        title: '已取消收藏',
-        duration: 2000
-      })
-      that.setData({
-        IsCollect: false
-      })
-    } else { //收藏
-      wx.showToast({
-        title: '收藏成功',
-        duration: 2000
-      })
-      that.setData({
-        IsCollect: true
-      })
-    }
   },
   goVROpt() { //vr体验
     var that = this;
@@ -87,32 +108,56 @@ Page({
    */
   onShow: function () {
     var that = this;
-    wx.getStorage({
-      key: "arobj",
-      success: function (res) {
-        that.setData({
-          dataobj: res.data
+
+    getApp().ChargeLogin().then(res => {
+      if (getApp().globalData.WxUserId == 0) {
+        wx.navigateTo({
+          url: '../../../wxauth/pages/wxlogin/index',
         })
+      } else {
+        that.InitData();
+        that.SaveRecord();
       }
     })
   },
+  InitData() { //获取详情
+    var that = this;
+    var url = requestUrl + "/API/CloudExhibition/GetCloudExhibitionInfoDetail?id=" + that.data.id + "&userid=" + getApp().globalData.WxUserId;
+    WxRequest.PostRequest(url, {}).then(res => {
+      if (res.data.success) {
+        var dataobj = res.data.data;
+        that.setData({
+          dataobj: dataobj,
+          IsZan: dataobj.IsLikes == 1, //是否点赞
+          IsCollect: dataobj.IsCollection == 1, //是否收藏
+          IsVr: dataobj.VRUrl != '', //是否有VR视频
+        })
+      }
 
+      setTimeout(() => {
+        that.setData({
+          showloadingMask:false
+        })
+      }, 500);
+    });
+  },
+  SaveRecord() { //保存浏览记录
+    var that = this;
+    var url = requestUrl + "/API/CloudExhibition/SaveBrowseInfo?yid=" + that.data.id + "&userid=" + getApp().globalData.WxUserId;
+    WxRequest.PostRequest(url, {}).then(res => {});
+  },
   /**
    * 生命周期函数--监听页面隐藏
    */
   onHide: function () {
-    wx.removeStorage({
-      key: 'arobj',
-    })
+   
   },
 
   /**
    * 生命周期函数--监听页面卸载
    */
   onUnload: function () {
-    wx.removeStorage({
-      key: 'arobj',
-    })
+    
   },
 
   /**

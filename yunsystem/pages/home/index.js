@@ -9,6 +9,7 @@ Page({
    */
   data: {
     showStep: false,
+    bgimg:'',
   },
 
   /**
@@ -70,6 +71,16 @@ Page({
   onShow: function () {
     var that = this;
 
+    getApp().ChargeLogin().then(res => {
+      if (getApp().globalData.WxUserId == 0) {
+        wx.navigateTo({
+          url: '../../../wxauth/pages/wxlogin/index',
+        })
+      } else {
+        that.InitData();
+      }
+    })
+
     wx.getStorage({
       key: 'yunzhanopt',
       success: function () {
@@ -84,7 +95,17 @@ Page({
       }
     })
   },
-
+  InitData(){//获取背景图
+    var that=this;
+    var url=requestUrl+"/API/CloudExhibition/GetCoverCloud?userid="+getApp().globalData.WxUserId;
+    WxRequest.PostRequest(url,{}).then(res=>{
+      if(res.data.success){
+        that.setData({
+          bgimg:res.data.data
+        })
+      }
+    })
+  },
   /**
    * 生命周期函数--监听页面隐藏
    */

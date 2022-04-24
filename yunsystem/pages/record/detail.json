@@ -1,7 +1,0 @@
-{
-  "navigationBarTitleText": "详情页",
-  "usingComponents": {
-    "loadding": "../../../components/loadding/index",
-    "parser": "../../../h5parser/parser"
-  }
-}

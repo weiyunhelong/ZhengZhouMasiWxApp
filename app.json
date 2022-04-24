@@ -83,12 +83,6 @@
     "pages": [
       "pages/home/index",
       "pages/record/index",
-      "pages/record/detail",
-      "pages/zhanqilai/index",
-      "pages/qiangqilai/index",
-      "pages/fuqilai/index",
-      "pages/hongsehenan/index",
-      "pages/xinzhengzhou/index",
       "pages/info/index",
       "pages/scan/index",
       "pages/webview/index"
