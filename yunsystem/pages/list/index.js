@@ -1,6 +1,6 @@
-// pages/shidu/list.js
+// yunsystem/pages/list/index.js
 var requestUrl = getApp().globalData.requestUrl;
-var WxRequest = require('../../utils/WxRequest.js');
+var WxRequest = require('../../../utils/WxRequest.js');
 
 Page({
 
@@ -8,29 +8,21 @@ Page({
    * 页面的初始数据
    */
   data: {
-    showloadingMask:true,
-    id: 0,
     list: [],
     pageindex: 1,
+    pagesize: 10,
+    showloadingMask: true
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    var that = this;
-    that.setData({
-      id: options.id
-    })
-    wx.setNavigationBarTitle({
-      title: options.name,
-    })
-  },
-  goDetail(e) { //跳转到详情
 
-    WxRequest.ViewRedGenePage(e.currentTarget.dataset.id);
+  },
+  goDetail(e){//点击到详情
     wx.navigateTo({
-      url: "../shidu/chapter?id=" + e.currentTarget.dataset.id
+      url: '../info/index?id='+e.currentTarget.dataset.id
     })
   },
   /**
@@ -49,18 +41,19 @@ Page({
     getApp().ChargeLogin().then(res => {
       if (getApp().globalData.WxUserId == 0) {
         wx.navigateTo({
-          url: '../../wxauth/pages/wxlogin/index',
+          url: '../../../wxauth/pages/wxlogin/index',
         })
       } else {
-        //获取数据
         that.InitData();
+        that.SaveRecord();
       }
     })
   },
-  InitData() { //获取数据
+  InitData() { //获取列表
     var that = this;
     var pageindex = that.data.pageindex;
-    var url = requestUrl + "/API/ReadRedTimeApi/GetReadRedTimeList?page=" + pageindex + "&rows=10&type=" + that.data.id+"&uid="+getApp().globalData.WxUserId;
+    var pagesize = that.data.pagesize;
+    var url = requestUrl + "/API/CloudExhibition/GetCloudExhibitionInfoList?type=" + that.data.id + "&page=" + pageindex + "&rows=" + pagesize;
     WxRequest.PostRequest(url, {}).then(res => {
       if (res.data.success) {
         if (pageindex == 1) {
@@ -73,12 +66,20 @@ Page({
           })
         }
       }
+
       setTimeout(() => {
         that.setData({
-          showloadingMask:false
+          showloadingMask: false
         })
-      }, 1000);
+      }, 500);
+    });
+  },
+  ShowMore() { //加载更多
+    var that = this;
+    that.setData({
+      pageindex: that.data.pageindex + 1
     })
+    that.InitData();
   },
   /**
    * 生命周期函数--监听页面隐藏

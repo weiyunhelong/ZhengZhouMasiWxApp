@@ -126,3 +126,4 @@
 
 <!--loadding 加载-->
 <loadding showloadingMask="{{showloadingMask}}"/>
+<audio src="{{src}}" id="myAudio"></audio>

@@ -1,0 +1,15 @@
+<!--yunsystem/pages/list/index.wxml-->
+<scroll-view scroll-y="true" class="listv" bindscrolltolower="ShowMore"></scroll-view>
+<block wx:for="{{list}}" wx:key="item" wx:for-index="x">
+  <view class="datav" bindtap="goDetail" data-id="{{item.ID}}">
+    <image src="{{item.CoverPicture}}" mode="aspectFill" class="cover" lazy-load="true"></image>
+    <view class="datac">
+      <view class="name showTwohangTxt">{{item.Title}}</view>
+      <view class="numbertxt">{{item.BrowseNum}}浏览 · {{item.LikesNum}}点赞 · {{item.CollectionNum}}收藏</view>
+    </view>
+  </view>
+</block>
+<view class="nomoredata">没有更多了</view>
+
+<!--loadding 加载-->
+<loadding showloadingMask="{{showloadingMask}}"/>

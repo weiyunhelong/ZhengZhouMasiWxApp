@@ -1,8 +1,9 @@
 /* yunsystem/pages/middle/index.wxss */
-page{
+page {
   overflow: hidden;
 }
-.pagev{
+
+.pagev {
   width: 100vw;
   height: 100vh;
 }
@@ -35,39 +36,46 @@ page{
   left: 0rpx;
   background-color: rgba(0, 0, 0, 0.8);
 }
-.maskcv{
+
+.maskcv {
   position: absolute;
   bottom: 0rpx;
   left: 0rpx;
   width: 100%;
   height: auto;
 }
-.stepv1{
+
+.stepv1 {
   text-align: center;
 }
-.stepv1icon{
+
+.stepv1icon {
   width: 100%;
   height: 326rpx;
 }
-.steptext1{
+
+.steptext1 {
   text-align: center;
   font-size: 40rpx;
   font-weight: 300;
   color: rgba(255, 255, 255, 1);
   margin-top: 40rpx;
 }
-.steptext1 text{
+
+.steptext1 text {
   font-weight: 600;
   color: #FFFFFF;
 }
-.steptext2{
+
+.steptext2 {
   text-align: center;
   font-size: 40rpx;
   font-weight: 300;
   color: rgba(255, 255, 255, 1);
   margin-bottom: 60rpx;
 }
-.stepbtn{
+
+.stepbtn {
   width: 288rpx;
   height: 80rpx;
   border-radius: 40rpx;
@@ -76,17 +84,20 @@ page{
   color: #FFFFFF;
   text-align: center;
   line-height: 80rpx;
-  margin:0 auto 38rpx;
+  margin: 0 auto 38rpx;
 }
-.stepv2{
+
+.stepv2 {
   text-align: center;
 }
-.stepv2icon{
+
+.stepv2icon {
   width: 122rpx;
   height: 120rpx;
   margin: 0 auto;
 }
-.tabbarv{
+
+.tabbarv {
   width: 100vw;
   height: 70px;
   margin: 34rpx 0rpx;
@@ -94,11 +105,13 @@ page{
   z-index: 9999;
   text-align: center;
 }
-.stepv3icon{
+
+.stepv3icon {
   width: 140rpx;
   height: 142rpx;
   margin: 0 auto;
 }
+
 .tabbar {
   display: flex;
   justify-content: space-around;
@@ -160,4 +173,33 @@ page{
   width: 164rpx;
   text-align: center;
   top: -30rpx;
+}
+
+/*呼吸灯效果*/
+.breathe-btn {
+  position: relative;
+  top:680rpx;
+  width: 50rpx;
+  height: 50rpx;
+  margin: 0rpx auto;
+  border: 1rpx solid #2b92d4;
+  border-radius: 50%;
+  cursor: pointer;
+  box-shadow: 0 1rpx 2rpx rgba(0, 0, 0, .3);
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#6cc3fe), to(#21a1d0));
+  animation: breathe 2.7s ease-in-out infinite;
+  animation-direction: alternate;
+}
+
+@keyframes breathe {
+  0% {
+    opacity: .2;
+    box-shadow: 0 1rpx 2rpx rgba(255, 255, 255, 0.1);
+  }
+
+  100% {
+    opacity: 1;
+    border: 1px solid rgba(59, 235, 235, 1);
+    box-shadow: 0 1rpx 30rpx rgba(59, 255, 255, 1);
+  }
 }

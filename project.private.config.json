@@ -12,6 +12,20 @@
     },
     "miniprogram": {
       "list": [
+        {
+          "name": "",
+          "pathName": "yunsystem/pages/home/index",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "",
+          "pathName": "pages/shidu/chapter",
+          "query": "id=144",
+          "scene": null,
+          "launchMode": "default"
+        }
       ]
     }
   }

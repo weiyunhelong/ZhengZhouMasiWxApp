@@ -1,6 +1,9 @@
 // pages/shidu/chapter.js
 var requestUrl = getApp().globalData.requestUrl;
 var WxRequest = require('../../utils/WxRequest.js');
+var myaudio = wx.createInnerAudioContext(); //录音播放
+var timer = ""; //计时器
+var time = require('../../utils/time.js');
 
 Page({
 
@@ -8,7 +11,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-    showloadingMask:true,
+    showloadingMask: true,
     chktab: 1, //1:声音 2:简介 3:评论
     id: 0,
     dataobj: {},
@@ -57,6 +60,73 @@ Page({
     wx.navigateTo({
       url: '../shidu/detail?id=' + e.currentTarget.dataset.id
     })
+  },
+  goPlay(e) { //点击播放
+    var that = this;
+    var index = e.currentTarget.dataset.index;
+    var dataobj=that.data.dataobj;
+    var list=dataobj.ReadManu;
+    for(var i=0;i<list.length;i++){
+      list[i].IsPlay=false;
+    }
+    list[index].IsPlay=true;
+    dataobj.ReadManu=list;
+    that.setData({
+      dataobj:dataobj,
+      currobj:list[index],
+      playSTime: new Date().getTime()
+    })
+    myaudio.src = e.currentTarget.dataset.src;
+    myaudio.play();
+
+    timer = setInterval(function () {
+      var dataobj = that.data.currobj;
+      dataobj.Progress = time.AddSeconds("0:00", 1);
+      if (dataobj.Progress == dataobj.summarytime) {
+        dataobj.Progress="0:00";
+        clearInterval(timer);
+        that.pauseOpt();
+      }
+      that.setData({
+        currobj: dataobj
+      })
+    }, 1000)
+  },
+  pauseOpt() { //暂停操作
+    var that = this;
+    myaudio.pause();
+    myaudio.onPause(function (res) {
+      clearInterval(timer);
+      var dataobj = that.data.currobj;
+      that.SaveVideoProgress(dataobj.Progress);
+    })
+
+    var dataobj=that.data.dataobj;
+    var list=dataobj.ReadManu;
+    for(var i=0;i<list.length;i++){
+      list[i].IsPlay=false;
+    }
+    dataobj.ReadManu=list;
+    that.setData({
+      dataobj:dataobj,
+      currobj:{},
+    })
+  },
+  SaveVideoProgress(progress) { //保存播放记录
+    var that = this;
+    var dataobj = that.data.dataobj;
+    var url = requestUrl + "/API/ReadRedTimeApi/SavePlayhistory";
+    var params = {
+      userId: getApp().globalData.WxUserId,
+      RID: dataobj.ID,
+      TypeID: 0,
+      Level: 1,
+      Progress: progress,
+      Title: dataobj.Title,
+      Thumbnail: dataobj.Thumbnail
+    };
+    WxRequest.PostRequest(url, params).then(res => {});
+
   },
   getComment(e) { //获取评论内容
     this.setData({
@@ -189,7 +259,7 @@ Page({
       }
       setTimeout(() => {
         that.setData({
-          showloadingMask:false
+          showloadingMask: false
         })
       }, 1000);
     })

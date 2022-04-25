@@ -82,6 +82,7 @@
     "root": "yunsystem",
     "pages": [
       "pages/home/index",
+      "pages/list/index",
       "pages/record/index",
       "pages/info/index",
       "pages/scan/index",

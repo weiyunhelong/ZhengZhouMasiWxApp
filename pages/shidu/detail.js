@@ -2,7 +2,7 @@
 var requestUrl = getApp().globalData.requestUrl;
 const time = require('../../utils/time.js');
 var WxRequest = require('../../utils/WxRequest.js');
-const myaudio = wx.createInnerAudioContext({}); //录音播放
+var myaudio = wx.createInnerAudioContext(); //录音播放
 var timer = ""; //计时器
 
 Page({

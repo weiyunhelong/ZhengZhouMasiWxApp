@@ -10,6 +10,7 @@ Page({
   data: {
     showStep: false,
     bgimg:'',
+    showloadingMask:true,
   },
 
   /**
@@ -104,6 +105,16 @@ Page({
           bgimg:res.data.data
         })
       }
+      setTimeout(() => {
+        that.setData({
+          showloadingMask:false
+        })
+      }, 500);
+    })
+  },
+  goList(){//跳转到列表
+    wx.navigateTo({
+      url: '../list/index',
     })
   },
   /**

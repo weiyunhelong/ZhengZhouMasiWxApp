@@ -1,10 +1,11 @@
 <!--yunsystem/pages/middle/index.wxml-->
-<view class="pagev" style="background: url({{bgimg}}) no-repeat;background-size: cover;">
+<view class="pagev" style="background: url({{bgimg}}) no-repeat;background-size: cover;" bindtap="goList">
   <view class="topbgv">
     <view style="width: 100vw;height:{{navigationBarHeight}}px;margin-bottom: 10rpx;"></view>
     <view class="backcv" catchtap="goBack">
       <image src="/resources/comman/backiconw.png" class="backicon"></image>
     </view>
+    <view class="breathe-btn"></view>
   </view>
 </view>
 
@@ -33,3 +34,6 @@
   </view>
   <view class="tabbartxt" bindtap="goRecord">记录</view>
 </view>
+
+<!--loadding 加载-->
+<loadding showloadingMask="{{showloadingMask}}"/>

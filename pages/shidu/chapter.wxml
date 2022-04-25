@@ -51,10 +51,10 @@
       <view class="summaryvr">共{{dataobj.ReadManu.length}}章节</view>
     </view>
     <block wx:for="{{dataobj.ReadManu}}" wx:key="item" wx:for-index="x">
-      <view class="chapterv" bindtap="goDetail" data-id="{{item.ID}}">
-        <view class="chapterno {{dataobj.Progress==''&&x==0||dataobj.Progress==item.Title?'redtxt':''}}">{{x+1}}</view>
-        <view class="chapternamev">
-          <view class="showTwohangTxt chaptername  {{dataobj.Progress==''&&x==0||dataobj.Progress==item.Title?'redtxt':''}}">{{item.Title}}</view>
+      <view class="chapterv">
+        <view class="chapterno {{item.IsPlay?'redtxt':''}}">{{x+1}}</view>
+        <view class="chapternamev" bindtap="goDetail" data-id="{{item.ID}}">
+          <view class="showTwohangTxt chaptername  {{item.IsPlay?'redtxt':''}}">{{item.Title}}</view>
           <view class="chapternumv">
             <image class="chapternumicon" src="/resources/home/listen.png"></image>
             <view class="chapternumtxt">{{item.PlayNum}}</view>
@@ -64,8 +64,8 @@
             <view class="chapternumtxt">{{item.CommentNum}}</view>
           </view>
         </view>
-        <view class="chapteroptv">
-          <image src="{{dataobj.Progress==''&&x==0||dataobj.Progress==item.Title?'/resources/shidu/gif.gif':'/resources/shidu/play.png'}}" class="playicon"></image>
+        <view class="chapteroptv" bindtap="{{!item.IsPlay?'goPlay':'pauseOpt'}}" data-src="{{item.Audio}}" data-index="{{x}}">
+          <image src="{{item.IsPlay?'/resources/shidu/gif.gif':'/resources/shidu/play.png'}}" class="playicon"></image>
         </view>
       </view>
     </block>
@@ -135,3 +135,4 @@
 
 <!--loadding 加载-->
 <loadding showloadingMask="{{showloadingMask}}"/>
+<audio src="{{src}}" id="myAudio"></audio>
