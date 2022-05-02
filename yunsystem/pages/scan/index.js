@@ -49,9 +49,9 @@ Page({
       image: base64
     };
     WxRequest.PostFormRequest(url, params).then(res => {
-      if (res.data.success) {
+      if (res.data.success&&res.data.data.ID) {
         wx.redirectTo({
-          url: '../info/index?id=' + res.data.data.id,
+          url: '../info/index?id=' + res.data.data.ID,
         })      
       }
     })

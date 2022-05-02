@@ -10,7 +10,7 @@
 
 <!--视频部分-->
 <video class="videoobj" object-fit="fill" controls="{{true}}" autoplay="{{false}}" initial-time="0:00" 
- src="{{dataobj.Video}}" bindtimeupdate="ViewVideoOpt"></video>
+ src="{{dataobj.Video}}" poster="{{dataobj.Video}}?x-oss-process=video/snapshot,t_7000,f_jpg,w_750,h_422,m_fast" bindtimeupdate="ViewVideoOpt"></video>
 
 <!--视频信息-->
 <view class="videoinfov">

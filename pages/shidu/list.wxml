@@ -4,7 +4,9 @@
     <image mode="aspectFill" lazy-load="true" src="{{item.Thumbnail}}" class="zhuanlancover"></image>
     <view class="zhuanlanc">
       <view class="zhuanlanname showOnehangTxt">{{item.Name}}</view>
-      <view class="zhuanlandesc showOnehangTxt">{{item.Introduce}}</view>
+      <view class="zhuanlandesc" style="height: 32rpx;overflow: hidden;">
+       <h5parser html="{{item.Introduce}}" />
+      </view>
       <view class="zhuanlannumv">
         <image src="/resources/home/listen.png" class="voiceicon"></image>
         <view class="zhuanlannum">{{item.PlayNum}}播放</view>

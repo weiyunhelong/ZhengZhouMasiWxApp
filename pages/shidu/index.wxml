@@ -55,7 +55,9 @@
           <image mode="aspectFill" lazy-load="true" src="{{citem.Thumbnail}}" class="zhuanlancover"></image>
           <view class="zhuanlanc">
             <view class="zhuanlanname showOnehangTxt">{{citem.Name}}</view>
-            <view class="zhuanlandesc showOnehangTxt">{{citem.Introduce}}</view>
+            <view class="zhuanlandesc" style="overflow: hidden;height: 32rpx;">
+             <h5parser html="{{citem.Introduce}}"/>
+            </view>
             <view class="zhuanlannumv">
               <image src="/resources/home/listen.png" class="voiceicon"></image>
               <view class="zhuanlannum">{{citem.PlayNum}}播放</view>

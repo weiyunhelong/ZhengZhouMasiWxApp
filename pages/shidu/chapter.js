@@ -82,7 +82,8 @@ Page({
     timer = setInterval(function () {
       var dataobj = that.data.currobj;
       dataobj.Progress = time.AddSeconds("0:00", 1);
-      if (dataobj.Progress == dataobj.summarytime) {
+     
+      if (dataobj.Progress == dataobj.Duration) {
         dataobj.Progress="0:00";
         clearInterval(timer);
         that.pauseOpt();
@@ -95,10 +96,10 @@ Page({
   pauseOpt() { //暂停操作
     var that = this;
     myaudio.pause();
+    var dataobj = that.data.currobj;
+    that.SaveVideoProgress(dataobj.Progress);
     myaudio.onPause(function (res) {
       clearInterval(timer);
-      var dataobj = that.data.currobj;
-      that.SaveVideoProgress(dataobj.Progress);
     })
 
     var dataobj=that.data.dataobj;

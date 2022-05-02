@@ -3,6 +3,7 @@
   "navigationStyle": "custom",
   "usingComponents": {
     "loadding": "../../components/loadding/index",
-    "nodatav": "../../components/nodata/index"
+    "nodatav": "../../components/nodata/index",
+    "h5parser": "../../h5parser/parser"
   }
 }

@@ -286,7 +286,7 @@ Page({
     WxRequest.PostRequest(url, {}).then(res => {
       if (res.data.success) {
         var dataobj = res.data.data;
-        if(dataobj.Audio!=null&&Audio!=''){
+        if(dataobj.Audio!=null&&dataobj.Audio!=''){
           wx.redirectTo({
             url: '../kecheng/detail?id='+that.data.id,
           })

@@ -93,7 +93,7 @@ Page({
     timer = setInterval(function () {
       var dataobj = that.data.dataobj;
       dataobj.Progress = time.AddSeconds(dataobj.Progress, 1);
-      if (dataobj.Progress == dataobj.summarytime) {
+      if (dataobj.Progress == dataobj.Duration) {
         dataobj.Progress="0:00";
         clearInterval(timer);
         that.pauseOpt();
@@ -302,8 +302,8 @@ Page({
 
       if (res.data.success) {
         var dataobj = res.data.data;
-        dataobj.summarytime = "02:30";
-        dataobj.Progress=dataobj.Progress==null||dataobj.Progress==''||dataobj.Progress==dataobj.summarytime?'0:00':dataobj.Progress;
+        
+        dataobj.Progress=dataobj.Progress==null||dataobj.Progress==''||dataobj.Progress==dataobj.Duration?'0:00':dataobj.Progress;
         that.setData({
           dataobj: dataobj
         })
