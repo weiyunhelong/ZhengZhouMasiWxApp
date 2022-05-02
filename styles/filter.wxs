@@ -197,7 +197,14 @@ function string2Arry(txt) {
   if (txt == undefined || txt == null || txt == '') {
     return [];
   } else {
-    return txt.split('|')
+    var arry = txt.split('|'),
+      result = [];
+    for (var i = 0; i < arry.length; i++) {
+      if (arry[i] != "") {
+        result.push(arry[i]);
+      }
+    }
+    return result;
   }
 }
 
@@ -260,43 +267,44 @@ function str2Arry(txt) {
 }
 
 //聊天显示时间
-function ChatShowDateTime(chattime){
+function ChatShowDateTime(chattime) {
   if (chattime == undefined || chattime == '' || chattime == null) {
     return false;
   } else {
-    var chattimestr=chattime.replace('-','/').replace('-','/').replace('-','/');
-    var chattimenum= getDate(chattimestr).getTime();
-    var nowtimenum= getDate().getTime();
-    var cha=nowtimenum-chattimenum;
-    if(cha/60000>5){
+    var chattimestr = chattime.replace('-', '/').replace('-', '/').replace('-', '/');
+    var chattimenum = getDate(chattimestr).getTime();
+    var nowtimenum = getDate().getTime();
+    var cha = nowtimenum - chattimenum;
+    if (cha / 60000 > 5) {
       return true;
-    }else{
+    } else {
       return false;
     }
   }
 }
 
 //时间转换
-function Date2Txt(chattime){
+function Date2Txt(chattime) {
   if (chattime == undefined || chattime == '' || chattime == null) {
     return false;
   } else {
-    var chattimestr=chattime.replace('-','.').replace('-','.').replace('-','.');
-    return chattimestr.replace('T',' ');
+    var chattimestr = chattime.replace('-', '.').replace('-', '.').replace('-', '.');
+    return chattimestr.replace('T', ' ');
   }
 }
 
 //转k，w为单位
 function toUnit(num) {
 
-  var  numtxt='',numunit='';
-  if(num/10000>1){
-    numtxt=parseFloat(num/10000).toFixed(2);
-    numunit='w';
-  }else{
-    numtxt=num;
+  var numtxt = '',
+    numunit = '';
+  if (num / 10000 > 1) {
+    numtxt = parseFloat(num / 10000).toFixed(2);
+    numunit = 'w';
+  } else {
+    numtxt = num;
   }
-  return numtxt+numunit;
+  return numtxt + numunit;
 }
 
 // 导出对外暴露的属性
@@ -320,8 +328,8 @@ module.exports = {
   time2Percent: time2Percent,
   IsMoreChk: IsMoreChk,
   time2Percent2: time2Percent2,
-  str2Arry:str2Arry,
-  ChatShowDateTime:ChatShowDateTime,
-  Date2Txt:Date2Txt,
-  toUnit:toUnit,
+  str2Arry: str2Arry,
+  ChatShowDateTime: ChatShowDateTime,
+  Date2Txt: Date2Txt,
+  toUnit: toUnit,
 }

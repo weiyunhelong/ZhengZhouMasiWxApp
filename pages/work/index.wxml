@@ -3,7 +3,7 @@
  
   <block wx:for="{{list}}" wx:key="item">
     <view class="workv" bindtap="goDetail" data-id="{{item.ID}}">
-      <image src="{{item.AccessoryUrl}}" mode="aspectFill" class="cover" mode="aspectFill"></image>
+      <image src="{{item.Thumbnail}}" mode="aspectFill" class="cover" mode="aspectFill"></image>
       <view class="name showOnehangTxt">{{item.Title}}</view>
       <view class="owner showOnehangTxt">创作人：{{item.ReadName}}</view>
     </view>

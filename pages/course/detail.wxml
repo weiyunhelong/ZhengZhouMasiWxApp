@@ -1,6 +1,6 @@
 <!--pages/course/detail.wxml-->
 <!--顶部用户信息-->
-<view class="topbgv" bindtap="hideMaskOpt" style="background:{{showMaskAni?'rgba(0,0,0,0.8)':'url(https://sqyr2021.oss-cn-shanghai.aliyuncs.com/imgesfiles/202112281422584976.jpg) no-repeat'}};background-size: cover;">
+<view class="topbgv" bindtap="hideMaskOpt" style="background:rgba(0,0,0,0.8)" wx:if="{{showMaskAni}}">
   <view style="width: 100vw;height:{{navigationBarHeight}}px;margin-bottom: 10rpx;"></view>
   <view class="pagetitlev">
     <view class="backiconv" catchtap="goBackOpt">
@@ -9,16 +9,24 @@
     <view class="pagetitle"></view>
   </view>
 </view>
-
+<view class="topbgv" bindtap="hideMaskOpt" wx:else style="background:url({{dataobj.Thumbnail}}) no-repeat;background-size: cover;">
+  <view style="width: 100vw;height:{{navigationBarHeight}}px;margin-bottom: 10rpx;"></view>
+  <view class="pagetitlev">
+    <view class="backiconv" catchtap="goBackOpt">
+      <image src="/resources/comman/backiconw.png" class="backicon"></image>
+    </view>
+    <view class="pagetitle"></view>
+  </view>
+</view>
 <!--课程详情-->
-<scroll-view scroll-y="true" class="contentv">
+<view class="contentv">
   <view class="infov">
     <view class="namev">
       <view class="namelie"></view>
       <view class="nametxt">{{dataobj.Title}}</view>
     </view>
     <view class="owner">负责人：{{dataobj.AuthorName}}</view>
-    <view class="desc">{{dataobj.Introduction==null?"":dataobj.Introduction}}</view>
+    <view class="desc showFourehangTxt">{{dataobj.Introduction==null?"":dataobj.Introduction}}</view>
   </view>
 
   <view class="tabv">
@@ -27,10 +35,10 @@
     <view class="tabitem tabitem3" bindtap="goTestOpt">答题考试</view>
   </view>
 
-  <view class="bodyv">
+  <scroll-view  class="bodyv" scroll-y="true">
     <view class="kindv">考核标准</view>
     <view class="demandtxtv">
-      <h5parser html="{{dataobj.Standard}}" />"
+      <h5parser html="{{dataobj.Standard}}" />
     </view>
 
     <view class="kindv">完成情况</view>
@@ -78,7 +86,7 @@
       <view class="taolunbtn" bindtap="gogroupOpt">发起讨论组</view>
     </view>
     <view class="btmvv"></view>
-  </view>
+  </scroll-view>
 
   <!--底部操作按钮部分-->
   <view class="btmv">
@@ -101,7 +109,7 @@
     </view>
   </view>
 
-</scroll-view>
+</view>
 
 
 <!--显示遮罩层-->

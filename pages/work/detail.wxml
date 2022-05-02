@@ -1,4 +1,5 @@
 <!--chat/pages/work/detail.wxml-->
+<wxs module="filter" src="../../styles/filter.wxs" />
 <!--顶部用户信息-->
 <view class="topbgv">
   <view style="width: 100vw;height:{{navigationBarHeight}}px;margin-bottom: 10rpx;"></view>
@@ -10,13 +11,7 @@
   </view>
 </view>
 <!--轮播图-->
-<swiper indicator-dots="{{dataobj.AccessoryUrlList.length>1}}" style="width:100vw;height: {{imgh}}rpx;" interval="3000" duration="1500" autoplay="{{true}}">
- <block wx:for="{{dataobj.AccessoryUrlList}}" wx:key="item" wx:for-index="x">
-  <swiper-item>
-    <image src="{{item}}" mode="{{x==0?'widthFix':'aspectFill'}}" class="swiperimg" bindload="{{x==0?'ImgLoad':''}}" style="height: {{imgh}}rpx;"></image>
-  </swiper-item>
- </block>
-</swiper>
+<image src="{{dataobj.Thumbnail}}" mode="widthFix" style="width: 100vw;min-height:0rpx;height:auto;"></image>
 
 <!--基本信息-->
 <view class="infov">
@@ -32,7 +27,7 @@
     <image src="/resources/home/lefttop.png" class="icon"></image>
   </view>
   <view class="desc">
-    <parser html="{{dataobj.Contents}}"/>
+    <parser html="{{dataobj.Contents}}" />
   </view>
   <view class="righticonv">
     <image src="/resources/home/rightbtm.png" class="icon"></image>
@@ -40,4 +35,4 @@
 </scroll-view>
 
 <!--loadding 加载-->
-<loadding showloadingMask="{{showloadingMask}}"/>
+<loadding showloadingMask="{{showloadingMask}}" />

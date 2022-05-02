@@ -83,8 +83,8 @@ Page({
     })
   },
   goJiyin() { //红色基因
-    wx.switchTab({
-      url: '../jiyin/index',
+    wx.navigateTo({
+      url: '../jiyin/list',
     })
   },
   goJiYinOpt(e) { //点击探寻红色基因

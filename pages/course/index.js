@@ -100,7 +100,12 @@ Page({
     var that = this;
     var pageindex = that.data.pageindex;
     var chktab = that.data.chktab;
-    var url = requestUrl + "/API/PracticalTeaching/GetPracticalTeachingList?page=" + pageindex + "&rows=10&userID=" + (chktab == 1 ? getApp().globalData.WxUserId : "");
+    var url = requestUrl;
+    if(chktab == 1){//我的实践课程
+      url+="/API/PracticalTeaching/GetPracticalTeachingList?page=" + pageindex + "&rows=10&userID="+getApp().globalData.WxUserId;
+    }else{//更多课程
+      url+="/API/PracticalTeaching/GetMorePracticalTeachingList?page=" + pageindex + "&rows=10&userID="+getApp().globalData.WxUserId;
+    }
 
     WxRequest.PostRequest(url, {}).then(res => {
       if (res.data.success) {

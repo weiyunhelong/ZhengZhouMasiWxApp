@@ -52,7 +52,7 @@ page {
 
 .infov {
   width: 622rpx;
-  height: auto;
+  height: 342rpx;
   background: rgba(255, 255, 255, 0.9);
   box-shadow: 0rpx 6rpx 20rpx 0rpx rgba(0, 0, 0, 0.08);
   border-radius: 10rpx;
@@ -90,7 +90,8 @@ page {
   line-height: 40rpx;
   font-size: 28rpx;
   color: #666666;
-  min-height: 100rpx;
+  height: 160rpx;
+  overflow: hidden;
 }
 
 .tabv {
@@ -129,6 +130,7 @@ page {
 .bodyv {
   padding: 0 32rpx;
   background-color: #fff;
+  height: calc(100vh - 342rpx - 140rpx - 280rpx);
 }
 
 .kindv {
