@@ -68,7 +68,7 @@ Page({
   InitData() { //获取列表数据
     var that = this;
     var pageindex = that.data.pageindex;
-    var url = requestUrl + "/API/FourHistoryApi/GetFourHistoryList?keywords=&userId=" + getApp().globalData.WxUserId + "&page=" + pageindex + "&rows=10";
+    var url = requestUrl + "/API/FourHistoryApi/GetFourHistoryList?keywords=&uid=" + getApp().globalData.WxUserId + "&page=" + pageindex + "&rows=10";
     WxRequest.PostRequest(url, {}).then(res => {
       if (res.data.success) {
         if (pageindex == 1) {

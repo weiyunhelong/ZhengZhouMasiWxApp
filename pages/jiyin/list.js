@@ -75,7 +75,7 @@ Page({
   InitData() { //获取数据
     var that = this;
     var pageindex = that.data.pageindex;
-    var url = requestUrl + "/API/RedGeneApi/GetPanoramList?page=" + pageindex + "&rows=10&type=" + that.data.id;
+    var url = requestUrl + "/API/RedGeneApi/GetPanoramList?page=" + pageindex + "&rows=10&type=" + that.data.id+"&uid="+getApp().globalData.WxUserId;
     WxRequest.PostRequest(url, {}).then(res => {
       if (res.data.success) {
         if (pageindex == 1) {

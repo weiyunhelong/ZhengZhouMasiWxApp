@@ -76,7 +76,7 @@ Page({
   },
   InitData() { //获取数据
     var that = this;
-    var url = requestUrl + "/API/RedGeneApi/GetPanoramList?type=12&rows=100&page=1";
+    var url = requestUrl + "/API/RedGeneApi/GetPanoramList?type=12&rows=100&page=1&uid="+getApp().globalData.WxUserId;
     WxRequest.PostRequest(url, {}).then(res => {
       if (res.data.success) {
         that.setData({

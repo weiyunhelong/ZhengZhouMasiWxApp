@@ -16,7 +16,7 @@
     <image src="{{list[0].Thumbnail}}" lazy-load="true" class="blockcover"></image>
     <view class="blockinfo">
       <view class="stepname">{{list[0].Name}}</view>
-      <view class="blockdesc showFourehangTxt" style="height:100rpx;">
+      <view class="blockdesc showFourehangTxtv" style="height:100rpx;">
         <parser html="{{list[0].Contents}}" />
       </view>
     </view>
@@ -25,7 +25,7 @@
     <image src="{{list[1].Thumbnail}}" lazy-load="true" class="blockcover"></image>
     <view class="blockinfo">
       <view class="stepname">{{list[1].Name}}</view>
-      <view class="blockdesc showFourehangTxt" style="height:100rpx;">
+      <view class="blockdesc showFourehangTxtv" style="height:100rpx;">
         <parser html="{{list[1].Contents}}" />
       </view>
     </view>
@@ -33,7 +33,7 @@
   <view bindtap="goWebOpt" data-index="2" class="blockv" style="padding-top:90rpx;">
     <view class="blockinfo">
       <view class="stepname">{{list[2].Name}}</view>
-      <view class="blockdesc showFourehangTxt" style="height:100rpx;">
+      <view class="blockdesc showFourehangTxtv" style="height:100rpx;">
         <parser html="{{list[2].Contents}}" />
       </view>
     </view>
@@ -43,7 +43,7 @@
     <image src="{{list[3].Thumbnail}}" lazy-load="true" class="blockcover"></image>
     <view class="blockinfo">
       <view class="stepname">{{list[3].Name}}</view>
-      <view class="blockdesc showFourehangTxt" style="height:100rpx;">
+      <view class="blockdesc showFourehangTxtv" style="height:100rpx;">
         <parser html="{{list[3].Contents}}" />
       </view>
     </view>
@@ -52,7 +52,7 @@
     <image src="{{list[4].Thumbnail}}" lazy-load="true" class="blockcover"></image>
     <view class="blockinfo">
       <view class="stepname">{{list[4].Name}}</view>
-      <view class="blockdesc showFourehangTxt" style="height:100rpx;">
+      <view class="blockdesc showFourehangTxtv" style="height:100rpx;">
         <parser html="{{list[4].Contents}}" />
       </view>
     </view>
@@ -62,7 +62,7 @@
   <view bindtap="goWebOpt" data-index="5" class="blockv" style="padding-top:276rpx;">
     <view class="blockinfo">
       <view class="stepname">{{list[5].Name}}</view>
-      <view class="blockdesc showFourehangTxt" style="height:100rpx;">
+      <view class="blockdesc showFourehangTxtv" style="height:100rpx;">
         <parser html="{{list[5].Contents}}" />
       </view>
     </view>
@@ -72,7 +72,7 @@
     <image src="{{list[6].Thumbnail}}" lazy-load="true" class="blockcover"></image>
     <view class="smblockinfo">
       <view class="stepname">{{list[6].Name}}</view>
-      <view class="blockdesc showFourehangTxt" style="height:100rpx;">
+      <view class="blockdesc showFourehangTxtv" style="height:100rpx;">
         <parser html="{{list[6].Contents}}" />
       </view>
     </view>
@@ -81,7 +81,7 @@
     <image src="{{list[7].Thumbnail}}" lazy-load="true" class="blockcover"></image>
     <view class="blockinfo">
       <view class="stepname">{{list[7].Name}}</view>
-      <view class="blockdesc showFourehangTxt" style="height:100rpx;">
+      <view class="blockdesc showFourehangTxtv" style="height:100rpx;">
         <parser html="{{list[7].Contents}}" />
       </view>
     </view>
@@ -91,7 +91,7 @@
   <view bindtap="goWebOpt" data-index="8" class="blockv" style="margin-top:-30rpx;">
     <view class="blockinfo">
       <view class="stepname">{{list[8].Name}}</view>
-      <view class="blockdesc showFourehangTxt" style="height:100rpx;">
+      <view class="blockdesc showFourehangTxtv" style="height:100rpx;">
         <parser html="{{list[8].Contents}}" />
       </view>
     </view>
@@ -100,7 +100,7 @@
   <view bindtap="goWebOpt" data-index="9" class="blockv" style="padding-top:67rpx;">
     <view class="smblockinfo" style="margin-left: 0;margin-right: 20rpx;width: 350rpx;">
       <view class="stepname">{{list[9].Name}}</view>
-      <view class="blockdesc showFourehangTxt" style="height:100rpx;">
+      <view class="blockdesc showFourehangTxtv" style="height:100rpx;">
         <parser html="{{list[9].Contents}}" />
       </view>
     </view>
@@ -109,7 +109,7 @@
   <view bindtap="goWebOpt" data-index="10" class="blockv" style="padding-top:67rpx;">
     <view class="smblockinfo" style="margin-left: 0;margin-right: 20rpx;width: 350rpx;">
       <view class="stepname">{{list[10].Name}}</view>
-      <view class="blockdesc showFourehangTxt" style="height:100rpx;">
+      <view class="blockdesc showFourehangTxtv" style="height:100rpx;">
         <parser html="{{list[10].Contents}}" />
       </view>
     </view>
@@ -119,7 +119,7 @@
     <image src="{{list[11].Thumbnail}}" lazy-load="true" class="blockcover"></image>
     <view class="blockinfo">
       <view class="stepname">{{list[11].Name}}</view>
-      <view class="blockdesc showFourehangTxt" style="height:100rpx;">
+      <view class="blockdesc showFourehangTxtv" style="height:100rpx;">
         <parser html="{{list[11].Contents}}" />
       </view>
     </view>
@@ -127,7 +127,7 @@
   <view bindtap="goWebOpt" data-index="12" class="blockv" style="padding-top:67rpx;">
     <view class="blockinfo">
       <view class="stepname">{{list[12].Name}}</view>
-      <view class="blockdesc showFourehangTxt" style="height:100rpx;">
+      <view class="blockdesc showFourehangTxtv" style="height:100rpx;">
         <parser html="{{list[12].Contents}}" />
       </view>
     </view>
@@ -139,7 +139,7 @@
     <image src="{{list[13].Thumbnail}}" lazy-load="true" class="blockcover"></image>
     <view class="blockinfo">
       <view class="stepname">{{list[13].Name}}</view>
-      <view class="blockdesc showFourehangTxt" style="height:100rpx;">
+      <view class="blockdesc showFourehangTxtv" style="height:100rpx;">
         <parser html="{{list[13].Contents}}" />
       </view>
     </view>
@@ -148,7 +148,7 @@
     <image src="{{list[14].Thumbnail}}" lazy-load="true" class="blockcover"></image>
     <view class="blockinfo">
       <view class="stepname">{{list[14].Name}}</view>
-      <view class="blockdesc showFourehangTxt" style="height:100rpx;">
+      <view class="blockdesc showFourehangTxtv" style="height:100rpx;">
         <parser html="{{list[14].Contents}}" />
       </view>
     </view>
@@ -156,7 +156,7 @@
   <view bindtap="goWebOpt" data-index="15" class="blockv" style="padding-top:96rpx;">
     <view class="blockinfo">
       <view class="stepname">{{list[15].Name}}</view>
-      <view class="blockdesc showFourehangTxt" style="height:100rpx;">
+      <view class="blockdesc showFourehangTxtv" style="height:100rpx;">
         <parser html="{{list[15].Contents}}" />
       </view>
     </view>
@@ -165,7 +165,7 @@
   <view bindtap="goWebOpt" data-index="16" class="blockv" style="padding-top:109rpx;">
     <view class="smblockinfo" style="margin-left: 0;margin-right: 57rpx;">
       <view class="stepname">{{list[16].Name}}</view>
-      <view class="blockdesc showFourehangTxt" style="height:100rpx;">
+      <view class="blockdesc showFourehangTxtv" style="height:100rpx;">
         <parser html="{{list[16].Contents}}" />
       </view>
     </view>
@@ -177,7 +177,7 @@
     <image src="{{list[17].Thumbnail}}" lazy-load="true" class="blockcover"></image>
     <view class="blockinfo">
       <view class="stepname">{{list[17].Name}}</view>
-      <view class="blockdesc showFourehangTxt" style="height:100rpx;">
+      <view class="blockdesc showFourehangTxtv" style="height:100rpx;">
         <parser html="{{list[17].Contents}}" />
       </view>
     </view>
@@ -186,7 +186,7 @@
     <image src="{{list[18].Thumbnail}}" lazy-load="true" class="blockcover"></image>
     <view class="blockinfo">
       <view class="stepname">{{list[18].Name}}</view>
-      <view class="blockdesc showFourehangTxt" style="height:100rpx;">
+      <view class="blockdesc showFourehangTxtv" style="height:100rpx;">
         <parser html="{{list[18].Contents}}" />
       </view>
     </view>
@@ -195,7 +195,7 @@
     <image src="{{list[19].Thumbnail}}" lazy-load="true" class="blockcover"></image>
     <view class="blockinfo">
       <view class="stepname">{{list[19].Name}}</view>
-      <view class="blockdesc showFourehangTxt" style="height:100rpx;">
+      <view class="blockdesc showFourehangTxtv" style="height:100rpx;">
         <parser html="{{list[19].Contents}}" />
       </view>
     </view>
@@ -203,7 +203,7 @@
   <view bindtap="goWebOpt" data-index="20" class="blockv" style="padding-top:89rpx;">
     <view class="blockinfo">
       <view class="stepname">{{list[20].Name}}</view>
-      <view class="blockdesc showFourehangTxt" style="height:100rpx;">
+      <view class="blockdesc showFourehangTxtv" style="height:100rpx;">
         <parser html="{{list[20].Contents}}" />
       </view>
     </view>
@@ -213,7 +213,7 @@
     <image src="{{list[21].Thumbnail}}" lazy-load="true" class="blockcover"></image>
     <view class="blockinfo">
       <view class="stepname">{{list[21].Name}}</view>
-      <view class="blockdesc showFourehangTxt" style="height:100rpx;">
+      <view class="blockdesc showFourehangTxtv" style="height:100rpx;">
         <parser html="{{list[21].Contents}}" />
       </view>
     </view>
@@ -224,7 +224,7 @@
     <image src="{{list[22].Thumbnail}}" lazy-load="true" class="blockcover"></image>
     <view class="blockinfo">
       <view class="stepname">{{list[22].Name}}</view>
-      <view class="blockdesc showFourehangTxt" style="height:100rpx;">
+      <view class="blockdesc showFourehangTxtv" style="height:100rpx;">
         <parser html="{{list[22].Contents}}" />
       </view>
     </view>

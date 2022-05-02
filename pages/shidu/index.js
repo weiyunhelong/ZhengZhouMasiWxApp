@@ -96,7 +96,7 @@ Page({
   InitData(id, i) { //获取分类下的列表数据
     var that = this;
     var tabs = that.data.tabs;
-    var url = requestUrl + "/API/ReadRedTimeApi/GetReadRedTimeList?page=1&rows=6&type=" + id;
+    var url = requestUrl + "/API/ReadRedTimeApi/GetReadRedTimeList?page=1&rows=6&type=" + id+"&uid="+getApp().globalData.WxUserId;
     WxRequest.PostRequest(url, {}).then(res => {
       if (res.data.success) {
         tabs[i].list = res.data.data.datas;

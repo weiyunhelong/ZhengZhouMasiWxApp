@@ -24,14 +24,18 @@
         <view class="dataname showOnehangTxt">{{item.Title}}</view>
         <image src="/resources/home/lefttop.png" class="lefttopicon"></image>
         <view class="datadescv">
-          <view class="datadesc showTwohangTxt">{{item.Summarize}}</view>
+          <view class="datadesc showTwohangTxt">
+           <h5parser html="{{item.Summarize}}"/>
+          </view>
         </view>
         <image src="/resources/home/rightbtm.png" class="rightbtmicon"></image>
       </view>
     </view>
   </block>
 
+  <nodatacom wx:if="{{list.length==0}}" />
+
 </scroll-view>
 
 <!--loadding 加载-->
-<loadding showloadingMask="{{showloadingMask}}"/>
+<loadding showloadingMask="{{showloadingMask}}" />

@@ -100,6 +100,7 @@
   height: 217rpx;
   margin-right: 26rpx;
   border-radius: 50%;
+  border: 4rpx solid #F24540;
 }
 
 .blockinfo {
@@ -248,4 +249,8 @@ image {
 .step23icon {
   width: 179rpx;
   height: 29rpx;
+}
+
+.showFourehangTxtv{
+  overflow: hidden;
 }

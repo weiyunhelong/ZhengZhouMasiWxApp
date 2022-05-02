@@ -78,8 +78,8 @@ Page({
   },
   goTabOpt(e) { //点击3个tab
     var index = e.currentTarget.dataset.index;
-    var url = "";
     var url = "../../wxauth/pages/wxlogin/index";
+    var IsLogin = that.data.IsLogin;
 
     if (!IsLogin) {
       url = '../../wxauth/pages/wxlogin/index';
@@ -102,8 +102,8 @@ Page({
   },
   tapMenu(e) { //跳转到菜单
     var that = this;
-    var url = "",
-      menu = parseInt(e.currentTarget.dataset.menu);
+    var IsLogin = that.data.IsLogin;
+    var menu = parseInt(e.currentTarget.dataset.menu);
     var url = "../../wxauth/pages/wxlogin/index";
 
     if (!IsLogin) {

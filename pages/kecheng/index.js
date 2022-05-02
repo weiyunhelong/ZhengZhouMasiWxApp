@@ -100,7 +100,7 @@ Page({
 
     var pageindex = that.data.pageindex;
     var chktab = that.data.chktab; //0视频 1专栏
-    var url = requestUrl + "/API/ManuscriptApi/GetManuscriptList?page=" + pageindex + "&rows=10" + "&type=" + chktab;
+    var url = requestUrl + "/API/ManuscriptApi/GetManuscriptList?page=" + pageindex + "&rows=10" + "&type=" + chktab+"&uid="+getApp().globalData.WxUserId;
     WxRequest.PostRequest(url, {}).then(res => {
       if (res.data.success) {
         if (pageindex == 1) {
