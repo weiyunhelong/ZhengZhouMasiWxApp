@@ -189,6 +189,7 @@ page {
   background-image: -webkit-gradient(linear, left top, left bottom, from(#6cc3fe), to(#21a1d0));
   animation: breathe 2.7s ease-in-out infinite;
   animation-direction: alternate;
+  display: none;
 }
 
 @keyframes breathe {

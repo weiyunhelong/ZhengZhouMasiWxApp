@@ -1,9 +1,35 @@
 <!--yunsystem/pages/info/index.wxml-->
 <view class="topborder"></view>
-<view class="bodyv">
-  <view class="title">{{dataobj.Title}}</view>
+
+<!--轮播图-->
+<swiper class="swiper-box" indicator-dots="{{false}}" autoplay="{{true}}" interval="5000" duration="500" bindchange="swiperChange" current="{{currentSwiper}}" circular="{{true}}" easing-function="easeOutCubic" style="width: 100vw;height: {{imgh}}rpx;">
+  <block wx:for="{{swipers}}" wx:key="item" wx:for-index="x">
+    <swiper-item class="swiper-item">
+      <image class="slide-image" src="{{item}}" lazy-load='true' bindload="{{x==0?'ImgLoad':''}}" mode="{{x==0?'widthFix':'aspectFill'}}" style="width: 100vw;height: {{imgh}}rpx;display: block;"></image>
+    </swiper-item>
+  </block>
+</swiper>
+
+<!--名称和分页-->
+<view class="titlev">
+  <view class="title showOnehangTxt">{{dataobj.Title}}</view>
+  <view class="swiperdot">{{currentSwiper+1}}/{{swipers.length}}</view>
+</view>
+
+<!--内容简介-->
+<view class="infov">
+  <block wx:if="{{dataobj.VideoUrl!=''}}">
+    <view class="videov" bindtap="playVideo">
+      <image src="../../resources/video.png" mode="aspectFill" class="videocover"></image>
+      <view class="videotitle showOnehangTxt">{{dataobj.Title}}</view>
+      <image src="../../resources/play.png" mode="aspectFill" class="playicon"></image>
+      <video src="{{dataobj.VideoUrl}}" id="myVideo" style="width:0rpx;height:0rpx;" controls></video>
+    </view>
+  </block>
   <parser html="{{dataobj.Contents}}" />
 </view>
+
+<!--底部操作部分-->
 <view class="tabbarv"></view>
 <view class="tabbar">
   <view class="tabbaritem">
@@ -28,4 +54,4 @@
 </view>
 
 <!--loadding 加载-->
-<loadding showloadingMask="{{showloadingMask}}"/>
+<loadding showloadingMask="{{showloadingMask}}" />

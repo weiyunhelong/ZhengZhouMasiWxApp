@@ -1,8 +1,22 @@
 {
   "setting": {
-    "urlCheck": false
+    "urlCheck": false,
+    "compileHotReLoad": true
   },
-  "condition": {},
+  "condition": {
+    "miniprogram": {
+      "list": [
+        {
+          "name": "",
+          "pathName": "yunsystem/pages/info/index",
+          "query": "id=13",
+          "launchMode": "default",
+          "scene": null
+        }
+      ]
+    }
+  },
   "description": "项目私有配置文件。此文件中的内容将覆盖 project.config.json 中的相同字段。项目的改动优先同步到此文件中。详见文档：https://developers.weixin.qq.com/miniprogram/dev/devtools/projectconfig.html",
-  "libVersion": "2.24.2"
+  "libVersion": "2.25.0",
+  "projectname": "%E9%83%91%E5%B7%9E%E5%B9%BC%E5%84%BF%E5%B0%8F%E7%A8%8B%E5%BA%8F"
 }

@@ -2,6 +2,7 @@
 var requestUrl = getApp().globalData.requestUrl;
 var WxRequest = require('../../../utils/WxRequest.js');
 
+
 Page({
 
   /**
@@ -13,7 +14,8 @@ Page({
     IsZan: false, //是否点赞
     IsCollect: false, //是否收藏
     IsVr: false, //是否有VR视频
-    showloadingMask:true,
+    showloadingMask: true,
+    currentSwiper: 0, //轮播图下标
   },
 
   /**
@@ -23,6 +25,11 @@ Page({
     var that = this;
     that.setData({
       id: options.id
+    })
+  },
+  swiperChange(e) { //轮播图下标
+    this.setData({
+      currentSwiper: e.detail.current
     })
   },
   ZanOpt() { //点赞
@@ -36,22 +43,22 @@ Page({
           title: '已取消点赞',
           duration: 2000
         })
-        dataobj.IsLikes=0;
-        dataobj.LikesNum=dataobj.LikesNum-1;
+        dataobj.IsLikes = 0;
+        dataobj.LikesNum = dataobj.LikesNum - 1;
         that.setData({
           IsZan: false,
-          dataobj:dataobj
+          dataobj: dataobj
         })
       } else { //点赞
         wx.showToast({
           title: '点赞成功',
           duration: 2000
         })
-        dataobj.IsLikes=1;
-        dataobj.LikesNum=dataobj.LikesNum+1;
+        dataobj.IsLikes = 1;
+        dataobj.LikesNum = dataobj.LikesNum + 1;
         that.setData({
           IsZan: true,
-          dataobj:dataobj
+          dataobj: dataobj
         })
       }
     })
@@ -67,22 +74,22 @@ Page({
           title: '已取消收藏',
           duration: 2000
         })
-        dataobj.IsCollection=0;
-        dataobj.CollectionNum=dataobj.CollectionNum-1;
+        dataobj.IsCollection = 0;
+        dataobj.CollectionNum = dataobj.CollectionNum - 1;
         that.setData({
           IsCollect: false,
-          dataobj:dataobj
+          dataobj: dataobj
         })
       } else { //收藏
         wx.showToast({
           title: '收藏成功',
           duration: 2000
         })
-        dataobj.IsCollection=1;
-        dataobj.CollectionNum=dataobj.CollectionNum+1;
+        dataobj.IsCollection = 1;
+        dataobj.CollectionNum = dataobj.CollectionNum + 1;
         that.setData({
           IsCollect: true,
-          dataobj:dataobj
+          dataobj: dataobj
         })
       }
     })
@@ -101,6 +108,9 @@ Page({
     wx.hideShareMenu({
       menus: ['shareAppMessage', 'shareTimeline'],
     })
+
+    this.videoContext = wx.createVideoContext('myVideo');
+
   },
 
   /**
@@ -131,33 +141,53 @@ Page({
           IsZan: dataobj.IsLikes == 1, //是否点赞
           IsCollect: dataobj.IsCollection == 1, //是否收藏
           IsVr: dataobj.VRUrl != '', //是否有VR视频
+          swipers: dataobj.MainGraph, //顶部轮播图
         })
       }
-
-      setTimeout(() => {
-        that.setData({
-          showloadingMask:false
-        })
-      }, 500);
     });
+  },
+  ImgLoad(e) { //获取图片高度
+    var that = this;
+    var ratio = 0;
+    var $width = e.detail.width, //获取图片真实宽度
+      $height = e.detail.height,
+      ratio = $width / $height; //图片的真实宽高比例
+    var viewWidth = 750, //设置图片显示宽度，左右留有16rpx边距
+      viewHeight = viewWidth / ratio; //计算的高度值
+    that.setData({
+      imgh: viewHeight
+    })
+    setTimeout(() => {
+      that.setData({
+        showloadingMask: false
+      })
+    }, 500);
   },
   SaveRecord() { //保存浏览记录
     var that = this;
     var url = requestUrl + "/API/CloudExhibition/SaveBrowseInfo?yid=" + that.data.id + "&userid=" + getApp().globalData.WxUserId;
     WxRequest.PostRequest(url, {}).then(res => {});
   },
+  playVideo() { //视频播放
+    var that = this;
+
+    this.videoContext.requestFullScreen({
+      direction: -90
+    });
+    this.videoContext.play();
+  },
   /**
    * 生命周期函数--监听页面隐藏
    */
   onHide: function () {
-   
+
   },
 
   /**
    * 生命周期函数--监听页面卸载
    */
   onUnload: function () {
-    
+
   },
 
   /**
