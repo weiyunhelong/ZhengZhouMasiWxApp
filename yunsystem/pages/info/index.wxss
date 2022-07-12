@@ -43,8 +43,8 @@ page {
 
 .infov {
   padding: 0rpx 32rpx 32rpx;
-  font-size: 28rpx;
-  line-height: 45rpx;
+  font-size: 32rpx;
+  line-height: 60rpx;
   color: #262626;
   margin-top: -20rpx;
 }
