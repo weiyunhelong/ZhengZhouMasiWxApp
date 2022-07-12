@@ -53,7 +53,7 @@ Page({
     var that = this;
     var pageindex = that.data.pageindex;
     var pagesize = that.data.pagesize;
-    var url = requestUrl + "/API/CloudExhibition/GetCloudExhibitionInfoList?type=" + that.data.id + "&page=" + pageindex + "&rows=" + pagesize;
+    var url = requestUrl + "/API/CloudExhibition/GetCloudExhibitionInfoList?type=" + that.data.id + "&page=" + pageindex + "&rows=" + pagesize+"&userid=" + getApp().globalData.WxUserId;
     WxRequest.PostRequest(url, {}).then(res => {
       if (res.data.success) {
         if (pageindex == 1) {

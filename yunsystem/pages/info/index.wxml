@@ -18,14 +18,6 @@
 
 <!--内容简介-->
 <view class="infov">
-  <block wx:if="{{dataobj.VideoUrl!=''}}">
-    <view class="videov" bindtap="playVideo">
-      <image src="../../resources/video.png" mode="aspectFill" class="videocover"></image>
-      <view class="videotitle showOnehangTxt">{{dataobj.Title}}</view>
-      <image src="../../resources/play.png" mode="aspectFill" class="playicon"></image>
-      <video src="{{dataobj.VideoUrl}}" id="myVideo" style="width:0rpx;height:0rpx;" controls></video>
-    </view>
-  </block>
   <parser html="{{dataobj.Contents}}" />
 </view>
 
@@ -46,12 +38,23 @@
   </view>
 </view>
 
+<!--VR-->
 <view class="vrbtn" bindtap="goVROpt" wx:if="{{dataobj.VRUrl!=''}}">
   <view class="vriconv">
     <image src="../../resources/vr.png" class="vricon"></image>
   </view>
   <view class="vrtxt">全景体验</view>
 </view>
+
+<!--Video-->
+<view class="videobtn" bindtap="playVideo" wx:if="{{dataobj.VideoUrl!=''}}">
+  <view class="videoiconv">
+    <image src="../../resources/playicon.png" class="videoicon"></image>
+  </view>
+  <view class="videotxt">视频播放</view>
+</view>
+<video src="{{dataobj.VideoUrl}}" id="myVideo" style="width:0rpx;height:0rpx;" controls></video>
+
 
 <!--loadding 加载-->
 <loadding showloadingMask="{{showloadingMask}}" />
